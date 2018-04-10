@@ -49,19 +49,25 @@ img.emoji {
 <meta name="generator" content="WordPress 4.6.10" />
 
    	<style type="text/css">
-					.blog-title a, .blog-description, .social-icons a { color: #ffffff; }
+					.blog-title a, .blog-description, .social-icons a { color: #222222; }
 		
 						                
 		
 							.main-navigation a { color: ; }
 		                                            </style>
     		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
-		<style type="text/css" id="syntaxhighlighteranchor"></style>
+			<style type="text/css">
+			.site-title a,
+		.site-description {
+			color: #222222;
+		}
+		</style>
+	<style type="text/css" id="syntaxhighlighteranchor"></style>
 </head>
 
 <body class="archive paged author author-jerome author-1 paged-7 author-paged-7 group-blog">
 
-<header id="masthead" role="banner" class="site-head site-header" >
+<header id="masthead" role="banner" class="site-head site-header" style="background-image: url(http://localhost:8888/wp-content/uploads/2018/04/Screenshot-2018-04-09-19.38.59.png);">
     <nav id="site-navigation" class="main-navigation" role="navigation">
         <div>
             <h1 class="menu-toggle">
@@ -70,7 +76,7 @@ img.emoji {
                 </a>
             </h1>
             <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
-            <div class="menu"><ul><li ><a href="/">Home</a></li><li class="page_item page-item-6"><a href="/about/">About</a></li><li class="page_item page-item-1073"><a href="/data-stories/">Data with stories workshop &#8211; examples</a></li><li class="page_item page-item-437"><a href="/proofs-of-concept/">Private section</a></li><li class="page_item page-item-2"><a href="/sample-page/">Sample Page</a></li></ul></div>
+            <div class="menu"><ul><li ><a href="/">Home</a></li></ul></div>
         </div>
     </nav><!-- #site-navigation -->
 
@@ -99,35 +105,6 @@ img.emoji {
 							</header><!-- .page-header -->
 
 						
-				
-<article id="post-925" class="post-925 post type-post status-publish format-standard hentry category-data-visualization tag-rgb tag-tableau tag-violette tag-vision">
-		    <header class="post-header">
-        			<span class="post-meta">
-				<span class="posted-on"><a href="/2011/06/10/red-green-blue-something-else/" rel="bookmark"><time class="entry-date published" datetime="2011-06-10T18:35:34+00:00">June 10, 2011</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/data-visualization/" rel="category tag">data visualization</a>			</span>
-		        <h1 class="post-title"><a href="/2011/06/10/red-green-blue-something-else/" rel="bookmark">Red + green + blue = something else</a></h1>
-         
-    </header>
-	<section class="post-content">
-
-		<p>I&#8217;ve been posting quite a few times on Tableau these last few days, so I&#8217;ll end up the week with one viz I had previously shared on twitter with some success.<br />
-<script type="text/javascript" src="http://public.tableausoftware.com/javascripts/api/viz_v1.js"></script><object class="tableauViz" width="1667" height="870" style="display:none;"><param name="host_url" value="http%3A%2F%2Fpublic.tableausoftware.com%2F" /><param name="name" value="violette&#47;Sheet1" /><param name="tabs" value="no" /><param name="toolbar" value="yes" /><param name="animate_transition" value="yes" /><param name="display_static_image" value="yes" /><param name="display_spinner" value="yes" /><param name="display_overlay" value="yes" /></object><noscript>Sheet 1 <br /><a href="#"><img alt="Sheet 1 " src="http:&#47;&#47;public.tableausoftware.com&#47;static&#47;images&#47;vi&#47;violette&#47;Sheet1&#47;1_rss.png" height="100%" /></a></noscript>
-<div style="width:1667px;height:22px;padding:0px 10px 0px 0px;color:black;font:normal 8pt verdana,helvetica,arial,sans-serif;">
-<div style="float:right; padding-right:8px;"><a href="http://www.tableausoftware.com/public?ref=http://public.tableausoftware.com/views/violette/Sheet1" target="_blank">Powered by Tableau</a></div>
-</div>
-<p>so what&#8217;s the story?<br />
-I have been inspired to do this via the work on <a href="http://www.onformative.com/work/fragments-of-rgb/">onformative</a> which I discovered on <a href="http://butdoesitfloat.com/1420489/One-has-to-arrive-at-a-specific-temperature-at-which-the-objects">But does it float</a>.</p>
-<p>I was struck by how the proximity of a red dot, a green dot and a blue dot was interpreted by our human eyes as a spot of another color. Then again, this is how <a href="http://electronics.howstuffworks.com/lcd5.htm">monitors</a> <a href="http://computer.howstuffworks.com/monitor7.htm">work</a>. If you look hard enough on your lcd screen you may see the sub-pixels.<br />
-This is also why, in an image such as this one, the segments of the line appear unaligned, although logically this line is one pixel wide.<br />
-<a href="http://www.jeromecukier.net/wp-content/uploads/2011/06/unaligned.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/06/unaligned.png" alt="" title="unaligned" class="aligncenter size-full wp-image-926" /></a><br />
-Physically, the segments are <em>indeed</em> unaligned, as the each segment uses sub-pixels of a different color which don&#8217;t have the same horizontal position within one pixel. </p>
-<p>However, I didn&#8217;t realize that this effect would work with patches of blue, green and red much bigger than a subpixel.<br />
-I made the underlying dataset from a picture of my daughter Violette when she was 2. I converted the picture to a list of values of red, green and blue (thanks, processing) which were all associated to a x and y position on the screen and the name of their layer (so they could be turned on or off). These x and y positions were derived from the position of the pixel on the original image, but the red, blue and green dots are all shifted in one direction so they form a triangle.<br />
-Then, I&#8217;ve added some extra layers as noise to obfuscate the image. </p>
-<p>Here, the effect is voluntary. Then again, if you position lots of marks one next to the other, you could re-create it accidentally, and instead of seeing three distinct dots, your users would see just one and of a different color at that!</p>
-	    		<div class="clear">&nbsp;</div>
-	</section>
-</article><!-- #post-## -->
-			
 				
 <article id="post-917" class="post-917 post type-post status-publish format-standard hentry category-data-visualization tag-contest tag-maps tag-real-estate tag-tableau">
 		    <header class="post-header">
@@ -666,6 +643,40 @@ Anyone who wants to create dorling cartograms for France can <a href="http://www
 	</section>
 </article><!-- #post-## -->
 			
+				
+<article id="post-764" class="post-764 post type-post status-publish format-standard hentry category-data-visualization category-protovis tag-cantonales tag-cartogramme tag-dorling tag-elections tag-francais tag-france tag-politiques">
+		    <header class="post-header">
+        			<span class="post-meta">
+				<span class="posted-on"><a href="/2011/03/26/la-carte-des-cantonales/" rel="bookmark"><time class="entry-date published" datetime="2011-03-26T21:05:36+00:00">March 26, 2011</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/data-visualization/" rel="category tag">data visualization</a>, <a href="/category/protovis/" rel="category tag">protovis</a>			</span>
+		        <h1 class="post-title"><a href="/2011/03/26/la-carte-des-cantonales/" rel="bookmark">La carte des cantonales</a></h1>
+         
+    </header>
+	<section class="post-content">
+
+		[I write this here post in French because it's more relevant for a French audience, a <a href="http://www.jeromecukier.net/?p=796">more technical post</a> with an explanation of how it's done follows in English].</p>
+
+J'ai écrit que j'avais été déçu par les infographies des principaux médias au lendemain des cantonales.</p>
+
+Si on prend la carte du Monde par exemple, on y voit la France nettemement découpée en départements, soit bien roses, soit bien bleus, ou à la rigueur gris si l'issue est incertaine. Mais ce n'est pas l'enjeu de ces élections. Ce sont les dernières élections avant la présidentielle, et on est donc attentif aux enseignements nationaux du scrutin au-delà de la composition des conseils généraux. Ce qu'on commente, c'est plus la percée de l'extrême droite ou le poids de l'abstention. C'est la capacité de la droite ou de la gauche à s'imposer. </p>
+Dans cette optique, chaque département n'a pas le même poids. Le Nord par exemple, avec presque 900,000 électeurs, compte plus que la Lozère qui en compte juste un peu plus de 20,000. Donc, tracer une carte géographiquement exacte n'est pas très honnête, puisque cela cache ces différences qui peuvent être énormes.</p>
+Comme je n'ai pas l'habitude de porter des critiques <a href="http://www.jeromecukier.net/?p=661">sans proposer autre chose</a>, j'ai fabriqué des cartogrammes de Dorling pour rendre compte de ce qui s'est vraiment passé dimanche dernier.</p>
+
+Les cartogrammes, ce sont presque des cartes, sauf que le côté géographique n'est pas pris au sens strict. Leur forme dépend plus des données qu'elles représentent. Et dans la version de Dorling, on remplace les morceaux de la carte (ici, les départements) par des cercles, plus ou moins gros. Là, la taille des cercles dépend du nombre d'électeurs inscrits aux cantonales. Du coup, leur position sur la carte n'est pas exactement la même que celle des départements sur la carte de France mais elle est assez proche pour qu'on puisse les retrouver.</p>
+
+Je propose 3 scénarios: une comparaison gauche-droite, l'importance de l'extrême-droite et celle de l'abstention.
+</p><hr/></p>
+<script type="text/javascript" src="http://blog.oecdfactblog.org/wp-includes/js/protovis-r3.2.js"></script>
+<form>
+<input type="radio" checked name="group1" value="0" onclick="sc=0;reinit() ;vis.render();">Gauche-droite
+<input type="radio" name="group1" value="1" onclick="sc=1;reinit() ;vis.render();">Extrême-droite
+<input type="radio" name="group1" value="2" onclick="sc=2;reinit() ;vis.render();">Abstention</form>
+<script type="text/javascript" src="http://www.jeromecukier.net/wp-content/uploads/2011/03/votes.js"></script>
+<script type="text/javascript" src="http://www.jeromecukier.net/wp-content/uploads/2011/03/francedorling.js"></script>
+<script type="text/javascript" src="http://www.jeromecukier.net/wp-content/uploads/2011/03/cantonales.js"></script>
+	    		<div class="clear">&nbsp;</div>
+	</section>
+</article><!-- #post-## -->
+			
 				<nav class="pagination navigation paging-navigation" role="navigation">
 		<div class="nav-links">
 						<div class="older-posts"><a href="/author/jerome/page/8/" >Older Posts <span class="meta-nav">&rarr;</span></a></div>
@@ -688,9 +699,6 @@ Anyone who wants to create dorling cartograms for France can <a href="http://www
 				<input type="submit" class="search-submit" value="Search" />
 			</form></aside>		<aside id="recent-posts-2" class="widget widget_recent_entries">		<h1 class="widget-title">Recent Posts</h1>		<ul>
 					<li>
-				<a href="/2018/04/09/hello-world/">Hello world!</a>
-						</li>
-					<li>
 				<a href="/2016/08/17/the-big-leagues/">The big leagues</a>
 						</li>
 					<li>
@@ -702,10 +710,12 @@ Anyone who wants to create dorling cartograms for France can <a href="http://www
 					<li>
 				<a href="/2016/08/11/react-components/">React components</a>
 						</li>
+					<li>
+				<a href="/2016/08/10/coding-with-react/">Coding with React</a>
+						</li>
 				</ul>
-		</aside>		<aside id="recent-comments-2" class="widget widget_recent_comments"><h1 class="widget-title">Recent Comments</h1><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link"><a href='https://wordpress.org/' rel='external nofollow' class='url'>A WordPress Commenter</a></span> on <a href="/2018/04/09/hello-world/#comment-1">Hello world!</a></li><li class="recentcomments"><span class="comment-author-link"><a href='http://omeraz.wordpress.com/' rel='external nofollow' class='url'>עומר עזריאל</a></span> on <a href="/2016/08/17/the-big-leagues/#comment-567">The big leagues</a></li><li class="recentcomments"><span class="comment-author-link">Carlos Ayres</span> on <a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-312">Manipulating data like a boss with d3</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://migrate.powertripanalytics.com/game-of-thrones-interactions-among-the-top-30-characters/' rel='external nofollow' class='url'>Game of ThronesInteractions Among the Top 30 Characters &#8211; PowerTrip Analytics</a></span> on <a href="/2013/05/13/making-the-game-of-thrones-visualization/#comment-466">Making the game of thrones visualization</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://abgoswam.wordpress.com/2016/10/08/d3-getting-started/' rel='external nofollow' class='url'>D3 &#8211; Getting Started | abgoswam&#039;s tech blog</a></span> on <a href="/2012/09/04/getting-to-hello-world-with-d3/#comment-419">Getting to &#8220;Hello world&#8221; with d3</a></li></ul></aside><aside id="archives-2" class="widget widget_archive"><h1 class="widget-title">Archives</h1>		<ul>
-			<li><a href='/2018/04/'>April 2018</a></li>
-	<li><a href='/2016/08/'>August 2016</a></li>
+		</aside>		<aside id="recent-comments-2" class="widget widget_recent_comments"><h1 class="widget-title">Recent Comments</h1><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link"><a href='http://omeraz.wordpress.com/' rel='external nofollow' class='url'>עומר עזריאל</a></span> on <a href="/2016/08/17/the-big-leagues/#comment-567">The big leagues</a></li><li class="recentcomments"><span class="comment-author-link">Carlos Ayres</span> on <a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-312">Manipulating data like a boss with d3</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://migrate.powertripanalytics.com/game-of-thrones-interactions-among-the-top-30-characters/' rel='external nofollow' class='url'>Game of ThronesInteractions Among the Top 30 Characters &#8211; PowerTrip Analytics</a></span> on <a href="/2013/05/13/making-the-game-of-thrones-visualization/#comment-466">Making the game of thrones visualization</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://abgoswam.wordpress.com/2016/10/08/d3-getting-started/' rel='external nofollow' class='url'>D3 &#8211; Getting Started | abgoswam&#039;s tech blog</a></span> on <a href="/2012/09/04/getting-to-hello-world-with-d3/#comment-419">Getting to &#8220;Hello world&#8221; with d3</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://plus.google.com/+BrotoBhattacharjee' rel='external nofollow' class='url'>Broto Bhattacharjee</a></span> on <a href="/2012/09/04/getting-to-hello-world-with-d3/#comment-418">Getting to &#8220;Hello world&#8221; with d3</a></li></ul></aside><aside id="archives-2" class="widget widget_archive"><h1 class="widget-title">Archives</h1>		<ul>
+			<li><a href='/2016/08/'>August 2016</a></li>
 	<li><a href='/2015/05/'>May 2015</a></li>
 	<li><a href='/2015/02/'>February 2015</a></li>
 	<li><a href='/2014/10/'>October 2014</a></li>

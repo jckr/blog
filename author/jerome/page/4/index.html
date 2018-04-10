@@ -49,19 +49,25 @@ img.emoji {
 <meta name="generator" content="WordPress 4.6.10" />
 
    	<style type="text/css">
-					.blog-title a, .blog-description, .social-icons a { color: #ffffff; }
+					.blog-title a, .blog-description, .social-icons a { color: #222222; }
 		
 						                
 		
 							.main-navigation a { color: ; }
 		                                            </style>
     		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
-		<style type="text/css" id="syntaxhighlighteranchor"></style>
+			<style type="text/css">
+			.site-title a,
+		.site-description {
+			color: #222222;
+		}
+		</style>
+	<style type="text/css" id="syntaxhighlighteranchor"></style>
 </head>
 
 <body class="archive paged author author-jerome author-1 paged-4 author-paged-4 group-blog">
 
-<header id="masthead" role="banner" class="site-head site-header" >
+<header id="masthead" role="banner" class="site-head site-header" style="background-image: url(http://localhost:8888/wp-content/uploads/2018/04/Screenshot-2018-04-09-19.38.59.png);">
     <nav id="site-navigation" class="main-navigation" role="navigation">
         <div>
             <h1 class="menu-toggle">
@@ -70,7 +76,7 @@ img.emoji {
                 </a>
             </h1>
             <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
-            <div class="menu"><ul><li ><a href="/">Home</a></li><li class="page_item page-item-6"><a href="/about/">About</a></li><li class="page_item page-item-1073"><a href="/data-stories/">Data with stories workshop &#8211; examples</a></li><li class="page_item page-item-437"><a href="/proofs-of-concept/">Private section</a></li><li class="page_item page-item-2"><a href="/sample-page/">Sample Page</a></li></ul></div>
+            <div class="menu"><ul><li ><a href="/">Home</a></li></ul></div>
         </div>
     </nav><!-- #site-navigation -->
 
@@ -99,25 +105,6 @@ img.emoji {
 							</header><!-- .page-header -->
 
 						
-				
-<article id="post-1445" class="post-1445 post type-post status-publish format-standard hentry category-uncategorized tag-contest tag-iron-viz tag-politics tag-right-wing tag-sarkozy tag-tableau tag-ump">
-		    <header class="post-header">
-        			<span class="post-meta">
-				<span class="posted-on"><a href="/2012/09/05/which-way-to-the-right/" rel="bookmark"><time class="entry-date published" datetime="2012-09-05T20:14:03+00:00">September 5, 2012</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/uncategorized/" rel="category tag">Uncategorized</a>			</span>
-		        <h1 class="post-title"><a href="/2012/09/05/which-way-to-the-right/" rel="bookmark">Which way to the right?</a></h1>
-         
-    </header>
-	<section class="post-content">
-
-		<p>Here is my entry for the Tableau 2012 politics contest.</p>
-<p><iframe style="border: 0px;" src="http://public.tableausoftware.com/views/politics/DashEN" scrolling="no" width="802px" height="4000px"></iframe></p>
-<p>Source of the data:</p>
-<p>Economic statistics from OECD, opinion data from TNS Sofres.</p>
-<p>Making-of and explanation post to follow.</p>
-	    		<div class="clear">&nbsp;</div>
-	</section>
-</article><!-- #post-## -->
-			
 				
 <article id="post-1419" class="post-1419 post type-post status-publish format-standard hentry category-d3 category-tips tag-beginner tag-browser tag-css tag-d3 tag-data tag-easyphp tag-first-steps tag-html tag-introduction tag-javascript tag-sublimetext2 tag-text-editor tag-tutorial tag-web-server">
 		    <header class="post-header">
@@ -1000,6 +987,42 @@ Et encore, tout le monde s&#8217;était accordé à dire qu&#8217;en 2007, la ga
 	</section>
 </article><!-- #post-## -->
 			
+				
+<article id="post-1264" class="post-1264 post type-post status-publish format-standard hentry category-d3 category-data-visualization category-francais tag-coordonnees-paralleles tag-elections">
+		    <header class="post-header">
+        			<span class="post-meta">
+				<span class="posted-on"><a href="/2012/05/07/a-la-decouverte-des-resultats-des-presidentielles-avec-les-coordonnees-paralleles/" rel="bookmark"><time class="entry-date published" datetime="2012-05-07T19:20:39+00:00">May 7, 2012</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/d3/" rel="category tag">d3</a>, <a href="/category/data-visualization/" rel="category tag">data visualization</a>, <a href="/category/francais/" rel="category tag">français</a>			</span>
+		        <h1 class="post-title"><a href="/2012/05/07/a-la-decouverte-des-resultats-des-presidentielles-avec-les-coordonnees-paralleles/" rel="bookmark">À la découverte des résultats des présidentielles avec les coordonnées parallèles</a></h1>
+         
+    </header>
+	<section class="post-content">
+
+		<p style="text-align: center;"><a href="http://www.jeromecukier.net/projects/elections/dtour2012.html"><img class="aligncenter size-full wp-image-1265" title="front" src="http://www.jeromecukier.net/wp-content/uploads/2012/05/front.jpg" alt="" width="700" height="374" /></a></p>
+<p>Qui dit élection présidentielle, dit résultats.</p>
+<p>Et qui dit résultats dit représentation visuelle dans les médias.</p>
+<p>Et donc souvent carte.</p>
+<p>Cela dit, une carte ne nous apprend pas grand chose de ce qui s&#8217;est vraiment passé dans une élection. C&#8217;est vrai que c&#8217;est utile pour retrouver sa région ou sa ville, mais les résultats de deux villes proches géographiquement (par exemple, Boulogne-Billancourt et Issy-les-Moulineaux) n&#8217;a strictement rien à voir.</p>
+<p>En revanche, avec une carte c&#8217;est très difficile de répondre à certaines questions, comme: où a-t-on le plus voté pour Nicolas Sarkozy? Qu&#8217;est ce qui s&#8217;est passé dans les villes qui ont beaucoup voté pour Marine Le Pen ou François Bayrou? D&#8217;où vient l&#8217;explosion du vote blanc au deuxième tour?</p>
+<p>Pour répondre à ces questions, on peut utiliser les <a href="http://www.jeromecukier.net/projects/elections/dtour2012.html">coordonnées parallèles</a>.</p>
+<p>Chaque axe vertical correspond à un vote possible &#8211; d&#8217;abord ceux du premier tour, puis ceux du deuxième. Chaque ligne de couleur correspond à une ville (ou à un département, à une région, ou à la France). Chacune de ces lignes coupe chaque axe à une hauteur qui correspond à la proportion des gens qui ont fait tel ou tel choix. Par exemple, les villes où on a beaucoup voté pour Jean-Luc Mélenchon, comme Bagnolet ou Gennevilliers, se retrouveront vers le haut de l&#8217;axe du milieu.</p>
+<p>En s&#8217;approchant des axes, le curseur devient une croix. Il suffit alors de le faire glisser le long de l&#8217;axe pour dessiner un rectangle, et mettre en valeur toutes les lignes qui passent par ce rectangle. Par exemple, voici les villes qui ont donné plus de 70% de leurs voix du second tour à François Hollande:</p>
+<p><a href="http://jeromecukier.net/projects/elections/dtour2012.html"><img class="aligncenter size-full wp-image-1266" title="hollande70" src="http://www.jeromecukier.net/wp-content/uploads/2012/05/hollande70.jpg" alt="" width="700" height="500" /></a></p>
+<p>&nbsp;</p>
+<p>On peut tracer autant de rectangles qu&#8217;on veut. Par exemple, on peut ne garder que les endroits qui avaient soutenu Bayrou (par exemple à plus de 10%).</p>
+<p><a href="http://jeromecukier.net/projects/elections/dtour2012.html"><img class="aligncenter size-full wp-image-1267" title="hollande70bayrou10" src="http://www.jeromecukier.net/wp-content/uploads/2012/05/hollande70bayrou10.jpg" alt="" width="700" height="500" /></a></p>
+<p>et voilà: il n&#8217;y en a plus que 2.</p>
+<p>Pour supprimer une sélection, il suffit de cliquer près de l&#8217;axe sans glisser. Si on clique sur un rectangle, on peut aussi le faire coulisser le long de l&#8217;axe.</p>
+<p>Avec cette technique, on peut tout de suite voir les fiefs de tel ou tel candidat: il s&#8217;agit des lignes qui touchent le haut du graphique.</p>
+<p>On peut répondre à des questions plus complexes. Par exemple, je parlais de l&#8217;explosion du vote blanc au deuxième tour. Que s&#8217;est-il passé?</p>
+<p>Sélectionnons les endroits où le vote blanc a dépassé les 4% au deuxième tour, tout en restant à moins de 1.5% au premier tour:</p>
+<p><a href="http://www.jeromecukier.net/projects/elections/dtour2012.html"><img class="aligncenter size-full wp-image-1268" title="blanc" src="http://www.jeromecukier.net/wp-content/uploads/2012/05/blanc.jpg" alt="" width="700" height="370" /></a></p>
+<p>On voit trois pics: les villes où Marine Le Pen, Jean-Luc Mélenchon ou François Bayrou ont fait un très gros score. On peut continuer à sélectionner et voir que ce sont bien les villes qui sont dans la pointe de l&#8217;un des trois triangles et pas celles qui passent par le bas qui se retrouvent dans ce cas de figure. Ces électeurs ont préféré voter blanc plutôt que de choisir.</p>
+<p>Bonne exploration!</p>
+<p><a href="http://www.jeromecukier.net/projects/elections/dtour2012.html">http://www.jeromecukier.net/projects/elections/dtour2012.html</a></p>
+	    		<div class="clear">&nbsp;</div>
+	</section>
+</article><!-- #post-## -->
+			
 				<nav class="pagination navigation paging-navigation" role="navigation">
 		<div class="nav-links">
 						<div class="older-posts"><a href="/author/jerome/page/5/" >Older Posts <span class="meta-nav">&rarr;</span></a></div>
@@ -1022,9 +1045,6 @@ Et encore, tout le monde s&#8217;était accordé à dire qu&#8217;en 2007, la ga
 				<input type="submit" class="search-submit" value="Search" />
 			</form></aside>		<aside id="recent-posts-2" class="widget widget_recent_entries">		<h1 class="widget-title">Recent Posts</h1>		<ul>
 					<li>
-				<a href="/2018/04/09/hello-world/">Hello world!</a>
-						</li>
-					<li>
 				<a href="/2016/08/17/the-big-leagues/">The big leagues</a>
 						</li>
 					<li>
@@ -1036,10 +1056,12 @@ Et encore, tout le monde s&#8217;était accordé à dire qu&#8217;en 2007, la ga
 					<li>
 				<a href="/2016/08/11/react-components/">React components</a>
 						</li>
+					<li>
+				<a href="/2016/08/10/coding-with-react/">Coding with React</a>
+						</li>
 				</ul>
-		</aside>		<aside id="recent-comments-2" class="widget widget_recent_comments"><h1 class="widget-title">Recent Comments</h1><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link"><a href='https://wordpress.org/' rel='external nofollow' class='url'>A WordPress Commenter</a></span> on <a href="/2018/04/09/hello-world/#comment-1">Hello world!</a></li><li class="recentcomments"><span class="comment-author-link"><a href='http://omeraz.wordpress.com/' rel='external nofollow' class='url'>עומר עזריאל</a></span> on <a href="/2016/08/17/the-big-leagues/#comment-567">The big leagues</a></li><li class="recentcomments"><span class="comment-author-link">Carlos Ayres</span> on <a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-312">Manipulating data like a boss with d3</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://migrate.powertripanalytics.com/game-of-thrones-interactions-among-the-top-30-characters/' rel='external nofollow' class='url'>Game of ThronesInteractions Among the Top 30 Characters &#8211; PowerTrip Analytics</a></span> on <a href="/2013/05/13/making-the-game-of-thrones-visualization/#comment-466">Making the game of thrones visualization</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://abgoswam.wordpress.com/2016/10/08/d3-getting-started/' rel='external nofollow' class='url'>D3 &#8211; Getting Started | abgoswam&#039;s tech blog</a></span> on <a href="/2012/09/04/getting-to-hello-world-with-d3/#comment-419">Getting to &#8220;Hello world&#8221; with d3</a></li></ul></aside><aside id="archives-2" class="widget widget_archive"><h1 class="widget-title">Archives</h1>		<ul>
-			<li><a href='/2018/04/'>April 2018</a></li>
-	<li><a href='/2016/08/'>August 2016</a></li>
+		</aside>		<aside id="recent-comments-2" class="widget widget_recent_comments"><h1 class="widget-title">Recent Comments</h1><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link"><a href='http://omeraz.wordpress.com/' rel='external nofollow' class='url'>עומר עזריאל</a></span> on <a href="/2016/08/17/the-big-leagues/#comment-567">The big leagues</a></li><li class="recentcomments"><span class="comment-author-link">Carlos Ayres</span> on <a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-312">Manipulating data like a boss with d3</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://migrate.powertripanalytics.com/game-of-thrones-interactions-among-the-top-30-characters/' rel='external nofollow' class='url'>Game of ThronesInteractions Among the Top 30 Characters &#8211; PowerTrip Analytics</a></span> on <a href="/2013/05/13/making-the-game-of-thrones-visualization/#comment-466">Making the game of thrones visualization</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://abgoswam.wordpress.com/2016/10/08/d3-getting-started/' rel='external nofollow' class='url'>D3 &#8211; Getting Started | abgoswam&#039;s tech blog</a></span> on <a href="/2012/09/04/getting-to-hello-world-with-d3/#comment-419">Getting to &#8220;Hello world&#8221; with d3</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://plus.google.com/+BrotoBhattacharjee' rel='external nofollow' class='url'>Broto Bhattacharjee</a></span> on <a href="/2012/09/04/getting-to-hello-world-with-d3/#comment-418">Getting to &#8220;Hello world&#8221; with d3</a></li></ul></aside><aside id="archives-2" class="widget widget_archive"><h1 class="widget-title">Archives</h1>		<ul>
+			<li><a href='/2016/08/'>August 2016</a></li>
 	<li><a href='/2015/05/'>May 2015</a></li>
 	<li><a href='/2015/02/'>February 2015</a></li>
 	<li><a href='/2014/10/'>October 2014</a></li>

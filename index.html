@@ -49,19 +49,25 @@ img.emoji {
 <link rel='shortlink' href='http://wp.me/' />
 
    	<style type="text/css">
-					.blog-title a, .blog-description, .social-icons a { color: #ffffff; }
+					.blog-title a, .blog-description, .social-icons a { color: #222222; }
 		
 						                
 		
 							.main-navigation a { color: ; }
 		                                            </style>
     		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
-		<style type="text/css" id="syntaxhighlighteranchor"></style>
+			<style type="text/css">
+			.site-title a,
+		.site-description {
+			color: #222222;
+		}
+		</style>
+	<style type="text/css" id="syntaxhighlighteranchor"></style>
 </head>
 
 <body class="home blog group-blog">
 
-<header id="masthead" role="banner" class="site-head site-header" >
+<header id="masthead" role="banner" class="site-head site-header" style="background-image: url(http://localhost:8888/wp-content/uploads/2018/04/Screenshot-2018-04-09-19.38.59.png);">
     <nav id="site-navigation" class="main-navigation" role="navigation">
         <div>
             <h1 class="menu-toggle">
@@ -70,7 +76,7 @@ img.emoji {
                 </a>
             </h1>
             <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
-            <div class="menu"><ul><li class="current_page_item"><a href="/">Home</a></li><li class="page_item page-item-6"><a href="/about/">About</a></li><li class="page_item page-item-1073"><a href="/data-stories/">Data with stories workshop &#8211; examples</a></li><li class="page_item page-item-437"><a href="/proofs-of-concept/">Private section</a></li><li class="page_item page-item-2"><a href="/sample-page/">Sample Page</a></li></ul></div>
+            <div class="menu"><ul><li class="current_page_item"><a href="/">Home</a></li></ul></div>
         </div>
     </nav><!-- #site-navigation -->
 
@@ -92,21 +98,6 @@ img.emoji {
 
 		
 						
-				
-<article id="post-1" class="post-1 post type-post status-publish format-standard hentry category-uncategorized">
-		    <header class="post-header">
-        			<span class="post-meta">
-				<span class="posted-on"><a href="/2018/04/09/hello-world/" rel="bookmark"><time class="entry-date published" datetime="2018-04-09T21:49:15+00:00">April 9, 2018</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/uncategorized/" rel="category tag">Uncategorized</a>			</span>
-		        <h1 class="post-title"><a href="/2018/04/09/hello-world/" rel="bookmark">Hello world!</a></h1>
-         
-    </header>
-	<section class="post-content">
-
-		<p>Welcome to WordPress. This is your first post. Edit or delete it, then start writing!</p>
-	    		<div class="clear">&nbsp;</div>
-	</section>
-</article><!-- #post-## -->
-			
 				
 <article id="post-1765" class="post-1765 post type-post status-publish format-standard hentry category-uncategorized">
 		    <header class="post-header">
@@ -1736,10 +1727,31 @@ The spark that led me to write was Lea Verou&#8217;s article <a href="http://lea
 	</section>
 </article><!-- #post-## -->
 			
+				
+<article id="post-1661" class="post-1661 post type-post status-publish format-standard hentry category-d3 category-tips">
+		    <header class="post-header">
+        			<span class="post-meta">
+				<span class="posted-on"><a href="/2015/05/05/blending-mode-and-svg/" rel="bookmark"><time class="entry-date published" datetime="2015-05-05T23:56:46+00:00">May 5, 2015</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/d3/" rel="category tag">d3</a>, <a href="/category/tips/" rel="category tag">tips</a>			</span>
+		        <h1 class="post-title"><a href="/2015/05/05/blending-mode-and-svg/" rel="bookmark">Blending mode and SVG</a></h1>
+         
+    </header>
+	<section class="post-content">
+
+		<p>One great thing about canvas is that it&#8217;s super easy to change the compositing mode. And sure, you can do all sorts of fancy things with that, but my basic usage of that is to control how opacity is handled. By default, in svg, if you add one element which is not fully opaque on top of another, the top element makes the bottom element darker. By contrast, in canvas you can have access to globalCompositeOperation that let you change how new elements drawn on top of an existing image are handled, or in processing, you have blendMode, etc.</p>
+<p>In SVG, there are a variety of operations accessible through filters: see <a href="http://apike.ca/prog_svg_filters.html">http://apike.ca/prog_svg_filters.html</a> for an excellent overview. I must admit that I find filters a bit intimidating to set up and need to always go back to a reference to achieve anything.</p>
+<p>I was reading this article this morning on CSS graphical effects <a href="http://blogs.adobe.com/dreamweaver/2015/04/an-introduction-to-graphical-effects-in-css.html">http://blogs.adobe.com/dreamweaver/2015/04/an-introduction-to-graphical-effects-in-css.html</a> thinking, wouldn&#8217;t that be nice if we could do control compositing in SVG.</p>
+<p>It turns out that we can! By manipulating the &#8220;mix-blend-mode&#8221; style attribute of any graphical element, we can achieve one of 16 blending modes (which is actually more than canvas or processing!)<br />
+Here&#8217;s a demo that shows what can be done. This is an adaptation of <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-blend-mode">this</a> example.</p>
+<p>So, through the use of the right blending mode, opacity can be used to make the resulting image lighter (among many other things).</p>
+<p><iframe src="http://www.jeromecukier.net/stuff/blendmode/blendmode.html" width="600" height="750" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe></p>
+	    		<div class="clear">&nbsp;</div>
+	</section>
+</article><!-- #post-## -->
+			
 				<nav class="pagination navigation paging-navigation" role="navigation">
 		<div class="nav-links">
 						<div class="older-posts"><a href="/page/2/" >Older Posts <span class="meta-nav">&rarr;</span></a></div>
-							<div class="page-number">Page 1 of 13</div>
+							<div class="page-number">Page 1 of 12</div>
 			
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
@@ -1756,9 +1768,6 @@ The spark that led me to write was Lea Verou&#8217;s article <a href="http://lea
 				<input type="submit" class="search-submit" value="Search" />
 			</form></aside>		<aside id="recent-posts-2" class="widget widget_recent_entries">		<h1 class="widget-title">Recent Posts</h1>		<ul>
 					<li>
-				<a href="/2018/04/09/hello-world/">Hello world!</a>
-						</li>
-					<li>
 				<a href="/2016/08/17/the-big-leagues/">The big leagues</a>
 						</li>
 					<li>
@@ -1770,10 +1779,12 @@ The spark that led me to write was Lea Verou&#8217;s article <a href="http://lea
 					<li>
 				<a href="/2016/08/11/react-components/">React components</a>
 						</li>
+					<li>
+				<a href="/2016/08/10/coding-with-react/">Coding with React</a>
+						</li>
 				</ul>
-		</aside>		<aside id="recent-comments-2" class="widget widget_recent_comments"><h1 class="widget-title">Recent Comments</h1><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link"><a href='https://wordpress.org/' rel='external nofollow' class='url'>A WordPress Commenter</a></span> on <a href="/2018/04/09/hello-world/#comment-1">Hello world!</a></li><li class="recentcomments"><span class="comment-author-link"><a href='http://omeraz.wordpress.com/' rel='external nofollow' class='url'>עומר עזריאל</a></span> on <a href="/2016/08/17/the-big-leagues/#comment-567">The big leagues</a></li><li class="recentcomments"><span class="comment-author-link">Carlos Ayres</span> on <a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-312">Manipulating data like a boss with d3</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://migrate.powertripanalytics.com/game-of-thrones-interactions-among-the-top-30-characters/' rel='external nofollow' class='url'>Game of ThronesInteractions Among the Top 30 Characters &#8211; PowerTrip Analytics</a></span> on <a href="/2013/05/13/making-the-game-of-thrones-visualization/#comment-466">Making the game of thrones visualization</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://abgoswam.wordpress.com/2016/10/08/d3-getting-started/' rel='external nofollow' class='url'>D3 &#8211; Getting Started | abgoswam&#039;s tech blog</a></span> on <a href="/2012/09/04/getting-to-hello-world-with-d3/#comment-419">Getting to &#8220;Hello world&#8221; with d3</a></li></ul></aside><aside id="archives-2" class="widget widget_archive"><h1 class="widget-title">Archives</h1>		<ul>
-			<li><a href='/2018/04/'>April 2018</a></li>
-	<li><a href='/2016/08/'>August 2016</a></li>
+		</aside>		<aside id="recent-comments-2" class="widget widget_recent_comments"><h1 class="widget-title">Recent Comments</h1><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link"><a href='http://omeraz.wordpress.com/' rel='external nofollow' class='url'>עומר עזריאל</a></span> on <a href="/2016/08/17/the-big-leagues/#comment-567">The big leagues</a></li><li class="recentcomments"><span class="comment-author-link">Carlos Ayres</span> on <a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-312">Manipulating data like a boss with d3</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://migrate.powertripanalytics.com/game-of-thrones-interactions-among-the-top-30-characters/' rel='external nofollow' class='url'>Game of ThronesInteractions Among the Top 30 Characters &#8211; PowerTrip Analytics</a></span> on <a href="/2013/05/13/making-the-game-of-thrones-visualization/#comment-466">Making the game of thrones visualization</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://abgoswam.wordpress.com/2016/10/08/d3-getting-started/' rel='external nofollow' class='url'>D3 &#8211; Getting Started | abgoswam&#039;s tech blog</a></span> on <a href="/2012/09/04/getting-to-hello-world-with-d3/#comment-419">Getting to &#8220;Hello world&#8221; with d3</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://plus.google.com/+BrotoBhattacharjee' rel='external nofollow' class='url'>Broto Bhattacharjee</a></span> on <a href="/2012/09/04/getting-to-hello-world-with-d3/#comment-418">Getting to &#8220;Hello world&#8221; with d3</a></li></ul></aside><aside id="archives-2" class="widget widget_archive"><h1 class="widget-title">Archives</h1>		<ul>
+			<li><a href='/2016/08/'>August 2016</a></li>
 	<li><a href='/2015/05/'>May 2015</a></li>
 	<li><a href='/2015/02/'>February 2015</a></li>
 	<li><a href='/2014/10/'>October 2014</a></li>

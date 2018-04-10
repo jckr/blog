@@ -10,24 +10,10 @@
 	<atom:link href="http://localhost/comments/feed/" rel="self" type="application/rss+xml" />
 	<link>/</link>
 	<description>Just another WordPress site</description>
-	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<lastBuildDate>Sun, 11 Dec 2016 21:06:23 +0000</lastBuildDate>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
 	<generator>https://wordpress.org/?v=4.6.10</generator>
-	<item>
-		<title>Comment on Hello world! by A WordPress Commenter</title>
-		<link>/2018/04/09/hello-world/#comment-1</link>
-		<dc:creator><![CDATA[A WordPress Commenter]]></dc:creator>
-		<pubDate>Mon, 09 Apr 2018 21:49:15 +0000</pubDate>
-		<guid isPermaLink="false">/?p=1#comment-1</guid>
-		<description><![CDATA[Hi, this is a comment.
-To get started with moderating, editing, and deleting comments, please visit the Comments screen in the dashboard.
-Commenter avatars come from &lt;a href=&quot;https://gravatar.com&quot;&gt;Gravatar&lt;/a&gt;.]]></description>
-		<content:encoded><![CDATA[<p>Hi, this is a comment.<br />
-To get started with moderating, editing, and deleting comments, please visit the Comments screen in the dashboard.<br />
-Commenter avatars come from <a href="https://gravatar.com/">Gravatar</a>.</p>
-]]></content:encoded>
-	</item>
 	<item>
 		<title>Comment on The big leagues by עומר עזריאל</title>
 		<link>/2016/08/17/the-big-leagues/#comment-567</link>
@@ -116,6 +102,16 @@ Commenter avatars come from <a href="https://gravatar.com/">Gravatar</a>.</p>
 		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1664#comment-554</guid>
 		<description><![CDATA[such a nice post!!!!]]></description>
 		<content:encoded><![CDATA[<p>such a nice post!!!!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Comment on Getting to &#8220;Hello world&#8221; with d3 by jerome</title>
+		<link>/2012/09/04/getting-to-hello-world-with-d3/#comment-416</link>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+		<pubDate>Tue, 06 Sep 2016 17:33:32 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1419#comment-416</guid>
+		<description><![CDATA[Hi, what do you see in your console along with your blank screen?]]></description>
+		<content:encoded><![CDATA[<p>Hi, what do you see in your console along with your blank screen?</p>
 ]]></content:encoded>
 	</item>
 </channel>
