@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>database &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/database/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>Using d3 with a mySql database</title>
+		<link>/2012/01/02/using-d3-with-a-mysql-database/</link>
+		<comments>/2012/01/02/using-d3-with-a-mysql-database/#comments</comments>
+		<pubDate>Mon, 02 Jan 2012 18:15:59 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[d3]]></category>
+		<category><![CDATA[tips]]></category>
+		<category><![CDATA[ajax]]></category>
+		<category><![CDATA[database]]></category>
+		<category><![CDATA[mysql]]></category>
+		<category><![CDATA[php]]></category>
+		<category><![CDATA[tutorial]]></category>
+		<category><![CDATA[xhr]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1165</guid>
+		<description><![CDATA[Creating visualizations from static files is fine and dandy but sometimes you need to be able to access dynamic data. And some other times, you may want to somehow record interactions from your users. One way to do that is by interacting with a mySql database. Without further ado here is the demo: How does <a class="read-more" href="/2012/01/02/using-d3-with-a-mysql-database/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>Creating visualizations from static files is fine and dandy but sometimes you need to be able to access dynamic data. And some other times, you may want to somehow record interactions from your users. One way to do that is by interacting with a mySql database.</p>
+<p>Without further ado here is the demo:</p>
+<p><iframe src="http://www.jeromecukier.net/stuff/sql_map/sqlmap.html" scrolling="no" width="542px" height="680px"></iframe></p>
+<h3>How does it work?</h3>
+<p>There are several parts to that.</p>
+<p>First, one <a href="http://www.jeromecukier.net/stuff/sql_map/sqlmap.html">html file</a> which holds everything together. By the way, for the styling I used Twitter&#8217;s <a href="http://twitter.github.com/bootstrap/">bootstrap</a> which makes it easy for all elements to find their place, and look at those purty buttons.</p>
+<p>Second, one <a href="http://www.jeromecukier.net/stuff/sql_map/sqlmap.js">javascript file</a> which contains the visualization proper.  If you have some familiarity with <a href="http://www.d3-js.org/">d3</a>, there is really nothing scary in this script. I&#8217;ll go back to the parts where the script interacts with databases in detail.</p>
+<p>Here&#8217;s what the rest does at a high level.</p>
+<ol>
+<li>We give some behaviors to the buttons</li>
+<li>Then we create a grid of small squares. All of these squares are positionned and given a class name, so that the square with class &#8220;r32&#8221; and &#8220;c17&#8221; is the 18th square from the left and 33th from the top (the class names start at 0).</li>
+<li>We catch the clicks on each square with a &#8220;clickme&#8221; function. In d3 logic, what is passed to that function is the underlying data of the element, in this case a 2-dimensional array with the x and y coordinates of the square which is being clicked on. In turn, the clickme function is going to update the data of the square, and those of the 4 surrounding squares (the one to the top, the bottom, the left and the right) by either increasing or decreasing the elevation of the terrain they represent</li>
+</ol>
+<p>When it gets interesting is how the data is initialized and how it is updated.</p>
+<pre class="brush: jscript; title: ; notranslate">d3.text(&quot;mapread.php&quot;, function(txt) {
+	d3.selectAll(&quot;#loading&quot;).remove();
+	txt.split(&quot;\n&quot;).forEach(function(line,i) {
+		line.split(&quot;,&quot;).forEach(function(d,j) {
+			data[i][j]=parseFloat(d);
+			d3.selectAll(&quot;.r&quot;+i+&quot;.c&quot;+j).style(&quot;fill&quot;,function() {return cScale(data[i][j]);});
+		})
+	});
+})</pre>
+<p>What&#8217;s really interesting here is the first line. We are asking d3 to go fetch a text file sitting at mapread.php, then do something with this file. The second part of the line, function(txt), calls a function with the contents of this text as argument.</p>
+<p>The second line just removes the loading message box. Then, d3 splits the text in lines, and each line being a string of comma-separated values, it splits that too and feeds a variable, data, with the result of all of this splitting. Then, it formats the squares by coloring them according to the retrieved values.</p>
+<p>At this stage you may think: but shouldn&#8217;t you load the data <em>before </em>drawing the scene? Well, what happens here is that loading the data takes much more time than drawing the scene, so it makes more sense to draw it first as an empty shell, load the data and then update the scene.</p>
+<p>And as you may have guessed, this mapread.php is no ordinary text file, but a dynamically-generated file from a mySql database. I won&#8217;t cover setting up a mySql database. Tutorials on the subject abound, there are ISPs that offer free mySql hosting, and if you can also install a local server on your computer, for instance <a href="http://www.easyphp.org/">EasyPHP</a> for windows users. And, if your ISP limits the number of mySql databases you can have, you don&#8217;t need to create a new one, just creating a new table within one will be fine. All you have to do really is find your mySql credentials.</p>
+<p>Next, you want to create a PHP file that goes like this:</p>
+<pre class="brush: php; title: ; notranslate">&lt;?php
+$username=&quot;username&quot;; //replace with your mySql username
+$password=&quot;password&quot;;  //replace with your mySql password
+$dsn=&quot;database&quot;;  //replace with your mySql database name
+$host=&quot;host&quot;;  //replace with the name of the machine your mySql runs on
+$link=mysql_connect($host,$username,$password);
+?&gt;</pre>
+<p>You can call this: mysqlConfig.php or whatever, this  is a convenience file so you don&#8217;t have to type in your credentials each time you need to connect to your mySql database.</p>
+<p>Next, here is the script that reads the database and outputs a text file:</p>
+<pre class="brush: php; title: ; notranslate">
+
+&lt;?php
+// load in mysql server configuration (connection string, user/pw, etc)
+include 'mysqlConfig.php';
+// connect to the database
+@mysql_select_db($dsn) or die( &quot;Unable to select database&quot;);
+
+// reads the map db
+
+$query=&quot;SELECT `height` FROM `v_map` ORDER BY `row`, `col`&quot;;
+mysql_query($query);
+
+$result = mysql_query($query,$link) or die('Errant query: '.$query);
+
+// outputs the db as lines of text.
+header('Content-type: text/plain; charset=us-ascii');
+$i=0;
+$line=&quot;&quot;;
+
+if(mysql_num_rows($result)) {
+ while($value = mysql_fetch_assoc($result)) {
+
+$line=$line.$value[&quot;height&quot;];
+ $i=$i+1;
+ if ($i==52) {
+ $i=0;
+ echo $line.&quot;\n&quot;;
+ $line=&quot;&quot;;}
+ else {$line=$line.&quot;,&quot;;}
+ }
+}
+mysql_close();
+?&gt;
+</pre>
+<p>And by the way, I am by no means a php expert. I hadn&#8217;t written a line of php in almost 10 years, so there may well be more effective ways to do that but the above works. The more interesting part is that we write an sql query which we store in $query and then we execute this query. Then, we loop over the results and echo the output.</p>
+<p>Back to our javascript file, we also interact with another php file when we update the data.</p>
+<pre class="brush: jscript; title: ; notranslate">
+function update(r,c,v) {
+	if(r&gt;=0 &amp;&amp; r&lt;y &amp;&amp; c&gt;=0 &amp;&amp; c&lt;x) {
+		data[r]=d3.max([d3.min([100,data[r]+v*build]),0]);
+		d3.selectAll(&quot;.r&quot;+r+&quot;.c&quot;+c).style(&quot;fill&quot;,function() {return cScale(data[r]);});
+		d3.text(&quot;mapupdate.php?height=&quot;+data[r]+&quot;&amp;col=&quot;+c+&quot;&amp;row=&quot;+r,function() {console.log(&quot;cell on row &quot;+r+&quot; and col&quot;+c+&quot; updated to &quot;+data[r]);});
+	}
+}</pre>
+<p>Here the last line is the interesting one. What it does is that, again, it attempts to fetch a text file from a url. In fact, there is no text there but just accessing this url will trigger an interaction with the database. (I guess it would be good practice to actually get some text in return, but hey).</p>
+<p>The program tries to read an url of the form mapupdate.php?height=20&amp;col=10&amp;row=32. By calling this url, we are actually passing these parameters to a php file, which will read them and use them to construct a query to the mySql database.</p>
+<p>Here goes:</p>
+<pre class="brush: php; title: ; notranslate">&lt;?php
+
+// load in mysql server configuration (connection string, user/pw, etc)
+include 'mysqlConfig.php';
+// connect to the database
+@mysql_select_db($dsn) or die( &quot;Unable to select database&quot;);
+
+// updates the map db
+
+$query=&quot;UPDATE `v_map` SET `height`=&quot;.$_GET[&quot;height&quot;].&quot; WHERE `col`= &quot;.$_GET[&quot;col&quot;].&quot; and `row`= &quot;.$_GET[&quot;row&quot;];
+mysql_query($query);
+mysql_close();
+?&gt;</pre>
+<p>Here, the line that starts with $query is doing just that. The dot &#8220;.&#8221; is PHP concatenation operator, and the $_GET variable returns an associative array with the parameters passed to the script.</p>
+<p>For the sake of completeness, I had two other php scripts, one to initiate the table to begin with, and one to reset it if something went wrong. Those are just plain SQL queries so no need to reproduce them here.</p>
+<p>And voilà! now all of you can interact with this terrain builder, create islands, forests, mountains etc. The graphics are kind of crude, because when I was looking for an example I decided to recreate one of my earliest attempts in creative coding. In 1990 upon the release of <a href="http://en.wikipedia.org/wiki/Powermonger">Powermonger</a> I was so fascinated by the algorithmically-generated maps the game used as copy protection that I tried to code my own terrain generator, that was a time where 320x240x16 resolution was considered generous. Only here, it&#8217;s your clicks that replace the algorithm!</p>
+<p>I hope you enjoy the tutorial and working with persistant data with d3!</p>
+]]></content:encoded>
+			<wfw:commentRss>/2012/01/02/using-d3-with-a-mysql-database/feed/</wfw:commentRss>
+		<slash:comments>9</slash:comments>
+		</item>
+		<item>
+		<title>New data services 2: Wolfram&#124;alpha</title>
+		<link>/2009/06/05/new-data-services-2-wolframalpha/</link>
+		<comments>/2009/06/05/new-data-services-2-wolframalpha/#respond</comments>
+		<pubDate>Fri, 05 Jun 2009 14:54:21 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[data publishing]]></category>
+		<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[web sites]]></category>
+		<category><![CDATA[charts]]></category>
+		<category><![CDATA[data]]></category>
+		<category><![CDATA[database]]></category>
+		<category><![CDATA[mathematica]]></category>
+		<category><![CDATA[semantic]]></category>
+		<category><![CDATA[sources]]></category>
+		<category><![CDATA[wolfram]]></category>
+		<category><![CDATA[wolfram alpha]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=145</guid>
+		<description><![CDATA[In March this year, überscientist Stephen Wolfram, of Mathematica fame, revealed the world he was working on something new, something big, something different. The first time I heard of this was through semantic web prophet Nova Spivack, who is not known to get excited by less-than-revolutionary projects. That, plus the fact that the project was <a class="read-more" href="/2009/06/05/new-data-services-2-wolframalpha/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>In March this year, überscientist <a href="http://en.wikipedia.org/wiki/Stephen_Wolfram">Stephen Wolfram</a>, of <a href="http://www.wolfram.com/products/mathematica/index.html">Mathematica </a>fame, revealed the world he was working on something new, something big, something different. The first time I heard of this was through semantic web prophet <a href="http://en.wikipedia.org/wiki/Nova_Spivack">Nova Spivack</a>, who is not known to get excited by less-than-revolutionary projects. That, plus the fact that the project was announced so short before its release, contributed to build anticipation to huge levels.</p>
+<p><img class="aligncenter size-medium wp-image-146" title="wolframalpha" src="http://www.jeromecukier.net/wp-content/uploads/2009/06/wolframalpha-275x300.png" alt="wolframalpha" width="275" height="300" /></p>
+<p><a href="http://www.wolframalpha.com/">Wolfram|alpha</a> describes itself as a &#8220;computational knowledge engine&#8221; or, simply put, as an &#8220;answer engine&#8221;. Like google and search engines, it tries to provide information based on a query. But while search engines simply try to retrieve the keywords of the query in their indexed pages, the answer engine tries to understand the query as a question and forms an educated answer. In a sense, this is similar to the <a href="http://www.freebase.com/">freebase</a> project, which is to put all the knowledge of a world in a database where links could be established across items.</p>
+<p>It attempts to detect the nature of each of the word of the query. Is that a city? a mathematic formula? foodstuff? an economic variable? Once it understands the terms of the query, it gives the user all the data it can to answer.</p>
+<p>Here for instance:</p>
+<p><img class="aligncenter size-full wp-image-147" title="wolframalpha-2" src="http://www.jeromecukier.net/wp-content/uploads/2009/06/wolframalpha-2.png" alt="wolframalpha-2" width="445" height="1052" /></p>
+<p>Using the same <strong>find </strong>&gt; <strong>access </strong>&gt; <strong>process </strong>&gt; <strong>present </strong>&gt; <strong>share</strong> <a href="http://www.jeromecukier.net/?p=124">diagram</a> as before,</p>
+<p>Wolfram|alpha&#8217;s got &#8220;find&#8221; covered. More about that below.</p>
+<p>It lets you access the data. If data have been used to produce a chart, then there is a query that will retrieve those bare numbers in a table format.</p>
+<p>Process is perhaps Wolfram|Alpha&#8217;s forte. It will internally reformulate and cook your query to produce all meaningful outputs in its capacity.</p>
+<p>The presentation is excellent. It is very legible, consistent across the site, efficient and unpretentious. When charts are provided which is often, the charts are small but both relevant and informative, only the necessary data are plotted. This is unusual enough to be worth mentioning.</p>
+<p>Wolfram|alpha doesn&#8217;t allow people to share its outputs <em>per se</em>, but since a given query will produce consistent results, users can simply exchange queries or communicate links to a successful query result.</p>
+<p>Now back to finding data.</p>
+<p>When a user submits a query, the engine does not query external sources of data in real time. Rather, it used its internal, freebase-like database. This, in turn, is updated by external sources when possible.</p>
+<p>For each query, sources are available. Unfortunately, the data sources provided are for the general categories. For instance, for all the country-related informations, the listed sources are the same, and some are accurate and dependable (national or international statistical offices), some are less reliable or verifiable (such as the CIA world factbook or what&#8217;s cited as Wolfram|Alpha curated data, 2009.). And to me that&#8217;s the big flaw of this otherwise impressive system.</p>
+<p>Granted, coverage is not perfect. That can only improve. Syntax is not always intuitive &#8211; to make some results appear in a particular way can be very elusive. But this, as well, will get gradually better over time. But to be able to verify the data presented, or not, is a huge difference &#8211; either it is possible or not. I&#8217;m really looking forward to this.</p>
+]]></content:encoded>
+			<wfw:commentRss>/2009/06/05/new-data-services-2-wolframalpha/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

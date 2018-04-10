@@ -1,0 +1,1095 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>protovis &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/category/protovis/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>d3: scales, and color.</title>
+		<link>/2011/08/11/d3-scales-and-color/</link>
+		<comments>/2011/08/11/d3-scales-and-color/#comments</comments>
+		<pubDate>Thu, 11 Aug 2011 10:03:21 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[d3]]></category>
+		<category><![CDATA[protovis]]></category>
+		<category><![CDATA[tips]]></category>
+		<category><![CDATA[color]]></category>
+		<category><![CDATA[color palettes]]></category>
+		<category><![CDATA[hsl]]></category>
+		<category><![CDATA[linear]]></category>
+		<category><![CDATA[logarithmic]]></category>
+		<category><![CDATA[ordinal]]></category>
+		<category><![CDATA[power]]></category>
+		<category><![CDATA[quantitative]]></category>
+		<category><![CDATA[rgb]]></category>
+		<category><![CDATA[scales]]></category>
+		<category><![CDATA[tutorial]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1026</guid>
+		<description><![CDATA[In protovis, scales were super-useful in just about everything. That much hasn&#8217;t changed in d3, even though d3.scale is a bit different from pv.Scale. (do note that d3.scale is in lowercase for starters). Scales: the main idea Simply put: scales transform a number in a certain interval (called the domain) into a number in another <a class="read-more" href="/2011/08/11/d3-scales-and-color/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>In <a href="http://mbostock.github.com/protovis/docs/scale.html">protovis</a>, scales were super-useful in just about everything. That much hasn&#8217;t changed in d3, even though <a href="https://github.com/mbostock/d3/wiki/Scales">d3.scale</a> is a bit different from pv.Scale. (do note that <strong>d3.scale</strong> is in lowercase for starters).</p>
+<h2>Scales: the main idea</h2>
+<p>Simply put: scales transform a number in a certain interval (called the <em>domain</em>) into a number in another interval (called the <em>range</em>).<br />
+<img src="http://www.jeromecukier.net/wp-content/uploads/2011/08/d3scale1.png" alt="an example of how scales work" /><br />
+For instance, let&#8217;s suppose you <em>know</em> your data is always over 20 and always below 80. You would like to plot it, say, in a bar chart, which can be only 120 pixels tall.<br />
+You could, obviously, do the math:</p>
+<pre class="brush: jscript; title: ; notranslate">.attr(&quot;height&quot;, function(d) {return (d-20)*2;})</pre>
+<p>But what if you suddenly have more or less space? or your data changes? you&#8217;d have to go back to the entrails of your code and make the change. This is very error prone. So instead, you can use a scale: </p>
+<pre class="brush: jscript; title: ; notranslate">var y=d3.scale.linear().domain(20,80).range(0,120);
+...
+.attr(&quot;height&quot;, y)</pre>
+<p>this is much simpler, elegant, and easy to maintain. Oh, and the latter notation is equivalent to
+<pre class="brush: jscript; title: ; notranslate">.attr(&quot;height&quot;, function(d) {return y(d);})</pre>
+<p>&#8230; only more legible and shorter.<br />
+And, there are tons of possibility with scales. </p>
+<h2>Fun with scales</h2>
+<p>In d3, quantitative scales can be of several types: </p>
+<ul>
+<li>linear scales (including <em>quantize</em> and <em>quantile</em> scales,</li>
+<li>logarithmic scales,</li>
+<li>power scales (including <em>square root</em> scales)</li>
+</ul>
+<p>While they behave differently, they have a lot in common. </p>
+<h3>Domain and range</h3>
+<p>For all scales, with the exception of quantize and quantile scales which are a bit different, domain and range work the same.<br />
+First, note that <strong>unlike in protovis</strong>, domain and range take an array as argument. Compare:</p>
+<pre class="brush: jscript; title: ; notranslate">var y=pv.Scale.linear().range(20,60).domain(0,120);
+var y=d3.scale.linear().range([20,60]).domain([0,120]);</pre>
+<p>This is because <strong>contrary to protovis</strong>, where domain could be a whole dataset, in d3, domain contains the bounds of the interval that is going to be transformed.<br />
+Typically, this is two numbers. If this is more, we are talking about a polypoint scale: there are as many segments in the intervals as there are numbers in the domain (minus one). The range must have as many numbers, and so as many segments. When using the scale, if a number is in the n-th segment of the domain, it is transformed into a number in the n-th segment of the range.<br />
+<img src="http://www.jeromecukier.net/wp-content/uploads/2011/08/d3scaleMultipoint.png" alt="illustration of a multipoint scale" /><br />
+With this example, 30 finds itself in the first segment of the domain. So it&#8217;s transformed to a value in the first segment of the range. 60, however, is in the 2nd segment, so it&#8217;s transformed into a value in the 2nd segment of the range.<br />
+Also, bounds of domain and range need not be numbers, as long as they can be converted to numbers. One useful examples are colors. Color names can be used as range, for instance, to create <em>color ramps</em>:</p>
+<pre class="brush: jscript; title: ; notranslate">var ramp=d3.scale.linear().domain([0,100]).range([&quot;red&quot;,&quot;blue&quot;]);</pre>
+<p>This will transform any value betwen 0 and 100 into the corresponding color between red and blue.</p>
+<h3>Clamping</h3>
+<p>What happends if the scale is asked to process a number outside of the domain? That&#8217;s what clamping controls. If it is set, then the bounds of the range are the minimum and maximum value that can be returned by the scale. Else, the same transformation applies to all numbers, whether they fall within the domain or not.<br />
+<img src="http://www.jeromecukier.net/wp-content/uploads/2011/08/d3clamping.png" alt="Clamping example" /><br />
+Here, with clamping, the result of the linear transformation is 120, but without it, it&#8217;s 160. </p>
+<pre class="brush: jscript; title: ; notranslate">var clamp=d3.scale.linear().domain([20,80]).range([0,120]);
+clamp(100); // 160
+clamp.clamp(true);
+clamp(100); // 120</pre>
+<h3>Scales and nice numbers</h3>
+<p>More often than not, the bounds of the domain and/or those of the ranges will be calculated. So, chances are they won&#8217;t be round numbers, or numbers a human would like. Scales, however, come with a bunch of method to address that. d3 keeps in mind that scales are often used to position marks along an axis.</p>
+<h4>.nice()</h4>
+<p>When applied to a scale, the nice method expends the domain to &#8220;nicer&#8221; numbers. You wouldn&#8217;t want your axis to start at -2.347 and end at 7.431, right?<br />
+So, there. </p>
+<pre class="brush: jscript; title: ; notranslate">var data=[-2.347, 4, 5.23,-1.234,6.234,7.431]; // or whatever.
+var y=d3.scale.linear().range([0,120]);
+y.domain([d3.min(data), d3.max(data)]); // domain takes bounds as arguments, not all numbers
+y.domain() // [-2.347, 7.431];
+y.nice() // [-3, 8]</pre>
+<h4>.ticks(n)</h4>
+<p>Given a domain, and a number n (which, <strong>contrary to protovis, is mandatory in d3</strong>), the ticks method will split your domain in (more or less) n convenient, human-readable values, and return an array of these values. This is especially useful to label axes. Passing these values to the scale allows them to position ticks nicely on an axis. </p>
+<pre class="brush: jscript; title: ; notranslate">var y=d3.scale.linear([20,80]).range([0,120]);
+...
+var ticks=axis.selectAll(&quot;line&quot;)
+  .data(y.ticks(4)) // 20, 40, 60 and 80
+  .enter().append(&quot;svg:line&quot;);
+ticks
+  .attr(&quot;x1&quot;,0).attr(&quot;x2&quot;,5)
+  .attr(&quot;y1&quot;,y).attr(&quot;y2&quot;,y) // short and simple. 
+  .attr(&quot;stroke&quot;,&quot;black&quot;);</pre>
+<h4>.rangeRound()</h4>
+<p>If used instead of .range(), this will guarantee that the output of the scales are integers, which is better to position marks on the screen with pixel precision than numbers with decimals. </p>
+<h4>.invert()</h4>
+<p>The invert function turns the scale upside down: for one given number in the range, it returns which number of the domain would have been transformed into that number.<br />
+For instance: </p>
+<pre class="brush: jscript; title: ; notranslate">var y=d3.scale.linear([20,80]).range([0,120]);
+y(50); // 60
+y.invert(60); // 50</pre>
+<p>That&#8217;s quite useful, for instance, when a user mouses over a chart, and you would like to know to what value the mouse coordinates correspond. </p>
+<h3>Power scales and log scales</h3>
+<p>The <em>linear</em>scale is a function of the form y=ax+b which works for both ends of the domain and range. In the example we&#8217;ve used most often until now, this function is really f(x): y=2x-40.<br />
+Power and logarithm scales work the same, only we are looking for a function of the form y=ax<sup>k</sup>+b, or y=a.log(x)+b.<br />
+For the power scales, you can specify an exponent (k) with the .exponent() method. For instance, if we specify an exponent of 2, here is what the scale would look like:<br />
+<img src="http://www.jeromecukier.net/wp-content/uploads/2011/08/d3scalePower.png" alt="an example of a power scale" /><br />
+The equation is now f(x): y=x²/50-8. So 20 still becomes 0 and 80 still becomes 120, but other than that the values at the beginning of the domain would be lower than with the linear scale, and those at the end of the scale will be higher.<br />
+For convenience, d3 includes a d3.scale.sqrt() (the square root scale) so you never have to type d3.scale.pow.exponent(0.5) in full.<br />
+Also note that if you are using a log scale, you <strong>cannot</strong> have 0 in the domain. </p>
+<h3>Quantize and quantile</h3>
+<p>quantize and quantile are specific linear scales.<br />
+quantize works with a discrete, rather than continuous, range: in other terms, the output of quantize can only take a certain number of values.<br />
+For instance: </p>
+<pre class="brush: jscript; title: ; notranslate">var q=d3.scale.quantize().domain([0,10]).range([0,2,8]); 
+q(0); // 0
+q(3); // 0
+q(3.33); // 0
+q(3.34); // 2
+q(5); // 2
+q(6.66); // 2
+q(6.67); // 8
+q(8); // 8
+q(1000); // 8</pre>
+<p>quantile on the other hand matches values in the domain (which, this time, is the full dataset) with their respective quantile. The number of quantiles is specified by the range.<br />
+For instance: </p>
+<pre class="brush: jscript; title: ; notranslate">
+var q=d3.scale.quantile().domain([0,1,5,6,2,4,6,2,4,6,7,8]).range([0,100]);
+q.quantiles(); // [4.5], only one quantile - the median
+q(0); // 0
+q(4); // 0
+q(4.499); // 0
+q(4.5); // 100 - over the median
+q(5); // 100
+q(10000); // 100
+q.range([0,25,50,75,100]);
+q.quantiles(); // [2, 4, 5.6, 6];
+q(0); // 0 
+q(2); // 25 - greater than the first quantile limit
+q(3); // 25
+q(4); // 50
+q(6); // 100
+q(10000); // 100</pre>
+<h3>Ordinal scales</h3>
+<p>All the scales we&#8217;ve seen so far have been quantitative, but how about ordinal scales?<br />
+The big difference is that ordinal scales have <strong>a discrete domain</strong>, in other words, they turn a limited number of values into something else, without caring for what&#8217;s between those values.<br />
+Ordinal scales are very useful for positioning marks along an x axis. Let&#8217;s suppose you have 10 bars to position for your bar chart, each corresponding to a category, a month or whatever.<br />
+For instance: </p>
+<pre class="brush: jscript; title: ; notranslate">
+var x=d3.scale.ordinal()
+  .domain([&quot;Sunday&quot;,&quot;Monday&quot;,&quot;Tuesday&quot;,&quot;Wednesday&quot;,&quot;Thursday&quot;,&quot;Friday&quot;,&quot;Saturday&quot;]) // 7 items
+  .rangeBands([0,120]);
+x(&quot;Tuesday&quot;); // 34.285714285714285
+</pre>
+<p>There are 3 possibilites for range. Two are similar: the .rangePoints() and .rangeBands() methods, which both work with an array of two numbers &#8211; i.e. .rangeBands([0,120]). The last one is to specify all values in the range with .range(). </p>
+<h4>rangePoints() and rangeBands()</h4>
+<p>With .rangePoints(<em>interval</em>), d3 fits n points within the interval, n being the number of categories in the domain. In that case, the value of the first point is the beginning of the interval, that of the last point is the end of the interval.<br />
+With .rangeBands(<em>interval</em>), d3 fit n <em>bands</em> within the interval. Here, the value of the last item in the domain is less than the upper bound of the interval.<br />
+Those methods <strong>replace the protovis methods</strong> .split() and .splitBanded().<br />
+<img src="http://www.jeromecukier.net/wp-content/uploads/2011/08/d3ordinalRange.png" alt="difference between rangeBands and rangePoints" /><br />
+This chart illustrates the difference between using rangeBands and rangePoints. </p>
+<pre class="brush: jscript; title: ; notranslate">var x=d3.scale.ordinal()
+  .domain([&quot;Sunday&quot;,&quot;Monday&quot;,&quot;Tuesday&quot;,&quot;Wednesday&quot;,&quot;Thursday&quot;,&quot;Friday&quot;,&quot;Saturday&quot;]);
+x.rangePoints([0,120]);
+x(&quot;Saturday&quot;); // 120
+x.rangeBands([0,120]);
+x(&quot;Saturday&quot;); // 102.85714285714286
+x(&quot;Saturday&quot;)+x.rangeBand(); // 120</pre>
+<h4>the range method</h4>
+<p>Finally, we can also use the .range method with several values.<br />
+We can specify the domain, or not. Then, if we use such a scale on a value which is not part of the domain (or if the domain is left empty), this value is added to the domain. If there are <em>n</em> values in the range, and more in the domain, then the n+1<sup>th</sup> value of the doamin is matched with the 1st value in the range, etc.</p>
+<pre class="brush: jscript; title: ; notranslate">var x=d3.scale.ordinal().range([&quot;hello&quot;, &quot;world&quot;]); 
+x.domain(); // [] - empty still.
+x(0); // &quot;hello&quot;
+x(1); // &quot;world&quot;
+x(2); // &quot;hello&quot;
+x.domain(); // [0,1,2]
+</pre>
+<h4>Color palettes</h4>
+<p><strong>Unlike in protovis</strong>, which had them under pv.Colors &#8211; i.e. pv.Colors.category10(), in d3, built-in color palettes can be accessed through scales. Well, even in protovis they had been ordinal scales all along, only not called this way.<br />
+There are <a href="https://github.com/mbostock/d3/wiki/Ordinal-Scales#category10">4 built-in color palette</a> in protovis: d3.scale.category10(), d3.scale.category20(), d3.scale.category20b(), and d3.scale.category20c().</p>
+<p>A palette like d3.scale.category10() works exactly like an ordinal scale. </p>
+<pre class="brush: jscript; title: ; notranslate">
+var p=d3.scale.category10();
+var r=p.range(); // [&quot;#1f77b4&quot;, &quot;#ff7f0e&quot;, &quot;#2ca02c&quot;, &quot;#d62728&quot;, &quot;#9467bd&quot;, 
+                      // &quot;#8c564b&quot;, &quot;#e377c2&quot;, &quot;#7f7f7f&quot;, &quot;#bcbd22&quot;, &quot;#17becf&quot;]
+var s=d3.scale.ordinal().range(r); 
+p.domain(); // [] - empty
+s.domain(); // [] - empty, see above
+p(0); // &quot;#1f77b4&quot;
+p(1); // &quot;#ff7f0e&quot;
+p(2); // &quot;#2ca02c&quot;
+p.domain(); // [0,1,2];
+s(0); // &quot;#1f77b4&quot;
+s(1); // &quot;#ff7f0e&quot;
+s(2); // &quot;#2ca02c&quot;
+s.domain(); // [0,1,2];</pre>
+<p>It&#8217;s noteworthy that in d3, color palette return strings, not pv.Color objects like in protovis.<br />
+Also: </p>
+<pre class="brush: jscript; title: ; notranslate">
+d3.scale.category10(1); // this doesn't work
+d3.scale.category10()(1); // this is the way.</pre>
+<h2>Colors</h2>
+<p>Compared to protovis, d3.color is simpler. The main reason is that protovis handled color and transparency together with the pv.Color object, whereas in SVG, those two are distinct attributes: you handle the background color of a filled object with <em>fill</em>, its transparency with <em>opacity</em>, the color of the outline with <em>stroke</em> and the transparency of that color with <em>stroke-opacity</em>. </p>
+<p>d3 has two color objects: d3_Rgb and d3_Hsl, which describe colors in the two of the most popular color spaces: red/green/blue, and hue/saturation/light. </p>
+<p>With d3.color, you can make operations on such objects, like converting colors between various formats, or make colors lighter or darker.</p>
+<p>d3.rgb(<em>color</em>), and d3.hsl(<em>color</em>) create such objects.<br />
+In this context, <em>color</em> can be (straight from <a href="https://github.com/mbostock/d3/wiki/Colors">the manual</a>):</p>
+<ul>
+<li>rgb decimal &#8211; &#8220;rgb(255,255,255)&#8221;</li>
+<li>hsl decimal &#8211; &#8220;hsl(120,50%,20%)&#8221;</li>
+<li>rgb hexadecimal &#8211; &#8220;#ffeeaa&#8221;</li>
+<li>rgb shorthand hexadecimal &#8211; &#8220;#fea&#8221;</li>
+<li>named &#8211; &#8220;red&#8221;, &#8220;white&#8221;, &#8220;blue&#8221;</li>
+</ul>
+<p>Once you have that object, you can make it brighter or darker with the appropriate method.<br />
+You can use .toString() to get it back in rgb hexadecimal format (or hsl decimal), and .rgb() or .hsl() to convert it to the object in the other color space. </p>
+<pre class="brush: jscript; title: ; notranslate">
+var c=d3.rgb(&quot;violet&quot;) // d3_Rgb object
+c.toString(); // &quot;#ee82ee&quot;
+c.darker().toString(); // &quot;#a65ba6&quot;
+c.darker(2).toString(); // &quot;#743f74&quot; - even darker
+c.brighter().toString();// &quot;ffb9ff&quot;
+c.brighter(0.1).toString(); // &quot;#f686f6&quot; - only slightly brighter
+c.hsl(); // d3_Hsl object
+c.hsl().toString() // &quot;hsl(300, 76, 72)&quot;</pre>
+]]></content:encoded>
+			<wfw:commentRss>/2011/08/11/d3-scales-and-color/feed/</wfw:commentRss>
+		<slash:comments>21</slash:comments>
+		</item>
+		<item>
+		<title>d3: adding stuff. And, oh, understanding selections</title>
+		<link>/2011/08/09/d3-adding-stuff-and-oh-understanding-selections/</link>
+		<comments>/2011/08/09/d3-adding-stuff-and-oh-understanding-selections/#comments</comments>
+		<pubDate>Tue, 09 Aug 2011 12:49:23 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[d3]]></category>
+		<category><![CDATA[protovis]]></category>
+		<category><![CDATA[tips]]></category>
+		<category><![CDATA[charts]]></category>
+		<category><![CDATA[javascript]]></category>
+		<category><![CDATA[selection]]></category>
+		<category><![CDATA[svg]]></category>
+		<category><![CDATA[tutorial]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1012</guid>
+		<description><![CDATA[From data to graphics d3 and protovis are built around the same principle. Take data, put it into an array, and for each element of data a graphical object can be created, whose properties are derived from the data that was provided. Only d3 and protovis have a slightly different way of adding those graphical <a class="read-more" href="/2011/08/09/d3-adding-stuff-and-oh-understanding-selections/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<h2>From data to graphics</h2>
+<p><img src="http://jeromecukier.net/wp-content/uploads/2011/08/d3principle.png" alt="the d3 principle (and also the protovis principle)" /><br />
+d3 and protovis are built around the same principle. Take data, put it into an array, and for each element of data a graphical object can be created, whose properties are derived from the data that was provided.</p>
+<p>Only d3 and protovis have a slightly different way of adding those graphical elements and getting data. </p>
+<p>In protovis, you start from a panel, a protovis-specific object, to which you add various marks. Each time you add a mark, you can either:</p>
+<ul>
+<li><strong>not</strong> specify data and add just one, </li>
+<li> or <strong>specify</strong> data and create as many as there are items in the array you pass as data.</li>
+</ul>
+<p>.</p>
+<h2>How de did it in protovis</h2>
+<pre class="brush: jscript; title: ; notranslate">
+var vis=new pv.Panel().width(200).height(200); 
+vis.add(pv.Panel).top(10).left(10)
+  .add(pv.Bar)
+    .data([1,4,3,2,5])
+    .left(function() {return this.index*20;})
+    .width(15)
+    .bottom(0)
+    .height(function(d) {return d*10;});
+vis.render();</pre>
+<p><img src="http://jeromecukier.net/wp-content/uploads/2011/08/protoBar.png" alt="this simple bar chart in protovis" /><br />
+you first create a panel (first line), you may add an element without data (here, another panel, line 2), and add to this panel bars: there would be 5, one for each element in the array in line 4. </p>
+<h2>And in d3?</h2>
+<p>In d3, you also have a way to add either one object without passing data, or a series of objects &#8211; one per data element. </p>
+<pre class="brush: jscript; title: ; notranslate">
+var vis=d3.select(&quot;body&quot;).append(&quot;svg:svg&quot;).attr(&quot;width&quot;,200).attr(&quot;height&quot;,200);
+var rect=vis.selectAll(&quot;rect&quot;).data([1,4,3,2,5]).enter().append(&quot;svg:rect&quot;);
+rect.attr(&quot;height&quot;,function(d) {return d*20;})
+  .attr(&quot;width&quot;, 15)
+  .attr(&quot;x&quot;,function(d,i) {return i*20;})
+  .attr(&quot;y&quot;,function(d) {return 100-20*d;}
+  .attr(&quot;fill&quot;,&quot;steelblue&quot;);
+</pre>
+<p>In the first line, we are creating an svg document which will be the root of our graphical creation. It behaves just as the top-level panel in protovis. </p>
+<p>However we are not creating this out of thin air, but rather we are bolting it onto an existing part of the page, here the <body> tag. Essentially, we are looking through the page for a tag named <body> and once we find it (which should be the case often), that&#8217;s where we put the svg document. </p>
+<p>Oftentimes, instead of creating our document on <body>, we are going to add it to an existing &lt;div&gt; block, for instance: </p>
+<pre class="brush: jscript; title: ; notranslate">
+&lt;div id=&quot;chart&quot;&gt;&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+var vis=d3.select(&quot;#chart&quot;).append(&quot;svg:svg&quot;);
+...
+&lt;/script&gt;
+</pre>
+<p>Anyway. To <strong>add one element</strong>, regardless of data, what you do is: </p>
+<p>The logic is : d3.select(<em>where we would like to put our new object</em>).append(<em>type of new object</em>).</p>
+<p>Going back to our code: </p>
+<pre class="brush: jscript; title: ; notranslate">
+var vis=d3.select(&quot;body&quot;).append(&quot;svg:svg&quot;).attr(&quot;width&quot;,200).attr(&quot;height&quot;,200);
+var rect=vis.selectAll(&quot;rect&quot;).data([1,4,3,2,5]).enter().append(&quot;svg:rect&quot;);
+rect.attr(&quot;height&quot;,function(d) {return d*20;})
+  .attr(&quot;width&quot;, 15)
+  .attr(&quot;x&quot;,function(d,i) {return i*20;})
+  .attr(&quot;y&quot;,function(d) {return 100-20*d;}
+  .attr(&quot;fill&quot;,&quot;steelblue&quot;);
+</pre>
+<p>On line 2, we see a different construct:</p>
+<p><em>an existing selection, or a part of the page</em><br />
+.selectAll(<em>something</em>)<br />
+.data(<em>an array</em>)<br />
+.enter()<br />
+.append(<em>an object type</em>)</p>
+<p>This sequence of methods (selectAll, data, enter and append) are the way to add a series of elements. If all you need to know is to create a bar chart, just remember that, but if you plan on taking your d3 skills further than where you stopped with protovis, look at the end of the post for a more thorough explanation of the selection process. </p>
+<h2>Attributes and accessor functions</h2>
+<p>At this stage, we&#8217;ve added our new rectangles, and now we are going to shape and style them. </p>
+<pre class="brush: jscript; title: ; notranslate">rect.attr(&quot;height&quot;,function(d) {return d*20;})
+  .attr(&quot;width&quot;, 15)
+  .attr(&quot;x&quot;,function(d,i) {return i*20;})
+  .attr(&quot;y&quot;,function(d) {return 100-20*d;}
+  .attr(&quot;fill&quot;,&quot;steelblue&quot;);
+</pre>
+<p>All the attributes of a graphical element are controlled by the method attr(). You specify the attribute you want to set, and the value you want to give.<br />
+In some cases, the value doesn&#8217;t depend on the data. All the bars will be 15 pixels wide, and they will all be of the steelblue color.<br />
+In some others, the value do depend on the data. We decide that the height of each bar is 20 times the value of the underlying data, in pixels (so 1 becomes 20, 5 becomes 100 etc.). Like in protovis, once data has been attributed to an element, function(<em>variable name</em>) enables to return a dynamic value in function on that element. By convention, we usually write function(d) {&#8230;;} (d for data) although it could be anything. Those functions are still called <strong>accessor functions</strong>.<br />
+so for instance: </p>
+<pre class="brush: jscript; title: ; notranslate">.attr(&quot;height&quot;,function(d) {return d*20;})</pre>
+<p>means that the height will be 20 times the value of the underlying data element (exactly what we said above).<br />
+In protovis, we could position the mark relatively to any corner of its parent, so we had a .top method and a .bottom method. But with SVG, objects are positioned relatively to the top-left corner. So when we specify the y position, it is also relative to the top of the document, not necessarily to the axis (and not in this case).<br />
+so &#8211;
+<pre class="brush: jscript; title: ; notranslate">.attr(&quot;y&quot;, function(d) {return 100-d*20;})</pre>
+<p>if we use scales (see next post), all of this will have no impact whatsoever anyway.<br />
+Finally, there is an attribue here which doesn&#8217;t so much depend on the <em>value</em> of the data, but of its <em>rank</em> in the data items: the x position.<br />
+for this, we write: function(d,i) {return i*20;}<br />
+Here is a <strong>fundamental difference with protovis</strong>. In protovis, when we passed a second argument to such a function, it meant the data of the parent element (grand parent for the third, etc.). But here in d3, the second parameter is the position of the data element in its array. By convention, we write it i (for index).<br />
+And since you have to know: there is no easy way to retrieve the data of the parent element. </p>
+<h2>Bonus: understanding selections</h2>
+<p>To add many elements at once we&#8217;ve used the sequence: selectAll, data, enter, append.<br />
+Why use 4 methods for what appears to be one elementary task? If you don&#8217;t care about manipulating nodes individually, for instance for animations, you can just remember the sequence. But if you want to know more, here is what each method does. </p>
+<h3>selectAll</h3>
+<p><img src="http://jeromecukier.net/wp-content/uploads/2011/08/d3selectAll.png" alt="the selectAll method" /><br />
+First, we select a point on which to add your new graphical objects. When you are creating your objects and use the selectAll method, it will return an <em>empty selection</em> but based on that given point. You may also use selectAll in another context, to update your objects for instance. But here, an empty selection is expected. </p>
+<h3>data</h3>
+<p><img src="http://jeromecukier.net/wp-content/uploads/2011/08/d3data.png" alt="the data method" /><br />
+Then, you attribute data. This works quite similarly to protovis: d3 expects an array. d3 takes the concept further (with the concept of <em>data joins</em>) but you need not concern yourself with that until you look at transitions.<br />
+Anyway, at this stage you have an empty selection, based on a given point in the page, but with data.</p>
+<h3>enter</h3>
+<p><img src="http://jeromecukier.net/wp-content/uploads/2011/08/d3enter.png" alt="the enter method" /><br />
+The enter method updates the selection with nodes which have data, but no graphical representation. Using enter() is like creating stubs where the graphical elements will be grafted. </p>
+<h3>append</h3>
+<p><img src="http://jeromecukier.net/wp-content/uploads/2011/08/d3append.png" alt="the append method" /><br />
+Finally, by appending we actually create the graphical objects. Each is tied to one data element, so it can be further styled (for instance, through &#8220;attr&#8221;) to derive its characteristics from the value of that data.</p>
+]]></content:encoded>
+			<wfw:commentRss>/2011/08/09/d3-adding-stuff-and-oh-understanding-selections/feed/</wfw:commentRss>
+		<slash:comments>11</slash:comments>
+		</item>
+		<item>
+		<title>From protovis to d3</title>
+		<link>/2011/08/08/from-protovis-to-d3/</link>
+		<comments>/2011/08/08/from-protovis-to-d3/#comments</comments>
+		<pubDate>Mon, 08 Aug 2011 14:47:45 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[d3]]></category>
+		<category><![CDATA[protovis]]></category>
+		<category><![CDATA[svg]]></category>
+		<category><![CDATA[tutorial]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=995</guid>
+		<description><![CDATA[You&#8217;ve spent some time learning protovis only to find that its development is halted as authors have switched to work on d3. Have your efforts all been in vain? Fear not! This series of posts will help you adapt to d3 with a protovis background. Before we go anywhere further, let me say that these <a class="read-more" href="/2011/08/08/from-protovis-to-d3/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>You&#8217;ve spent some time <a href="http://www.jeromecukier.net/blog/2011/02/07/working-with-data-in-protovis/">learning protovis</a> only to find that its development is halted as authors have switched to work on <a href="http://www.d3-js.org/">d3</a>. Have your efforts all been in vain? Fear not! This series of posts will help you adapt to d3 with a protovis background. </p>
+<p>Before we go anywhere further, let me say that <strong>these posts won&#8217;t make you awesome at d3</strong> (yet). We won&#8217;t be talking about how to do all amazing things you could never do in protovis. Rather, we&#8217;ll focus on enabling you to be as comfortable with d3 than you could have been with protovis. And once that&#8217;s done, nothing will prevent you from learning the more powerful aspects of d3. </p>
+<p>Anyway, if you&#8217;re reading this, <strong>you are already awesome.</strong></p>
+<h2>Why should I make the switch to d3?</h2>
+<p>Frankly, you don&#8217;t have to. Protovis is a fine framework and works well. Now you may <em>want</em> to switch to d3 for several reasons. </p>
+<ul>
+<li><strong>d3 is fast.</strong> d3 is better at handling scenes with hundreds or thousands of elements. So if you like scatterplots or network graphs, and who doesn&#8217;t, d3 has much stronger performance.</li>
+<li><strong>d3 does animation.</strong> There were workarounds to get animation in protovis but there were that. Workarounds. Animation and transitions are built in d3 and are a snap to implement. </li>
+<li><strong>More features.</strong> Just because development has stopped on protovis doesn&#8217;t mean that it has stopped elsewhere&#8230; for instance, d3 has <em>more ready-to-use layouts</em>, like voronoi tesselation or chords, and it has more methods and functions to make your life easier, to access and manipulate data for example.</li>
+<li><strong>Styling.</strong> In d3 it is possible to apply style sheets in CSS to graphical elements. This helps keeping the code and the format separate. </li>
+</ul>
+<h2>Yes but doesn&#8217;t everything change?</h2>
+<p>Short answer: <strong>no. </strong></p>
+<p>Less short answer: some things do change substantially. Most things stay the same. And then, some things look the same but have changed.</p>
+<h3>Things that stay the same</h3>
+<ul>
+<li><strong>The general principle.</strong>Protovis is about transforming an array of data into the same number of graphical elements, with characteristics derived from that data. d3 does exactly this as well.</li>
+<li>pv.Nest, which in my personal protovis experience has been the hardest to understand. Only, it&#8217;s called d3.nest now. </li>
+<li>Methods that supplement the existing javascript array manipulation methods, like pv.min, pv.values, pv.entries etc. are also back (as d3.min, d3.values, d3.entries, but you&#8217;ve guessed it by now). Some, like pv.mean or pv.median, didn&#8217;t make it through but you could easily rewrite them, or continue using the protovis ones.</li>
+</ul>
+<h3>Things that look different, but which are largely the same</h3>
+<p>Protovis had a number of native graphical objects, or marks, that could be manipulated at will with methods. </p>
+<pre class="brush: jscript; title: ; notranslate">var vis=new pv.Panel()
+  .height(400)
+  .width(400)
+  .fillStyle(&quot;aliceblue&quot;)
+  .lineWidth(1)
+  .strokeStyle(&quot;steelblue&quot;);
+vis.render();</pre>
+<p>In protovis, it is inherently different to set the height, the width or just any property of an object. This uses different methods. </p>
+<pre class="brush: jscript; title: ; notranslate">var vis=d3.select(&quot;body&quot;).append(&quot;svg:svg&quot;);
+  vis.append(&quot;svg:rect&quot;)
+    .attr(&quot;height&quot;,400)
+    .attr(&quot;width&quot;,400)
+    .attr(&quot;fill&quot;,&quot;aliceblue&quot;)
+    .attr(&quot;stroke&quot;,&quot;steelblue&quot;)
+    .attr(&quot;stroke-width&quot;,1);</pre>
+<p>This produces essentially the same thing. We add a rectangle of a specified height, width, and colors. There are a few differences though. Here, controlling height, width or fill is essentially the same thing and uses the same method, .attr(). Notice also that we first created an svg document, then a shape within that document. And also, that we don&#8217;t need to use vis.render(); anymore. </p>
+<p>The d3 approach looks longer. But if we define all the style information first we could make it much shorter, shorter than in protovis in fact!<br />
+For instance:</p>
+<pre class="brush: jscript; title: ; notranslate">var vis=d3.select(&quot;body&quot;).append(&quot;svg:svg&quot;).append(&quot;svg:rect&quot;).attr(&quot;class&quot;, &quot;myRect&quot;);</pre>
+<p>Much of the apparent differences between d3 and protovis come from using explicitly svg shapes (paths, polygons, ellipses, etc.) as opposed to native objects (pv.Panel, pv.Bar, pv.Dot, etc.), although &#8211; it&#8217;s essentially the same thing. Yes, you have to <a href="http://commons.oreilly.com/wiki/index.php/SVG_Essentials">learn your SVG</a> but it&#8217;s really on a need-to-know basis. In fact, if you&#8217;ve worked with protovis, or even if you&#8217;ve worked with HTML and CSS, you probably know more SVG than you thought. </p>
+<p>SVG is more flexible than protovis objects. The flipside is that constructs which were once simple in protovis become less obvious in SVG. But for those cases, d3 has recreated some native objects, even if not as many as in protovis. </p>
+<h3>Things that look the same, but which are different</h3>
+<p>There have been some changes in methods that have kept the same name since protovis &#8211; some minor, some more substantial. In any case, the basic ways of using these methods (like scale, color, data&#8230;) doesn&#8217;t change much. It&#8217;s only their more exotic uses who do change. </p>
+]]></content:encoded>
+			<wfw:commentRss>/2011/08/08/from-protovis-to-d3/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>VAST challenge 2011</title>
+		<link>/2011/07/01/vast-challenge-2011/</link>
+		<comments>/2011/07/01/vast-challenge-2011/#comments</comments>
+		<pubDate>Thu, 30 Jun 2011 22:09:33 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[protovis]]></category>
+		<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[contest]]></category>
+		<category><![CDATA[disease]]></category>
+		<category><![CDATA[terrorism]]></category>
+		<category><![CDATA[twitter]]></category>
+		<category><![CDATA[vast]]></category>
+		<category><![CDATA[VAST challenge]]></category>
+		<category><![CDATA[Vastopolis]]></category>
+		<category><![CDATA[video]]></category>
+		<category><![CDATA[visweek]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=930</guid>
+		<description><![CDATA[This year I have participated to the VAST Challenge (VAST stands for visual analytics science and technology). The VAST symposium is part of the yearly VisWeek conferences. Anyway. The rules required contestants to send videos with voiceovers, so without further ado here they are. Watch me in HD instead!! Watch me in HD too!! If <a class="read-more" href="/2011/07/01/vast-challenge-2011/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>This year I have participated to the <a href="http://hcil.cs.umd.edu/localphp/hcil/vast11/index.php/">VAST Challenge</a> (VAST stands for visual analytics science and technology). The VAST symposium is part of the yearly VisWeek conferences. </p>
+<p>Anyway. The rules required contestants to send videos with voiceovers, so without further ado here they are. </p>
+<p><object width="560" height="349"><param name="movie" value="http://www.youtube.com/v/i5g7_iX9tVQ?version=3&amp;hl=fr_FR"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/i5g7_iX9tVQ?version=3&amp;hl=fr_FR" type="application/x-shockwave-flash" width="560" height="349" allowscriptaccess="always" allowfullscreen="true"></embed></object><br />
+<a href="http://www.youtube.com/watch?v=i5g7_iX9tVQ&#038;hd=1">Watch me in HD instead!!</a></p>
+<p><object width="560" height="349"><param name="movie" value="http://www.youtube.com/v/CMPZJLms9tU?version=3&amp;hl=fr_FR&amp;rel=0"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/CMPZJLms9tU?version=3&amp;hl=fr_FR&amp;rel=0" type="application/x-shockwave-flash" width="560" height="349" allowscriptaccess="always" allowfullscreen="true"></embed></object><br />
+<a href="http://www.youtube.com/watch?v=CMPZJLms9tU&#038;hd=1">Watch me in HD too!!</a></p>
+<p>If you want to play with the tools you can download them here: <a href="http://dl.dropbox.com/u/5259106/mc1.zip">mini-challenge 1</a>, <a href="http://dl.dropbox.com/u/5259106/mc3.zip">mini-challenge 3</a>. </p>
+<p>Unfortunately, I couldn&#8217;t find the time to complete mini-challenge 2 and the grand challenge. I&#8217;m making this on my free time and I had to balance all kinds of commitments, so I couldn&#8217;t secure enough time to finish. Unlike previous years, though, I managed to find enough time to start ! so, in the words of Charlie Sheen: winning.</p>
+<p>So what is this about?<br />
+In the fictional Vastopolis, a mysterious infection strikes. Where does it come from and how is this transmitted? To answer these questions we have one million tweets sent by residents in the past 3 weeks. and among that million, there are quite a few about people reporting symptoms. </p>
+<p>The first thing that I did was coming up for a method to tell whether one tweet was actually about a disease or not. so I scored them. I made a list of words that were required to consider that one message related to sickness, they were fairly univoquial like sick, flu, pneumonia, etc. Each of those words added one point to a &#8220;sickness&#8221; score. Then there was a second list of more ambiguous words like &#8220;a lot&#8221;, &#8220;pain&#8221;, &#8220;fire&#8221; etc. I added one point for each of these words or phrase, if a message already contains a required word. So, there were a few false negative, a few false positive, but all in all it was fairly accurate. </p>
+<p>Fairly soon I had the idea to show the sums of all the scores of a part of the map, rather than showing each individual tweet. But originally, the sectors were quite large and I showed data by day.<br />
+ <a href="http://www.jeromecukier.net/wp-content/uploads/2011/06/earlyshot.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/06/earlyshot.png" alt="" title="earlyshot" class="aligncenter size-full wp-image-931" /></a></p>
+<p>Then, I worked with finer sectors and by 6 hours chunks. That&#8217;s how I could exhibit how people moved towards the center of the map by day, and back to its edges every night. With finer geographic details I could also see some spikes in various areas of the map during the period that I couldn&#8217;t see before, which were not necessarily related to the disease.</p>
+<p><a href="http://www.jeromecukier.net/wp-content/uploads/2011/06/nextshot.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/06/nextshot.png" alt="" title="nextshot" class="aligncenter size-full wp-image-932" /></a></p>
+<p>Eventually, I wanted to read what the tweets corresponded to, so I loaded the full text of the messages so that clicking on a square would reveal what was said at that moment. In this dataset, every spike in volume corresponds with an event that&#8217;s been added by the designers, so it was fun to discover everything happening there, from baseball games to accidents or buildings catching fire. Often, there were articles in the mini-challenge 3 dataset that would give more information about what really happened.</p>
+<p>so, what was mini-challenge 3 about? nothing less than diagnosing possible terrorist threat. This time we were given not one million tweets, but thousands of articles which were much longer than 140 characters! From reading a few sample articles, I saw that most didn&#8217;t talk about terrorism or vastopolis at all. But couldn&#8217;t they contain clues that could link 2 and 2? </p>
+<p>my first idea was to find all entities in the articles, that is names of people, or names of organizations (which follow a certain syntax) and arrange them in a network. The problem is that there were just too many names and groups (thousands of both) and I couldn&#8217;t tell from such a list which sounded suspicious. Although, a group called &#8220;network of hate&#8221; is probably not a charity. I&#8217;m sure it is possible to solve the challenge like this, but I chose another way to get my first leads.</p>
+<p>I just did like in mini-challenge 1 and scored my articles, but I gave them several scores instead of just one by comparing them to several series of words. One series, for instance, was all the proper names in Vastopolis, like names of neighborhoods, because articles <em>about</em> Vastopolis are probably more interesting. The other series corresponded to various kind of threats. </p>
+<p>That allowed me to create the scatterplot form which I used both to represent articles and to narrow the selection by selecting an area if needed. Then, as time went by I added more and more features to the tool, for instance an interface to read articles with keywords highlighted, the possibility to filter articles by keyword in addition to a graphical interface, being able to see all the articles as a list and select from that list, not just from the scatterplot, and finally the possiblity to mark articles as interesting and regroup them in another list&#8230;</p>
+<p>That was about when I felt I could run out of time, so I didn&#8217;t add the other features I had planned or worked on making a decent interface. Also, I spent a lot of time not just trying to solve the challenge, but reading all the stories that were planted in the dataset, linking them to the tweets of MC1, etc. </p>
+<p>Anyway. I quite enjoyed working on that and really, really appreciated the humongous work that went into creating the vast challenge universe. I&#8217;m looking forward seeing what other teams came up with. On a side note, it&#8217;s probably my last protovis projects as it makes sense to completely switch to D3 now&#8230;</p>
+]]></content:encoded>
+			<wfw:commentRss>/2011/07/01/vast-challenge-2011/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>Cantonales suite et fin: duels et transferts de voix</title>
+		<link>/2011/04/08/cantonales-suite-et-fin-duels-et-transferts-de-voix/</link>
+		<comments>/2011/04/08/cantonales-suite-et-fin-duels-et-transferts-de-voix/#respond</comments>
+		<pubDate>Fri, 08 Apr 2011 13:09:44 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[français]]></category>
+		<category><![CDATA[protovis]]></category>
+		<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[cantonales]]></category>
+		<category><![CDATA[duels]]></category>
+		<category><![CDATA[FN]]></category>
+		<category><![CDATA[politique]]></category>
+		<category><![CDATA[transferts de voix]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=826</guid>
+		<description><![CDATA[[A note to my English readers &#8211; as you&#8217;d have probably guessed by the title in French, this post about French politics is in French again, but I&#8217;ll soon resume posting in English] Dimanche 27 a eu lieu le deuxième tour des élections cantonales, dont j&#8217;ai déjà un peu parlé ici ou ici. Et qui <a class="read-more" href="/2011/04/08/cantonales-suite-et-fin-duels-et-transferts-de-voix/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>[A note to my English readers &#8211; as you&#8217;d have probably guessed by the title in French, this post about French politics is in French again, but I&#8217;ll soon resume posting in English]<br />
+Dimanche 27 a eu lieu le deuxième tour des élections cantonales, dont j&#8217;ai déjà un peu parlé <a href="http://www.jeromecukier.net/?p=764">ici</a> ou <a href="http://www.jeromecukier.net/?p=804">ici</a>. Et qui dit second tour dit duels :<br />
+<script type="text/javascript" src="http://www.jeromecukier.net/wp-content/uploads/2011/04/deuxieme.js"></script><br />
+<script type="text/javascript" src="http://www.jeromecukier.net/wp-content/uploads/2011/03/votes.js"></script><br />
+<script type="text/javascript" src="http://jeromecukier.net/protovis_r3_2.js"></script></p>
+<div style="width:500px;margin-left:auto;margin-right:auto;"><script type="text/javascript" src="http://www.jeromecukier.net/wp-content/uploads/2011/04/arc2.js"></script></div>
+<p>Comme on peut le voir, le &#8220;classico&#8221; du second tour c&#8217;était le duel UMP-PS (336 cas). Mais ce qui intéressait tout le monde c&#8217;était plutôt les cas où le FN était présent: 403 scrutins. Alors que s&#8217;est-il passé? est-ce que les voix se sont <em>bien transférées</em>? </p>
+<p>Ce que j&#8217;ai lu suite aux cantonales, c&#8217;est que si les électeurs de gauche avaient fait barrage au front national dans le cas des duels entre le FN et la droite, ce n&#8217;était pas trop le cas des électeurs de droite qui s&#8217;étaient souvent contentés de laisser gagner la gauche sans se mobiliser davantage. Alors voyons ce que disent les chiffres. </p>
+<p>Sur les 403 cantons où le front national s&#8217;est maintenu, il y a eu 266 duels avec la gauche et 127 avec la droite. On va passer sur les 10 autres cas de figure (triangulaires, duel avec une autre formation etc.) parce que ce qui nous intéresse ici c&#8217;est de voir <strong>pour qui vote un électeur d&#8217;une grande faction qui ne se retrouve pas au second tour</strong>.</p>
+<div style="width:490px;margin-left:auto;margin-right:auto;"><script type="text/javascript" src="http://www.jeromecukier.net/wp-content/uploads/2011/04/transfert11.js"></script></div>
+</p>
+<p>Dans le cas des duels droite-FN, il y a presque 240,000 électeurs qui avaient voté à gauche au premier tour et qui se sont fait confisquer leur vote. Bien plus que les voix supplémentaire récoltées par les candidats de droite (environ 150,000)! De même, il y a eu environ 280,000 électeurs de droite qui n&#8217;ont pas pu soutenir leur candidat au deuxième tour, alors que les candidats de gauche n&#8217;ont récupéré que 190,000 voix en plus. </p>
+<p>Dans les deux cas, la participation a augmenté: environ 210,000 votants en plus. Pourtant, il y a eu une augmentation du nombre de votes nuls (plus de 150,000 supplémentaires) et surtout, un fort gain des voix du FN (presque 300,000).</p>
+<h3>Qu&#8217;est ce qu&#8217;on peut en déduire?</h3>
+<p>L&#8217;idée d&#8217;un <em>front républicain</em>, d&#8217;une mobilisation massive d&#8217;électeurs de tout bord qui empêcheraient systématiquement la victoire d&#8217;un candidat FN est bien mise à mal. Dans ces 403 cantons, la participation n&#8217;était que de 55.28%, pas très différente de la moyenne nationale. On a déjà vu plus mobilisé! </p>
+<p>En plus, il n&#8217;y a pas de report systématique des voix vers l&#8217;adversaire du FN (et ce dans les deux cas, gauche/FN ou droite/FN). En fait, le FN est même capable de gagner des voix entre les deux tours et même beaucoup de voix! Bref, il n&#8217;y aura plus d&#8217;effet 5 mai 2002 et tout est désormais possible pour les candidats du FN.</p>
+]]></content:encoded>
+			<wfw:commentRss>/2011/04/08/cantonales-suite-et-fin-duels-et-transferts-de-voix/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Votre prénom est-il de droite?</title>
+		<link>/2011/04/01/votre-prenom-est-il-de-droite/</link>
+		<comments>/2011/04/01/votre-prenom-est-il-de-droite/#comments</comments>
+		<pubDate>Fri, 01 Apr 2011 20:47:27 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[protovis]]></category>
+		<category><![CDATA[cantonales]]></category>
+		<category><![CDATA[discrimination]]></category>
+		<category><![CDATA[élections]]></category>
+		<category><![CDATA[français]]></category>
+		<category><![CDATA[nom]]></category>
+		<category><![CDATA[prénom]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=804</guid>
+		<description><![CDATA[[another post in French. sorry for my English readers, but since it's again based on election data it really is only relevant to French people] Donner un prénom à ses enfants, c'est peut-être la décision qui va le plus influencer le regard des autres à son égard... surtout quand ils ne l'ont pas encore vu. <a class="read-more" href="/2011/04/01/votre-prenom-est-il-de-droite/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[[another post in French. sorry for my English readers, but since it's again based on election data it really is only relevant to French people]</p>
+Donner un prénom à ses enfants, c'est peut-être la décision qui va le plus influencer le regard des autres à son égard... surtout quand ils ne l'ont pas encore vu. Qu'est-ce qu'on peut s'imaginer d'un Édouard ou d'une Jacqueline avant de les connaître? sûrement pas la même chose. Est-ce qu'on peut deviner leur couleur politique? </p>
+pour vérifier ça j'ai pris la liste de tous les candidats aux dernières élections cantonales,soit 10361 personnes avec 1247 prénoms différents qui ont rendu publiques leurs convictions politiques. </p>
+Alors, est-ce que tous les Nicolas sont de droite? et les Jean-Marie? Tous les Jean-Luc et les Olivier sont-ils de gauche? Bon, Ségolène, on savait tous que ça faisait pas très socialiste. Mais Martine? Ou François?</p>
+
+La taille des cercles représente le nombre de candidats qui portent tel ou tel prénom, et la couleur, où ils se situent sur une échelle gauche-droite. En cliquant sur un candidat, on peut voir tous les candidats qui portent son prénom, par parti. </p>
+
+Quelques trouvailles: tous les Kévin sont au front national. Toutes les Arlette, aussi - les temps changent! J'ai laissé toutes les orthographes et tous les accents. Par exemple, Michaël est de gauche, mais Mickaël de droite. Et Mickael, de gauche. A quoi ça tient!</p>
+
+Parmi les prénoms qu'on trouve plus de 5 fois, les plus marqués à gauche sont Mathilde, Marianne, Régine, Norbert et Aline. A droite, on trouve Laura, Edouard, Marie-Christine, Adrien et Thérèse.</p>
+
+Et... si Jean-Marie est plutôt de droite, les Nicolas sont d'habitude à gauche, mais pas les François. On trouve plus de Jean-Luc, de Martine et de Dominique à gauche, mais pas d'Olivier!</p><hr/></p>
+<script type="text/javascript" src="http://blog.oecdfactblog.org/wp-includes/js/protovis-r3.2.js"></script>
+<script type="text/javascript" src="http://www.jeromecukier.net/wp-content/uploads/2011/04/candidats.js" charset="ISO-8859-1"></script>
+<script type="text/javascript+protovis">
+var re="", sp=-1;
+partisDetails={
+	EXG:{nom:"Extrême gauche", color:"red", order:0},
+	COM:{nom:"Communistes", color:"firebrick",order:1},
+	PG:{nom:"Parti de Gauche", color:"crimson",order:2},
+	SOC:{nom:"Parti socialiste", color:"lightcoral",order:3},
+	RDG:{nom:"Radicaux de gauche", color:"yellow",order:4},
+	DVG:{nom:"Divers gauche", color:"pink",order:5},
+	VEC:{nom:"Verts, Europe écologie", color:"limegreen",order:6},
+	ECO:{nom:"Écologistes", color:"green",order:7},
+	REG:{nom:"Régionalistes", color: "saddlebrown",order:8},
+	AUT:{nom:"Autres", color: "grey",order:9},
+	MODM:{nom:"MODEM", color: "gold",order:10},
+	"M-NC":{nom:"Majorité présidentielle", color: "mediumblue",order:11},
+	M:{nom:"Autres candidats majorité présidentielle", color: "blue",order:12},
+	UMP:{nom:"Union pour un Mouvement Populaire", color:"royalblue",order:13},
+	DVD:{nom:"Divers droite", color:"steelblue",order:14},
+	FN:{nom:"Front National", color: "skyblue",order:15},
+	EXD:{nom:"Extrême droite", color: "sienna",order:16}
+};
+partis=pv.keys(partisDetails);
+partiScore={"EXG":-5, "COM":-5, "PG":-5, "SOC":-2, "RDG":-1, "DVG":-3, "VEC":-4, "ECO":-1, "REG":0, "AUT":0, "MODM":1, "M-NC":3, "M":3, "UMP":3, "DVD":3, "FN":5, "EXD":5}
+
+
+candidats.forEach(function(c) {var n=c.name.split(" ");pre="";nom="";var inNom=false;n.forEach(function(s) {if(s.toUpperCase()==s){inNom=true;};if(inNom){nom+=s+" ";}else{pre+=s+" ";}});pre=pre.trim();nom=nom.trim();c["prenom"]=pre;c["nom"]=nom;})
+
+//prenoms=pv.nest(candidats).key(function(c) {return c.prenom;}).rollup(function(prenom) {return pv.mean(prenom, function(d) {return partiScore[d.party];});})
+prenoms=pv.values(pv.nest(candidats).key(function(c) {return c.prenom;}).rollup(function(prenom) {
+return {prenom:prenom[0].prenom,
+        score:pv.mean(prenom, function(d) {return partiScore[d.party];}),
+        frequence:prenom.length}
+;}))
+prenoms.forEach(function(p) {p["partis"]=pv.nest(candidats.filter(function(c) {return c.prenom==p.prenom;})).key(function(d) {return d.party;}).rollup(function(d) {return d.length;});})
+
+var prenomParti=[];
+
+cScale=pv.Scale.linear(-5,0,5).range("red","#eee","blue")
+//pf=prenoms.filter(function(p) {return p.frequence>1;}).sort(function(b,a) {return (a.frequence>b.frequence)-(b.frequence>a.frequence);});
+pf=prenoms.sort(function(b,a) {return (a.frequence>b.frequence)-(b.frequence>a.frequence);});
+pnode0=pv.nest(candidats).key(function(c) {return c.prenom;}).rollup(function(prenom) {return prenom.length;})
+pnode={};pscore={};
+
+pv.keys(pnode0).forEach(function(p,i) {
+	if(p!="") {
+		pnode[p]=pv.values(pnode0)[i];
+		pscore[p]=pf.filter(function(d) {return d.prenom==p;})[0].score;
+	}})
+pv.keys(pnode).forEach(function(p,i) {pscore[pv.values(pf)[i].prenom]=pv.values(pf)[i].score;})
+vis=new pv.Panel().width(600).height(600);
+
+vis2=vis.add(pv.Panel).width(450).height(450).event("click", function() {sp=-1;prenom="";vis.render();});
+var pack = vis2.add(pv.Layout.Pack)
+    .nodes(pv.dom(pnode).root("prenoms").nodes())
+    .size(function(d) {return d.nodeValue;})
+    //.order(null)
+    ;
+pack.node.strokeStyle(null);
+pack.node.add(pv.Dot)
+    .fillStyle(function(d) {if(d.index) {return cScale(pscore[d.nodeName]);} else {return "white";}})
+    .title(function(d) {if (d.index) {return d.nodeName;} else {return null;}})
+
+    .event("click", function(d) {if(this.index) {
+    	console.log(d.nodeName);
+    	select(d.nodeName);
+    } else {sp=-1;prenom="";vis.render();}
+    smallP.render();})
+
+
+    //.title(function(d) {if (d.index) {return d.nodeName+" "+pscore[d.nodeName];} else {return null;}})
+    .strokeStyle(function(d) {return re?((d.nodeName).match(re) ? "#000" : null):null;})
+    ;
+
+function update(query) {
+	if (query != re) {
+	    re = new RegExp(query, "i");
+	    vis2.render();
+	}
+}
+
+var nameList, nameSlice, nameLength;
+function select(prenom) {
+	console.log(prenom);
+	sp=1;
+	prenomParti=prenoms.filter(function(p) {return p.prenom==prenom;})[0];
+	nameList=candidats.filter(function(c) {return c.prenom==prenom;});
+	nameSlice=0;
+	nameLength=nameList.length;
+	vis.render();
+}
+
+var partiScale=pv.Scale.linear()
+	.domain(0,80)
+	.range(0,100);
+
+var smallP=vis.add(pv.Panel)
+	.left(440).height(600)
+	.visible(function() {return sp!=-1;});
+var box=smallP.add(pv.Panel)
+	.height(function() {return 30+12*pv.keys(prenomParti.partis).length;}).width(160)
+	.fillStyle("#ddd");
+box.add(pv.Label).top(1).left(5).textBaseline("top").text(function() {return prenomParti.prenom+" ("+prenomParti.frequence+")";})
+
+var partyBars=box.add(pv.Panel).top(15).left(1).height(function() {return this.parent.height()-16;}).width(158).fillStyle("white")
+		.add(pv.Bar)
+			.data(function() {return pv.keys(prenomParti.partis)
+				.sort(function(a,b) {return (partisDetails[a].order>partisDetails[b].order)-(partisDetails[a].order<partisDetails[b].order);})
+			;})
+			.top(function() {return 10+this.index*12;})
+			.left(40)
+			.height(10)
+			.width(function(d) {return partiScale(prenomParti.partis[d]);})
+			.fillStyle(function(d) {return partisDetails[d].color;})
+			.title(function(d) {return partisDetails[d].nom;});
+
+partyBars.anchor("left").add(pv.Label)
+				.textAlign("right")
+partyBars.anchor("right").add(pv.Label)
+				.textAlign("left")
+				.text(function(d) {return prenomParti.partis[d];})
+				.textStyle("#ccc")
+
+var box2=smallP.add(pv.Panel).top(270).height(330).fillStyle("#ddd");
+var nameListing=box2.add(pv.Panel)
+	.top(1)
+	.height(328)
+	.left(1)
+	.width(158)
+	.fillStyle("#fff")
+	.add(pv.Panel)
+		.data(function() {return nameList.slice(nameSlice,nameSlice+24);})
+		.top(function() {return 5+this.index*12;})
+		.left(10).height(10)
+		.fillStyle("rgba(255,255,255,.01)")
+		.title(function(d) {return d.name+" ("+((d.depId[0]==0)?"":d.depId[0])+d.depId.slice(1,3)+")";})
+		.add(pv.Panel)
+			.top(3).left(-8).width(7).height(7).fillStyle(function(d) partisDetails[d.party].color)
+			.title(function(d) partisDetails[d.party].nom)
+			.parent
+		.add(pv.Label)
+			.textBaseline("top").textAlign("left")
+			.text(function(d) {return d.name+" ("+((d.depId[0]==0)?"":d.depId[0])+d.depId.slice(1,3)+")";})
+	;
+
+box2.add(pv.Panel).left(158).top(5).height(320).width(1).fillStyle("#fff");
+box2.add(pv.Panel).left(159).top(5).height(320).width(1).fillStyle("#ddd");
+
+var moreBox = smallP.add(pv.Panel)
+	.fillStyle("#eee")
+	.height(20)
+	.left(90)
+	.width(60)
+	.top(570)
+	.visible(function() {return nameSlice+24<=nameLength;})
+	.event("click", function() {nameSlice+=24;box2.render();moreBox.render();lessBox.render();});
+moreBox.anchor("center").add(pv.Label).text("suivants")
+	;
+
+var lessBox = smallP.add(pv.Panel)
+	.fillStyle("#eee")
+	.height(20)
+	.left(10)
+	.width(60)
+	.top(570)
+	.visible(function() {return nameSlice>=24;})
+	.event("click", function() {nameSlice-=24;box2.render();moreBox.render();lessBox.render();});
+lessBox.anchor("center").add(pv.Label).text("précédents")
+	;
+
+
+    vis.render();
+
+</script>
+<div class="protovis" style="float:left;"></div>
+<div>
+	<label for="search">Trouver un prénom : </label>
+	<input type="text" id="search" onkeyup="update(this.value)">
+</div>
+<p/><hr/>
+]]></content:encoded>
+			<wfw:commentRss>/2011/04/01/votre-prenom-est-il-de-droite/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>datavizchallenge.org: my entry</title>
+		<link>/2011/03/27/datavizchallenge-org-my-entry/</link>
+		<comments>/2011/03/27/datavizchallenge-org-my-entry/#comments</comments>
+		<pubDate>Sun, 27 Mar 2011 14:03:12 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[protovis]]></category>
+		<category><![CDATA[budget]]></category>
+		<category><![CDATA[challenge]]></category>
+		<category><![CDATA[datavizchallenge]]></category>
+		<category><![CDATA[game-y infographics]]></category>
+		<category><![CDATA[treemap]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=799</guid>
+		<description><![CDATA[I just posted my www.datavizchallenge.org entry! So here&#8217;s a little explanation about what I&#8217;ve done, how and why. The idea behind the data provider web site, WhatWePayFor, is that billions and millions don&#8217;t talk to the average citizen. This doesn&#8217;t help them understand where their money goes. And in my work, I generally try to <a class="read-more" href="/2011/03/27/datavizchallenge-org-my-entry/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>I just posted my <a href="http://www.datavizchallenge.org/">www.datavizchallenge.org</a> <a href="http://www.jeromecukier.net/stuff/datavizchallenge/index.html">entry</a>!<br />
+<a href="http://www.jeromecukier.net/stuff/datavizchallenge/index.html"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/03/myEntry3.png" alt="" title="My  datavizchallenge.org entry" width="323" height="330" class="aligncenter size-full wp-image-801" /></a></p>
+<p>So here&#8217;s a little explanation about what I&#8217;ve done, how and why. </p>
+<p>The idea behind the data provider web site, <a href="http://www.whatwepayfor.com/">WhatWePayFor</a>, is that billions and millions don&#8217;t talk to the average citizen. This doesn&#8217;t help them understand where their money goes.</p>
+<p>And in my work, I generally try to show as little data as possible to make a point. And I like to use interactivity to involve users. </p>
+<p>I got my idea from thinking back to the presentation made by <a href="http://thevcl.com/storytelling/docs/nicholas_diakopoulos.pdf">Nick Diakopoulos</a> at last <a href="http://thevcl.com/storytelling/">Visweek</a>. We had that workshop on data storytelling and Nick showed how to get user attention on a subject by letting them play and guess first. So here goes.</p>
+<p>First, I wanted to let users play with data, in this case try to establish their priorities for federal budget spending. Where <em>should</em> money go?</p>
+<p>I&#8217;ve manipulated this kind of figures a few times, so I know that USA has extreme positions on some &#8220;functions of spending&#8221;, like defense, or culture. Some rich countries that spend up to 7% of their budget on culture, and some who spend less than 0.1% of their budget on defense. Hint, the USA is not one of them.</p>
+<p>So I&#8217;m hoping that the users will see differences between their preferences and the choices that the government makes in their names, and that from the differences will be striking enough for them to understand the orders of magnitude and possibly inspire them to take action.</p>
+]]></content:encoded>
+			<wfw:commentRss>/2011/03/27/datavizchallenge-org-my-entry/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Building the France Dorling cartogram</title>
+		<link>/2011/03/27/building-the-france-dorling-cartogram/</link>
+		<comments>/2011/03/27/building-the-france-dorling-cartogram/#respond</comments>
+		<pubDate>Sun, 27 Mar 2011 12:28:33 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[protovis]]></category>
+		<category><![CDATA[cartogram]]></category>
+		<category><![CDATA[dorling]]></category>
+		<category><![CDATA[france]]></category>
+		<category><![CDATA[map]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=796</guid>
+		<description><![CDATA[This is a follow-up to the previous post where I used a Dorling cartogram to show election results in France. So how did I come up with that? Step 1: the data Without data, there wouldn&#8217;t be much to plot, right? So the first order of business was to fetch the data, which is theoretically <a class="read-more" href="/2011/03/27/building-the-france-dorling-cartogram/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>This is a follow-up to <a href="http://www.jeromecukier.net/?p=764">the previous post</a> where I used a Dorling cartogram to show election results in France. So how did I come up with that?</p>
+<h2>Step 1: the data</h2>
+<p>Without data, there wouldn&#8217;t be much to plot, right? So the first order of business was to fetch the data, which is theoretically available from an <a href="http://elections.interieur.gouv.fr/CN2011/">official source.</a> Unfortunately, there is no way to download those results at once, instead they are presented in a myriad of formatted HTML pages &#8211; over 2000 in all. </br><br />
+I used <a href="http://www.google.com/search?q=wget">wget</a> to download them all. wget allows for recursive download, that is, you can download a page, and all the links from that page, etc. You can also specify the depth of the recursive download, which is a good idea in that case because there are lots of duplicates of that information on the server, so trying to get everything will take a couple of hours vs about 10 minutes.</p>
+<p>Once that&#8217;s done, I used python and <a href="http://www.crummy.com/software/BeautifulSoup/">Beautiful Soup</a> to turn the HTML pages into nice JSON objects. Fortunately the pages followed the same strict template, so I could run a relatively simple extraction script, like: look at the second HTML table of the page, get the number of registered voters who didn&#8217;t vote from the 2nd cell of the 2nd row, etc.<br />
+Once that was done I came up with 2 files: <a href="http://www.jeromecukier.net/wp-content/uploads/2011/03/votes.js">one which listed the aggregate votes per county</a> and per party, and another one which listed all the candidates, their affiliation and their votes. I ended up using only the 1st one, actually at an even more aggregated level, but I may use the second one for further work.</p>
+<h2>Next up: setting the geography</h2>
+<p>A dorling cartogram is really a kind of <a href="http://en.wikipedia.org/wiki/Force-based_algorithms_(graph_drawing)">force-directed layout graph</a> where the nodes represent geographical entities, which are initially positioned at a place corresponding to their geography, but which are then resized by a variable, and whose movement is subject to several forces: each node is linked to its original geographical neighbors, which attract each other, but also cannot intersect with other nodes, so it pushes back its neighbors.</p>
+<p>So for this to work I had to:
+<ul>
+<li>find the initial position of my geographical entities (French <em>départements</em>) and</li>
+<li>list their neighbors.</li>
+</ul>
+<p>To get the initial position I fetched the list of all French towns and their lon-lat coordinates which I averaged for each département. That gave me a workable proxy of the centroid of that departement. Note that I didn&#8217;t need anything very accurate at this stage, since nodes are going to be pushing each other anyway.<br />
+I listed the neighbors manually, since the number of départements is workable. Else, one possible way to do that from a shape file is look at every point of every shape and list all the entities that use it. If two entities use it they are neighbors. Again at this stage it&#8217;s not mandatory to be exhaustive. If an entity is surrounded by 8 others and we only use 4 the results will look sensibly the same.<br />
+Anyone who wants to create dorling cartograms for France can <a href="http://www.jeromecukier.net/wp-content/uploads/2011/03/francedorling.js">reuse the file</a>. </p>
+<h2>Putting it all together</h2>
+<p>The rest is standard protovis fare. There is an example which uses <a href="http://vis.stanford.edu/protovis/ex/cartogram.html">Dorling cartograms</a> which I used as a basis. I prepared my data files so that I could aggregate the stuff I needed at the level of the département (which is about 20 counties). I never really considered showing anything at the county level because except for looking up specific results it is never too relevant. For instance, in most places there are some agreement between parties which don&#8217;t all present candidates in order to favor their allies. </p>
+<p>An interesting parameter when building the visualization is choosing the constant by which to multiply the size of the nodes. If it is too high, the cartogram will look like a featureless cluster of circles. If it is too low, it will ressemble the map a lot, and circles won&#8217;t touch each other.</p>
+]]></content:encoded>
+			<wfw:commentRss>/2011/03/27/building-the-france-dorling-cartogram/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>La carte des cantonales</title>
+		<link>/2011/03/26/la-carte-des-cantonales/</link>
+		<comments>/2011/03/26/la-carte-des-cantonales/#comments</comments>
+		<pubDate>Sat, 26 Mar 2011 19:05:36 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[protovis]]></category>
+		<category><![CDATA[cantonales]]></category>
+		<category><![CDATA[cartogramme]]></category>
+		<category><![CDATA[dorling]]></category>
+		<category><![CDATA[élections]]></category>
+		<category><![CDATA[français]]></category>
+		<category><![CDATA[france]]></category>
+		<category><![CDATA[politiques]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=764</guid>
+		<description><![CDATA[[I write this here post in French because it's more relevant for a French audience, a more technical post with an explanation of how it's done follows in English]. J'ai écrit que j'avais été déçu par les infographies des principaux médias au lendemain des cantonales. Si on prend la carte du Monde par exemple, on <a class="read-more" href="/2011/03/26/la-carte-des-cantonales/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[[I write this here post in French because it's more relevant for a French audience, a <a href="http://www.jeromecukier.net/?p=796">more technical post</a> with an explanation of how it's done follows in English].</p>
+
+J'ai écrit que j'avais été déçu par les infographies des principaux médias au lendemain des cantonales.</p>
+
+Si on prend la carte du Monde par exemple, on y voit la France nettemement découpée en départements, soit bien roses, soit bien bleus, ou à la rigueur gris si l'issue est incertaine. Mais ce n'est pas l'enjeu de ces élections. Ce sont les dernières élections avant la présidentielle, et on est donc attentif aux enseignements nationaux du scrutin au-delà de la composition des conseils généraux. Ce qu'on commente, c'est plus la percée de l'extrême droite ou le poids de l'abstention. C'est la capacité de la droite ou de la gauche à s'imposer. </p>
+Dans cette optique, chaque département n'a pas le même poids. Le Nord par exemple, avec presque 900,000 électeurs, compte plus que la Lozère qui en compte juste un peu plus de 20,000. Donc, tracer une carte géographiquement exacte n'est pas très honnête, puisque cela cache ces différences qui peuvent être énormes.</p>
+Comme je n'ai pas l'habitude de porter des critiques <a href="http://www.jeromecukier.net/?p=661">sans proposer autre chose</a>, j'ai fabriqué des cartogrammes de Dorling pour rendre compte de ce qui s'est vraiment passé dimanche dernier.</p>
+
+Les cartogrammes, ce sont presque des cartes, sauf que le côté géographique n'est pas pris au sens strict. Leur forme dépend plus des données qu'elles représentent. Et dans la version de Dorling, on remplace les morceaux de la carte (ici, les départements) par des cercles, plus ou moins gros. Là, la taille des cercles dépend du nombre d'électeurs inscrits aux cantonales. Du coup, leur position sur la carte n'est pas exactement la même que celle des départements sur la carte de France mais elle est assez proche pour qu'on puisse les retrouver.</p>
+
+Je propose 3 scénarios: une comparaison gauche-droite, l'importance de l'extrême-droite et celle de l'abstention.
+</p><hr/></p>
+<script type="text/javascript" src="http://blog.oecdfactblog.org/wp-includes/js/protovis-r3.2.js"></script>
+<form>
+<input type="radio" checked name="group1" value="0" onclick="sc=0;reinit() ;vis.render();">Gauche-droite
+<input type="radio" name="group1" value="1" onclick="sc=1;reinit() ;vis.render();">Extrême-droite
+<input type="radio" name="group1" value="2" onclick="sc=2;reinit() ;vis.render();">Abstention</form>
+<script type="text/javascript" src="http://www.jeromecukier.net/wp-content/uploads/2011/03/votes.js"></script>
+<script type="text/javascript" src="http://www.jeromecukier.net/wp-content/uploads/2011/03/francedorling.js"></script>
+<script type="text/javascript" src="http://www.jeromecukier.net/wp-content/uploads/2011/03/cantonales.js"></script>
+]]></content:encoded>
+			<wfw:commentRss>/2011/03/26/la-carte-des-cantonales/feed/</wfw:commentRss>
+		<slash:comments>5</slash:comments>
+		</item>
+		<item>
+		<title>More fun with arrays in protovis</title>
+		<link>/2011/03/15/more-fun-with-arrays-in-protovis/</link>
+		<comments>/2011/03/15/more-fun-with-arrays-in-protovis/#comments</comments>
+		<pubDate>Tue, 15 Mar 2011 16:21:21 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[protovis]]></category>
+		<category><![CDATA[array]]></category>
+		<category><![CDATA[data]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=699</guid>
+		<description><![CDATA[In my short tutorial on working with data and protovis I briefly covered some standard javascript and protovis methods to work with arrays. The more I work with Protovis, the more I am convinced that efficient array manipulation is key to achieving just about anything with the library. So, I would like to go into <a class="read-more" href="/2011/03/15/more-fun-with-arrays-in-protovis/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[In my short tutorial on <a href="http://www.jeromecukier.net/?p=426">working with data and protovis</a> I briefly covered some standard javascript and protovis methods to <a href="http://www.jeromecukier.net/?p=494">work with arrays</a>.
+
+The more I work with Protovis, the more I am convinced that efficient array manipulation is key to achieving just about anything with the library. So, I would like to go into more detail in some javascript methods for building, processing and testing arrays that can really be helpful.
+<h3>Going through arrays: map and forEach</h3>
+I said rapidly that the map method was very useful in protovis especially used in combination with pv.range.
+But that's not very fair to map() to be treated this lightly.
+Protovis <a href="http://vis.stanford.edu/protovis/ex/">canon examples</a> do not use many traditional loops such as <em>for </em> or <em>while</em> statements.
+One reason for that is that many constructs in protovis are <em>de facto</em> loops: when we pass an array to protovis as a data file, to create a bar chart for instance (or panels, pie wedges, you name it), it will go through each element of the array to create individul bars (panels, wedges...), to position them, style them, and so on and so forth. This is why it is so important to have your <strong>data elements in the best possible shape</strong> when you first pass them to protovis. It makes the rest of your code much nicer.
+
+Remember our early example:
+<table>
+<tbody>
+<tr>
+<td><pre class="brush: jscript; title: ; notranslate">var categories = [&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;d&quot;,&quot;e&quot;,&quot;f&quot;];
+var vis = new pv.Panel()
+  .width(150)
+  .height(150);
+
+vis.add(pv.Bar)
+  .data([1, 1.2, 1.7, 1.5, .7, .3])
+  .width(20)
+  .height(function(d) d * 80)
+  .bottom(0)
+  .left(function() this.index * 25)
+  .anchor(&quot;bottom&quot;).add(pv.Label)
+    .text(function() categories[this.index]);
+
+vis.render();
+</pre></td>
+<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/categories.png"><img class="aligncenter size-full wp-image-483" title="categories" src="http://www.jeromecukier.net/wp-content/uploads/2011/02/categories.png" alt="" width="144" height="135" /></a></td>
+</tr>
+</tbody>
+</table>
+This is not ideal to have values and categories in two separate places, because one could be changed without updating the other.
+So let's try to use map to create one single variable.
+
+<pre class="brush: jscript; title: ; notranslate">var categories = [&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;d&quot;,&quot;e&quot;,&quot;f&quot;];
+var data=[1, 1.2, 1.7, 1.5, .7, .3].map(function(d,i) {return {value:d, key: categories[i]};});</pre>
+
+Let's look at our map() method here.
+First, it's right after an array. It will run against this array, so it will perform an operation on each element of this array, and the result will be another array of the same size with the outcome of each operation in the same order.
+The next thing here is a function with two arguments: d and i. Again the naming is arbitrary, call them what you want. And they are both optional. But it has to be a function. pv.range(3).map(3) will not return [3,3,3], you need to write pv.range(3).map(function() 3).
+
+The first argument refers to the current item of the array map is working on. So 1, then 1.2, etc. If the array is more complex, and is an array of arrays or similar, the current element can be itself an array, an object or anything. It doesn't have to be a number.
+Here, we want to create an array of associative arrays where the value handle corresponds to the values of the array, and where key corresponds to the category name.
+So we start our output by "{value: d,". This puts the value of each array element in sequence where we need it to be.
+
+The second argument corresponds to the index of the current item in the array, so - 0, 1, 2 etc. This is not unlike using "this.index" in other parts of protovis. This helps us getting the right category name, the one in the same position as the value we are fetching. So we write "key: categories[i]}".
+The rest of the code can then be changed to :
+
+<pre class="brush: jscript; first-line: 6; title: ; notranslate">vis.add(pv.Bar)
+  .data(data)
+  .width(20)
+  .height(function(d) d.value * 80)
+  .bottom(0)
+  .left(function() this.index * 25)
+  .anchor(&quot;bottom&quot;).add(pv.Label)
+    .text(function() d.key);
+vis.render();</pre>
+
+Now how about forEach()?
+forEach works in a very similar way to map(), the difference is that it doesn't output an array. It's just a function that runs on each element of the array. It can be used to perform an operation a number of times corresponding to the length of that array, for instance.
+<h3>Testing arrays</h3>
+There are some times when you need to know whether some or all the elements of your array fulfill a condition. And some other times, you need to be able to extract a subset of your array also on a conditional basis. Now, that would be possible using forEach or map methods as above, but fortunately javascript provides simpler means to achieve that.
+<h4>Testing a condition on an array at once</h4>
+There are two methods that do that: every() and some(). every() will return true is the condition is true for, well, every element of the array. some() will return true if the condition is true for at least one element of the array. So, they can also be used to tell if the condition is false for at least one element of the array, or all elements of the array respectively.
+
+This is how they work:
+
+<pre class="brush: jscript; title: ; notranslate">[0,1,2].every(function(d) {return d;})
+// will return false: 0 is false, 1 is true and 2 is true.
+[0,1,2].every(function(d) {return (d&lt;3);})
+// will return true. All elements are less than 3.
+
+[0,1,2].some(function(d) {return d;})
+// will return true. 1 is true, so at least one element in the array is true.
+</pre>
+
+<h4>Creating conditional subsets of an array</h4>
+It is also possible to get only the elements that fit a condition using the filter() method.
+
+<pre class="brush: jscript; title: ; notranslate">
+[0,1,2].filter(function(d) {return d;})
+// this will return [1,2]. 0 is evaluated as &quot;false&quot;.
+</pre>
+
+<pre class="brush: jscript; title: ; notranslate">
+[1,2,3,4,5].filter(function(d) {return (d&gt;2);})
+// this will return [3,4,5].
+</pre>
+
+Of course, the more complex the array, the more interesting these functions get. 
+With the barley array from <a href="http://www.jeromecukier.net/?p=502">part 4</a>:
+
+<pre class="brush: jscript; title: ; notranslate"> barley.filter(function(d) {return d.variety==&quot;Manchuria&quot;;}
+/* this will return: 
+  [{&quot;yield&quot;:27,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;University Farm&quot;},
+   {&quot;yield&quot;:48.86667,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Waseca&quot;},
+   {&quot;yield&quot;:27.43334,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Morris&quot;},
+   {&quot;yield&quot;:39.93333,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Crookston&quot;},
+   {&quot;yield&quot;:32.96667,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Grand Rapids&quot;},
+   {&quot;yield&quot;:28.96667,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Duluth&quot;},
+   {&quot;yield&quot;:26.9,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;University Farm&quot;},
+   {&quot;yield&quot;:33.46667,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Waseca&quot;},
+   {&quot;yield&quot;:34.36666,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Morris&quot;},
+   {&quot;yield&quot;:32.96667,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Crookston&quot;},
+   {&quot;yield&quot;:22.13333,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Grand Rapids&quot;},
+   {&quot;yield&quot;:22.56667,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Duluth&quot;}]*/</pre>
+<h3>Visualizing arrays</h3>
+(without plotting them, of course)
+When you are manipulating arrays, turning them into maps, performing roll-ups and sorts, you may want to get a glimpse of the array. But, unless it's a single, one-dimensional array, firebug or chrome debugger will represent it as a cryptic [ > Object, > Object, > Object ]. 
+
+Not being able to follow step by step what's happening to an array makes understanding the data functions much more difficult. 
+Fortunately, you can use the JSON.stringify() method.
+
+<pre class="brush: jscript; title: ; notranslate">JSON.stringify(barley)
+/*returns: 
+&quot;[
+{&quot;yield&quot;:27,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:48.86667,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:27.43334,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:39.93333,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:32.96667,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:28.96667,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:43.06666,&quot;variety&quot;:&quot;Glabron&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:55.2,&quot;variety&quot;:&quot;Glabron&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:28.76667,&quot;variety&quot;:&quot;Glabron&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:38.13333,&quot;variety&quot;:&quot;Glabron&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:29.13333,&quot;variety&quot;:&quot;Glabron&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:29.66667,&quot;variety&quot;:&quot;Glabron&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:35.13333,&quot;variety&quot;:&quot;Svansota&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:47.33333,&quot;variety&quot;:&quot;Svansota&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:25.76667,&quot;variety&quot;:&quot;Svansota&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:40.46667,&quot;variety&quot;:&quot;Svansota&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:29.66667,&quot;variety&quot;:&quot;Svansota&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:25.7,&quot;variety&quot;:&quot;Svansota&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:39.9,&quot;variety&quot;:&quot;Velvet&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:50.23333,&quot;variety&quot;:&quot;Velvet&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:26.13333,&quot;variety&quot;:&quot;Velvet&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:41.33333,&quot;variety&quot;:&quot;Velvet&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:23.03333,&quot;variety&quot;:&quot;Velvet&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:26.3,&quot;variety&quot;:&quot;Velvet&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:36.56666,&quot;variety&quot;:&quot;Trebi&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:63.8333,&quot;variety&quot;:&quot;Trebi&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:43.76667,&quot;variety&quot;:&quot;Trebi&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:46.93333,&quot;variety&quot;:&quot;Trebi&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:29.76667,&quot;variety&quot;:&quot;Trebi&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:33.93333,&quot;variety&quot;:&quot;Trebi&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:43.26667,&quot;variety&quot;:&quot;No. 457&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:58.1,&quot;variety&quot;:&quot;No. 457&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:28.7,&quot;variety&quot;:&quot;No. 457&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:45.66667,&quot;variety&quot;:&quot;No. 457&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:32.16667,&quot;variety&quot;:&quot;No. 457&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:33.6,&quot;variety&quot;:&quot;No. 457&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:36.6,&quot;variety&quot;:&quot;No. 462&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:65.7667,&quot;variety&quot;:&quot;No. 462&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:30.36667,&quot;variety&quot;:&quot;No. 462&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:48.56666,&quot;variety&quot;:&quot;No. 462&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:24.93334,&quot;variety&quot;:&quot;No. 462&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:28.1,&quot;variety&quot;:&quot;No. 462&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:32.76667,&quot;variety&quot;:&quot;Peatland&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:48.56666,&quot;variety&quot;:&quot;Peatland&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:29.86667,&quot;variety&quot;:&quot;Peatland&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:41.6,&quot;variety&quot;:&quot;Peatland&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:34.7,&quot;variety&quot;:&quot;Peatland&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:32,&quot;variety&quot;:&quot;Peatland&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:24.66667,&quot;variety&quot;:&quot;No. 475&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:46.76667,&quot;variety&quot;:&quot;No. 475&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:22.6,&quot;variety&quot;:&quot;No. 475&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:44.1,&quot;variety&quot;:&quot;No. 475&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:19.7,&quot;variety&quot;:&quot;No. 475&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:33.06666,&quot;variety&quot;:&quot;No. 475&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:39.3,&quot;variety&quot;:&quot;Wisconsin No. 38&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:58.8,&quot;variety&quot;:&quot;Wisconsin No. 38&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:29.46667,&quot;variety&quot;:&quot;Wisconsin No. 38&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:49.86667,&quot;variety&quot;:&quot;Wisconsin No. 38&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:34.46667,&quot;variety&quot;:&quot;Wisconsin No. 38&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:31.6,&quot;variety&quot;:&quot;Wisconsin No. 38&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:26.9,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:33.46667,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:34.36666,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:32.96667,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:22.13333,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:22.56667,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:36.8,&quot;variety&quot;:&quot;Glabron&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:37.73333,&quot;variety&quot;:&quot;Glabron&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:35.13333,&quot;variety&quot;:&quot;Glabron&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:26.16667,&quot;variety&quot;:&quot;Glabron&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:14.43333,&quot;variety&quot;:&quot;Glabron&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:25.86667,&quot;variety&quot;:&quot;Glabron&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:27.43334,&quot;variety&quot;:&quot;Svansota&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:38.5,&quot;variety&quot;:&quot;Svansota&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:35.03333,&quot;variety&quot;:&quot;Svansota&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:20.63333,&quot;variety&quot;:&quot;Svansota&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:16.63333,&quot;variety&quot;:&quot;Svansota&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:22.23333,&quot;variety&quot;:&quot;Svansota&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:26.8,&quot;variety&quot;:&quot;Velvet&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:37.4,&quot;variety&quot;:&quot;Velvet&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:38.83333,&quot;variety&quot;:&quot;Velvet&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:32.06666,&quot;variety&quot;:&quot;Velvet&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:32.23333,&quot;variety&quot;:&quot;Velvet&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:22.46667,&quot;variety&quot;:&quot;Velvet&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:29.06667,&quot;variety&quot;:&quot;Trebi&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:49.2333,&quot;variety&quot;:&quot;Trebi&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:46.63333,&quot;variety&quot;:&quot;Trebi&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:41.83333,&quot;variety&quot;:&quot;Trebi&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:20.63333,&quot;variety&quot;:&quot;Trebi&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:30.6,&quot;variety&quot;:&quot;Trebi&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:26.43334,&quot;variety&quot;:&quot;No. 457&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:42.2,&quot;variety&quot;:&quot;No. 457&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:43.53334,&quot;variety&quot;:&quot;No. 457&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:34.33333,&quot;variety&quot;:&quot;No. 457&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:19.46667,&quot;variety&quot;:&quot;No. 457&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:22.7,&quot;variety&quot;:&quot;No. 457&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:25.56667,&quot;variety&quot;:&quot;No. 462&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:44.7,&quot;variety&quot;:&quot;No. 462&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:47,&quot;variety&quot;:&quot;No. 462&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:30.53333,&quot;variety&quot;:&quot;No. 462&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:19.9,&quot;variety&quot;:&quot;No. 462&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:22.5,&quot;variety&quot;:&quot;No. 462&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:28.06667,&quot;variety&quot;:&quot;Peatland&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:36.03333,&quot;variety&quot;:&quot;Peatland&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:43.2,&quot;variety&quot;:&quot;Peatland&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:25.23333,&quot;variety&quot;:&quot;Peatland&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:26.76667,&quot;variety&quot;:&quot;Peatland&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:31.36667,&quot;variety&quot;:&quot;Peatland&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:30,&quot;variety&quot;:&quot;No. 475&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:41.26667,&quot;variety&quot;:&quot;No. 475&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:44.23333,&quot;variety&quot;:&quot;No. 475&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:32.13333,&quot;variety&quot;:&quot;No. 475&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:15.23333,&quot;variety&quot;:&quot;No. 475&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:27.36667,&quot;variety&quot;:&quot;No. 475&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:38,&quot;variety&quot;:&quot;Wisconsin No. 38&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:58.16667,&quot;variety&quot;:&quot;Wisconsin No. 38&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:47.16667,&quot;variety&quot;:&quot;Wisconsin No. 38&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:35.9,&quot;variety&quot;:&quot;Wisconsin No. 38&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:20.66667,&quot;variety&quot;:&quot;Wisconsin No. 38&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:29.33333,&quot;variety&quot;:&quot;Wisconsin No. 38&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Duluth&quot;}
+]&quot;*/</pre>
+
+No matter the manipulations you inflict to an array you will always be able to make it reveal its innards by using this.
+
+]]></content:encoded>
+			<wfw:commentRss>/2011/03/15/more-fun-with-arrays-in-protovis/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+	</channel>
+</rss>

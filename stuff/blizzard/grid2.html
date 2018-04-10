@@ -1,0 +1,265 @@
+<html>
+<head>
+<script type="text/javascript" src="protovisr3.2.js"></script>
+<script type="text/javascript" src="data.js"></script>
+<style>
+.protovis {width:620; height:620; background: #fff;}
+body {background: #1A0F09;}
+</style></head>
+
+<body><div class="protovis">
+<script type="text/javascript+protovis">
+
+
+
+function sum(data) pv.sum(data, function(d) d.chars);
+var w=380,h=380;
+
+var matrix=pv.nest(data)
+	.key(function(d) {return d.Race;})
+	.key(function(d) {return d.Class;})
+	.rollup(sum);
+
+var comboLevel=pv.nest(data)
+	.key(function(d) {return d.Race;})
+	.key(function(d) {return d.Class;})
+	.key(function(d) {return d.level;})
+	.rollup(sum);
+
+var details=pv.nest(data)
+	.key(function(d) {return d.Race;})
+	.key(function(d) {return d.Class;})
+	.key(function(d) {return d.Specialization;})
+	.key(function(d) {return d.level;})
+	.rollup(sum);
+
+var byRace=pv.nest(data)
+	.key(function(d) {return d.Race;})
+	.rollup(sum);
+
+byRace=pv.flatten(byRace).key("Race").key("chars").array().sort(function(a,b) (a.Race.toLowerCase()<b.Race.toLowerCase())?-1:1);
+
+function titler(chars) {return (chars + " characters ("+(100*chars/total).toFixed(1)+"%)");}
+
+var byClass=pv.nest(data)
+	.key(function(d) {return d.Class;})
+	.rollup(sum);
+byClass=pv.flatten(byClass).key("Class").key("chars").array().sort(function(a,b) (a.Class.toLowerCase()<b.Class.toLowerCase())?-1:1);
+
+
+var byLevel=pv.nest(data)
+	.key(function(d) {return d.level;})
+	.rollup(sum);
+
+var total=pv.sum(byClass, function(d) {return d.chars;})
+var selClass="Warrior";selRace="Human";
+var r=pv.range(10).map(function() Math.random());
+var Panel=new pv.Panel().width(620).height(772).fillStyle("#1A0F09");
+
+Panel.add(pv.Label)
+	.top(0)
+	.left(310)
+	.textAlign("center")
+	.text("World of Warcraft Race-Class Matrix")
+	.font("32px Palatino Linotype")
+	.textStyle("#fff")
+	.textBaseline("top")
+
+var vis = Panel.add(pv.Panel)
+    .width(w)
+    .height(h)
+    .fillStyle("#120B05")
+    .strokeStyle("#2E2218").lineWidth(1)
+    .top(82).left(50)
+;
+
+row = vis.add(pv.Panel)
+	.data(byClass)
+	.height(h/byClass.length)
+	.top(function(d) this.index*h/byClass.length)
+	.width(w)
+;
+
+//row.anchor("left").add(pv.Label).text(function(d) d.Class).textAlign("right");
+row.anchor("left").add(pv.Image)
+	.url(function(d) classPics[d.Class].pic)
+	.title(function(d) classPics[d.Class].title)
+	.width(36)
+	.height(36)
+	.top(1)
+	.left(-41);
+//row.anchor("bottom").add(pv.Rule).strokeStyle("lightgrey").left(0).bottom(0).width(w);
+row.anchor("right")
+	.add(pv.Panel)
+		.left(w+5)
+		.top(1).height(36)
+		.width(function(d) 500*d.chars/total)
+		.fillStyle(function(d) d.chars==pv.max(byClass, function(d) d.chars)?"#EFC9A0":"#B79855")
+		.event("mouseover", function() {selClass=d.Class;Panel.render();})
+		.title(function(d) titler(d.chars))
+		.anchor("right")
+			.add(pv.Label)
+			.text(function(d) (100*d.chars/total).toFixed(0)+"%")
+			.textAlign("left").textStyle("#EFC9A0").font("10px Arial");
+
+col = vis.add(pv.Panel)
+	.data(byRace)
+	.width(w/byRace.length)
+	.left(function(d) this.index*w/byRace.length)
+	.height(h)
+;
+
+//col.anchor("top").add(pv.Label).text(function(d) d.Race).textAngle(Math.PI/2).textAlign("right").textBaseline("bottom");
+col.anchor("top").add(pv.Image)
+	.url(function(d) racePics[d.Race][r[this.parent.index]>.5?"picf":"picm"])
+	.title(function(d) racePics[d.Race].title)
+	.width(36)
+	.height(36)
+	.left(1)
+	.top(-41);
+//col.anchor("right").add(pv.Rule).strokeStyle("lightgrey").top(0).height(h);
+col.anchor("bottom").add(pv.Panel).top(h+5).left(1).width(36).height(function(d) 500*d.chars/total).fillStyle(function(d) d.chars==pv.max(byRace, function(d) d.chars)?"#EFC9A0":"#B79855")
+	.event("mouseover", function() {selRace=d.Race;Panel.render();})
+	.title(function(d) titler(d.chars))
+	.anchor("bottom").add(pv.Label).text(function(d) (100*d.chars/total).toFixed(0)+"%").textAlign("center").textBaseline("top").textStyle("#EFC9A0").font("10px Arial");
+cell=row.add(pv.Panel)
+	.data(pv.range(10))
+	.bottom(1)
+	.left(function(d) d*w/byRace.length+1)
+	.height(w/byClass.length-2)
+	.width(h/byRace.length-2)
+	.fillStyle(function(d) {
+		var m=matrix[byRace[d].Race][byClass[this.parent.index].Class];
+		return m?pv.Scale.linear().domain(0.01, 0.0164, 0.02).range("red", "#eee", "green")(m/total):"#120B05";})
+
+	/*.anchor("center").add(pv.Dot).size(function(d) {var m=matrix[byRace[d].Race][byClass[this.parent.parent.index].Class]; return (m/total)*(m/total)*750000;})
+	.strokeStyle(function() this.fillStyle()?this.fillStyle().darker():null)
+	.fillStyle(function(d) {
+		var m=matrix[byRace[d].Race][byClass[this.parent.parent.index].Class];
+		return m?pv.Scale.linear().domain(0, 0.02).range("#000", "#fff")(m/total):"#120B05";
+		})*/
+
+
+	//.fillStyle("grey")
+	//.width(function(d) 50*(matrix[byRace[d].Race][byClass[this.parent.index].Class]/byRace[d].chars))
+	//.height(function(d) 50*(matrix[byRace[d].Race][byClass[this.parent.index].Class]/byClass[this.parent.index].chars))
+	//.title(function(d) titler(matrix[byRace[d].Race][byClass[this.parent.index].Class]))
+	.event("mouseover", function(d) {if(matrix[byRace[d].Race][byClass[this.parent.index].Class]){selClass=byClass[this.parent.index].Class; selRace=byRace[d].Race;Panel.render();fs=this.fillStyle()}})
+	.event("mouseout", function() {selClass="";selRace="";})
+	;
+
+var bp=Panel.add(pv.Panel)
+	.top(552)
+	.left(0)
+	.fillStyle("#211309")
+	.strokeStyle("#2E2218")
+	.height(220)
+	;
+bp.add(pv.Label).font("28px Palatino Linotype").textStyle("#fff").textBaseline("top").left(5).top(5).text(function() racePics[selRace].title+" "+classPics[selClass].title)
+
+
+// main stats on the panel
+
+bp.add(pv.Label)
+	.top(90)
+	.left(10)
+	.text(function() matrix[selRace][selClass] +" characters")
+	.font("16px Arial")
+	.textStyle("#B79855")
+;
+bp.add(pv.Label)
+	.top(120)
+	.left(10)
+	.text(function() (100*matrix[selRace][selClass]/total).toFixed(1)+"% of total")
+	.font("16px Arial")
+	.textStyle("#B79855")
+
+bp.add(pv.Rule)
+	.top(40)
+	.left(295)
+	.bottom(10)
+	.strokeStyle("#2E2218")
+
+bp.add(pv.Label)
+	.top(60)
+	.left(305)
+	.text("Breakdown by level")
+	.textAlign("left").font("12px arial")
+	.textStyle("#EFC9A0")
+;
+
+bp.add(pv.Label)
+	.data(levelRange)
+	.top(function() 80+this.index*10)
+	.left(305)
+	.textAlign("left").font("10px arial")
+	.textStyle("#EFC9A0")
+
+// this is the bar that shows the breakdown of chars by level
+bp.add(pv.Bar)
+	.data(function() pv.values(comboLevel[selRace][selClass]))
+	.left(340)
+	.width(function(d) d*3000/byLevel[this.index])
+	.title(function(d) (100*d/byLevel[this.index]).toFixed(1)+"% of characters of this level range")
+	.height(6)
+	.top(function() 70+this.index*10+1)
+	.fillStyle("#EFC9A0")
+
+// this is the leet line. The more it goes right, the more the combo is leet. If it goes left: noob.
+bp.add(pv.Line)
+	.data(function() [pv.values(comboLevel[selRace][selClass])[0],pv.values(comboLevel[selRace][selClass])[12]])
+	.left(function(d) 335+d*3000/byLevel[this.index*12])
+	.top(function(d) 70+12*this.index*10+1+3)
+	.strokeStyle(pv.color("#EFC9A0").darker())
+
+bp.add(pv.Rule)
+	.data(pv.range(3))
+	.left(function(d) 340+d*30)
+	.top(70)
+	.height(130)
+	.strokeStyle(pv.color("#211309").alpha(.3))
+
+
+// breakdown of chars by specialty, then by level
+bp.add(pv.Panel)
+	.data(function() pv.keys(details[selRace][selClass]).sort()) // specializations of this class
+	.left(function() 440+60*this.index)
+	.top(0)
+	.anchor("top").left(0).top(20)
+		//.add(pv.Label).textAlign("left").text(function(d,a) a).textStyle("#B79855").font("54px").parent
+		.add(pv.Image)
+			.url(function(d,spec) specPics[selClass][spec].pic)	// spec icon
+			.title(function(d,spec) specPics[selClass][spec].title)
+			.width(36).height(36)
+			.add(pv.Image)
+				.url("http://us.battle.net/wow/static/images/game/talent-frame.png")
+				.top(13).left(-8).width(54).height(54) // plus frame like on the web site.
+				.parent
+	.add(pv.Bar)
+		.data(function(d) pv.values(details[selRace][selClass][d]))
+		.width(function(d) d*3000/byLevel[this.index])
+		.title(function(d) (100*d/byLevel[this.index]).toFixed(1)+"% of characters of this level range")
+		.height(6)
+		.top(function() 70+this.index*10+1)
+		.fillStyle("#B79855")
+		.parent
+		.add(pv.Rule)
+			.data(pv.range(20))
+			.left(function(d) d*3)
+			.top(70)
+			.height(130)
+		.strokeStyle(pv.color("#211309").alpha(.3))
+
+
+Panel.render()
+;
+
+
+
+
+
+    </script>
+
+</div>
+  </body>
+</html>

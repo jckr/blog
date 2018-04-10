@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Testing Microsoft Office 2010</title>
+	<atom:link href="http://localhost/2009/10/06/testing-microsoft-office-2010/feed/" rel="self" type="application/rss+xml" />
+	<link>/2009/10/06/testing-microsoft-office-2010/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>By: Andreas</title>
+		<link>/2009/10/06/testing-microsoft-office-2010/#comment-43</link>
+		<dc:creator><![CDATA[Andreas]]></dc:creator>
+		<pubDate>Mon, 07 Dec 2009 20:33:28 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=228#comment-43</guid>
+		<description><![CDATA[For sparklines that work with older Excel version (Excel 2000, XP, 2003 and 2007) have a look on MicroCharts
+
+http://www.bonavistasystems.com/
+
+Andreas]]></description>
+		<content:encoded><![CDATA[<p>For sparklines that work with older Excel version (Excel 2000, XP, 2003 and 2007) have a look on MicroCharts</p>
+<p><a href="http://www.bonavistasystems.com/" rel="nofollow">http://www.bonavistasystems.com/</a></p>
+<p>Andreas</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Jon Peltier</title>
+		<link>/2009/10/06/testing-microsoft-office-2010/#comment-42</link>
+		<dc:creator><![CDATA[Jon Peltier]]></dc:creator>
+		<pubDate>Thu, 08 Oct 2009 04:03:34 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=228#comment-42</guid>
+		<description><![CDATA[&quot;Even more complex formatting options mean a greater chance to use them poorly&quot;
+
+Instead of making it hard or impossible to do bad things, they keep making it easier. Oh well....]]></description>
+		<content:encoded><![CDATA[<p>&#8220;Even more complex formatting options mean a greater chance to use them poorly&#8221;</p>
+<p>Instead of making it hard or impossible to do bad things, they keep making it easier. Oh well&#8230;.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Ashley Margolis</title>
+		<link>/2009/10/06/testing-microsoft-office-2010/#comment-41</link>
+		<dc:creator><![CDATA[Ashley Margolis]]></dc:creator>
+		<pubDate>Tue, 06 Oct 2009 17:19:20 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=228#comment-41</guid>
+		<description><![CDATA[looks promising, i just bought office 2007  under this corporate discount, just so ican get used to this new ribbon interface. .. am just hoping that this version is not too much of a hog, resource wise (ok , I am dreaming  ..)  on my aging pc  that is struggling with this @#$# Vista .. :-)]]></description>
+		<content:encoded><![CDATA[<p>looks promising, i just bought office 2007  under this corporate discount, just so ican get used to this new ribbon interface. .. am just hoping that this version is not too much of a hog, resource wise (ok , I am dreaming  ..)  on my aging pc  that is struggling with this @#$# Vista .. 🙂</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

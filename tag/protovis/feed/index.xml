@@ -1,0 +1,1873 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>protovis &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/protovis/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>d3: scales, and color.</title>
+		<link>/2011/08/11/d3-scales-and-color/</link>
+		<comments>/2011/08/11/d3-scales-and-color/#comments</comments>
+		<pubDate>Thu, 11 Aug 2011 10:03:21 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[d3]]></category>
+		<category><![CDATA[protovis]]></category>
+		<category><![CDATA[tips]]></category>
+		<category><![CDATA[color]]></category>
+		<category><![CDATA[color palettes]]></category>
+		<category><![CDATA[hsl]]></category>
+		<category><![CDATA[linear]]></category>
+		<category><![CDATA[logarithmic]]></category>
+		<category><![CDATA[ordinal]]></category>
+		<category><![CDATA[power]]></category>
+		<category><![CDATA[quantitative]]></category>
+		<category><![CDATA[rgb]]></category>
+		<category><![CDATA[scales]]></category>
+		<category><![CDATA[tutorial]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1026</guid>
+		<description><![CDATA[In protovis, scales were super-useful in just about everything. That much hasn&#8217;t changed in d3, even though d3.scale is a bit different from pv.Scale. (do note that d3.scale is in lowercase for starters). Scales: the main idea Simply put: scales transform a number in a certain interval (called the domain) into a number in another <a class="read-more" href="/2011/08/11/d3-scales-and-color/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>In <a href="http://mbostock.github.com/protovis/docs/scale.html">protovis</a>, scales were super-useful in just about everything. That much hasn&#8217;t changed in d3, even though <a href="https://github.com/mbostock/d3/wiki/Scales">d3.scale</a> is a bit different from pv.Scale. (do note that <strong>d3.scale</strong> is in lowercase for starters).</p>
+<h2>Scales: the main idea</h2>
+<p>Simply put: scales transform a number in a certain interval (called the <em>domain</em>) into a number in another interval (called the <em>range</em>).<br />
+<img src="http://www.jeromecukier.net/wp-content/uploads/2011/08/d3scale1.png" alt="an example of how scales work" /><br />
+For instance, let&#8217;s suppose you <em>know</em> your data is always over 20 and always below 80. You would like to plot it, say, in a bar chart, which can be only 120 pixels tall.<br />
+You could, obviously, do the math:</p>
+<pre class="brush: jscript; title: ; notranslate">.attr(&quot;height&quot;, function(d) {return (d-20)*2;})</pre>
+<p>But what if you suddenly have more or less space? or your data changes? you&#8217;d have to go back to the entrails of your code and make the change. This is very error prone. So instead, you can use a scale: </p>
+<pre class="brush: jscript; title: ; notranslate">var y=d3.scale.linear().domain(20,80).range(0,120);
+...
+.attr(&quot;height&quot;, y)</pre>
+<p>this is much simpler, elegant, and easy to maintain. Oh, and the latter notation is equivalent to
+<pre class="brush: jscript; title: ; notranslate">.attr(&quot;height&quot;, function(d) {return y(d);})</pre>
+<p>&#8230; only more legible and shorter.<br />
+And, there are tons of possibility with scales. </p>
+<h2>Fun with scales</h2>
+<p>In d3, quantitative scales can be of several types: </p>
+<ul>
+<li>linear scales (including <em>quantize</em> and <em>quantile</em> scales,</li>
+<li>logarithmic scales,</li>
+<li>power scales (including <em>square root</em> scales)</li>
+</ul>
+<p>While they behave differently, they have a lot in common. </p>
+<h3>Domain and range</h3>
+<p>For all scales, with the exception of quantize and quantile scales which are a bit different, domain and range work the same.<br />
+First, note that <strong>unlike in protovis</strong>, domain and range take an array as argument. Compare:</p>
+<pre class="brush: jscript; title: ; notranslate">var y=pv.Scale.linear().range(20,60).domain(0,120);
+var y=d3.scale.linear().range([20,60]).domain([0,120]);</pre>
+<p>This is because <strong>contrary to protovis</strong>, where domain could be a whole dataset, in d3, domain contains the bounds of the interval that is going to be transformed.<br />
+Typically, this is two numbers. If this is more, we are talking about a polypoint scale: there are as many segments in the intervals as there are numbers in the domain (minus one). The range must have as many numbers, and so as many segments. When using the scale, if a number is in the n-th segment of the domain, it is transformed into a number in the n-th segment of the range.<br />
+<img src="http://www.jeromecukier.net/wp-content/uploads/2011/08/d3scaleMultipoint.png" alt="illustration of a multipoint scale" /><br />
+With this example, 30 finds itself in the first segment of the domain. So it&#8217;s transformed to a value in the first segment of the range. 60, however, is in the 2nd segment, so it&#8217;s transformed into a value in the 2nd segment of the range.<br />
+Also, bounds of domain and range need not be numbers, as long as they can be converted to numbers. One useful examples are colors. Color names can be used as range, for instance, to create <em>color ramps</em>:</p>
+<pre class="brush: jscript; title: ; notranslate">var ramp=d3.scale.linear().domain([0,100]).range([&quot;red&quot;,&quot;blue&quot;]);</pre>
+<p>This will transform any value betwen 0 and 100 into the corresponding color between red and blue.</p>
+<h3>Clamping</h3>
+<p>What happends if the scale is asked to process a number outside of the domain? That&#8217;s what clamping controls. If it is set, then the bounds of the range are the minimum and maximum value that can be returned by the scale. Else, the same transformation applies to all numbers, whether they fall within the domain or not.<br />
+<img src="http://www.jeromecukier.net/wp-content/uploads/2011/08/d3clamping.png" alt="Clamping example" /><br />
+Here, with clamping, the result of the linear transformation is 120, but without it, it&#8217;s 160. </p>
+<pre class="brush: jscript; title: ; notranslate">var clamp=d3.scale.linear().domain([20,80]).range([0,120]);
+clamp(100); // 160
+clamp.clamp(true);
+clamp(100); // 120</pre>
+<h3>Scales and nice numbers</h3>
+<p>More often than not, the bounds of the domain and/or those of the ranges will be calculated. So, chances are they won&#8217;t be round numbers, or numbers a human would like. Scales, however, come with a bunch of method to address that. d3 keeps in mind that scales are often used to position marks along an axis.</p>
+<h4>.nice()</h4>
+<p>When applied to a scale, the nice method expends the domain to &#8220;nicer&#8221; numbers. You wouldn&#8217;t want your axis to start at -2.347 and end at 7.431, right?<br />
+So, there. </p>
+<pre class="brush: jscript; title: ; notranslate">var data=[-2.347, 4, 5.23,-1.234,6.234,7.431]; // or whatever.
+var y=d3.scale.linear().range([0,120]);
+y.domain([d3.min(data), d3.max(data)]); // domain takes bounds as arguments, not all numbers
+y.domain() // [-2.347, 7.431];
+y.nice() // [-3, 8]</pre>
+<h4>.ticks(n)</h4>
+<p>Given a domain, and a number n (which, <strong>contrary to protovis, is mandatory in d3</strong>), the ticks method will split your domain in (more or less) n convenient, human-readable values, and return an array of these values. This is especially useful to label axes. Passing these values to the scale allows them to position ticks nicely on an axis. </p>
+<pre class="brush: jscript; title: ; notranslate">var y=d3.scale.linear([20,80]).range([0,120]);
+...
+var ticks=axis.selectAll(&quot;line&quot;)
+  .data(y.ticks(4)) // 20, 40, 60 and 80
+  .enter().append(&quot;svg:line&quot;);
+ticks
+  .attr(&quot;x1&quot;,0).attr(&quot;x2&quot;,5)
+  .attr(&quot;y1&quot;,y).attr(&quot;y2&quot;,y) // short and simple. 
+  .attr(&quot;stroke&quot;,&quot;black&quot;);</pre>
+<h4>.rangeRound()</h4>
+<p>If used instead of .range(), this will guarantee that the output of the scales are integers, which is better to position marks on the screen with pixel precision than numbers with decimals. </p>
+<h4>.invert()</h4>
+<p>The invert function turns the scale upside down: for one given number in the range, it returns which number of the domain would have been transformed into that number.<br />
+For instance: </p>
+<pre class="brush: jscript; title: ; notranslate">var y=d3.scale.linear([20,80]).range([0,120]);
+y(50); // 60
+y.invert(60); // 50</pre>
+<p>That&#8217;s quite useful, for instance, when a user mouses over a chart, and you would like to know to what value the mouse coordinates correspond. </p>
+<h3>Power scales and log scales</h3>
+<p>The <em>linear</em>scale is a function of the form y=ax+b which works for both ends of the domain and range. In the example we&#8217;ve used most often until now, this function is really f(x): y=2x-40.<br />
+Power and logarithm scales work the same, only we are looking for a function of the form y=ax<sup>k</sup>+b, or y=a.log(x)+b.<br />
+For the power scales, you can specify an exponent (k) with the .exponent() method. For instance, if we specify an exponent of 2, here is what the scale would look like:<br />
+<img src="http://www.jeromecukier.net/wp-content/uploads/2011/08/d3scalePower.png" alt="an example of a power scale" /><br />
+The equation is now f(x): y=x²/50-8. So 20 still becomes 0 and 80 still becomes 120, but other than that the values at the beginning of the domain would be lower than with the linear scale, and those at the end of the scale will be higher.<br />
+For convenience, d3 includes a d3.scale.sqrt() (the square root scale) so you never have to type d3.scale.pow.exponent(0.5) in full.<br />
+Also note that if you are using a log scale, you <strong>cannot</strong> have 0 in the domain. </p>
+<h3>Quantize and quantile</h3>
+<p>quantize and quantile are specific linear scales.<br />
+quantize works with a discrete, rather than continuous, range: in other terms, the output of quantize can only take a certain number of values.<br />
+For instance: </p>
+<pre class="brush: jscript; title: ; notranslate">var q=d3.scale.quantize().domain([0,10]).range([0,2,8]); 
+q(0); // 0
+q(3); // 0
+q(3.33); // 0
+q(3.34); // 2
+q(5); // 2
+q(6.66); // 2
+q(6.67); // 8
+q(8); // 8
+q(1000); // 8</pre>
+<p>quantile on the other hand matches values in the domain (which, this time, is the full dataset) with their respective quantile. The number of quantiles is specified by the range.<br />
+For instance: </p>
+<pre class="brush: jscript; title: ; notranslate">
+var q=d3.scale.quantile().domain([0,1,5,6,2,4,6,2,4,6,7,8]).range([0,100]);
+q.quantiles(); // [4.5], only one quantile - the median
+q(0); // 0
+q(4); // 0
+q(4.499); // 0
+q(4.5); // 100 - over the median
+q(5); // 100
+q(10000); // 100
+q.range([0,25,50,75,100]);
+q.quantiles(); // [2, 4, 5.6, 6];
+q(0); // 0 
+q(2); // 25 - greater than the first quantile limit
+q(3); // 25
+q(4); // 50
+q(6); // 100
+q(10000); // 100</pre>
+<h3>Ordinal scales</h3>
+<p>All the scales we&#8217;ve seen so far have been quantitative, but how about ordinal scales?<br />
+The big difference is that ordinal scales have <strong>a discrete domain</strong>, in other words, they turn a limited number of values into something else, without caring for what&#8217;s between those values.<br />
+Ordinal scales are very useful for positioning marks along an x axis. Let&#8217;s suppose you have 10 bars to position for your bar chart, each corresponding to a category, a month or whatever.<br />
+For instance: </p>
+<pre class="brush: jscript; title: ; notranslate">
+var x=d3.scale.ordinal()
+  .domain([&quot;Sunday&quot;,&quot;Monday&quot;,&quot;Tuesday&quot;,&quot;Wednesday&quot;,&quot;Thursday&quot;,&quot;Friday&quot;,&quot;Saturday&quot;]) // 7 items
+  .rangeBands([0,120]);
+x(&quot;Tuesday&quot;); // 34.285714285714285
+</pre>
+<p>There are 3 possibilites for range. Two are similar: the .rangePoints() and .rangeBands() methods, which both work with an array of two numbers &#8211; i.e. .rangeBands([0,120]). The last one is to specify all values in the range with .range(). </p>
+<h4>rangePoints() and rangeBands()</h4>
+<p>With .rangePoints(<em>interval</em>), d3 fits n points within the interval, n being the number of categories in the domain. In that case, the value of the first point is the beginning of the interval, that of the last point is the end of the interval.<br />
+With .rangeBands(<em>interval</em>), d3 fit n <em>bands</em> within the interval. Here, the value of the last item in the domain is less than the upper bound of the interval.<br />
+Those methods <strong>replace the protovis methods</strong> .split() and .splitBanded().<br />
+<img src="http://www.jeromecukier.net/wp-content/uploads/2011/08/d3ordinalRange.png" alt="difference between rangeBands and rangePoints" /><br />
+This chart illustrates the difference between using rangeBands and rangePoints. </p>
+<pre class="brush: jscript; title: ; notranslate">var x=d3.scale.ordinal()
+  .domain([&quot;Sunday&quot;,&quot;Monday&quot;,&quot;Tuesday&quot;,&quot;Wednesday&quot;,&quot;Thursday&quot;,&quot;Friday&quot;,&quot;Saturday&quot;]);
+x.rangePoints([0,120]);
+x(&quot;Saturday&quot;); // 120
+x.rangeBands([0,120]);
+x(&quot;Saturday&quot;); // 102.85714285714286
+x(&quot;Saturday&quot;)+x.rangeBand(); // 120</pre>
+<h4>the range method</h4>
+<p>Finally, we can also use the .range method with several values.<br />
+We can specify the domain, or not. Then, if we use such a scale on a value which is not part of the domain (or if the domain is left empty), this value is added to the domain. If there are <em>n</em> values in the range, and more in the domain, then the n+1<sup>th</sup> value of the doamin is matched with the 1st value in the range, etc.</p>
+<pre class="brush: jscript; title: ; notranslate">var x=d3.scale.ordinal().range([&quot;hello&quot;, &quot;world&quot;]); 
+x.domain(); // [] - empty still.
+x(0); // &quot;hello&quot;
+x(1); // &quot;world&quot;
+x(2); // &quot;hello&quot;
+x.domain(); // [0,1,2]
+</pre>
+<h4>Color palettes</h4>
+<p><strong>Unlike in protovis</strong>, which had them under pv.Colors &#8211; i.e. pv.Colors.category10(), in d3, built-in color palettes can be accessed through scales. Well, even in protovis they had been ordinal scales all along, only not called this way.<br />
+There are <a href="https://github.com/mbostock/d3/wiki/Ordinal-Scales#category10">4 built-in color palette</a> in protovis: d3.scale.category10(), d3.scale.category20(), d3.scale.category20b(), and d3.scale.category20c().</p>
+<p>A palette like d3.scale.category10() works exactly like an ordinal scale. </p>
+<pre class="brush: jscript; title: ; notranslate">
+var p=d3.scale.category10();
+var r=p.range(); // [&quot;#1f77b4&quot;, &quot;#ff7f0e&quot;, &quot;#2ca02c&quot;, &quot;#d62728&quot;, &quot;#9467bd&quot;, 
+                      // &quot;#8c564b&quot;, &quot;#e377c2&quot;, &quot;#7f7f7f&quot;, &quot;#bcbd22&quot;, &quot;#17becf&quot;]
+var s=d3.scale.ordinal().range(r); 
+p.domain(); // [] - empty
+s.domain(); // [] - empty, see above
+p(0); // &quot;#1f77b4&quot;
+p(1); // &quot;#ff7f0e&quot;
+p(2); // &quot;#2ca02c&quot;
+p.domain(); // [0,1,2];
+s(0); // &quot;#1f77b4&quot;
+s(1); // &quot;#ff7f0e&quot;
+s(2); // &quot;#2ca02c&quot;
+s.domain(); // [0,1,2];</pre>
+<p>It&#8217;s noteworthy that in d3, color palette return strings, not pv.Color objects like in protovis.<br />
+Also: </p>
+<pre class="brush: jscript; title: ; notranslate">
+d3.scale.category10(1); // this doesn't work
+d3.scale.category10()(1); // this is the way.</pre>
+<h2>Colors</h2>
+<p>Compared to protovis, d3.color is simpler. The main reason is that protovis handled color and transparency together with the pv.Color object, whereas in SVG, those two are distinct attributes: you handle the background color of a filled object with <em>fill</em>, its transparency with <em>opacity</em>, the color of the outline with <em>stroke</em> and the transparency of that color with <em>stroke-opacity</em>. </p>
+<p>d3 has two color objects: d3_Rgb and d3_Hsl, which describe colors in the two of the most popular color spaces: red/green/blue, and hue/saturation/light. </p>
+<p>With d3.color, you can make operations on such objects, like converting colors between various formats, or make colors lighter or darker.</p>
+<p>d3.rgb(<em>color</em>), and d3.hsl(<em>color</em>) create such objects.<br />
+In this context, <em>color</em> can be (straight from <a href="https://github.com/mbostock/d3/wiki/Colors">the manual</a>):</p>
+<ul>
+<li>rgb decimal &#8211; &#8220;rgb(255,255,255)&#8221;</li>
+<li>hsl decimal &#8211; &#8220;hsl(120,50%,20%)&#8221;</li>
+<li>rgb hexadecimal &#8211; &#8220;#ffeeaa&#8221;</li>
+<li>rgb shorthand hexadecimal &#8211; &#8220;#fea&#8221;</li>
+<li>named &#8211; &#8220;red&#8221;, &#8220;white&#8221;, &#8220;blue&#8221;</li>
+</ul>
+<p>Once you have that object, you can make it brighter or darker with the appropriate method.<br />
+You can use .toString() to get it back in rgb hexadecimal format (or hsl decimal), and .rgb() or .hsl() to convert it to the object in the other color space. </p>
+<pre class="brush: jscript; title: ; notranslate">
+var c=d3.rgb(&quot;violet&quot;) // d3_Rgb object
+c.toString(); // &quot;#ee82ee&quot;
+c.darker().toString(); // &quot;#a65ba6&quot;
+c.darker(2).toString(); // &quot;#743f74&quot; - even darker
+c.brighter().toString();// &quot;ffb9ff&quot;
+c.brighter(0.1).toString(); // &quot;#f686f6&quot; - only slightly brighter
+c.hsl(); // d3_Hsl object
+c.hsl().toString() // &quot;hsl(300, 76, 72)&quot;</pre>
+]]></content:encoded>
+			<wfw:commentRss>/2011/08/11/d3-scales-and-color/feed/</wfw:commentRss>
+		<slash:comments>21</slash:comments>
+		</item>
+		<item>
+		<title>d3: adding stuff. And, oh, understanding selections</title>
+		<link>/2011/08/09/d3-adding-stuff-and-oh-understanding-selections/</link>
+		<comments>/2011/08/09/d3-adding-stuff-and-oh-understanding-selections/#comments</comments>
+		<pubDate>Tue, 09 Aug 2011 12:49:23 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[d3]]></category>
+		<category><![CDATA[protovis]]></category>
+		<category><![CDATA[tips]]></category>
+		<category><![CDATA[charts]]></category>
+		<category><![CDATA[javascript]]></category>
+		<category><![CDATA[selection]]></category>
+		<category><![CDATA[svg]]></category>
+		<category><![CDATA[tutorial]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1012</guid>
+		<description><![CDATA[From data to graphics d3 and protovis are built around the same principle. Take data, put it into an array, and for each element of data a graphical object can be created, whose properties are derived from the data that was provided. Only d3 and protovis have a slightly different way of adding those graphical <a class="read-more" href="/2011/08/09/d3-adding-stuff-and-oh-understanding-selections/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<h2>From data to graphics</h2>
+<p><img src="http://jeromecukier.net/wp-content/uploads/2011/08/d3principle.png" alt="the d3 principle (and also the protovis principle)" /><br />
+d3 and protovis are built around the same principle. Take data, put it into an array, and for each element of data a graphical object can be created, whose properties are derived from the data that was provided.</p>
+<p>Only d3 and protovis have a slightly different way of adding those graphical elements and getting data. </p>
+<p>In protovis, you start from a panel, a protovis-specific object, to which you add various marks. Each time you add a mark, you can either:</p>
+<ul>
+<li><strong>not</strong> specify data and add just one, </li>
+<li> or <strong>specify</strong> data and create as many as there are items in the array you pass as data.</li>
+</ul>
+<p>.</p>
+<h2>How de did it in protovis</h2>
+<pre class="brush: jscript; title: ; notranslate">
+var vis=new pv.Panel().width(200).height(200); 
+vis.add(pv.Panel).top(10).left(10)
+  .add(pv.Bar)
+    .data([1,4,3,2,5])
+    .left(function() {return this.index*20;})
+    .width(15)
+    .bottom(0)
+    .height(function(d) {return d*10;});
+vis.render();</pre>
+<p><img src="http://jeromecukier.net/wp-content/uploads/2011/08/protoBar.png" alt="this simple bar chart in protovis" /><br />
+you first create a panel (first line), you may add an element without data (here, another panel, line 2), and add to this panel bars: there would be 5, one for each element in the array in line 4. </p>
+<h2>And in d3?</h2>
+<p>In d3, you also have a way to add either one object without passing data, or a series of objects &#8211; one per data element. </p>
+<pre class="brush: jscript; title: ; notranslate">
+var vis=d3.select(&quot;body&quot;).append(&quot;svg:svg&quot;).attr(&quot;width&quot;,200).attr(&quot;height&quot;,200);
+var rect=vis.selectAll(&quot;rect&quot;).data([1,4,3,2,5]).enter().append(&quot;svg:rect&quot;);
+rect.attr(&quot;height&quot;,function(d) {return d*20;})
+  .attr(&quot;width&quot;, 15)
+  .attr(&quot;x&quot;,function(d,i) {return i*20;})
+  .attr(&quot;y&quot;,function(d) {return 100-20*d;}
+  .attr(&quot;fill&quot;,&quot;steelblue&quot;);
+</pre>
+<p>In the first line, we are creating an svg document which will be the root of our graphical creation. It behaves just as the top-level panel in protovis. </p>
+<p>However we are not creating this out of thin air, but rather we are bolting it onto an existing part of the page, here the <body> tag. Essentially, we are looking through the page for a tag named <body> and once we find it (which should be the case often), that&#8217;s where we put the svg document. </p>
+<p>Oftentimes, instead of creating our document on <body>, we are going to add it to an existing &lt;div&gt; block, for instance: </p>
+<pre class="brush: jscript; title: ; notranslate">
+&lt;div id=&quot;chart&quot;&gt;&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+var vis=d3.select(&quot;#chart&quot;).append(&quot;svg:svg&quot;);
+...
+&lt;/script&gt;
+</pre>
+<p>Anyway. To <strong>add one element</strong>, regardless of data, what you do is: </p>
+<p>The logic is : d3.select(<em>where we would like to put our new object</em>).append(<em>type of new object</em>).</p>
+<p>Going back to our code: </p>
+<pre class="brush: jscript; title: ; notranslate">
+var vis=d3.select(&quot;body&quot;).append(&quot;svg:svg&quot;).attr(&quot;width&quot;,200).attr(&quot;height&quot;,200);
+var rect=vis.selectAll(&quot;rect&quot;).data([1,4,3,2,5]).enter().append(&quot;svg:rect&quot;);
+rect.attr(&quot;height&quot;,function(d) {return d*20;})
+  .attr(&quot;width&quot;, 15)
+  .attr(&quot;x&quot;,function(d,i) {return i*20;})
+  .attr(&quot;y&quot;,function(d) {return 100-20*d;}
+  .attr(&quot;fill&quot;,&quot;steelblue&quot;);
+</pre>
+<p>On line 2, we see a different construct:</p>
+<p><em>an existing selection, or a part of the page</em><br />
+.selectAll(<em>something</em>)<br />
+.data(<em>an array</em>)<br />
+.enter()<br />
+.append(<em>an object type</em>)</p>
+<p>This sequence of methods (selectAll, data, enter and append) are the way to add a series of elements. If all you need to know is to create a bar chart, just remember that, but if you plan on taking your d3 skills further than where you stopped with protovis, look at the end of the post for a more thorough explanation of the selection process. </p>
+<h2>Attributes and accessor functions</h2>
+<p>At this stage, we&#8217;ve added our new rectangles, and now we are going to shape and style them. </p>
+<pre class="brush: jscript; title: ; notranslate">rect.attr(&quot;height&quot;,function(d) {return d*20;})
+  .attr(&quot;width&quot;, 15)
+  .attr(&quot;x&quot;,function(d,i) {return i*20;})
+  .attr(&quot;y&quot;,function(d) {return 100-20*d;}
+  .attr(&quot;fill&quot;,&quot;steelblue&quot;);
+</pre>
+<p>All the attributes of a graphical element are controlled by the method attr(). You specify the attribute you want to set, and the value you want to give.<br />
+In some cases, the value doesn&#8217;t depend on the data. All the bars will be 15 pixels wide, and they will all be of the steelblue color.<br />
+In some others, the value do depend on the data. We decide that the height of each bar is 20 times the value of the underlying data, in pixels (so 1 becomes 20, 5 becomes 100 etc.). Like in protovis, once data has been attributed to an element, function(<em>variable name</em>) enables to return a dynamic value in function on that element. By convention, we usually write function(d) {&#8230;;} (d for data) although it could be anything. Those functions are still called <strong>accessor functions</strong>.<br />
+so for instance: </p>
+<pre class="brush: jscript; title: ; notranslate">.attr(&quot;height&quot;,function(d) {return d*20;})</pre>
+<p>means that the height will be 20 times the value of the underlying data element (exactly what we said above).<br />
+In protovis, we could position the mark relatively to any corner of its parent, so we had a .top method and a .bottom method. But with SVG, objects are positioned relatively to the top-left corner. So when we specify the y position, it is also relative to the top of the document, not necessarily to the axis (and not in this case).<br />
+so &#8211;
+<pre class="brush: jscript; title: ; notranslate">.attr(&quot;y&quot;, function(d) {return 100-d*20;})</pre>
+<p>if we use scales (see next post), all of this will have no impact whatsoever anyway.<br />
+Finally, there is an attribue here which doesn&#8217;t so much depend on the <em>value</em> of the data, but of its <em>rank</em> in the data items: the x position.<br />
+for this, we write: function(d,i) {return i*20;}<br />
+Here is a <strong>fundamental difference with protovis</strong>. In protovis, when we passed a second argument to such a function, it meant the data of the parent element (grand parent for the third, etc.). But here in d3, the second parameter is the position of the data element in its array. By convention, we write it i (for index).<br />
+And since you have to know: there is no easy way to retrieve the data of the parent element. </p>
+<h2>Bonus: understanding selections</h2>
+<p>To add many elements at once we&#8217;ve used the sequence: selectAll, data, enter, append.<br />
+Why use 4 methods for what appears to be one elementary task? If you don&#8217;t care about manipulating nodes individually, for instance for animations, you can just remember the sequence. But if you want to know more, here is what each method does. </p>
+<h3>selectAll</h3>
+<p><img src="http://jeromecukier.net/wp-content/uploads/2011/08/d3selectAll.png" alt="the selectAll method" /><br />
+First, we select a point on which to add your new graphical objects. When you are creating your objects and use the selectAll method, it will return an <em>empty selection</em> but based on that given point. You may also use selectAll in another context, to update your objects for instance. But here, an empty selection is expected. </p>
+<h3>data</h3>
+<p><img src="http://jeromecukier.net/wp-content/uploads/2011/08/d3data.png" alt="the data method" /><br />
+Then, you attribute data. This works quite similarly to protovis: d3 expects an array. d3 takes the concept further (with the concept of <em>data joins</em>) but you need not concern yourself with that until you look at transitions.<br />
+Anyway, at this stage you have an empty selection, based on a given point in the page, but with data.</p>
+<h3>enter</h3>
+<p><img src="http://jeromecukier.net/wp-content/uploads/2011/08/d3enter.png" alt="the enter method" /><br />
+The enter method updates the selection with nodes which have data, but no graphical representation. Using enter() is like creating stubs where the graphical elements will be grafted. </p>
+<h3>append</h3>
+<p><img src="http://jeromecukier.net/wp-content/uploads/2011/08/d3append.png" alt="the append method" /><br />
+Finally, by appending we actually create the graphical objects. Each is tied to one data element, so it can be further styled (for instance, through &#8220;attr&#8221;) to derive its characteristics from the value of that data.</p>
+]]></content:encoded>
+			<wfw:commentRss>/2011/08/09/d3-adding-stuff-and-oh-understanding-selections/feed/</wfw:commentRss>
+		<slash:comments>11</slash:comments>
+		</item>
+		<item>
+		<title>From protovis to d3</title>
+		<link>/2011/08/08/from-protovis-to-d3/</link>
+		<comments>/2011/08/08/from-protovis-to-d3/#comments</comments>
+		<pubDate>Mon, 08 Aug 2011 14:47:45 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[d3]]></category>
+		<category><![CDATA[protovis]]></category>
+		<category><![CDATA[svg]]></category>
+		<category><![CDATA[tutorial]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=995</guid>
+		<description><![CDATA[You&#8217;ve spent some time learning protovis only to find that its development is halted as authors have switched to work on d3. Have your efforts all been in vain? Fear not! This series of posts will help you adapt to d3 with a protovis background. Before we go anywhere further, let me say that these <a class="read-more" href="/2011/08/08/from-protovis-to-d3/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>You&#8217;ve spent some time <a href="http://www.jeromecukier.net/blog/2011/02/07/working-with-data-in-protovis/">learning protovis</a> only to find that its development is halted as authors have switched to work on <a href="http://www.d3-js.org/">d3</a>. Have your efforts all been in vain? Fear not! This series of posts will help you adapt to d3 with a protovis background. </p>
+<p>Before we go anywhere further, let me say that <strong>these posts won&#8217;t make you awesome at d3</strong> (yet). We won&#8217;t be talking about how to do all amazing things you could never do in protovis. Rather, we&#8217;ll focus on enabling you to be as comfortable with d3 than you could have been with protovis. And once that&#8217;s done, nothing will prevent you from learning the more powerful aspects of d3. </p>
+<p>Anyway, if you&#8217;re reading this, <strong>you are already awesome.</strong></p>
+<h2>Why should I make the switch to d3?</h2>
+<p>Frankly, you don&#8217;t have to. Protovis is a fine framework and works well. Now you may <em>want</em> to switch to d3 for several reasons. </p>
+<ul>
+<li><strong>d3 is fast.</strong> d3 is better at handling scenes with hundreds or thousands of elements. So if you like scatterplots or network graphs, and who doesn&#8217;t, d3 has much stronger performance.</li>
+<li><strong>d3 does animation.</strong> There were workarounds to get animation in protovis but there were that. Workarounds. Animation and transitions are built in d3 and are a snap to implement. </li>
+<li><strong>More features.</strong> Just because development has stopped on protovis doesn&#8217;t mean that it has stopped elsewhere&#8230; for instance, d3 has <em>more ready-to-use layouts</em>, like voronoi tesselation or chords, and it has more methods and functions to make your life easier, to access and manipulate data for example.</li>
+<li><strong>Styling.</strong> In d3 it is possible to apply style sheets in CSS to graphical elements. This helps keeping the code and the format separate. </li>
+</ul>
+<h2>Yes but doesn&#8217;t everything change?</h2>
+<p>Short answer: <strong>no. </strong></p>
+<p>Less short answer: some things do change substantially. Most things stay the same. And then, some things look the same but have changed.</p>
+<h3>Things that stay the same</h3>
+<ul>
+<li><strong>The general principle.</strong>Protovis is about transforming an array of data into the same number of graphical elements, with characteristics derived from that data. d3 does exactly this as well.</li>
+<li>pv.Nest, which in my personal protovis experience has been the hardest to understand. Only, it&#8217;s called d3.nest now. </li>
+<li>Methods that supplement the existing javascript array manipulation methods, like pv.min, pv.values, pv.entries etc. are also back (as d3.min, d3.values, d3.entries, but you&#8217;ve guessed it by now). Some, like pv.mean or pv.median, didn&#8217;t make it through but you could easily rewrite them, or continue using the protovis ones.</li>
+</ul>
+<h3>Things that look different, but which are largely the same</h3>
+<p>Protovis had a number of native graphical objects, or marks, that could be manipulated at will with methods. </p>
+<pre class="brush: jscript; title: ; notranslate">var vis=new pv.Panel()
+  .height(400)
+  .width(400)
+  .fillStyle(&quot;aliceblue&quot;)
+  .lineWidth(1)
+  .strokeStyle(&quot;steelblue&quot;);
+vis.render();</pre>
+<p>In protovis, it is inherently different to set the height, the width or just any property of an object. This uses different methods. </p>
+<pre class="brush: jscript; title: ; notranslate">var vis=d3.select(&quot;body&quot;).append(&quot;svg:svg&quot;);
+  vis.append(&quot;svg:rect&quot;)
+    .attr(&quot;height&quot;,400)
+    .attr(&quot;width&quot;,400)
+    .attr(&quot;fill&quot;,&quot;aliceblue&quot;)
+    .attr(&quot;stroke&quot;,&quot;steelblue&quot;)
+    .attr(&quot;stroke-width&quot;,1);</pre>
+<p>This produces essentially the same thing. We add a rectangle of a specified height, width, and colors. There are a few differences though. Here, controlling height, width or fill is essentially the same thing and uses the same method, .attr(). Notice also that we first created an svg document, then a shape within that document. And also, that we don&#8217;t need to use vis.render(); anymore. </p>
+<p>The d3 approach looks longer. But if we define all the style information first we could make it much shorter, shorter than in protovis in fact!<br />
+For instance:</p>
+<pre class="brush: jscript; title: ; notranslate">var vis=d3.select(&quot;body&quot;).append(&quot;svg:svg&quot;).append(&quot;svg:rect&quot;).attr(&quot;class&quot;, &quot;myRect&quot;);</pre>
+<p>Much of the apparent differences between d3 and protovis come from using explicitly svg shapes (paths, polygons, ellipses, etc.) as opposed to native objects (pv.Panel, pv.Bar, pv.Dot, etc.), although &#8211; it&#8217;s essentially the same thing. Yes, you have to <a href="http://commons.oreilly.com/wiki/index.php/SVG_Essentials">learn your SVG</a> but it&#8217;s really on a need-to-know basis. In fact, if you&#8217;ve worked with protovis, or even if you&#8217;ve worked with HTML and CSS, you probably know more SVG than you thought. </p>
+<p>SVG is more flexible than protovis objects. The flipside is that constructs which were once simple in protovis become less obvious in SVG. But for those cases, d3 has recreated some native objects, even if not as many as in protovis. </p>
+<h3>Things that look the same, but which are different</h3>
+<p>There have been some changes in methods that have kept the same name since protovis &#8211; some minor, some more substantial. In any case, the basic ways of using these methods (like scale, color, data&#8230;) doesn&#8217;t change much. It&#8217;s only their more exotic uses who do change. </p>
+]]></content:encoded>
+			<wfw:commentRss>/2011/08/08/from-protovis-to-d3/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>datavizchallenge.org: my entry</title>
+		<link>/2011/03/27/datavizchallenge-org-my-entry/</link>
+		<comments>/2011/03/27/datavizchallenge-org-my-entry/#comments</comments>
+		<pubDate>Sun, 27 Mar 2011 14:03:12 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[protovis]]></category>
+		<category><![CDATA[budget]]></category>
+		<category><![CDATA[challenge]]></category>
+		<category><![CDATA[datavizchallenge]]></category>
+		<category><![CDATA[game-y infographics]]></category>
+		<category><![CDATA[treemap]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=799</guid>
+		<description><![CDATA[I just posted my www.datavizchallenge.org entry! So here&#8217;s a little explanation about what I&#8217;ve done, how and why. The idea behind the data provider web site, WhatWePayFor, is that billions and millions don&#8217;t talk to the average citizen. This doesn&#8217;t help them understand where their money goes. And in my work, I generally try to <a class="read-more" href="/2011/03/27/datavizchallenge-org-my-entry/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>I just posted my <a href="http://www.datavizchallenge.org/">www.datavizchallenge.org</a> <a href="http://www.jeromecukier.net/stuff/datavizchallenge/index.html">entry</a>!<br />
+<a href="http://www.jeromecukier.net/stuff/datavizchallenge/index.html"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/03/myEntry3.png" alt="" title="My  datavizchallenge.org entry" width="323" height="330" class="aligncenter size-full wp-image-801" /></a></p>
+<p>So here&#8217;s a little explanation about what I&#8217;ve done, how and why. </p>
+<p>The idea behind the data provider web site, <a href="http://www.whatwepayfor.com/">WhatWePayFor</a>, is that billions and millions don&#8217;t talk to the average citizen. This doesn&#8217;t help them understand where their money goes.</p>
+<p>And in my work, I generally try to show as little data as possible to make a point. And I like to use interactivity to involve users. </p>
+<p>I got my idea from thinking back to the presentation made by <a href="http://thevcl.com/storytelling/docs/nicholas_diakopoulos.pdf">Nick Diakopoulos</a> at last <a href="http://thevcl.com/storytelling/">Visweek</a>. We had that workshop on data storytelling and Nick showed how to get user attention on a subject by letting them play and guess first. So here goes.</p>
+<p>First, I wanted to let users play with data, in this case try to establish their priorities for federal budget spending. Where <em>should</em> money go?</p>
+<p>I&#8217;ve manipulated this kind of figures a few times, so I know that USA has extreme positions on some &#8220;functions of spending&#8221;, like defense, or culture. Some rich countries that spend up to 7% of their budget on culture, and some who spend less than 0.1% of their budget on defense. Hint, the USA is not one of them.</p>
+<p>So I&#8217;m hoping that the users will see differences between their preferences and the choices that the government makes in their names, and that from the differences will be striking enough for them to understand the orders of magnitude and possibly inspire them to take action.</p>
+]]></content:encoded>
+			<wfw:commentRss>/2011/03/27/datavizchallenge-org-my-entry/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Building the France Dorling cartogram</title>
+		<link>/2011/03/27/building-the-france-dorling-cartogram/</link>
+		<comments>/2011/03/27/building-the-france-dorling-cartogram/#respond</comments>
+		<pubDate>Sun, 27 Mar 2011 12:28:33 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[protovis]]></category>
+		<category><![CDATA[cartogram]]></category>
+		<category><![CDATA[dorling]]></category>
+		<category><![CDATA[france]]></category>
+		<category><![CDATA[map]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=796</guid>
+		<description><![CDATA[This is a follow-up to the previous post where I used a Dorling cartogram to show election results in France. So how did I come up with that? Step 1: the data Without data, there wouldn&#8217;t be much to plot, right? So the first order of business was to fetch the data, which is theoretically <a class="read-more" href="/2011/03/27/building-the-france-dorling-cartogram/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>This is a follow-up to <a href="http://www.jeromecukier.net/?p=764">the previous post</a> where I used a Dorling cartogram to show election results in France. So how did I come up with that?</p>
+<h2>Step 1: the data</h2>
+<p>Without data, there wouldn&#8217;t be much to plot, right? So the first order of business was to fetch the data, which is theoretically available from an <a href="http://elections.interieur.gouv.fr/CN2011/">official source.</a> Unfortunately, there is no way to download those results at once, instead they are presented in a myriad of formatted HTML pages &#8211; over 2000 in all. </br><br />
+I used <a href="http://www.google.com/search?q=wget">wget</a> to download them all. wget allows for recursive download, that is, you can download a page, and all the links from that page, etc. You can also specify the depth of the recursive download, which is a good idea in that case because there are lots of duplicates of that information on the server, so trying to get everything will take a couple of hours vs about 10 minutes.</p>
+<p>Once that&#8217;s done, I used python and <a href="http://www.crummy.com/software/BeautifulSoup/">Beautiful Soup</a> to turn the HTML pages into nice JSON objects. Fortunately the pages followed the same strict template, so I could run a relatively simple extraction script, like: look at the second HTML table of the page, get the number of registered voters who didn&#8217;t vote from the 2nd cell of the 2nd row, etc.<br />
+Once that was done I came up with 2 files: <a href="http://www.jeromecukier.net/wp-content/uploads/2011/03/votes.js">one which listed the aggregate votes per county</a> and per party, and another one which listed all the candidates, their affiliation and their votes. I ended up using only the 1st one, actually at an even more aggregated level, but I may use the second one for further work.</p>
+<h2>Next up: setting the geography</h2>
+<p>A dorling cartogram is really a kind of <a href="http://en.wikipedia.org/wiki/Force-based_algorithms_(graph_drawing)">force-directed layout graph</a> where the nodes represent geographical entities, which are initially positioned at a place corresponding to their geography, but which are then resized by a variable, and whose movement is subject to several forces: each node is linked to its original geographical neighbors, which attract each other, but also cannot intersect with other nodes, so it pushes back its neighbors.</p>
+<p>So for this to work I had to:
+<ul>
+<li>find the initial position of my geographical entities (French <em>départements</em>) and</li>
+<li>list their neighbors.</li>
+</ul>
+<p>To get the initial position I fetched the list of all French towns and their lon-lat coordinates which I averaged for each département. That gave me a workable proxy of the centroid of that departement. Note that I didn&#8217;t need anything very accurate at this stage, since nodes are going to be pushing each other anyway.<br />
+I listed the neighbors manually, since the number of départements is workable. Else, one possible way to do that from a shape file is look at every point of every shape and list all the entities that use it. If two entities use it they are neighbors. Again at this stage it&#8217;s not mandatory to be exhaustive. If an entity is surrounded by 8 others and we only use 4 the results will look sensibly the same.<br />
+Anyone who wants to create dorling cartograms for France can <a href="http://www.jeromecukier.net/wp-content/uploads/2011/03/francedorling.js">reuse the file</a>. </p>
+<h2>Putting it all together</h2>
+<p>The rest is standard protovis fare. There is an example which uses <a href="http://vis.stanford.edu/protovis/ex/cartogram.html">Dorling cartograms</a> which I used as a basis. I prepared my data files so that I could aggregate the stuff I needed at the level of the département (which is about 20 counties). I never really considered showing anything at the county level because except for looking up specific results it is never too relevant. For instance, in most places there are some agreement between parties which don&#8217;t all present candidates in order to favor their allies. </p>
+<p>An interesting parameter when building the visualization is choosing the constant by which to multiply the size of the nodes. If it is too high, the cartogram will look like a featureless cluster of circles. If it is too low, it will ressemble the map a lot, and circles won&#8217;t touch each other.</p>
+]]></content:encoded>
+			<wfw:commentRss>/2011/03/27/building-the-france-dorling-cartogram/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>More fun with arrays in protovis</title>
+		<link>/2011/03/15/more-fun-with-arrays-in-protovis/</link>
+		<comments>/2011/03/15/more-fun-with-arrays-in-protovis/#comments</comments>
+		<pubDate>Tue, 15 Mar 2011 16:21:21 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[protovis]]></category>
+		<category><![CDATA[array]]></category>
+		<category><![CDATA[data]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=699</guid>
+		<description><![CDATA[In my short tutorial on working with data and protovis I briefly covered some standard javascript and protovis methods to work with arrays. The more I work with Protovis, the more I am convinced that efficient array manipulation is key to achieving just about anything with the library. So, I would like to go into <a class="read-more" href="/2011/03/15/more-fun-with-arrays-in-protovis/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[In my short tutorial on <a href="http://www.jeromecukier.net/?p=426">working with data and protovis</a> I briefly covered some standard javascript and protovis methods to <a href="http://www.jeromecukier.net/?p=494">work with arrays</a>.
+
+The more I work with Protovis, the more I am convinced that efficient array manipulation is key to achieving just about anything with the library. So, I would like to go into more detail in some javascript methods for building, processing and testing arrays that can really be helpful.
+<h3>Going through arrays: map and forEach</h3>
+I said rapidly that the map method was very useful in protovis especially used in combination with pv.range.
+But that's not very fair to map() to be treated this lightly.
+Protovis <a href="http://vis.stanford.edu/protovis/ex/">canon examples</a> do not use many traditional loops such as <em>for </em> or <em>while</em> statements.
+One reason for that is that many constructs in protovis are <em>de facto</em> loops: when we pass an array to protovis as a data file, to create a bar chart for instance (or panels, pie wedges, you name it), it will go through each element of the array to create individul bars (panels, wedges...), to position them, style them, and so on and so forth. This is why it is so important to have your <strong>data elements in the best possible shape</strong> when you first pass them to protovis. It makes the rest of your code much nicer.
+
+Remember our early example:
+<table>
+<tbody>
+<tr>
+<td><pre class="brush: jscript; title: ; notranslate">var categories = [&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;d&quot;,&quot;e&quot;,&quot;f&quot;];
+var vis = new pv.Panel()
+  .width(150)
+  .height(150);
+
+vis.add(pv.Bar)
+  .data([1, 1.2, 1.7, 1.5, .7, .3])
+  .width(20)
+  .height(function(d) d * 80)
+  .bottom(0)
+  .left(function() this.index * 25)
+  .anchor(&quot;bottom&quot;).add(pv.Label)
+    .text(function() categories[this.index]);
+
+vis.render();
+</pre></td>
+<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/categories.png"><img class="aligncenter size-full wp-image-483" title="categories" src="http://www.jeromecukier.net/wp-content/uploads/2011/02/categories.png" alt="" width="144" height="135" /></a></td>
+</tr>
+</tbody>
+</table>
+This is not ideal to have values and categories in two separate places, because one could be changed without updating the other.
+So let's try to use map to create one single variable.
+
+<pre class="brush: jscript; title: ; notranslate">var categories = [&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;d&quot;,&quot;e&quot;,&quot;f&quot;];
+var data=[1, 1.2, 1.7, 1.5, .7, .3].map(function(d,i) {return {value:d, key: categories[i]};});</pre>
+
+Let's look at our map() method here.
+First, it's right after an array. It will run against this array, so it will perform an operation on each element of this array, and the result will be another array of the same size with the outcome of each operation in the same order.
+The next thing here is a function with two arguments: d and i. Again the naming is arbitrary, call them what you want. And they are both optional. But it has to be a function. pv.range(3).map(3) will not return [3,3,3], you need to write pv.range(3).map(function() 3).
+
+The first argument refers to the current item of the array map is working on. So 1, then 1.2, etc. If the array is more complex, and is an array of arrays or similar, the current element can be itself an array, an object or anything. It doesn't have to be a number.
+Here, we want to create an array of associative arrays where the value handle corresponds to the values of the array, and where key corresponds to the category name.
+So we start our output by "{value: d,". This puts the value of each array element in sequence where we need it to be.
+
+The second argument corresponds to the index of the current item in the array, so - 0, 1, 2 etc. This is not unlike using "this.index" in other parts of protovis. This helps us getting the right category name, the one in the same position as the value we are fetching. So we write "key: categories[i]}".
+The rest of the code can then be changed to :
+
+<pre class="brush: jscript; first-line: 6; title: ; notranslate">vis.add(pv.Bar)
+  .data(data)
+  .width(20)
+  .height(function(d) d.value * 80)
+  .bottom(0)
+  .left(function() this.index * 25)
+  .anchor(&quot;bottom&quot;).add(pv.Label)
+    .text(function() d.key);
+vis.render();</pre>
+
+Now how about forEach()?
+forEach works in a very similar way to map(), the difference is that it doesn't output an array. It's just a function that runs on each element of the array. It can be used to perform an operation a number of times corresponding to the length of that array, for instance.
+<h3>Testing arrays</h3>
+There are some times when you need to know whether some or all the elements of your array fulfill a condition. And some other times, you need to be able to extract a subset of your array also on a conditional basis. Now, that would be possible using forEach or map methods as above, but fortunately javascript provides simpler means to achieve that.
+<h4>Testing a condition on an array at once</h4>
+There are two methods that do that: every() and some(). every() will return true is the condition is true for, well, every element of the array. some() will return true if the condition is true for at least one element of the array. So, they can also be used to tell if the condition is false for at least one element of the array, or all elements of the array respectively.
+
+This is how they work:
+
+<pre class="brush: jscript; title: ; notranslate">[0,1,2].every(function(d) {return d;})
+// will return false: 0 is false, 1 is true and 2 is true.
+[0,1,2].every(function(d) {return (d&lt;3);})
+// will return true. All elements are less than 3.
+
+[0,1,2].some(function(d) {return d;})
+// will return true. 1 is true, so at least one element in the array is true.
+</pre>
+
+<h4>Creating conditional subsets of an array</h4>
+It is also possible to get only the elements that fit a condition using the filter() method.
+
+<pre class="brush: jscript; title: ; notranslate">
+[0,1,2].filter(function(d) {return d;})
+// this will return [1,2]. 0 is evaluated as &quot;false&quot;.
+</pre>
+
+<pre class="brush: jscript; title: ; notranslate">
+[1,2,3,4,5].filter(function(d) {return (d&gt;2);})
+// this will return [3,4,5].
+</pre>
+
+Of course, the more complex the array, the more interesting these functions get. 
+With the barley array from <a href="http://www.jeromecukier.net/?p=502">part 4</a>:
+
+<pre class="brush: jscript; title: ; notranslate"> barley.filter(function(d) {return d.variety==&quot;Manchuria&quot;;}
+/* this will return: 
+  [{&quot;yield&quot;:27,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;University Farm&quot;},
+   {&quot;yield&quot;:48.86667,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Waseca&quot;},
+   {&quot;yield&quot;:27.43334,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Morris&quot;},
+   {&quot;yield&quot;:39.93333,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Crookston&quot;},
+   {&quot;yield&quot;:32.96667,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Grand Rapids&quot;},
+   {&quot;yield&quot;:28.96667,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Duluth&quot;},
+   {&quot;yield&quot;:26.9,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;University Farm&quot;},
+   {&quot;yield&quot;:33.46667,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Waseca&quot;},
+   {&quot;yield&quot;:34.36666,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Morris&quot;},
+   {&quot;yield&quot;:32.96667,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Crookston&quot;},
+   {&quot;yield&quot;:22.13333,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Grand Rapids&quot;},
+   {&quot;yield&quot;:22.56667,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Duluth&quot;}]*/</pre>
+<h3>Visualizing arrays</h3>
+(without plotting them, of course)
+When you are manipulating arrays, turning them into maps, performing roll-ups and sorts, you may want to get a glimpse of the array. But, unless it's a single, one-dimensional array, firebug or chrome debugger will represent it as a cryptic [ > Object, > Object, > Object ]. 
+
+Not being able to follow step by step what's happening to an array makes understanding the data functions much more difficult. 
+Fortunately, you can use the JSON.stringify() method.
+
+<pre class="brush: jscript; title: ; notranslate">JSON.stringify(barley)
+/*returns: 
+&quot;[
+{&quot;yield&quot;:27,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:48.86667,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:27.43334,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:39.93333,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:32.96667,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:28.96667,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:43.06666,&quot;variety&quot;:&quot;Glabron&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:55.2,&quot;variety&quot;:&quot;Glabron&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:28.76667,&quot;variety&quot;:&quot;Glabron&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:38.13333,&quot;variety&quot;:&quot;Glabron&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:29.13333,&quot;variety&quot;:&quot;Glabron&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:29.66667,&quot;variety&quot;:&quot;Glabron&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:35.13333,&quot;variety&quot;:&quot;Svansota&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:47.33333,&quot;variety&quot;:&quot;Svansota&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:25.76667,&quot;variety&quot;:&quot;Svansota&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:40.46667,&quot;variety&quot;:&quot;Svansota&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:29.66667,&quot;variety&quot;:&quot;Svansota&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:25.7,&quot;variety&quot;:&quot;Svansota&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:39.9,&quot;variety&quot;:&quot;Velvet&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:50.23333,&quot;variety&quot;:&quot;Velvet&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:26.13333,&quot;variety&quot;:&quot;Velvet&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:41.33333,&quot;variety&quot;:&quot;Velvet&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:23.03333,&quot;variety&quot;:&quot;Velvet&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:26.3,&quot;variety&quot;:&quot;Velvet&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:36.56666,&quot;variety&quot;:&quot;Trebi&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:63.8333,&quot;variety&quot;:&quot;Trebi&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:43.76667,&quot;variety&quot;:&quot;Trebi&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:46.93333,&quot;variety&quot;:&quot;Trebi&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:29.76667,&quot;variety&quot;:&quot;Trebi&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:33.93333,&quot;variety&quot;:&quot;Trebi&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:43.26667,&quot;variety&quot;:&quot;No. 457&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:58.1,&quot;variety&quot;:&quot;No. 457&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:28.7,&quot;variety&quot;:&quot;No. 457&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:45.66667,&quot;variety&quot;:&quot;No. 457&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:32.16667,&quot;variety&quot;:&quot;No. 457&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:33.6,&quot;variety&quot;:&quot;No. 457&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:36.6,&quot;variety&quot;:&quot;No. 462&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:65.7667,&quot;variety&quot;:&quot;No. 462&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:30.36667,&quot;variety&quot;:&quot;No. 462&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:48.56666,&quot;variety&quot;:&quot;No. 462&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:24.93334,&quot;variety&quot;:&quot;No. 462&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:28.1,&quot;variety&quot;:&quot;No. 462&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:32.76667,&quot;variety&quot;:&quot;Peatland&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:48.56666,&quot;variety&quot;:&quot;Peatland&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:29.86667,&quot;variety&quot;:&quot;Peatland&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:41.6,&quot;variety&quot;:&quot;Peatland&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:34.7,&quot;variety&quot;:&quot;Peatland&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:32,&quot;variety&quot;:&quot;Peatland&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:24.66667,&quot;variety&quot;:&quot;No. 475&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:46.76667,&quot;variety&quot;:&quot;No. 475&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:22.6,&quot;variety&quot;:&quot;No. 475&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:44.1,&quot;variety&quot;:&quot;No. 475&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:19.7,&quot;variety&quot;:&quot;No. 475&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:33.06666,&quot;variety&quot;:&quot;No. 475&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:39.3,&quot;variety&quot;:&quot;Wisconsin No. 38&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:58.8,&quot;variety&quot;:&quot;Wisconsin No. 38&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:29.46667,&quot;variety&quot;:&quot;Wisconsin No. 38&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:49.86667,&quot;variety&quot;:&quot;Wisconsin No. 38&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:34.46667,&quot;variety&quot;:&quot;Wisconsin No. 38&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:31.6,&quot;variety&quot;:&quot;Wisconsin No. 38&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:26.9,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:33.46667,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:34.36666,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:32.96667,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:22.13333,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:22.56667,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:36.8,&quot;variety&quot;:&quot;Glabron&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:37.73333,&quot;variety&quot;:&quot;Glabron&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:35.13333,&quot;variety&quot;:&quot;Glabron&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:26.16667,&quot;variety&quot;:&quot;Glabron&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:14.43333,&quot;variety&quot;:&quot;Glabron&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:25.86667,&quot;variety&quot;:&quot;Glabron&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:27.43334,&quot;variety&quot;:&quot;Svansota&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:38.5,&quot;variety&quot;:&quot;Svansota&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:35.03333,&quot;variety&quot;:&quot;Svansota&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:20.63333,&quot;variety&quot;:&quot;Svansota&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:16.63333,&quot;variety&quot;:&quot;Svansota&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:22.23333,&quot;variety&quot;:&quot;Svansota&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:26.8,&quot;variety&quot;:&quot;Velvet&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:37.4,&quot;variety&quot;:&quot;Velvet&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:38.83333,&quot;variety&quot;:&quot;Velvet&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:32.06666,&quot;variety&quot;:&quot;Velvet&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:32.23333,&quot;variety&quot;:&quot;Velvet&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:22.46667,&quot;variety&quot;:&quot;Velvet&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:29.06667,&quot;variety&quot;:&quot;Trebi&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:49.2333,&quot;variety&quot;:&quot;Trebi&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:46.63333,&quot;variety&quot;:&quot;Trebi&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:41.83333,&quot;variety&quot;:&quot;Trebi&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:20.63333,&quot;variety&quot;:&quot;Trebi&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:30.6,&quot;variety&quot;:&quot;Trebi&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:26.43334,&quot;variety&quot;:&quot;No. 457&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:42.2,&quot;variety&quot;:&quot;No. 457&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:43.53334,&quot;variety&quot;:&quot;No. 457&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:34.33333,&quot;variety&quot;:&quot;No. 457&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:19.46667,&quot;variety&quot;:&quot;No. 457&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:22.7,&quot;variety&quot;:&quot;No. 457&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:25.56667,&quot;variety&quot;:&quot;No. 462&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:44.7,&quot;variety&quot;:&quot;No. 462&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:47,&quot;variety&quot;:&quot;No. 462&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:30.53333,&quot;variety&quot;:&quot;No. 462&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:19.9,&quot;variety&quot;:&quot;No. 462&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:22.5,&quot;variety&quot;:&quot;No. 462&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:28.06667,&quot;variety&quot;:&quot;Peatland&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:36.03333,&quot;variety&quot;:&quot;Peatland&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:43.2,&quot;variety&quot;:&quot;Peatland&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:25.23333,&quot;variety&quot;:&quot;Peatland&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:26.76667,&quot;variety&quot;:&quot;Peatland&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:31.36667,&quot;variety&quot;:&quot;Peatland&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:30,&quot;variety&quot;:&quot;No. 475&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:41.26667,&quot;variety&quot;:&quot;No. 475&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:44.23333,&quot;variety&quot;:&quot;No. 475&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:32.13333,&quot;variety&quot;:&quot;No. 475&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:15.23333,&quot;variety&quot;:&quot;No. 475&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:27.36667,&quot;variety&quot;:&quot;No. 475&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:38,&quot;variety&quot;:&quot;Wisconsin No. 38&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:58.16667,&quot;variety&quot;:&quot;Wisconsin No. 38&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:47.16667,&quot;variety&quot;:&quot;Wisconsin No. 38&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:35.9,&quot;variety&quot;:&quot;Wisconsin No. 38&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:20.66667,&quot;variety&quot;:&quot;Wisconsin No. 38&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:29.33333,&quot;variety&quot;:&quot;Wisconsin No. 38&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Duluth&quot;}
+]&quot;*/</pre>
+
+No matter the manipulations you inflict to an array you will always be able to make it reveal its innards by using this.
+
+]]></content:encoded>
+			<wfw:commentRss>/2011/03/15/more-fun-with-arrays-in-protovis/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Protovis: analysis of the Map projections example</title>
+		<link>/2011/03/15/protovis-analysis-of-the-map-projections-example/</link>
+		<comments>/2011/03/15/protovis-analysis-of-the-map-projections-example/#respond</comments>
+		<pubDate>Tue, 15 Mar 2011 16:17:31 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[protovis]]></category>
+		<category><![CDATA[arrays]]></category>
+		<category><![CDATA[data]]></category>
+		<category><![CDATA[map]]></category>
+		<category><![CDATA[projections]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=573</guid>
+		<description><![CDATA[What is a map? before we start looking at the code it may be a good idea to think of the best way to represent a country. Countries are areas of land surrounded by borders, which are imaginary (or sometimes physical) lines going through a set of points. Some countries are made of one of <a class="read-more" href="/2011/03/15/protovis-analysis-of-the-map-projections-example/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<h2>What is a map?</h2>
+<p>before we start looking at the code it may be a good idea to think of the best way to represent a country.<br />
+Countries are areas of land surrounded by borders, which are imaginary (or sometimes physical) <strong>lines</strong> going through a set of <strong>points</strong>.<br />
+<a href="http://www.jeromecukier.net/wp-content/uploads/2011/03/square.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/03/square.png" alt="" title="square" width="200" height="200" class="aligncenter size-full wp-image-748" /></a></p>
+<p>Some countries are made of one of such surfaces, but many countries are not one contiguous territory (they may include islands for instance) so they could be made out of <strong>several disjointed polygons</strong>.<br />
+<a href="http://www.jeromecukier.net/wp-content/uploads/2011/03/square1.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/03/square1.png" alt="" title="square" width="200" height="200" class="aligncenter size-full wp-image-749" /></a>.</p>
+<p>Now let&#8217;s put on our protovis hat. Let&#8217;s suppose we want to draw a map where each country could be colored differently (choropleth). What kind of data structure should be use to represent that?<br />
+First there should be a sort of array of countries. Each country should be an item in that array, so they can be indexed and assigned an individual color and various data points.<br />
+Then, at the lowest level, we would be drawing polygons, which are treated as pv.Line in protovis. For each polygon, we would require an array of coordinate pairs. To draw a country, we would need a list (array) of those polygons. </p>
+<p>So the data structure we are looking at is: </p>
+<pre class="brush: jscript; title: ; notranslate">var world=[  // an array of countries
+    [ // an array of polygons
+        [ // an array of pairs of coordinates
+            [x0, y0], // coordinates of the first point
+            [x1, y1], // coordinates of the next one
+                ... 
+            [xn, yn],
+            [x0, y0]  // coordinates of the first point to close the polygon
+        ]
+       ...              // another polygon, but maybe not.
+   ], 
+   [                    // next country
+  ...
+   ]
+...
+]</pre>
+<h2>the map projections example</h2>
+<p><a href="http://www.jeromecukier.net/wp-content/uploads/2011/03/projections.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/03/projections.png" alt="" title="projections" width="600" height="360" class="aligncenter size-full wp-image-754" /></a></p>
+<p>Can be found <a href="http://vis.stanford.edu/protovis/ex/projection.html">here: </a> http://vis.stanford.edu/protovis/ex/projection.html</p>
+<pre class="brush: jscript; title: ; notranslate">/*
+ * A diverging color scale, using previously-computed quantiles of population
+ * densities; in the future, we might use a quantile scale here to do this
+ * automatically. Map colors based on www.ColorBrewer.org, by Cynthia A. Brewer,
+ * Penn State.
+ */
+var fill = pv.Scale.linear()
+    .domain(140, 650, 1900)
+    .range(&quot;#91bfdb&quot;, &quot;#ffffbf&quot;, &quot;#fc8d59&quot;);
+
+/* Precompute the country's population density and color. */
+countries.forEach(function(c) {
+  c.color = stats[c.code].area
+      ? fill(stats[c.code].pop / stats[c.code].area)
+      : &quot;#ccc&quot;; // unknown
+});
+
+var w = 860,
+    h = 3 / 5 * w,
+    geo = pv.Geo.scale(&quot;hammer&quot;).range(w, h);
+
+var vis = new pv.Panel()
+    .width(w)
+    .height(h);
+
+/* Countries. */
+vis.add(pv.Panel)
+    .data(countries)
+  .add(pv.Panel)
+    .data(function(c) c.borders)
+  .add(pv.Line)
+    .data(function(b) b)
+    .left(geo.x)
+    .top(geo.y)
+    .title(function(d, b, c) c.name)
+    .fillStyle(function(d, b, c) c.color)
+    .strokeStyle(function() this.fillStyle().darker())
+    .lineWidth(1)
+    .antialias(false);
+
+/* Latitude ticks. */
+vis.add(pv.Panel)
+    .data(geo.ticks.lat())
+  .add(pv.Line)
+    .data(function(b) b)
+    .left(geo.x)
+    .top(geo.y)
+    .strokeStyle(&quot;rgba(128,128,128,.3)&quot;)
+    .lineWidth(1)
+    .interpolate(&quot;cardinal&quot;)
+    .antialias(false);
+
+/* Longitude ticks. */
+vis.add(pv.Panel)
+    .data(geo.ticks.lng())
+  .add(pv.Line)
+    .data(function(b) b)
+    .left(geo.x)
+    .top(geo.y)
+    .strokeStyle(&quot;rgba(128,128,128,.3)&quot;)
+    .lineWidth(1)
+    .interpolate(&quot;cardinal&quot;)
+    .antialias(false);
+
+vis.render();
+</pre>
+<p>In addition there are two arrays of the following shape:<br />
+First, stats which is an associative arrays of associative arrays, and which associate each 2-letter country code with values of population and area:</p>
+<pre class="brush: jscript; light: true; title: ; notranslate">
+var stats = {
+'AG': {pop:83039, area:44},
+'DZ': {pop:32854159, area:238174},
+...
+'US': {pop:299846449, area:915896},
+...
+};
+</pre>
+<p>Then, countries, which is an array of associative arrays.</p>
+<pre class="brush: jscript; light: true; title: ; notranslate">
+var countries = [
+{code:'AG', name:&quot;Antigua and Barbuda&quot;, 
+borders:[ // an array of one or several areas, 
+  [ // an array of coordinates, 
+    [ // a pair of the form longitude, lattitude
+       ...
+    ]
+  ]
+]}
+...
+]</pre>
+<p>Now this second data structure looks a lot like the one we&#8217;ve drafted in the prologue. All the geographic information is tucked in a property called &#8220;borders&#8221;. The array has other properties for comfort.<br />
+Because the data is put in the right shape and order, this script can produce a very good map with a remarkable economy of code.<br />
+This example has been put together to showcase the various map projections of protovis (identity, mercator, and so on.). These projections have zero impact on the way data should be assembled for making maps, so we&#8217;ll just treat them as &#8220;magic&#8221;. </p>
+<pre class="brush: jscript; title: ; notranslate">/*
+ * A diverging color scale, using previously-computed quantiles of population
+ * densities; in the future, we might use a quantile scale here to do this
+ * automatically. Map colors based on www.ColorBrewer.org, by Cynthia A. Brewer,
+ * Penn State.
+ */
+var fill = pv.Scale.linear()
+    .domain(140, 650, 1900)
+    .range(&quot;#91bfdb&quot;, &quot;#ffffbf&quot;, &quot;#fc8d59&quot;);
+</pre>
+<p>This part creates a color scale which will return a color according to the value passed to it. The color returned will be somewhere between the ones specified in the range, depending on where the value is relatively to the values specified in the domain. So a value of 140 will result in a color of #91bfdb (bluish), it will go towards the grey as the value moves up to 650, and towards #fc8d59 (redish) as the value goes up to 1900.</p>
+<pre class="brush: jscript; first-line: 11; title: ; notranslate">/* Precompute the country's population density and color. */
+countries.forEach(function(c) {
+  c.color = stats[c.code].area
+      ? fill(stats[c.code].pop / stats[c.code].area)
+      : &quot;#ccc&quot;; // unknown
+});</pre>
+<p>As the remark says, this will precompute the country&#8217;s color once and for all.<br />
+The <a href="http://www.jeromecukier.net/?p=494">forEach() method</a> goes to every element of the countries array.<br />
+the c.color = statement will add a color key to each element of that array (which, as you may recall, already has values for the code, name and borders keys.<br />
+What it does is that is retrieves the country code of that element of countries, c.code, and uses that to find out whether we have an area value for that country code (this is stats[/c].area?).<br />
+If this is the case, we are going to compute the color that should be attributed to the country, by passing the population divided by the area to the color scale we just made. Else, we just use light grey.</p>
+<p>The next few lines are standard constants that will shape the vis.<br />
+Note however </p>
+<pre class="brush: jscript; first-line: 20; title: ; notranslate">geo = pv.Geo.scale(&quot;hammer&quot;).range(w, h)</pre>
+<p>This is a geographic scale, which will be used to convert longitudes and latitudes to X and Y coordinates on the screen.</p>
+<pre class="brush: jscript; first-line: 26; title: ; notranslate">/* Countries. */
+vis.add(pv.Panel)
+    .data(countries)
+  .add(pv.Panel)
+    .data(function(c) c.borders)
+  .add(pv.Line)
+    .data(function(b) b)
+    .left(geo.x)
+    .top(geo.y)
+    .title(function(d, b, c) c.name)
+    .fillStyle(function(d, b, c) c.color)
+    .strokeStyle(function() this.fillStyle().darker())
+    .lineWidth(1)
+    .antialias(false);</pre>
+<p>This is where it all happens.<br />
+First, we create a series of panels, one for each country. So, we pass the countries array as data.<br />
+Then, we are going to create another series of panels for every country, that is, with as many panels as there are independent areas in the country. For instance, if there are islands, we are going to need extra panels to represent them. If the country is one contiguous mass of land, there will be just one panel here.<br />
+This time, we use function(c) c.borders as data. That is, we go into the borders array.</p>
+<p>Finally, we are going to create a filled polygon for each of these independent areas. This is achieved by adding a pv.Line to the previous panels. Likewise, we use (function(b) b) as data, meaning that we go yet another level into the borders array. Now, we are accessing the pairs of longitude + latitude numbers.</p>
+<p>geo.x and geo.y convert this pair of numbers to X and Y coordinates on the screen.<br />
+For the next two lines, title and fillStyle, we need to go back to the country level.<br />
+so, we use a function of the form <a href="http://www.jeromecukier.net/?p=479">function(d,b,c)</a>. d is the current item (pair of longitude, latitude), b its parent (individual area) and c, its grand-parent (the country).<br />
+so, function(d,b,c) c.name retrieves the country name, and function(d,b,c) c.color retrieves the color we had computed for that country to begin with.</p>
+<p>For the color of the border, we wish to use a darker version of the fill color. This is what the this.fillStyle().darker() does.</p>
+<p>The rest of the vis is longitude and latitude ticks, using the built-in properties of the scale.</p>
+]]></content:encoded>
+			<wfw:commentRss>/2011/03/15/protovis-analysis-of-the-map-projections-example/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>The top TV earners are not found on tabloids.</title>
+		<link>/2011/02/22/the-top-tv-earners-are-not-found-on-tabloids/</link>
+		<comments>/2011/02/22/the-top-tv-earners-are-not-found-on-tabloids/#comments</comments>
+		<pubDate>Tue, 22 Feb 2011 17:23:48 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[charts]]></category>
+		<category><![CDATA[protovis]]></category>
+		<category><![CDATA[flowing data challenge]]></category>
+		<category><![CDATA[scatterplot]]></category>
+		<category><![CDATA[tv earners]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=681</guid>
+		<description><![CDATA[This is my contribution to Flowing Data challenge: visualize this / top tv earners. When I looked at the dataset provided by Nathan I first wondered what was missing. Quite a few stars were missing in the list. I added Simon Baker whose Mentalist gets a huge audience and who is said to be getting <a class="read-more" href="/2011/02/22/the-top-tv-earners-are-not-found-on-tabloids/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[This is my contribution to Flowing Data challenge: <a href="http://flowingdata.com/2011/02/15/visualize-this-tvs-top-earners/">visualize this / top tv earners</a>.</p>
+<div>
+<script type="text/javascript" src="http://blog.oecdfactblog.org/wp-includes/js/protovis-r3.2.js"></script>
+<script type="text/javascript+protovis">
+var TRUE=true;
+var FALSE=false;
+
+var data=[
+{actor: "William Shatner", show: "$#*! My Dad Says", ppe: 150000, type:"Comedy", viewers:5.2, channel:"cbs",mins:21, ey:18, ppm:7142.85714285714, ppy:2700000, star:TRUE},
+{actor: "Tina Fey", show: "30 Rock", ppe: 350000, type:"Comedy", viewers:2.3, channel:"nbc",mins:21, ey:18.8, ppm:16666.6666666667, ppy:6580000, star:TRUE},
+{actor: "Tom Selleck", show: "Blue Bloods", ppe: 125000, type:"Drama", viewers:11.1, channel:"cbs",mins:45, ey:15, ppm:2777.77777777778, ppy:1875000, star:TRUE},
+{actor: "Dana Delany", show: "Body of Proof", ppe: 150000, type:"Drama", viewers:4, channel:"abc",mins:42, ey:13, ppm:3571.42857142857, ppy:1950000, star:TRUE},
+{actor: "David Boreanaz", show: "Bones", ppe: 200000, type:"Drama", viewers:10.1, channel:"fox",mins:43, ey:20, ppm:4651.16279069767, ppy:4000000, star:TRUE},
+{actor: "Jeffrey Donovan", show: "Burn Notice", ppe: 200000, type:"Drama", viewers:4.8, channel:"usa",mins:42, ey:15.5, ppm:4761.90476190476, ppy:3100000, star:TRUE},
+{actor: "David Duchovny", show: "Californication", ppe: 200000, type:"Comedy", viewers:0.5, channel:"showtime",mins:26, ey:10.75, ppm:7692.30769230769, ppy:2150000, star:TRUE},
+{actor: "Nathan Fillion", show: "Castle", ppe: 100000, type:"Drama", viewers:8.75, channel:"abc",mins:43, ey:16.6666666666667, ppm:2325.58139534884, ppy:1666666.66666667, star:TRUE},
+{actor: "Cole Hauser", show: "Chase", ppe: 100000, type:"Drama", viewers:4.3, channel:"nbc",mins:42, ey:13, ppm:2380.95238095238, ppy:1300000, star:TRUE},
+{actor: "Zachary Levi", show: "Chuck", ppe: 60000, type:"Drama", viewers:5.5, channel:"abc",mins:43, ey:17.5, ppm:1395.3488372093, ppy:1050000, star:TRUE},
+{actor: "Joe Mantegna", show: "Criminal Minds", ppe: 125000, type:"Drama", viewers:12.8, channel:"cbs",mins:45, ey:21.5, ppm:2777.77777777778, ppy:2687500, star:TRUE},
+{actor: "Thomas Gibson", show: "Criminal Minds", ppe: 100000, type:"Drama", viewers:12.8, channel:"cbs",mins:45, ey:21.5, ppm:2222.22222222222, ppy:2150000, star:FALSE},
+{actor: "Marg Helgenberger", show: "CSI", ppe: 375000, type:"Drama", viewers:12.65, channel:"cbs",mins:42, ey:22.1818181818182, ppm:8928.57142857143, ppy:8318181.81818182, star:TRUE},
+{actor: "Laurence Fishburne", show: "CSI", ppe: 350000, type:"Drama", viewers:12.65, channel:"cbs",mins:42, ey:22.1818181818182, ppm:8333.33333333333, ppy:7763636.36363636, star:FALSE},
+{actor: "David Caruso", show: "CSI: Miami", ppe: 375000, type:"Drama", viewers:10.4, channel:"cbs",mins:44, ey:22.6666666666667, ppm:8522.72727272727, ppy:8500000, star:TRUE},
+{actor: "Gary Sinise", show: "CSI: NY", ppe: 275000, type:"Drama", viewers:10.6, channel:"cbs",mins:43, ey:22.1428571428571, ppm:6395.3488372093, ppy:6089285.71428571, star:TRUE},
+{actor: "Marcia Cross", show: "Desperate Housewives", ppe: 400000, type:"Comedy", viewers:10.4, channel:"abc",mins:41, ey:21.2857142857143, ppm:9756.09756097561, ppy:8514285.71428571, star:FALSE},
+{actor: "Felicity Huffman", show: "Desperate Housewives", ppe: 400000, type:"Comedy", viewers:10.4, channel:"abc",mins:41, ey:21.2857142857143, ppm:9756.09756097561, ppy:8514285.71428571, star:FALSE},
+{actor: "Eva Longoria", show: "Desperate Housewives", ppe: 400000, type:"Comedy", viewers:10.4, channel:"abc",mins:41, ey:21.2857142857143, ppm:9756.09756097561, ppy:8514285.71428571, star:FALSE},
+{actor: "Teri Hatcher", show: "Desperate Housewives", ppe: 400000, type:"Comedy", viewers:10.4, channel:"abc",mins:41, ey:21.2857142857143, ppm:9756.09756097561, ppy:8514285.71428571, star:TRUE},
+{actor: "Jeremy Piven", show: "Entourage", ppe: 350000, type:"Comedy", viewers:1.85, channel:"hbo",mins:26, ey:12.5714285714286, ppm:13461.5384615385, ppy:4400000, star:TRUE},
+{actor: "Kevin Dillon", show: "Entourage", ppe: 200000, type:"Comedy", viewers:1.85, channel:"hbo",mins:26, ey:12.5714285714286, ppm:7692.30769230769, ppy:2514285.71428571, star:FALSE},
+{actor: "Adrian Grenier", show: "Entourage", ppe: 200000, type:"Comedy", viewers:1.85, channel:"hbo",mins:26, ey:12.5714285714286, ppm:7692.30769230769, ppy:2514285.71428571, star:FALSE},
+{actor: "Jane Lynch", show: "Glee", ppe: 50000, type:"Comedy", viewers:10.5, channel:"fox",mins:45, ey:17.5, ppm:1111.11111111111, ppy:875000, star:TRUE},
+{actor: "Matthew Morrison", show: "Glee", ppe: 30000, type:"Comedy", viewers:10.5, channel:"fox",mins:45, ey:17.5, ppm:666.666666666667, ppy:525000, star:FALSE},
+{actor: "Patrick Dempsey", show: "Grey's Anatomy", ppe: 250000, type:"Drama", viewers:10.4, channel:"abc",mins:43, ey:20, ppm:5813.95348837209, ppy:5000000, star:TRUE},
+{actor: "Alex O'Loughlin", show: "Hawaii Five-O", ppe: 100000, type:"Drama", viewers:10.6, channel:"cbs",mins:42, ey:18, ppm:2380.95238095238, ppy:1800000, star:TRUE},
+{actor: "Scott Caan", show: "Hawaii Five-O", ppe: 80000, type:"Drama", viewers:10.6, channel:"cbs",mins:42, ey:18, ppm:1904.7619047619, ppy:1440000, star:FALSE},
+{actor: "Jada Pinkett Smith", show: "HawthoRNe", ppe: 150000, type:"Drama", viewers:3.6, channel:"tnt",mins:42, ey:10, ppm:3571.42857142857, ppy:1500000, star:TRUE},
+{actor: "Ashley Tisdale", show: "Hellcats", ppe: 30000, type:"Drama", viewers:1.6, channel:"cw",mins:41, ey:15, ppm:731.707317073171, ppy:450000, star:TRUE},
+{actor: "Ed O'Neil", show: "Hot in Cleveland", ppe: 100000, type:"Comedy", viewers:0.95, channel:"tvl",mins:23, ey:7, ppm:4347.82608695652, ppy:700000, star:TRUE},
+{actor: "Betty White", show: "Hot in Cleveland", ppe: 75000, type:"Comedy", viewers:0.95, channel:"tvl",mins:23, ey:7, ppm:3260.86956521739, ppy:525000, star:FALSE},
+{actor: "Hugh Laurie", show: "House", ppe: 400000, type:"Drama", viewers:9.9, channel:"fox",mins:42, ey:20.7142857142857, ppm:9523.80952380952, ppy:8285714.28571429, star:TRUE},
+{actor: "Miranada Cosgrove", show: "iCarly", ppe: 180000, type:"Comedy", viewers:4.9, channel:"nick",mins:23, ey:19.5, ppm:7826.08695652174, ppy:3510000, star:TRUE},
+{actor: "Timothy Olyphant", show: "Justified", ppe: 100000, type:"Drama", viewers:2.4, channel:"fx",mins:42, ey:7.5, ppm:2380.95238095238, ppy:750000, star:TRUE},
+{actor: "Christopher Meloni", show: "Law & Order: SVU", ppe: 395000, type:"Drama", viewers:17.6, channel:"nbc",mins:42, ey:22.0833333333333, ppm:9404.7619047619, ppy:8722916.66666667, star:TRUE},
+{actor: "Mariska Hargitay", show: "Law & Order: SVU", ppe: 395000, type:"Drama", viewers:17.6, channel:"nbc",mins:42, ey:22.0833333333333, ppm:9404.7619047619, ppy:8722916.66666667, star:FALSE},
+{actor: "Jon Hamm", show: "Mad Men", ppe: 100000, type:"Drama", viewers:2, channel:"amc",mins:47, ey:13, ppm:2127.65957446808, ppy:1300000, star:TRUE},
+{actor: "Jason Lee", show: "Memphis Beat", ppe: 125000, type:"Drama", viewers:3.6, channel:"tnt",mins:43, ey:10, ppm:2906.97674418605, ppy:1250000, star:TRUE},
+{actor: "Ty Burrell", show: "Modern Family", ppe: 50000, type:"Comedy", viewers:6.55, channel:"abc",mins:22, ey:12, ppm:2272.72727272727, ppy:600000, star:TRUE},
+{actor: "Rico Rodriguez", show: "Modern Family", ppe: 15000, type:"Comedy", viewers:6.55, channel:"abc",mins:22, ey:12, ppm:681.818181818182, ppy:180000, star:FALSE},
+{actor: "Mark Harmon", show: "NCIS", ppe: 375000, type:"Drama", viewers:19.5, channel:"cbs",mins:43, ey:22.125, ppm:8720.93023255814, ppy:8296875, star:TRUE},
+{actor: "Michael Weatherly", show: "NCIS", ppe: 125000, type:"Drama", viewers:19.5, channel:"cbs",mins:43, ey:22.125, ppm:2906.97674418605, ppy:2765625, star:FALSE},
+{actor: "LL Cool J", show: "NCIS: Los Angeles", ppe: 125000, type:"Drama", viewers:16.8, channel:"cbs",mins:43, ey:20, ppm:2906.97674418605, ppy:2500000, star:TRUE},
+{actor: "Chris O'Donnell", show: "NCIS: Los Angeles", ppe: 125000, type:"Drama", viewers:16.8, channel:"cbs",mins:43, ey:20, ppm:2906.97674418605, ppy:2500000, star:FALSE},
+{actor: "Edie Falco", show: "Nurse Jackie", ppe: 175000, type:"Comedy", viewers:0.45, channel:"showtime",mins:27, ey:12, ppm:6481.48148148148, ppy:2100000, star:TRUE},
+{actor: "Jimmy Smits", show: "Outlaw", ppe: 150000, type:"Drama", viewers:3.4, channel:"nbc",mins:43, ey:8, ppm:3488.37209302326, ppy:1200000, star:TRUE},
+{actor: "Lauren Graham", show: "Parenthood", ppe: 150000, type:"Drama", viewers:1.9, channel:"nbc",mins:43, ey:14.5, ppm:3488.37209302326, ppy:2175000, star:TRUE},
+{actor: "Denis Leary", show: "Rescue Me", ppe: 350000, type:"Drama", viewers:1.2, channel:"fx",mins:43, ey:14, ppm:8139.53488372093, ppy:4900000, star:TRUE},
+{actor: "Angie Harmon", show: "Rizzoli & Isles", ppe: 75000, type:"Drama", viewers:9, channel:"tnt",mins:45, ey:10, ppm:1666.66666666667, ppy:750000, star:TRUE},
+{actor: "Mark Feuerstein", show: "Royal Pains", ppe: 125000, type:"Drama", viewers:3.9, channel:"usa",mins:42, ey:14.5, ppm:2976.19047619048, ppy:1812500, star:TRUE},
+{actor: "David Spade", show: "Rules of Engagement", ppe: 150000, type:"Comedy", viewers:4.3, channel:"cbs",mins:30, ey:12.6, ppm:5000, ppy:1890000, star:TRUE},
+{actor: "Patrick Warburton", show: "Rules of Engagement", ppe: 85000, type:"Comedy", viewers:4.3, channel:"cbs",mins:30, ey:12.6, ppm:2833.33333333333, ppy:1071000, star:FALSE},
+{actor: "Kaley Cuoco", show: "The Big Bang Theory", ppe: 60000, type:"Comedy", viewers:6.4, channel:"cbs",mins:21, ey:19.75, ppm:2857.14285714286, ppy:1185000, star:TRUE},
+{actor: "Jaonny Galecki", show: "The Big Bang Theory", ppe: 60000, type:"Comedy", viewers:6.4, channel:"cbs",mins:21, ey:19.75, ppm:2857.14285714286, ppy:1185000, star:FALSE},
+{actor: "Jim Parsons", show: "The Big Bang Theory", ppe: 40000, type:"Comedy", viewers:6.4, channel:"cbs",mins:21, ey:19.75, ppm:1904.7619047619, ppy:790000, star:FALSE},
+{actor: "Kyra Sedwick", show: "The Closer", ppe: 350000, type:"Drama", viewers:7.2, channel:"tnt",mins:51, ey:14.6666666666667, ppm:6862.74509803922, ppy:5133333.33333333, star:TRUE},
+{actor: "Blair Underwood", show: "The Event", ppe: 75000, type:"Drama", viewers:5.6, channel:"nbc",mins:43, ey:10, ppm:1744.18604651163, ppy:750000, star:TRUE},
+{actor: "Julianna Margulies", show: "The Good Wife", ppe: 175000, type:"Drama", viewers:11.4, channel:"cbs",mins:43, ey:17, ppm:4069.76744186047, ppy:2975000, star:TRUE},
+{actor: "Simon Baker", show: "the mentalist", ppe: 450000, type:"Drama", viewers:14.75, channel:"cbs",mins:43, ey:20.3333333333333, ppm:10465.1162790698, ppy:9150000, star:TRUE},
+{actor: "Steve Carell", show: "The Office", ppe: 297000, type:"Comedy", viewers:3.45, channel:"nbc",mins:21, ey:20.4285714285714, ppm:14142.8571428571, ppy:6067285.71428571, star:TRUE},
+{actor: "Shailene Woodley", show: "The Secret Life of the American Teenager", ppe: 40000, type:"Drama", viewers:3.2, channel:"abc",mins:45, ey:20.3333333333333, ppm:888.888888888889, ppy:813333.333333333, star:TRUE},
+{actor: "Dan Castellaneta", show: "The Simpsons", ppe: 400000, type:"Comedy", viewers:5, channel:"fox",mins:23, ey:21.7272727272727, ppm:17391.3043478261, ppy:8690909.09090909, star:TRUE},
+{actor: "Julie Kavner", show: "The Simpsons", ppe: 400000, type:"Comedy", viewers:5, channel:"fox",mins:23, ey:21.7272727272727, ppm:17391.3043478261, ppy:8690909.09090909, star:FALSE},
+{actor: "Dylan Sprouse", show: "The Suite Life of Zack and Cody", ppe: 20000, type:"Comedy", viewers:2.5, channel:"disn",mins:22, ey:29, ppm:909.090909090909, ppy:580000, star:TRUE},
+{actor: "Cole Sprouse", show: "The Suite Life of Zack and Cody", ppe: 20000, type:"Comedy", viewers:2.5, channel:"disn",mins:22, ey:29, ppm:909.090909090909, ppy:580000, star:FALSE},
+{actor: "Ian Somerhalder", show: "The Vampire Diaries", ppe: 40000, type:"Drama", viewers:2.75, channel:"cw",mins:41, ey:18.5, ppm:975.609756097561, ppy:740000, star:TRUE},
+{actor: "Anna Paquin", show: "True Blood", ppe: 75000, type:"Drama", viewers:5.1, channel:"hbo",mins:55, ey:12, ppm:1363.63636363636, ppy:900000, star:TRUE},
+{actor: "Charlie Sheen", show: "Two and a Half Men", ppe: 1250000, type:"Comedy", viewers:7.25, channel:"cbs",mins:20, ey:22.125, ppm:62500, ppy:27656250, star:TRUE},
+{actor: "Jon Cryer", show: "Two and a Half Men", ppe: 550000, type:"Comedy", viewers:7.25, channel:"cbs",mins:20, ey:22.125, ppm:27500, ppy:12168750, star:FALSE},
+{actor: "Angus T. Jones", show: "Two and a Half Men", ppe: 250000, type:"Comedy", viewers:7.25, channel:"cbs",mins:20, ey:22.125, ppm:12500, ppy:5531250, star:FALSE},
+{actor: "Matt Bomer", show: "White Collar", ppe: 100000, type:"Drama", viewers:5.6, channel:"usa",mins:42, ey:13.5, ppm:2380.95238095238, ppy:1350000, star:TRUE},
+{actor: "Selena Gomez", show: "Wizards of Waverly Place", ppe: 30000, type:"Comedy", viewers:1.7, channel:"disn",mins:22, ey:22.25, ppm:1363.63636363636, ppy:667500, star:TRUE}];
+
+
+var c={
+abc: "#1f77b4",
+amc: "#aec7e8",
+cbs: "#ff7f0e",
+cw: "#ffbb78",
+disn: "#2ca02c",
+fox: "#98df8a",
+fx: "#d62728",
+hbo: "#ff9896",
+nbc: "#9467bd",
+nick: "#c5b0d5",
+showtime: "#8c564b",
+tnt: "#c49c94",
+tvl: "#e377c2",
+usa: "#f7b6d2"};
+
+
+
+function nformatter(number) {
+	if (number>1000000){
+		var x=Math.floor(number/1000000);
+		return (x+"."+nformatter(number-x*1000000));
+		}
+	else if(number>1000){
+		var x=Math.floor(number/1000);
+		return (x+"."+nformatter(number-x*1000));
+		} else {return ((number<100)?'0':'')+((number<10)?'0':'')+number;}
+		}
+
+
+
+//var myData=data.filter(function(d) {return d.star;});
+var myData=data; myData.forEach(function(d) {d.jitterX=6*Math.random(); d.jitterY=6*Math.random();});
+
+var maxPay=pv.max(myData, function(d) {return d.ppe;});
+var maxView=pv.max(myData, function(d) {return d.viewers;});
+var maxPpm=pv.max(myData, function(d) {return d.ppm;});
+
+maxView=20;
+maxPay=1300000;
+
+var selBubble=0;
+var th=620,w=500
+var h=500,w=500;
+
+vis=new pv.Panel()
+	.width(w)
+	.height(th)
+	;
+
+vis.add(pv.Label).top(35).left(w/2).textAlign("center").font("20px Georgia bold").text("Pay of TV series actors")
+
+vis.add(pv.Rule).bottom(145).top(75).data(pv.range(14)).left(function(d) 45+430*d*100000/maxPay).strokeStyle(function(d) d?"#eee":"#000")
+	.anchor("bottom").add(pv.Label).textAlign("center").textBaseline("top").visible(function(d) d).text(function(d) (d<10)?d*100+"k":(d/10)+"m")
+
+vis.add(pv.Label).top(75).left(13).textAngle(-Math.PI/2).text("Audience").textAlign("right")
+
+vis.add(pv.Rule).left(function(d) d?46:45).right(25).data(pv.range(11)).bottom(function(d) 145+400*d*2/maxView).strokeStyle(function(d) d?"#eee":"#000")
+	.anchor("left").add(pv.Label).textAlign("right").textBaseline("middle").visible(function(d) d).text(function(d) d*2+"m")
+
+vis.add(pv.Label).top(505).left(410).text("Pay per episode")
+
+vis.add(pv.Panel).bottom(120)
+	.add(pv.Dot)
+	.data(myData)
+	.bottom(function(d) 22+400*d.viewers/maxView+d.jitterX)
+	.left(function(d) 42+430*d.ppe/maxPay+d.jitterY)
+	.size(function(d) Math.sqrt(d.ppm)/2)
+	.event("mouseover", function() {selBubble=this.index;vis.render();})
+	//.event("unpoint", function() {selBubble=-1;})
+	.title(function(d) d.actor)
+	.fillStyle(function(d) pv.color(c[d.channel]).alpha(.8))
+	.strokeStyle(function(d) this.index==selBubble?"#000":null);
+
+
+vis.add(pv.Panel).top(520).height(120)//.add(pv.Rule).top(0).width(w).left(0).strokeStyle("dimgrey").parent
+	.add(pv.Label).top(35).left(20).text(function() myData[selBubble].actor).font("20px Georgia bold").parent
+	.add(pv.Label).top(55).left(20).text(function() myData[selBubble].show + " - "+(myData[selBubble].channel).toUpperCase()).font("12px Georgia").parent
+	.add(pv.Label).top(70).left(20).text("Pay per episode: ").font("12px Georgia").parent
+	.add(pv.Label).top(70).right(200).textAlign("right").text(function() '$'+nformatter(myData[selBubble].ppe)).font("12px Georgia").parent
+	.add(pv.Label).top(84).left(20).text("Pay per minute: ").font("12px Georgia").parent
+	.add(pv.Label).top(84).right(200).textAlign("right").text(function() '$'+nformatter(Math.floor(myData[selBubble].ppm))).font("12px Georgia").parent
+	.add(pv.Label).top(98).left(20).text("Hourly viewers per week (millions): ").font("12px Georgia").parent
+	.add(pv.Label).top(98).right(200).textAlign("right").text(function() +nformatter(myData[selBubble].viewers)).font("12px Georgia").parent
+
+	.add(pv.Label).top(55).left(350).text("The color of the bubble is").font("12px Georgia italic").parent
+	.add(pv.Label).top(70).left(350).text("the channel of the show, ").font("12px Georgia italic").parent
+	.add(pv.Label).top(84).left(350).text("the size of the bubble is").font("12px Georgia italic").parent
+	.add(pv.Label).top(98).left(350).text("the pay per minute.").font("12px Georgia italic").parent
+vis.render();
+
+
+
+    </script>
+</div><p>
+When I looked at the dataset <a href="http://datasets.flowingdata.com/tv-earners/top-tv-earners.csv">provided by Nathan</a> I first wondered what was missing. 
+Quite a few stars were missing in the list. I added Simon Baker whose Mentalist gets a huge audience and who is said to be getting $450k per show. Others who probably should be there include Forest Whittaker for the Criminal Minds spinoff, Jim Belushi in the Defenders, Kate Walsh in Private Practice or Elizabeth Michell in V. I don't think any of them is settling for less than $15k per episode. </p>
+
+<p>Another thing were the audiences. There are a few good sources for that (and some less good) so I tried to approximate how much viewers a show would generate for their channel. I came up with hourly viewers because a show that brings 10 million people to one channel for half an hour should be equivalent to one that gets 5 million viewers for an hour, right? </br>
+In fact, I wanted to come up with a proxy of how much value a TV show was generating and how much of that went into the pockets of the cast. It's probably possible to come up with a precise answer with better data than could be assembled by an amateur over a lunch break, audience is probably a part of the equation, but the short story doesn't require much calculation: actors only get the crumbs of a very fat pie. </br>
+A show like Grey's Anatomy got <a href="http://sbnikita.blogspot.com/2010/05/top-10-prime-network-programs-on-ad.html">$329.1m dollars of ad revenue in 2009</a>, which I assume is an US-only figure, the show being syndicated in many countries, unfortunately including France. And that excludes sales of DVD, paid donwloads and other streams of revenue. Out of that, Patrick Dempsey only got $6m. Now $6m is a lot of money, but actors of successful, established shows don't get a very good deal here. In the last seasons of "Friends", the 6 main actors all got <a href="http://www.nytimes.com/2002/02/12/business/friends-deal-will-pay-each-of-its-6-stars-22-million.html">$1m per episode</a>, which seemed fair in retrospect. Sarah Jessica Parker's salary even reached <a href="http://www.telegraph.co.uk/culture/film/starsandstories/3673404/Sarah-Jessica-Parker-Am-I-really-the-worlds-unsexiest-woman.html">$3.2m per Sex and the City episode</a>, but she was co-producer. And this was then. </p>
+
+<p>The chart can be divided in quadrants. On the lower-right corner, Charlie Sheen, who is the only one there with an old-school deal. </br>
+On the higher-left corner, the work horses - stars of the crime shows with stellar ratings, who could ask for more. </br>
+On the very bottom-left, those who are happy to be there. Etc.</p>
+
+<p>Now some stars of shows that get well over 10m viewers get "only" around $100k per episode. So obviously the revenue stream must go somewhere else! my money is on the writers <img src="https://s.w.org/images/core/emoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+
+<p>Also for fun, I computed the ratio of their salary to the length of each episode. I once calculated that I earned about 83 cents a minute, which sounds pretty ridiculous compared to Charlie Sheen's $62500!</p>
+
+
+
+]]></content:encoded>
+			<wfw:commentRss>/2011/02/22/the-top-tv-earners-are-not-found-on-tabloids/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Working with data in protovis: part 5 of 5</title>
+		<link>/2011/02/11/working-with-data-in-protovis-part-5-of-5/</link>
+		<comments>/2011/02/11/working-with-data-in-protovis-part-5-of-5/#comments</comments>
+		<pubDate>Fri, 11 Feb 2011 18:11:22 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[charts]]></category>
+		<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[protovis]]></category>
+		<category><![CDATA[tips]]></category>
+		<category><![CDATA[arc diagrams]]></category>
+		<category><![CDATA[force-directed graphs]]></category>
+		<category><![CDATA[graphs]]></category>
+		<category><![CDATA[layouts]]></category>
+		<category><![CDATA[matrix diagrams]]></category>
+		<category><![CDATA[network]]></category>
+		<category><![CDATA[stacked areas]]></category>
+		<category><![CDATA[stacked bars]]></category>
+		<category><![CDATA[stacked columns]]></category>
+		<category><![CDATA[treemaps]]></category>
+		<category><![CDATA[trees]]></category>
+		<category><![CDATA[tutorial]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=623</guid>
+		<description><![CDATA[previous: reshaping complex arrays (4/5) Working with layouts In this final part, we&#8217;re going to look at how we can shape our data to use the protovis built-in layouts such as stacked areas, treemaps or force-directed graphs. This is not a tutorial on how to use layouts stricto sensu, and I advise anyone interested to <a class="read-more" href="/2011/02/11/working-with-data-in-protovis-part-5-of-5/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>previous: <a href="http://www.jeromecukier.net/?p=502">reshaping complex arrays (4/5)</a></p>
+<h2>Working with layouts</h2>
+<p>In this final part, we&#8217;re going to look at how we can shape our data to use the protovis built-in layouts such as stacked areas, treemaps or force-directed graphs.<br />
+This is not a tutorial on how to use layouts stricto sensu, and I advise anyone interested to first look at the <a href="http://vis.stanford.edu/protovis/docs/layout.html">protovis documentation</a> to see what can be done with this and to understand the underlying concepts. </p>
+<p>But if there is one thing to know about layouts, it&#8217;s that they allow you to <strong>create non-trivial visualizations in even less code than regular protovis</strong>, provided that you <strong>pass them data in a form they can use</strong>, and this is precisely where we come in.</p>
+<h3>Three great categories of layouts</h3>
+<p>Currently, there are no fewer than 13 types of layouts in Protovis. Fortunately, there are examples for all of them in the gallery.<br />
+There are layouts for: </p>
+<ul>
+<li>Arrays of data</li>
+<ul>
+<li>
+Grids or heatmaps <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Grid.html">doc</a> <a href="http://vis.stanford.edu/protovis/ex/heatmap.html">example</a>
+</li>
+<li>
+Stacked areas or streamgraphs <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Stack.html">doc</a> <a href="http://vis.stanford.edu/protovis/ex/stack.html">stacked areas</a> <a href="http://vis.stanford.edu/protovis/ex/stream.html">streamgraphs</a>
+</li>
+</ul>
+<li>Networks (nodes and links)</td>
+<td>Hierarchized data (trees)</li>
+<ul>
+<li>
+Arc diagrams <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Arc.html">doc</a> <a href="http://vis.stanford.edu/protovis/ex/arc.html">example</a></li>
+<li>
+Force-directed graphs <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Force.html">doc</a> <a href="http://vis.stanford.edu/protovis/ex/force.html">example </a>
+</li>
+<li>
+Relationship matrices <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Matrix.html">doc</a> <a href="http://vis.stanford.edu/protovis/ex/matrix.html">example</a>
+</li>
+<li>Rollup network<a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Rollup.html">doc</a> (no example in Protovis 3.2, but there is one in 3.3)</li>
+</ul>
+<li>Trees and hierarchized data</li>
+<ul>
+<li>
+Dendograms <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Cluster.html">doc </a><a href="http://vis.stanford.edu/protovis/ex/dendrogram.html">example</a>
+</li>
+<li>
+Indented trees <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Indent.html">doc</a> <a href="http://vis.stanford.edu/protovis/ex/indent.html">example</a>
+</li>
+<li>
+Packed circles <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Pack.html">doc</a> <a href="http://vis.stanford.edu/protovis/ex/pack.html">example</a>
+</li>
+<li>
+Sunbursts and icicles <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Partition.html">doc</a> <a href="http://vis.stanford.edu/protovis/ex/sunburst.html">sunbursts</a> <a href="http://vis.stanford.edu/protovis/ex/icicle.html">icicles</a>
+</li>
+<li>
+Node-link trees <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Tree.html">doc</a> <a href="http://vis.stanford.edu/protovis/ex/tree.html">example</a></li>
+<li>Treemaps <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Treemap.html">doc</a> <a href="http://vis.stanford.edu/protovis/ex/treemap.html">example</a></li>
+</ul>
+</ul>
+<p>In addition, there are layouts like <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Bullet.html">pv.Layout.Bullet</a> which require data to have a certain specific shape but the <a href="http://vis.stanford.edu/protovis/ex/bullet.html">example from the gallery</a> is very explicit. (et tu, <a href="http://vis.stanford.edu/protovis/ex/horizon.html">Horizon</a> layout).</p>
+<h3>Arrays of data</h3>
+<p>In order to work with this kind of layout, the simplest thing is to put your data in a 2-dimensional array: </p>
+<pre class="brush: jscript; title: ; notranslate">var data=[
+   [8,3,7,2,5],
+   [9,6,1,7,4],
+    ...
+   [7,4,3,6,8]
+];</pre>
+<p>For the grid layout, this gives you an array of cells divided in columns (number of elements in each line) and rows (number of lines).<br />
+The idea of the grid layout is that your cells are automatically positioned and sized, so afaik the only thing you can do is add a mark such as a pv.Bar which would fill them completely, but which you could still style with fillStyle or strokeStyle. You can&#8217;t really access the underlying data with functions but you can use methods that rely on default values, like adding labels.</p>
+<p>For instance, you can use it to generate a QR code: </p>
+<table>
+<tr>
+<td>
+<pre class="brush: jscript; title: ; notranslate">var qr=[
+&quot;000000000000000000000000000&quot;,
+&quot;011111110001010100011111110&quot;,
+&quot;010000010101001110010000010&quot;,
+&quot;010111010000010100010111010&quot;,
+&quot;010111010111011110010111010&quot;,
+&quot;010111010010000001010111010&quot;,
+&quot;010000010110110010010000010&quot;,
+&quot;011111110101010101011111110&quot;,
+&quot;000000000011100100000000000&quot;,
+&quot;011111011110101110101010100&quot;,
+&quot;000010101001010111101000100&quot;,
+&quot;010101111001001011111010110&quot;,
+&quot;001011000100010101010100010&quot;,
+&quot;001100010111011010010101110&quot;,
+&quot;010101100110001101001010100&quot;,
+&quot;010011010011111111100110110&quot;,
+&quot;010111101010100101000010010&quot;,
+&quot;010100110010111101111101000&quot;,
+&quot;000000000101010111000111000&quot;,
+&quot;011111110100011001010111110&quot;,
+&quot;010000010000110011000110110&quot;,
+&quot;010111010110001011111111000&quot;,
+&quot;010111010101101100110101110&quot;,
+&quot;010111010100000111001001010&quot;,
+&quot;010000010111010101101110010&quot;,
+&quot;011111110101001100011111110&quot;,
+&quot;000000000000000000000000000&quot;,
+].map(function(i) i.split(&quot;&quot;));
+
+var vis = new pv.Panel()
+    .width(216)
+    .height(216);
+vis.add(pv.Layout.Grid)
+    .rows(qr)
+ 	.cell.add(pv.Bar)
+ 	    .fillStyle(pv.colors(&quot;#fff&quot;, &quot;#000&quot;))
+     ;
+vis.render();</pre>
+</td>
+<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/QR-grid-big.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/QR-grid-big.png" alt="" title="QR-grid-big" width="216" height="216" class="aligncenter size-full wp-image-628" /></a>(BTW, this is the QR code to this page)</td>
+</tr>
+</table>
+<p>On line 29, I&#8217;m using a <a href="http://www.jeromecukier.net/?p=494">map function</a> to turn this array of strings, which is easier and shorter to type, into a <em>bona fide</em> 2-dimensional array. </p>
+<p>That&#8217;s all there is to grids, of all the layouts they are among the easiest to reproduce with regular protovis.</p>
+<p>Now, stacks.<br />
+The easiest way to use them is to pass them 2-dimensional arrays. Now it doesn&#8217;t have to be arrays of numbers, it can be arrays of associative arrays in case you need to do something exotic. But for the following examples let&#8217;s just assume you don&#8217;t. Here is how you&#8217;d do a stacked area, stacked columns and stacked bars respectively:</p>
+<table>
+<tr>
+<td>
+<pre class="brush: jscript; title: ; notranslate">var data=[
+[[1000,1200,1500,1700]]
+[[100,500,300,200]]
+]
+var vis=new pv.Panel().width(200).height(200);
+vis.add(pv.Layout.Stack)
+    .layers(data)
+    .x(function() 50*this.index)
+    .y(function(d) d/20)
+    .layer.add(pv.Area)</pre>
+</td>
+<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/stackedAreas.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/stackedAreas.png" alt="" title="stackedAreas" width="200" height="200" class="aligncenter size-full wp-image-636" /></a></td>
+</tr>
+</table>
+<p>all you need is to feed the layers, x, y properties of your stack, then say what you want to add to your layers.<br />
+Now, columns: </p>
+<table>
+<tr>
+<td>
+<pre class="brush: jscript; first-line: 6; title: ; notranslate">vis.add(pv.Layout.Stack)
+    .layers(data)
+    .x(function() 50*this.index)
+    .y(function(d) d/20)
+    .layer.add(pv.Bar).width(40)</pre>
+</td>
+<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/stackedColumns.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/stackedColumns.png" alt="" title="stackedColumns" width="200" height="200" class="aligncenter size-full wp-image-637" /></a></td>
+</tr>
+</table>
+<p>and finally, bars: </p>
+<table>
+<tr>
+<td>
+<pre class="brush: jscript; first-line: 6; highlight: [8,11]; title: ; notranslate">vis.add(pv.Layout.Stack)
+    .layers(data)
+    .orient(&quot;left&quot;)
+    .x(function() 50*this.index)
+    .y(function(d) d/20)
+    .layer.add(pv.Bar).height(40)</pre>
+</td>
+<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/stackedBars.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/stackedBars.png" alt="" title="stackedBars" width="200" height="200" class="aligncenter size-full wp-image-638" /></a></td>
+</tr>
+</table>
+<p>For bars, there is a little trick here. I specify that the layer orientation is horizontal (&#8220;left&#8221;) and I change the height instead of the width of the added pv.Bar.<br />
+And that all there is. You can create various streamgraphs by <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Stack.html#offset">playing with the order and offset properties</a> of the stack but this doesn&#8217;t change anything to the data structure, so we&#8217;re done here.</p>
+<h3>Representing networks</h3>
+<p>Protovis provides 3 cool layouts to easily exhibit relationships between nodes: arc diagrams, matrix diagrams and force-directed layouts.<br />
+The good news is that the shape of the data required by those three layouts is identical. </p>
+<p>They require an array that correponds to the nodes. This can be as simple as a pv.range(), or as sophisticated as an array of associative arrays if you want to style your network graph according to several potential attributes of the node. </p>
+<p>And they also require an array for the links. This array has a more rigid form, it must be an array of associative arrays of the shape: {source: #, target: #, value: #} where the values for source and target correspond to the position of a node in the node array, and value indicates the strength of the link. </p>
+<p>So let&#8217;s do a simple one. </p>
+<table>
+<tr>
+<td>
+<pre class="brush: jscript; title: ; notranslate">var nodes=pv.range(6); // why more complex, right?
+var links=[
+{source:0, target:1, value:2},
+{source:1, target:2, value:1},
+{source:1, target:3, value:1},
+{source:2, target:4, value:4},
+{source:3, target:5, value:1},
+{source:4, target:5, value:1},
+{source:1, target:5, value:3}
+]
+var vis = new pv.Panel()
+    .width(200)
+    .height(200)
+    ;
+var arc = vis.add(pv.Layout.Arc)
+    .nodes(nodes)
+    .links(links)
+	.bottom(100)
+arc.link.add(pv.Line);
+arc.node.add(pv.Dot)
+    .size(50)
+vis.render();</pre>
+</td>
+<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleNetwork1.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleNetwork1.png" alt="" title="simpleNetwork" width="200" height="200" class="aligncenter size-full wp-image-644" /></a></td>
+</tr>
+</table>
+<p>Here, by varying the strength of the link, the thickness of the arcs changes accordingly. The nodes are left unstyled, had we passed a more complicated dataset to the nodes array, we could have changed their properties (fillStyle, size, strokeStyle, labels etc.) with appropriate accessor functions. </p>
+<p>With little modifications we can create a force-directed layout and a matrix diagram.</p>
+<table>
+<tr>
+<td>
+<pre class="brush: jscript; first-line: 14; title: ; notranslate">
+var force = vis.add(pv.Layout.Force)
+    .nodes(nodes)
+    .links(links);
+
+force.link.add(pv.Line);
+
+force.node.add(pv.Dot)
+	.size(50)
+	.anchor(&quot;center&quot;).add(pv.Label)
+		.text(function() this.index);
+
+vis.render();
+</pre>
+</td>
+<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleForce.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleForce.png" alt="" title="simpleForce" width="200" height="200" class="aligncenter size-full wp-image-645" /></a></td>
+</tr>
+</table>
+<p>Here I labelled the nodes so one can tell which is which. This is done by adding a pv.Label to the pv.Dot that&#8217;s attached to the node, just like with any other mark.</p>
+<table>
+<tr>
+<td>
+<pre class="brush: jscript; first-line: 14; title: ; notranslate">
+var Matrix = vis.add(pv.Layout.Matrix)
+	.nodes(nodes)
+	.directed(true)
+	.links(links)
+	.top(20).left(20)
+
+Matrix.link.add(pv.Bar)
+    .fillStyle(function(d) pv.Scale.linear(0, 2, 4)
+      .range('#eee', 'yellow', 'green')(d.linkValue))
+
+Matrix.label.add(pv.Label).text(function() Math.floor(this.index/2))
+
+vis.render();</pre>
+</td>
+<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleMatrix1.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleMatrix1.png" alt="" title="simpleMatrix" width="200" height="200" class="aligncenter size-full wp-image-647" /></a></td>
+</tr>
+</table>
+<p>For the matrix things are slightly more complex than for the previous 2. Here I opted for a directed matrix, as opposed to a bidirectional one: this means that each link is shown once, to its source from its target, and not twice (ie from its target back to its source) which is the default.<br />
+I chose to color the bar attached to my links (which are cells of the matrix) according to the strength of my links. Again, if my nodes field was more qualified, I could have used these properties. </p>
+<p>Finally, we&#8217;ve added labels to the custom property Matrix.label. Only, the labels are numbered from 0 to 11 so to get numbers from 0 to 5 for both rows and columns I used Math.floor(this.index/2) (integer part of half of this number).</p>
+<h3>Hierarchized data</h3>
+<p>Like for networks, the shape of the data we can feed to treemaps, icicles and other hierarchical representation doesn&#8217;t change. So once you have your data in order, you can easily switch representations. </p>
+<p>Essentially, you will be passing a tree of the form: </p>
+<pre class="brush: jscript; title: ; notranslate">var myTree={
+   rootnode: {
+      node: {
+      ...  
+         node: {
+            leaf: value,
+            leaf: value,
+            ...
+            leaf: value
+         },
+      ...  
+}</pre>
+<p>The protovis examples use the hierarchy of <a href="http://vis.stanford.edu/protovis/ex/flare.js">flare source code</a> as an example, which really shows what can be done with a treemap and other tree represenations. </p>
+<p>For our purpose we are going for a simpler tree, inspired by the work of Periscopic on <a href="http://www.congressspeaks.com/">congressspeaks.com</a> which Kim Rees showed at <a href="http://now.periscopic.com/2011/02/lessons-in-visual-economy-at-strata/">Strata</a>.<br />
+Kim presentation featured tiny treemaps that showed the voting record for a congressperson, and whether they had voted for or against their party.</p>
+<p>So let&#8217;s play with the voting record of an hypothetic congressperson:</p>
+<pre class="brush: jscript; title: ; notranslate">var hasVoted={
+	didnt: 100,
+	voted: {
+	    yes: {
+	        yesWithParty: 241,
+	        yesAgainstParty: 23
+	    },
+	    no: {
+	        noWithParty: 73,
+	        noAgainstParty: 5
+	    }
+	}
+};</pre>
+<p>Once you have your tree, you will need to pass it to your layout using pv.dom, like this: </p>
+<pre class="brush: jscript; light: true; title: ; notranslate">pv.dom(hasVoted).root(&quot;hasVoted&quot;).nodes()</pre>
+<p>Based on that let&#8217;s do two hierarchical representations.<br />
+Let&#8217;s start with a tree: </p>
+<pre class="brush: jscript; first-line: 14; title: ; notranslate">var vis = new pv.Panel()
+    .width(500)
+    .height(200)
+    ;
+var tree = vis.add(pv.Layout.Tree)
+    .nodes(pv.dom(hasVoted).root(&quot;hasVoted&quot;).nodes())
+    .depth(40)
+    .breadth(100)
+    .top(30)
+    .right(100)
+    ;
+tree.link.add(pv.Line);
+tree.node.add(pv.Dot)
+    .size(function(n) n.nodeValue)
+	.anchor(&quot;center&quot;).add(pv.Label).textAlign(&quot;center&quot;).text(function(n) n.nodeName)
+vis.render();</pre>
+<p>And here is the result:<br />
+<a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleTree.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleTree.png" alt="" title="simpleTree" width="500" height="200" class="aligncenter size-full wp-image-652" /></a></p>
+<p>There are many styling possibilities obviously left unexplored in this simple example (you can control properties of the tree.link, tree.node, tree.labels which we didn&#8217;t use here, etc.), but this won&#8217;t change much as far as data are concerned. </p>
+<p>Now let&#8217;s try a treemap with the same dataset.</p>
+<pre class="brush: jscript; first-line: 14; title: ; notranslate">var vis = new pv.Panel()
+    .width(400)
+    .height(200)
+    ;
+
+var tree = vis.add(pv.Layout.Treemap)
+	.width(200).height(200)
+    .nodes(pv.dom(hasVoted).root(&quot;hasVoted&quot;).nodes())
+    ;
+
+tree.leaf.add(pv.Panel)
+	.fillStyle(function(d) d.nodeName==&quot;didnt&quot;?&quot;darkgrey&quot;:d.nodeName.slice(0,3)==&quot;yes&quot;?
+	d.nodeName.slice(-9)==&quot;WithParty&quot;?&quot;powderblue&quot;:&quot;steelblue&quot;:
+	d.nodeName.slice(-9)==&quot;WithParty&quot;?&quot;lightsalmon&quot;:&quot;salmon&quot;)
+
+vis.add(pv.Panel)
+	.data([
+		   {label:&quot;yes with party&quot;, 	color: &quot;powderblue&quot;},
+		   {label:&quot;yes against party&quot;, 	color: &quot;steelblue&quot;},
+		   {label:&quot;no with party&quot;, 		color: &quot;lightsalmon&quot;},
+		   {label:&quot;no against party&quot;, 	color: &quot;salmon&quot;},
+		   {label:&quot;didn't vote&quot;, 		color: &quot;darkgrey&quot;}
+		   ])
+	.left(220)
+	.top(function() 50+20*this.index)
+	.height(15)
+	.width(20)
+	.fillStyle(function(d) d.color)
+	.anchor(&quot;right&quot;).add(pv.Label).textAlign(&quot;left&quot;).text(function(d) d.label)
+
+vis.render();
+</pre>
+<p>and what took the longest part of the code was making the legend.</p>
+<p>Here is the outcome:<br />
+<a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleTreemap.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleTreemap.png" alt="" title="simpleTreemap" width="400" height="200" class="aligncenter size-full wp-image-653" /></a></p>
+]]></content:encoded>
+			<wfw:commentRss>/2011/02/11/working-with-data-in-protovis-part-5-of-5/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+		<item>
+		<title>Working with data in protovis &#8211; part 4 of 5</title>
+		<link>/2011/02/11/working-with-data-in-protovis-part-4-of-5/</link>
+		<comments>/2011/02/11/working-with-data-in-protovis-part-4-of-5/#comments</comments>
+		<pubDate>Fri, 11 Feb 2011 00:51:39 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[charts]]></category>
+		<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[protovis]]></category>
+		<category><![CDATA[tips]]></category>
+		<category><![CDATA[aggregation]]></category>
+		<category><![CDATA[hierarchy]]></category>
+		<category><![CDATA[maps]]></category>
+		<category><![CDATA[nesting]]></category>
+		<category><![CDATA[rollup]]></category>
+		<category><![CDATA[trees]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=502</guid>
+		<description><![CDATA[Previous: array functions in javascript and protovis Reshaping complex arrays This really is what protovis data processing is all about. In today&#8217;s tutorial, I am going to refer extensively to protovis&#8217;s Becker&#8217;s Barley example. One reason for that is that it&#8217;s also used in the API documentation of the methods we are going to cover, <a class="read-more" href="/2011/02/11/working-with-data-in-protovis-part-4-of-5/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p><a href="http://www.jeromecukier.net/?p=494">Previous: array functions in javascript and protovis</a></p>
+<h2>Reshaping complex arrays</h2>
+<p>This really is what protovis data processing is all about.<br />
+In today&#8217;s tutorial, I am going to refer extensively to protovis&#8217;s <a href="http://vis.stanford.edu/protovis/ex/barley.html">Becker&#8217;s Barley</a> example. One reason for that is that it&#8217;s also used in the <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Nest.html">API documentation of the methods</a> we are going to cover, and also because I am posting <a href="http://www.jeromecukier.net/?p=534">a line-by-line explanation of this example</a> that you can refer to.</p>
+<p>So far we’ve seen that :</p>
+<ul>
+<li>Associative arrays are great as data elements, as their various values can be used for various attributes.<br />
+For instance, if the current data element is an associative array of this shape: </p>
+<pre class="brush: jscript; title: ; notranslate">{ yield: 27.00000, variety: &quot;Manchuria&quot;, year: 1931, site: &quot;University Farm&quot; }</pre>
+<p>one could imagine a bar chart where the length of the  bar would come from the yield, their fillStyle color from the variety, the label from the site, etc.</li>
+<li>arrays of associative arrays are very practical to manipulate thanks to accessor functions.<br />
+An array of the shape:</p>
+<pre class="brush: jscript; title: ; notranslate">var barley = [
+  { yield: 27.00000, variety: &quot;Manchuria&quot;, year: 1931, site: &quot;University Farm&quot; },
+  { yield: 48.86667, variety: &quot;Manchuria&quot;, year: 1931, site: &quot;Waseca&quot; },
+  { yield: 27.43334, variety: &quot;Manchuria&quot;, year: 1931, site: &quot;Morris&quot; },
+  { yield: 39.93333, variety: &quot;Manchuria&quot;, year: 1931, site: &quot;Crookston&quot; },
+  { yield: 32.96667, variety: &quot;Manchuria&quot;, year: 1931, site: &quot;Grand Rapids&quot; },
+  { yield: 28.96667, variety: &quot;Manchuria&quot;, year: 1931, site: &quot;Duluth&quot; },
+  { yield: 43.06666, variety: &quot;Glabron&quot;, year: 1931, site: &quot;University Farm&quot; },
+  { yield: 55.20000, variety: &quot;Glabron&quot;, year: 1931, site: &quot;Waseca&quot; },
+  { yield: 28.76667, variety: &quot;Glabron&quot;, year: 1931, site: &quot;Morris&quot; },
+  { yield: 38.13333, variety: &quot;Glabron&quot;, year: 1931, site: &quot;Crookston&quot; },
+  { yield: 29.13333, variety: &quot;Glabron&quot;, year: 1931, site: &quot;Grand Rapids&quot; },
+  { yield: 29.66667, variety: &quot;Glabron&quot;, year: 1931, site: &quot;Duluth&quot; },
+  { yield: 35.13333, variety: &quot;Svansota&quot;, year: 1931, site: &quot;University Farm&quot; },
+…
+  { yield: 29.33333, variety: &quot;Wisconsin No. 38&quot;, year: 1932, site: &quot;Duluth&quot; }
+]</pre>
+<p>could be easily sorted according to any of the keys – yield, variety, year, site, etc.</li>
+<li>it is easy to access the data of an element’s parent, and in some cases it can greatly simplify the code.</li>
+</ul>
+<h3>Nesting</h3>
+<p>For this last reason, you may want to turn one flat array of associative arrays into an array of arrays of associative arrays. This process is called <strong>nesting</strong>.</p>
+<p><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/nesting.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/nesting.png" alt="" title="nesting" width="700" height="250" class="aligncenter size-full wp-image-528" /></a></p>
+<h4>Simple nesting</h4>
+<p>If you turn a <strong>single array</strong> like the one on the left-hand side to <strong>an array of arrays</strong> like on the right-hand side, you could easily do 3 smaller charts, one next to the other, by creating them inside of panels. You could have some information at this panel level (for instance the variety) and the rest at a lower level. </p>
+<p>Fortunately, there are protovis methods that can turn your flat list into a more complex array of arrays. And since protovis methods are meant to be chained, you can even go on and create arrays of arrays of arrays of arrays if needs be.<br />
+Even better – combined with the other data processing functions, you don’t only change the structure of your array, but you can also filter and control the order of the elements to show everything that you want and only what you want.</p>
+<p>And how complicated can this be?<br />
+To do the above, all you have to type is </p>
+<pre class="brush: jscript; title: ; notranslate">barley=pv.nest(barley).key(function(d) d.variety).entries();</pre>
+<p>What this does is that it nests your <em>barley</em> array, according to the <em>variety</em> key. entries() at the end is required to obtain the array of arrays needed.</p>
+<p>Here is an example of what can be done with both kinds of data structures in just a few lines of code (which won&#8217;t include the data proper. The long, flat array is stored in the variable barley, as above).<br />
+Without nesting:<br />
+<a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/BarleyWithoutNesting.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/BarleyWithoutNesting.png" alt="" title="BarleyWithoutNesting" width="606" height="198" class="aligncenter size-full wp-image-594" /></a></p>
+<pre class="brush: jscript; title: ; notranslate">var vis = new pv.Panel()
+    .width(600)
+    .height(200)
+;
+vis.add(pv.Bar)
+	.data(barley)
+	.left(function() this.index*5)
+	.width(4)
+	.bottom(0)
+	.height(function(d) d.yield*2)
+	.fillStyle(function(d) d.year==1931?&quot;steelBlue&quot;:&quot;Orange&quot;)
+;
+vis.render();</pre>
+<p>As the pv.Bar goes through the array, there is not much it can do to structure it. We can just size the bars according to the value of yield, and color them according to another key (here the year).</p>
+<p>Now using nesting:<br />
+<a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/BarleyWithNesting2.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/BarleyWithNesting2.png" alt="" title="BarleyWithNesting2" width="711" height="160" class="aligncenter size-full wp-image-598" /></a></p>
+<pre class="brush: jscript; highlight: [1,8,15]; title: ; notranslate">barley2=pv.nest(barley).key(function(d) d.variety).entries();
+barley2=pv.nest(barley).key(function(d) d.variety).entries();
+var vis = new pv.Panel()
+    .width(710)
+    .height(150)
+;
+var cell=vis.add(pv.Panel)
+	.data(barley2)
+	.left(function() this.index*70)
+	.width(70)
+	.top(0)
+	.height(150);
+cell.anchor(&quot;top&quot;).add(pv.Label).textAlign(&quot;center&quot;).font(&quot;9px sans-serif&quot;).text(function(d) d.key)
+cell.add(pv.Bar)
+		.data(function(d) d.values)
+		.left(function() 5+this.index%6*10)
+		.width(8)
+		.bottom(0)
+		.height(function(d) d.yield*2)
+		.fillStyle(function(d) d.year==1931?&quot;steelBlue&quot;:&quot;Orange&quot;)
+		.add(pv.Label).text(function(d) d.site).textAngle(-Math.PI/2)
+			.textAlign(&quot;left&quot;).left(function() 15+this.index%6*10).textStyle(&quot;#222&quot;)
+	;
+vis.render();
+</pre>
+<p>Here we used the same simple nesting command as above (the original example uses a more complicated one which allows for more refinement in the display). This structure allows us to create first panels, which we can style by displaying the name of the sites for instance, then, within these panels, the corresponding bars.</p>
+<p>Doing this with the data in its original form would have been possible, but would have required writing a much longer program. So the whole idea of nesting is to <strong>take some time to plan the data structure once, so that the code is as short and useful as possible</strong>.</p>
+<h4>Going further with nesting</h4>
+<p>However, it is possible to go beyond that: </p>
+<ul>
+<li>by nesting further, which can be done by adding other .key() methods:</p>
+<pre class="brush: jscript; title: ; notranslate">barley=pv.nest(barley)
+  .key(function(d) d.variety)
+  .key(function(d) d.year)
+  .entries();</pre>
+</li>
+</ul>
+<p>And/or</p>
+<ul>
+<li>by sorting keys or values using the sortKeys() and sortValues() methods, respectively. </p>
+<p>For instance, we can change the order in which the variety blocks are displayed with sortKeys():</p>
+<table>
+<tr>
+<td>
+<pre class="brush: jscript; title: ; notranslate">barley=pv.nest(barley)
+  .key(function(d) d.variety)
+  .entries();</pre>
+</td>
+<td>
+<pre class="brush: jscript; highlight: [3]; title: ; notranslate">barley=pv.nest(barley)
+  .key(function(d) d.variety)
+  .sortKeys()
+  .entries();</pre>
+</td>
+</tr>
+<tr>
+<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/sort-unsorted.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/sort-unsorted.png" alt="" title="sort-unsorted" width="300" height="250" class="aligncenter size-full wp-image-524" /></a></td>
+<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/sort-sorted.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/sort-sorted.png" alt="" title="sort-sorted" width="300" height="250" class="aligncenter size-full wp-image-525" /></a></td>
+</tr>
+</table>
+</li>
+</ul>
+<p>By using sortKeys without argument, the natural order is used (alphabetical, since our key is a string). But we could provide a comparison function if we wanted a more sophisticated arrangement.</p>
+<h4>Nesting and hierarchy</h4>
+<p>If you run the double nesting command we discussed above, </p>
+<pre class="brush: jscript; title: ; notranslate">barley=pv.nest(barley)
+  .key(function(d) d.variety)
+  .key(function(d) d.year)
+  .entries();</pre>
+<p>you&#8217;ll get as a result something of the form: </p>
+<pre class="brush: jscript; title: ; notranslate">var barley=[
+  {key:&quot;Manchuria&quot;, values: [
+    {key:&quot;1931&quot;, values: [
+      {site:&quot;University farm&quot;, variety: &quot;Manchuria&quot;, year: 1931, yield: 27},
+      {site:&quot;Waseca&quot;, variety: &quot;Manchuria&quot;, year: 1931, yield: 48.86667},
+      {site:&quot;Morris&quot;, variety: &quot;Manchuria&quot;, year: 1931, yield: 27.43334},
+      {site:&quot;Crookston&quot;, variety: &quot;Manchuria&quot;, year: 1931, yield: 39.93333},
+      {site:&quot;Grand Rapids&quot;, variety: &quot;Manchuria&quot;, year: 1931, yield: 32.96667},
+      {site:&quot;Duluth&quot;, variety: &quot;Manchuria&quot;, year: 1931, yield: 28.96667}
+    ]},
+    {key:&quot;1932&quot;, values: [  
+      {site:&quot;University farm&quot;, variety: &quot;Manchuria&quot;, year: 1932, yield: 26.9},
+      {site:&quot;Waseca&quot;, variety: &quot;Manchuria&quot;, year: 1932, yield: 33.46667},
+      {site:&quot;Morris&quot;, variety: &quot;Manchuria&quot;, year: 1932, yield: 34.36666},
+      {site:&quot;Crookston&quot;, variety: &quot;Manchuria&quot;, year: 1932, yield: 32.96667},
+      {site:&quot;Grand Rapids&quot;, variety: &quot;Manchuria&quot;, year: 1932, yield: 22.13333},
+      {site:&quot;Duluth&quot;, variety: &quot;Manchuria&quot;, year: 1932, yield: 22.56667}
+    ]}
+  ]},
+  {key: &quot;Glabron&quot;, ...
+]
+</pre>
+<p>and so on and so forth for all the varieties of barley. Now how can we use this structure in a protovis script? why not use multi-dimensional arrays instead, and if so, how would the code change?</p>
+<p>Well. You&#8217;d start using this structure by creating a first panel and and passing it the nested structure as data.<br />
+Assuming your root panel is called vis, you&#8217;d start likewise:</p>
+<pre class="brush: jscript; highlight: [2]; title: ; notranslate">
+vis.add(pv.Panel)
+    .data(barley)</pre>
+<p>now, since barley has been nested first by variety, it is now an array of 10 elements. You are going to create 10 individual panels. At some point you should worry about dimensioning and positioning them. But here we are only focusing on passing data to subsequent elements.</p>
+<p>Next, you are going to create another set of panels (or any mark, really, this doesn&#8217;t change anything for the data)</p>
+<pre class="brush: jscript; first-line: 3; highlight: [4]; title: ; notranslate">.add(pv.Panel)
+    .data(function(d) d.values)</pre>
+<p>This is how you drill down to the next level of data, by using an accessor function with the key &#8220;values&#8221;.<br />
+Congratulations! you have created 2 panels in each of our 10 individual panels, one per year. </p>
+<p>Finally, you are going to create a final mark (let&#8217;s say, a pv.Bar)</p>
+<pre class="brush: jscript; first-line: 5; highlight: [6]; title: ; notranslate">.add(pv.Bar)
+    .data(function(d) d.values)</pre>
+<p>Again, you use an accessor function of the same form. This will create a bar chart with 6 bars.<br />
+The data element corresponding to each bar is of the form:
+<pre class="brush: jscript; light: true; title: ; notranslate">{site:&quot;University farm&quot;, variety: &quot;Manchuria&quot;, year: 1932, yield: 26.9}</pre>
+<p>So, when you style the chart, you can access these properties with accessor functions, and write for instance:</p>
+<pre class="brush: jscript; first-line: 7; title: ; notranslate">    .height(function(d) d.yield)
+    .add(pv.Label).text(function(d) d.variety)</pre>
+<p>etc.</p>
+<p>To sum it up: you can create a hierarchical structure in protovis that corresponds to the shape of your nested array by adding elements and passing data using an accessor function with the key &#8220;values&#8221;.<br />
+At the lowest level of your structure you can access all the properties of the original array using accessor functions.</p>
+<p>Now, what if instead we used a multi-dimensional, normal array without keys and values? don&#8217;t they have structure and hierarchy, too?<br />
+This is not only possible, but also advised when your dataset is getting really big, as you would plague your users with annoying loading times. This changes the structure of the code though. </p>
+<p>An equivalent multi-dimensional array would be something like: </p>
+<pre class="brush: jscript; title: ; notranslate">
+var yields =
+[ // this is the level of the variety
+  [ // this is the level of the year
+    [ 27, 48.86667, 27.43334, 39.93333, 32.96667, 28.96667], 
+    [ 26.9, 33.46667, 34.36666, 32.96667, 22.13333, 22.56667]
+  ],
+  [ 
+    [ 43.06666, 55.2, 28.76667, 38.13333, 29.13333, 29.66667],
+    [ 36.8, 37.73333, 35.13333, 26.16667, 14.43333, 25.86667]
+  ],
+  [
+    [ 35.13333, 47.33333, 25.76667, 40.46667, 29.66667, 25.7],
+    [ 27.43334, 38.5, 35.03333, 20.63333, 16.63333, 22.23333]
+  ],
+  [
+    [ 39.9, 50.23333, 26.13333, 41.33333, 23.03333, 26.3],
+    [ 26.8, 37.4, 38.83333, 32.06666, 32.23333, 22.46667]
+  ],
+  [
+    [ 36.56666, 63.8333, 43.76667, 46.93333, 29.76667, 33.93333],
+    [ 29.06667, 49.2333, 46.63333, 41.83333, 20.63333, 30.6]
+  ],
+  [
+    [ 43.26667, 58.1, 28.7, 45.66667, 32.16667, 33.6],
+    [ 26.43334, 42.2, 43.53334, 34.33333, 19.46667, 22.7]
+  ],
+  [
+    [ 36.6, 65.7667, 30.36667, 48.56666, 24.93334, 28.1],
+    [ 25.56667, 44.7, 47, 30.53333, 19.9, 22.5]
+  ],
+  [
+    [ 32.76667, 48.56666, 29.86667, 41.6, 34.7, 32],
+    [ 28.06667, 36.03333, 43.2, 25.23333, 26.76667, 31.36667]
+  ],
+  [
+    [ 24.66667, 46.76667, 22.6, 44.1, 19.7, 33.06666],
+    [ 30, 41.26667, 44.23333, 32.13333, 15.23333, 27.36667]
+  ],
+  [
+    [ 39.3, 58.8, 29.46667, 49.86667, 34.46667, 31.6],
+    [ 38, 58.16667, 47.16667, 35.9, 20.66667, 29.33333]
+  ]
+]</pre>
+<p>and that&#8217;s the whole lot. It is indeed shorter. now this array is only the yields, you may want to create an array of the possible values of varieties, sites and years for good measure.</p>
+<pre class="brush: jscript; title: ; notranslate">var varieties=[&quot;Manchuria&quot;, &quot;Glabron&quot;, &quot;Svansota&quot;, &quot;Velvet&quot;, &quot;Trebi&quot;,
+     &quot;No. 457&quot;, &quot;No. 462&quot;, &quot;Peatland&quot;, &quot;No. 475&quot;, &quot;Wisconsin No. 38&quot;], 
+    sites=[&quot;University Farm&quot;, &quot;Waseca&quot;, &quot;Morris&quot;, &quot;Crookston&quot;, &quot;Grand Rapids&quot;, &quot;Duluth&quot;],
+    years=[1931,1932];</pre>
+<p>And by the way, it is very possible to create these arrays out of the original array using the map() method or equivalent.</p>
+<p>how can we create an equivalent structure?<br />
+we start like the above:</p>
+<pre class="brush: jscript; title: ; notranslate">vis.add(pv.Panel)
+     .data(yields)</pre>
+<p>Likewise, our 3-dimensional array is really an array of 10 arrays of 2 arrays of 6 elements. So we are also creating 10 panels. Let&#8217;s continue and create panels for the years:</p>
+<pre class="brush: jscript; first-line: 3; highlight: [4]; title: ; notranslate">.add(pv.Panel)
+    .data(function(d) d)</pre>
+<p>To drill down one level in an array, you have to use this form. you say that you are giving the children of your object what&#8217;s inside the data property of their parent. </p>
+<p>So naturally, you follow by</p>
+<pre class="brush: jscript; first-line: 5; highlight: [6]; title: ; notranslate">.add(pv.Bar)
+    .data(function(d) d)</pre>
+<p>now how you style your bars will be slightly different than before. What you passed your first panel was an array of yields. So that&#8217;s what you get now from your data. If you want something else, you&#8217;ll have to get it with this.index for instance.</p>
+<pre class="brush: jscript; first-line: 7; title: ; notranslate">    .height(function(d) d) // that's the yield
+    .add(pv.Label).text(function() varieties[this.index])</pre>
+<p>All in all it&#8217;s trickier to work with arrays. The code is less explicit, and if you change one array even by accident, you&#8217;ll have to check that others are still synchronized. But it could make your vis much faster.</p>
+<h3>Aggregating</h3>
+<p>Sometimes, what you want out of an array is not a more complex array, but a simpler list of numbers. For instance, what if you could obtain the sum of all the values in the array for such or such property? This is also possible in protovis, and in fact, it looks a lot like what we&#8217;ve done. The difference is that instead of using the method entries(), we will use the method rollup().</p>
+<p>Let&#8217;s suppose we have a flat array that looks like this: these are scores of students on 3 exams. </p>
+<pre class="brush: jscript; light: true; title: ; notranslate">var scores=[
+{student:&quot;Adam&quot;, exam:1, score: 77},
+{student:&quot;Adam&quot;, exam:2, score: 34},
+{student:&quot;Adam&quot;, exam:3, score: 85},
+{student:&quot;Barbara&quot;, exam:1, score: 92},
+{student:&quot;Barbara&quot;, exam:2, score: 68},
+{student:&quot;Barbara&quot;, exam:3, score: 97},
+{student:&quot;Connor&quot;, exam:1, score: 84},
+{student:&quot;Connor&quot;, exam:2, score: 54},
+{student:&quot;Connor&quot;, exam:3, score: 37},
+{student:&quot;Daniela&quot;, exam:1, score: 61},
+{student:&quot;Daniela&quot;, exam:2, score: 58},
+{student:&quot;Daniela&quot;, exam:3, score: 64}
+]</pre>
+<p>Now, we would like to get, in one simple object, the average for each student.<br />
+We know we could reshape the array if we wanted by using pv.Nest and entries(): </p>
+<pre class="brush: jscript; title: ; notranslate">pv.nest(scores).key(function(d) d.student).entries()</pre>
+<p>This would be something of the shape: </p>
+<pre class="brush: jscript; light: true; title: ; notranslate">
+[{key:&quot;Adam&quot;, values:[
+    {exam:1, score: 77, student: &quot;Adam&quot;},
+    {exam:2, score: 34, student: &quot;Adam&quot;},
+    {exam:3, score: 85, student: &quot;Adam&quot;}
+    ]
+  },
+  {key:&quot;Barbara&quot;, values:[
+    {exam:1, score: 92, student: &quot;Barbara&quot;},
+    {exam:2, score: 68, student: &quot;Barbara&quot;},
+    {exam:3, score: 97, student: &quot;Barbara&quot;}
+   ]
+  },
+etc.
+</pre>
+<p>Useful, for instance, if we&#8217;d want to chart the progress of each student separately. </p>
+<p>Now if instead of using entries() at the end, we use rollup(), we could get this: </p>
+<pre class="brush: jscript; light: true; title: ; notranslate">{
+Adam: 65.33333333333333
+Barbara: 85.66666666666667
+Connor: 58.333333333333336
+Daniela: 61}
+</pre>
+<p>The exact statement is </p>
+<pre class="brush: jscript; title: ; notranslate">pv.nest(scores)
+  .key(function(d) d.student)
+  .rollup(function(data) pv.mean(data, function(d) d.score))</pre>
+<p>To understand how this works, it helps to visualize what the pv.nest would have returned if we had asked for entries.<br />
+What rollup does is that it would go through each of the values that correspond to the keys, and return one aggregate value, depending on the function. </p>
+<p>For the first student, &#8220;Adam&#8221;, the corresponding values array is like this: </p>
+<pre class="brush: jscript; light: true; title: ; notranslate">[
+    {exam:1, score: 77, student: &quot;Adam&quot;},
+    {exam:2, score: 34, student: &quot;Adam&quot;},
+    {exam:3, score: 85, student: &quot;Adam&quot;}
+    ]</pre>
+<p>so rollup will just look at each element of this array and apply the function.<br />
+This is what (data) in &#8220;function(data)&#8221; corresponds to.<br />
+Next, we tell protovis what to do with these elements. Here, we are interested in the average, so we take pv.mean (not pv.average, <a href="http://www.jeromecukier.net/?p=494">remember</a>?)<br />
+However, we can&#8217;t directly compute the average of an array of associative arrays &#8211; we must tell protovis exactly what to average. This is why we use an accessor function, function(d) d.score.</p>
+<p>Of course, pv.mean used in this example can be replaced by just about any function.</p>
+<p>In the name of clarity, especially if there is only one property that can be aggregated, you can declare a function outside of the rollup() method. This is useful if you are going to aggregate your array by different dimensions:</p>
+<pre class="brush: jscript; title: ; notranslate">function meanScore(data) pv.mean(data, function(d) d.score);
+var avgStudent=pv.nest(scores)
+  .key(function(d) d.student)
+  .rollup(meanScore);
+var avgExam=pv.nest(scores)
+  .key(function(d) d.exam)
+  .rollup(meanScore);</pre>
+<h3>Flattening</h3>
+<p>Protovis also provides methods that turn a &#8220;nested&#8221; array back into a flat array. And methods that turn a normal array into a tree.<br />
+The main advantage of having a flat array is that you can nest it in a different way. This is useful, for instance, if you got your data in a nested form that doesn&#8217;t work for you. Likewise, a tree is easier to reshape in protovis than an array.</p>
+<p>To create a flat array out of a nested one, you have to use pv.flatten and specify all the keys of the array and conclude by array().</p>
+<pre class="brush: jscript; light: true; title: ; notranslate">barley=pv.flatten(barley).key(&quot;variety&quot;).key(&quot;site&quot;).key(&quot;year&quot;).key(&quot;yield&quot;).array()</pre>
+<p>It&#8217;s important to note that you need to specify all the keys, not just the keys that correspond to actual nesting. So again, if you start from a flat array, and you do</p>
+<pre class="brush: jscript; light: true; title: ; notranslate">barley=pv.nest(barley).key(&quot;variety&quot;).entries()</pre>
+<p>to reverse this, you&#8217;ll have to enter the full formula, using key four times:</p>
+<pre class="brush: jscript; light: true; title: ; notranslate">barley=pv.flatten(barley).key(&quot;variety&quot;).key(&quot;site&quot;).key(&quot;year&quot;).key(&quot;yield&quot;).array()</pre>
+<p>Finally, pv.tree &#8211; well, I haven&#8217;t seen this method used outside the <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Tree.html">documentation</a>. It&#8217;s not used in any live example, not covered by any question in the forum, and I haven&#8217;t found any trace of it in the internet. So I&#8217;d rather leave you with the explanation in the documentation which is fairly clear than come up with my own. If you find yourself in a situation like in the documentation, where you have a flat array of associative arrays, which have a property that could be interpreted as a hierarchy, then you could use this method to turn your array in something more useful to protovis.</p>
+<h3>Putting it all together</h3>
+<p>Instead of coming up with a specific new example for this section I refer you to my explanation of the <a href="http://www.jeromecukier.net/?p=534">Becker&#8217;s Barley example</a>.<br />
+On the same subject, see a comparison of how to <a href="http://www.jeromecukier.net/?p=550">re-create Becker&#8217;s Barley with protovis and Tableau</a></p>
+<p>next: <a href="http://www.jeromecukier.net/?p=623">working with layouts</a></p>
+]]></content:encoded>
+			<wfw:commentRss>/2011/02/11/working-with-data-in-protovis-part-4-of-5/feed/</wfw:commentRss>
+		<slash:comments>5</slash:comments>
+		</item>
+	</channel>
+</rss>

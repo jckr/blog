@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Dashboards versus data visualization</title>
+	<atom:link href="http://localhost/2015/02/07/dashboards-versus-data-visualization/feed/" rel="self" type="application/rss+xml" />
+	<link>/2015/02/07/dashboards-versus-data-visualization/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>By: Data Visualization vs. Dashboards &#124; Sweetspot Intelligence</title>
+		<link>/2015/02/07/dashboards-versus-data-visualization/#comment-537</link>
+		<dc:creator><![CDATA[Data Visualization vs. Dashboards &#124; Sweetspot Intelligence]]></dc:creator>
+		<pubDate>Mon, 02 Mar 2015 22:34:34 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1619#comment-537</guid>
+		<description><![CDATA[[&#8230;] was very happy to be pointed to this post recently: Dashboards versus data visualization (by Jerome [&#8230;]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] was very happy to be pointed to this post recently: Dashboards versus data visualization (by Jerome [&#8230;]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Charts in the age of the web &#124; Jerome Cukier</title>
+		<link>/2015/02/07/dashboards-versus-data-visualization/#comment-536</link>
+		<dc:creator><![CDATA[Charts in the age of the web &#124; Jerome Cukier]]></dc:creator>
+		<pubDate>Sat, 07 Feb 2015 01:03:47 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1619#comment-536</guid>
+		<description><![CDATA[[&#8230;] How this play out is what we&#8217;ll cover in the next articles of the series: Dashboards versus data visualizations. [&#8230;]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] How this play out is what we&#8217;ll cover in the next articles of the series: Dashboards versus data visualizations. [&#8230;]</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

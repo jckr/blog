@@ -1,0 +1,149 @@
+<html>
+ <head>
+<style type="text/css">
+
+
+body {background:#F9F9F9;}
+.countries {text-align:right;width: 85px; position: absolute;left:10px;font-family: georgia; font-size: 10px;}
+.labels {text-align:left; position: absolute; font-family: "trebuchet MS"; font-size: 10 px;}
+.title {text-align: center; position: absolute; top: 20px; left: 0px;width:100%;font-size: 14px; font-family: georgia; font-weight:bold;}
+.axes, .firstaxis, .lastaxis {position:absolute; top:340px; font-size:10px; width: 50px; font-family: "trebuchet MS";}
+.axes {text-align:center;}
+.firstaxis {text-align:left;}
+.lastaxis {text-align:right;}
+a {text-decoration: none;}
+</style>
+  <script type="application/x-javascript">
+function draw() {
+ var canvas = document.getElementById("canvas");
+ var ctx = canvas.getContext("2d");
+
+
+  // Create gradients
+  var lingrad = ctx.createLinearGradient(0,0,150,0);
+  lingrad.addColorStop(1, '#990000');
+  lingrad.addColorStop(0, '#ffcccc');
+
+  ctx.fillStyle = lingrad;
+//  ctx.strokeStyle = lingrad2;
+  
+  // draw shapes
+  //ctx.fillRect(10,10,130,130);
+  //ctx.strokeRect(50,50,50,50);
+
+ctx.fillStyle="#DDD9C3";
+ctx.fillRect(0,0,210,281);
+ctx.fillStyle="#EEEDE3";
+ctx.fillRect(1,0,209,280);
+
+
+
+
+
+ctx.strokeStyle="#F3F4F9";
+ctx.lineWidth=1;
+ctx.beginPath();
+
+ctx.moveTo(37,0);
+ctx.lineTo(37,281);
+ctx.moveTo(75,0);
+ctx.lineTo(75,281);
+ctx.moveTo(112,0);
+ctx.lineTo(112,281);
+ctx.moveTo(150,0);
+ctx.lineTo(150,281);
+ctx.moveTo(187,0);
+ctx.lineTo(187,281);
+ctx.moveTo(225,0);
+ctx.lineTo(225,281);
+
+ctx.stroke();
+
+
+
+
+ctx.fillStyle = "#008CC6";
+
+ctx.fillRect(1,5,149.64,10);
+ctx.fillRect(1,20,140.64,10);
+ctx.fillRect(1,35,115.305,10);
+ctx.fillRect(1,50,29.94,10);
+ctx.fillRect(1,65,11.715,10);
+ctx.fillRect(1,80,8.235,1);
+ctx.fillRect(1,86,7.575,1);
+ctx.fillRect(1,92,6.75,1);
+ctx.fillRect(1,98,5.67,1);
+ctx.fillRect(1,104,5.355,1);
+ctx.fillRect(1,110,5.07,1);
+ctx.fillRect(1,116,4.86,1);
+ctx.fillRect(1,122,4.695,1);
+ctx.fillRect(1,128,4.515,1);
+ctx.fillRect(1,134,4.035,1);
+ctx.fillRect(1,140,3.675,1);
+ctx.fillRect(1,146,1.98,1);
+ctx.fillRect(1,152,1.545,1);
+ctx.fillRect(1,158,1.5,1);
+ctx.fillRect(1,164,1.395,1);
+ctx.fillRect(1,170,1.38,1);
+ctx.fillRect(1,176,1.26,1);
+ctx.fillRect(1,182,1.185,1);
+ctx.fillRect(1,188,1.05,1);
+ctx.fillRect(1,194,0.735,1);
+ctx.fillRect(1,200,0.645,1);
+ctx.fillRect(1,206,0.615,10);
+ctx.fillRect(1,221,0.615,10);
+ctx.fillRect(1,236,0.465,10);
+ctx.fillRect(1,251,0.045,10);
+ctx.fillRect(1,266,0,10);
+
+
+
+
+
+// ctx.fillRect (10, 10, 55, 50);
+
+// ctx.fillRect (30, 30, 55, 50);
+}
+  </script>
+ </head>
+ <body onload="draw()">
+   <canvas id="canvas" width="210" height="281" style="position: absolute; top:60px; left:100px;"></canvas>
+<div class="countries" style="top: 63px;"><a href="/wp-content/uploads/2009/02/country.htm">Canada</a></div>
+<div class="countries" style="top: 78px;"><a href="/wp-content/uploads/2009/02/country.htm">United States</a></div>
+<div class="countries" style="top: 93px;"><a href="/wp-content/uploads/2009/02/country.htm">Australia</a></div>
+<div class="countries" style="top: 108px;"><a href="/wp-content/uploads/2009/02/country.htm">Mexico</a></div>
+<div class="countries" style="top: 123px;"><a href="/wp-content/uploads/2009/02/country.htm">Turkey</a></div>
+<div class="countries" style="top: 264px;"><a href="/wp-content/uploads/2009/02/country.htm">Denmark</a></div>
+<div class="countries" style="top: 279px;"><a href="/wp-content/uploads/2009/02/country.htm">Switzerland</a></div>
+<div class="countries" style="top: 294px;"><a href="/wp-content/uploads/2009/02/country.htm">Netherlands</a></div>
+<div class="countries" style="top: 309px;"><a href="/wp-content/uploads/2009/02/country.htm">Belgium</a></div>
+<div class="countries" style="top: 324px;"><a href="/wp-content/uploads/2009/02/country.htm">Luxembourg</a></div>
+
+<div class="labels" style="top: 64px; left: 259px;"><a href="/wp-content/uploads/2009/02/table.htm">9976</a></div>
+<div class="labels" style="top: 79px; left: 250px;"><a href="/wp-content/uploads/2009/02/table.htm">9376</a></div>
+<div class="labels" style="top: 94px; left: 225px;"><a href="/wp-content/uploads/2009/02/table.htm">7687</a></div>
+<div class="labels" style="top: 109px; left: 139px;"><a href="/wp-content/uploads/2009/02/table.htm">1996</a></div>
+<div class="labels" style="top: 124px; left: 121px;"><a href="/wp-content/uploads/2009/02/table.htm">781</a></div>
+<div class="labels" style="top: 265px; left: 110px;"><a href="/wp-content/uploads/2009/02/table.htm">43</a></div>
+<div class="labels" style="top: 280px; left: 110px;"><a href="/wp-content/uploads/2009/02/table.htm">41</a></div>
+<div class="labels" style="top: 295px; left: 110px;"><a href="/wp-content/uploads/2009/02/table.htm">41</a></div>
+<div class="labels" style="top: 310px; left: 110px;"><a href="/wp-content/uploads/2009/02/table.htm">31</a></div>
+<div class="labels" style="top: 325px; left: 110px;"><a href="/wp-content/uploads/2009/02/table.htm">3</a></div>
+
+
+<div class="firstaxis" style="left: 100px">0</div>
+<div class="axes" style="left: 112px">2500</div>
+<div class="axes" style="left: 150px">5000</div>
+<div class="axes" style="left: 187px">7500</div>
+<div class="axes" style="left: 225px">10000</div>
+<div class="axes" style="left: 262px">12500</div>
+
+
+
+
+<div class="title">
+Total area, thousands km<sup>2</sup>
+</div>
+
+ </body>
+</html>

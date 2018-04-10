@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Working with data in protovis &#8211; part 4 of 5</title>
+	<atom:link href="http://localhost/2011/02/11/working-with-data-in-protovis-part-4-of-5/feed/" rel="self" type="application/rss+xml" />
+	<link>/2011/02/11/working-with-data-in-protovis-part-4-of-5/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>By: Jerome Cukier &#187; Working with data in protovis</title>
+		<link>/2011/02/11/working-with-data-in-protovis-part-4-of-5/#comment-103</link>
+		<dc:creator><![CDATA[Jerome Cukier &#187; Working with data in protovis]]></dc:creator>
+		<pubDate>Tue, 15 Mar 2011 16:21:24 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=502#comment-103</guid>
+		<description><![CDATA[[...] then check out the powerful protovis data processing methods, such as those who reshape complex [...]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] then check out the powerful protovis data processing methods, such as those who reshape complex [&#8230;]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Taylor Steil</title>
+		<link>/2011/02/11/working-with-data-in-protovis-part-4-of-5/#comment-102</link>
+		<dc:creator><![CDATA[Taylor Steil]]></dc:creator>
+		<pubDate>Sat, 19 Feb 2011 10:57:34 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=502#comment-102</guid>
+		<description><![CDATA[Dude, great write up. I was doing much of this work (resorting/reshuffling my data) myself, I didn&#039;t even realize protovis has built in methods to do it. Thanks for the post!]]></description>
+		<content:encoded><![CDATA[<p>Dude, great write up. I was doing much of this work (resorting/reshuffling my data) myself, I didn&#8217;t even realize protovis has built in methods to do it. Thanks for the post!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Jerome Cukier &#187; Working with data in protovis: part 5 of 5</title>
+		<link>/2011/02/11/working-with-data-in-protovis-part-4-of-5/#comment-101</link>
+		<dc:creator><![CDATA[Jerome Cukier &#187; Working with data in protovis: part 5 of 5]]></dc:creator>
+		<pubDate>Fri, 11 Feb 2011 18:11:26 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=502#comment-101</guid>
+		<description><![CDATA[[...] previous: reshaping complex arrays (4/5) [...]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] previous: reshaping complex arrays (4/5) [&#8230;]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Tweets that mention Jerome Cukier » Working with data in protovis – part 4 of 5 -- Topsy.com</title>
+		<link>/2011/02/11/working-with-data-in-protovis-part-4-of-5/#comment-100</link>
+		<dc:creator><![CDATA[Tweets that mention Jerome Cukier » Working with data in protovis – part 4 of 5 -- Topsy.com]]></dc:creator>
+		<pubDate>Fri, 11 Feb 2011 05:43:52 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=502#comment-100</guid>
+		<description><![CDATA[[...] This post was mentioned on Twitter by Jérôme Cukier, sonngbogong. sonngbogong said: RT @jcukier: part 4/5 on my #protovis tutorial on using data is up http://bit.ly/egdtBc reshaping complex arrays (nesting, etc.) [...]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] This post was mentioned on Twitter by Jérôme Cukier, sonngbogong. sonngbogong said: RT @jcukier: part 4/5 on my #protovis tutorial on using data is up <a href="http://bit.ly/egdtBc" rel="nofollow">http://bit.ly/egdtBc</a> reshaping complex arrays (nesting, etc.) [&#8230;]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Jerome Cukier &#187; Working with data in protovis – part 3 of 5</title>
+		<link>/2011/02/11/working-with-data-in-protovis-part-4-of-5/#comment-99</link>
+		<dc:creator><![CDATA[Jerome Cukier &#187; Working with data in protovis – part 3 of 5]]></dc:creator>
+		<pubDate>Fri, 11 Feb 2011 00:41:22 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=502#comment-99</guid>
+		<description><![CDATA[[...] So, with the use of simple array functions, I can easily rework an unprepared dataset in protovis, rather than having to tailor my dataset with manual (and error-prone) manipulations in external programs. Here is the result:  Next: reshaping complex arrays [...]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] So, with the use of simple array functions, I can easily rework an unprepared dataset in protovis, rather than having to tailor my dataset with manual (and error-prone) manipulations in external programs. Here is the result:  Next: reshaping complex arrays [&#8230;]</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

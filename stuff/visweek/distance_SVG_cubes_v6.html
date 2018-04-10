@@ -1,0 +1,260 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8">
+		<script type="text/javascript" src="http://mbostock.github.com/d3/d3.js?2.0.0"></script>
+		<!--<script type="text/javascript" src="http://blog.oecdfactblog.org/wp-includes/js/protovis-r3.2.js"></script>-->
+		<style>
+			@import url("http://mbostock.github.com/d3/style.css?1.10.0");
+			@import url("http://mbostock.github.com/d3/syntax.css?1.10.0");
+		</style>
+		<style>
+		.cell {
+			position:absolute;
+			overflow:hidden;
+			height:20;
+			width:20;
+			border:1px solid white;
+			text-align:center;
+			vertical-align:middle;
+			}
+		.cellSVG {height:20;width:20;}
+		</style>
+	</head>
+	<body>
+		<div id="mode">
+		mode:0
+		</div>
+		<div id="info">
+		</div>
+		<div id="chart">
+		</div>
+
+		<script type="text/javascript">
+		var k=0.707106781;
+		var depth=k/2;
+		var u=10;
+		var a=u*depth;
+
+		var s=u+2*a;
+		var nb=1000;
+
+		var maxDim=Math.ceil(Math.sqrt(nb));
+		var cubeEdge=Math.ceil(Math.pow(nb,1/3));
+
+		var attrProba=[[15,15,10,7,6,4,2,2,2],
+					   [1,1,1,1,1,1,1,1,1],
+					   [3,5,2,4,6,4,2,1,5],
+					   [20,20,20,20,5,5,5,5,5],
+					   [1,2,3,4,5,6,7,8,9],
+					   [60,50,40,20,10,30,70,80,90]];
+
+		var attrProba=[[1,1],[0,0,1,1],[0,0,0,0,1,1],[20,20,20,20,5,5,5,5,5],
+					   [1,2,3,4,5,6,7,8,9],
+					   [60,50,40,20,10,30,70,80,90]];
+
+		attrProba=attrProba.map(function(v) {return v.map(function(d) {return d/d3.sum(v);});})
+
+		function detAttr(arg,attr) {var i=0;p=attrProba[attr][0];while(i<attrProba[attr].length){if(arg<p){return i;}else{p+=attrProba[attr][++i];}}}
+		function showData() {data.forEach(function(d) {console.log(d.id+" "+d.attr[0]+" "+d.attr[1]+" "+d.attr[2]+" "+d.attr[3]+" "+d.attr[4]+" "+d.attr[5]);})}
+		function showMatrix() {data.forEach(function(i,d) {console.log(matrix[0][d]+" "+matrix[1][d]+" "+matrix[2][d]+" "+matrix[3][d]+" "+matrix[4][d]+" "+matrix[5][d]+" "+matrix[6][d]);})}
+
+		var data=d3.range(nb).map(function(d) {return {'attr':d3.range(6).map(function(d) {return detAttr(Math.random(),d);}), 'id':d};})
+		//data=[{id:0,attr:[0,2,5,1,7,6]},{id:1,attr:[0,3,4,0,3,0]},{id:2,attr:[0,3,4,8,7,4]},{id:3,attr:[0,2,4,0,6,8]},{id:4,attr:[1,3,4,8,3,2]},{id:5,attr:[0,2,5,3,5,8]},{id:6,attr:[0,2,4,3,5,3]},{id:7,attr:[0,2,4,3,2,8]}];
+		
+		var matrix=d3.range(7).map(function(c) {return d3.range(nb).map(function(r) {return r;});})
+		var pos=data.map(function(d) {return {id:d.id,x:0,y:0,z:0,order:-1};});
+
+		function rePos() {
+			if (mode==0) {
+				pos.forEach(function(d,i) {
+					var x,y,z;
+					y=~~(i/(cubeEdge*cubeEdge));
+					x=(~~((i-(cubeEdge*cubeEdge)*y)/cubeEdge));
+					z=(i%cubeEdge);
+					pos[i]={id:d.id,x:x,y:y,z:z,order:i};
+				})
+			} else if (mode==1) {
+				pos.sort(function(a,b) {return data[a.id].attr[0]-data[b.id].attr[0];})
+				.forEach(function(d,i) {
+				    var x,y,z;
+					z=0;
+					y=~~(i/maxDim);
+					x=i%maxDim;
+					pos[i]={id:d.id,x:x,y:y,z:z,order:-1};
+				})
+			} else if (mode==2) {
+				pos.sort(function(a,b) {return data[a.id].attr[1]-data[b.id].attr[1];})
+				.forEach(function(d,i) {
+				    var x,y,z;
+					y=0;//maxDim;
+					z=~~(i/maxDim);
+					x=i%maxDim;
+					pos[i]={id:d.id,x:x,y:y,z:z,order:-1};
+				})
+			} else if (mode==3) {
+				pos.sort(function(a,b) {return data[a.id].attr[2]-data[b.id].attr[2];})
+				.forEach(function(d,i) {
+				    var x,y,z;
+					x=0;//maxDim;
+					y=~~(i/maxDim);
+					z=i%maxDim;
+					pos[i]={id:d.id,x:x,y:y,z:z,order:-1};
+				})
+			}
+			pos.sort(function(a,b) {return maxDim*maxDim*(a.y-b.y)+maxDim*(a.z-b.z)+a.x-b.x;});
+			pos.forEach(function(d,i) {pos[i]['order']=i;})
+			pos.sort(function(a,b) {return a.id-b.id;})
+		}
+		
+		d3.range(6).forEach(function(i) {
+		  data.sort(function(a,b) {
+		    return a.attr[i]-b.attr[i]
+		  ;});
+		  matrix[i+1]=data.map(function(d) {return d.id;});
+		  data.sort(function(a,b) {return a.id-b.id;});
+  		})
+
+
+		var xScaleX=d3.scale.linear().domain([0,maxDim]).range([0,maxDim*u]),
+			xScaleZ=d3.scale.linear().domain([0,maxDim]).range([maxDim*a,0]),
+			yScaleY=d3.scale.linear().domain([0,maxDim]).range([50+maxDim*u,50]),
+			yScaleZ=d3.scale.linear().domain([0,maxDim]).range([50,50+maxDim*a]);
+
+
+
+
+		//      +----+
+		//    / 1   /|
+		//   +-----+ |
+		//   |     |2|
+		//   |  0  | +
+		//   |     |/
+		//   +-----+
+		//
+		//
+		//  0 - z=0
+ 		//  1 - y=0
+		//  2 - x=0
+
+
+
+
+		var mode=0;
+
+		cols=["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf"];
+		var vis=d3.select("body").append("svg:svg").attr("width",1500).attr("height",1500)
+
+
+		var cubes=vis.selectAll("rect").data(data.slice(0,1000)).enter().append("svg:g");
+		cubes
+		    .style("stroke","black")
+			.attr("transform", function(d,i) {
+						var y=(~~(i/(cubeEdge*cubeEdge))),
+							x=(~~((i-(cubeEdge*cubeEdge)*y)/cubeEdge)),
+							z=(i%cubeEdge);
+						return "translate(" + (xScaleX(.75*cubeEdge+1.5*x)+xScaleZ(.75*cubeEdge+1.5*z)) +", "+(yScaleY(.75*cubeEdge+1.5*y)+yScaleZ(.75*cubeEdge+1.5*z))+")";
+				})
+			.attr("id", function(d) {return d.id;})
+
+
+		// 0 face
+		cubes.append("svg:path").attr("class","f0").attr("d","M 0 0,h "+u+", v -"+u+", h -"+u+", Z").style("fill", function(d) {return cols[d.attr[0]];})
+		// 1 face
+		cubes.append("svg:path").attr("class","f1").attr("d","M 0 -"+u+", h "+u+", l "+a+" -"+a+", h -"+u+", Z").style("fill", function(d) {return cols[d.attr[1]];})
+		// 2 face
+		cubes.append("svg:path").attr("class","f2").attr("d","M "+u+" -"+u+", v "+u+", l "+a+" -"+a+", v -"+u+", Z").style("fill", function(d) {return cols[d.attr[2]];})
+		cubes.on("click",function(d,i) {
+		d3.select("#info").html(
+			"id:"+d.id+", i:"+i+"<br>attr:"+d.attr[0]+" "+d.attr[1]+" "+d.attr[2])
+
+		})
+
+		//cubes.on("mousedown", transform);
+		d3.select(window).on("keydown", transform);
+		function transform() {
+			mode=(++mode)%4;
+
+
+
+
+
+			d3.select("#mode").html("mode:"+mode);
+			rePos();
+			// Cubes ought to be drawn in that order:
+			/*
+
+			  stu
+			 vwx
+			yz*
+
+              jkl
+             mno
+			pqr
+
+			  abc
+			 def
+			ghi
+
+			in other words: y ascending, x ascending, z ascending.
+
+			two cases:
+			mode 0:
+
+			we draw a cube.
+
+			y, x and z are calculated from the order of the cube i as such:
+			y=~~(i/100)
+			x=~~((i-100*y)/10)
+			z=i%10
+
+			mode 1-3:
+
+			all cubes are projected towards a face. one of the dimension (respectively z,y,x) is set to 30,
+			the other two (respectively (y,x), (x,z), and (z,y) are calculated as such:
+
+			dim1=~~(i/30)
+			dim2=i%30
+
+
+			then (todo) the face will rotate so that it will face the user.
+			*/
+
+
+
+			// then move them to their right position
+
+			if (mode!=1) {
+				cubes.transition()
+					.attr("transform", function(d,i) {
+						var y=(~~(i/(cubeEdge*cubeEdge))),
+							x=(~~((i-(cubeEdge*cubeEdge)*y)/cubeEdge)),
+							z=(i%cubeEdge);
+						return "translate(" + (xScaleX(.75*cubeEdge+1.5*x)+xScaleZ(.75*cubeEdge+1.5*z)) +", "+(yScaleY(.75*cubeEdge+1.5*y)+yScaleZ(.75*cubeEdge+1.5*z))+")";
+				})
+
+				.duration(400);}
+
+
+			if (mode) {
+				cubes.transition()
+					.attr("transform", function(d,j) {
+						var myPos=pos[d.id];
+						return "translate(" + (xScaleX(myPos.x)+xScaleZ(myPos.z)) +", "+(yScaleY(myPos.y)+yScaleZ(myPos.z))+")";
+				})
+				.delay(400)
+				.duration(500);
+
+			}
+
+
+
+// sort them cubes
+//
+// cubes.sort(function(a,b) {var ai=matrix[mode][a.id]; bi=matrix[mode][b.id];return (maxDim*maxDim*(~~(ai/maxDim))+maxDim*(ai%maxDim))-(maxDim*maxDim*(~~(bi/maxDim))+maxDim*(bi%maxDim));})
+//
+			cubes.sort(function(a,b) {return pos[a.id].order-pos[b.id].order;})
+}
+		</script>
+	</body>
+</html>
+

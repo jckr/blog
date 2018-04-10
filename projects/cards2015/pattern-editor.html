@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+	<title></title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+
+	<style>
+	
+
+	.twitter-share-button {position: absolute; left: 70px; top: 30px;}
+	
+	.construction {stroke: #ccc;fill: none;}
+	.current > .construction {stroke: #888;}
+	.final {stroke: #f00; stroke-width: 2; fill: none;}
+	.dots {fill: #aaa;}
+	.dots.last {fill: #888;}
+
+	.float {float: left;}
+	.input {width: 90px;margin-right:20px;}
+	#chart {}
+	</style>
+</head>
+<body>
+<script src="../../lib/d3.min.js">
+</script>
+<script src="../../lib/queue.min.js"></script>
+
+<!--<a href="https://twitter.com/share" class="twitter-share-button" 
+data-url="http://jeromecukier.net" 
+data-via="jcukier">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+-->
+
+<div class="container">
+<div style="float:left; width:550px">
+<div id="chart"></div>
+</div>
+<div class="float" style="width:590px">
+<div class="row" style="margin-top:20px; margin-bottom:20px">
+<strong>New template based on:</strong></br>
+	<div class="btn-group">
+	<button type="button" class="btn btn-default square4">Square/4 lines</button>
+	<button type="button" class="btn btn-default square6">Square/6 lines</button>
+	<button type="button" class="btn btn-default square8">Square/8 lines</button>
+	</div>
+	<div class="btn-group">
+	<button type="button" class="btn btn-default hex3">Hexagon/3 lines</button>
+	<button type="button" class="btn btn-default hex6">Hexagon/6 lines</button>
+	</div>
+</div>
+<div class="row" style="margin-top:20px; margin-bottom:20px">
+	<strong>Add elements to pattern:</strong></br>
+	<div class="btn-group" style="margin-right:23px">
+	<button type="button" class="btn btn-default active addline">Add line</button>
+	<button type="button" class="btn btn-default addcircle">Add circle</button>
+	<button type="button" class="btn btn-default drawshape">Draw final form</button>
+	</div>
+	<button type="button" class="btn btn-default disabled newstep">New step</button>
+	<div class="btn-group" style="margin-left:23px">
+	<button type="button" class="btn btn-primary disabled confirm ok">ok</button>
+	<button type="button" class="btn btn-default disabled confirm cancel">cancel</button>
+	</div>
+</div>
+<div class="row" style="display:none">
+	<div class="input float p0x">
+		 <label for="p0x">1st point (x)</label>
+    	 <input type="text" class="form-control p0x" id="p0x">
+	</div>
+	<div class="input float p0y">
+		 <label for="p0y">1st point (y)</label>
+    	 <input type="text" class="form-control p0y" id="p0y">
+	</div>
+	<div class="input float p1x">
+		 <label for="p1x">2nd point (x)</label>
+    	 <input type="text" class="form-control p1x" id="p1x">
+	</div>
+	<div class="input float p1y">
+		 <label for="p1y">2nd point (y)</label>
+    	 <input type="text" class="form-control p1y" id="p1y">
+	</div>
+	<div class="input float r">
+		 <label for="r">Radius</label>
+    	 <input type="text" class="form-control r" id="r">
+	</div>
+</div>
+<div class="row" style="margin-top:20px; margin-bottom:20px">
+<div class="input float">
+	<label for="patternid">Pattern Id</label>
+	<input type="text" class="form-control" id="patternid" value="0">
+</div>
+<div class="input float">
+	<button type="button" style="margin-top:25px;" class="btn save btn-success">Save</button> 
+</div>
+<div class="input float">
+	<button type="button" style="margin-top:25px;" class="btn clear btn-warning">Clear</button>
+</div>
+</div>
+<div class="row" style="margin-top:20px; margin-bottom:20px">
+<div class="export">
+	<h2>Introduction:</h2>
+	This pattern editor is one of the tools I used to create patterns, especially islamic-inspired ones. 
+	First, choose a <strong>template</strong>. Then, add <strong>construction</strong> lines and circles. Those construction lines won't be part of your final pattern, but their <strong>intersections</strong> will help you draw further construction lines, or the final shape. Finally, when you have placed all the lines and intersections, you can draw the <strong>final pattern</strong>.
+	<h2>How this works:</h2>
+	<ul><li>Start by selecting a template (top row of buttons.)</li>
+	<li>Then, click on the dots on intersections of lines/circles to add new lines or circles. </br>
+	First, click on a first dot. Then click on a second dot. You will see the figure you may add in dotted form (either a line that goes through both dots, or a circle with the center on the first dot, and that goes through the second dot). Click on OK to confirm. Add as many shapes as you want. </li>
+	<li>When you click "next step", intersections between all the shapes will be computed, so you can use them for further shapes. Also, all the shapes you've added since the last time you clicked "next step" are grouped, and if you mouseover one, they will all be highlighted. </li>
+	<li>Finally, click "draw final form" to trace the final pattern. Choose several intersection dots (two or more). When you click ok, they will all be linked in order.</li>
+	<li>When you are done, click export to see the data you have generated. </li>
+	</ul>
+
+
+</div>
+</div>
+<script src="pattern-editor.js"></script>
+<script>
+var params = {};
+var query = window.location.search.substring(1);
+
+var vars = query.split("&");
+vars.forEach(function(v) {
+	p=v.split("=");
+	params[p[0]]=p[1]
+})
+
+vis.init(params);
+</script>
+</body>
+</html>

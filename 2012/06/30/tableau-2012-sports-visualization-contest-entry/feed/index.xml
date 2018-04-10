@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Tableau 2012 sports visualization contest entry</title>
+	<atom:link href="http://localhost/2012/06/30/tableau-2012-sports-visualization-contest-entry/feed/" rel="self" type="application/rss+xml" />
+	<link>/2012/06/30/tableau-2012-sports-visualization-contest-entry/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>By: Jerome Cukier &#187; Tableau 2012 politics contest &#8211; justification and making-of</title>
+		<link>/2012/06/30/tableau-2012-sports-visualization-contest-entry/#comment-343</link>
+		<dc:creator><![CDATA[Jerome Cukier &#187; Tableau 2012 politics contest &#8211; justification and making-of]]></dc:creator>
+		<pubDate>Wed, 05 Sep 2012 18:14:37 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1384#comment-343</guid>
+		<description><![CDATA[[...] was technically happy of my entry for the sports contest. I had done what I wanted: obtain a hard-to-find, interesting dataset, attempt to create an exotic, [...]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] was technically happy of my entry for the sports contest. I had done what I wanted: obtain a hard-to-find, interesting dataset, attempt to create an exotic, [&#8230;]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: jerome</title>
+		<link>/2012/06/30/tableau-2012-sports-visualization-contest-entry/#comment-342</link>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+		<pubDate>Thu, 30 Aug 2012 09:37:47 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1384#comment-342</guid>
+		<description><![CDATA[Please use the &quot;↓download&quot; link on the bottom right to get a copy of the workbook]]></description>
+		<content:encoded><![CDATA[<p>Please use the &#8220;↓download&#8221; link on the bottom right to get a copy of the workbook</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Daman Jeet Singh</title>
+		<link>/2012/06/30/tableau-2012-sports-visualization-contest-entry/#comment-341</link>
+		<dc:creator><![CDATA[Daman Jeet Singh]]></dc:creator>
+		<pubDate>Thu, 30 Aug 2012 08:24:21 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1384#comment-341</guid>
+		<description><![CDATA[Hi Jerome...can you send me the tableau workbook that you created. 
+
+I need to create a network graph in Tableau version 6.1 with different nodes but facing problems.]]></description>
+		<content:encoded><![CDATA[<p>Hi Jerome&#8230;can you send me the tableau workbook that you created. </p>
+<p>I need to create a network graph in Tableau version 6.1 with different nodes but facing problems.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Jerome Cukier &#187; Embedding tableau visualizations on the web</title>
+		<link>/2012/06/30/tableau-2012-sports-visualization-contest-entry/#comment-340</link>
+		<dc:creator><![CDATA[Jerome Cukier &#187; Embedding tableau visualizations on the web]]></dc:creator>
+		<pubDate>Mon, 02 Jul 2012 17:42:23 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1384#comment-340</guid>
+		<description><![CDATA[[...] Here is what I did last time. [...]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] Here is what I did last time. [&#8230;]</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

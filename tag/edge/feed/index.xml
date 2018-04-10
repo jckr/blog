@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>edge &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/edge/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>Events in the Game of Thrones</title>
+		<link>/2012/12/09/events-in-the-game-of-thrones/</link>
+		<comments>/2012/12/09/events-in-the-game-of-thrones/#respond</comments>
+		<pubDate>Sun, 09 Dec 2012 17:40:05 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[d3]]></category>
+		<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[bubbles]]></category>
+		<category><![CDATA[edge]]></category>
+		<category><![CDATA[game of Thrones]]></category>
+		<category><![CDATA[network]]></category>
+		<category><![CDATA[visualization]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1514</guid>
+		<description><![CDATA[I&#8217;ve created an interactive visualization on the Game of Thrones. (A more technical post on how this was done to follow)]]></description>
+				<content:encoded><![CDATA[<p><div id="attachment_1518" style="width: 745px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/projects/agot/events.html"><img class="size-full wp-image-1518" title="Events in a Game of Thrones" src="http://www.jeromecukier.net/wp-content/uploads/2012/12/GoTviz.png" alt="Events in a Game of Thrones" width="735" height="692" /></a><p class="wp-caption-text">Click for the interactive version</p></div></p>
+<p>I&#8217;ve created an <a href="http://www.jeromecukier.net/projects/agot/events.html">interactive visualization</a> on the Game of Thrones.</p>
+<p>(A more technical post on how this was done to follow)</p>
+]]></content:encoded>
+			<wfw:commentRss>/2012/12/09/events-in-the-game-of-thrones/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

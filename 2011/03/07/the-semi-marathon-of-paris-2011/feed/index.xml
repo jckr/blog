@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: The semi-marathon of Paris 2011</title>
+	<atom:link href="http://localhost/2011/03/07/the-semi-marathon-of-paris-2011/feed/" rel="self" type="application/rss+xml" />
+	<link>/2011/03/07/the-semi-marathon-of-paris-2011/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>By: jerome</title>
+		<link>/2011/03/07/the-semi-marathon-of-paris-2011/#comment-128</link>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+		<pubDate>Tue, 08 Mar 2011 14:24:41 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=714#comment-128</guid>
+		<description><![CDATA[Hi Firat, how are you?
+are you referring to the view with dots, or that one with bars? I have a very low-end machine which handles the bars quite well but which chokes on the dots. I don&#039;t think it&#039;s a good idea to show individual dots, though...
+for this view here x is the position in km from the start, the darker lines mark 5km, and y is the number of runners. I think 1px is 30 runners or something. For the dot view, the y was just a random number. The dots were all very transparent so they looked different when they stacked up to some point, but 100 dots on top of each other looked no different than 1000 or 10000 dots that&#039;s why I scattered them a bit.]]></description>
+		<content:encoded><![CDATA[<p>Hi Firat, how are you?<br />
+are you referring to the view with dots, or that one with bars? I have a very low-end machine which handles the bars quite well but which chokes on the dots. I don&#8217;t think it&#8217;s a good idea to show individual dots, though&#8230;<br />
+for this view here x is the position in km from the start, the darker lines mark 5km, and y is the number of runners. I think 1px is 30 runners or something. For the dot view, the y was just a random number. The dots were all very transparent so they looked different when they stacked up to some point, but 100 dots on top of each other looked no different than 1000 or 10000 dots that&#8217;s why I scattered them a bit.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Firat Gelbal</title>
+		<link>/2011/03/07/the-semi-marathon-of-paris-2011/#comment-127</link>
+		<dc:creator><![CDATA[Firat Gelbal]]></dc:creator>
+		<pubDate>Tue, 08 Mar 2011 13:57:56 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=714#comment-127</guid>
+		<description><![CDATA[Hey Jerome,
+
+This is cool : ) Nice work.. 
+
+My humble criticism:
+- Your script is completely devouring my CPU. Great that I have 2 cores. 
+- On first view, I didn&#039;t understand what X and Y axis stand for. It looks clean and simple now as it is, but I would have put tiny legend to explain.]]></description>
+		<content:encoded><![CDATA[<p>Hey Jerome,</p>
+<p>This is cool : ) Nice work.. </p>
+<p>My humble criticism:<br />
+&#8211; Your script is completely devouring my CPU. Great that I have 2 cores.<br />
+&#8211; On first view, I didn&#8217;t understand what X and Y axis stand for. It looks clean and simple now as it is, but I would have put tiny legend to explain.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: jerome</title>
+		<link>/2011/03/07/the-semi-marathon-of-paris-2011/#comment-126</link>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+		<pubDate>Tue, 08 Mar 2011 12:16:11 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=714#comment-126</guid>
+		<description><![CDATA[following Mike&#039;s message http://mbostock.github.com/d3/tutorial/protovis.html I think at some point soon I&#039;ll have to take the dive :)]]></description>
+		<content:encoded><![CDATA[<p>following Mike&#8217;s message <a href="http://mbostock.github.com/d3/tutorial/protovis.html" rel="nofollow">http://mbostock.github.com/d3/tutorial/protovis.html</a> I think at some point soon I&#8217;ll have to take the dive 🙂</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Jan Willem Tulp</title>
+		<link>/2011/03/07/the-semi-marathon-of-paris-2011/#comment-125</link>
+		<dc:creator><![CDATA[Jan Willem Tulp]]></dc:creator>
+		<pubDate>Tue, 08 Mar 2011 07:44:36 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=714#comment-125</guid>
+		<description><![CDATA[One more thing: your first version might be an excellent test case for the improved performance of D3, so if you&#039;re ready for it and want to make the conversion to D3... that might be really interesting! :)]]></description>
+		<content:encoded><![CDATA[<p>One more thing: your first version might be an excellent test case for the improved performance of D3, so if you&#8217;re ready for it and want to make the conversion to D3&#8230; that might be really interesting! 🙂</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: jerome</title>
+		<link>/2011/03/07/the-semi-marathon-of-paris-2011/#comment-124</link>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+		<pubDate>Mon, 07 Mar 2011 22:46:17 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=714#comment-124</guid>
+		<description><![CDATA[glad you like it! that&#039;s my first self-animated protovis thing. Originally I wanted to do something over a map but it would have been too slow...]]></description>
+		<content:encoded><![CDATA[<p>glad you like it! that&#8217;s my first self-animated protovis thing. Originally I wanted to do something over a map but it would have been too slow&#8230;</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Jan Willem Tulp</title>
+		<link>/2011/03/07/the-semi-marathon-of-paris-2011/#comment-123</link>
+		<dc:creator><![CDATA[Jan Willem Tulp]]></dc:creator>
+		<pubDate>Mon, 07 Mar 2011 22:18:57 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=714#comment-123</guid>
+		<description><![CDATA[Oh... soryy... the page apparently didn&#039;t load correctly... it&#039;s showing now! Great job!!!]]></description>
+		<content:encoded><![CDATA[<p>Oh&#8230; soryy&#8230; the page apparently didn&#8217;t load correctly&#8230; it&#8217;s showing now! Great job!!!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Jan Willem Tulp</title>
+		<link>/2011/03/07/the-semi-marathon-of-paris-2011/#comment-122</link>
+		<dc:creator><![CDATA[Jan Willem Tulp]]></dc:creator>
+		<pubDate>Mon, 07 Mar 2011 22:18:17 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=714#comment-122</guid>
+		<description><![CDATA[Hi Jerome, the first version looks great (slow though), but am I missing the link to the second version?]]></description>
+		<content:encoded><![CDATA[<p>Hi Jerome, the first version looks great (slow though), but am I missing the link to the second version?</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

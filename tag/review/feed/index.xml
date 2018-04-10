@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>review &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/review/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>Designing data visualizations</title>
+		<link>/2012/04/22/designing-data-visualizations/</link>
+		<comments>/2012/04/22/designing-data-visualizations/#respond</comments>
+		<pubDate>Sun, 22 Apr 2012 15:32:58 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[book review]]></category>
+		<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[book]]></category>
+		<category><![CDATA[designing data visualizations]]></category>
+		<category><![CDATA[Noah Iliinsky]]></category>
+		<category><![CDATA[review]]></category>
+		<category><![CDATA[visualization]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1155</guid>
+		<description><![CDATA[Noah Iliinsky and O&#8217;Reilly were kind enough to send me one review copy of Noah&#8217;s book and who says review copy says review, so here goes. We need more introductory books to data visualization. I&#8217;ve had several discussions with data visualization colleagues who feel that there are too many books already. I strongly believe otherwise. <a class="read-more" href="/2012/04/22/designing-data-visualizations/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p><a href="http://www.amazon.com/Designing-Data-Visualizations-Noah-Iliinsky/dp/1449312284/ref=tag_stp_s2f_edpp_data_v18on"><img class="alignnone" title="Designing data visualization book cover" src="http://covers.oreilly.com/images/0636920022060/cat.gif" alt="Designing data visualization book cover" width="180" height="236" /></a></p>
+<p>Noah Iliinsky and O&#8217;Reilly were kind enough to send me one review copy of Noah&#8217;s book and who says review copy says review, so here goes.</p>
+<h2>We need more introductory books to data visualization.</h2>
+<p>I&#8217;ve had several discussions with data visualization colleagues who feel that there are too many books already. I strongly believe otherwise.</p>
+<p>As of this writing, there are <a href="http://www.amazon.com/gp/tagging/items-tagged-with?ie=UTF8&amp;flatten=1&amp;tag=data%20visualization&amp;search=1">59 books tagged data visualization</a> on Amazon, versus well over a thousand for Java (for example). And on those 59, I would say about a dozen qualify as introductory. Here are 3 reasons why introductory books are important.</p>
+<ul>
+<li><strong>You only need to know a little to start making effective visualizations. </strong>A small book won&#8217;t teach you all there is to know about visualization, but you don&#8217;t need that to get off to a good start. A lot of this has to do with asking yourself the right questions. But this is a very unnatural thing to do, especially when you feel you can do stuff. Fortunately, even a short book can help you to pause and think.</li>
+<li><strong>An effective visualization is not harder to make than a poor one</strong>. Well, actually it is, really good visualizations are built after many iterations on one promising concept. But the point is, a lot of efforts and ressources can go into abyssmal visualizations. If you are in a position to buy visualization, having even basic knowledge of how data visualization works can prevent you from wasting your money.</li>
+<li><strong>There are many approaches to visualization.</strong> The right introductory book will be the one that resonates with you. Some people who are interested in this love to code, some are afraid of programming. Some are accomplished visual artists, some don&#8217;t know to draw. Some have specific needs (business dashboards, presentations, interactive web applications, etc.).</li>
+</ul>
+<h2><span class="Apple-style-span" style="font-size: 26px;"><strong>Where does designing data visualizations fit?</strong></span></h2>
+<p>Designing Data Visualizations is a very short book &#8211; the advantage is that you can read this in a couple of hours. It&#8217;s perfect for a train or plane trip for instance. The format of the book (23 x 17.5 cm, flexible paperback) makes it easy to carry and read anywhere. And it&#8217;s an easy read &#8211; you won&#8217;t need to put down the book every few pages to make sure you understood.</p>
+<p>The flipside of this is that you won&#8217;t learn any actionable skills from the book. The book is <strong>never trying to teach you to make things</strong> : this is explicitly outside of its scope. What is does is <strong>make you think on how to do stuff</strong>. It makes you consider the choices you make.</p>
+<p>So you&#8217;re making a visualization. Does your choice of representation makes sense? how about your colors? placement? If you&#8217;re not confident that you know the answer to this kind of questions <strong>you must read the book right now</strong>; else, you won&#8217;t be able to improve your work. And again that is what successful designers do &#8211; iterate and improve, again and again and again.</p>
+<p>As a non-native speaker of English one reason why I enjoy reading introductory books is for their excellent formulation of things. You know, there are those things you have a vague idea of, and the writer puts the exact words on it. So I&#8217;ll go ahead and quote my favorite paragraph :</p>
+<blockquote><p>Consult [your goal] when you are about to be seduced by the siren song of circular layouts, the allure of extra data, the false prophet of &#8220;because I can&#8221;. These are distractions on your journey. As Bruce Lee would say, &#8220;It is like a finger pointing a way to the moon. Don&#8217;t concentrate on the finger or you will miss all that heavenly glory&#8221;.</p></blockquote>
+<h3>Who is this book for?</h3>
+<p>I think the people who would benefit the most from the books fall in two categories:</p>
+<ol>
+<li>Those who know absolutely nothing about visualization but have some interest in the subject. And the subset of those who don&#8217;t really have time to find out all about it (think: your client, your n+2 boss). They will appreciate that there is a real take-out value in such a short book.</li>
+<li>Those who can create visualization because for instance they are coders, designers, excel users etc. and who see data visualization as a byproduct of their activity, so they never really asked themselves those questions. And among those, I&#8217;m thinking mostly of coders. Noah and I met at last year&#8217;s Strata conference which is also attended by the cream of the crop of the data scientists. I was surprised to see that some of them, despite being able to harness huge quantity of data, were severely limited in their visualization options because they never had an opportunity to learn. These people who are already at ease with the tool will see their activity supercharged thanks to the book.</li>
+</ol>
+<div>For a data practitioner who has already an interest in theory I won&#8217;t lie to you &#8211; reading the book will feel like patting yourself on the back and there will be little you will learn. But consider, for instance, giving copies to your customers and think of all the fruitless discussions that will  this will save you in the course of a project.</div>
+]]></content:encoded>
+			<wfw:commentRss>/2012/04/22/designing-data-visualizations/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Using Tableau Public: first thoughts</title>
+		<link>/2010/01/21/using-tableau-public-first-thoughts/</link>
+		<comments>/2010/01/21/using-tableau-public-first-thoughts/#comments</comments>
+		<pubDate>Thu, 21 Jan 2010 13:44:18 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[data publishing]]></category>
+		<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[chart]]></category>
+		<category><![CDATA[data tools]]></category>
+		<category><![CDATA[review]]></category>
+		<category><![CDATA[Tableau]]></category>
+		<category><![CDATA[Tableau Public]]></category>
+		<category><![CDATA[tool]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=313</guid>
+		<description><![CDATA[I am currently beta testing Tableau Public. Essentially Tableau Public let you bring the power of Tableau analysis online. With Tableau public, your audience doesn&#8217;t need to download a workbook file that they can see in an offline, software client &#8211; they can see and interact with your work directly on a web page. There <a class="read-more" href="/2010/01/21/using-tableau-public-first-thoughts/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>I am currently beta testing <a href="http://www.tableausoftware.com/">Tableau</a> Public. Essentially <a href="http://public.tableausoftware.com/">Tableau Public</a> let you bring the power of <a href="http://www.jeromecukier.net/?p=194">Tableau</a> analysis online. With Tableau public, your audience doesn&#8217;t need to download a workbook file that they can see in an offline, software client &#8211; they can see and interact with your work directly on a web page.</p>
+<p>There are quite a few examples of the things you can do with Tableau public. These are the examples you are given when you start the product:</p>
+<p><a href="http://www.freakalytics.com/2009/06/30/historic-stock-market-returns-exploring-insightful-metrics-with-tableau-online/"><img class="size-full wp-image-317" title="Tracking Economic Indicators by Freakalytics" src="http://www.jeromecukier.net/wp-content/uploads/2010/01/Freakalytics1.png" alt="Tracking Economic Indicators by Freakalytics" width="127" height="92" /></a><a href="http://blogs.wsj.com/venturecapital/2009/08/25/how-long-does-it-take-to-build-a-technology-empire/"><img class="size-full wp-image-315" style="margin-left: 10px; margin-right: 10px;" title="A Tale of 100 Entrepreneurs by Christian Chabot" src="http://www.jeromecukier.net/wp-content/uploads/2010/01/Chabot1.png" alt="A Tale of 100 Entrepreneurs by Christian Chabot" width="127" height="92" /></a><a href="http://www.jeromecukier.net/wp-content/uploads/2010/01/Snarge1.png"><img class="size-full wp-image-314" style="margin-left: 10px; margin-right: 10px;" title="Bird strikes by airport by Crankyflier" src="http://www.jeromecukier.net/wp-content/uploads/2010/01/Snarge1.png" alt="Bird strikes by airport by Crankyflier" width="127" height="92" /></a><a href="http://fantasynews.cbssports.com/fantasyfootball/story/12157942"><img class="size-full wp-image-316" style="margin-left: 10px; margin-right: 10px; " title="Interactive Running Back Selector by CBS sports" src="http://www.jeromecukier.net/wp-content/uploads/2010/01/Eisenberg1.png" alt="Interactive Running Back Selector by CBS sports" width="127" height="92" /></a></p>
+<p style="clear:left;">And there are always more on <a href="http://www.tableausoftware.com/community/blog">Tableau&#8217;s own blog</a>. I&#8217;ve done <a href="http://www.jeromecukier.net/?p=295">quite a few</a> which I&#8217;ll share progressively on this blog and on my OECD blog, <a href="http://www.oecd.blog/statistics/factblog">http://www.oecd.blog/statistics/factblog</a>.</p>
+<p>So that&#8217;s the context. What&#8217;s the verdict?</p>
+<h2><strong>1. There is no comparable data visualization platform out there.</strong></h2>
+<p>There are many ways to communicate data visually. Count them: <a href="http://www.datavisualization.ch/tools/13-javascript-libraries-for-visualizations">13</a>, <a href="http://sixrevisions.com/javascript/20-fresh-javascript-data-visualization-libraries/">20</a>, <a href="http://theresaneil.wordpress.com/2009/12/06/28_rich_charting_tools/">28</a>, <a href="http://www.tripwiremagazine.com/2009/12/70-tools-for-visualizing-your-data-css-flash-jquery-php.html">75</a>&#8230; and many more.</p>
+<p>However these tools have a narrower focus than Tableau, or require the user some programming ability. For instance, <a href="http://www.many-eyes.com/">Many Eyes</a> uses a certain number of types of data visualization which can be set up in seconds, but which cannot be customized. Conversely, <a href="http://vis.stanford.edu/protovis/">Protovis</a> is very flexible but requires some knowledge of Javascript. And even for a skilled developer, coding an interactive data visualization from scratch takes time.</p>
+<p>By contrast, <strong>Tableau is a fully-featured solution which doesn&#8217;t require programming</strong>. It has many representation types which can be deeply customized: every visual characteristic of a chart (colour, size, position, etc.) can depend on your data. Several charts can also be combined as one dashboard. On top of that, data visualization done in Tableau comes with many built-in controls, with an interface to highlight and filter data, or to get more details on demand. For dashboards, it is also possible to link charts, so that actions done on one chart (highlighting records, for instance) affect other charts.</p>
+<h2><strong>2. The solution is not limitless. </strong></h2>
+<p>Tableau enables you to do things which are not possible using other packages. But it doesn&#8217;t allow you to do anything. That&#8217;s for your own good &#8211; it won&#8217;t allow you to do things that don&#8217;t make sense.</p>
+<p><strong>There are many safety nets in Tableau</strong>, which you may or may not run into. For instance, you can&#8217;t make a line chart for data which don&#8217;t have a temporal dimension &#8211; so much for parallel coordinates. However, the system is not fool-proof. Manipulating aggregates, for instance, can lead to errors that you wouldn&#8217;t have to worry about in plain old Excel, where the various steps through which data are computed to create a graph are more transparent (and more manual). Compared to Excel, you have to worry less about formatting &#8211; the default options for colours, fonts and positions are sterling &#8211; and be more vigilant about calculations.</p>
+<h2><strong>3. Strength is in numbers.</strong></h2>
+<p>Over the years, many of us grew frustrated with Excel visual capacities. <a href="http://peltiertech.com/">Others </a><a href="http://www.ozgrid.com/">firmly </a><a href="http://chandoo.org/wp/">believed </a>that anything could be done with the venerable spreadsheet and have shown the world that nothing is impossible.</p>
+<p>The same applies to Tableau. <strong>The vibrant </strong><a href="http://www.tableausoftware.com/community/forums"><strong>Tableau community</strong></a><strong> provides excellent advice</strong>. &#8220;Historic&#8221; Tableau users are not only proficient with the tool, but also have a better knowledge of data visualization practices than the average Excel user. Like any fully-featured product, there is a learning curve to Tableau, which means that there are experts (the proper in-house term is <a href="http://www.tableausoftware.com/learning/training/ondemand">Jedis</a>) which find hacks to make Tableau even more versatile. So of course, it is possible to do <a href="http://www.tableausoftware.com/forum/parallel-coordinates-plot">parallel coordinates with Tableau</a>.</p>
+<p>The forum, like the abundant training, available as videos, manuals, list of tips,or online sessions with an instructor, doesn&#8217;t only help the user to solve their problems, but it also a fantastic source of inspiration.</p>
+<p>With the introduction of Tableau Public, the forum will become even more helpful, as there will be more questions, more problems and more examples.</p>
+<p> </p>
+]]></content:encoded>
+			<wfw:commentRss>/2010/01/21/using-tableau-public-first-thoughts/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+	</channel>
+</rss>

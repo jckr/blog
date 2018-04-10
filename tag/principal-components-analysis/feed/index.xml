@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>principal components analysis &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/principal-components-analysis/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>Dimensionality reduction</title>
+		<link>/2012/09/10/dimensionality-reduction/</link>
+		<comments>/2012/09/10/dimensionality-reduction/#comments</comments>
+		<pubDate>Mon, 10 Sep 2012 09:13:45 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[dimensionality reduction]]></category>
+		<category><![CDATA[politics]]></category>
+		<category><![CDATA[principal components analysis]]></category>
+		<category><![CDATA[Tableau]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1465</guid>
+		<description><![CDATA[Following my Tableau politics contest entry, here is another view I had developed but which I didn&#8217;t include in the already full dashboard. In the main view I have tried to show how the values of candidates relate to those of the French. It&#8217;s difficult to convey that graphically when these values are determined by <a class="read-more" href="/2012/09/10/dimensionality-reduction/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>Following my <a href="http://www.jeromecukier.net/blog/2012/09/05/which-way-to-the-right/">Tableau politics contest entry</a>, here is another view I had developed but which I didn&#8217;t include in the already full dashboard. </p>
+<p><iframe style="border: 0px;" src="http://public.tableausoftware.com/views/politics/DR_EN" scrolling="no" width="710px" height="810px"></iframe></p>
+<p>In the <a href="http://public.tableausoftware.com/views/politics/DashEN">main view</a> I have tried to show how the values of candidates relate to those of the French. It&#8217;s difficult to convey that graphically when these values are determined by the answers to as many as 19 questions (and there are many many more that could be used to that effect).</p>
+<p>Enter a technique called dimensionality reduction. The idea is to turn a dataset with many dimensions into a dataset with much fewer dimensions, as little as one, two or three. So we compute new variables, so that they capture virtually all the variability of the original dataset. In other words, if two records have different values in the original dataset, they should have different values in the transformed dataset too. </p>
+<p>If you&#8217;re not allergic to words like eigenvalues the math <a href="http://en.wikipedia.org/wiki/Principal_component_analysis">is actually pretty simple</a>. But let&#8217;s not go into that. The point is that with this technique <strong>you can represent a complex dataset as a two-dimensional dataset with very little loss</strong>.</p>
+<p>Of course the technique doesn&#8217;t tell you what these new variables represent. Getting a feel for the data I postulate that the one on the X axis represents the toughness of a candidate (pro-security measures, no sensitivity for minorities, etc.) and the one on the Y axis is happiness with previous government. Or possibly, lover of the capitalistic doctrine.</p>
+<p>Now you get a better feel for how close or distant the various candidates are from individual voters. You can also see which &#8220;spaces&#8221; remain empty or which are competitive. The top-right quadrant, for instance, looks tempting, but it is really nearly empty (about 200 respondents on over 1500). The right half of the matrix, that is the one which is sensitive to strength, has only one possible competitor but also few voters (~400 respondents). It makes more sense to remain an acceptable choice for the top half (750 voters) and especially the top left (550). In other words the Sarkozy mark should drift slightly towards the top left for optimal impact.</p>
+]]></content:encoded>
+			<wfw:commentRss>/2012/09/10/dimensionality-reduction/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+	</channel>
+</rss>

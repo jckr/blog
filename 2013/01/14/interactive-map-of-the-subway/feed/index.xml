@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Interactive map of the subway</title>
+	<atom:link href="http://localhost/2013/01/14/interactive-map-of-the-subway/feed/" rel="self" type="application/rss+xml" />
+	<link>/2013/01/14/interactive-map-of-the-subway/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>By: jerome</title>
+		<link>/2013/01/14/interactive-map-of-the-subway/#comment-473</link>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+		<pubDate>Thu, 17 Jan 2013 14:14:56 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1533#comment-473</guid>
+		<description><![CDATA[1) yes. In the second view the segments which are not part of any shortest path are not displayed. For instance, from Montparnasse, there are large chunks of ligne 8 that should never be used, because it&#039;s always faster not to use it. 
+2) that is a remnant of the first project I did with that data.
+3) in some cases, it is indeed quicker to go to a station which is one or two stops further because it can be quicker to exit. many people who live halfway across two stops have a preference which &quot;feels quicker&quot; even though the number of stops actually increases. 
+4) originally there were about 1700 edges in the graph. If I had included all paths from each platform to each exit, I could have added a good 5 to 10000 more. besides, I don&#039;t have a reliable list of all exits. so instead I rely on a subjective measure. the question is, how far does the platform feel from your exit? My feeling is that the average of that can be useful, more than an arbitrary value (&quot;it&#039;s always 5 minutes&quot;) and more than not taking entering/leaving the station into account.]]></description>
+		<content:encoded><![CDATA[<p>1) yes. In the second view the segments which are not part of any shortest path are not displayed. For instance, from Montparnasse, there are large chunks of ligne 8 that should never be used, because it&#8217;s always faster not to use it.<br />
+2) that is a remnant of the first project I did with that data.<br />
+3) in some cases, it is indeed quicker to go to a station which is one or two stops further because it can be quicker to exit. many people who live halfway across two stops have a preference which &#8220;feels quicker&#8221; even though the number of stops actually increases.<br />
+4) originally there were about 1700 edges in the graph. If I had included all paths from each platform to each exit, I could have added a good 5 to 10000 more. besides, I don&#8217;t have a reliable list of all exits. so instead I rely on a subjective measure. the question is, how far does the platform feel from your exit? My feeling is that the average of that can be useful, more than an arbitrary value (&#8220;it&#8217;s always 5 minutes&#8221;) and more than not taking entering/leaving the station into account.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: JulienW</title>
+		<link>/2013/01/14/interactive-map-of-the-subway/#comment-472</link>
+		<dc:creator><![CDATA[JulienW]]></dc:creator>
+		<pubDate>Thu, 17 Jan 2013 08:08:58 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1533#comment-472</guid>
+		<description><![CDATA[I love the idea.
+
+Small comments:
+- If I understand correctly, for those cases where 2 different lines run between the 2 same stations, only the fastest one is displayed ?
+- I&#039;d choose &quot;red&quot; for the most central stations and make the color fade away when we go in the periphery
+- when the user clicks on a station, eg Montmarnasse-Bienvenüe, then we can see that sometimes the lines goes back in time. Does that mean that it takes longer to go out of the station ? For instance, it&#039;s faster to go out of Porte d&#039;Orléans than out of Alesia ?
+- there are several entrances/exits for a station; an extreme one is &quot;Les Halles&quot; on line 4, which have a very fast entrance and some that are very far away. How do you think this could be handled on your map ?]]></description>
+		<content:encoded><![CDATA[<p>I love the idea.</p>
+<p>Small comments:<br />
+&#8211; If I understand correctly, for those cases where 2 different lines run between the 2 same stations, only the fastest one is displayed ?<br />
+&#8211; I&#8217;d choose &#8220;red&#8221; for the most central stations and make the color fade away when we go in the periphery<br />
+&#8211; when the user clicks on a station, eg Montmarnasse-Bienvenüe, then we can see that sometimes the lines goes back in time. Does that mean that it takes longer to go out of the station ? For instance, it&#8217;s faster to go out of Porte d&#8217;Orléans than out of Alesia ?<br />
+&#8211; there are several entrances/exits for a station; an extreme one is &#8220;Les Halles&#8221; on line 4, which have a very fast entrance and some that are very far away. How do you think this could be handled on your map ?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Victor Blaer</title>
+		<link>/2013/01/14/interactive-map-of-the-subway/#comment-471</link>
+		<dc:creator><![CDATA[Victor Blaer]]></dc:creator>
+		<pubDate>Tue, 15 Jan 2013 12:35:23 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1533#comment-471</guid>
+		<description><![CDATA[holy cow that is some awesome work.]]></description>
+		<content:encoded><![CDATA[<p>holy cow that is some awesome work.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Hig</title>
+		<link>/2013/01/14/interactive-map-of-the-subway/#comment-470</link>
+		<dc:creator><![CDATA[Hig]]></dc:creator>
+		<pubDate>Mon, 14 Jan 2013 08:56:32 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1533#comment-470</guid>
+		<description><![CDATA[I love it!
+
+Except one fiddly detail... the transition animation shows circles appearing and disappearing from the center, but it seems like it should be from the edge.  The circles should stretch to be larger if you click on a station that is more central (thus closer to everywhere) and they should shrink to be smaller if you do the opposite.  But instead new circles pop into or out of existence at the middle, so the circle that once referred to a certain time now refers to a different time.]]></description>
+		<content:encoded><![CDATA[<p>I love it!</p>
+<p>Except one fiddly detail&#8230; the transition animation shows circles appearing and disappearing from the center, but it seems like it should be from the edge.  The circles should stretch to be larger if you click on a station that is more central (thus closer to everywhere) and they should shrink to be smaller if you do the opposite.  But instead new circles pop into or out of existence at the middle, so the circle that once referred to a certain time now refers to a different time.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Ken Cherven</title>
+		<link>/2013/01/14/interactive-map-of-the-subway/#comment-469</link>
+		<dc:creator><![CDATA[Ken Cherven]]></dc:creator>
+		<pubDate>Mon, 14 Jan 2013 02:28:07 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1533#comment-469</guid>
+		<description><![CDATA[route - not rote]]></description>
+		<content:encoded><![CDATA[<p>route &#8211; not rote</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Ken Cherven</title>
+		<link>/2013/01/14/interactive-map-of-the-subway/#comment-468</link>
+		<dc:creator><![CDATA[Ken Cherven]]></dc:creator>
+		<pubDate>Mon, 14 Jan 2013 02:27:15 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1533#comment-468</guid>
+		<description><![CDATA[Fantastic work on the Paris Metro! Centering the selected station and highlighting the best rote is especially effective.]]></description>
+		<content:encoded><![CDATA[<p>Fantastic work on the Paris Metro! Centering the selected station and highlighting the best rote is especially effective.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

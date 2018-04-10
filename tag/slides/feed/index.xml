@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>slides &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/slides/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>Book review: Presentation Zen by Garr Reynolds</title>
+		<link>/2008/11/26/book-review-presentation-zen-by-garr-reynolds/</link>
+		<comments>/2008/11/26/book-review-presentation-zen-by-garr-reynolds/#comments</comments>
+		<pubDate>Wed, 26 Nov 2008 12:29:13 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[book review]]></category>
+		<category><![CDATA[presentation]]></category>
+		<category><![CDATA[advice]]></category>
+		<category><![CDATA[book]]></category>
+		<category><![CDATA[garr]]></category>
+		<category><![CDATA[garr reynolds]]></category>
+		<category><![CDATA[guidelines]]></category>
+		<category><![CDATA[image]]></category>
+		<category><![CDATA[powerpoint]]></category>
+		<category><![CDATA[presentation zen]]></category>
+		<category><![CDATA[slides]]></category>
+		<category><![CDATA[story]]></category>
+		<category><![CDATA[visual]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=15</guid>
+		<description><![CDATA[Presentation Zen, by Garr Reynolds, has been my favorite business book in 2008. Whatever your field, if you are a professional, chances are that you are going to make a presentation at least once a year. If you are looking for guidance, you could do worse than checking Garr&#8217;s website, aptly named presentation zen, or <a class="read-more" href="/2008/11/26/book-review-presentation-zen-by-garr-reynolds/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p><a href="http://www.amazon.com/dp/0321525655?tag=jeromecukiern-20&amp;camp=14573&amp;creative=327641&amp;linkCode=as1&amp;creativeASIN=0321525655&amp;adid=1SMVEYMJTKAVERYAM6YM&amp;"><img class="alignleft" style="padding:10px;" title="Presentation Zen cover" src="http://sixminutes.dlugan.com/wp-content/uploads/2008/01/presentation-zen-book.jpg" alt="" width="200" height="245" /></a>Presentation Zen, by Garr Reynolds, has been my favorite business book in 2008.</p>
+<p>Whatever your field, if you are a professional, chances are that you are going to make a presentation at least once a year. If you are looking for guidance, you could do worse than checking Garr&#8217;s website, aptly named <a href="http://www.presentationzen.com/">presentation zen</a>, or buying the book.</p>
+<p>Garr&#8217;s book will not teach you everything you need to know about presentations, but is a great starting point.</p>
+<p>If I were to summarize the book in one sentence, that would be:</p>
+<p><strong>Focus on your delivering your message.</strong></p>
+<p>Anything in your presentation that doesn&#8217;t help you deliver your key message must be removed. Conversely, there are ways to present your content that can enhance your message. Consider them.</p>
+<p>I could sum up his practical advice in 3 points.</p>
+<ul>
+<li>start to think offline.</li>
+<li>in your favorite presentation software, start from a blank slide.</li>
+<li>use visuals. And give your visuals all the space they need.</li>
+</ul>
+<div>Let&#8217;s ellaborate a bit.</div>
+<div><strong>Start to think offline</strong></div>
+<div>The first thing most business professionals would do when asked to design a presentation would be to fire up Powerpoint and create slides. Then, they will edit slides. Insert slides&#8230; remove slides. Edit them some more. Tweak the design&#8230; Insert that extra idea. Ah, but the slide is no longer aligned. So we&#8217;re back to more editing and more tweaking. The end result is often busy, neither consistent nor convincing. Sounds familiar?</div>
+<p style="text-align: center;"><a title="27062008661 by Nevon, on Flickr" href="http://www.flickr.com/photos/nevon/2621789613/"><img class="aligncenter" src="http://farm4.static.flickr.com/3162/2621789613_8153c4b7c5.jpg" alt="27062008661" width="400" height="300" /></a></p>
+<div>The solution to that problem is to start working on your presentation offline &#8211; determine the outline, how to structure your talk, what to say on each slide&#8230; A nice way to do this is with post-its.</div>
+<p style="text-align: center;"><a title="Outlining my dConstruct talk by adactio, on Flickr" href="http://www.flickr.com/photos/adactio/2735966814/"><img class="aligncenter" src="http://farm4.static.flickr.com/3136/2735966814_cce38ccc94.jpg" alt="Outlining my dConstruct talk" width="375" height="500" /></a></p>
+<div>Post-its are easy to group and reposition, and if text doesn&#8217;t fit on a post it, it&#8217;s probably too wordy to put on a slide, anyway.</div>
+<div><strong>Start from a blank template</strong></div>
+<div>Powerpoint and others have trained us to think in terms of bulleted lists. But what an awful way of presenting information! When you&#8217;re showing a bulleted list, you&#8217;re reading out loud your slide, to an audience who has alreay read it by the time you get to point 2. Garr, in this <a href="http://www.presentationzen.com/presentationzen/2006/01/contrasts_in_pr.html">star wars-themed slide show,</a> shows how bulleted lists are the &#8220;dark side of the force&#8221; type of presentations.</div>
+<div><strong>Use visuals</strong></div>
+<div><a href="http://presentationzen.blogs.com/presentationzen/2005/10/the_lessig_meth.html">Famous presenters</a> each have their signature style, and Garr&#8217;s is the use of full-bleed image with minimal legends (and Gill Sans, but what&#8217;s wrong with that? I love Gill Sans). Full-bleed means that instead of integrating a smaller image in a template, you make it occupy all the space in the slide.</div>
+<div><iframe src="https://www.slideshare.net/slideshow/embed_code/295996" width="425" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe><br/></div>
+<div>I won&#8217;t claim this is the single best way of presenting information, and by the way, neither does he. But it is fool-proof and easy to emulate. Finding the right image, which has never been that easy, and using it appropriately, will always have great impact.</div>
+<div></div>
+<div>In the book, Garr covers much more ground. It&#8217;s not only interesting, but it&#8217;s a nice read, and laced with examples you can actually use. I was quite surprised to see him redo charts I had done! (although, for my defense, they were never intended to be shown as is in a powerpoint).</div>
+<div>If you need to buy one book on presentations, buy this book. If you think you don&#8217;t need a book on presentation, buy this book as well.</div>
+<div></div>
+<div>PS. Since the book has been released, I can see lots of presentations, on <a href="http://www.slideshare.net/">slideshare</a> or elsewhere, that apply the visual style of Garr&#8217;s (nice, appropriately-chosen images, caption kept to an essential) but forget the other part of the story, which is the structure of the overall presentation. Both aspects are vital and complementary.</div>
+]]></content:encoded>
+			<wfw:commentRss>/2008/11/26/book-review-presentation-zen-by-garr-reynolds/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+	</channel>
+</rss>

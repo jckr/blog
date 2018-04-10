@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="HandheldFriendly" content="True" />
+<meta name="MobileOptimized" content="320" />
+
+<title>d3js | jeromecukier.net</title>
+
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="/xmlrpc.php">
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Feed" href="/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Comments Feed" href="/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; d3js Tag Feed" href="/tag/d3js/feed/" />
+<!-- This site uses the Google Analytics by MonsterInsights plugin v7.0.5 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+<!-- Note: MonsterInsights is not currently configured on this site. The site owner needs to authenticate with Google Analytics in the MonsterInsights settings panel. -->
+<!-- No UA code set -->
+<!-- / Google Analytics by MonsterInsights -->
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/localhost:8888\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6.10"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='YoutubeShortcodeMargenn-css'  href='/wp-content/plugins/youtube-shortcode/youtube-shortcode.css?ver=4.6.10' type='text/css' media='all' />
+<link rel='stylesheet' id='casper-google-fonts-css'  href='//fonts.googleapis.com/css?family=Noto+Serif%3A400%2C700%2C400italic%7COpen+Sans%3A700%2C400&#038;ver=4.6.10' type='text/css' media='all' />
+<link rel='stylesheet' id='casper-style-css'  href='/wp-content/themes/casper/style.css?ver=4.6.10' type='text/css' media='all' />
+<script type='text/javascript' src='/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.6.10" />
+
+   	<style type="text/css">
+					.blog-title a, .blog-description, .social-icons a { color: #ffffff; }
+		
+						                
+		
+							.main-navigation a { color: ; }
+		                                            </style>
+    		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+
+<body class="archive tag tag-d3js tag-92 group-blog">
+
+<header id="masthead" role="banner" class="site-head site-header" >
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+        <div>
+            <h1 class="menu-toggle">
+                <a class="icon-bars" href="#">
+                    <span class="hidden">Menu</span>
+                </a>
+            </h1>
+            <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+            <div class="menu"><ul><li ><a href="/">Home</a></li><li class="page_item page-item-6"><a href="/about/">About</a></li><li class="page_item page-item-1073"><a href="/data-stories/">Data with stories workshop &#8211; examples</a></li><li class="page_item page-item-437"><a href="/proofs-of-concept/">Private section</a></li><li class="page_item page-item-2"><a href="/sample-page/">Sample Page</a></li></ul></div>
+        </div>
+    </nav><!-- #site-navigation -->
+
+    <div class="vertical-row">
+        <div class="vertical">
+            <div class="site-head-content inner">
+                
+                <div class="social-icons">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                    </div>
+                <h1 class="blog-title"><a class="blog-logo" href='/' rel='home'>jeromecukier.net</a></h1>
+                <h2 class="blog-description">Just another WordPress site</h2>
+            </div>
+        </div>
+    </div>
+</header><!-- #masthead -->
+
+<main id="content" class="content" role="main">
+
+	<section id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		
+			<header class="page-header">
+				<h1 class="page-title">
+					d3js				</h1>
+							</header><!-- .page-header -->
+
+						
+				
+<article id="post-1664" class="post-1664 post type-post status-publish format-standard hentry category-charts category-d3 category-javascript category-tips tag-canvas tag-d3js tag-dom tag-javascript tag-library tag-svg">
+		    <header class="post-header">
+        			<span class="post-meta">
+				<span class="posted-on"><a href="/2015/05/19/you-may-not-need-d3/" rel="bookmark"><time class="entry-date published" datetime="2015-05-19T23:15:56+00:00">May 19, 2015</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/charts/" rel="category tag">charts</a>, <a href="/category/d3/" rel="category tag">d3</a>, <a href="/category/javascript/" rel="category tag">javascript</a>, <a href="/category/tips/" rel="category tag">tips</a>			</span>
+		        <h1 class="post-title"><a href="/2015/05/19/you-may-not-need-d3/" rel="bookmark">You may not need d3</a></h1>
+         
+    </header>
+	<section class="post-content">
+
+		<p>If you&#8217;re working on visualization on the web, the go-to choice is to use <a href="http://d3js.org/">d3js</a> (or a higher-level library). d3js is powerful and versatile. The best proof of that is the lead author of d3, Mike Bostock, worked until recently at the New York Times which many, including myself, consider the ultimate reference in terms of information graphics. At the NYT and elsewhere, d3js has powered breathtaking projects.</p>
+<p>d3js was built as a successor to protovis. Protovis was a slightly higher-level library than d3js, more specialized in data graphics, and designed with the assumption that it could be used with little or no programming experience. And indeed this was true. When I started using protovis in 2009, my javascript skills were limited, and so I learned by deconstructing and recombining the examples. I kept on doing that when d3 came along &#8211; learning through examples. And the d3 examples, like those in protovis before, were short and standalone, demonstrating how easy it was to create something with a few lines of code.</p>
+<p>d3js requires more technical knowledge than protovis did to get started, but not much. However, it is much more versatile &#8211; no longer constrained to charts and maps, it can handle a lot of the front-end functionalities of a web site. And so, it is possible to make visualizations by:</p>
+<ul>
+<li>learning how to do stuff in d3js,</li>
+<li>learning the essential javascript that you need to run d3js, as needed (i.e. variables, if-then statements, array methods&#8230;)</li>
+<li>then, learning through doing, and obtain a feeling for how SVG, HTML and the Document Object Model works.</li>
+</ul>
+<p>This approach is actually very limiting.</p>
+<p>You would create much more robust code by:</p>
+<ul>
+<li>learning javascript,</li>
+<li>learning SVG/HTML/DOM,</li>
+<li>then learning and appreciate d3 logic.</li>
+</ul>
+<p>That would give you the choice when to use a d3js method, when to use another library (past, present or future), or when to use native javascript.</p>
+<p>The point of this article is to go through the main functions of d3js and see how they can be replicated without using a library. As of this writing, I am convinced that using d3js is the most sensible way to handle certain tasks (though this may change in the future). In almost any case I can think of, even when it&#8217;s not the most efficient way to do so, using the d3js approach is the most convenient and the easiest from the developer&#8217;s perspective.  But I also believe it&#8217;s really important to know how to do all these things without d3js.</p>
+<p>This will be a very long post. I&#8217;m trying to keep it as structured as possible so you can jump to the right section and keep it as a reference. This also assumes you have a certain familiarity with d3js and javascript &#8211; this is not an introductory post.</p>
+<p>I&#8217;ve divided it in 4 parts:</p>
+<ul>
+<li>Tasks that you really don&#8217;t need d3js for. And ok, you may want to use it regardless. But here&#8217;s how to do those things without it. (manipulating DOM elements)</li>
+<li>interlude: a reflexion on d3js data binding. Do you really need that?</li>
+<li>Tasks which are significantly easier with d3js (working with external data, animation)</li>
+<li>Tasks where as of now, d3js is clearly superior to anything else (scales, array refactoring, map projections, layouts).</li>
+</ul>
+<h2>Selecting and manipulating elements</h2>
+<p>At the core of d3js is the notion of selection. In d3js, you select one or several elements which become a selection object. You can then do a variety of things:</p>
+<ul>
+<li>join them with data, which is also an essential tenet of the d3 philosophy,</li>
+<li>create or delete elements, especially in relation to the data you may have joined with their parent,</li>
+<li>manipulate these elements by changing their attributes and their style, including in function of the data joined with each of them,</li>
+<li>attach events listeners to those elements, so that when events happen (ie somebody clicks on a rectangle, or change the value of a form) a function might be triggered,</li>
+<li>animate and transform those elements.</li>
+</ul>
+<h3>Selecting elements and parsing the DOM</h3>
+<h4>d3 selection objects vs Nodes, HTML NodeList vs HTML LiveCollections</h4>
+<p>When you select something with d3js, using methods such as d3.select() or d3.selectAll(), this returns a d3 selection object. The selection object is a subclass of the javascript object Array &#8211; <a href="http://bost.ocks.org/mike/selection/">check here for all the nitty-gritty</a>. The gist of it is that d3 selection objects can then be manipulated by d3 methods, such as .attr() or .style() to assign attributes or styles.</p>
+<p>By contrast, the DOM is made of Node objects. The root of the DOM, the Document Object Model, is a special Node called Document. Nodes are organized in a tree-like structure: Document has children, which may have children etc. and encompass everything in the page. The Node objects are really the building blocks of a web page. When an element is added, be it an HTML element like a &lt;div&gt; or an SVG element like a &lt;rect&gt;, a new Node is created as well. So d3js has to interact with Node objects as well. d3 selection objects are tightly connected to their corresponding Node objects.</p>
+<p>However, with &#8220;vanilla&#8221; javascript, you can <em>directly</em> access and manipulate the Node objects.</p>
+<h4>d3.select / d3.selectAll vs document.querySelector / document.querySelectorAll</h4>
+<p>In d3js, you parse the document using d3.select (to select one object) or d3.selectAll. The argument of this method is a <a href="https://github.com/mbostock/d3/wiki/Selections">CSS3 selector</a>, that is, a string which is very similar to what could be found in a CSS style sheet to assign specific styles to certain situations. For instance, &#8220;g.series rect.mark&#8221; will match with all the rectangles of the class &#8220;mark&#8221; which are descendants of the SVG g groups of the class series.</p>
+<p>When d3js was introduced in 2011, javascript didn&#8217;t have an equivalent syntax &#8211; instead you could select elements by class, or by id, or by tag name (more on that in a minute). Things have changed however and it is now possible to use CSS3 selectors using document.querySelector (which will return just one node) or document.querySelectorAll (which will return an HTML NodeList).</p>
+<p>An HTML NodeList is a special object which is kind of like an array of Node objects, only it has almost no array methods or properties. You can still access its members using brackets, and get its length, but that&#8217;s it.</p>
+<p>I wrote document.querySelectorAll, because you can use this method from the document, but you can use it from any Node. Those two snippets of code are parallel:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+var svg = d3.select(&quot;svg&quot;); // svg is a d3 selection object
+var g = svg.selectAll(&quot;g&quot;); // g is a d3 selection object
+</pre>
+<pre class="brush: jscript; title: ; notranslate" title="">
+var svg = document.querySelector(&quot;svg&quot;); // svg is a Node
+var g = svg.querySelectorAll(&quot;g&quot;); // g is a NodeList
+</pre>
+<h4> Getting elements by class name, ID, tag name, name attribute</h4>
+<p>d3js doesn&#8217;t have a special way to get all descendants of a selection of a certain class, of a certain ID, etc. The CSS3 selector syntax can indeed handle all those cases, so why have a separate way?</p>
+<p>By contrast, javascript pre-2011 didn&#8217;t have a querySelectorAll method, and so the only way to parse the document was to use more specific method, like document.getElementsByClassName().</p>
+<p>document.getElementsByClassName() retrieves all descendants of a certain class. document.getElementsByName() retrieves elements with a certain &#8220;name&#8221; attribute (think forms). documents.getElementsByTagName() gets all descendants of a certain type (ie all &lt;div&gt;s, all &lt;rect&gt;s, etc.).</p>
+<p>What&#8217;s interesting about that is that what is returned is not an HTML NodeList like above with querySelectorAll, but another object called HTML <strong>Live Collection</strong>. The difference is that matching elements are created after, they would still be included in the Live Collection.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+var svg = d3.select(&quot;svg&quot;);
+svg.selectAll(&quot;rect&quot;).data([1,2,3]).enter().append(&quot;rect&quot;);
+var mySelection = svg.selectAll(&quot;rect&quot;); // 3 elements
+mySelection[0].length // 3
+svg.append(&quot;rect&quot;);
+mySelection[0].length // 3
+mySelection = svg.selectAll(&quot;rect&quot;); // re-selecting to update it
+mySelection[0].length // 4
+</pre>
+<pre class="brush: jscript; title: ; notranslate" title="">
+var svg = document.querySelector(&quot;svg&quot;);
+var ns = &quot;http://www.w3.org/2000/svg&quot;;
+var i;
+for (i = 0; i &lt; 3; i++) {
+  var rect = document.createElementNS(ns, &quot;rect&quot;); // we'll explain creating elements later
+  svg.appendChild(rect);
+}
+var mySelection = svg.getElementsByTagName(&quot;rect&quot;); // 3 elements
+var rect = document.createElementNS(ns, &quot;rect&quot;);
+svg.appendChild(rect);
+mySelection.length // 4 - no need to reselect to update
+</pre>
+<p>How about IDs? there is also the getElementById (no s at elements!) which only retrieve one element. After all, IDs are supposed to be unique! if no elements match, getElementById returns null.</p>
+<h4>Children, parents, siblings&#8230;</h4>
+<p>Truth be told, if you can use selectors from the root, you can access everything. But sometimes, it&#8217;s nice to be able to go from one node to its parents or its children or its siblings, and d3js doesn&#8217;t provide that. By contrast, the Node object has an interface that does just that &#8211; node.childNodes gets a nodeList of child nodes, node.parentNode gets the parent node, node.nextSibling and node.previousSibling get the next and previous siblings. Nice.</p>
+<p>However, most often you will really be manipulating elements (more on that in a second) and not nodes. What&#8217;s the difference? all Elements are Nodes, but the reverse is not true. One common example of Node which is not an Element is text content.</p>
+<p>To get an Element&#8217;s children, you can use the (wait for it) children property. The added benefit is that what you get through children is a LiveCollection (dynamic), while what you get through childNodes is a NodeList (static).</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+var svg = document.querySelector(&quot;svg&quot;);
+var ns = &quot;http://www.w3.org/2000/svg&quot;;
+var i;
+for (i = 0; i &lt; 3; i++) {
+  var myRect = document.createElementNS(ns, &quot;rect&quot;); // we'll explain creating elements later
+  svg.appendChild(rect);
+}
+// the variable myRect holds the last of the 3 &lt;rect&gt; elements that have been added
+svg.childNodes; // a NodeList
+myRect.parentNode; // the svg element
+myRect.nextSibling; // null - myRect holds the last child of svg.
+myRect.previousSibling; // the 2nd &lt;rect&gt; element
+svg.firstChild; // the 1st &lt;rect&gt;. Really useful shorthand
+svg.querySelector(&quot;rect&quot;); // also the 1st &lt;rect&gt;.
+svg.children; // a LiveCollection
+</pre>
+<h2>Adding/reading attributes, styles, properties and events</h2>
+<h4>Node, Element, EventTarget and other objects</h4>
+<p>In d3 101, right after you&#8217;ve created elements (to which we&#8217;ll come in a moment), you can start moving them around or giving them cool colors like &#8220;steelblue&#8221; by using the .attr and .style methods.</p>
+<p>Wouldn&#8217;t that be cool if we could do the same to Node objects in vanilla javascript!</p>
+<p>Well, we can. Technically, you can&#8217;t add style or attributes to Node objects proper, but to Element objects. The Element object inherits from the Node objects and is used to store these properties. There is also an HTMLElement and SVGElement which inherit from the Element object.</p>
+<p>If you look at the Chrome console at an SVG element like a rect, you can see, in the properties tab, all the objects it inherits from: Object, EventTarget, Node, Element, SVGElement, SVGGraphicsElement, SVGGeometryElement, SVGRectElement, rect.</p>
+<p>All have different roles. To simplify: Node relates to their relative place in the document hierarchy, EventTarget, to events, and Element and its children, to attributes, style and the like. The various SVG-prefixed objects all implement specific methods and properties. When we select a Node object as we&#8217;ve done above with svg.querySelector(&#8220;rect&#8221;) and the like, note that there&#8217;s not a Node object on one side, then an Element object somewhere else, a distinct SVGGeometryElement, and so on and so forth. What is retrieved is <em>one single object</em> that inherits all methods and properties of Nodes, Elements, EventTargets, and so on and so forth, and, as such, that behaves like a Node, like an Element, etc.</p>
+<h4>Setting and getting attributes</h4>
+<p>You can set attributes with the Element.setAttribute method.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+var rect = document.querySelector(&quot;rect&quot;);
+rect.setAttribute(&quot;x&quot;, 100);
+rect.setAttribute(&quot;y&quot;, 100);
+rect.setAttribute(&quot;width&quot;, 100);
+rect.setAttribute(&quot;height&quot;, 100);
+</pre>
+<p>To be honest, I&#8217;m a big fan of the shorthand method in d3js,</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+var rect = d3.select(&quot;rect&quot;);
+rect.attr({x: 100, y: 100, width: 100, height: 100});
+</pre>
+<p>Also, the Element.setAttribute method doesn&#8217;t return anything, which means it can&#8217;t be chained (which may or may not be a bad thing, though it&#8217;s definitely a change for d3js users). It&#8217;s not possible to set several attributes in one go either, although one could create a custom function, or, for the daring, extend the Element object for that.</p>
+<p>Likewise, the Element object has a getAttribute method :</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+rect.getAttribute(&quot;x&quot;); // 100
+</pre>
+<h4>Classes, IDs and tag names</h4>
+<p>Classes, IDs and tag names are special properties of the Element objects. It&#8217;s extremely common to add or remove classes to elements in visualization: my favorite way to do that is to use the classed method in d3js.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+d3.select(&quot;rect&quot;).classed(&quot;myRect&quot;, 1)
+</pre>
+<p>In vanilla javascript, you have the concept of classList.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+document.querySelector(&quot;rect&quot;).classList; // [&quot;myRect&quot;]
+</pre>
+<p>ClassList has a number of cool methods. contains checks if this Element is of a certain class, add adds a class, remove removes a class, and toggles, well, toggles a class.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+document.querySelector(&quot;rect&quot;).classList.contains([&quot;myRect&quot;]); // true
+document.querySelector(&quot;rect&quot;).classList.remove(&quot;myRect&quot;);
+document.querySelector(&quot;rect&quot;).classList.add(&quot;myRect&quot;);
+document.querySelector(&quot;rect&quot;).classList.toggle(&quot;myRect&quot;);
+</pre>
+<p>How about IDs ? with d3js, you&#8217;d have to treat them as any other property (rect.attr(&#8220;id&#8221;)). In vanilla javascript, however, you can access it directly via the id property of Element. You can also do that with the name property.<br />
+Finally, you can use the tagName to get the type of element you are looking at (though you cannot change it &#8211; you can try, it just won&#8217;t do anything).</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+document.querySelector(&quot;rect&quot;).id = &quot;myRect&quot;; // true
+document.querySelector(&quot;rect&quot;).name; // undefined;
+document.querySelector(&quot;rect&quot;).tagName; // &quot;rect&quot;
+document.querySelector(&quot;rect&quot;).tagName = &quot;circle&quot;;
+document.querySelector(&quot;rect&quot;).tagName; // &quot;rect&quot;
+</pre>
+<h4>Text</h4>
+<p>Text is a pretty useful aspect of visualization! it is different from attributes or styles, which are set in the opening tag of an element. The text or content is what is happening in between the opening and closing tags of that element. This is why, in d3js, text isn&#8217;t set using attr or style, but either by the html method for HTML elements like DIVs or Ps, or by the text method for SVG elements like &lt;text&gt; and &lt;tspan&gt;.</p>
+<p>Those have equivalent in the DOM + javascript world.</p>
+<p>HTMLelements have the .innerHTML and outerHTML properties. The difference between the two is that outerHTML includes the opening and closing tags. innerHTML and outerHTML both return HTML, complete with tags and syntax.</p>
+<p>SVG elements, however, don&#8217;t have access to this property, so they have to rely on the Node property textContent. HTML elements also have access to it, by the way. textContent returns just the plain text content of what&#8217;s in the element. All three properties can be used to either get or set text.</p>
+<h4>Style</h4>
+<p>In d3js, setting styles to elements is very similar to setting attributes, only we use the .style method instead of the .attr one. It&#8217;s so much similar that it&#8217;s a rather common mistake to pass as attribute what should be a style and vice-versa! Like with attributes, it is possible to pass an object with keys and values to set several style properties at once.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+d3.selectAll(&quot;rect&quot;).style(&quot;fill&quot;, &quot;red&quot;);
+d3.selectAll(&quot;rect&quot;).style({stroke: &quot;#222&quot;, opacity: .5});
+</pre>
+<p>In the world of DOM and vanilla javascript, style is a property of the HTMLElement / SVGElement objects. You can set style properties one at a time:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+rect = document.querySelector(&quot;rect&quot;);
+rect.style.fill = &quot;red&quot;;
+rect.style.stroke = &quot;#222&quot;;
+rect.style.opacity = .5;
+</pre>
+<p>Technically, .style returns a CSSStyleDeclaration object. This object maintains a &#8220;live&#8221; link to what it describes. So:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+myStyle = rect.style;
+rect.style.fill = &quot;yellow&quot;;
+myStyle.fill; // &quot;yellow&quot;
+</pre>
+<p>Finally, the window object has a getComputedStyle method that can get the computed styles of an element, ie how the element is actually going to get drawn. By contrast, the style property and the d3js style method only affect the inline styles of an element and are &#8220;blind&#8221; to styles of its parents.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+myStyle = window.getComputedStyle(rect, null);
+myStyle.fill; // &quot;yellow&quot;
+</pre>
+<h4>Adding and removing events</h4>
+<p>In d3js, we have the very practical method &#8220;on&#8221; which let users interact with elements and can trigger behavior, such as transformations, filtering, or, really, any arbitrary function. This is where creating visualizations with SVG really shines because any minute interaction with any part of a scene can be elegantly intercepted and dealt with. Since in d3js, elements can be tied with data, the &#8220;on&#8221; methods takes that into account and passes the data element to the listener function. One of my favorite tricks when I&#8217;m developing with d3js and SVG is to add somewhere towards the end the line:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+d3.selectAll(&quot;*&quot;).on(&quot;click&quot;, function(d) {console.log(d);})
+</pre>
+<p>Which, as you may have guessed, displays the data item tied to any SVG element the user could click on.</p>
+<p>In the world of the DOM, the object to which events methods are attached in the EventTarget. Every Element is also an EventTarget (and EventTarget could be other things that handle events too, like xhr requests).</p>
+<p>To add an event listener to an element, use the addEventListener method like so.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+document
+  .querySelector(&quot;rect&quot;)
+  .addEventListener(&quot;click&quot;, function() {
+     console.log(&quot;you clicked the rectangle!&quot;
+   }, false);
+</pre>
+<p>The first parameter is the type of event to listen to (just as in &#8220;on&#8221;), the second is the listener function proper. The third one, &#8220;use capture&#8221;, a Boolean, is optional. If set to true, it stops the event from propagating up and being intercepted by event listeners of the parents of this element.</p>
+<p>There is also a &#8220;removeEventListener&#8221; method that does the opposite, and needs the same elements: in other words, yes, you need to pass the same listener function to be able to stop listening to the element. There is no native way to remove all event listeners from an element, although there are <a href="http://stackoverflow.com/questions/9251837/how-to-remove-all-listeners-in-an-element">workarounds</a>.</p>
+<h2>Creating and removing elements</h2>
+<p>Selecting and modifying elements is great, but if you are creating a visualization, chances are that you want to create elements from scratch.</p>
+<p>Let&#8217;s first talk about how this is done in the DOM/javascript, then we&#8217;ll better understand the data joins and d3 angle.</p>
+<p>Node objects can exist outside of the hierarchy of the DOM. Actually, they must first be created, <em>then</em> be assigned to a place in the DOM.</p>
+<p>Until a Node object is positioned in the DOM, it is not visible. However, it can receive attributes, styles, etc. Likewise, a Node object can be taken from the DOM, and still manipulated.</p>
+<p>To create an HTML element, we can use the document.createElement() method:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+var myDiv = document.createElement(&quot;div&quot;);
+</pre>
+<p>However, that won&#8217;t work for SVG elements &#8211; remember in an earlier example, we used the createElementNS method. This is because SVG elements have to be created in the SVG namespace. d3js old-timers may remember that in the first versions, we had to deal with namespaces when creating elements in d3js as well, but now this all happens under the hood.</p>
+<p>Anyway, in vanilla javascript, this is  how it&#8217;s done:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+var svgns = &quot;http://www.w3.org/2000/svg&quot;;
+var myRect = document.createElementNS(svgns, &quot;rect&quot;);
+</pre>
+<p>Warning, because document.createElement(&#8220;rect&#8221;) will not produce anything useful as of this writing.</p>
+<p>Once the new Node objects are created, in order to be visible, they should be present in the DOM. Because the DOM is a tree, this means that they have to have a parent.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+svg.appendChild(myRect);
+</pre>
+<p>Likewise, to remove a Node from the DOM means to sever that relationship with its parent, which is done through the removeChild method:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+svg.removeChild(myRect);
+</pre>
+<p>Again, even after a Node has been removed, it can still be manipulated, and possibly re inserted at a later time.</p>
+<p>Nodes don&#8217;t remove themselves, but you can write:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+myRect.parentNode.removeChild(myRect);
+</pre>
+<p>In contrast, here is how things are done in d3js.</p>
+<p>The append method will add one element to a parent.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+d3.select(&quot;svg&quot;).append(&quot;rect&quot;);
+</pre>
+<p>The remove method will remove one entire selection object from the DOM.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+d3.select(&quot;svg&quot;).selectAll(&quot;rect&quot;).remove(); // removes all rect elements which are children of the SVG element
+</pre>
+<p>But the most intriguing and the most characteristic way to <a href="http://www.jeromecukier.net/blog/2011/08/09/d3-adding-stuff-and-oh-understanding-selections/">create new elements</a> in d3js is to use a data join.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+d3.select(&quot;svg&quot;)
+  .selectAll(&quot;rect&quot;)
+  .data(d3.range(5))
+  .enter()
+  .append(&quot;rect&quot;);
+</pre>
+<p>The above snippet of code counts all the rect children of the svg element, and, if there are fewer than 5 &#8211; the number of items in d3.range(5), which is the [0,1,2,3,4] array &#8211; creates as many as needed to get to 5, and binds values to those elements &#8211; the contents of d3.range(5) in order. If there are already 5 rect elements, no new elements will be created, but the data assignment to the existing elements will still occur.</p>
+<h2>Data joins, or the lack thereof</h2>
+<p>The select / selectAll / data / enter / append sequence can sound exotic to people who learn d3js, but to its practitioners, <a href="http://www.jeromecukier.net/blog/2011/08/09/d3-adding-stuff-and-oh-understanding-selections/">it is its angular stone</a>. Not only is it a quick way to create many elements (which, in vanilla javascript, takes at least 2 steps. Creating them, and assigning them to the right parent), but it also associates them with a data element. That data element can then be accessed each time the element is being manipulated, notably when setting attributes or styles and handling events.</p>
+<p>For instance,</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+d3.selectAll(&quot;rect&quot;)
+  .attr(&quot;x&quot;, function(d) {return 20 * d;});
+</pre>
+<p>the above code utilizes the fact that each of the rectangle have a different number associated with them to dynamically set an attribute, here position rectangles horizontally.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+d3.selectAll(&quot;rect&quot;)
+  .on(&quot;click&quot;, function(d) {console.log(d);})
+</pre>
+<p>A trick I had mentioned above, but which illustrates this point: here by clicking on each rectangle, we use the data join to show the associated data element.</p>
+<p>Having data readily available when manipulating elements in d3js is extremely convenient. After all, data visualization is but the encoding of data through visual attributes. How to perform this operation without the comfort of data joins?</p>
+<p>Simply by going back to the dataset itself.</p>
+<p>Consider this:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+var data = [];
+var i;
+for (i = 0; i &lt; 100; i++) {
+  data.push({x: Math.random() * 300, y: Math.random() * 300}); // random data points
+}
+
+// d3 way
+var d3svg = d3.select(&quot;body&quot;).append(&quot;svg&quot;);
+d3svg.selectAll(&quot;circle&quot;).data(data).enter().append(&quot;circle&quot;)
+  .attr({cx: function(d) {return d.x;}, cy: function(d) {return d.y}, r: 2})
+  .style({fill: &quot;#222&quot;, opacity: .5});
+
+// vanilla js way
+var svgns = &quot;http://www.w3.org/2000/svg&quot;;
+var svg = document.createElementNS(svgns, &quot;svg&quot;);
+document.querySelector(&quot;body&quot;).appendChild(svg);
+for (i = 0; i &lt; 100; i++) {
+  var myCircle = document.createElementNS(svgns, &quot;circle&quot;);
+  myCircle.setAttribute(&quot;cx&quot;, data[i].x);
+  myCircle.setAttribute(&quot;cy&quot;, data[i].y);
+  myCircle.setAttribute(&quot;r&quot;, 2);
+  myCircle.style.fill = &quot;#222&quot;;
+  myCircle.style.opacity = .5;
+  svg.appendChild(myCircle);
+}</pre>
+<p class="codepen" data-height="268" data-theme-id="0" data-slug-hash="eNzaYg" data-default-tab="result" data-user="jckr">See the Pen <a href="http://codepen.io/jckr/pen/eNzaYg/">eNzaYg</a> by Jerome Cukier (<a href="http://codepen.io/jckr">@jckr</a>) on <a href="http://codepen.io/">CodePen</a>.</p>
+<p><script src="//assets.codepen.io/assets/embed/ei.js" async=""></script>Both codes are equivalent. Vanilla JS is also marginally faster, but d3 code is much more compact. In d3js, the process from dataset to visual is:</p>
+<ul>
+<li>Joining dataset to container,</li>
+<li>Creating as may children to container as needed, [repeat operation for as many levels of hierarchy as needed],</li>
+<li>Use d3 selection objects to update the attributes and styles of underlying Node objects from the data items which have been joined to them.</li>
+</ul>
+<p>    In contrast, in vanilla Javascript, the process is:</p>
+<ul>
+<li>Loop over the dataset,</li>
+<li>create, position and style elements as they are read from the dataset.</li>
+</ul>
+<p>For visuals with a hierarchy of elements, the dataset may also have a hierarchy and could be nested. In this case, there may be several nested loops. While the d3js code is much more compact, the vanilla approach is actually more simple conceptually. Interestingly, this is the same logic that is at play when creating visualization with Canvas or with frameworks like React.js. To simply loop over an existing, invariant dataset enables you to implement a stateless design and take advantage of immutability. You don&#8217;t have to worry about things such as what happens if your dataset changes or the status that your nodes are in before creating or updating them. By contrast most operations in d3js assume that you are constantly updating a scene on which you are keeping tabs. In order to create elements, you would first need to me mindful on existing elements, what data is currently associated with them, etc. So while the d3js approach is much more convenient and puts the data that you need at your fingertips, the vanilla JS approach is not without merits.</p>
+<h2>Loading files</h2>
+<p>The first word in data visualization is data, and data comes in files, or database queries. If you&#8217;re plotting anything with more than a few datapoints, chances are you are not storing them as a local variable in your javascript. d3js has a number of nifty functions for that purpose, such as d3.csv or d3.json, which allow to load the files asynchronously. The trick in working with files is that it can take some time, so some operations can take place while we wait for the files to load, but some others really have to wait for the event that the file is loaded to start. I personally almost always use queue.js, also from Mike Bostock, as I typically have to load data from several files and a pure d3 approach would require nesting all those asynchronous file functions. But, for loading a simple csv file, d3js has a really simple syntax:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+d3.csv(&quot;myfile.csv&quot;, function(error, csv) {
+  // voila, the contents of the file is now store in the csv variable as an array
+})
+</pre>
+<p>For reference, using queue js, this would look like</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+queue()
+ .defer(d3.csv, &quot;myFirstFile.csv&quot;)
+ .defer(d3.csv, &quot;mySecondFile.csv&quot;)
+ .await(ready);
+
+function ready(error, first, second) {
+  // the contents of myFirstFile is stored as an array in the variable &quot;first&quot;,
+  // and the contents of mySecondFile are in the variable &quot;second&quot;.
+}
+</pre>
+<p>The way to do the equivalent in vanilla Javascript is to use XMLHttpRequest.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+function readFile() {
+  var fileLines = this.responseText.split(&quot;\n&quot;);
+  var fields = fileLines[0].split(&quot;,&quot;);
+  var data = fileLines.slice(1).map(function(d) {
+    var item = {};
+    d.split(&quot;,&quot;).forEach(function(v, i) {item[fields[i]] = v;})
+    return item;
+  })
+
+  var request = new XMLHttpRequest();
+  request.onload = readFile;
+  request.open(&quot;get&quot;, &quot;myFile.csv&quot;, true);
+  request.send();
+</pre>
+<p>The syntax of loading the file isn&#8217;t that cumbersome, and there are tons of nice things that can be done through XMLHttpRequest(), but let&#8217;s admit that d3js/queue.js functions make it much more comfortable to work with csv files.</p>
+<h2>Animations</h2>
+<p>d3js transitions is one of my favorite part of the library. I understand it&#8217;s also one the things which couldn&#8217;t be done well in protovis and which caused that framework to break. It feels so natural: you define what you want to animate, all that needs to change, the time frame and the easing functions, and you&#8217;re good to go (<a href="http://www.jeromecukier.net/blog/2012/07/16/animations-and-transitions/">see my previous post on animations and transitions</a>). In native javascript, while you can have deep control of animations, it&#8217;s also, unsurprisingly, much more cumbersome. However, CSS3 provides an animation interface which is comparable in flexibility, expressiveness and ease of use to what d3js does. First let&#8217;s get a high-level view of how to do this entirely within JS. Then let&#8217;s get a sense of what CSS can do.</p>
+<h4>requestAnimationFrame and animation in JavaScript</h4>
+<p>JavaScript has timer functions, window.setTimeout and window.setTimeinterval, which let you run some code after a certain delay or every so often, respectively. But this isn&#8217;t great for animation. Your computer draws to screen a fixed number of times per second. So if you try to redraw the same element several times before in between those times, it&#8217;s a waste of resources! What requestAnimationFrame does is tell your system to wait for the next occasion to draw to execute a given function. Here&#8217;s how it will look in general.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+function animate(duration) {
+  var start = Date.now();
+  var id = requestAnimationFrame(tick);
+  function tick() {
+    var time = Date.now();
+    if (time - start &lt; duration) {
+       id = requestAnimationFrame(tick);
+       draw(time - start / duration);
+    } else {
+      cancelAnimationFrame(id);
+    }
+  }
+  function draw(frame) {
+    // do your thing, update attributes, etc.
+  }
+}
+</pre>
+<p>&nbsp;</p>
+<p>See the Pen <a href="http://codepen.io/jckr/pen/PqzgLV/">PqzgLV</a> by Jerome Cukier (<a href="http://codepen.io/jckr">@jckr</a>) on <a href="http://codepen.io/">CodePen</a>.</p>
+<p><script src="//assets.codepen.io/assets/embed/ei.js" async=""></script></p>
+<p>OK so in the part I commented out, you will do the drawing proper. Are you out of the woods yet? well, one great thing about d3js transitions is that they use easing functions, which transform a value between 0 and 1 into another value between 0 and 1 so that the speed of the animation isn&#8217;t necessarily uniform. In my example, you have (time &#8211; start) / duration represents the proportion of animation time that has already elapsed, so that proportion can be further transformed.</p>
+<p>So yay we can do everything in plain javascript, but that&#8217;s a lot of things to rewrite from scratch.</p>
+<h4>CSS3, animations and transitions</h4>
+<p>(This is not intended to be an exhaustive description of animations and transitions, a subject on which whole books have been written. Just to give those who are not familiar with it a small taste).</p>
+<p>In CSS3, anything you can do with CSS, you can time and animate. But there are some caveats.</p>
+<p>There are two similar concepts to handle appearance change in CSS: <em>animations</em> and <em>transitions</em>. What is the difference?</p>
+<ul>
+<li>with <em>animations</em>, you describe a @keyframes rule, which is a sequence of states that happen at different points in time in your transition. In each of these events, any style property can be changed. The animation will transform smoothly your elements to go from one state to the next.</li>
+<li>in <em>transitions, </em>you specify how changes to certain properties will be timed. For instance, you can say that whenever opacity changes, that change will be staged over a 1s period, as opposed to happen immediately.</li>
+</ul>
+<p>Both approaches have their uses. CSS3 animations are great to create complex sequences. In d3js, that requires to &#8220;chain transitions&#8221;, which is the more complex aspect of managing them. By contrast, going from one segment of the animation to another is fairly easy to handle in CSS3. Animations, though, require the @keyframes rule to be specified ahead of time in a CSS declaration file. And yes, that can be done programmatically, but it&#8217;s cumbersome and not the intent. The point is: animations work better for complex, pre-designed sequence of events.</p>
+<p>Transitions, in contrast, can be set as inline styles, and work fine when one style property is changed dynamically, a scenario which is more likely to happen in interactive visualizations.</p>
+<p>Here&#8217;s how they work. Let&#8217;s start with animations.</p>
+<p class="codepen" data-height="268" data-theme-id="0" data-slug-hash="vOKKYN" data-default-tab="result" data-user="jckr">See the Pen <a href="http://codepen.io/jckr/pen/vOKKYN/">vOKKYN</a> by Jerome Cukier (<a href="http://codepen.io/jckr">@jckr</a>) on <a href="http://codepen.io/">CodePen</a>.</p>
+<p><script src="//assets.codepen.io/assets/embed/ei.js" async=""></script>Note: as of this writing, animation-related CSS properties have to be vendor prefixed, i.e. you have to repeat writing these rules for the different browsers. Here&#8217;s a transition in action.</p>
+<p class="codepen" data-height="268" data-theme-id="0" data-slug-hash="xGOqOR" data-default-tab="result" data-user="jckr">See the Pen <a href="http://codepen.io/jckr/pen/xGOqOR/">xGOqOR</a> by Jerome Cukier (<a href="http://codepen.io/jckr">@jckr</a>) on <a href="http://codepen.io/">CodePen</a>.</p>
+<p>For transition, you specify one style property to &#8220;listen&#8221; to, and say how changes to that property will be timed, using the transition: name of property + settings. (in the above example: transition: transform ease 2s means that whenever the &#8220;transform&#8221; style of that element changes, this will happen over a 2s period with an easing function). <script src="//assets.codepen.io/assets/embed/ei.js" async=""></script></p>
+<p>One big caveat for both CSS animations and transitions is that they are limited to <em>style properties</em>. In HTML elements this is fine because everything that is related to their appearance is effectively handled by style: position, size, colors, etc. For SVG, however, color or opacity are styles, like in HTML, but positions, sizes and shapes are <em>attributes</em>, and can&#8217;t be directly controlled by CSS. There is a workaround for positions and sizes, which is to use the transform style property.</p>
+<p>But wait: isn&#8217;t transform an SVG attribute as well? that&#8217;s right. And that&#8217;s where it can get <em>really </em>confusing. Many SVG elements are positioned through x and y properties (attributes). They can also have a transform property which is additive to that. For instance, if I have a &lt;rect&gt; which has an x property of 100 and a transform set at &#8220;translate(100)&#8221;, it will be positioned 200px right of its point of origin. But on top of that, SVG elements can have a transform <em>style </em>which affects pretty much the same things (position, scales, rotation&#8230;) but which has a slightly different syntax (&#8220;translate(100)&#8221;, for instance, wouldn&#8217;t work, you&#8217;d have to write &#8220;translateX(100px)&#8221;). What&#8217;s more, the transform set in the style doesn&#8217;t add to the one set in the properties, but it overrides it. If we add a &#8220;transform: translateX(50px)&#8221; to our &lt;rect&gt;, it will be positioned at 150px, not 200px or 250px. Another potential headache is that some SVG elements cannot support transform styles.<br />
+While any of these properties can be accessed programmatically, managing their potential conflicts and overlaps can be difficult. In the transition example above, I have used the transform/translateX syntax.</p>
+<p>That said, a lot of awesome stuff can be done in CSS only. For scripted animations, the animation in pure CSS is definitely more powerful and flexible than the d3js equivalent, however, when dealing with dynamically changing data, while you can definitely handle most things through CSS transitions, you&#8217;ll appreciate the comfort of d3js style transitions.</p>
+<p class="codepen" data-height="268" data-theme-id="0" data-slug-hash="GJqrLO" data-default-tab="result" data-user="jckr">See the Pen <a href="http://codepen.io/jckr/pen/GJqrLO/">GJqrLO</a> by Jerome Cukier (<a href="http://codepen.io/jckr">@jckr</a>) on <a href="http://codepen.io/">CodePen</a>.</p>
+<p><script src="//assets.codepen.io/assets/embed/ei.js" async=""></script></p>
+<p>Now a common transformation handled by d3js transitions is to transform the shape of path shapes. This is impossible through CSS animations/transitions, because the shape of the path &#8211; the &#8220;d&#8221; &#8211; is definitely not a style property. And sure, we can use a purely programmatic approach with requestAnimationFrame but is there a more high level way?<br />
+It turns out there actually is &#8211; the animation element of SVG, or SMIL. Through SMIL, everything SVG can be animated with an interface, this includes moving an object along a path, which I wouldn&#8217;t know how to do on top of my head in d3js. Here is an extensive <a href="https://css-tricks.com/guide-svg-animations-smil/">explanation of how this works and what can be done</a>.</p>
+<h2>Data processing, scales, maps and layouts</h2>
+<p>For the end of the article let&#8217;s talk about all of which could technically be done without d3js, but in a much, much less convenient way. Therefore, I won&#8217;t be discussing alternatives with vanilla Javascript, which would be very work intensive and not necessarily inventive.</p>
+<h4>Array functions and data processing</h4>
+<p>d3js comes with a number of array functions. Some are here for convenience, such as d3.min or d3.max which can easily be replaced by using the native reduce method of arrays. When comparing only two variables, d3.max([a, b]) is not much more convenient than Math.max(a,b) or a &gt; b ? a : b.</p>
+<p>Likewise, d3js has many statistical functions, which saves you the trouble to implement them yourself if you need them, such as d3.quantile. There are other libraries who do that, but they&#8217;re here and it&#8217;s really not useful to recode that from scratch.</p>
+<p>d3js comes with shims for maps and sets, which will be supported by ES6. By now, there are transpilers which can let you use ES6 data structures. But it&#8217;s nice to have them.</p>
+<p>In my experience, d3js most useful tool in terms of data processing is the d3.nest function, which can transform an array of objects into a nested object. (I wrote <a href="http://www.jeromecukier.net/blog/2012/05/28/manipulating-data-like-a-boss-with-d3/">this article</a> about them).  Underscore has something similar. While you can definitely getting a dataset of any shape and size by parsing an array and performing any grouping or operations manually, this is not only very tedious but <strong>also extremely error prone.</strong></p>
+<h4>Scales</h4>
+<p>Scales are one superb feature of d3js. They are simple to understand, yet very versatile and convenient. Oftentimes, d3 scales, especially the linear ones, are a replacement for linear algebra.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+d3.scale.linear().range([100, 500]).domain([0, 24])(14);
+((14 - 0) / (24 - 0)) * (500 - 100) + 100; // those two are equivalent (333.33...)
+</pre>
+<p>but changing the domain or the range of a scale is much safer using the scale than adhoc formulas. Add to this scale goodness such as the ticks() method or nice() to round the domain, and you get something really powerful.</p>
+<p>So, of course it is possible (and straightforward, even) to replace the scales but that would be missing out one of the best features of d3js.</p>
+<h4>Maps</h4>
+<p>d3js comes with a full arsenal of functions and methods to handle geographic projections, ie: the transformation of longitude/latitude coordinates into x,y positions on screen. Those come in two main groups, projections proper that turn an array of two values (longitude, latitude) into an array of two values (x, y). There are also paths functions that are used to trace polygons, such as countries, from specially formatted geographic files (geoJSON, topoJSON).</p>
+<p>The mercator projection may be straightforward to implement, But others are much less so. The degree of comfort that d3js provides when visualizing geographical data is really impressive.</p>
+<h4>Layouts</h4>
+<p>d3js layouts, that is special visual arrangements of data, were in my opinion one of the key drivers of protovis (where they originated) then d3js adoption. Through layouts, it became simple to create, with a few line of codes, complex constructions like treemaps or force-directed networks. Some layouts, like the pie chart or the dendogram, are here for convenience and could be emulated. Others, and most of all the force layout, are remarkably implemented, efficient and versatile. While they are called different names in d3js, geometry functions such as voronoi tessellation or convex hulls are similar functionally and there is little incentive in reproducing what they do in plain javascript.</p>
+<h1>Should I stop using d3?</h1>
+<p>d3js is definitely the most advanced javascript visualization library. The point of this article is not to get you to stop using it, but rather, to have a critical thinking in your code. Even with the best hammer, not everything is a nail.</p>
+<p>To parse the DOM, manipulate classes and listen to events, you probably don&#8217;t need a library. The context of your code may make it more convenient to use d3 or jQuery or something else, but it&#8217;s useful to consider alternatives.<br />
+The concept of the data join unlocks a lot of possibilities in d3js. A good understanding of data join would lead you to implement your visualization much faster, using more concise code and replicable logic. It also makes trouble shooting easier. Data joins are especially useful if you have a dataset which is structured like your visualization should be, or if you plan to have interaction with your visualization that requires quick access with the underlying data. However, data joins are not necessary in d3js, or in visualization in general. In many cases, it&#8217;s actually perfectly sensible to parse a dataset and create a visual representation in one fell swoop, without attaching the data to its representation or overly worrying about updating.</p>
+<p>Assuming you have d3js loaded, nothing prevents you from creating elements using d3js append methods instead of vanilla javascript. Or to listen to events using addEventListener rather than with d3js on method. It&#8217;s totally ok to mix and match.</p>
+<p>Like data joins, transitions are a very powerful component of d3js, and, once you&#8217;re comfortable with them, they are very expressive. There are other animation frameworks available though, which can be better adapted to the task at hand.<br />
+Scale, maps, layouts and geometries are extremely helpful features however and I can think of no good reason to reimplement them.</p>
+<h2>Credit where it&#8217;s due</h2>
+<p>To write this I drew inspiration from many articles and I will try to list them all here.<br />
+The spark that led me to write was Lea Verou&#8217;s article <a href="http://lea.verou.me/2015/04/jquery-considered-harmful/">jQuery considered harmful</a>, as well as articles she cites (<a href="http://youmightnotneedjquery.com/">you might not need jQuery</a>, <a href="http://blog.garstasio.com/you-dont-need-jquery/">you don&#8217;t need jQuery</a>, <a href="http://www.sitepoint.com/do-you-really-need-jquery/">Do you really need jQuery?</a>, <a href="http://tutorialzine.com/2014/06/10-tips-for-writing-javascript-without-jquery/">10 tips for writing JavaScript without jQuery</a>).</p>
+<p>Most of the information I used especially in the beginning of the article comes more or less directly from <a href="https://developer.mozilla.org/en-US/">MDN documentation</a>, and direct experimentation. For CSS and animation, I found the articles of Chris Coyier (such as <a href="https://css-tricks.com/animating-svg-css/">this one</a> or <a href="https://css-tricks.com/animate-to-an-inline-style/">this one</a>) and Sara Soueidan (<a href="https://css-tricks.com/guide-svg-animations-smil/">here</a>) on <a href="https://css-tricks.com/">CSS Tricks</a> to be extremely helpful. Those are definitely among the first resources to check out to go deeper on the subject. Sara was also <a href="http://blogs.adobe.com/dreamweaver/2015/04/an-introduction-to-graphical-effects-in-css.html">the inspiration</a> behind <a href="http://www.jeromecukier.net/blog/2015/05/05/blending-mode-and-svg/">my previous post</a>, so thanks to her again!</p>
+<p>Finally, I&#8217;ve read <a href="http://blog.webkid.io/replacing-jquery-with-d3/">Replacing jQuery with d3</a> with great interest (like <a href="http://snips.net/blog/posts/2014/01-10-fast-interactive_prototyping_with_d3_js.html">Fast interactive prototyping with d3js and sketch</a> about a year ago). It may seem that what I write goes in the opposite direction, but we&#8217;re really talking about the same thing -that there are many ways to power front ends and that it&#8217;s important to maintain awareness of alternative methods.</p>
+	    		<div class="clear">&nbsp;</div>
+	</section>
+</article><!-- #post-## -->
+			
+			
+		
+		</main><!-- #main -->
+	</section><!-- #primary -->
+
+	<div id="secondary" class="widget-area" role="complementary">
+		<aside id="search-2" class="widget widget_search"><form role="search" method="get" class="search-form" action="/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit" value="Search" />
+			</form></aside>		<aside id="recent-posts-2" class="widget widget_recent_entries">		<h1 class="widget-title">Recent Posts</h1>		<ul>
+					<li>
+				<a href="/2018/04/09/hello-world/">Hello world!</a>
+						</li>
+					<li>
+				<a href="/2016/08/17/the-big-leagues/">The big leagues</a>
+						</li>
+					<li>
+				<a href="/2016/08/17/creating-a-react-visualization-web-app/">Creating a React visualization web app</a>
+						</li>
+					<li>
+				<a href="/2016/08/13/beyond-rendering/">Beyond rendering</a>
+						</li>
+					<li>
+				<a href="/2016/08/11/react-components/">React components</a>
+						</li>
+				</ul>
+		</aside>		<aside id="recent-comments-2" class="widget widget_recent_comments"><h1 class="widget-title">Recent Comments</h1><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link"><a href='https://wordpress.org/' rel='external nofollow' class='url'>A WordPress Commenter</a></span> on <a href="/2018/04/09/hello-world/#comment-1">Hello world!</a></li><li class="recentcomments"><span class="comment-author-link"><a href='http://omeraz.wordpress.com/' rel='external nofollow' class='url'>עומר עזריאל</a></span> on <a href="/2016/08/17/the-big-leagues/#comment-567">The big leagues</a></li><li class="recentcomments"><span class="comment-author-link">Carlos Ayres</span> on <a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-312">Manipulating data like a boss with d3</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://migrate.powertripanalytics.com/game-of-thrones-interactions-among-the-top-30-characters/' rel='external nofollow' class='url'>Game of ThronesInteractions Among the Top 30 Characters &#8211; PowerTrip Analytics</a></span> on <a href="/2013/05/13/making-the-game-of-thrones-visualization/#comment-466">Making the game of thrones visualization</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://abgoswam.wordpress.com/2016/10/08/d3-getting-started/' rel='external nofollow' class='url'>D3 &#8211; Getting Started | abgoswam&#039;s tech blog</a></span> on <a href="/2012/09/04/getting-to-hello-world-with-d3/#comment-419">Getting to &#8220;Hello world&#8221; with d3</a></li></ul></aside><aside id="archives-2" class="widget widget_archive"><h1 class="widget-title">Archives</h1>		<ul>
+			<li><a href='/2018/04/'>April 2018</a></li>
+	<li><a href='/2016/08/'>August 2016</a></li>
+	<li><a href='/2015/05/'>May 2015</a></li>
+	<li><a href='/2015/02/'>February 2015</a></li>
+	<li><a href='/2014/10/'>October 2014</a></li>
+	<li><a href='/2013/11/'>November 2013</a></li>
+	<li><a href='/2013/05/'>May 2013</a></li>
+	<li><a href='/2013/03/'>March 2013</a></li>
+	<li><a href='/2013/01/'>January 2013</a></li>
+	<li><a href='/2012/12/'>December 2012</a></li>
+	<li><a href='/2012/11/'>November 2012</a></li>
+	<li><a href='/2012/10/'>October 2012</a></li>
+	<li><a href='/2012/09/'>September 2012</a></li>
+	<li><a href='/2012/07/'>July 2012</a></li>
+	<li><a href='/2012/06/'>June 2012</a></li>
+	<li><a href='/2012/05/'>May 2012</a></li>
+	<li><a href='/2012/04/'>April 2012</a></li>
+	<li><a href='/2012/01/'>January 2012</a></li>
+	<li><a href='/2011/11/'>November 2011</a></li>
+	<li><a href='/2011/10/'>October 2011</a></li>
+	<li><a href='/2011/09/'>September 2011</a></li>
+	<li><a href='/2011/08/'>August 2011</a></li>
+	<li><a href='/2011/07/'>July 2011</a></li>
+	<li><a href='/2011/06/'>June 2011</a></li>
+	<li><a href='/2011/05/'>May 2011</a></li>
+	<li><a href='/2011/04/'>April 2011</a></li>
+	<li><a href='/2011/03/'>March 2011</a></li>
+	<li><a href='/2011/02/'>February 2011</a></li>
+	<li><a href='/2011/01/'>January 2011</a></li>
+	<li><a href='/2010/11/'>November 2010</a></li>
+	<li><a href='/2010/04/'>April 2010</a></li>
+	<li><a href='/2010/03/'>March 2010</a></li>
+	<li><a href='/2010/02/'>February 2010</a></li>
+	<li><a href='/2010/01/'>January 2010</a></li>
+	<li><a href='/2009/12/'>December 2009</a></li>
+	<li><a href='/2009/10/'>October 2009</a></li>
+	<li><a href='/2009/09/'>September 2009</a></li>
+	<li><a href='/2009/08/'>August 2009</a></li>
+	<li><a href='/2009/07/'>July 2009</a></li>
+	<li><a href='/2009/06/'>June 2009</a></li>
+	<li><a href='/2009/05/'>May 2009</a></li>
+	<li><a href='/2008/12/'>December 2008</a></li>
+	<li><a href='/2008/11/'>November 2008</a></li>
+	<li><a href='/2008/10/'>October 2008</a></li>
+		</ul>
+		</aside><aside id="categories-2" class="widget widget_categories"><h1 class="widget-title">Categories</h1>		<ul>
+	<li class="cat-item cat-item-2"><a href="/category/book-review/" >book review</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="/category/charts/" >charts</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="/category/conferences/" >conferences</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="/category/d3/" >d3</a>
+</li>
+	<li class="cat-item cat-item-6"><a href="/category/dashboards/" >dashboards</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="/category/data-publishing/" >data publishing</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="/category/data-visualization/" >data visualization</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="/category/francais/" >français</a>
+</li>
+	<li class="cat-item cat-item-10"><a href="/category/javascript/" >javascript</a>
+</li>
+	<li class="cat-item cat-item-11"><a href="/category/presentation/" >presentation</a>
+</li>
+	<li class="cat-item cat-item-12"><a href="/category/protovis/" >protovis</a>
+</li>
+	<li class="cat-item cat-item-13"><a href="/category/react/" >react</a>
+</li>
+	<li class="cat-item cat-item-14"><a href="/category/tips/" >tips</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="/category/uncategorized/" >Uncategorized</a>
+</li>
+	<li class="cat-item cat-item-15"><a href="/category/web-sites/" >web sites</a>
+</li>
+		</ul>
+</aside><aside id="meta-2" class="widget widget_meta"><h1 class="widget-title">Meta</h1>			<ul>
+						<li><a href="/wp-login.php">Log in</a></li>
+			<li><a href="/feed/">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="/comments/feed/">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>			</ul>
+			</aside>		<div class="clear">&nbsp;</div>
+	</div><!-- #secondary -->
+	<footer id="colophon" class="site-footer" role="contentinfo">
+	    <a class="subscribe icon-feed" href="/feed/"><span class="tooltip">Subscribe!</span></a>
+		<div class="site-info inner">
+		    <section class="copyright">
+		    			    		<a href="https://github.com/lacymorrow/casper" rel="home">Casper WP</a> by Lacy Morrow		    			    </section>
+		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+</main><!-- /#content -->
+
+<script type='text/javascript' src='/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js?ver=3.0.9b'></script>
+<script type='text/javascript' src='/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushJScript.js?ver=3.0.9b'></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "http://localhost:8888/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "http://localhost:8888/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+<script type='text/javascript' src='/wp-content/themes/casper/js/main.js?ver=1.0.0'></script>
+<script type='text/javascript' src='/wp-includes/js/wp-embed.min.js?ver=4.6.10'></script>
+<!--stats_footer_test--></body>
+</html>

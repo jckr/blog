@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>followers &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/followers/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>Strength in numbers</title>
+		<link>/2011/07/22/strength-in-numbers/</link>
+		<comments>/2011/07/22/strength-in-numbers/#respond</comments>
+		<pubDate>Fri, 22 Jul 2011 15:22:47 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[europe]]></category>
+		<category><![CDATA[followers]]></category>
+		<category><![CDATA[treemap]]></category>
+		<category><![CDATA[twitter]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=937</guid>
+		<description><![CDATA[Last month, visualizing.org organized an event in Brussels to gather European dataviz folks. As far as I&#8217;m concerned, the main output of that is that a handful of those present decided to create an informal discussion group to share ideas and promote data visualization. The group as it currently stands includes @datavis (@wiederkehr), @FILWD, @infosthetics, <a class="read-more" href="/2011/07/22/strength-in-numbers/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p><script src="http://www.jeromecukier.net/wp-includes/js/protovis_r3_2.js" type="text/javascript"></script><br />
+Last month, <a href="http://www.visualizing.org/">visualizing.org</a> organized an event in Brussels to gather European dataviz folks. As far as I&#8217;m concerned, the main output of that is that a handful of those present decided to create an informal discussion group to share ideas and promote data visualization. The group as it currently stands includes <a href="http://www.twitter.com/#!/datavis">@datavis</a> (@wiederkehr), <a href="http://www.twitter.com/#!/FILWD">@FILWD</a>, <a href="http://www.twitter.com/#!/infosthetics">@infosthetics</a>, <a href="http://www.twitter.com/#!/janwillemtulp">@janwillemtulp</a>, <a href="http://www.twitter.com/#!/moritz_stefaner">@moritz_stefaner</a>, <a href="http://www.twitter.com/#!/visualisingdata">@visualisingdata</a> and myself (<a href="http://www.twitter.com/#!/jcukier">@jcukier</a>).</p>
+<p>Before going any further <strong>I invite you to follow any and all of these accounts</strong> you don&#8217;t yet follow on twitter. You would be in great company (see below).
+</p>
+<p>This week I was looking at the Twitter API and had the idea to compare our respective friends and followers on twitter. We have very different profiles.<br />
+First, we are all based in a different country, except for @filwd and @moritz_stefaner who are both in Germany. Also the interest of our audiences are different. </p>
+<p>Still, I was suprised to see that there was not that much overlap among our followers. For each of us, at least one third of our followers do not follow any of the other accounts. So, even for @infosthetics which has over 8000 followers, the collective audience of the group is approximately twice as much. </p>
+<p><script src="http://www.jeromecukier.net/wp-content/uploads/2011/07/smallTreemap.js" type="text/javascript"></script>
+</p>
+<p>So anyway, I conducted some further analysis to answer some questions such as: </p>
+<ul>
+<li>which accounts follow several of us, but not one specific account?</li>
+<li>among the followers unique to an account, which have many followers? (ie @datavis is being followed, and occasionally RT&#8217;d, by @alyssa_milano!)
+<li>which accounts are being followed by many of us?</li>
+</ul>
+<p><strong><a href="http://jeromecukier.net/stuff/unum3.html">you can find the detail here</a>.</strong></p>
+<p>So the 22 accounts that currently follow our 8 accounts are:<br />
+<a href="http://www.twitter.com/#!/JeffClark">@JeffClark</a>, <a href="http://www.twitter.com/#!/visualizingOrg">@visualizingOrg</a>, <a href="http://www.twitter.com/#!/akaiving">@akaiving</a>, <a href="http://www.twitter.com/#!/BrianBBrian">@BrianBBrian</a>, <a href="http://www.twitter.com/#!/eagereyes">@eagereyes</a>, <a href="http://www.twitter.com/#!/densitydesign">@densitydesign</a>, <a href="http://www.twitter.com/#!/bestiario140">@bestiario140</a>, <a href="http://www.twitter.com/#!/krees">@krees</a>, <a href="http://www.twitter.com/#!/cmulbrandon">@cmulbrandon</a>, <a href="http://www.twitter.com/#!/googlea">@googlea</a>, <a href="http://www.twitter.com/#!/pciuccarelli">@pciuccarelli</a>, <a href="http://www.twitter.com/#!/mathieubastian">@mathieubastian</a>, <a href="http://www.twitter.com/#!/geovisual">@geovisual</a>, <a href="http://www.twitter.com/#!/dominikus">@dominikus</a>, <a href="http://www.twitter.com/#!/seedataltd">@seedataltd</a>, <a href="http://www.twitter.com/#!/thewhyaxis">@thewhyaxis</a>, <a href="http://www.twitter.com/#!/algonpage">@algonpage</a>, <a href="http://www.twitter.com/#!/richard_jong">@richard_jong</a>, <a href="http://www.twitter.com/#!/SeeingStructure">@SeeingStructure</a>, <a href="http://www.twitter.com/#!/songobong">@songobong</a>, <a href="http://www.twitter.com/#!/2aziz1">@2aziz1</a>, <a href="http://www.twitter.com/#!/adizi">@adizi</a>. </p>
+<p>thanks!</p>
+]]></content:encoded>
+			<wfw:commentRss>/2011/07/22/strength-in-numbers/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

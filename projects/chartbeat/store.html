@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+	<title>In Store Traffic</title>
+	
+
+	<style>
+	body {
+		font-family: BookAntiqua;
+		font-size: 14px;
+		color: #4A4A4A;
+		line-height: 17px;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		font-family: Futura-Medium;
+	}
+
+	.icon {
+		position: absolute;
+	}
+	.box1 {
+		position: relative;
+		height: 72px;
+		background-color: #B1E6D1;
+	}
+
+	.box1 h1 {
+		position: absolute;
+		font-size: 18px;
+		top: 22px;
+		left: 85.8px;
+		text-transform: uppercase;
+	}
+
+	.box1 .icon {
+		left: 33px;
+		top: 23px;
+	}
+
+	.box2 {
+		position: relative;
+		height: 148px;
+		background-color: #77B1A9;
+	}
+
+	.box2 .hlbox {
+		width: 282px;
+		margin: 14px 89px;
+		height: 120px;
+		float: left;
+	}
+
+	.box2 .hlbox > .label {
+		font-size: 22px;
+		color: #B1E6D1;
+		line-height: 26px;
+		text-align: center;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.box2 .hlbox .main {
+		font-family: Futura-Medium;
+		font-size: 64px;
+		color: #451A3E;
+		line-height: 64px;
+		text-align: center;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.box2 .hlbox .average {
+		margin-left: auto;
+		margin-right: auto;
+		font-size: 18px;
+		color: #270A33;
+		line-height: 22px;
+	
+	}
+	.box2 .hlbox .average .label {
+		float: left;
+		margin-right: 20px;
+	}
+	.box2 .hlbox .average .value {
+		font-family: Futura-Medium;
+		float: right;
+		margin-right: 20px;
+	}
+
+	
+	.charts .section {
+		position: relative;
+		float: left;
+		width: 437px;
+		margin: 32px 0 0 32px;
+	}
+	
+	.section .title .line {
+		position:absolute;
+		background-image: url("line.png");
+		height:22px;
+		width: 100%;
+	}
+	.section .title .text {
+		padding-left:53.8px; padding-right: 5px;
+		position:absolute;
+		font-family: Futura-Medium;
+		font-size: 18px;
+		color: #3D7B80;
+		line-height: 25px;
+		height:25px;
+		background-color: #fff;
+	}
+	.section .title .icon {
+		position: absolute;
+		top: 0px; left: 0px;
+	}
+
+	.chart.new-visitors {background-image: url("new visitors chart.png");width: 414px;height:252px;margin-top:75px;margin-left:5px;}
+	.chart.current-visitors {background-image: url("current visitors chart.png");width: 412px;height:259px;margin-top:69px;margin-left:5px;}
+
+	.chart.location {background-image: url("Visitors per location chart.png");width: 342px;height:366px;margin-top:75px;margin-left:51px;}
+
+	.chart.cumulative {background-image: url("cumulative visitors chart.png");width: 388px;height:251px;margin-top:75px;margin-left:5px;}
+	.chart.period {background-image: url("This week.png");width: 408px;height:295px;margin-top:70px;margin-left:5px;}
+
+
+	#chart {}
+	</style>
+</head>
+<body>
+<div class="head">
+	<div class="box1">
+		<img src="main store icon.png" class="icon" />
+		<h1>In store traffic for Friday 12/5/2014 at 19:00</h1>
+	</div>
+	<div class="box2">
+		<div class="hlbox">
+			<div class="label">
+				People currently in the store
+			</div>
+			<div class="main">
+				78
+			</div>
+			<div class="average">
+				<div class="label">Average:</div>
+				<div class="value">60</div>
+			</div>
+		</div>
+		<div class="hlbox">
+			<div class="label">
+				Average length of a visit
+			</div>
+			<div class="main">
+				35min
+			</div>
+			<div class="average">
+				<div class="label">Average:</div>
+				<div class="value">30min</div>
+			</div>
+		</div>
+		<div class="hlbox">
+			<div class="label">
+				Total unique visitors today
+			</div>
+			<div class="main">
+				1237
+			</div>
+			<div class="average">
+				<div class="label">Daily objective:</div>
+				<div class="value">1500</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="charts">
+	<div class="section" id="inflow">
+		<div class="title">
+			<div class="line"></div>
+			<div class="text">Inflow of visitors</div>
+			<img src="inflow store icon.png" class="icon" />
+		</div>
+		<div class="chart new-visitors"></div>
+		<div class="chart current-visitors"></div>
+	</div>
+	<div class="section" id="happening">
+		<div class="title">
+			<div class="line"></div>
+			<div class="text">What's happening in the store?</div>
+			<img src="zoom store icon.png" class="icon" />
+		</div>
+		<div class="chart location"></div>
+	</div>
+	<div class="section" id="inflow">
+		<div class="title">
+			<div class="line"></div>
+			<div class="text">The day so far</div>
+			<img src="day so far icon.png" class="icon" />
+		</div>
+		<div class="chart cumulative"></div>
+		<div class="chart period"></div>
+	</div>
+
+</div>
+
+
+</script>
+</body>
+</html>

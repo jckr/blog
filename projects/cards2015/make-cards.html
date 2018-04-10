@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+	<title></title>
+	
+<!--<link href="//fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet" type="text/css">-->
+
+	<style>
+	body {
+		font-family: HelveticaNeue;
+		font-size: 14px;
+		color: #4A4A4A;
+		line-height: 19px;
+	}
+	input {width: 166px;}
+	.subtitle {font-style: italic; color: #ccc; font-size: 10px;}
+	.filter {width: 167px;margin-left: 20px;float: left;}
+	.form {height: 67px;overflow: hidden; clear: both;width: 960px;}
+	h1 {
+		font-family: HelveticaNeue;
+		font-weight: 800;
+		font-size: 36px;
+		color: #4A4A4A;
+		line-height: 49px;
+	}
+	h2 {
+		font-family: "Palatino"; 
+		font-style: italic;
+		font-size: 22px;
+		color: #4A4A4A;
+		line-height: 34px;
+	}
+	.bold {
+		font-family: HelveticaNeue;
+		font-weight: bold;
+		font-size: 14px;
+		color: #4A4A4A;
+		line-height: 19px;
+	}
+	#front, #back {float: left; width: 1080px; height: 600px; margin-right: 20px}
+	.twitter-share-button {position: absolute; left: 70px; top: 30px;}
+	
+
+	
+	#chart {}
+	</style>
+</head>
+<body>
+<script src="../../lib/d3.min.js">
+</script>
+<script src="../../lib/queue.min.js"></script>
+
+<div class="form">
+	<div class="filter">
+	First name</br>
+	<span class="subtitle">&nbsp;</span>
+	<input type="text" name="fn" />
+	</div>
+
+	<div class="filter">
+	Last name</br>
+	<span class="subtitle">&nbsp;</span>
+	<input type="text" name="ln" />
+	</div>
+
+</div>
+<a class="downloadf" href="#">Download</a>
+<div id="front"></div>
+</p>
+
+<canvas width="600" height="1080" style="display:none"></canvas>
+<script src="make-cards.js"></script>
+<script>
+var params = {};
+var query = window.location.search.substring(1);
+
+var vars = query.split("&");
+vars.forEach(function(v) {
+	p=v.split("=");
+	params[p[0]]=p[1]
+})
+
+vis.init(params);
+</script>
+</body>
+</html>

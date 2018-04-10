@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>admin &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/author/admin/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>Hello world!</title>
+		<link>/2008/10/14/hello-world-2/</link>
+		<comments>/2008/10/14/hello-world-2/#comments</comments>
+		<pubDate>Tue, 14 Oct 2008 14:43:24 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1</guid>
+		<description><![CDATA[Hello and welcome to my website. In this blog, I would like to share my research interest, which is how to communicate efficiently, or how to get a message across. I have talked about that subject in other blogs or websites I write for. So now, I&#8217;ll keep all conversations on this subject here, and <a class="read-more" href="/2008/10/14/hello-world-2/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>Hello and welcome to my website.</p>
+<p>In this blog, I would like to share my research interest, which is <strong>how to communicate efficiently</strong>, or <strong>how to get a message across</strong>.</p>
+<p>I have talked about that subject in other blogs or websites I write for. So now, I&#8217;ll keep all conversations on this subject here, and let these other websites focus on their initial subjects.</p>
+<p>So where have I written?</p>
+<p><strong>Videogames </strong></p>
+<ul>
+<li><a href="http://www.gamethink.net/">Gamethink</a> was my first site on which I wrote extensively. I have worked for a while in the videogame industry and I have used this space to write a number of columns on a variety of subjects, like <a href="http://www.gamethink.net/Games-and-violence.html">game violence</a> or <a href="http://www.gamethink.net/-History-.html">history of videogames</a>. But I consider that my work on gamethink is mostly done. I don&#8217;t plan to update it regularly anymore, and I don&#8217;t plan to ever work in the videogame industry again. That being said, a good third of the articles I wrote haven&#8217;t been published yet.</li>
+<li><a href="http://www.amusement.fr/">Amusement</a> is a game, fashion and lifestyle magazine to which I contribute regularly.</li>
+</ul>
+<p><strong>Statistics</strong></p>
+<p>I work at the OECD and my job is to improve the communication of statistics. More on that in future posts.</p>
+<p>There, I worked on two more or less official blogs:</p>
+<p>the <a href="http://oecdfactbook.wordpress.com/">OECD Factblog</a>, where I publish excerpts of OECD data. My most successful and most interesting story has been about <a href="http://oecdfactbook.wordpress.com/2008/07/25/how-to-publish-charts-in-blogs-and-websites/">how to publish graphs on blogs and websites</a>.</p>
+<p>the <a href="http://www.oecd.org/site/0,3407,en_21571361_41390497_1_1_1_1_1,00.html">OECD Statitistcs Spotlight</a>, where I produce graphs to illustrate topical subjects.</p>
+<p>I&#8217;m also collaborating on a book with colleagues from several statistical agencies about guidelines for producing graphs. It would be a follow-up to <a href="http://www.google.fr/url?sa=t&amp;source=web&amp;ct=res&amp;cd=1&amp;url=http%3A%2F%2Fwww.unece.org%2Fstats%2Fdocuments%2Fwriting%2F&amp;ei=ruwiSeSGEpyS1wbfyOGHAg&amp;usg=AFQjCNEH0JiG2wjeUe7ITkKVLGsD9wBeVQ&amp;sig2=tgVg_dZdLbAClz4sAh_3Yg">this guide: Making Data Meaningful</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>/2008/10/14/hello-world-2/feed/</wfw:commentRss>
+		<slash:comments>5</slash:comments>
+		</item>
+	</channel>
+</rss>

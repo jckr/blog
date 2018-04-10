@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>élections &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/elections/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>À la découverte des résultats des présidentielles avec les coordonnées parallèles</title>
+		<link>/2012/05/07/a-la-decouverte-des-resultats-des-presidentielles-avec-les-coordonnees-paralleles/</link>
+		<comments>/2012/05/07/a-la-decouverte-des-resultats-des-presidentielles-avec-les-coordonnees-paralleles/#respond</comments>
+		<pubDate>Mon, 07 May 2012 17:20:39 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[d3]]></category>
+		<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[français]]></category>
+		<category><![CDATA[coordonnées parallèles]]></category>
+		<category><![CDATA[élections]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1264</guid>
+		<description><![CDATA[Qui dit élection présidentielle, dit résultats. Et qui dit résultats dit représentation visuelle dans les médias. Et donc souvent carte. Cela dit, une carte ne nous apprend pas grand chose de ce qui s&#8217;est vraiment passé dans une élection. C&#8217;est vrai que c&#8217;est utile pour retrouver sa région ou sa ville, mais les résultats de <a class="read-more" href="/2012/05/07/a-la-decouverte-des-resultats-des-presidentielles-avec-les-coordonnees-paralleles/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p style="text-align: center;"><a href="http://www.jeromecukier.net/projects/elections/dtour2012.html"><img class="aligncenter size-full wp-image-1265" title="front" src="http://www.jeromecukier.net/wp-content/uploads/2012/05/front.jpg" alt="" width="700" height="374" /></a></p>
+<p>Qui dit élection présidentielle, dit résultats.</p>
+<p>Et qui dit résultats dit représentation visuelle dans les médias.</p>
+<p>Et donc souvent carte.</p>
+<p>Cela dit, une carte ne nous apprend pas grand chose de ce qui s&#8217;est vraiment passé dans une élection. C&#8217;est vrai que c&#8217;est utile pour retrouver sa région ou sa ville, mais les résultats de deux villes proches géographiquement (par exemple, Boulogne-Billancourt et Issy-les-Moulineaux) n&#8217;a strictement rien à voir.</p>
+<p>En revanche, avec une carte c&#8217;est très difficile de répondre à certaines questions, comme: où a-t-on le plus voté pour Nicolas Sarkozy? Qu&#8217;est ce qui s&#8217;est passé dans les villes qui ont beaucoup voté pour Marine Le Pen ou François Bayrou? D&#8217;où vient l&#8217;explosion du vote blanc au deuxième tour?</p>
+<p>Pour répondre à ces questions, on peut utiliser les <a href="http://www.jeromecukier.net/projects/elections/dtour2012.html">coordonnées parallèles</a>.</p>
+<p>Chaque axe vertical correspond à un vote possible &#8211; d&#8217;abord ceux du premier tour, puis ceux du deuxième. Chaque ligne de couleur correspond à une ville (ou à un département, à une région, ou à la France). Chacune de ces lignes coupe chaque axe à une hauteur qui correspond à la proportion des gens qui ont fait tel ou tel choix. Par exemple, les villes où on a beaucoup voté pour Jean-Luc Mélenchon, comme Bagnolet ou Gennevilliers, se retrouveront vers le haut de l&#8217;axe du milieu.</p>
+<p>En s&#8217;approchant des axes, le curseur devient une croix. Il suffit alors de le faire glisser le long de l&#8217;axe pour dessiner un rectangle, et mettre en valeur toutes les lignes qui passent par ce rectangle. Par exemple, voici les villes qui ont donné plus de 70% de leurs voix du second tour à François Hollande:</p>
+<p><a href="http://jeromecukier.net/projects/elections/dtour2012.html"><img class="aligncenter size-full wp-image-1266" title="hollande70" src="http://www.jeromecukier.net/wp-content/uploads/2012/05/hollande70.jpg" alt="" width="700" height="500" /></a></p>
+<p>&nbsp;</p>
+<p>On peut tracer autant de rectangles qu&#8217;on veut. Par exemple, on peut ne garder que les endroits qui avaient soutenu Bayrou (par exemple à plus de 10%).</p>
+<p><a href="http://jeromecukier.net/projects/elections/dtour2012.html"><img class="aligncenter size-full wp-image-1267" title="hollande70bayrou10" src="http://www.jeromecukier.net/wp-content/uploads/2012/05/hollande70bayrou10.jpg" alt="" width="700" height="500" /></a></p>
+<p>et voilà: il n&#8217;y en a plus que 2.</p>
+<p>Pour supprimer une sélection, il suffit de cliquer près de l&#8217;axe sans glisser. Si on clique sur un rectangle, on peut aussi le faire coulisser le long de l&#8217;axe.</p>
+<p>Avec cette technique, on peut tout de suite voir les fiefs de tel ou tel candidat: il s&#8217;agit des lignes qui touchent le haut du graphique.</p>
+<p>On peut répondre à des questions plus complexes. Par exemple, je parlais de l&#8217;explosion du vote blanc au deuxième tour. Que s&#8217;est-il passé?</p>
+<p>Sélectionnons les endroits où le vote blanc a dépassé les 4% au deuxième tour, tout en restant à moins de 1.5% au premier tour:</p>
+<p><a href="http://www.jeromecukier.net/projects/elections/dtour2012.html"><img class="aligncenter size-full wp-image-1268" title="blanc" src="http://www.jeromecukier.net/wp-content/uploads/2012/05/blanc.jpg" alt="" width="700" height="370" /></a></p>
+<p>On voit trois pics: les villes où Marine Le Pen, Jean-Luc Mélenchon ou François Bayrou ont fait un très gros score. On peut continuer à sélectionner et voir que ce sont bien les villes qui sont dans la pointe de l&#8217;un des trois triangles et pas celles qui passent par le bas qui se retrouvent dans ce cas de figure. Ces électeurs ont préféré voter blanc plutôt que de choisir.</p>
+<p>Bonne exploration!</p>
+<p><a href="http://www.jeromecukier.net/projects/elections/dtour2012.html">http://www.jeromecukier.net/projects/elections/dtour2012.html</a></p>
+]]></content:encoded>
+			<wfw:commentRss>/2012/05/07/a-la-decouverte-des-resultats-des-presidentielles-avec-les-coordonnees-paralleles/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Votre prénom est-il de droite?</title>
+		<link>/2011/04/01/votre-prenom-est-il-de-droite/</link>
+		<comments>/2011/04/01/votre-prenom-est-il-de-droite/#comments</comments>
+		<pubDate>Fri, 01 Apr 2011 20:47:27 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[protovis]]></category>
+		<category><![CDATA[cantonales]]></category>
+		<category><![CDATA[discrimination]]></category>
+		<category><![CDATA[élections]]></category>
+		<category><![CDATA[français]]></category>
+		<category><![CDATA[nom]]></category>
+		<category><![CDATA[prénom]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=804</guid>
+		<description><![CDATA[[another post in French. sorry for my English readers, but since it's again based on election data it really is only relevant to French people] Donner un prénom à ses enfants, c'est peut-être la décision qui va le plus influencer le regard des autres à son égard... surtout quand ils ne l'ont pas encore vu. <a class="read-more" href="/2011/04/01/votre-prenom-est-il-de-droite/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[[another post in French. sorry for my English readers, but since it's again based on election data it really is only relevant to French people]</p>
+Donner un prénom à ses enfants, c'est peut-être la décision qui va le plus influencer le regard des autres à son égard... surtout quand ils ne l'ont pas encore vu. Qu'est-ce qu'on peut s'imaginer d'un Édouard ou d'une Jacqueline avant de les connaître? sûrement pas la même chose. Est-ce qu'on peut deviner leur couleur politique? </p>
+pour vérifier ça j'ai pris la liste de tous les candidats aux dernières élections cantonales,soit 10361 personnes avec 1247 prénoms différents qui ont rendu publiques leurs convictions politiques. </p>
+Alors, est-ce que tous les Nicolas sont de droite? et les Jean-Marie? Tous les Jean-Luc et les Olivier sont-ils de gauche? Bon, Ségolène, on savait tous que ça faisait pas très socialiste. Mais Martine? Ou François?</p>
+
+La taille des cercles représente le nombre de candidats qui portent tel ou tel prénom, et la couleur, où ils se situent sur une échelle gauche-droite. En cliquant sur un candidat, on peut voir tous les candidats qui portent son prénom, par parti. </p>
+
+Quelques trouvailles: tous les Kévin sont au front national. Toutes les Arlette, aussi - les temps changent! J'ai laissé toutes les orthographes et tous les accents. Par exemple, Michaël est de gauche, mais Mickaël de droite. Et Mickael, de gauche. A quoi ça tient!</p>
+
+Parmi les prénoms qu'on trouve plus de 5 fois, les plus marqués à gauche sont Mathilde, Marianne, Régine, Norbert et Aline. A droite, on trouve Laura, Edouard, Marie-Christine, Adrien et Thérèse.</p>
+
+Et... si Jean-Marie est plutôt de droite, les Nicolas sont d'habitude à gauche, mais pas les François. On trouve plus de Jean-Luc, de Martine et de Dominique à gauche, mais pas d'Olivier!</p><hr/></p>
+<script type="text/javascript" src="http://blog.oecdfactblog.org/wp-includes/js/protovis-r3.2.js"></script>
+<script type="text/javascript" src="http://www.jeromecukier.net/wp-content/uploads/2011/04/candidats.js" charset="ISO-8859-1"></script>
+<script type="text/javascript+protovis">
+var re="", sp=-1;
+partisDetails={
+	EXG:{nom:"Extrême gauche", color:"red", order:0},
+	COM:{nom:"Communistes", color:"firebrick",order:1},
+	PG:{nom:"Parti de Gauche", color:"crimson",order:2},
+	SOC:{nom:"Parti socialiste", color:"lightcoral",order:3},
+	RDG:{nom:"Radicaux de gauche", color:"yellow",order:4},
+	DVG:{nom:"Divers gauche", color:"pink",order:5},
+	VEC:{nom:"Verts, Europe écologie", color:"limegreen",order:6},
+	ECO:{nom:"Écologistes", color:"green",order:7},
+	REG:{nom:"Régionalistes", color: "saddlebrown",order:8},
+	AUT:{nom:"Autres", color: "grey",order:9},
+	MODM:{nom:"MODEM", color: "gold",order:10},
+	"M-NC":{nom:"Majorité présidentielle", color: "mediumblue",order:11},
+	M:{nom:"Autres candidats majorité présidentielle", color: "blue",order:12},
+	UMP:{nom:"Union pour un Mouvement Populaire", color:"royalblue",order:13},
+	DVD:{nom:"Divers droite", color:"steelblue",order:14},
+	FN:{nom:"Front National", color: "skyblue",order:15},
+	EXD:{nom:"Extrême droite", color: "sienna",order:16}
+};
+partis=pv.keys(partisDetails);
+partiScore={"EXG":-5, "COM":-5, "PG":-5, "SOC":-2, "RDG":-1, "DVG":-3, "VEC":-4, "ECO":-1, "REG":0, "AUT":0, "MODM":1, "M-NC":3, "M":3, "UMP":3, "DVD":3, "FN":5, "EXD":5}
+
+
+candidats.forEach(function(c) {var n=c.name.split(" ");pre="";nom="";var inNom=false;n.forEach(function(s) {if(s.toUpperCase()==s){inNom=true;};if(inNom){nom+=s+" ";}else{pre+=s+" ";}});pre=pre.trim();nom=nom.trim();c["prenom"]=pre;c["nom"]=nom;})
+
+//prenoms=pv.nest(candidats).key(function(c) {return c.prenom;}).rollup(function(prenom) {return pv.mean(prenom, function(d) {return partiScore[d.party];});})
+prenoms=pv.values(pv.nest(candidats).key(function(c) {return c.prenom;}).rollup(function(prenom) {
+return {prenom:prenom[0].prenom,
+        score:pv.mean(prenom, function(d) {return partiScore[d.party];}),
+        frequence:prenom.length}
+;}))
+prenoms.forEach(function(p) {p["partis"]=pv.nest(candidats.filter(function(c) {return c.prenom==p.prenom;})).key(function(d) {return d.party;}).rollup(function(d) {return d.length;});})
+
+var prenomParti=[];
+
+cScale=pv.Scale.linear(-5,0,5).range("red","#eee","blue")
+//pf=prenoms.filter(function(p) {return p.frequence>1;}).sort(function(b,a) {return (a.frequence>b.frequence)-(b.frequence>a.frequence);});
+pf=prenoms.sort(function(b,a) {return (a.frequence>b.frequence)-(b.frequence>a.frequence);});
+pnode0=pv.nest(candidats).key(function(c) {return c.prenom;}).rollup(function(prenom) {return prenom.length;})
+pnode={};pscore={};
+
+pv.keys(pnode0).forEach(function(p,i) {
+	if(p!="") {
+		pnode[p]=pv.values(pnode0)[i];
+		pscore[p]=pf.filter(function(d) {return d.prenom==p;})[0].score;
+	}})
+pv.keys(pnode).forEach(function(p,i) {pscore[pv.values(pf)[i].prenom]=pv.values(pf)[i].score;})
+vis=new pv.Panel().width(600).height(600);
+
+vis2=vis.add(pv.Panel).width(450).height(450).event("click", function() {sp=-1;prenom="";vis.render();});
+var pack = vis2.add(pv.Layout.Pack)
+    .nodes(pv.dom(pnode).root("prenoms").nodes())
+    .size(function(d) {return d.nodeValue;})
+    //.order(null)
+    ;
+pack.node.strokeStyle(null);
+pack.node.add(pv.Dot)
+    .fillStyle(function(d) {if(d.index) {return cScale(pscore[d.nodeName]);} else {return "white";}})
+    .title(function(d) {if (d.index) {return d.nodeName;} else {return null;}})
+
+    .event("click", function(d) {if(this.index) {
+    	console.log(d.nodeName);
+    	select(d.nodeName);
+    } else {sp=-1;prenom="";vis.render();}
+    smallP.render();})
+
+
+    //.title(function(d) {if (d.index) {return d.nodeName+" "+pscore[d.nodeName];} else {return null;}})
+    .strokeStyle(function(d) {return re?((d.nodeName).match(re) ? "#000" : null):null;})
+    ;
+
+function update(query) {
+	if (query != re) {
+	    re = new RegExp(query, "i");
+	    vis2.render();
+	}
+}
+
+var nameList, nameSlice, nameLength;
+function select(prenom) {
+	console.log(prenom);
+	sp=1;
+	prenomParti=prenoms.filter(function(p) {return p.prenom==prenom;})[0];
+	nameList=candidats.filter(function(c) {return c.prenom==prenom;});
+	nameSlice=0;
+	nameLength=nameList.length;
+	vis.render();
+}
+
+var partiScale=pv.Scale.linear()
+	.domain(0,80)
+	.range(0,100);
+
+var smallP=vis.add(pv.Panel)
+	.left(440).height(600)
+	.visible(function() {return sp!=-1;});
+var box=smallP.add(pv.Panel)
+	.height(function() {return 30+12*pv.keys(prenomParti.partis).length;}).width(160)
+	.fillStyle("#ddd");
+box.add(pv.Label).top(1).left(5).textBaseline("top").text(function() {return prenomParti.prenom+" ("+prenomParti.frequence+")";})
+
+var partyBars=box.add(pv.Panel).top(15).left(1).height(function() {return this.parent.height()-16;}).width(158).fillStyle("white")
+		.add(pv.Bar)
+			.data(function() {return pv.keys(prenomParti.partis)
+				.sort(function(a,b) {return (partisDetails[a].order>partisDetails[b].order)-(partisDetails[a].order<partisDetails[b].order);})
+			;})
+			.top(function() {return 10+this.index*12;})
+			.left(40)
+			.height(10)
+			.width(function(d) {return partiScale(prenomParti.partis[d]);})
+			.fillStyle(function(d) {return partisDetails[d].color;})
+			.title(function(d) {return partisDetails[d].nom;});
+
+partyBars.anchor("left").add(pv.Label)
+				.textAlign("right")
+partyBars.anchor("right").add(pv.Label)
+				.textAlign("left")
+				.text(function(d) {return prenomParti.partis[d];})
+				.textStyle("#ccc")
+
+var box2=smallP.add(pv.Panel).top(270).height(330).fillStyle("#ddd");
+var nameListing=box2.add(pv.Panel)
+	.top(1)
+	.height(328)
+	.left(1)
+	.width(158)
+	.fillStyle("#fff")
+	.add(pv.Panel)
+		.data(function() {return nameList.slice(nameSlice,nameSlice+24);})
+		.top(function() {return 5+this.index*12;})
+		.left(10).height(10)
+		.fillStyle("rgba(255,255,255,.01)")
+		.title(function(d) {return d.name+" ("+((d.depId[0]==0)?"":d.depId[0])+d.depId.slice(1,3)+")";})
+		.add(pv.Panel)
+			.top(3).left(-8).width(7).height(7).fillStyle(function(d) partisDetails[d.party].color)
+			.title(function(d) partisDetails[d.party].nom)
+			.parent
+		.add(pv.Label)
+			.textBaseline("top").textAlign("left")
+			.text(function(d) {return d.name+" ("+((d.depId[0]==0)?"":d.depId[0])+d.depId.slice(1,3)+")";})
+	;
+
+box2.add(pv.Panel).left(158).top(5).height(320).width(1).fillStyle("#fff");
+box2.add(pv.Panel).left(159).top(5).height(320).width(1).fillStyle("#ddd");
+
+var moreBox = smallP.add(pv.Panel)
+	.fillStyle("#eee")
+	.height(20)
+	.left(90)
+	.width(60)
+	.top(570)
+	.visible(function() {return nameSlice+24<=nameLength;})
+	.event("click", function() {nameSlice+=24;box2.render();moreBox.render();lessBox.render();});
+moreBox.anchor("center").add(pv.Label).text("suivants")
+	;
+
+var lessBox = smallP.add(pv.Panel)
+	.fillStyle("#eee")
+	.height(20)
+	.left(10)
+	.width(60)
+	.top(570)
+	.visible(function() {return nameSlice>=24;})
+	.event("click", function() {nameSlice-=24;box2.render();moreBox.render();lessBox.render();});
+lessBox.anchor("center").add(pv.Label).text("précédents")
+	;
+
+
+    vis.render();
+
+</script>
+<div class="protovis" style="float:left;"></div>
+<div>
+	<label for="search">Trouver un prénom : </label>
+	<input type="text" id="search" onkeyup="update(this.value)">
+</div>
+<p/><hr/>
+]]></content:encoded>
+			<wfw:commentRss>/2011/04/01/votre-prenom-est-il-de-droite/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>La carte des cantonales</title>
+		<link>/2011/03/26/la-carte-des-cantonales/</link>
+		<comments>/2011/03/26/la-carte-des-cantonales/#comments</comments>
+		<pubDate>Sat, 26 Mar 2011 19:05:36 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[protovis]]></category>
+		<category><![CDATA[cantonales]]></category>
+		<category><![CDATA[cartogramme]]></category>
+		<category><![CDATA[dorling]]></category>
+		<category><![CDATA[élections]]></category>
+		<category><![CDATA[français]]></category>
+		<category><![CDATA[france]]></category>
+		<category><![CDATA[politiques]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=764</guid>
+		<description><![CDATA[[I write this here post in French because it's more relevant for a French audience, a more technical post with an explanation of how it's done follows in English]. J'ai écrit que j'avais été déçu par les infographies des principaux médias au lendemain des cantonales. Si on prend la carte du Monde par exemple, on <a class="read-more" href="/2011/03/26/la-carte-des-cantonales/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[[I write this here post in French because it's more relevant for a French audience, a <a href="http://www.jeromecukier.net/?p=796">more technical post</a> with an explanation of how it's done follows in English].</p>
+
+J'ai écrit que j'avais été déçu par les infographies des principaux médias au lendemain des cantonales.</p>
+
+Si on prend la carte du Monde par exemple, on y voit la France nettemement découpée en départements, soit bien roses, soit bien bleus, ou à la rigueur gris si l'issue est incertaine. Mais ce n'est pas l'enjeu de ces élections. Ce sont les dernières élections avant la présidentielle, et on est donc attentif aux enseignements nationaux du scrutin au-delà de la composition des conseils généraux. Ce qu'on commente, c'est plus la percée de l'extrême droite ou le poids de l'abstention. C'est la capacité de la droite ou de la gauche à s'imposer. </p>
+Dans cette optique, chaque département n'a pas le même poids. Le Nord par exemple, avec presque 900,000 électeurs, compte plus que la Lozère qui en compte juste un peu plus de 20,000. Donc, tracer une carte géographiquement exacte n'est pas très honnête, puisque cela cache ces différences qui peuvent être énormes.</p>
+Comme je n'ai pas l'habitude de porter des critiques <a href="http://www.jeromecukier.net/?p=661">sans proposer autre chose</a>, j'ai fabriqué des cartogrammes de Dorling pour rendre compte de ce qui s'est vraiment passé dimanche dernier.</p>
+
+Les cartogrammes, ce sont presque des cartes, sauf que le côté géographique n'est pas pris au sens strict. Leur forme dépend plus des données qu'elles représentent. Et dans la version de Dorling, on remplace les morceaux de la carte (ici, les départements) par des cercles, plus ou moins gros. Là, la taille des cercles dépend du nombre d'électeurs inscrits aux cantonales. Du coup, leur position sur la carte n'est pas exactement la même que celle des départements sur la carte de France mais elle est assez proche pour qu'on puisse les retrouver.</p>
+
+Je propose 3 scénarios: une comparaison gauche-droite, l'importance de l'extrême-droite et celle de l'abstention.
+</p><hr/></p>
+<script type="text/javascript" src="http://blog.oecdfactblog.org/wp-includes/js/protovis-r3.2.js"></script>
+<form>
+<input type="radio" checked name="group1" value="0" onclick="sc=0;reinit() ;vis.render();">Gauche-droite
+<input type="radio" name="group1" value="1" onclick="sc=1;reinit() ;vis.render();">Extrême-droite
+<input type="radio" name="group1" value="2" onclick="sc=2;reinit() ;vis.render();">Abstention</form>
+<script type="text/javascript" src="http://www.jeromecukier.net/wp-content/uploads/2011/03/votes.js"></script>
+<script type="text/javascript" src="http://www.jeromecukier.net/wp-content/uploads/2011/03/francedorling.js"></script>
+<script type="text/javascript" src="http://www.jeromecukier.net/wp-content/uploads/2011/03/cantonales.js"></script>
+]]></content:encoded>
+			<wfw:commentRss>/2011/03/26/la-carte-des-cantonales/feed/</wfw:commentRss>
+		<slash:comments>5</slash:comments>
+		</item>
+	</channel>
+</rss>

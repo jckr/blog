@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Making data meaningful &#8211; Style guide on the presentation of statistics</title>
+	<atom:link href="http://localhost/2010/02/10/making-data-meaningful-style-guide-on-the-presentation-of-statistics/feed/" rel="self" type="application/rss+xml" />
+	<link>/2010/02/10/making-data-meaningful-style-guide-on-the-presentation-of-statistics/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>By: jerome</title>
+		<link>/2010/02/10/making-data-meaningful-style-guide-on-the-presentation-of-statistics/#comment-52</link>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+		<pubDate>Thu, 23 Dec 2010 18:51:05 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=342#comment-52</guid>
+		<description><![CDATA[Stephen Few&#039;s book I was thinking of when I wrote this, &quot;show me the numbers&quot;, is 267 pages, all written from the same point of view, his. 
+Making data meaningful is 52 pages which are sometimes the fruit of consensus and numerous edits. 
+So, his version is more complete. 
+In my contribution I tried to approach the problem from another angle. I&#039;m recommending chart designers to be aware of the visual efforts that their creations require, and to adjust that effort to the purpose required: when you want to make something obvious, make it easy to decipher, when you want the reader to ignore some fact, represent it in a less comprehensible way. 
+After the many edits though, I&#039;m not sure this point is really represented in the final manuscript.]]></description>
+		<content:encoded><![CDATA[<p>Stephen Few&#8217;s book I was thinking of when I wrote this, &#8220;show me the numbers&#8221;, is 267 pages, all written from the same point of view, his.<br />
+Making data meaningful is 52 pages which are sometimes the fruit of consensus and numerous edits.<br />
+So, his version is more complete.<br />
+In my contribution I tried to approach the problem from another angle. I&#8217;m recommending chart designers to be aware of the visual efforts that their creations require, and to adjust that effort to the purpose required: when you want to make something obvious, make it easy to decipher, when you want the reader to ignore some fact, represent it in a less comprehensible way.<br />
+After the many edits though, I&#8217;m not sure this point is really represented in the final manuscript.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Eugene Tjoa</title>
+		<link>/2010/02/10/making-data-meaningful-style-guide-on-the-presentation-of-statistics/#comment-51</link>
+		<dc:creator><![CDATA[Eugene Tjoa]]></dc:creator>
+		<pubDate>Thu, 23 Dec 2010 18:36:18 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=342#comment-51</guid>
+		<description><![CDATA[Hi Jerome,
+
+I wonder why you recommend to buy Stephen Few&#039;s book. It sounds like you prefer that book over the style guide to which you have contributed yourself. Is your preference related to the content, the writing style or perhaps something else?
+
+Thanks for putting this on your blog anyway.
+Eugene]]></description>
+		<content:encoded><![CDATA[<p>Hi Jerome,</p>
+<p>I wonder why you recommend to buy Stephen Few&#8217;s book. It sounds like you prefer that book over the style guide to which you have contributed yourself. Is your preference related to the content, the writing style or perhaps something else?</p>
+<p>Thanks for putting this on your blog anyway.<br />
+Eugene</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Michael W Cristiani</title>
+		<link>/2010/02/10/making-data-meaningful-style-guide-on-the-presentation-of-statistics/#comment-50</link>
+		<dc:creator><![CDATA[Michael W Cristiani]]></dc:creator>
+		<pubDate>Tue, 23 Mar 2010 13:17:29 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=342#comment-50</guid>
+		<description><![CDATA[Jerome,
+
+Somehow the link for Part 1  does not resolve.  Do you have another link for it.  
+
+BTW, you know I really enjoy your work and your insight / innate sense of what makes a good and useful data visualization.
+
+MANY BLESSINGS!
+Peace and All Good!
+Michael]]></description>
+		<content:encoded><![CDATA[<p>Jerome,</p>
+<p>Somehow the link for Part 1  does not resolve.  Do you have another link for it.  </p>
+<p>BTW, you know I really enjoy your work and your insight / innate sense of what makes a good and useful data visualization.</p>
+<p>MANY BLESSINGS!<br />
+Peace and All Good!<br />
+Michael</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

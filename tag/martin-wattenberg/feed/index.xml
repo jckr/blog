@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>martin wattenberg &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/martin-wattenberg/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>Changing the world with visualization: slides from the panel.</title>
+		<link>/2009/10/22/changing-the-world-with-visualization-slides-from-the-panel/</link>
+		<comments>/2009/10/22/changing-the-world-with-visualization-slides-from-the-panel/#respond</comments>
+		<pubDate>Thu, 22 Oct 2009 15:50:20 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[presentation]]></category>
+		<category><![CDATA[change]]></category>
+		<category><![CDATA[infovis]]></category>
+		<category><![CDATA[martin wattenberg]]></category>
+		<category><![CDATA[panel]]></category>
+		<category><![CDATA[robert kosara]]></category>
+		<category><![CDATA[sarah cohen]]></category>
+		<category><![CDATA[visualization]]></category>
+		<category><![CDATA[visweek 2009]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=256</guid>
+		<description><![CDATA[I&#8217;ve put my slides from the panel on slideshare: Changing the world with visualization View more presentations from vozome.]]></description>
+				<content:encoded><![CDATA[<p>I&#8217;ve put my slides from the panel on slideshare:</p>
+<div style="width:425px;text-align:left" id="__ss_2320883"><a style="font:14px Helvetica,Arial,Sans-serif;display:block;margin:12px 0 3px 0;text-decoration:underline;" href="http://www.slideshare.net/vozome/changing-the-world-with-visualization" title="Changing the world with visualization">Changing the world with visualization</a><object style="margin:0px" width="425" height="355"><param name="movie" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=jeromecukier20091014-091022104217-phpapp02&#038;rel=0&#038;stripped_title=changing-the-world-with-visualization" /><param name="allowFullScreen" value="true"/><param name="allowScriptAccess" value="always"/><embed src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=jeromecukier20091014-091022104217-phpapp02&#038;rel=0&#038;stripped_title=changing-the-world-with-visualization" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="355"></embed></object>
+<div style="font-size:11px;font-family:tahoma,arial;height:26px;padding-top:2px;">View more <a style="text-decoration:underline;" href="http://www.slideshare.net/">presentations</a> from <a style="text-decoration:underline;" href="http://www.slideshare.net/vozome">vozome</a>.</div>
+</div>
+]]></content:encoded>
+			<wfw:commentRss>/2009/10/22/changing-the-world-with-visualization-slides-from-the-panel/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Changing the world with data visualization</title>
+		<link>/2009/10/18/changing-the-world-with-data-visualization/</link>
+		<comments>/2009/10/18/changing-the-world-with-data-visualization/#respond</comments>
+		<pubDate>Sat, 17 Oct 2009 23:05:36 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[presentation]]></category>
+		<category><![CDATA[infovis]]></category>
+		<category><![CDATA[martin wattenberg]]></category>
+		<category><![CDATA[panel]]></category>
+		<category><![CDATA[robert kosara]]></category>
+		<category><![CDATA[sarah cohen]]></category>
+		<category><![CDATA[visweek]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=249</guid>
+		<description><![CDATA[This Wednesday, I had the privilege of talking at Visweek at a panel with Robert Kosara, Sarah Cohen and Martin Wattenberg. That was a truly great experience (at least from that side of the microphone). We all had a different approach to the subject. Sarah showed some of the stories she ran on the Washington <a class="read-more" href="/2009/10/18/changing-the-world-with-data-visualization/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>This Wednesday, I had the privilege of talking at <a href="http://vis.computer.org/VisWeek2009/">Visweek </a>at a panel with <a href="http://eagereyes.org/blog/2009/visweek-changing-the-world-with-visualization-panel">Robert Kosara</a>, <a href="http://www.cs.duke.edu/courses/cps082/fall09/visitors/cohen.html">Sarah Cohen</a> and <a href="http://www.bewitched.com/">Martin Wattenberg</a>. That was a truly great experience (at least from that side of the microphone). We all had a different approach to the subject. Sarah showed some of the stories she ran on the Washington Post where showing data visually helped expose scandals and move things forward. Martin made insightful comparisons with writing &#8211; information verbalization. As for myself I elaborated on the OECD mantra that if people had better knowledge, they could make better decisions and that data visualization can help by providing the people that knowledge, without requiring them to actually know the data.</p>
+<p>But as with panels, the most interesting part is always the discussion. And I was quite surprised to see where it was headed.</p>
+<p>I have reserves in my belief that data visualization can save the world. For instance, I have been slightly disappointed by the outcome of the sunlight foundation <a href="http://www.sunlightlabs.com/contests/appsforamerica/">apps for America contest</a>. I thought the idea was fantastic and the finalist applications were very well designed, but not necessary useful. But I had read many positive reactions on blogs on this, or on anything related to data.gov, I thought I would be the skeptical one.</p>
+<p>But during the panel, during the discussions and in the subsequent days, I really found myself in the opposite role. I think <strong>data </strong><strong>visualization can achieve much more than what we ask it to do!</strong></p>
+<p>let&#8217;s put it this way. Currently there are approximately 1.7 billion internet users. That&#8217;s a order of magnitude of  the number of people that data visualization could help. Now before the before the panel, we had a talk about the number of visits that a successful data representation gets, and we convened that 100,000 viewers for one visualization is a lot. In other words, we still have <strong>more than 99.99% of the population to reach!</strong></p>
+<p>True, we can use data visualization to inform better. But we can do more! use it to support decisions! couldn&#8217;t the subprime crisis have been avoided, for instance, if households were helped to make the right ones?</p>
+<p>Raising the level of adoption of data visualization &#8211; not increasing it, but multiplying it &#8211; should really be a challenge of the field. However, academics seem to be more concerned with designing novel solutions which could turn into published papers. Then again, if public interest for data visualization was higher, funding would be more easily available to researchers.</p>
+<p>As an aside, Excel has also been discussed. Is it the problem? Partly. If a data representation is not a canonical chart type in Excel, people are not aware it exists, and mainstream media or others with a long reach will not use it for fear that potential users may be confused. Even scatterplots, to Martin&#8217;s lament, although they are in Excel and that they are pretty straightforward to use and understand, generate that aura of fear.</p>
+<p>Another comment which I really took to heart was the regret that while data visualization was thought to computer scientists, using data analytics isn&#8217;t tought in business schools. Wouldn&#8217;t it be part of the solution?</p>
+]]></content:encoded>
+			<wfw:commentRss>/2009/10/18/changing-the-world-with-data-visualization/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

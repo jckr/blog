@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head><style>
+body{margin:0px;}
+rect {stroke:black;fill:white;}
+circle {fill:steelblue;opacity:.5;}
+</style></head>
+<body>
+<script src="http://mbostock.github.com/d3/d3.v2.min.js"></script>
+
+
+<script>
+var width = 500,
+    height = 500, 
+    margin = 50;
+
+var cwidth=100,cheight=100,cmargin=5,maxr=5;
+
+var svg=d3.select("body").append("svg");
+var x=d3.scale.linear().domain([0,5]).range([cmargin,cwidth-margin]);
+var y=d3.scale.linear().domain([-10,10]).range([cheight-cmargin,cmargin]);
+var o=d3.scale.linear().domain([0,300000]).range([.5,1]);
+
+
+var continents=["Africa","America","Asia","Europe","Oceania"];
+
+var data;
+d3.csv("data.csv",function(csv) {
+
+  data=d3.nest()
+    .key(function(d) {return d.continent;})
+    .sortKeys(d3.ascending)
+    .entries(csv);
+   
+  
+  // One cell for each continent
+  var g=svg.selectAll("g").data(data).enter()
+    .append("g")
+    .attr("transform",function(d,i) {return "translate("+(100*i)+",0)";});
+  // we add a rect element with a title element
+  // so that mousing over the cell will tell us which continent it is
+  g
+    .append("rect")
+    .attr("x",cmargin)
+    .attr("y",cmargin)
+    .attr("width",cwidth-2*cmargin)
+    .attr("height",cheight-2*cmargin)
+      .append("title")
+      .text(function(d) {return d.key;})
+  // we also write its name below.
+  g
+    .append("text")
+    .attr("y",cheight+10)
+    .attr("x",cmargin)
+    .text(function(d) {return d.key;})
+  
+  // now marks, initiated to default values
+  g.selectAll("circle")
+  // we are getting the values of the countries like this:
+  .data(function(d) {return d.values}) 
+  .enter()
+      .append("circle")
+      .attr("cx",cmargin)
+      .attr("cy",cheight-cmargin)
+      .attr("r",1)
+      // throwing in a title element
+      .append("title")
+        .text(function(d) {return d.country;});
+
+  // finally, we animate our marks in position
+  g.selectAll("circle").transition().duration(1000)
+      .attr("r",3)
+      .attr("cx",function(d) {return x(+d.GERD);})
+      .attr("cy",function(d) {return y(+d.growth);})
+      .style("opacity",function(d) {return o(d.population)})
+      .style("opacity",function(d) {return o(+d.GDPcap);})
+    
+
+})
+
+</script>
+
+
+</body>
+</html>

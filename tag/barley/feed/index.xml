@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>barley &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/barley/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>Protovis: analysis of the Becker&#8217;s barley example sketch</title>
+		<link>/2011/02/11/protovis-analysis-of-the-beckers-barley-example-sketch/</link>
+		<comments>/2011/02/11/protovis-analysis-of-the-beckers-barley-example-sketch/#comments</comments>
+		<pubDate>Fri, 11 Feb 2011 00:45:44 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[protovis]]></category>
+		<category><![CDATA[tips]]></category>
+		<category><![CDATA[barley]]></category>
+		<category><![CDATA[becker]]></category>
+		<category><![CDATA[nesting]]></category>
+		<category><![CDATA[rollup]]></category>
+		<category><![CDATA[treillis]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=534</guid>
+		<description><![CDATA[We are taking a look at the Protovis Becker&#8217;s Barley example. Data: The code begins by defining a function that will be used throughout the program. this function expects an array of associative arrays which have the key “yield”. What it does is that it returns the median of all the values of the key <a class="read-more" href="/2011/02/11/protovis-analysis-of-the-beckers-barley-example-sketch/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>We are taking a look at the Protovis <a href="http://vis.stanford.edu/protovis/ex/barley.html">Becker&#8217;s Barley</a> example.</p>
+<pre class="brush: jscript; title: ; notranslate">&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Barley Yields&lt;/title&gt;
+    &lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;ex.css?3.2&quot;/&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;../protovis-r3.2.js&quot;&gt;&lt;/script&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;barley.js&quot;&gt;&lt;/script&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+
+#fig {
+  width: 350px;
+  height: 833px;
+}
+
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;&lt;div id=&quot;center&quot;&gt;&lt;div id=&quot;fig&quot;&gt;
+    &lt;script type=&quot;text/javascript+protovis&quot;&gt;
+
+/* Compute yield medians by site and by variety. */
+function median(data) pv.median(data, function(d) d.yield);
+var site = pv.nest(barley).key(function(d) d.site).rollup(median);
+var variety = pv.nest(barley).key(function(d) d.variety).rollup(median);
+
+/* Nest yields data by site then year. */
+barley = pv.nest(barley)
+    .key(function(d) d.site)
+    .sortKeys(function(a, b) site[b] - site[a])
+    .key(function(d) d.year)
+    .sortValues(function(a, b) variety[b.variety] - variety[a.variety])
+    .entries();
+
+/* Sizing and scales. */
+var w = 242,
+    h = 132,
+    x = pv.Scale.linear(10, 70).range(0, w),
+    c = pv.Colors.category10();
+
+/* The root panel. */
+var vis = new pv.Panel()
+    .width(w)
+    .height(h * pv.keys(site).length)
+    .top(15)
+    .left(90)
+    .right(20)
+    .bottom(25);
+
+/* A panel per site-year. */
+var cell = vis.add(pv.Panel)
+    .data(barley)
+    .height(h)
+    .top(function() this.index * h)
+    .strokeStyle(&quot;#999&quot;);
+
+/* Title bar. */
+cell.add(pv.Bar)
+    .height(14)
+    .fillStyle(&quot;bisque&quot;)
+  .anchor(&quot;center&quot;).add(pv.Label)
+    .text(function(site) site.key);
+
+/* A dot showing the yield. */
+var dot = cell.add(pv.Panel)
+    .data(function(site) site.values)
+    .top(23)
+  .add(pv.Dot)
+    .data(function(year) year.values)
+    .left(function(d) x(d.yield))
+    .top(function() this.index * 11)
+    .size(12)
+    .lineWidth(2)
+    .strokeStyle(function(d) c(d.year));
+
+/* A label showing the variety. */
+dot.anchor(&quot;left&quot;).add(pv.Label)
+    .visible(function() !this.parent.index)
+    .left(-1)
+    .text(function(d) d.variety);
+
+/* X-ticks. */
+vis.add(pv.Rule)
+    .data(x.ticks(7))
+    .left(x)
+    .bottom(-5)
+    .height(5)
+    .strokeStyle(&quot;#999&quot;)
+  .anchor(&quot;bottom&quot;).add(pv.Label);
+
+/* A legend showing the year. */
+vis.add(pv.Dot)
+    .extend(dot)
+    .data([{year:1931}, {year:1932}])
+    .left(function(d) 170 + this.index * 40)
+    .top(-8)
+  .anchor(&quot;right&quot;).add(pv.Label)
+    .text(function(d) d.year);
+
+vis.render();
+
+    &lt;/script&gt;
+  &lt;/div&gt;&lt;/div&gt;&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<p>Data: </p>
+<pre class="brush: jscript; light: true; title: ; notranslate">var barley = [
+  { yield: 27.00000, variety: &quot;Manchuria&quot;, year: 1931, site: &quot;University Farm&quot; },
+  { yield: 48.86667, variety: &quot;Manchuria&quot;, year: 1931, site: &quot;Waseca&quot; },
+  { yield: 27.43334, variety: &quot;Manchuria&quot;, year: 1931, site: &quot;Morris&quot; },
+etc.</pre>
+<p>The code begins by defining a function that will be used throughout the program.</p>
+<pre class="brush: jscript; first-line: 20; title: ; notranslate">function median(data) pv.median(data, function(d) d.yield);</pre>
+<p>this function expects an array of associative arrays which have the key “yield”. What it does is that it returns the median of all the values of the key yield.<br />
+If run against barley, it will return the median yield of all observations.  If run against a subset of barley, it will return the median of the yield of that subset.<br />
+The point of this function is to simplify the writing of otherwise obfuscated statements.</p>
+<p>Now let’s see it put to good use.</p>
+<pre class="brush: jscript; first-line: 21; title: ; notranslate">var site = pv.nest(barley).key(function(d) d.site).rollup(median);</pre>
+<p>The output of this statement is easier to understand than itself. It returns an associative array, with each site as a key, and their corresponding value is the median yield for all observations for that site. </p>
+<pre class="brush: jscript; light: true; title: ; notranslate">{
+  Crookston: 39.03333,
+  Duluth: 28.533335,
+  Grand Rapids: 23.983335,
+  Morris: 34.699995,
+  University Farm: 31.383335,
+  Waseca: 47.949995}</pre>
+<p><strong>pv.nest(barley)</strong> means that we are going to create an associative array based on barley with a hierarchy. (tree)<br />
+<strong>.key(function(d) d.site)</strong> means that they first key in the hierarchy of that tree will be the site. So, we are going to run an operation on all the entries of “barley” with the same site.<br />
+That operation is called by <strong>.rollup(median )</strong> at the end of the line: this crunches all the entries and replace them by the result of the function “median” applied to all those records. </p>
+<pre class="brush: jscript; first-line: 22; title: ; notranslate">var variety = pv.nest(barley).key(function(d) d.variety).rollup(median);</pre>
+<p>This does the same as above, but by variety instead of by site. </p>
+<pre class="brush: jscript; light: true; title: ; notranslate">{
+  Glabron: 32.4,
+  Manchuria: 30.96667,
+  No. 457: 33.966665,
+  No. 462: 30.45,
+  No. 475: 31.066665,
+  Peatland: 32.383335,
+  Svansota: 28.550005,
+  Trebi: 39.199995,
+  Velvet: 32.149995000000004,
+  Wisconsin No. 38: 36.95
+}</pre>
+<pre class="brush: jscript; first-line: 24; title: ; notranslate">
+/* Nest yields data by site then year. */
+  barley = pv.nest(barley)
+    .key(function(d) d.site)
+    .sortKeys(function(a, b) site[b] - site[a])
+    .key(function(d) d.year)
+    .sortValues(function(a, b) variety[b.variety] - variety[a.variety])
+    .entries();</pre>
+<p>This will transform the variable barley, which is now a flat list of records, into a tree form.<br />
+<strong>pv.nest(barley)</strong> indicates we are turning barley into a tree.<br />
+<strong>.key(function(d) d.site)</strong> says that the first order of the hierarchy will be “site”.<br />
+So our tree should look like: </p>
+<pre class="brush: jscript; light: true; title: ; notranslate">[{key:”Crookston”, values: {….},
+  {key:”Duluth”, values:{…},
+…</pre>
+<p>Well, the order of the keys may not be alphabetical, thanks to the next statement.<br />
+<strong>sortKeys </strong>sorts the keys using a comparator function: this function(a,b) thing goes through all the pairs of keys and will order them according to that function, so if for a key the value of site is higher than for another one, it will be put first.<br />
+As a result, the first key should be Waseca, then Crookston, etc.<br />
+The next order of hierarchy will be after year.  No sortkeys here, so the values of keys will just be presented in natural order.<br />
+So our tree will look like: </p>
+<pre class="brush: jscript; light: true; title: ; notranslate">[
+{ key: “Waseca”, values: [
+	{key: 1931, values: [ … ]},
+	{key: 1932, values: [ … ]}
+  ]
+}, 
+{key: “Crookston”, values: [
+	{key: 1931, values: [ … ]},
+	{key: 1932, values: [ … ]}
+  ]
+}, etc.</pre>
+<p>The next statement will rank the values.<br />
+What is in that values field (where the ellipses are) will now be ranked using another comparator function, on variety this time.<br />
+The <strong>sortKeys </strong>statement worked on keys: “Crookston”, “Duluth”, etc. so one could write directly site[a] and get a value.<br />
+But this <strong>sortValues </strong>statement works on entries (fields like:  { yield: 48.86667, variety: &#8220;Manchuria&#8221;, year: 1931, site: &#8220;Waseca&#8221; } ), so one can’t write variety[a] but instead, variety[a.variety].</p>
+<p>Finally, the last statement, <strong>entries()</strong>, says that the values thing should be filled by the actual records, as opposed to using rollup in order to crush an aggregate value from the records. </p>
+<p>So the final tree will look like this: </p>
+<pre class="brush: jscript; light: true; title: ; notranslate">[{key: “Waseca”, values: [
+ {key: 1931, values: 	[{site: &quot;Waseca&quot;, variety: &quot;Trebi&quot;, year: 1931, yield: 63.8333},
+ {site: &quot;Waseca&quot;,variety: &quot;Wisconsin No. 38&quot;, year: 1931, yield: 58.8},
+ {site: &quot;Waseca&quot;, variety: &quot;No. 457&quot;, year: 1931, yield: 58.1},
+…
+]},
+{key: 1932, values: 	[…]}
+]}, 
+{key: “Crookston”, values: […]}, 
+…
+{key: “Grand Rapids”, values: […]}]</pre>
+<p>The next block of statements is more straightforward.</p>
+<pre class="brush: jscript; first-line: 32; title: ; notranslate">/* Sizing and scales. */
+var w = 242,
+    h = 132,
+    x = pv.Scale.linear(10, 70).range(0, w),
+    c = pv.Colors.category10();</pre>
+<p>w and h are constants for the width and heights of the cells,<br />
+x is a scale to transform the yields in horizontal coordinates, so 10 will be represented at the left-most sied of the cell and 70 at the right-most side,<br />
+c is the standard color palette.</p>
+<p>Now, we create the panels. </p>
+<pre class="brush: jscript; first-line: 38; title: ; notranslate">/* The root panel. */
+var vis = new pv.Panel()
+    .width(w)
+    .height(h * pv.keys(site).length)
+    .top(15)
+    .left(90)
+    .right(20)
+    .bottom(25);
+
+/* A panel per site-year. */
+var cell = vis.add(pv.Panel)
+    .data(barley)
+    .height(h)
+    .top(function() this.index * h)
+    .strokeStyle(&quot;#999&quot;);
+</pre>
+<p>First we create the root panel. The height of the panel is determined by the number of sites.<br />
+Since site is an associative array, we first derive an array of the same length with <strong>pv.keys(site)</strong>, which contains the names of the keys of that associative array (in plain English, the names of the sites). What we need is just the number of them, that’s what the <strong>length </strong>property is for.<br />
+(btw, we could have simply written <strong>barley.length</strong>)<br />
+We multiply that number by the height of each cell to get the height of the root panel. </p>
+<p>We then create panels inside that rootpanel.<br />
+Note the simplicity with which data is pushed into those panels: </p>
+<pre class="brush: jscript; first-line: 49; title: ; notranslate">    .data(barley)</pre>
+<p>Now barley is an array of 6 objects. So we are creating 6 panels, and their data element will be of the form: </p>
+<pre class="brush: jscript; light: true; title: ; notranslate">{key: “Waseca”, values: [{key: “1931”, values:  [entries]}, {key:”1932”, values: [entries]}]}</pre>
+<p>Since these cells will be positioned from the root panel, their top value is determined using a simple function of this.index, so the 1st one will be right on top, the next one will be at h pixels from the top, the next one at 2*h pixels, etc.</p>
+<pre class="brush: jscript; first-line: 54; title: ; notranslate">/* Title bar. */
+cell.add(pv.Bar)
+    .height(14)
+    .fillStyle(&quot;bisque&quot;)
+  .anchor(&quot;center&quot;).add(pv.Label)
+    .text(function(site) site.key);</pre>
+<p>This just adds a title to the cells. Here, we use a bar, but it could have been a panel.<br />
+We only specify the height: the top and left value are supposed to be 0 and the width is that of the parent. We choose the svg color “bisque” as the background color and we add a label in the middle.<br />
+Here’s how we obtain the text. Yes it is the site name, but this has nothing to do with the choice of “site” as the variable name in the accessor function.<br />
+That function just takes data from the data property, which is directly inherited from the parent. This is a complex associative array, but at its first level, the key property corresponds to the site name. So, function(site) site.key returns the site name. </p>
+<pre class="brush: jscript; first-line: 61; title: ; notranslate">/* A dot showing the yield. */
+var dot = cell.add(pv.Panel)
+    .data(function(site) site.values)
+    .top(23)
+  .add(pv.Dot)
+    .data(function(year) year.values)
+    .left(function(d) x(d.yield))
+    .top(function() this.index * 11)
+    .size(12)
+    .lineWidth(2)
+    .strokeStyle(function(d) c(d.year));</pre>
+<p>Here’s the data representation.<br />
+We first add a group of panels called dot to the panel cell.<br />
+This is a group, and not a single panel, because of what they get through the data method: the content of the values key of their parent.<br />
+Again, the data property of their parent, cell, is of the form: </p>
+<pre class="brush: jscript; light: true; title: ; notranslate">{key: site name, values: [{key: “1931”, values: […]}, {key:”1932”, values: […]}]}</pre>
+<p>So if we isolate the content of the values key, we have an array of 2 values:</p>
+<pre class="brush: jscript; light: true; title: ; notranslate">[{key: “1931”, values:[…]} , 
+{key: “1932”, values:[…]} ]</pre>
+<p>Therefore, this statement creates 2, not 1, panels.<br />
+But those panels are superposed: the only positioning instruction is that they are 23 pixels from the top, so they are both taking the full width of the cell panel, and go to the bottom of that panel as well.<br />
+The system will first draw the first one, then the second one on top of that.</p>
+<p>Then, we add a dot object to those dot panels, which is a series of circles.<br />
+How many dots will there be in those series? This, again, depends on the contents of the data method.<br />
+What we get this time is: </p>
+<pre class="brush: jscript; first-line: 66; title: ; notranslate">    .data(function(year) year.values)</pre>
+<p>What this means is that we are looking at the data element of the parent, and we are taking what’s behind values. </p>
+<p>The data element of the parent was of the form: </p>
+<pre class="brush: jscript; light: true; title: ; notranslate">{key: year name, values: 
+  [
+   {site: site name, variety: variety name, year: year name, yield: yield value},
+   {site: site name, variety: variety name, year: year name, yield: yield value}, 
+   {site: site name, variety: variety name, year: year name, yield: yield value},
+…
+   {site: site name, variety: variety name, year: year name, yield: yield value}
+  ]
+}</pre>
+<p>So what we’re getting is the array of 10 entries that were behind values.</p>
+<pre class="brush: jscript; first-line: 67; title: ; notranslate">.left(function(d) x(d.yield))</pre>
+<p>This means that each mark will be positioned from the left, according to the value of its yield property, once transformed by our scale. </p>
+<pre class="brush: jscript; first-line: 68; title: ; notranslate">.top(function() this.index * 11)</pre>
+<p>And they are simply positioned vertically depending on this.index, so one on top of the other. Remember, this is relative to the dot panel, not to cell.</p>
+<pre class="brush: jscript; first-line: 69; title: ; notranslate">.size(12)
+.lineWidth(2)</pre>
+<p>We are determining a size and a line width, but no fill style, so we are drawing rings, not discs. Even if they are superposed, the back one should still be visible. </p>
+<pre class="brush: jscript; first-line: 71; title: ; notranslate">.strokeStyle(function(d) c(d.year));</pre>
+<p>Finally, we are determining the color of the ring. For that, we extract the year of the current entry using d.year.  It is converted to a color using the palette c.<br />
+There are other ways to get the year, but this is the simplest to write.</p>
+<p>Now if we consider the statement in its entirety again: </p>
+<pre class="brush: jscript; first-line: 61; title: ; notranslate">/* A dot showing the yield. */
+var dot = cell.add(pv.Panel)
+    .data(function(site) site.values)
+    .top(23)
+  .add(pv.Dot)
+    .data(function(year) year.values)
+    .left(function(d) x(d.yield))
+    .top(function() this.index * 11)
+    .size(12)
+    .lineWidth(2)
+    .strokeStyle(function(d) c(d.year));</pre>
+<p>What is really assigned to dot is not the first item created (panels) but the dot chart proper. This is important to note that for the rest: </p>
+<pre class="brush: jscript; first-line: 73; title: ; notranslate">/* A label showing the variety. */
+dot.anchor(&quot;left&quot;).add(pv.Label)
+    .visible(function() !this.parent.index)
+    .left(-1)
+    .text(function(d) d.variety);
+</pre>
+<p>What we’re trying to do here is to write legends for the dot charts. We don’t want to do this for each year: the labels would be on top of each other, and less legible than if they were just one group of labels. This is why we use this visible statement. this.parent refers to a the parent panel of dot, so this.parent.index is worth 0 for the first panel, and 1 for the second. So here, !this.parent.index will be false for all values other than 0, so there will be only 1 set of labels, even if we add a year for instance. </p>
+<p>Then, although we said we were adding the labels just to the left of the dot (this is what dot.anchor(“left”)  does), what we really want is to have them on the left of the cell.<br />
+That’s why we use </p>
+<pre class="brush: jscript; first-line: 76; title: ; notranslate">.left(-1)</pre>
+<pre class="brush: jscript; first-line: 77; title: ; notranslate">.text(function(d) d.variety)</pre>
+<p> runs on the data  provided by the parent, in this case the dot chart. So it’s just the variety of the current entry.</p>
+<pre class="brush: jscript; first-line: 79; title: ; notranslate">/* X-ticks. */
+vis.add(pv.Rule)
+    .data(x.ticks(7))
+    .left(x)
+    .bottom(-5)
+    .height(5)
+    .strokeStyle(&quot;#999&quot;)
+  .anchor(&quot;bottom&quot;).add(pv.Label);</pre>
+<p>This just adds a series of  7 ticks to the bottom of the chart. They are rules, but their height has been limited to 5 pixels. They start from below the chart &#8211; bottom(-5)  &#8211; and we add the ticks to that below with anchor(“bottom”). Since all the values are 2-digit numbers, we can leave the default versions for the pv.Label objects, and not go into tickFormat or anything fancy.</p>
+<pre class="brush: jscript; first-line: 88; title: ; notranslate">/* A legend showing the year. */
+vis.add(pv.Dot)
+    .extend(dot)
+    .data([{year:1931}, {year:1932}])
+    .left(function(d) 170 + this.index * 40)
+    .top(-8)
+  .anchor(&quot;right&quot;).add(pv.Label)
+    .text(function(d) d.year);</pre>
+<p>Finally, the legend of the chart, in form of a dot chart.<br />
+The first .extend(dot) statement just says that we are copying the properties of the other  dot chart. So, if we decide to change the size of the rings or their thickness, it will be reflected in the legend.<br />
+Here, we just pass the data manually. Note that this is added to the root panel (vis), so top(-8) means that it appears over the main chart. </p>
+<p>In this example, the authors have started from an unformated, flat list of 120 entries.<br />
+Then, they thought of the shape their final visualization will take and the hierarchy of objects needed to accommodate that:<br />
+•	two superposed dot series, showing the various varieties for a given year/site combination (dot),<br />
+•	each inside a panel, one for each year,<br />
+•	which would be part of a parent panel, for each site (cell)<br />
+•	which would be stacked vertically inside the root panel (vis).</p>
+<p>So in order to do that seamlessly, they had to prepare a data variable with that hierarchy:<br />
+First by site, then by year, then by variety. </p>
+<p>This is what the complex pv.nest command does at the beginning.<br />
+Once this is taken care of, the various objects can be added one to the other naturally.</p>
+]]></content:encoded>
+			<wfw:commentRss>/2011/02/11/protovis-analysis-of-the-beckers-barley-example-sketch/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+	</channel>
+</rss>

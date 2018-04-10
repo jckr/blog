@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>data tools &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/data-tools/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>Using Tableau Public: first thoughts</title>
+		<link>/2010/01/21/using-tableau-public-first-thoughts/</link>
+		<comments>/2010/01/21/using-tableau-public-first-thoughts/#comments</comments>
+		<pubDate>Thu, 21 Jan 2010 13:44:18 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[data publishing]]></category>
+		<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[chart]]></category>
+		<category><![CDATA[data tools]]></category>
+		<category><![CDATA[review]]></category>
+		<category><![CDATA[Tableau]]></category>
+		<category><![CDATA[Tableau Public]]></category>
+		<category><![CDATA[tool]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=313</guid>
+		<description><![CDATA[I am currently beta testing Tableau Public. Essentially Tableau Public let you bring the power of Tableau analysis online. With Tableau public, your audience doesn&#8217;t need to download a workbook file that they can see in an offline, software client &#8211; they can see and interact with your work directly on a web page. There <a class="read-more" href="/2010/01/21/using-tableau-public-first-thoughts/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>I am currently beta testing <a href="http://www.tableausoftware.com/">Tableau</a> Public. Essentially <a href="http://public.tableausoftware.com/">Tableau Public</a> let you bring the power of <a href="http://www.jeromecukier.net/?p=194">Tableau</a> analysis online. With Tableau public, your audience doesn&#8217;t need to download a workbook file that they can see in an offline, software client &#8211; they can see and interact with your work directly on a web page.</p>
+<p>There are quite a few examples of the things you can do with Tableau public. These are the examples you are given when you start the product:</p>
+<p><a href="http://www.freakalytics.com/2009/06/30/historic-stock-market-returns-exploring-insightful-metrics-with-tableau-online/"><img class="size-full wp-image-317" title="Tracking Economic Indicators by Freakalytics" src="http://www.jeromecukier.net/wp-content/uploads/2010/01/Freakalytics1.png" alt="Tracking Economic Indicators by Freakalytics" width="127" height="92" /></a><a href="http://blogs.wsj.com/venturecapital/2009/08/25/how-long-does-it-take-to-build-a-technology-empire/"><img class="size-full wp-image-315" style="margin-left: 10px; margin-right: 10px;" title="A Tale of 100 Entrepreneurs by Christian Chabot" src="http://www.jeromecukier.net/wp-content/uploads/2010/01/Chabot1.png" alt="A Tale of 100 Entrepreneurs by Christian Chabot" width="127" height="92" /></a><a href="http://www.jeromecukier.net/wp-content/uploads/2010/01/Snarge1.png"><img class="size-full wp-image-314" style="margin-left: 10px; margin-right: 10px;" title="Bird strikes by airport by Crankyflier" src="http://www.jeromecukier.net/wp-content/uploads/2010/01/Snarge1.png" alt="Bird strikes by airport by Crankyflier" width="127" height="92" /></a><a href="http://fantasynews.cbssports.com/fantasyfootball/story/12157942"><img class="size-full wp-image-316" style="margin-left: 10px; margin-right: 10px; " title="Interactive Running Back Selector by CBS sports" src="http://www.jeromecukier.net/wp-content/uploads/2010/01/Eisenberg1.png" alt="Interactive Running Back Selector by CBS sports" width="127" height="92" /></a></p>
+<p style="clear:left;">And there are always more on <a href="http://www.tableausoftware.com/community/blog">Tableau&#8217;s own blog</a>. I&#8217;ve done <a href="http://www.jeromecukier.net/?p=295">quite a few</a> which I&#8217;ll share progressively on this blog and on my OECD blog, <a href="http://www.oecd.blog/statistics/factblog">http://www.oecd.blog/statistics/factblog</a>.</p>
+<p>So that&#8217;s the context. What&#8217;s the verdict?</p>
+<h2><strong>1. There is no comparable data visualization platform out there.</strong></h2>
+<p>There are many ways to communicate data visually. Count them: <a href="http://www.datavisualization.ch/tools/13-javascript-libraries-for-visualizations">13</a>, <a href="http://sixrevisions.com/javascript/20-fresh-javascript-data-visualization-libraries/">20</a>, <a href="http://theresaneil.wordpress.com/2009/12/06/28_rich_charting_tools/">28</a>, <a href="http://www.tripwiremagazine.com/2009/12/70-tools-for-visualizing-your-data-css-flash-jquery-php.html">75</a>&#8230; and many more.</p>
+<p>However these tools have a narrower focus than Tableau, or require the user some programming ability. For instance, <a href="http://www.many-eyes.com/">Many Eyes</a> uses a certain number of types of data visualization which can be set up in seconds, but which cannot be customized. Conversely, <a href="http://vis.stanford.edu/protovis/">Protovis</a> is very flexible but requires some knowledge of Javascript. And even for a skilled developer, coding an interactive data visualization from scratch takes time.</p>
+<p>By contrast, <strong>Tableau is a fully-featured solution which doesn&#8217;t require programming</strong>. It has many representation types which can be deeply customized: every visual characteristic of a chart (colour, size, position, etc.) can depend on your data. Several charts can also be combined as one dashboard. On top of that, data visualization done in Tableau comes with many built-in controls, with an interface to highlight and filter data, or to get more details on demand. For dashboards, it is also possible to link charts, so that actions done on one chart (highlighting records, for instance) affect other charts.</p>
+<h2><strong>2. The solution is not limitless. </strong></h2>
+<p>Tableau enables you to do things which are not possible using other packages. But it doesn&#8217;t allow you to do anything. That&#8217;s for your own good &#8211; it won&#8217;t allow you to do things that don&#8217;t make sense.</p>
+<p><strong>There are many safety nets in Tableau</strong>, which you may or may not run into. For instance, you can&#8217;t make a line chart for data which don&#8217;t have a temporal dimension &#8211; so much for parallel coordinates. However, the system is not fool-proof. Manipulating aggregates, for instance, can lead to errors that you wouldn&#8217;t have to worry about in plain old Excel, where the various steps through which data are computed to create a graph are more transparent (and more manual). Compared to Excel, you have to worry less about formatting &#8211; the default options for colours, fonts and positions are sterling &#8211; and be more vigilant about calculations.</p>
+<h2><strong>3. Strength is in numbers.</strong></h2>
+<p>Over the years, many of us grew frustrated with Excel visual capacities. <a href="http://peltiertech.com/">Others </a><a href="http://www.ozgrid.com/">firmly </a><a href="http://chandoo.org/wp/">believed </a>that anything could be done with the venerable spreadsheet and have shown the world that nothing is impossible.</p>
+<p>The same applies to Tableau. <strong>The vibrant </strong><a href="http://www.tableausoftware.com/community/forums"><strong>Tableau community</strong></a><strong> provides excellent advice</strong>. &#8220;Historic&#8221; Tableau users are not only proficient with the tool, but also have a better knowledge of data visualization practices than the average Excel user. Like any fully-featured product, there is a learning curve to Tableau, which means that there are experts (the proper in-house term is <a href="http://www.tableausoftware.com/learning/training/ondemand">Jedis</a>) which find hacks to make Tableau even more versatile. So of course, it is possible to do <a href="http://www.tableausoftware.com/forum/parallel-coordinates-plot">parallel coordinates with Tableau</a>.</p>
+<p>The forum, like the abundant training, available as videos, manuals, list of tips,or online sessions with an instructor, doesn&#8217;t only help the user to solve their problems, but it also a fantastic source of inspiration.</p>
+<p>With the introduction of Tableau Public, the forum will become even more helpful, as there will be more questions, more problems and more examples.</p>
+<p> </p>
+]]></content:encoded>
+			<wfw:commentRss>/2010/01/21/using-tableau-public-first-thoughts/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+	</channel>
+</rss>

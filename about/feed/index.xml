@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: About</title>
+	<atom:link href="http://localhost/about/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>By: ChrYStophe</title>
+		<link>/about/#comment-4</link>
+		<dc:creator><![CDATA[ChrYStophe]]></dc:creator>
+		<pubDate>Tue, 05 Jun 2012 16:32:16 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?page_id=2#comment-4</guid>
+		<description><![CDATA[Bonjour,
+
+  Je viens de trouver votre blog et j&#039;ai été ravi du contenu, en effet depuis quelques temps je suis ce qui concerne la visualisation de données (en débutant par &quot;Visualizing Data&quot; et Processing), récemment j&#039;ai découvert d3.js et c&#039;est ce qui m&#039;a permis de trouver des informations parmi vos posts.
+
+Cordialement,
+
+Christophe]]></description>
+		<content:encoded><![CDATA[<p>Bonjour,</p>
+<p>  Je viens de trouver votre blog et j&#8217;ai été ravi du contenu, en effet depuis quelques temps je suis ce qui concerne la visualisation de données (en débutant par &#8220;Visualizing Data&#8221; et Processing), récemment j&#8217;ai découvert d3.js et c&#8217;est ce qui m&#8217;a permis de trouver des informations parmi vos posts.</p>
+<p>Cordialement,</p>
+<p>Christophe</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Elissa Fink</title>
+		<link>/about/#comment-2</link>
+		<dc:creator><![CDATA[Elissa Fink]]></dc:creator>
+		<pubDate>Tue, 01 Sep 2009 18:01:29 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?page_id=2#comment-2</guid>
+		<description><![CDATA[Hi Jerome - Just a quick thank you for such a thorough and clear review of Tableau. We appreciate it - especially from someone who clearly has an eye and appreciation for design and presentation. Thanks again. Elissa Fink (VP Marketing at Tableau)]]></description>
+		<content:encoded><![CDATA[<p>Hi Jerome &#8211; Just a quick thank you for such a thorough and clear review of Tableau. We appreciate it &#8211; especially from someone who clearly has an eye and appreciation for design and presentation. Thanks again. Elissa Fink (VP Marketing at Tableau)</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

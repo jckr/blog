@@ -1,0 +1,46 @@
+message	correspondent	direction	tweet	word1	word2	word3	time	subject	thread	length
+
+12251	FCV	from		group	such	glad	1340539359	Re: Technical reviewing my book	1318	4
+
+12249	FCV	to		here	happy	thoughts	1340567578	Re: Technical reviewing my book	1318	5
+
+12331	FCV	from		the	but	one	1340735071	Re: Few notes about the reviewing	1325	12
+
+12330	FCV	from		rushed	caption	detached	1340984313	Re: Re: Few notes about the reviewing	1354	295
+
+12333	FCV	to		prevailing	repetition	riddle	1341075972	Re: Few notes about the reviewing	1364	700
+
+12326	FCV	from		its	write	wow	1341076633	Re: Few notes about the reviewing	1364	18
+
+13291	FCV	from		reader	clarity	deductive	1341597854	My thoughts about chapter 3	1442	437
+
+13290	FCV	to		arbitrary	ingredient	paragraphs	1341631843	Re: My thoughts about chapter 3	1442	190
+
+13468	FCV	from		you	thank		1341915349	Re: Change of the Lead Technical Editor for the book "Data  Visualization: Success through Process"	1461	2
+
+16937	FCV	to		revision	assessed	chaotic	1346707934	comments on chapter 4	1852	572
+
+22661	FCV	to		rewriting	accommodating	unlimited	1353691356	Book	2478	187
+
+22662	FCV	from		have	know	good	1353691454	Re: Book	2478	12
+
+22663	FCV	to		happy	subject	thought	1353693717	Re: Book	2478	30
+
+t1354	FCV	to	mention	visualization	stefaner	http	1333758164		t556	15
+
+t252	FCV	to	mention	interesting	points	won	1334190956		t569	14
+
+t992	FCV	from	mention	http	long	books	1342573053		t1442	11
+
+t254	FCV	to	mention	nbrgraphs	rule	smfrogers	1343262576		t1518	13
+
+t198	FCV	from	mention	first	soon	moebio	1344387505		t1563	5
+
+t832	FCV	from	mention	them	jcukier	looking	1344388758		t1563	20
+
+t833	FCV	from	mention	thanks	jcukier	andy	1344387592		t1563	16
+
+t831	FCV	from	mention	like	jcukier	looking	1344384513		t1563	12
+
+t1225	FCV	to	mention	visualisingdata	moebio	team	1356742293		t2374	13
+

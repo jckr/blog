@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>dig &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/dig/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>Go deep rather than go wide</title>
+		<link>/2008/12/16/go-deep-rather-than-go-wide/</link>
+		<comments>/2008/12/16/go-deep-rather-than-go-wide/#respond</comments>
+		<pubDate>Tue, 16 Dec 2008 09:45:19 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[presentation]]></category>
+		<category><![CDATA[deep]]></category>
+		<category><![CDATA[dig]]></category>
+		<category><![CDATA[garr reynolds]]></category>
+		<category><![CDATA[presentation zen]]></category>
+		<category><![CDATA[slideshare]]></category>
+		<category><![CDATA[webinar]]></category>
+		<category><![CDATA[wide]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=111</guid>
+		<description><![CDATA[Yesterday, I attended a Presentation Zen webinar. One phrase that struck me was this advice to go deep rather than go wide. In a presentation, there is only so much time to present information, before everyone&#8217;s attention collapses. Rather than try to cover as much ground as possible, it&#8217;s much more efficient to focus on <a class="read-more" href="/2008/12/16/go-deep-rather-than-go-wide/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p><a href="http://www.watfordmuseum.org.uk/activities_victory.html"><img alt="" src="http://www.watfordmuseum.org.uk/docs/dig_s.jpg" title="Dig for Victory!" class="alignnone" width="200" height="282" /></a>Yesterday, I attended a <a href="http://www.presentationzen.com/presentationzen/2008/12/live-pz-webcast-december-15-free.html">Presentation Zen webinar</a>. One phrase that struck me was this advice to go deep rather than go wide. In a presentation, there is only so much time to present information, before everyone&#8217;s attention collapses. </p>
+<p>Rather than try to cover as much ground as possible, it&#8217;s much more efficient to <strong>focus</strong> on a subject and make sure to deliver.</p>
+<p>And if you are expected to deliver lots of information on a wide scope, then a written report is a more appropriate medium. </p>
+<p>The presentation should be available in <a href="http://www.slideshare.net/">slideshare</a> any time soon.</p>
+]]></content:encoded>
+			<wfw:commentRss>/2008/12/16/go-deep-rather-than-go-wide/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

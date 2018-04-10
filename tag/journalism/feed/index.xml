@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>journalism &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/journalism/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>Open data and data journalism</title>
+		<link>/2011/10/14/open-data-and-data-journalism/</link>
+		<comments>/2011/10/14/open-data-and-data-journalism/#respond</comments>
+		<pubDate>Fri, 14 Oct 2011 10:50:11 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[presentation]]></category>
+		<category><![CDATA[caroline goulard]]></category>
+		<category><![CDATA[cecile dehesdin]]></category>
+		<category><![CDATA[data journalism]]></category>
+		<category><![CDATA[data veyes]]></category>
+		<category><![CDATA[eric mettoux]]></category>
+		<category><![CDATA[etalab]]></category>
+		<category><![CDATA[fabrice epelboin]]></category>
+		<category><![CDATA[fhimt]]></category>
+		<category><![CDATA[françois prosper]]></category>
+		<category><![CDATA[guardian]]></category>
+		<category><![CDATA[journalism]]></category>
+		<category><![CDATA[karen bastien]]></category>
+		<category><![CDATA[lexpress]]></category>
+		<category><![CDATA[open data]]></category>
+		<category><![CDATA[partikuls]]></category>
+		<category><![CDATA[pierre falga]]></category>
+		<category><![CDATA[simon rogers]]></category>
+		<category><![CDATA[slate]]></category>
+		<category><![CDATA[storytelling with data]]></category>
+		<category><![CDATA[tunisia]]></category>
+		<category><![CDATA[we_do_data]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1060</guid>
+		<description><![CDATA[Yesterday I attended a workshop organized by Etalab on data journalism. Since open data, data visualization and storytelling with data are my 3 work interests I could not just be found elsewhere that day. Interestingly, while speakers and attendants were very much discussing the same subject, what was said (or inferred in questions asked) was <a class="read-more" href="/2011/10/14/open-data-and-data-journalism/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>Yesterday I attended a workshop organized by <a href="http://www.etalab.gouv.fr/article-4eme-atelier-de-travail-datajournalisme-86096912.html">Etalab on data journalism</a>. Since open data, data visualization and storytelling with data are my 3 work interests I could not just be found elsewhere that day.</p>
+<p>Interestingly, while speakers and attendants were very much discussing the same subject, what was said (or inferred in questions asked) was very different. On some topics participants presented opposite opinions,  while on others there was a strong agreement.</p>
+<h2>Inspiration and enthusiasm</h2>
+<p>That was definitely the common denominator across presentations. </p>
+<p>In short: <strong>visualization + journalism = win</strong>. </p>
+<p>Every presenter, <a href="http://www.twitter.com/!#/dataveyes">@dataveyes</a>, Pierre Falga, <a href="http://www.twitter.com/!#/datastore">@datastore</a>, <a href="http://www.twitter.com/!#/sayseal">@sayseal</a>, <a href="http://www.twitter.com/!#/we_do_data">@we_do_data</a> and <a href="http://www.twitter.com/!#/epelboin">@epelboin</a> all showed are talked about things which were pretty awesome and which would have not been possible with data or visualization. While I was familiar with the other examples, I was most fired up by Fabrice Epelboin&#8217;s presentation of Tunisian media, Fhimt.com and its <a href="http://dataviz.fhimt.com/">dataviz gallery</a>.</p>
+<p>What was interesting was how it was easy to tell a memorable story with the support of data. I think for the picture to be complete you also have to include in the big picture the viewer&#8217;s assumption and the presenter/journalist narration. One example which was shown by both Caroline Goulard and Simon Rogers is the relationship between tweets and UK riots.</p>
+<p>The unsaid assumption was that social media have helped organize the riots.</p>
+<p><a href="http://www.guardian.co.uk/uk/interactive/2011/aug/24/riots-twitter-traffic-interactive"><img class="aligncenter size-full wp-image-1061" title="guardian" src="http://www.jeromecukier.net/wp-content/uploads/2011/10/guardian.png" alt="" /></a></p>
+<p>Facts in hand, in turns out that the bulks of the tweets related to a  riot happened after, not before, the event.  So the narrator help us conclude that riot caused tweets rather than the other way around.</p>
+<p>Another example from <a href="http://www.fhimt.com/">fhimt.com</a>:<br />
+We assume that tertiary graduates have better job prospects than those with less education.<br />
+<a href="http://dataviz.fhimt.com/wp-content/uploads/2011/10/chomage.001.jpg"><img class="alignnone size-full wp-image-380" title="chomage.001" src="http://dataviz.fhimt.com/wp-content/uploads/2011/10/chomage.001.jpg" alt="" width="819" height="614"></a><br />
+This isn&#8217;t the case in Tunisia where there graduates endure a 23% unemployment rate, while the rate for those who haven&#8217;t completed primary school is around 5%.<br />
+Comment by Fabrice Epelboin: the only thing left to do for them is prepare the revolution. I find this a very clear and rational explanation of the arab spring, in contrast with how television presented those events.</p>
+<h2>Is this difficult?</h2>
+<h3>It requires work</h3>
+<p>And no one denies this. Cécile Dehesdin and We Do Data presented us their work process, from the original idea to the final piece. Cécile would stress more the usage aspects while Karen and François emphasized the benefits of illustration and aesthetics to the final result. They both tried to convey us the amount of time and effort it takes to achieve something. </p>
+<h3>and ressources&#8230; or not</h3>
+<p>Then Pierre Falga and Simon Rogers gave somewhat conflicting views of the inner working of a newsroom. While Simon Rogers depicts the process as relatively effortless and quick thanks to freely available tools, Pierre Falga&#8217;s views where that an online newsroom&#8217;s resources were very thin, which prevented most media from fully embracing data journalism. To nuance Rogers position and bring it closer to consensus, he argues that <strong>the work-intensive part is</strong> not the output proper, but rather <strong>the data collection</strong>, and like Cécile and Pierre he had his share of horror stories on this front. </p>
+<h2>Thank you, open data</h2>
+<p>All presenters were grateful for data being increasingly accessible through open data initiatives. Not all is rosy in dataland, however, as institutions here and there are not all excited about doing the prospects of spending their own resources to retrieve data for journalists &#8211; even in the case where they are legally forced to.<br />
+While <strong>data journalism obviously need open data, the reverse is possibly truer</strong> &#8211; that may be the motive for Etalab to organize the event. So far, official data portals haven&#8217;t proved to be directly useful to the concerned citizen, so it is those who are able to utilize those free data and turn them into attention-arresting stories that give them a purpose and demonstrate very visibly that the open data process truly benefits all. </p>
+<h2>Is there a demand for data journalism?</h2>
+<p>Presenters didn&#8217;t all address this question frontally but seemed to have mixed opinions about that. The guardian has been resorting to data journalism for over one century and gave no impression to ever have reconsidered the question. Others in the rooms, including attendants, had less faith on the matter. Pierre Falga and Eric Mettoux from lexpress.fr admitted their share of responsibility as that demand is largely dependent on the supply of quality material from existing media. </p>
+<p>More fundamentally, I see that the mix of data visualization and communication is commonly referred to as data journalism which may be a slight over simplification.<br />
+<strong>Why would the task of communicating with data visualization be restricted to journalists or media?</strong> <strong>Companies and government</strong> agencies alike have considerable budgets devoted to communication. IMO they <strong>should be the ones driving that effort</strong>. To a curious audience, that is, to the people who are actively seeking information on a certain topic, data visualization answers can be insanely more powerful and cost-effective than classic communication tailored for a more passive receiver. </p>
+]]></content:encoded>
+			<wfw:commentRss>/2011/10/14/open-data-and-data-journalism/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

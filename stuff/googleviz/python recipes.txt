@@ -1,0 +1,21 @@
+this is how you do it: 
+
+stemmer=nltk.stem.snowball.SnowballStemmer(u"french")
+stemmer.stem("maintenant")
+
+for i in range(len(tokens)):
+	tokens[i]=tokens[i].encode("unicode_escape")
+	
+text=nltk.Text(tokens)
+text.collocations()
+
+from nltk.collocations import *
+bigram_measures = nltk.collocations.BigramAssocMeasures()
+trigram_measures = nltk.collocations.TrigramAssocMeasures()
+
+finder = BigramCollocationFinder.from_words(text)
+finder.nbest(bigram_measures.pmi, 10)
+
+a=finder.nbest(bigram_measures.pmi, 10)
+print((a[1][0]).decode("unicode_escape"))
+

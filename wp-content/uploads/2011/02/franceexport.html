@@ -1,0 +1,221 @@
+<html>
+<head>
+<script type="text/javascript" src="http://blog.oecdfactblog.org/wp-includes/js/protovis-r3.2.js"></script>
+<script type="text/javascript" src="/wp-content/uploads/2011/02/data.js"></script>
+<style>
+//.protovis {width:500; height:500; background: #fff;}
+body {background: #eee;}
+</style></head>
+
+<body><div class="protovis">
+<script type="text/javascript+protovis">
+
+
+function rollup(data) {return pv.sum(data, function(d) {return d.exp;});} // here rollup will be done on 1-element arrays, so any aggregation will do.
+
+function setCountry(country) {
+	selCountry=country; // duh
+	myProductTree=byProduct[selCountry];
+
+	catsByCountry = pv.flatten(myProductTree).key("cat").key("com").key("exp").array(); // this first turns our map into a flat array.
+	catsByCountry = pv.nest(catsByCountry).key(function(d) {return d.cat;}).rollup(rollup);   // then we nest it to get the total export per category. But our array becomes a map, so...
+	catsByCountry = pv.values(catsByCountry); 												  // now it's an array again :)
+	}
+
+function setCommodity(commodity) {
+	selCommodity=commodity; // duh
+	myCountryTree=byCountry[selCommodity];
+
+	catsByCommodity = pv.flatten(myCountryTree).key("con").key("cou").key("exp").array(); // same as above, but the key order is different
+	catsByCommodity = pv.nest(catsByCommodity).key(function(d) {return d.con;}).rollup(rollup);   // we aggregate by continent
+	catsByCommodity = pv.values(catsByCommodity);
+	}
+
+function updateCountry(country) {
+	setCountry(country);
+	tree2.reset();tree1.reset();
+	vis.render();
+	}
+
+
+function fn(number) {
+	if (number>1000000000) {
+		return (number/1000000000).toFixed(1)+" b$";
+	} else if (number>1000000) {
+		return (number/1000000).toFixed(1)+" m$";
+	} else if (number>1000) {
+		return number/(1000).toFixed(1)+" k$";
+	}
+}
+
+function updateCommodity(commodity) {
+	setCommodity(commodity);
+	tree1.reset();tree2.reset();
+	vis.render();}
+
+var selCountry, selCommodity, myProductTree,myCountryTree;
+
+var cmCountry=0;
+var cmProduct=0;
+var catsByCountry=[];
+var contsByProduct=[];
+
+var byProduct=pv.nest(data.concat(world)) // I want to look at trade by product in all countries including world but NOT including trade on all products by country
+	.key(function(d) {return d.cou;})		   // country. This won't show in the treemap. The tree in the treemap would always be a subset of that tree.
+	.key(function(d) {return d.cat;}) 		   // product category
+	.key(function(d) {return d.com;})		   // commodity
+	.rollup(rollup)							   // this is the touch to create a tree based on the export value.
+;
+var byCountry=pv.nest(data.concat(allcom)) // I want to look at trade by country for all products including trade of all products, but NOT including world trade per product.
+	.key(function(d) {return d.com;})		   // Commodity. This won't show in the treemap. The tree in the treemap would always be a subset of that tree.
+	.key(function(d) {return d.con;}) 		   // continent
+	.key(function(d) {return d.cou;})		   // country
+	.rollup(rollup)							   // this is the touch to create a tree based on the export value.
+;
+
+setCountry("0"); // selected country is the world
+setCommodity("TOTAL"); // selected commodity is totam
+
+var details=pv.nest(data.concat(allcom).concat(world).concat(totalworld)) // this is everything
+	.key(function(d) {return d.cou;})		   // by country
+	.key(function(d) {return d.com;})		   // by commodity
+	.map()									   // and as an tree.
+;											   // so I can do : details["12"]["64"][cou] and get the continent of algeria (1)
+
+
+var vis = new pv.Panel()
+    .width(1132)
+    .height(500)
+    .fillStyle("#fff").strokeStyle("#eee")
+    .event("click", function(d) {updateCommodity("TOTAL"); updateCountry("0");})
+    ;
+var myColors=["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf"];
+
+var cColors=["#000","#FFD700", "#07387D", "#C10E07", "#687D30", "#087DC0", "#fff"];
+
+var tree1 = vis.add(pv.Layout.Treemap)
+    .width(400).height(400)
+    .nodes(function() pv.dom(myProductTree).root("byProduct").nodes())
+    .left(150)
+    .top(50)
+;
+vis.add(pv.Label).top(40).left(320).textAlign("center").text(function() "Exports (" + countries[selCountry].name + "), broken down by product").font("12pt sans-serif")
+;
+
+tree1.leaf.add(pv.Panel)
+	.fillStyle(function(d) {if (d.nodeName==selCommodity) {return "pink";}
+							else if (cmProduct) {
+									var detail=details[selCountry][d.nodeName][0];
+									return (detail.imp*detail.exp==0?"#ccc":pv.Scale.linear(0, 1, 2).range("#fc8d59", "#ffffbf", "#91bfdb")(detail.exp/detail.imp));
+								} else {
+									return myColors[coms[d.nodeName].category];
+							}})
+	.strokeStyle("black")
+	.title(function(d) {if (cmProduct) {
+						var detail=details[selCountry][d.nodeName][0];
+						return coms[d.nodeName].name+"("+Scats[coms[d.nodeName].category]+"): imports: "+fn(detail.imp)+", exports: "+fn(detail.exp);}
+						else {return Scats[coms[d.nodeName].category]+" - "+coms[d.nodeName].name+" - "+fn(d.nodeValue);}})
+	.event("click", function(d) {updateCommodity(d.nodeName);})
+	.lineWidth(1)
+
+var barLeft=vis.add(pv.Panel).top(50).width(140).left(2).height(330).fillStyle("#fcfcfc");
+barLeft.add(pv.Panel).height(20).fillStyle("#eee").anchor("center").add(pv.Label).textBaseline("middle").textAlign("center").text("% by category:");
+barLeft.strokeStyle("#888").lineWidth(1);
+
+vis.add(pv.Bar)
+	.data(function() pv.normalize(catsByCountry))
+	.top(function() 80+this.index*30)
+	.height(20)
+	.left(2)
+	.width(function(d) d*160)
+	.fillStyle(function() myColors[this.index])
+	.title(function(d) (d*100).toFixed(0)+"%")
+	.anchor("left").add(pv.Label).left(2).textBaseline("middle").textAlign("left").text(function() Scats[this.index])
+
+
+vis.add(pv.Panel)
+	.top(400)
+	.width(140)
+	.left(2)
+	.height(40)
+	.event("click", function() {cmProduct=1-cmProduct; tree1.reset();vis.render();})
+	.fillStyle(function() cmProduct?"#ffffbf":"#eee").strokeStyle(function() this.fillStyle().darker())
+	.add(pv.Label).left(70).textAlign("center").top(19).text(function() cmProduct?"colored by balance":"colored by product")
+	.add(pv.Label).left(70).textAlign("center").top(33).text("(click to change)")
+;
+
+var tree2 = vis.add(pv.Layout.Treemap)
+	.width(400).height(400)
+	.left(580).top(50)
+	.nodes(function() pv.dom(myCountryTree).root("byCountry").nodes())
+;
+
+
+vis.add(pv.Label).top(40).left(765).textAlign("center").text(function() "Exports (" + coms[selCommodity].name + "), broken down by country").font("12pt sans-serif")
+	;
+
+tree2.leaf.add(pv.Panel)
+	.fillStyle(function(d) {if (d.nodeName==selCountry) {return "pink";}
+								else if (cmCountry) {
+										var detail=details[d.nodeName][selCommodity][0];
+										return (detail.imp*detail.exp==0?"#ccc":pv.Scale.linear(0, 1, 2).range("#fc8d59", "#ffffbf", "#91bfdb")(detail.exp/detail.imp));
+									} else {
+										return cColors[countries[d.nodeName].continent];
+								}})
+		.strokeStyle("black")
+		.title(function(d) {if (cmCountry) {
+							var detail=details[d.nodeName][selCommodity][0];
+							return countries[d.nodeName].name+"("+continents[countries[d.nodeName].continent]+"): imports: "+fn(detail.imp)+", exports: "+fn(detail.exp);}
+						else {return continents[countries[d.nodeName].continent]+" - "+countries[d.nodeName].name+" - "+fn(d.nodeValue);}})
+	.event("click", function(d) {updateCountry(d.nodeName);})
+	.lineWidth(1)
+
+var barRight=vis.add(pv.Panel).top(50).width(140).left(990).height(230).fillStyle("#fcfcfc");
+barRight.add(pv.Panel).height(20).fillStyle("#eee").anchor("center").add(pv.Label).textBaseline("middle").textAlign("center").text("% by continent:");
+barRight.strokeStyle("#888").lineWidth(1);
+vis.add(pv.Bar)
+	.data(function() pv.normalize(catsByCommodity))
+	.top(function() 100+this.index*30)
+	.height(20)
+	.width(function(d) d*140)
+	.left(function() 1130-this.width())
+	.fillStyle(function() cColors[this.index+1])
+	.title(function(d) (d*100).toFixed(0)+"%")
+	.anchor("right").add(pv.Label).textBaseline("middle").textAlign("right").text(function() continents[this.index+1])
+;
+
+vis.add(pv.Panel)
+	.top(400)
+	.width(140)
+	.left(990)
+	.height(40)
+	.event("click", function() {cmCountry=1-cmCountry; tree1.reset();vis.render();})
+	.fillStyle(function() cmCountry?"#ffffbf":"#eee").strokeStyle(function() this.fillStyle().darker())
+	.add(pv.Label).left(70).textAlign("center").top(19).text(function() cmCountry?"Colored by balance":"Colored by continent")
+	.add(pv.Label).left(70).textAlign("center").top(33).text("(click to change)")
+;
+
+
+
+vis.add(pv.Label)
+.top(485)
+.left(600)
+.textAlign("center")
+.text("Click on the treemap to select a product (left) or country (right). Click outside to reset the selection.")
+.font("italic 14pt sans-serif")
+,
+vis.render();
+
+
+
+
+
+
+
+
+
+    </script>
+
+</div>
+  </body>
+</html>

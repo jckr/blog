@@ -1,0 +1,1525 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="HandheldFriendly" content="True" />
+<meta name="MobileOptimized" content="320" />
+
+<title>d3 | jeromecukier.net | Page 3</title>
+
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="/xmlrpc.php">
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Feed" href="/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Comments Feed" href="/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; d3 Category Feed" href="/category/d3/feed/" />
+<!-- This site uses the Google Analytics by MonsterInsights plugin v7.0.5 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+<!-- Note: MonsterInsights is not currently configured on this site. The site owner needs to authenticate with Google Analytics in the MonsterInsights settings panel. -->
+<!-- No UA code set -->
+<!-- / Google Analytics by MonsterInsights -->
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/localhost:8888\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6.10"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='YoutubeShortcodeMargenn-css'  href='/wp-content/plugins/youtube-shortcode/youtube-shortcode.css?ver=4.6.10' type='text/css' media='all' />
+<link rel='stylesheet' id='casper-google-fonts-css'  href='//fonts.googleapis.com/css?family=Noto+Serif%3A400%2C700%2C400italic%7COpen+Sans%3A700%2C400&#038;ver=4.6.10' type='text/css' media='all' />
+<link rel='stylesheet' id='casper-style-css'  href='/wp-content/themes/casper/style.css?ver=4.6.10' type='text/css' media='all' />
+<script type='text/javascript' src='/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.6.10" />
+
+   	<style type="text/css">
+					.blog-title a, .blog-description, .social-icons a { color: #ffffff; }
+		
+						                
+		
+							.main-navigation a { color: ; }
+		                                            </style>
+    		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+
+<body class="archive paged category category-d3 category-5 paged-3 category-paged-3 group-blog">
+
+<header id="masthead" role="banner" class="site-head site-header" >
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+        <div>
+            <h1 class="menu-toggle">
+                <a class="icon-bars" href="#">
+                    <span class="hidden">Menu</span>
+                </a>
+            </h1>
+            <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+            <div class="menu"><ul><li ><a href="/">Home</a></li><li class="page_item page-item-6"><a href="/about/">About</a></li><li class="page_item page-item-1073"><a href="/data-stories/">Data with stories workshop &#8211; examples</a></li><li class="page_item page-item-437"><a href="/proofs-of-concept/">Private section</a></li><li class="page_item page-item-2"><a href="/sample-page/">Sample Page</a></li></ul></div>
+        </div>
+    </nav><!-- #site-navigation -->
+
+    <div class="vertical-row">
+        <div class="vertical">
+            <div class="site-head-content inner">
+                
+                <div class="social-icons">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                    </div>
+                <h1 class="blog-title"><a class="blog-logo" href='/' rel='home'>jeromecukier.net</a></h1>
+                <h2 class="blog-description">Just another WordPress site</h2>
+            </div>
+        </div>
+    </div>
+</header><!-- #masthead -->
+
+<main id="content" class="content" role="main">
+
+	<section id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		
+			<header class="page-header">
+				<h1 class="page-title">
+					d3				</h1>
+							</header><!-- .page-header -->
+
+						
+				
+<article id="post-1289" class="post-1289 post type-post status-publish format-standard hentry category-d3 category-data-visualization category-francais">
+		    <header class="post-header">
+        			<span class="post-meta">
+				<span class="posted-on"><a href="/2012/05/23/la-parite-cest-maintenant/" rel="bookmark"><time class="entry-date published" datetime="2012-05-23T17:56:51+00:00">May 23, 2012</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/d3/" rel="category tag">d3</a>, <a href="/category/data-visualization/" rel="category tag">data visualization</a>, <a href="/category/francais/" rel="category tag">français</a>			</span>
+		        <h1 class="post-title"><a href="/2012/05/23/la-parite-cest-maintenant/" rel="bookmark">La parité, c&#8217;est maintenant?</a></h1>
+         
+    </header>
+	<section class="post-content">
+
+		<p><div id="attachment_1290" style="width: 620px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/projects/elections/parite.html"><img class="size-full wp-image-1290" title="La parité, c'est maintenant" src="http://www.jeromecukier.net/wp-content/uploads/2012/05/parite.png" alt="" width="610" height="572" /></a><p class="wp-caption-text">Cliquez sur l&#39;image pour arriver à l&#39;application interactive</p></div></p>
+<p>J&#8217;ai eu l&#8217;idée de créer cette carte quand j&#8217;ai pu mettre la main sur les données des résultats de la présidentielle par circonscription législative. En 2007, les résulats du deuxième tour ont été un très bon prédicteur de ceux des législatives qui ont suivi: une circonscription pour qui un candidat à la présidentielle au second tour a fait ne serait-ce que 52% a plus de 75% de chances d&#8217;être remportée par le député du même parti.<br />
+Et encore, tout le monde s&#8217;était accordé à dire qu&#8217;en 2007, la gauche avait fait une très bonne campagne et qu&#8217;elle avait <a href="http://www.rfi.fr/actufr/articles/090/article_52924.asp">endigué la vague bleue</a>. Les probabilités sont sûrement encore plus élevées.</p>
+<p>Or, presque 80% des circonscriptions ont été gagnées avec un score supérieur à 52%, ce qui est donc une très grosse marge. Dans plus du quart d&#8217;entre elles, le gagnant du scrutin a même récolté plus de 60% des voix&#8230;</p>
+<p>Bref. Dans la plupart des circonscriptions, il n&#8217;y aura pas tellement de suspsens. Là où je vote, on n&#8217;a pas souvent le droit à un deuxième tour.</p>
+<p>Comme pour<a href="http://www.jeromecukier.net/blog/2012/05/15/le-decoupage-de-paris-en-circonscriptions/"> le découpage électoral</a>, je trouve ça un peu dérangeant. L&#8217;élection n&#8217;est pas tant la rencontre entre une personne et une population qui la choisit, mais surtout le fait d&#8217;un parti qui place ses pions, surtout si on rajoute les &#8220;accords électoraux&#8221;. Je crois que j&#8217;ai moins de chance de rencontrer la candidate <em>challenger</em> de ma circonscription que de voir François Hollande ou Nicolas Sarkozy &#8220;en vrai&#8221;.</p>
+<p>Alors pourquoi ne pas en profiter pour s&#8217;approcher de la parité à l&#8217;assemblée?</p>
+<p>Pourquoi ne pas le faire d&#8217;abord: si un parti ne présente pas autant de femmes que d&#8217;hommes, il récupère une amende. Ou plutôt, comme l&#8217;explique bien <a href="http://www.lemonde.fr/politique/article/2012/05/22/les-manquements-a-la-parite-coutent-cher-aux-partis_1705246_823448.html">Alexandre Léchenet</a>,  il perd des financements. Mais le mode de calcul est biaisé. Un parti récupère une certaine somme par voix  au niveau national, puis cette somme est minorée si les femmes représentent moins de la moitié des candidats. Pour contrer ce système, il aurait été plus judicieux de le baser sur la proportion des voix <em>remportées</em> par des femmes, pas sur celles qu&#8217;on a alignées au départ.</p>
+<p>Donc, on envoie les femmes au casse-pipe: on les met dans des circonscriptions impossibles à gagner, histoire d&#8217;éviter l&#8217;amende. Il y a presque 100 candidates qui se retrouvent contre le représentant d&#8217;un parti qui a fait plus de 55% au second tour.</p>
+<p>A Paris, par exemple, Annie Novelli défie Claude Goasguen dans la 14ème circonscription (qui a voté à 77% pour Sarkozy) et c&#8217;est Agnès Pannier qui affronte Bernard Debré dans la 4ème (75% pour Sarkozy). Pendant ce temps, Roxane Decorte se frotte à Daniel Vaillant dans la 17ème circonscription (qui a voté Hollande à 72%).</p>
+<p>Et encore, en théorie elles pourraient gagner, mais dans 238 circonscriptions, soit plus de 40%, ni le PS ni l&#8217;UMP n&#8217;ont investi de femme, comme ça on est tranquille.</p>
+<p>Ce qui fait qu&#8217;au final, même s&#8217;il y a 40% de candidates, le nombre d&#8217;élues devrait tourner autour de 175 soit 28%. Ce serait quand même presque 70 de plus qu&#8217;aujourd&#8217;hui, malgré le cynisme de l&#8217;actuel patron de l&#8217;UMP. Espérons qu&#8217;elle pourront aller à l&#8217;Assemblée<a href="http://www.lemonde.fr/politique/article/2011/06/07/l-assemblee-se-defend-d-etre-un-bastion-du-sexisme_1533148_823448.html"> habillées comme elles veulent</a>.</p>
+<p><a href="http://www.insee.fr/fr/themes/tableau.asp?reg_id=0&amp;ref_id=NATnon02145">Mine de rien</a>, il y aurait 51.5% de femmes en France.</p>
+	    		<div class="clear">&nbsp;</div>
+	</section>
+</article><!-- #post-## -->
+			
+				
+<article id="post-1277" class="post-1277 post type-post status-publish format-standard hentry category-d3 category-data-visualization category-tips">
+		    <header class="post-header">
+        			<span class="post-meta">
+				<span class="posted-on"><a href="/2012/05/15/making-of-cutting-paris-in-voting-districts/" rel="bookmark"><time class="entry-date published" datetime="2012-05-15T15:33:44+00:00">May 15, 2012</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/d3/" rel="category tag">d3</a>, <a href="/category/data-visualization/" rel="category tag">data visualization</a>, <a href="/category/tips/" rel="category tag">tips</a>			</span>
+		        <h1 class="post-title"><a href="/2012/05/15/making-of-cutting-paris-in-voting-districts/" rel="bookmark">Making-of: cutting Paris in voting districts</a></h1>
+         
+    </header>
+	<section class="post-content">
+
+		<p>Hi, in my previous post I showcased <a href="http://www.jeromecukier.net/projects/elections/circonscriptions.html#">one of my recent projects</a>. I really enjoyed building it and so would like to share how this has been done.</p>
+<p>First, getting the data. I already scraped the results of both rounds of the presidential election by city. The districts for the congress election are also known, but it&#8217;s not possible to do a match, because large cities are almost systematically broken down into several such districts. Paris, for instance, will be represented by no less than 18 <em>députés</em>.</p>
+<p>So I needed the results by the finest possible unit, that is by individual polling station. During the election night these results are compiled by city and centralized, so you would assume that the raw data of each polling station is available somewhere. That is not the case, unfortunately. Although it seems that they will be made public eventually, that may not be the case before the June 2012 election.</p>
+<p>Fortunately, <a href="http://opendata.paris.fr/opendata/jsp/site/Portal.jsp?document_id=133&amp;portlet_id=102">Open Data Paris</a> had the results by polling station. More: it had their address and matching of every inhabited building in Paris to its corresponding polling station.</p>
+<p>To map the polling stations, my first intuition was to create a <a href="http://en.wikipedia.org/wiki/Voronoi_diagram">voronoi tesselation</a> of their projected, geocoded coordinates (I only had their addresses in the raw data file). In short, voronoi polygons can be generated for a certain number of control points and correspond to the area nearer to that control point than to any other. So it&#8217;s a good approximation of the areas  which correspond to a given polling station.</p>
+<p><iframe style="border:none;" src="http://www.jeromecukier.net/stuff/littlevoronoi.html" scrolling="no" width="502px" height="270px"></iframe></p>
+<p>Problem: several polling stations could be in the same address, and for the voronoi algorithm the control points have to be distinct. So I tried jittering them (adding random noise to each one). A tesselation could be done that kind of looked like Paris but voting districts will look messy as there were frequent inversions between neighboring districts.</p>
+<p>So I had to come up with a better approximation of what part of the city corresponded to what voting district. So I used the address to polling station correspondance, and for each polling station I took the first and the last street number of any street that was covered by it. Then I geocoded the whole lot. That&#8217;s about 16000 points. It took some time.</p>
+<p><div id="attachment_1280" style="width: 616px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2012/05/centroids.png"><img class="wp-image-1280" title="centroids" src="http://www.jeromecukier.net/wp-content/uploads/2012/05/centroids.png" alt="" width="606" height="478" /></a><p class="wp-caption-text">Here&#39;s my polling station as an example.</p></div></p>
+<p>Then, for each polling station area, I took the minimum and maximum longitude and latitude, which formed a bounding box, and assigned the polling station to the center of that box. Then, I used tesselation again.</p>
+<p>I found a number of oddities in the geocoding that I had to correct manually, because if one address was not accurately coded, chances are it would change the shape of the bounding box drastically and so the position of its corresponding polling station. Sometimes the geocoding service wouldn&#8217;t find the street and/or would use a street of the same name in another city, sometimes they did find the street but the coordinates were way off&#8230; So the dataset required a lot of massaging before it got into shape.</p>
+<p>The last geographic errand I had to do for this visualization was to create a perimeter of Paris to use as a clipping mask, else the tesselation would be done on a rectangular shape with the edge polygons being very large and very skewed. So I collected coordinates of points around Paris to create one polygon. Only what&#8217;s inside of this polygon is shown (.style(&#8220;clip-path&#8221;) in d3).</p>
+<p>After the data has been acquired, the building of the rest of the datavis was nothing special. I have used extensively mouseover and click events to trigger transformations as I always do, although this time I did prepare a lot of rules.</p>
+<p>Originally I wanted to make the whole of France like this, though it will be difficult: one, to get the data, and two, to get it into shape. As of today the location (i.e. street address) of most of the polling stations is not available online, so even if we got the number of votes for each of the polling stations (there should be about 40000 of them) the geographic part of the problem will remain unsolved. Though, it&#8217;s a worthy endeavour. While the election results have little interest at a macro-geographic level &#8211; by region or by <em>département &#8211; </em>they are very useful at a very fine level as strategies can be constructed.</p>
+<p>For instance, it&#8217;s worthwhile to send heavyweights to conquer districts that are winnable, but it&#8217;s a waste to keep them in their respective fiefdoms if victory in these districts is already certain. Also, when districts would have to be redefined, having this kind of information can be invaluable to the political force which gets to draw their new limits, or to their opponents.</p>
+	    		<div class="clear">&nbsp;</div>
+	</section>
+</article><!-- #post-## -->
+			
+				
+<article id="post-1264" class="post-1264 post type-post status-publish format-standard hentry category-d3 category-data-visualization category-francais tag-coordonnees-paralleles tag-elections">
+		    <header class="post-header">
+        			<span class="post-meta">
+				<span class="posted-on"><a href="/2012/05/07/a-la-decouverte-des-resultats-des-presidentielles-avec-les-coordonnees-paralleles/" rel="bookmark"><time class="entry-date published" datetime="2012-05-07T19:20:39+00:00">May 7, 2012</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/d3/" rel="category tag">d3</a>, <a href="/category/data-visualization/" rel="category tag">data visualization</a>, <a href="/category/francais/" rel="category tag">français</a>			</span>
+		        <h1 class="post-title"><a href="/2012/05/07/a-la-decouverte-des-resultats-des-presidentielles-avec-les-coordonnees-paralleles/" rel="bookmark">À la découverte des résultats des présidentielles avec les coordonnées parallèles</a></h1>
+         
+    </header>
+	<section class="post-content">
+
+		<p style="text-align: center;"><a href="http://www.jeromecukier.net/projects/elections/dtour2012.html"><img class="aligncenter size-full wp-image-1265" title="front" src="http://www.jeromecukier.net/wp-content/uploads/2012/05/front.jpg" alt="" width="700" height="374" /></a></p>
+<p>Qui dit élection présidentielle, dit résultats.</p>
+<p>Et qui dit résultats dit représentation visuelle dans les médias.</p>
+<p>Et donc souvent carte.</p>
+<p>Cela dit, une carte ne nous apprend pas grand chose de ce qui s&#8217;est vraiment passé dans une élection. C&#8217;est vrai que c&#8217;est utile pour retrouver sa région ou sa ville, mais les résultats de deux villes proches géographiquement (par exemple, Boulogne-Billancourt et Issy-les-Moulineaux) n&#8217;a strictement rien à voir.</p>
+<p>En revanche, avec une carte c&#8217;est très difficile de répondre à certaines questions, comme: où a-t-on le plus voté pour Nicolas Sarkozy? Qu&#8217;est ce qui s&#8217;est passé dans les villes qui ont beaucoup voté pour Marine Le Pen ou François Bayrou? D&#8217;où vient l&#8217;explosion du vote blanc au deuxième tour?</p>
+<p>Pour répondre à ces questions, on peut utiliser les <a href="http://www.jeromecukier.net/projects/elections/dtour2012.html">coordonnées parallèles</a>.</p>
+<p>Chaque axe vertical correspond à un vote possible &#8211; d&#8217;abord ceux du premier tour, puis ceux du deuxième. Chaque ligne de couleur correspond à une ville (ou à un département, à une région, ou à la France). Chacune de ces lignes coupe chaque axe à une hauteur qui correspond à la proportion des gens qui ont fait tel ou tel choix. Par exemple, les villes où on a beaucoup voté pour Jean-Luc Mélenchon, comme Bagnolet ou Gennevilliers, se retrouveront vers le haut de l&#8217;axe du milieu.</p>
+<p>En s&#8217;approchant des axes, le curseur devient une croix. Il suffit alors de le faire glisser le long de l&#8217;axe pour dessiner un rectangle, et mettre en valeur toutes les lignes qui passent par ce rectangle. Par exemple, voici les villes qui ont donné plus de 70% de leurs voix du second tour à François Hollande:</p>
+<p><a href="http://jeromecukier.net/projects/elections/dtour2012.html"><img class="aligncenter size-full wp-image-1266" title="hollande70" src="http://www.jeromecukier.net/wp-content/uploads/2012/05/hollande70.jpg" alt="" width="700" height="500" /></a></p>
+<p>&nbsp;</p>
+<p>On peut tracer autant de rectangles qu&#8217;on veut. Par exemple, on peut ne garder que les endroits qui avaient soutenu Bayrou (par exemple à plus de 10%).</p>
+<p><a href="http://jeromecukier.net/projects/elections/dtour2012.html"><img class="aligncenter size-full wp-image-1267" title="hollande70bayrou10" src="http://www.jeromecukier.net/wp-content/uploads/2012/05/hollande70bayrou10.jpg" alt="" width="700" height="500" /></a></p>
+<p>et voilà: il n&#8217;y en a plus que 2.</p>
+<p>Pour supprimer une sélection, il suffit de cliquer près de l&#8217;axe sans glisser. Si on clique sur un rectangle, on peut aussi le faire coulisser le long de l&#8217;axe.</p>
+<p>Avec cette technique, on peut tout de suite voir les fiefs de tel ou tel candidat: il s&#8217;agit des lignes qui touchent le haut du graphique.</p>
+<p>On peut répondre à des questions plus complexes. Par exemple, je parlais de l&#8217;explosion du vote blanc au deuxième tour. Que s&#8217;est-il passé?</p>
+<p>Sélectionnons les endroits où le vote blanc a dépassé les 4% au deuxième tour, tout en restant à moins de 1.5% au premier tour:</p>
+<p><a href="http://www.jeromecukier.net/projects/elections/dtour2012.html"><img class="aligncenter size-full wp-image-1268" title="blanc" src="http://www.jeromecukier.net/wp-content/uploads/2012/05/blanc.jpg" alt="" width="700" height="370" /></a></p>
+<p>On voit trois pics: les villes où Marine Le Pen, Jean-Luc Mélenchon ou François Bayrou ont fait un très gros score. On peut continuer à sélectionner et voir que ce sont bien les villes qui sont dans la pointe de l&#8217;un des trois triangles et pas celles qui passent par le bas qui se retrouvent dans ce cas de figure. Ces électeurs ont préféré voter blanc plutôt que de choisir.</p>
+<p>Bonne exploration!</p>
+<p><a href="http://www.jeromecukier.net/projects/elections/dtour2012.html">http://www.jeromecukier.net/projects/elections/dtour2012.html</a></p>
+	    		<div class="clear">&nbsp;</div>
+	</section>
+</article><!-- #post-## -->
+			
+				
+<article id="post-1204" class="post-1204 post type-post status-publish format-standard hentry category-d3 category-data-visualization tag-challenge tag-d3 tag-david-mccandless tag-hacks tag-iba tag-infobeauty-awards tag-tutorial">
+		    <header class="post-header">
+        			<span class="post-meta">
+				<span class="posted-on"><a href="/2012/04/22/hollywood-data-iii-our-infobeauty-awards-entry-bonus-making-of/" rel="bookmark"><time class="entry-date published" datetime="2012-04-22T17:08:14+00:00">April 22, 2012</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/d3/" rel="category tag">d3</a>, <a href="/category/data-visualization/" rel="category tag">data visualization</a>			</span>
+		        <h1 class="post-title"><a href="/2012/04/22/hollywood-data-iii-our-infobeauty-awards-entry-bonus-making-of/" rel="bookmark">Hollywood + data III: our info+beauty awards entry. Bonus: making of.</a></h1>
+         
+    </header>
+	<section class="post-content">
+
+		<p>So Jen and I released our <a href="http://bit.ly/starchallenge">Info+beauty awards entry</a>.</p>
+<p><a href="http://bit.ly/starchallenge"><img class="aligncenter size-full wp-image-1205" title="shootingstars" src="http://www.jeromecukier.net/wp-content/uploads/2012/02/shootingstars.png" alt="" width="628" height="636" /></a></p>
+<p>How did we end up with this?</p>
+<p>it&#8217;s really cool working around movies, because it&#8217;s something we can relate to.</p>
+<p><div id="attachment_1206" style="width: 610px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2012/02/20120203_105750.jpg"><img class="size-full wp-image-1206" title="20120203_105750" src="http://www.jeromecukier.net/wp-content/uploads/2012/02/20120203_105750.jpg" alt="" width="600" height="450" /></a><p class="wp-caption-text">A part of my movie ticket stubs stash.</p></div></p>
+<p>At first I wanted to do something out of keywords we could grab on the movies but  Jen came up with another idea I found more worth pursuing: working around the story types (which was the most interesting aspect of the curated contest dataset) and see if there was not some kind of grand truth we could unravel there. She also requested stars and glitter, because we were not going to work on this glamorous dataset with a tedious dashboard done in Excel.</p>
+<p>That truth didn&#8217;t take so much time to find: the most frequently used story types (like comedy or movies with monsters) do not perform well in the box office while different story types (stories of teens growing up, or when the main character turns into something else), which are used less often, are much more profitable. So why doesn&#8217;t hollywood make more Junos and Black Swans and fewer College Road Trips or Dylan Dogs?</p>
+<p>That&#8217;s the idea. Now the making.</p>
+<p><span style="color: #ff0000;">Fair warning &#8211; the rest of this post is fairly technical. </span></p>
+<h3>Making stars</h3>
+<p>If I had to contribute significantly to the project it had to be done in d3/svg.</p>
+<p>Fortunately, it&#8217;s easy to generate star shapes in d3. Once you have the coordinates of where the points of one unitary star should be, you can easily make stars of any size with a function and a parameter.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+var c1=Math.cos(.2*Math.PI),c2=Math.cos(.4*Math.PI),
+    s1=Math.sin(.2*Math.PI),s2=Math.sin(.4*Math.PI),
+    r=1,
+
+    // ok the constant after r1 is the thickness of the branches.
+    // 1 is a &quot;straight&quot; star, less is narrower, more is thicker.
+
+    r1=1.5*r*c2/c1,
+    star=[
+        [0,-r],
+        [r1*s1,-r1*c1],
+        [r*s2,-r*c2],
+        [r1*s2,r1*c2],
+        [r*s1,r*c1],
+        [0,r1],
+        [-r*s1,r*c1],
+        [-r1*s2,r1*c2],
+        [-r*s2,-r*c2],
+        [-r1*s1,-r1*c1],
+        [0,-r]
+        ];
+    // this is a list of the pair of coordinates of the points that make a star.
+lineStar=function(k) {
+	var line=d3.svg.line()
+		.x(function(d) {return d[0]*k;})
+		.y(function(d) {return d[1]*k;})
+	return line(star)+&quot;Z&quot;; // this will stitch everything together.
+}</pre>
+<p>Now, running lineStar(10) will return the path description of a star with a radius of 10, thusly:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">&quot;M0,-10L3.367709824346891,-4.635254915624212L9.510565162951535,-3.0901699437494745L5.449068960040206,
+1.770509831248423L5.877852522924732,8.090169943749475L0,5.729490168751577L-5.877852522924732,
+8.090169943749475L-5.449068960040206,1.770509831248423L-9.510565162951535,-3.0901699437494745
+L-3.367709824346891,-4.635254915624212L0,-10Z&quot;</pre>
+<h3>Placing, moving (and spinning) the stars</h3>
+<p>The next idea was placing the stars.</p>
+<p>And for this we need two things: being able to position them somewhere, and being able to move them easily from point A to point B, ideally with some cool effect in between.</p>
+<p>So, it would be possible to change the x and y attributes of the path, but each would have to be dealt with separately with a different function call. I found it a better approach to rely on the <strong>transform </strong>attribute and <strong>translate</strong>. Each time I want to position a star somewhere, I need it to be set at an x and y coordinate, which will always correspond to either the data of the star, or that of a group above it. For instance, a star corresponding to a movie will need to be at the position corresponding to the data of that movie, or that of the story type above it if it&#8217;s still collapsed, or that of the high-level grouping of story types if that&#8217;s collapsed.</p>
+<p>Now all of the data structures for that are array of objects which all have x and y keys. In other terms, for any star-shaped object, I can always expect the underlying datum d to have d.x and d.y values. So, I wrote a function <strong>translate(d)</strong> which works on those 2 properties. And as a result, when I need to position any object all I have to write is:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">.attr(&quot;transform&quot;,translate)</pre>
+<p>and the object will be positioned according to its underlying data. (this is equivalent to writing .attr(&#8220;transform&#8221;,function(d) {return translate(d);}) )</p>
+<p>If I need to be them elsewhere, i.e. at the position of their parent, I can pass the data of that parent as an argument, for instance:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">.attr(&quot;transform&quot;,function(d) {return translate(structs[d.struct]);})</pre>
+<p>For a cheap bit of extra action, I&#8217;ve added a spinning effect in the translate function. Since translate(d) returns a value for the transform attribute, nobody said it just had to be instructions for translation! so I&#8217;ve added a rotate after the translate. The arguments for the rotate function depend on the x and y properties of the argument as well, so when stars move across the screen, the rotate angle changes slightly with each increment of either coordinate, giving the impression of spinning.</p>
+<h3>Explosions, starlets and other effects</h3>
+<p>Most of the cool things happening in the visualization rely on one very simple principle about d3 transitions: <strong>chaining them. </strong><br />
+In the code you&#8217;ll find oftentimes this pattern:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">.selectAll(&quot;someobject&quot;).data(...).enter().append(...) // creates the items
+... // sets the initial attributes
+...
+.transition()
+... // change the attributes
+...
+...
+...
+.each(&quot;end&quot;, function() { // stuff to be done on each item after the transition is over
+</pre>
+<p>and within that function, you&#8217;ll find either:<br />
+another transition which starts exactly when the previous one ends, so for instance opacity can decrease (causing a fading effect): d3.select(this).transition()&#8230;</p>
+<p>or a command to remove the object: d3.select(this).remove().</p>
+<p>When another transition is called, there can be another one after, then another one, then another one, then eventually the object can be removed (or not).</p>
+<p>Now you may think of transitions as ways to get one object to change smoothly from state A to state B, like a rectangle moving across the screen. But if you start to think that the <strong>objects can be discarded after the transitions</strong>, you&#8217;ll realize that there is an unbelievable number of things that can be done with them.<br />
+For instance, upon clicking on some stars, I am creating another star shape at that same location. Initially it has a the same size as the star, but I increase that radius to a large number (1000px) while decreasing its opacity to 0. So it seems that the new star is both exploding and fading. When it&#8217;s become transparent I remove it.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">gStructs.append(&quot;svg:path&quot;) // here I'm creating a &quot;path&quot; shape
+.style(&quot;stroke&quot;,&quot;none&quot;) // with no outline
+.style(&quot;fill&quot;,colorXp)  // with the fill color of the explosion
+.style(&quot;opacity&quot;,0.2)  // and a low opacity to start with (translucent)
+.attr(&quot;d&quot;,lineStar(d.size[sizeAxis])) // I give it the shape of a star and the size of the
+                                      // star that's being clicked
+.attr(&quot;transform&quot;,translate(d)) // and I position it on that star
+
+.transition() // action!
+
+.duration(500)	// a 500ms transition. Long enough to see the effect.
+.attr(&quot;d&quot;,lineStar(1000)) // the star expands to a radius of 1000.
+.style(&quot;opacity&quot;,0) // while fading to transparency.
+
+.each(&quot;end&quot;,function() {d3.select(this).remove();}) // and when it's done - it's removed.
+</pre>
+<h3>Changing axes</h3>
+<p>In this visualization I let the user change what&#8217;s plotted along the axes. It&#8217;s not very difficult to do but it&#8217;s a hassle to do it late in the project as it has been our case because it requires a lot of housekeeping. This is really about the data structures that will support our items. Instead of having just one value for x, y and size they have an object with several keys, one per axis. Then we maintain one variable per axis type, so everywhere we should write: d.x, we write instead: d.x[xAxis].</p>
+<p>So when there is an axis change, of course, we do a transition so that the stars and everything move smoothly to their new position. But what if the objects were already moving? When an unplanned transition interferes with an ongoing one, the results are often ugly, especially if the current transition had chained transitions waiting to be triggered. In other words, this will leave a mess.</p>
+<p>The way I&#8217;ve dealt with this is by keeping a tab on the number of transitions going on at a certain time. The axis change could only occur if no other transitions were taken place. If that was the case they were simply denied. There are other ways to do that like a queue of actions but that seemed the simple and adequate way to deal with this.</p>
+<h3>Bootstrap and google fonts</h3>
+<p>This was the first non-trivial project where I used <a href="http://twitter.github.com/bootstrap/">bootstrap</a> and I&#8217;m just never going back. Bootstrap simply removes all the hassle of arranging all the elements of a visualization on a screen and is very easy to use. Plus, it comes up with sensible options for buttons, forms, and the like. Since the contest it has evolved faster than a pokémon, for instance it is now possible to specify custom colors in a form and bootstrap will generate the appropriate css files. <a href="http://www.google.com/webfonts">Google fonts</a> are another great help as they are a very easy solution to choose fonts among a relatively large number of choices without relying on the fact that all the users have these fonts on their computer.</p>
+<h3>Wrapping it up</h3>
+<p>There&#8217;s a lot of other hacks in the code which you are welcome to explore, I admit I don&#8217;t remember them all because I took too much time to write this blog post after creating the entry (bad). However if there is one point you would like be to explain please ask in the comments.<br />
+I&#8217;m not entirely sure of what happened when I submitted the entry though. First it wasn&#8217;t listed with the others, then I got a message saying it hadn&#8217;t been reviewed, so it didn&#8217;t win anything, yet some time after the prizes have been handled it appeared in the &#8220;shortlisted&#8221; visualizations for the contest (which I found by accident). So whether or not it was good, I let you guys judge, at any rate it was fun making.</p>
+	    		<div class="clear">&nbsp;</div>
+	</section>
+</article><!-- #post-## -->
+			
+				
+<article id="post-1211" class="post-1211 post type-post status-publish format-standard hentry category-d3 category-tips tag-d3 tag-tableau tag-treemaps tag-tutorial">
+		    <header class="post-header">
+        			<span class="post-meta">
+				<span class="posted-on"><a href="/2012/04/19/treemaps-in-tableau-can-be-done/" rel="bookmark"><time class="entry-date published" datetime="2012-04-19T13:16:13+00:00">April 19, 2012</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/d3/" rel="category tag">d3</a>, <a href="/category/tips/" rel="category tag">tips</a>			</span>
+		        <h1 class="post-title"><a href="/2012/04/19/treemaps-in-tableau-can-be-done/" rel="bookmark">Treemaps in Tableau? can be done.</a></h1>
+         
+    </header>
+	<section class="post-content">
+
+		Tableau can do many things natively but there are a couple of basic primitives that are not built in because they behave somewhat differently from the overall logic. And <a href="http://www.tableausoftware.com/about/blog/2011/05/alternative-tree-maps-0">treemaps is one of them</a>. Then again treemaps are arguably one of the best way to express complex hierarchical information, i.e. to show the proportions in a large dataset.</p>
+
+Fortunately, thanks to Tableau flexibility there are ways to do that. In the tutorial I'm going to cover 2 cases. First, we'll create a somewhat complex treemap off data which will not change in runtime. Then, we'll create mini-treemaps which can change dynamically.</p>
+<h2>A complex treemap</h2>
+<script type="text/javascript" src="http://public.tableausoftware.com/javascripts/api/viz_v1.js"></script>
+<noscript><a href="#"><img alt="ComplexTM " src="http:&#47;&#47;public.tableausoftware.com&#47;static&#47;images&#47;tr&#47;treemaps&#47;ComplexTM&#47;1_rss.png" style="border: none" /></a></noscript><object class="tableauViz" width="604" height="369" style="display:none;"><param name="host_url" value="http%3A%2F%2Fpublic.tableausoftware.com%2F" /><param name="site_root" value="" /><param name="name" value="treemaps&#47;ComplexTM" /><param name="tabs" value="no" /><param name="toolbar" value="yes" /><param name="static_image" value="http:&#47;&#47;public.tableausoftware.com&#47;static&#47;images&#47;tr&#47;treemaps&#47;ComplexTM&#47;1.png" /><param name="animate_transition" value="yes" /><param name="display_static_image" value="yes" /><param name="display_spinner" value="yes" /><param name="display_overlay" value="yes" /><param name="display_count" value="yes" /></object>
+<div style="width:604px;height:22px;padding:0px 10px 0px 0px;color:black;font:normal 8pt verdana,helvetica,arial,sans-serif;"><div style="float:right; padding-right:8px;"><a href="http://www.tableausoftware.com/public?ref=http://public.tableausoftware.com/views/treemaps/ComplexTM" target="_blank">Powered by Tableau</a></div></div>
+Before we go in the details the main ideas are deceptively simple.</p>
+<ul>
+	<li>we use the polygon mark,</li>
+	<li>we generate the treemap layout outside of tableau.</li>
+</ul>
+What we want (and what we'll get) is a dataset that can be directly imported in Tableau and -boom- makes a treemap in a few clicks.</p>
+
+To make this dataset we can use d3. The treemap I am making is directly inspired from the <a href="/category/d3/page/3/mbostock.github.com/d3/ex/treemap.html">d3 treemap example</a>. d3 is already computing all of the node positions so what we'll do is modify the program slightly so that it outputs them in a way that can be directly used in Tableau.</p>
+
+Here is the <a href="http://www.jeromecukier.net/wp-content/uploads/2012/04/treemap.html">modified file</a> which you can download and run on your computer. To work it needs to be in the same folder as a <a href="http://www.jeromecukier.net/wp-content/uploads/2012/04/data.js">data file</a> called data.js which will hold your hiearchical data and which has the same structure as the one linked here.</p>
+
+You can just copy/paste the table that's displayed below the treemap and put it in Tableau or save it in a file for good measure. Here is <a href="http://www.jeromecukier.net/wp-content/uploads/2012/04/data.csv">the output</a> of the data file linked above.</p>
+
+Let's take a look at a few rows :</p>
+<table>
+<tbody>
+<tr>
+<td>Id</td>
+<td>Path</td>
+<td>Top-level category</td>
+<td>Name</td>
+<td>Value</td>
+<td>Corner</td>
+<td>x</td>
+<td>y</td>
+</tr>
+<tr>
+<td>0</td>
+<td>flare&gt;analytics&gt;cluster</td>
+<td>flare</td>
+<td>AgglomerativeCluster</td>
+<td>3938</td>
+<td>0</td>
+<td>89</td>
+<td>167</td>
+</tr>
+<tr>
+<td>0</td>
+<td>flare&gt;analytics&gt;cluster</td>
+<td>flare</td>
+<td>AgglomerativeCluster</td>
+<td>3938</td>
+<td>1</td>
+<td>167</td>
+<td>167</td>
+</tr>
+<tr>
+<td>0</td>
+<td>flare&gt;analytics&gt;cluster</td>
+<td>flare</td>
+<td>AgglomerativeCluster</td>
+<td>3938</td>
+<td>2</td>
+<td>167</td>
+<td>192</td>
+</tr>
+<tr>
+<td>0</td>
+<td>flare&gt;analytics&gt;cluster</td>
+<td>flare</td>
+<td>AgglomerativeCluster</td>
+<td>3938</td>
+<td>3</td>
+<td>89</td>
+<td>192</td>
+</tr>
+<tr>
+<td>1</td>
+<td>flare&gt;analytics&gt;cluster</td>
+<td>flare</td>
+<td>CommunityStructure</td>
+<td>3812</td>
+<td>0</td>
+<td>102</td>
+<td>138</td>
+</tr>
+<tr>
+<td>1</td>
+<td>flare&gt;analytics&gt;cluster</td>
+<td>flare</td>
+<td>CommunityStructure</td>
+<td>3812</td>
+<td>1</td>
+<td>167</td>
+<td>138</td>
+</tr>
+<tr>
+<td>1</td>
+<td>flare&gt;analytics&gt;cluster</td>
+<td>flare</td>
+<td>CommunityStructure</td>
+<td>3812</td>
+<td>2</td>
+<td>167</td>
+<td>167</td>
+</tr>
+<tr>
+<td>1</td>
+<td>flare&gt;analytics&gt;cluster</td>
+<td>flare</td>
+<td>CommunityStructure</td>
+<td>3812</td>
+<td>3</td>
+<td>102</td>
+<td>167</td>
+</tr>
+<tr>
+<td>2</td>
+<td>flare&gt;analytics&gt;cluster</td>
+<td>flare</td>
+<td>HierarchicalCluster</td>
+<td>6714</td>
+<td>0</td>
+<td>89</td>
+<td>192</td>
+</tr>
+<tr>
+<td>2</td>
+<td>flare&gt;analytics&gt;cluster</td>
+<td>flare</td>
+<td>HierarchicalCluster</td>
+<td>6714</td>
+<td>1</td>
+<td>167</td>
+<td>192</td>
+</tr>
+<tr>
+<td>2</td>
+<td>flare&gt;analytics&gt;cluster</td>
+<td>flare</td>
+<td>HierarchicalCluster</td>
+<td>6714</td>
+<td>2</td>
+<td>167</td>
+<td>236</td>
+</tr>
+<tr>
+<td>2</td>
+<td>flare&gt;analytics&gt;cluster</td>
+<td>flare</td>
+<td>HierarchicalCluster</td>
+<td>6714</td>
+<td>3</td>
+<td>89</td>
+<td>236</td>
+</tr>
+</tbody>
+</table>
+I'm creating 4 lines per "leaf" node. So in this example which has 220 nodes, that amounts to 880 lines. Why 4? Because to draw a rectangle in Tableau you really need to define 4 corners. This is why there is a column "Corner" which is worth 0,1,2 and 3. This, we will use to tell Tableau to read our corners in bottom left, bottom right, top right, top left order which produces a nice convex rectangle and not a concave hourglass shape.</p>
+
+Now off to Tableau with this data. <a href="http://www.jeromecukier.net/wp-content/uploads/2012/04/complex.png"><img class="aligncenter size-full wp-image-1212" title="complex" src="http://www.jeromecukier.net/wp-content/uploads/2012/04/complex.png" alt="" width="558" height="477" /></a></p>
+
+Now it's just a matter of doing like this screen. Unsurprisingly the columns and rows are going to be determined by x and y. You want a polygon mark, and you absolutely must use your corner measure in the path. For color, you'll have a choice, you can use the top-level category column (as I have) or the full path which will divide your treemap in finer parts. Finally, level of detail: you must use the Id and not the name in case several of your nodes have the same name. It's quite important at this point to uncheck aggregate measures in Analysis. You do NOT want aggregate measures (though it's quite pretty). To be able to use the name, you must first make a measure out of it. And finally, you'll want to update your infotip slightly.</p>
+
+All of this you can see if you download the tableau file.</p>
+
+And voilà! Treemaps for your Tableau workbooks.</p>
+
+<em>Caveat:</em> the polygon mark doesn't support labels so you can't write on top of the small rectangles what they are but that's not the point of the treemap, which is instead to give an immediate first impression of the relative size of large groups of your data, then allow you to explore them, to that end the infotip function works just fine.</p>
+<h2>Simpler but dynamic treemaps</h2>
+This is fine and dandy if your data doesn't change but it won't scale if you need to make many treemaps based on selections. What to do? You could use pie charts, but let's not.</p>
+
+To that end I've tried to emulate the <a href="http://www.congressspeaks.com/">Congress speaks</a> visualization by <a href="http://periscopic.com/">Periscopic</a>. I really like it. When you've selected representatives at the end of the process you are taken to a screen which shows the following mini-treemap:</p>
+
+<a href="http://www.jeromecukier.net/wp-content/uploads/2012/04/votingrecord.png"><img class="aligncenter size-full wp-image-1213" title="votingrecord" src="http://www.jeromecukier.net/wp-content/uploads/2012/04/votingrecord.png" alt="" width="246" height="166" /></a></p>
+
+There are just 5 rectangles. But they will change for any representative that we choose. Can this be done with Tableau? Obviously.</p>
+
+Now the Tableau part of this is slightly trickier than above. The idea is that we are going to use formulas to generate the coordinates of all 20 corners of the rectangles, in other words we are going to let Tableau calculate the layout. We can do it because the way that rectangles are going to be arranged is quite predictible. There is one on the left, then 4 stacked on the right one on top of the other. Again, we could compute all of these coordinates outside of Tableau but that would be a hassle and so for a large number of cases it becomes easier and more reliable to do this inside of Tableau.</p>
+<h3>Data</h3>
+For this I have used completely random data. I have <a href="http://www.kleimo.com/random/name.cfm">generated 20 names</a>, and for each I have generated 5 values in a likely range, number of possible votes, number of votes the representative actually voted, number of times they voted yes, number of times they voted yes with their party, and the same for no. (or nay, technically).</p>
+
+At the end of the day I need 20 records per representative (5 rectangles of 4 corners each), so I can either replicate the line 20 times, or use linked tables. The idea is to get something like this for all of the representatives that can somehow get into Tableau.</p>
+<table width="640" border="0" cellspacing="0" cellpadding="0"><colgroup> <col span="10" width="64" /> </colgroup>
+<tbody>
+<tr>
+<td width="64" height="17">Id</td>
+<td width="64">representative</td>
+<td width="64">corner</td>
+<td width="64">rectangle</td>
+<td width="64">possible votes</td>
+<td width="64">total votes</td>
+<td width="64">voted yes</td>
+<td width="64">yes with party</td>
+<td width="64">voted no</td>
+<td width="64">no with party</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">0</td>
+<td>no against party</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">1</td>
+<td>no against party</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">2</td>
+<td>no against party</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">3</td>
+<td>no against party</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">0</td>
+<td>no vote</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">1</td>
+<td>no vote</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">2</td>
+<td>no vote</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">3</td>
+<td>no vote</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">0</td>
+<td>no with party</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">1</td>
+<td>no with party</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">2</td>
+<td>no with party</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">3</td>
+<td>no with party</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">0</td>
+<td>yes against party</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">1</td>
+<td>yes against party</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">2</td>
+<td>yes against party</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">3</td>
+<td>yes against party</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">0</td>
+<td>yes with party</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">1</td>
+<td>yes with party</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">2</td>
+<td>yes with party</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">3</td>
+<td>yes with party</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+</tbody>
+</table>
+<h3>In Tableau</h3>
+In Tableau we are going to use the same idea as above: polygon mark, disable aggregate measures, and use x and y for columns and rows.</p>
+
+Only, x and y are going to be much more complex. Sorry about that. Well, not that complex but definitely longer.</p>
+
+Here's x:</p>
+
+<pre class="brush: plain; title: ; notranslate" title="">
+
+case [rectangle]
+when &quot;no vote&quot; then
+     case [corner]
+       when 0 then 0
+       when 1 then (([possible votes]-[total votes])/[possible votes])
+       when 2 then (([possible votes]-[total votes])/[possible votes])
+       when 3 then 0
+     end
+else
+     case [corner]
+       when 0 then (([possible votes]-[total votes])/[possible votes])
+       when 1 then 1
+       when 2 then 1
+       when 3 then (([possible votes]-[total votes])/[possible votes])
+   end
+end
+
+</pre>
+
+Depending on the rectangle we are trying to draw we can find ourselves in one of two cases (hence the use of case).</p>
+
+If we draw "no vote" then we are on the left of our vis. The left corners are on the leftmost side of the vis (hence value: 0) and the right corners correspond to the proportion of possible votes which where not cast by this representative, which we can compute as ([possible votes]-[total votes])/[possible votes].</p>
+
+In the other case, we are drawing one of the 4 stacked rectangles, so the right corners are on the rightmost side of the vis (hence value: 1) and the left corners correspond to the value we just computed.</p>
+
+And now, y:</p>
+
+<pre class="brush: plain; title: ; notranslate" title="">
+case [rectangle]
+when &quot;no vote&quot; then
+case [corner]
+when 0 then 0
+when 1 then 0
+when 2 then 1
+when 3 then 1
+end
+when &quot;yes against party&quot; then
+case [corner]
+when 0 then 0
+when 1 then 0
+when 2 then (([voted yes]-[yes with party])/[total votes])
+when 3 then (([voted yes]-[yes with party])/[total votes])
+end
+when &quot;yes with party&quot; then
+case [corner]
+when 0 then (([voted yes]-[yes with party])/[total votes])
+when 1 then (([voted yes]-[yes with party])/[total votes])
+when 2 then ((2*[voted yes]-[yes with party])/[total votes])
+when 3 then ((2*[voted yes]-[yes with party])/[total votes])
+end
+when &quot;no with party&quot; then
+case [corner]
+when 0 then ((2*[voted yes]-[yes with party])/[total votes])
+when 1 then ((2*[voted yes]-[yes with party])/[total votes])
+when 2 then ((2*[voted yes]+[no with party]-[yes with party])/[total votes])
+when 3 then ((2*[voted yes]+[no with party]-[yes with party])/[total votes])
+end
+when &quot;no against party&quot; then
+case [corner]
+when 0 then ((2*[voted yes]+[no with party]-[yes with party])/[total votes])
+when 1 then ((2*[voted yes]+[no with party]-[yes with party])/[total votes])
+when 2 then 1
+when 3 then 1
+end
+end
+</pre>
+
+y is longer but this is the same general idea. For the "no vote" rectangle, the corners are either to the top or bottom of the vis. But for the other, we can predict where the rectangle will start and when it will end, as a proportion of the [possible votes] field. The values we want are going to be correspond to these proportions, plus that of all the rectangles below so we can achieve that stacked effect (as opposed to have all rectangles superimposed at the bottom of the vis). This is why I am entering the rectangles in stacking order. Each time, the bottom corners get the value of the top corners of the previous rectangle.</p>
+
+Here is the final result:</p>
+
+&nbsp;
+<script type="text/javascript" src="http://public.tableausoftware.com/javascripts/api/viz_v1.js"></script>
+<noscript><a href="#"><img alt="mini TM " src="http:&#47;&#47;public.tableausoftware.com&#47;static&#47;images&#47;B5&#47;B5PW2XJWX&#47;1_rss.png" style="border: none" /></a></noscript>
+<object class="tableauViz" width="404" height="269" style="display:none;">
+<param name="host_url" value="http%3A%2F%2Fpublic.tableausoftware.com%2F" />
+<param name="path" value="shared&#47;B5PW2XJWX" />
+<param name="toolbar" value="yes" />
+<param name="static_image" value="http:&#47;&#47;public.tableausoftware.com&#47;static&#47;images&#47;B5&#47;B5PW2XJWX&#47;1.png" />
+<param name="animate_transition" value="yes" />
+<param name="display_static_image" value="yes" />
+<param name="display_spinner" value="yes" />
+<param name="display_overlay" value="yes" />
+<param name="display_count" value="yes" />
+</object>
+<div style="width:404px;height:22px;padding:0px 10px 0px 0px;color:black;font:normal 8pt verdana,helvetica,arial,sans-serif;"><div style="float:right; padding-right:8px;"><a href="http://www.tableausoftware.com/public?ref=http://public.tableausoftware.com/shared/B5PW2XJWX" target="_blank">Powered by Tableau</a></div></div>	    		<div class="clear">&nbsp;</div>
+	</section>
+</article><!-- #post-## -->
+			
+				
+<article id="post-1165" class="post-1165 post type-post status-publish format-standard hentry category-d3 category-tips tag-ajax tag-d3 tag-database tag-mysql tag-php tag-tutorial tag-xhr">
+		    <header class="post-header">
+        			<span class="post-meta">
+				<span class="posted-on"><a href="/2012/01/02/using-d3-with-a-mysql-database/" rel="bookmark"><time class="entry-date published" datetime="2012-01-02T20:15:59+00:00">January 2, 2012</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/d3/" rel="category tag">d3</a>, <a href="/category/tips/" rel="category tag">tips</a>			</span>
+		        <h1 class="post-title"><a href="/2012/01/02/using-d3-with-a-mysql-database/" rel="bookmark">Using d3 with a mySql database</a></h1>
+         
+    </header>
+	<section class="post-content">
+
+		<p>Creating visualizations from static files is fine and dandy but sometimes you need to be able to access dynamic data. And some other times, you may want to somehow record interactions from your users. One way to do that is by interacting with a mySql database.</p>
+<p>Without further ado here is the demo:</p>
+<p><iframe src="http://www.jeromecukier.net/stuff/sql_map/sqlmap.html" scrolling="no" width="542px" height="680px"></iframe></p>
+<h3>How does it work?</h3>
+<p>There are several parts to that.</p>
+<p>First, one <a href="http://www.jeromecukier.net/stuff/sql_map/sqlmap.html">html file</a> which holds everything together. By the way, for the styling I used Twitter&#8217;s <a href="http://twitter.github.com/bootstrap/">bootstrap</a> which makes it easy for all elements to find their place, and look at those purty buttons.</p>
+<p>Second, one <a href="http://www.jeromecukier.net/stuff/sql_map/sqlmap.js">javascript file</a> which contains the visualization proper.  If you have some familiarity with <a href="http://www.d3-js.org/">d3</a>, there is really nothing scary in this script. I&#8217;ll go back to the parts where the script interacts with databases in detail.</p>
+<p>Here&#8217;s what the rest does at a high level.</p>
+<ol>
+<li>We give some behaviors to the buttons</li>
+<li>Then we create a grid of small squares. All of these squares are positionned and given a class name, so that the square with class &#8220;r32&#8221; and &#8220;c17&#8221; is the 18th square from the left and 33th from the top (the class names start at 0).</li>
+<li>We catch the clicks on each square with a &#8220;clickme&#8221; function. In d3 logic, what is passed to that function is the underlying data of the element, in this case a 2-dimensional array with the x and y coordinates of the square which is being clicked on. In turn, the clickme function is going to update the data of the square, and those of the 4 surrounding squares (the one to the top, the bottom, the left and the right) by either increasing or decreasing the elevation of the terrain they represent</li>
+</ol>
+<p>When it gets interesting is how the data is initialized and how it is updated.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">d3.text(&quot;mapread.php&quot;, function(txt) {
+	d3.selectAll(&quot;#loading&quot;).remove();
+	txt.split(&quot;\n&quot;).forEach(function(line,i) {
+		line.split(&quot;,&quot;).forEach(function(d,j) {
+			data[i][j]=parseFloat(d);
+			d3.selectAll(&quot;.r&quot;+i+&quot;.c&quot;+j).style(&quot;fill&quot;,function() {return cScale(data[i][j]);});
+		})
+	});
+})</pre>
+<p>What&#8217;s really interesting here is the first line. We are asking d3 to go fetch a text file sitting at mapread.php, then do something with this file. The second part of the line, function(txt), calls a function with the contents of this text as argument.</p>
+<p>The second line just removes the loading message box. Then, d3 splits the text in lines, and each line being a string of comma-separated values, it splits that too and feeds a variable, data, with the result of all of this splitting. Then, it formats the squares by coloring them according to the retrieved values.</p>
+<p>At this stage you may think: but shouldn&#8217;t you load the data <em>before </em>drawing the scene? Well, what happens here is that loading the data takes much more time than drawing the scene, so it makes more sense to draw it first as an empty shell, load the data and then update the scene.</p>
+<p>And as you may have guessed, this mapread.php is no ordinary text file, but a dynamically-generated file from a mySql database. I won&#8217;t cover setting up a mySql database. Tutorials on the subject abound, there are ISPs that offer free mySql hosting, and if you can also install a local server on your computer, for instance <a href="http://www.easyphp.org/">EasyPHP</a> for windows users. And, if your ISP limits the number of mySql databases you can have, you don&#8217;t need to create a new one, just creating a new table within one will be fine. All you have to do really is find your mySql credentials.</p>
+<p>Next, you want to create a PHP file that goes like this:</p>
+<pre class="brush: php; title: ; notranslate" title="">&lt;?php
+$username=&quot;username&quot;; //replace with your mySql username
+$password=&quot;password&quot;;  //replace with your mySql password
+$dsn=&quot;database&quot;;  //replace with your mySql database name
+$host=&quot;host&quot;;  //replace with the name of the machine your mySql runs on
+$link=mysql_connect($host,$username,$password);
+?&gt;</pre>
+<p>You can call this: mysqlConfig.php or whatever, this  is a convenience file so you don&#8217;t have to type in your credentials each time you need to connect to your mySql database.</p>
+<p>Next, here is the script that reads the database and outputs a text file:</p>
+<pre class="brush: php; title: ; notranslate" title="">
+
+&lt;?php
+// load in mysql server configuration (connection string, user/pw, etc)
+include 'mysqlConfig.php';
+// connect to the database
+@mysql_select_db($dsn) or die( &quot;Unable to select database&quot;);
+
+// reads the map db
+
+$query=&quot;SELECT `height` FROM `v_map` ORDER BY `row`, `col`&quot;;
+mysql_query($query);
+
+$result = mysql_query($query,$link) or die('Errant query: '.$query);
+
+// outputs the db as lines of text.
+header('Content-type: text/plain; charset=us-ascii');
+$i=0;
+$line=&quot;&quot;;
+
+if(mysql_num_rows($result)) {
+ while($value = mysql_fetch_assoc($result)) {
+
+$line=$line.$value[&quot;height&quot;];
+ $i=$i+1;
+ if ($i==52) {
+ $i=0;
+ echo $line.&quot;\n&quot;;
+ $line=&quot;&quot;;}
+ else {$line=$line.&quot;,&quot;;}
+ }
+}
+mysql_close();
+?&gt;
+</pre>
+<p>And by the way, I am by no means a php expert. I hadn&#8217;t written a line of php in almost 10 years, so there may well be more effective ways to do that but the above works. The more interesting part is that we write an sql query which we store in $query and then we execute this query. Then, we loop over the results and echo the output.</p>
+<p>Back to our javascript file, we also interact with another php file when we update the data.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+function update(r,c,v) {
+	if(r&gt;=0 &amp;&amp; r&lt;y &amp;&amp; c&gt;=0 &amp;&amp; c&lt;x) {
+		data[r]=d3.max([d3.min([100,data[r]+v*build]),0]);
+		d3.selectAll(&quot;.r&quot;+r+&quot;.c&quot;+c).style(&quot;fill&quot;,function() {return cScale(data[r]);});
+		d3.text(&quot;mapupdate.php?height=&quot;+data[r]+&quot;&amp;col=&quot;+c+&quot;&amp;row=&quot;+r,function() {console.log(&quot;cell on row &quot;+r+&quot; and col&quot;+c+&quot; updated to &quot;+data[r]);});
+	}
+}</pre>
+<p>Here the last line is the interesting one. What it does is that, again, it attempts to fetch a text file from a url. In fact, there is no text there but just accessing this url will trigger an interaction with the database. (I guess it would be good practice to actually get some text in return, but hey).</p>
+<p>The program tries to read an url of the form mapupdate.php?height=20&amp;col=10&amp;row=32. By calling this url, we are actually passing these parameters to a php file, which will read them and use them to construct a query to the mySql database.</p>
+<p>Here goes:</p>
+<pre class="brush: php; title: ; notranslate" title="">&lt;?php
+
+// load in mysql server configuration (connection string, user/pw, etc)
+include 'mysqlConfig.php';
+// connect to the database
+@mysql_select_db($dsn) or die( &quot;Unable to select database&quot;);
+
+// updates the map db
+
+$query=&quot;UPDATE `v_map` SET `height`=&quot;.$_GET[&quot;height&quot;].&quot; WHERE `col`= &quot;.$_GET[&quot;col&quot;].&quot; and `row`= &quot;.$_GET[&quot;row&quot;];
+mysql_query($query);
+mysql_close();
+?&gt;</pre>
+<p>Here, the line that starts with $query is doing just that. The dot &#8220;.&#8221; is PHP concatenation operator, and the $_GET variable returns an associative array with the parameters passed to the script.</p>
+<p>For the sake of completeness, I had two other php scripts, one to initiate the table to begin with, and one to reset it if something went wrong. Those are just plain SQL queries so no need to reproduce them here.</p>
+<p>And voilà! now all of you can interact with this terrain builder, create islands, forests, mountains etc. The graphics are kind of crude, because when I was looking for an example I decided to recreate one of my earliest attempts in creative coding. In 1990 upon the release of <a href="http://en.wikipedia.org/wiki/Powermonger">Powermonger</a> I was so fascinated by the algorithmically-generated maps the game used as copy protection that I tried to code my own terrain generator, that was a time where 320x240x16 resolution was considered generous. Only here, it&#8217;s your clicks that replace the algorithm!</p>
+<p>I hope you enjoy the tutorial and working with persistant data with d3!</p>
+	    		<div class="clear">&nbsp;</div>
+	</section>
+</article><!-- #post-## -->
+			
+				
+<article id="post-1026" class="post-1026 post type-post status-publish format-standard hentry category-d3 category-protovis category-tips tag-color tag-color-palettes tag-d3 tag-hsl tag-linear tag-logarithmic tag-ordinal tag-power tag-protovis tag-quantitative tag-rgb tag-scales tag-tutorial">
+		    <header class="post-header">
+        			<span class="post-meta">
+				<span class="posted-on"><a href="/2011/08/11/d3-scales-and-color/" rel="bookmark"><time class="entry-date published" datetime="2011-08-11T12:03:21+00:00">August 11, 2011</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/d3/" rel="category tag">d3</a>, <a href="/category/protovis/" rel="category tag">protovis</a>, <a href="/category/tips/" rel="category tag">tips</a>			</span>
+		        <h1 class="post-title"><a href="/2011/08/11/d3-scales-and-color/" rel="bookmark">d3: scales, and color.</a></h1>
+         
+    </header>
+	<section class="post-content">
+
+		<p>In <a href="http://mbostock.github.com/protovis/docs/scale.html">protovis</a>, scales were super-useful in just about everything. That much hasn&#8217;t changed in d3, even though <a href="https://github.com/mbostock/d3/wiki/Scales">d3.scale</a> is a bit different from pv.Scale. (do note that <strong>d3.scale</strong> is in lowercase for starters).</p>
+<h2>Scales: the main idea</h2>
+<p>Simply put: scales transform a number in a certain interval (called the <em>domain</em>) into a number in another interval (called the <em>range</em>).<br />
+<img src="http://www.jeromecukier.net/wp-content/uploads/2011/08/d3scale1.png" alt="an example of how scales work" /><br />
+For instance, let&#8217;s suppose you <em>know</em> your data is always over 20 and always below 80. You would like to plot it, say, in a bar chart, which can be only 120 pixels tall.<br />
+You could, obviously, do the math:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">.attr(&quot;height&quot;, function(d) {return (d-20)*2;})</pre>
+<p>But what if you suddenly have more or less space? or your data changes? you&#8217;d have to go back to the entrails of your code and make the change. This is very error prone. So instead, you can use a scale: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">var y=d3.scale.linear().domain(20,80).range(0,120);
+...
+.attr(&quot;height&quot;, y)</pre>
+<p>this is much simpler, elegant, and easy to maintain. Oh, and the latter notation is equivalent to
+<pre class="brush: jscript; title: ; notranslate" title="">.attr(&quot;height&quot;, function(d) {return y(d);})</pre>
+<p>&#8230; only more legible and shorter.<br />
+And, there are tons of possibility with scales. </p>
+<h2>Fun with scales</h2>
+<p>In d3, quantitative scales can be of several types: </p>
+<ul>
+<li>linear scales (including <em>quantize</em> and <em>quantile</em> scales,</li>
+<li>logarithmic scales,</li>
+<li>power scales (including <em>square root</em> scales)</li>
+</ul>
+<p>While they behave differently, they have a lot in common. </p>
+<h3>Domain and range</h3>
+<p>For all scales, with the exception of quantize and quantile scales which are a bit different, domain and range work the same.<br />
+First, note that <strong>unlike in protovis</strong>, domain and range take an array as argument. Compare:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">var y=pv.Scale.linear().range(20,60).domain(0,120);
+var y=d3.scale.linear().range([20,60]).domain([0,120]);</pre>
+<p>This is because <strong>contrary to protovis</strong>, where domain could be a whole dataset, in d3, domain contains the bounds of the interval that is going to be transformed.<br />
+Typically, this is two numbers. If this is more, we are talking about a polypoint scale: there are as many segments in the intervals as there are numbers in the domain (minus one). The range must have as many numbers, and so as many segments. When using the scale, if a number is in the n-th segment of the domain, it is transformed into a number in the n-th segment of the range.<br />
+<img src="http://www.jeromecukier.net/wp-content/uploads/2011/08/d3scaleMultipoint.png" alt="illustration of a multipoint scale" /><br />
+With this example, 30 finds itself in the first segment of the domain. So it&#8217;s transformed to a value in the first segment of the range. 60, however, is in the 2nd segment, so it&#8217;s transformed into a value in the 2nd segment of the range.<br />
+Also, bounds of domain and range need not be numbers, as long as they can be converted to numbers. One useful examples are colors. Color names can be used as range, for instance, to create <em>color ramps</em>:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">var ramp=d3.scale.linear().domain([0,100]).range([&quot;red&quot;,&quot;blue&quot;]);</pre>
+<p>This will transform any value betwen 0 and 100 into the corresponding color between red and blue.</p>
+<h3>Clamping</h3>
+<p>What happends if the scale is asked to process a number outside of the domain? That&#8217;s what clamping controls. If it is set, then the bounds of the range are the minimum and maximum value that can be returned by the scale. Else, the same transformation applies to all numbers, whether they fall within the domain or not.<br />
+<img src="http://www.jeromecukier.net/wp-content/uploads/2011/08/d3clamping.png" alt="Clamping example" /><br />
+Here, with clamping, the result of the linear transformation is 120, but without it, it&#8217;s 160. </p>
+<pre class="brush: jscript; title: ; notranslate" title="">var clamp=d3.scale.linear().domain([20,80]).range([0,120]);
+clamp(100); // 160
+clamp.clamp(true);
+clamp(100); // 120</pre>
+<h3>Scales and nice numbers</h3>
+<p>More often than not, the bounds of the domain and/or those of the ranges will be calculated. So, chances are they won&#8217;t be round numbers, or numbers a human would like. Scales, however, come with a bunch of method to address that. d3 keeps in mind that scales are often used to position marks along an axis.</p>
+<h4>.nice()</h4>
+<p>When applied to a scale, the nice method expends the domain to &#8220;nicer&#8221; numbers. You wouldn&#8217;t want your axis to start at -2.347 and end at 7.431, right?<br />
+So, there. </p>
+<pre class="brush: jscript; title: ; notranslate" title="">var data=[-2.347, 4, 5.23,-1.234,6.234,7.431]; // or whatever.
+var y=d3.scale.linear().range([0,120]);
+y.domain([d3.min(data), d3.max(data)]); // domain takes bounds as arguments, not all numbers
+y.domain() // [-2.347, 7.431];
+y.nice() // [-3, 8]</pre>
+<h4>.ticks(n)</h4>
+<p>Given a domain, and a number n (which, <strong>contrary to protovis, is mandatory in d3</strong>), the ticks method will split your domain in (more or less) n convenient, human-readable values, and return an array of these values. This is especially useful to label axes. Passing these values to the scale allows them to position ticks nicely on an axis. </p>
+<pre class="brush: jscript; title: ; notranslate" title="">var y=d3.scale.linear([20,80]).range([0,120]);
+...
+var ticks=axis.selectAll(&quot;line&quot;)
+  .data(y.ticks(4)) // 20, 40, 60 and 80
+  .enter().append(&quot;svg:line&quot;);
+ticks
+  .attr(&quot;x1&quot;,0).attr(&quot;x2&quot;,5)
+  .attr(&quot;y1&quot;,y).attr(&quot;y2&quot;,y) // short and simple. 
+  .attr(&quot;stroke&quot;,&quot;black&quot;);</pre>
+<h4>.rangeRound()</h4>
+<p>If used instead of .range(), this will guarantee that the output of the scales are integers, which is better to position marks on the screen with pixel precision than numbers with decimals. </p>
+<h4>.invert()</h4>
+<p>The invert function turns the scale upside down: for one given number in the range, it returns which number of the domain would have been transformed into that number.<br />
+For instance: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">var y=d3.scale.linear([20,80]).range([0,120]);
+y(50); // 60
+y.invert(60); // 50</pre>
+<p>That&#8217;s quite useful, for instance, when a user mouses over a chart, and you would like to know to what value the mouse coordinates correspond. </p>
+<h3>Power scales and log scales</h3>
+<p>The <em>linear</em>scale is a function of the form y=ax+b which works for both ends of the domain and range. In the example we&#8217;ve used most often until now, this function is really f(x): y=2x-40.<br />
+Power and logarithm scales work the same, only we are looking for a function of the form y=ax<sup>k</sup>+b, or y=a.log(x)+b.<br />
+For the power scales, you can specify an exponent (k) with the .exponent() method. For instance, if we specify an exponent of 2, here is what the scale would look like:<br />
+<img src="http://www.jeromecukier.net/wp-content/uploads/2011/08/d3scalePower.png" alt="an example of a power scale" /><br />
+The equation is now f(x): y=x²/50-8. So 20 still becomes 0 and 80 still becomes 120, but other than that the values at the beginning of the domain would be lower than with the linear scale, and those at the end of the scale will be higher.<br />
+For convenience, d3 includes a d3.scale.sqrt() (the square root scale) so you never have to type d3.scale.pow.exponent(0.5) in full.<br />
+Also note that if you are using a log scale, you <strong>cannot</strong> have 0 in the domain. </p>
+<h3>Quantize and quantile</h3>
+<p>quantize and quantile are specific linear scales.<br />
+quantize works with a discrete, rather than continuous, range: in other terms, the output of quantize can only take a certain number of values.<br />
+For instance: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">var q=d3.scale.quantize().domain([0,10]).range([0,2,8]); 
+q(0); // 0
+q(3); // 0
+q(3.33); // 0
+q(3.34); // 2
+q(5); // 2
+q(6.66); // 2
+q(6.67); // 8
+q(8); // 8
+q(1000); // 8</pre>
+<p>quantile on the other hand matches values in the domain (which, this time, is the full dataset) with their respective quantile. The number of quantiles is specified by the range.<br />
+For instance: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+var q=d3.scale.quantile().domain([0,1,5,6,2,4,6,2,4,6,7,8]).range([0,100]);
+q.quantiles(); // [4.5], only one quantile - the median
+q(0); // 0
+q(4); // 0
+q(4.499); // 0
+q(4.5); // 100 - over the median
+q(5); // 100
+q(10000); // 100
+q.range([0,25,50,75,100]);
+q.quantiles(); // [2, 4, 5.6, 6];
+q(0); // 0 
+q(2); // 25 - greater than the first quantile limit
+q(3); // 25
+q(4); // 50
+q(6); // 100
+q(10000); // 100</pre>
+<h3>Ordinal scales</h3>
+<p>All the scales we&#8217;ve seen so far have been quantitative, but how about ordinal scales?<br />
+The big difference is that ordinal scales have <strong>a discrete domain</strong>, in other words, they turn a limited number of values into something else, without caring for what&#8217;s between those values.<br />
+Ordinal scales are very useful for positioning marks along an x axis. Let&#8217;s suppose you have 10 bars to position for your bar chart, each corresponding to a category, a month or whatever.<br />
+For instance: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+var x=d3.scale.ordinal()
+  .domain([&quot;Sunday&quot;,&quot;Monday&quot;,&quot;Tuesday&quot;,&quot;Wednesday&quot;,&quot;Thursday&quot;,&quot;Friday&quot;,&quot;Saturday&quot;]) // 7 items
+  .rangeBands([0,120]);
+x(&quot;Tuesday&quot;); // 34.285714285714285
+</pre>
+<p>There are 3 possibilites for range. Two are similar: the .rangePoints() and .rangeBands() methods, which both work with an array of two numbers &#8211; i.e. .rangeBands([0,120]). The last one is to specify all values in the range with .range(). </p>
+<h4>rangePoints() and rangeBands()</h4>
+<p>With .rangePoints(<em>interval</em>), d3 fits n points within the interval, n being the number of categories in the domain. In that case, the value of the first point is the beginning of the interval, that of the last point is the end of the interval.<br />
+With .rangeBands(<em>interval</em>), d3 fit n <em>bands</em> within the interval. Here, the value of the last item in the domain is less than the upper bound of the interval.<br />
+Those methods <strong>replace the protovis methods</strong> .split() and .splitBanded().<br />
+<img src="http://www.jeromecukier.net/wp-content/uploads/2011/08/d3ordinalRange.png" alt="difference between rangeBands and rangePoints" /><br />
+This chart illustrates the difference between using rangeBands and rangePoints. </p>
+<pre class="brush: jscript; title: ; notranslate" title="">var x=d3.scale.ordinal()
+  .domain([&quot;Sunday&quot;,&quot;Monday&quot;,&quot;Tuesday&quot;,&quot;Wednesday&quot;,&quot;Thursday&quot;,&quot;Friday&quot;,&quot;Saturday&quot;]);
+x.rangePoints([0,120]);
+x(&quot;Saturday&quot;); // 120
+x.rangeBands([0,120]);
+x(&quot;Saturday&quot;); // 102.85714285714286
+x(&quot;Saturday&quot;)+x.rangeBand(); // 120</pre>
+<h4>the range method</h4>
+<p>Finally, we can also use the .range method with several values.<br />
+We can specify the domain, or not. Then, if we use such a scale on a value which is not part of the domain (or if the domain is left empty), this value is added to the domain. If there are <em>n</em> values in the range, and more in the domain, then the n+1<sup>th</sup> value of the doamin is matched with the 1st value in the range, etc.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">var x=d3.scale.ordinal().range([&quot;hello&quot;, &quot;world&quot;]); 
+x.domain(); // [] - empty still.
+x(0); // &quot;hello&quot;
+x(1); // &quot;world&quot;
+x(2); // &quot;hello&quot;
+x.domain(); // [0,1,2]
+</pre>
+<h4>Color palettes</h4>
+<p><strong>Unlike in protovis</strong>, which had them under pv.Colors &#8211; i.e. pv.Colors.category10(), in d3, built-in color palettes can be accessed through scales. Well, even in protovis they had been ordinal scales all along, only not called this way.<br />
+There are <a href="https://github.com/mbostock/d3/wiki/Ordinal-Scales#category10">4 built-in color palette</a> in protovis: d3.scale.category10(), d3.scale.category20(), d3.scale.category20b(), and d3.scale.category20c().</p>
+<p>A palette like d3.scale.category10() works exactly like an ordinal scale. </p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+var p=d3.scale.category10();
+var r=p.range(); // [&quot;#1f77b4&quot;, &quot;#ff7f0e&quot;, &quot;#2ca02c&quot;, &quot;#d62728&quot;, &quot;#9467bd&quot;, 
+                      // &quot;#8c564b&quot;, &quot;#e377c2&quot;, &quot;#7f7f7f&quot;, &quot;#bcbd22&quot;, &quot;#17becf&quot;]
+var s=d3.scale.ordinal().range(r); 
+p.domain(); // [] - empty
+s.domain(); // [] - empty, see above
+p(0); // &quot;#1f77b4&quot;
+p(1); // &quot;#ff7f0e&quot;
+p(2); // &quot;#2ca02c&quot;
+p.domain(); // [0,1,2];
+s(0); // &quot;#1f77b4&quot;
+s(1); // &quot;#ff7f0e&quot;
+s(2); // &quot;#2ca02c&quot;
+s.domain(); // [0,1,2];</pre>
+<p>It&#8217;s noteworthy that in d3, color palette return strings, not pv.Color objects like in protovis.<br />
+Also: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+d3.scale.category10(1); // this doesn't work
+d3.scale.category10()(1); // this is the way.</pre>
+<h2>Colors</h2>
+<p>Compared to protovis, d3.color is simpler. The main reason is that protovis handled color and transparency together with the pv.Color object, whereas in SVG, those two are distinct attributes: you handle the background color of a filled object with <em>fill</em>, its transparency with <em>opacity</em>, the color of the outline with <em>stroke</em> and the transparency of that color with <em>stroke-opacity</em>. </p>
+<p>d3 has two color objects: d3_Rgb and d3_Hsl, which describe colors in the two of the most popular color spaces: red/green/blue, and hue/saturation/light. </p>
+<p>With d3.color, you can make operations on such objects, like converting colors between various formats, or make colors lighter or darker.</p>
+<p>d3.rgb(<em>color</em>), and d3.hsl(<em>color</em>) create such objects.<br />
+In this context, <em>color</em> can be (straight from <a href="https://github.com/mbostock/d3/wiki/Colors">the manual</a>):</p>
+<ul>
+<li>rgb decimal &#8211; &#8220;rgb(255,255,255)&#8221;</li>
+<li>hsl decimal &#8211; &#8220;hsl(120,50%,20%)&#8221;</li>
+<li>rgb hexadecimal &#8211; &#8220;#ffeeaa&#8221;</li>
+<li>rgb shorthand hexadecimal &#8211; &#8220;#fea&#8221;</li>
+<li>named &#8211; &#8220;red&#8221;, &#8220;white&#8221;, &#8220;blue&#8221;</li>
+</ul>
+<p>Once you have that object, you can make it brighter or darker with the appropriate method.<br />
+You can use .toString() to get it back in rgb hexadecimal format (or hsl decimal), and .rgb() or .hsl() to convert it to the object in the other color space. </p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+var c=d3.rgb(&quot;violet&quot;) // d3_Rgb object
+c.toString(); // &quot;#ee82ee&quot;
+c.darker().toString(); // &quot;#a65ba6&quot;
+c.darker(2).toString(); // &quot;#743f74&quot; - even darker
+c.brighter().toString();// &quot;ffb9ff&quot;
+c.brighter(0.1).toString(); // &quot;#f686f6&quot; - only slightly brighter
+c.hsl(); // d3_Hsl object
+c.hsl().toString() // &quot;hsl(300, 76, 72)&quot;</pre>
+	    		<div class="clear">&nbsp;</div>
+	</section>
+</article><!-- #post-## -->
+			
+				
+<article id="post-1012" class="post-1012 post type-post status-publish format-standard hentry category-d3 category-protovis category-tips tag-charts tag-d3 tag-javascript tag-protovis tag-selection tag-svg tag-tutorial">
+		    <header class="post-header">
+        			<span class="post-meta">
+				<span class="posted-on"><a href="/2011/08/09/d3-adding-stuff-and-oh-understanding-selections/" rel="bookmark"><time class="entry-date published" datetime="2011-08-09T14:49:23+00:00">August 9, 2011</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/d3/" rel="category tag">d3</a>, <a href="/category/protovis/" rel="category tag">protovis</a>, <a href="/category/tips/" rel="category tag">tips</a>			</span>
+		        <h1 class="post-title"><a href="/2011/08/09/d3-adding-stuff-and-oh-understanding-selections/" rel="bookmark">d3: adding stuff. And, oh, understanding selections</a></h1>
+         
+    </header>
+	<section class="post-content">
+
+		<h2>From data to graphics</h2>
+<p><img src="http://jeromecukier.net/wp-content/uploads/2011/08/d3principle.png" alt="the d3 principle (and also the protovis principle)" /><br />
+d3 and protovis are built around the same principle. Take data, put it into an array, and for each element of data a graphical object can be created, whose properties are derived from the data that was provided.</p>
+<p>Only d3 and protovis have a slightly different way of adding those graphical elements and getting data. </p>
+<p>In protovis, you start from a panel, a protovis-specific object, to which you add various marks. Each time you add a mark, you can either:</p>
+<ul>
+<li><strong>not</strong> specify data and add just one, </li>
+<li> or <strong>specify</strong> data and create as many as there are items in the array you pass as data.</li>
+</ul>
+<p>.</p>
+<h2>How de did it in protovis</h2>
+<pre class="brush: jscript; title: ; notranslate" title="">
+var vis=new pv.Panel().width(200).height(200); 
+vis.add(pv.Panel).top(10).left(10)
+  .add(pv.Bar)
+    .data([1,4,3,2,5])
+    .left(function() {return this.index*20;})
+    .width(15)
+    .bottom(0)
+    .height(function(d) {return d*10;});
+vis.render();</pre>
+<p><img src="http://jeromecukier.net/wp-content/uploads/2011/08/protoBar.png" alt="this simple bar chart in protovis" /><br />
+you first create a panel (first line), you may add an element without data (here, another panel, line 2), and add to this panel bars: there would be 5, one for each element in the array in line 4. </p>
+<h2>And in d3?</h2>
+<p>In d3, you also have a way to add either one object without passing data, or a series of objects &#8211; one per data element. </p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+var vis=d3.select(&quot;body&quot;).append(&quot;svg:svg&quot;).attr(&quot;width&quot;,200).attr(&quot;height&quot;,200);
+var rect=vis.selectAll(&quot;rect&quot;).data([1,4,3,2,5]).enter().append(&quot;svg:rect&quot;);
+rect.attr(&quot;height&quot;,function(d) {return d*20;})
+  .attr(&quot;width&quot;, 15)
+  .attr(&quot;x&quot;,function(d,i) {return i*20;})
+  .attr(&quot;y&quot;,function(d) {return 100-20*d;}
+  .attr(&quot;fill&quot;,&quot;steelblue&quot;);
+</pre>
+<p>In the first line, we are creating an svg document which will be the root of our graphical creation. It behaves just as the top-level panel in protovis. </p>
+<p>However we are not creating this out of thin air, but rather we are bolting it onto an existing part of the page, here the <body> tag. Essentially, we are looking through the page for a tag named <body> and once we find it (which should be the case often), that&#8217;s where we put the svg document. </p>
+<p>Oftentimes, instead of creating our document on <body>, we are going to add it to an existing &lt;div&gt; block, for instance: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+&lt;div id=&quot;chart&quot;&gt;&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+var vis=d3.select(&quot;#chart&quot;).append(&quot;svg:svg&quot;);
+...
+&lt;/script&gt;
+</pre>
+<p>Anyway. To <strong>add one element</strong>, regardless of data, what you do is: </p>
+<p>The logic is : d3.select(<em>where we would like to put our new object</em>).append(<em>type of new object</em>).</p>
+<p>Going back to our code: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+var vis=d3.select(&quot;body&quot;).append(&quot;svg:svg&quot;).attr(&quot;width&quot;,200).attr(&quot;height&quot;,200);
+var rect=vis.selectAll(&quot;rect&quot;).data([1,4,3,2,5]).enter().append(&quot;svg:rect&quot;);
+rect.attr(&quot;height&quot;,function(d) {return d*20;})
+  .attr(&quot;width&quot;, 15)
+  .attr(&quot;x&quot;,function(d,i) {return i*20;})
+  .attr(&quot;y&quot;,function(d) {return 100-20*d;}
+  .attr(&quot;fill&quot;,&quot;steelblue&quot;);
+</pre>
+<p>On line 2, we see a different construct:</p>
+<p><em>an existing selection, or a part of the page</em><br />
+.selectAll(<em>something</em>)<br />
+.data(<em>an array</em>)<br />
+.enter()<br />
+.append(<em>an object type</em>)</p>
+<p>This sequence of methods (selectAll, data, enter and append) are the way to add a series of elements. If all you need to know is to create a bar chart, just remember that, but if you plan on taking your d3 skills further than where you stopped with protovis, look at the end of the post for a more thorough explanation of the selection process. </p>
+<h2>Attributes and accessor functions</h2>
+<p>At this stage, we&#8217;ve added our new rectangles, and now we are going to shape and style them. </p>
+<pre class="brush: jscript; title: ; notranslate" title="">rect.attr(&quot;height&quot;,function(d) {return d*20;})
+  .attr(&quot;width&quot;, 15)
+  .attr(&quot;x&quot;,function(d,i) {return i*20;})
+  .attr(&quot;y&quot;,function(d) {return 100-20*d;}
+  .attr(&quot;fill&quot;,&quot;steelblue&quot;);
+</pre>
+<p>All the attributes of a graphical element are controlled by the method attr(). You specify the attribute you want to set, and the value you want to give.<br />
+In some cases, the value doesn&#8217;t depend on the data. All the bars will be 15 pixels wide, and they will all be of the steelblue color.<br />
+In some others, the value do depend on the data. We decide that the height of each bar is 20 times the value of the underlying data, in pixels (so 1 becomes 20, 5 becomes 100 etc.). Like in protovis, once data has been attributed to an element, function(<em>variable name</em>) enables to return a dynamic value in function on that element. By convention, we usually write function(d) {&#8230;;} (d for data) although it could be anything. Those functions are still called <strong>accessor functions</strong>.<br />
+so for instance: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">.attr(&quot;height&quot;,function(d) {return d*20;})</pre>
+<p>means that the height will be 20 times the value of the underlying data element (exactly what we said above).<br />
+In protovis, we could position the mark relatively to any corner of its parent, so we had a .top method and a .bottom method. But with SVG, objects are positioned relatively to the top-left corner. So when we specify the y position, it is also relative to the top of the document, not necessarily to the axis (and not in this case).<br />
+so &#8211;
+<pre class="brush: jscript; title: ; notranslate" title="">.attr(&quot;y&quot;, function(d) {return 100-d*20;})</pre>
+<p>if we use scales (see next post), all of this will have no impact whatsoever anyway.<br />
+Finally, there is an attribue here which doesn&#8217;t so much depend on the <em>value</em> of the data, but of its <em>rank</em> in the data items: the x position.<br />
+for this, we write: function(d,i) {return i*20;}<br />
+Here is a <strong>fundamental difference with protovis</strong>. In protovis, when we passed a second argument to such a function, it meant the data of the parent element (grand parent for the third, etc.). But here in d3, the second parameter is the position of the data element in its array. By convention, we write it i (for index).<br />
+And since you have to know: there is no easy way to retrieve the data of the parent element. </p>
+<h2>Bonus: understanding selections</h2>
+<p>To add many elements at once we&#8217;ve used the sequence: selectAll, data, enter, append.<br />
+Why use 4 methods for what appears to be one elementary task? If you don&#8217;t care about manipulating nodes individually, for instance for animations, you can just remember the sequence. But if you want to know more, here is what each method does. </p>
+<h3>selectAll</h3>
+<p><img src="http://jeromecukier.net/wp-content/uploads/2011/08/d3selectAll.png" alt="the selectAll method" /><br />
+First, we select a point on which to add your new graphical objects. When you are creating your objects and use the selectAll method, it will return an <em>empty selection</em> but based on that given point. You may also use selectAll in another context, to update your objects for instance. But here, an empty selection is expected. </p>
+<h3>data</h3>
+<p><img src="http://jeromecukier.net/wp-content/uploads/2011/08/d3data.png" alt="the data method" /><br />
+Then, you attribute data. This works quite similarly to protovis: d3 expects an array. d3 takes the concept further (with the concept of <em>data joins</em>) but you need not concern yourself with that until you look at transitions.<br />
+Anyway, at this stage you have an empty selection, based on a given point in the page, but with data.</p>
+<h3>enter</h3>
+<p><img src="http://jeromecukier.net/wp-content/uploads/2011/08/d3enter.png" alt="the enter method" /><br />
+The enter method updates the selection with nodes which have data, but no graphical representation. Using enter() is like creating stubs where the graphical elements will be grafted. </p>
+<h3>append</h3>
+<p><img src="http://jeromecukier.net/wp-content/uploads/2011/08/d3append.png" alt="the append method" /><br />
+Finally, by appending we actually create the graphical objects. Each is tied to one data element, so it can be further styled (for instance, through &#8220;attr&#8221;) to derive its characteristics from the value of that data.</p>
+	    		<div class="clear">&nbsp;</div>
+	</section>
+</article><!-- #post-## -->
+			
+				
+<article id="post-995" class="post-995 post type-post status-publish format-standard hentry category-d3 category-protovis tag-d3 tag-protovis tag-svg tag-tutorial">
+		    <header class="post-header">
+        			<span class="post-meta">
+				<span class="posted-on"><a href="/2011/08/08/from-protovis-to-d3/" rel="bookmark"><time class="entry-date published" datetime="2011-08-08T16:47:45+00:00">August 8, 2011</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/d3/" rel="category tag">d3</a>, <a href="/category/protovis/" rel="category tag">protovis</a>			</span>
+		        <h1 class="post-title"><a href="/2011/08/08/from-protovis-to-d3/" rel="bookmark">From protovis to d3</a></h1>
+         
+    </header>
+	<section class="post-content">
+
+		<p>You&#8217;ve spent some time <a href="http://www.jeromecukier.net/blog/2011/02/07/working-with-data-in-protovis/">learning protovis</a> only to find that its development is halted as authors have switched to work on <a href="http://www.d3-js.org/">d3</a>. Have your efforts all been in vain? Fear not! This series of posts will help you adapt to d3 with a protovis background. </p>
+<p>Before we go anywhere further, let me say that <strong>these posts won&#8217;t make you awesome at d3</strong> (yet). We won&#8217;t be talking about how to do all amazing things you could never do in protovis. Rather, we&#8217;ll focus on enabling you to be as comfortable with d3 than you could have been with protovis. And once that&#8217;s done, nothing will prevent you from learning the more powerful aspects of d3. </p>
+<p>Anyway, if you&#8217;re reading this, <strong>you are already awesome.</strong></p>
+<h2>Why should I make the switch to d3?</h2>
+<p>Frankly, you don&#8217;t have to. Protovis is a fine framework and works well. Now you may <em>want</em> to switch to d3 for several reasons. </p>
+<ul>
+<li><strong>d3 is fast.</strong> d3 is better at handling scenes with hundreds or thousands of elements. So if you like scatterplots or network graphs, and who doesn&#8217;t, d3 has much stronger performance.</li>
+<li><strong>d3 does animation.</strong> There were workarounds to get animation in protovis but there were that. Workarounds. Animation and transitions are built in d3 and are a snap to implement. </li>
+<li><strong>More features.</strong> Just because development has stopped on protovis doesn&#8217;t mean that it has stopped elsewhere&#8230; for instance, d3 has <em>more ready-to-use layouts</em>, like voronoi tesselation or chords, and it has more methods and functions to make your life easier, to access and manipulate data for example.</li>
+<li><strong>Styling.</strong> In d3 it is possible to apply style sheets in CSS to graphical elements. This helps keeping the code and the format separate. </li>
+</ul>
+<h2>Yes but doesn&#8217;t everything change?</h2>
+<p>Short answer: <strong>no. </strong></p>
+<p>Less short answer: some things do change substantially. Most things stay the same. And then, some things look the same but have changed.</p>
+<h3>Things that stay the same</h3>
+<ul>
+<li><strong>The general principle.</strong>Protovis is about transforming an array of data into the same number of graphical elements, with characteristics derived from that data. d3 does exactly this as well.</li>
+<li>pv.Nest, which in my personal protovis experience has been the hardest to understand. Only, it&#8217;s called d3.nest now. </li>
+<li>Methods that supplement the existing javascript array manipulation methods, like pv.min, pv.values, pv.entries etc. are also back (as d3.min, d3.values, d3.entries, but you&#8217;ve guessed it by now). Some, like pv.mean or pv.median, didn&#8217;t make it through but you could easily rewrite them, or continue using the protovis ones.</li>
+</ul>
+<h3>Things that look different, but which are largely the same</h3>
+<p>Protovis had a number of native graphical objects, or marks, that could be manipulated at will with methods. </p>
+<pre class="brush: jscript; title: ; notranslate" title="">var vis=new pv.Panel()
+  .height(400)
+  .width(400)
+  .fillStyle(&quot;aliceblue&quot;)
+  .lineWidth(1)
+  .strokeStyle(&quot;steelblue&quot;);
+vis.render();</pre>
+<p>In protovis, it is inherently different to set the height, the width or just any property of an object. This uses different methods. </p>
+<pre class="brush: jscript; title: ; notranslate" title="">var vis=d3.select(&quot;body&quot;).append(&quot;svg:svg&quot;);
+  vis.append(&quot;svg:rect&quot;)
+    .attr(&quot;height&quot;,400)
+    .attr(&quot;width&quot;,400)
+    .attr(&quot;fill&quot;,&quot;aliceblue&quot;)
+    .attr(&quot;stroke&quot;,&quot;steelblue&quot;)
+    .attr(&quot;stroke-width&quot;,1);</pre>
+<p>This produces essentially the same thing. We add a rectangle of a specified height, width, and colors. There are a few differences though. Here, controlling height, width or fill is essentially the same thing and uses the same method, .attr(). Notice also that we first created an svg document, then a shape within that document. And also, that we don&#8217;t need to use vis.render(); anymore. </p>
+<p>The d3 approach looks longer. But if we define all the style information first we could make it much shorter, shorter than in protovis in fact!<br />
+For instance:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">var vis=d3.select(&quot;body&quot;).append(&quot;svg:svg&quot;).append(&quot;svg:rect&quot;).attr(&quot;class&quot;, &quot;myRect&quot;);</pre>
+<p>Much of the apparent differences between d3 and protovis come from using explicitly svg shapes (paths, polygons, ellipses, etc.) as opposed to native objects (pv.Panel, pv.Bar, pv.Dot, etc.), although &#8211; it&#8217;s essentially the same thing. Yes, you have to <a href="http://commons.oreilly.com/wiki/index.php/SVG_Essentials">learn your SVG</a> but it&#8217;s really on a need-to-know basis. In fact, if you&#8217;ve worked with protovis, or even if you&#8217;ve worked with HTML and CSS, you probably know more SVG than you thought. </p>
+<p>SVG is more flexible than protovis objects. The flipside is that constructs which were once simple in protovis become less obvious in SVG. But for those cases, d3 has recreated some native objects, even if not as many as in protovis. </p>
+<h3>Things that look the same, but which are different</h3>
+<p>There have been some changes in methods that have kept the same name since protovis &#8211; some minor, some more substantial. In any case, the basic ways of using these methods (like scale, color, data&#8230;) doesn&#8217;t change much. It&#8217;s only their more exotic uses who do change. </p>
+	    		<div class="clear">&nbsp;</div>
+	</section>
+</article><!-- #post-## -->
+			
+				<nav class="pagination navigation paging-navigation" role="navigation">
+		<div class="nav-links">
+							<div class="page-number">Page 3 of 3</div>
+						<div class="newer-posts"><a href="/category/d3/page/2/" ><span class="meta-nav">&larr;</span> Newer Posts</a></div>
+			
+		</div><!-- .nav-links -->
+	</nav><!-- .navigation -->
+	
+		
+		</main><!-- #main -->
+	</section><!-- #primary -->
+
+	<div id="secondary" class="widget-area" role="complementary">
+		<aside id="search-2" class="widget widget_search"><form role="search" method="get" class="search-form" action="/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit" value="Search" />
+			</form></aside>		<aside id="recent-posts-2" class="widget widget_recent_entries">		<h1 class="widget-title">Recent Posts</h1>		<ul>
+					<li>
+				<a href="/2018/04/09/hello-world/">Hello world!</a>
+						</li>
+					<li>
+				<a href="/2016/08/17/the-big-leagues/">The big leagues</a>
+						</li>
+					<li>
+				<a href="/2016/08/17/creating-a-react-visualization-web-app/">Creating a React visualization web app</a>
+						</li>
+					<li>
+				<a href="/2016/08/13/beyond-rendering/">Beyond rendering</a>
+						</li>
+					<li>
+				<a href="/2016/08/11/react-components/">React components</a>
+						</li>
+				</ul>
+		</aside>		<aside id="recent-comments-2" class="widget widget_recent_comments"><h1 class="widget-title">Recent Comments</h1><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link"><a href='https://wordpress.org/' rel='external nofollow' class='url'>A WordPress Commenter</a></span> on <a href="/2018/04/09/hello-world/#comment-1">Hello world!</a></li><li class="recentcomments"><span class="comment-author-link"><a href='http://omeraz.wordpress.com/' rel='external nofollow' class='url'>עומר עזריאל</a></span> on <a href="/2016/08/17/the-big-leagues/#comment-567">The big leagues</a></li><li class="recentcomments"><span class="comment-author-link">Carlos Ayres</span> on <a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-312">Manipulating data like a boss with d3</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://migrate.powertripanalytics.com/game-of-thrones-interactions-among-the-top-30-characters/' rel='external nofollow' class='url'>Game of ThronesInteractions Among the Top 30 Characters &#8211; PowerTrip Analytics</a></span> on <a href="/2013/05/13/making-the-game-of-thrones-visualization/#comment-466">Making the game of thrones visualization</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://abgoswam.wordpress.com/2016/10/08/d3-getting-started/' rel='external nofollow' class='url'>D3 &#8211; Getting Started | abgoswam&#039;s tech blog</a></span> on <a href="/2012/09/04/getting-to-hello-world-with-d3/#comment-419">Getting to &#8220;Hello world&#8221; with d3</a></li></ul></aside><aside id="archives-2" class="widget widget_archive"><h1 class="widget-title">Archives</h1>		<ul>
+			<li><a href='/2018/04/'>April 2018</a></li>
+	<li><a href='/2016/08/'>August 2016</a></li>
+	<li><a href='/2015/05/'>May 2015</a></li>
+	<li><a href='/2015/02/'>February 2015</a></li>
+	<li><a href='/2014/10/'>October 2014</a></li>
+	<li><a href='/2013/11/'>November 2013</a></li>
+	<li><a href='/2013/05/'>May 2013</a></li>
+	<li><a href='/2013/03/'>March 2013</a></li>
+	<li><a href='/2013/01/'>January 2013</a></li>
+	<li><a href='/2012/12/'>December 2012</a></li>
+	<li><a href='/2012/11/'>November 2012</a></li>
+	<li><a href='/2012/10/'>October 2012</a></li>
+	<li><a href='/2012/09/'>September 2012</a></li>
+	<li><a href='/2012/07/'>July 2012</a></li>
+	<li><a href='/2012/06/'>June 2012</a></li>
+	<li><a href='/2012/05/'>May 2012</a></li>
+	<li><a href='/2012/04/'>April 2012</a></li>
+	<li><a href='/2012/01/'>January 2012</a></li>
+	<li><a href='/2011/11/'>November 2011</a></li>
+	<li><a href='/2011/10/'>October 2011</a></li>
+	<li><a href='/2011/09/'>September 2011</a></li>
+	<li><a href='/2011/08/'>August 2011</a></li>
+	<li><a href='/2011/07/'>July 2011</a></li>
+	<li><a href='/2011/06/'>June 2011</a></li>
+	<li><a href='/2011/05/'>May 2011</a></li>
+	<li><a href='/2011/04/'>April 2011</a></li>
+	<li><a href='/2011/03/'>March 2011</a></li>
+	<li><a href='/2011/02/'>February 2011</a></li>
+	<li><a href='/2011/01/'>January 2011</a></li>
+	<li><a href='/2010/11/'>November 2010</a></li>
+	<li><a href='/2010/04/'>April 2010</a></li>
+	<li><a href='/2010/03/'>March 2010</a></li>
+	<li><a href='/2010/02/'>February 2010</a></li>
+	<li><a href='/2010/01/'>January 2010</a></li>
+	<li><a href='/2009/12/'>December 2009</a></li>
+	<li><a href='/2009/10/'>October 2009</a></li>
+	<li><a href='/2009/09/'>September 2009</a></li>
+	<li><a href='/2009/08/'>August 2009</a></li>
+	<li><a href='/2009/07/'>July 2009</a></li>
+	<li><a href='/2009/06/'>June 2009</a></li>
+	<li><a href='/2009/05/'>May 2009</a></li>
+	<li><a href='/2008/12/'>December 2008</a></li>
+	<li><a href='/2008/11/'>November 2008</a></li>
+	<li><a href='/2008/10/'>October 2008</a></li>
+		</ul>
+		</aside><aside id="categories-2" class="widget widget_categories"><h1 class="widget-title">Categories</h1>		<ul>
+	<li class="cat-item cat-item-2"><a href="/category/book-review/" >book review</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="/category/charts/" >charts</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="/category/conferences/" >conferences</a>
+</li>
+	<li class="cat-item cat-item-5 current-cat"><a href="/category/d3/" >d3</a>
+</li>
+	<li class="cat-item cat-item-6"><a href="/category/dashboards/" >dashboards</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="/category/data-publishing/" >data publishing</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="/category/data-visualization/" >data visualization</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="/category/francais/" >français</a>
+</li>
+	<li class="cat-item cat-item-10"><a href="/category/javascript/" >javascript</a>
+</li>
+	<li class="cat-item cat-item-11"><a href="/category/presentation/" >presentation</a>
+</li>
+	<li class="cat-item cat-item-12"><a href="/category/protovis/" >protovis</a>
+</li>
+	<li class="cat-item cat-item-13"><a href="/category/react/" >react</a>
+</li>
+	<li class="cat-item cat-item-14"><a href="/category/tips/" >tips</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="/category/uncategorized/" >Uncategorized</a>
+</li>
+	<li class="cat-item cat-item-15"><a href="/category/web-sites/" >web sites</a>
+</li>
+		</ul>
+</aside><aside id="meta-2" class="widget widget_meta"><h1 class="widget-title">Meta</h1>			<ul>
+						<li><a href="/wp-login.php">Log in</a></li>
+			<li><a href="/feed/">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="/comments/feed/">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>			</ul>
+			</aside>		<div class="clear">&nbsp;</div>
+	</div><!-- #secondary -->
+	<footer id="colophon" class="site-footer" role="contentinfo">
+	    <a class="subscribe icon-feed" href="/feed/"><span class="tooltip">Subscribe!</span></a>
+		<div class="site-info inner">
+		    <section class="copyright">
+		    			    		<a href="https://github.com/lacymorrow/casper" rel="home">Casper WP</a> by Lacy Morrow		    			    </section>
+		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+</main><!-- /#content -->
+
+<script type='text/javascript' src='/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js?ver=3.0.9b'></script>
+<script type='text/javascript' src='/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushJScript.js?ver=3.0.9b'></script>
+<script type='text/javascript' src='/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPlain.js?ver=3.0.9b'></script>
+<script type='text/javascript' src='/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPhp.js?ver=3.0.9b'></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "http://localhost:8888/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "http://localhost:8888/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+<script type='text/javascript' src='/wp-content/themes/casper/js/main.js?ver=1.0.0'></script>
+<script type='text/javascript' src='/wp-includes/js/wp-embed.min.js?ver=4.6.10'></script>
+<!--stats_footer_test--></body>
+</html>

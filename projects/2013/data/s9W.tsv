@@ -1,0 +1,556 @@
+message	correspondent	direction	tweet	word1	word2	word3	time	subject	thread	length
+
+205	s9W	to		dataviz	bayrou	aider	1325604764	dataviz + modem	17	40
+
+824	s9W	from		rencontrer	grandes	dataviz	1326307097	mise en relation	84	49
+
+827	s9W	to		occasion	etalab	cordialement	1326311147	Re: mise en relation	84	29
+
+826	s9W	to		donc	voir	ensemble	1326466493	Re: mise en relation	84	15
+
+831	s9W	from		dispo	déjeuner	mise	1326466951	RE: mise en relation	84	46
+
+825	s9W	to		mais	ça	moi	1326469239	Re: mise en relation	84	12
+
+830	s9W	to		pour	moi		1326470423	Re: mise en relation	84	2
+
+1113	s9W	to		faire	com	mal	1326728256	contact Jen Stirrup	105	13
+
+1346	s9W	from		les	des	sur	1326994607	dataviz bayrou	123	11
+
+1345	s9W	to		oui			1326994995	Re: dataviz bayrou	123	1
+
+1341	s9W	to		déclarent	décrivez	pions	1326999000	Re: dataviz bayrou	123	342
+
+1343	s9W	from		déclarent	décrivez	pions	1326999882	RE: dataviz bayrou	123	366
+
+1344	s9W	to		dispo	regarde	discours	1327003575	Re: dataviz bayrou	123	27
+
+1347	s9W	from		yes			1327004488	Re: dataviz bayrou	123	1
+
+1342	s9W	to		déficits	rebondir	grade	1327004755	Re: dataviz bayrou	123	81
+
+1352	s9W	from		pour	faire	nous	1326999304	dataviz	124	10
+
+1362	s9W	to		message	mail	demain	1327416330	Fwd: la raison pour laquelle je te mets en relation avec captain dash...	148	14
+
+1364	s9W	from		laquelle	mets	guénalle	1327416413	RE: la raison pour laquelle je te mets en relation avec captain dash...	148	43
+
+1597	s9W	to		guénalle	dispo	endroit	1327416594	demain midi	149	29
+
+1594	s9W	from		parfait	habitude	guénalle	1327416684	RE: demain midi	149	51
+
+1596	s9W	to		pour	heure	laisse	1327417079	Re: demain midi	149	5
+
+1598	s9W	to		alors	fois	après	1327485758	Re: demain midi	149	14
+
+1595	s9W	from		stratégies	dormoy	montrouge	1327487753	RE: demain midi	149	82
+
+1621	s9W	to		voter	principalement	tank	1327430333	vis bayrou	152	72
+
+1622	s9W	from		fermés	révèle	sondage	1327475381	RE: vis bayrou	152	108
+
+1623	s9W	to		évident	max	presse	1327475678	RE: vis bayrou	152	47
+
+1711	s9W	from		peux	hello	merci	1327509503	cv	167	5
+
+1710	s9W	to		par	parce	peux	1327509838	Re: cv	167	15
+
+1796	s9W	from		illustrations	prie	béatrice	1327569993	FW: Besoin d'Air - plan général avec emplacement d es illustrations - version validée LP	173	59
+
+1781	s9W	to		stratégique	suédois	synthétisé	1327582882	Fwd: Données des graphiques =2B exposé des motifs	175	1179
+
+1788	s9W	from		stratégique	suédois	synthétisé	1327593097	RE: Données des graphiques =2B exposé des motifs	175	1203
+
+1786	s9W	to		croquis	déclinés	habillons	1327617979	Re: Données des graphiques =2B exposé des motifs	175	421
+
+1783	s9W	from		totales	équivalence	travailleurs	1327684772	FW: Données des graphiques =2B exposé des motifs	175	1222
+
+1778	s9W	to		est	une	oui	1327685050	Re: FW: Données des graphiques =2B exposé des motifs	175	5
+
+1822	s9W	from		bien	choses	hello	1327598622	dataviz	179	5
+
+1824	s9W	to		engagé	décide	méchant	1327599407	Re: dataviz	179	67
+
+1823	s9W	from		méchant	émissions	automatiquement	1327601223	RE: dataviz	179	94
+
+1827	s9W	to		les	sur	plus	1327601931	Re: dataviz	179	11
+
+1826	s9W	from		vite	walther	janvier	1327602060	RE: dataviz	179	40
+
+1825	s9W	to		envoyer	regarde	intégrer	1327602792	RE: dataviz	179	22
+
+1828	s9W	from		copie	intégrer	courbe	1327603960	RE: dataviz	179	41
+
+1829	s9W	to		qqch	puisse	viens	1327599495	Fwd: Tr : Observatoire de l'Investissement de Trendeo	180	19
+
+1832	s9W	from		vaut	pièce	attendre	1327601263	RE: Tr : Observatoire de l'Investissement de Trendeo	180	39
+
+1830	s9W	to		seule	solution	position	1327601818	Re: Tr : Observatoire de l'Investissement de Trendeo	180	24
+
+1880	s9W	from		pourrions	certes	meme	1327678067	graphique 11	183	47
+
+1879	s9W	to		cher	rajouter	oeuvre	1327678457	Re: graphique 11	183	54
+
+1890	s9W	from		les	france	depuis	1327686086	dete de la france	185	6
+
+1889	s9W	to		nous	peux	avant	1327686501	Re: dete de la france	185	16
+
+1888	s9W	from		depuis	vendredi	manière	1327687565	RE: dete de la france	185	31
+
+1898	s9W	from		essayé	doc	pièce	1327687766	dataviz	186	18
+
+1895	s9W	to		light	graph	animations	1327688361	Re: dataviz	186	43
+
+1894	s9W	to		traitement	vus	graphs	1327691487	Re: dataviz	186	55
+
+1892	s9W	from		graph	animations	classique	1327743763	RE: dataviz	186	70
+
+1893	s9W	to		sous	faudrait	certains	1327744723	RE: dataviz	186	26
+
+1897	s9W	to		bayrou	tourne	pourraient	1327744856	RE: dataviz	186	37
+
+1900	s9W	from		couche	urgence	faisons	1327744955	RE: dataviz	186	61
+
+1899	s9W	from		coude	avances	animer	1327745085	RE: dataviz	186	97
+
+1896	s9W	to		textes	meme	raphael	1327755277	RE: dataviz	186	61
+
+1958	s9W	from		france	hello	ans	1327769861	evolution salaire net	188	7
+
+1959	s9W	to		mais	from	some	1327775350	Re: evolution salaire net	188	9
+
+1965	s9W	from		medef	penses	doc	1327770712	medef - retraites	189	25
+
+1966	s9W	to		texte	julien	guez	1327775805	Re: medef - retraites	189	28
+
+1967	s9W	from		medef	guez	minimum	1327777464	RE: medef - retraites	189	53
+
+1960	s9W	to		chiffres	proposer	gagner	1327783939	RE: medef - retraites	189	44
+
+1964	s9W	from		jours	eux	sommes	1327784165	RE: medef - retraites	189	18
+
+1961	s9W	from		des	suis	peu	1327784203	RE: medef - retraites	189	8
+
+1963	s9W	to		oui	heure	object	1327838849	RE: medef - retraites	189	20
+
+1962	s9W	to		mobile	trucs	object	1327838934	RE: medef - retraites	189	18
+
+1987	s9W	from		texte	évident	infographies	1327861747	Re: Dropbox et travail simultané	191	19
+
+1990	s9W	to		des	pense	oui	1327862151	Re: Dropbox et travail simultané	191	8
+
+2000	s9W	from		hong	aimerai	grosses	1327854152	tip top	193	35
+
+2002	s9W	from		jérôme	sais	données	1327854487	que detiens la dette de la France	194	15
+
+2001	s9W	to		peut	dit	aussi	1327857212	Re: que detiens la dette de la France	194	14
+
+2004	s9W	from		pas	pour	faire	1327861415	Re: que detiens la dette de la France	194	8
+
+2003	s9W	to		ça	être	peut	1327861536	Re: que detiens la dette de la France	194	10
+
+2006	s9W	to		les	sur	par	1327856827	Fwd: OECD.Stat Extracts Bulk Download CSV File	195	9
+
+2010	s9W	from		que	faire	peux	1327862204	Re: Fwd: OECD.Stat Extracts Bulk Download CSV File	195	10
+
+2008	s9W	to		from	some	sent	1327863543	Re: Fwd: OECD.Stat Extracts Bulk Download CSV File	195	5
+
+2005	s9W	from		brief	download	froid	1327863957	RE: Fwd: OECD.Stat Extracts Bulk Download CSV File	195	42
+
+2048	s9W	to		secondaire	travaillons	typographique	1327916742	medef	199	191
+
+2053	s9W	from		travaillons	typographique	wordle	1327935708	RE: medef	199	218
+
+2055	s9W	to		faut	super	cas	1327936424	Re: medef	199	19
+
+2051	s9W	from		janvier	tweets	medef	1327936480	RE: medef	199	45
+
+2052	s9W	to		charte	parisot	polish	1327936901	Re: medef	199	136
+
+2050	s9W	to		des	ans	trucs	1327936969	Re: medef	199	21
+
+2049	s9W	from		polish	buzz	madonna	1327937355	RE: medef	199	167
+
+2059	s9W	to		inutile	tiennes	lancés	1327919920	Bayrou (was Fwd: medef)	200	208
+
+2063	s9W	to		illustrée	marquée	mentalement	1327921047	commentaire sur l'ex maquette	201	357
+
+2082	s9W	from		faire	lui	peu	1327936110	streamgraph	205	15
+
+2086	s9W	to		extérieur	passage	salaires	1327936601	Re: streamgraph	205	57
+
+2085	s9W	from		extérieur	versus	streamgraph	1327937442	RE: streamgraph	205	82
+
+2143	s9W	to		contextualise	diversité	insert	1328031106	Re: 5 - IDH animated	208	131
+
+2107	s9W	from		respirer	tirées	déséquilibrer	1328033416	RE: 5 - IDH animated	208	192
+
+2116	s9W	to		soir	qqch	enverrai	1328033530	Re: 5 - IDH animated	208	3
+
+2130	s9W	to		retenir	souhaitons	fréquemment	1328055356	Re: 5 - IDH animated	208	112
+
+2102	s9W	from		mais	have	nous	1328693518	Re: 5 - IDH animated	208	10
+
+2159	s9W	from		walther	lundi	vue	1328025444	RE: 19 - création d'emplois	209	45
+
+2196	s9W	from		truc	jeff	type	1327999577	G20 Data	210	25
+
+2195	s9W	to		cac	dezooming	effeil	1328004781	Re: G20 Data	210	346
+
+2210	s9W	to		moi	assez	ensemble	1328019591	Re: in unrelated news	212	13
+
+2233	s9W	from		alena	mercosur	andine	1328019098	datas	215	51
+
+2232	s9W	to		moi	peux	données	1328022538	Re: datas	215	13
+
+2234	s9W	from		global	derrière	dette	1328019435	visualiser la dette	216	26
+
+2235	s9W	to		dreyfus	esthétiser	importations	1328021545	Re: visualiser la dette	216	136
+
+2248	s9W	from		treemap	augmentation	aurions	1328028038	where my money go	220	57
+
+2257	s9W	from		hello	truc	assez	1328030685	match france - allemagne	222	16
+
+2256	s9W	to		passant	amuser	comparaisons	1328031330	Re: match france - allemagne	222	62
+
+2258	s9W	from		amuser	comparaisons	étendre	1328033271	RE: match france - allemagne	222	82
+
+2128	s9W	from		amerique	errors	responsive	1328456711	FW: 5 - IDH animated	223	122
+
+2119	s9W	from		israel	amerique	historique	1328469153	Re: 5 - IDH animated	223	36
+
+2281	s9W	to		aider	donné	brief	1328052692	Re: investissement etranger en france	225	30
+
+2215	s9W	from		dessue	débattus	economist	1328297547	RE: in unrelated news	227	136
+
+2211	s9W	to		numérique	demandé	envoie	1328301308	Re: in unrelated news	227	34
+
+2283	s9W	to		ça	bien	serait	1328053502	Re: chapitre 1	228	4
+
+2292	s9W	from		merci	julien		1328089272	=?ISO-8859-1?B?UkU6IHTiY2hlcyBt6W5hZ+hyZXMgaW7pZ2FsaXTpcyBIL0Y=	229	2
+
+2287	s9W	to		directeur	tél	julien	1328089478	RE: t=E2ches ménagères inégalités H/F	229	34
+
+2289	s9W	from		julien	brunowalther	guez	1328092479	=?ISO-8859-1?B?UkU6IHTiY2hlcyBt6W5hZ+hyZXMgaW7pZ2FsaXTpcyBIL0Y=	229	56
+
+2409	s9W	from		est	non	naze	1328192472	Re: Intouchable	243	3
+
+2411	s9W	to		données	effort	impact	1328194144	Re: Intouchable	243	14
+
+2422	s9W	to		message	forwarded		1328352027	Fwd: Bulletins de salaire - Comparaison France/Allemagne	244	2
+
+2414	s9W	from		samedi	forwarded	salaire	1328353533	RE: Bulletins de salaire - Comparaison France/Allemagne	244	31
+
+2437	s9W	to		disparaissent	employeurs	partiel	1328361115	Re: Bulletins de salaire - Comparaison France/Allemagne	244	167
+
+2430	s9W	from		employeurs	partiel	carré	1328366416	RE: Bulletins de salaire - Comparaison France/Allemagne	244	198
+
+2431	s9W	to		some	peut	autre	1328367303	RE: Bulletins de salaire - Comparaison France/Allemagne	244	15
+
+2452	s9W	to		diplômé	doublé	socio	1328196645	éducation: salaire des enseignants=2C performance sel on le niveau social	245	296
+
+2432	s9W	from		constats	crds	estoile	1328285849	RE: Bulletins de salaire - Comparaison France/Allemagne	254	227
+
+2424	s9W	to		envoyé	intéressant	allemagne	1328286039	Re: Bulletins de salaire - Comparaison France/Allemagne	254	31
+
+2465	s9W	from		echeant	marchant	chatriot	1328294558	RE: bar charts et line charts	257	116
+
+2460	s9W	to		sent	faut	point	1328296340	RE: bar charts et line charts	257	17
+
+2617	s9W	from		bien	hello	juste	1328348501	investissements	260	14
+
+2616	s9W	to		que	from	faire	1328350514	Re: investissements	260	10
+
+2618	s9W	from		ménagères	immigration	couvre	1328348711	retraites	261	137
+
+2619	s9W	to		sent	données	mobile	1328350792	Re: retraites	261	19
+
+2596	s9W	to		belgium	$$$	china	1328350474	Fwd: Re: Re Kilian	262	157
+
+2591	s9W	from		china	switzerland	destinations	1328351133	RE: Re: Re Kilian	262	182
+
+2588	s9W	to		niveau	lundi	envoyer	1328352212	Re: Re: Re Kilian	262	24
+
+2594	s9W	from		réponds	condition	dollars	1328353911	RE: Re Kilian	262	81
+
+2621	s9W	from		histoire	production	donner	1328351942	feuille de paye	263	23
+
+2622	s9W	to		qqch	niveau	intéressant	1328352115	Re: feuille de paye	263	20
+
+2625	s9W	to		pas	dans	données	1328352658	illetrisme	264	5
+
+2624	s9W	from		bazin	walther	février	1328431710	RE: illetrisme	264	23
+
+2641	s9W	from		des	qui	une	1328370201	timeline	266	13
+
+2660	s9W	from		upa	[â	ases	1328382968	La feuille de paye France vs Allemagne	270	408
+
+2664	s9W	to					1328383437	Re: La feuille de paye France vs Allemagne	270	0
+
+2661	s9W	from		merci	bonne	soirée	1328395708	Re: La feuille de paye France vs Allemagne	270	3
+
+2663	s9W	to		serait	kilian	captaindash	1328431394	Re: La feuille de paye France vs Allemagne	270	17
+
+2677	s9W	from		room	datatelling	saying	1328431042	RE: data questions	272	57
+
+2685	s9W	to		pile	representation	devient	1328435258	Charte graphique	273	41
+
+2686	s9W	from		devient	reserves	charte	1328439758	RE: Charte graphique	273	70
+
+2687	s9W	to		ça	autre	chose	1328440102	Re: Charte graphique	273	14
+
+2692	s9W	from		scolaire	aurions	souligner	1328453242	Data	274	57
+
+2694	s9W	to		université	langue	enrichir	1328545678	RE: Data	274	124
+
+2702	s9W	from		depuis	dette	aurai	1328461101	brief dette française	276	31
+
+2701	s9W	to		pour	peu	mieux	1328468022	Re: brief dette française	276	13
+
+2707	s9W	from		aurai	timeline	montrant	1328461209	brief timeline	277	29
+
+2709	s9W	to		existait	renaissance	stat	1328467858	Re: brief timeline	277	93
+
+2703	s9W	from		des	mais	sur	1328468397	Re: brief timeline	277	6
+
+2705	s9W	to		exactement	pourra	probablement	1328472798	Re: brief timeline	277	30
+
+2706	s9W	from		probablement	directement	timeline	1328604392	RE: brief timeline	277	46
+
+2708	s9W	to		phone	hier	avant	1328608880	RE: brief timeline	277	19
+
+2711	s9W	from		walther	parlé	février	1328609166	RE: brief timeline	277	40
+
+2710	s9W	to		années	local	croissance	1328615514	Re: brief timeline	277	54
+
+2704	s9W	from		timeline	brief	proches	1328617565	RE: brief timeline	277	70
+
+2731	s9W	to		differences	shot	stayed	1328494838	lots of circles	278	105
+
+2737	s9W	from		bulles	bordé	briefer	1328733567	FW: lots of circles	278	144
+
+2738	s9W	to		shouldn	noticed	throughout	1328495245	forgot to mention...	279	47
+
+2837	s9W	from		cir	disparus	déboiter	1328595205	RE: Validation et Data Medef	293	287
+
+2848	s9W	from		commented	devons	schéma	1328600443	FW: investissements updated	294	97
+
+2857	s9W	to		eme	ere	ventilation	1328608601	Investissements	295	48
+
+2856	s9W	from		ere	attendons	ventilation	1328609126	RE: Investissements	295	67
+
+2864	s9W	from		csg	cohérent	demeurait	1328617317	FW: Zones régionales	297	2302
+
+2889	s9W	from		kilianbazin	courbes	particuliers	1328637330	FW: skin la france 4 ème destination des investisse ments dans le monde	301	158
+
+2913	s9W	to		sent	mobile	object	1328647391	Re: FW: skin la france 4 ème destination des invest issements dans le monde	301	12
+
+2896	s9W	to		collègues	kong	hong	1328652344	Re: FW: skin la france 4 ème destination des invest issements dans le monde	301	53
+
+2904	s9W	from		somme	investissements	chine	1328733217	RE: skin la france 4 ème destination des investisse ments dans le monde	301	105
+
+2881	s9W	from		totaux	fiables	savons	1328733347	RE: skin la france 4 ème destination des investisse ments dans le monde	301	125
+
+2914	s9W	to		forts	chine	entrants	1328745315	Re: skin la france 4 ème destination des investisse ments dans le monde	301	234
+
+2898	s9W	to		becomes	significantly	yellow	1328746769	Fwd: FW: skin la france 4 ème destination des inves tissements dans le monde	301	104
+
+2918	s9W	from		chine	forts	entrants	1328778052	RE: skin la france 4 ème destination des investisse ments dans le monde	301	259
+
+2921	s9W	from		clique	contient	dessue	1328798990	RE: skin la france 4 ème destination des investisse ments dans le monde	301	116
+
+2885	s9W	to		deviennent	jouable	rapproche	1328800363	Re: skin la france 4 ème destination des investisse ments dans le monde	301	64
+
+2884	s9W	from		deviennent	jouable	rapproche	1328807218	RE: skin la france 4 ème destination des investisse ments dans le monde	301	106
+
+2901	s9W	to		cercle	légende	suffisante	1328809191	Re: skin la france 4 ème destination des investisse ments dans le monde	301	78
+
+2991	s9W	from		qqn	formation	professionnelle	1328688215	RE: Help: j'ai zappé un truc	304	49
+
+2995	s9W	to		intéresse	équipe	rajouter	1328654243	data tuesday	306	43
+
+2994	s9W	from		parlons	confidentiel	idem	1328688169	RE: data tuesday	306	78
+
+2997	s9W	to		objets	marqués	mélanger	1328655319	un risque à éviter	307	166
+
+3102	s9W	to		préfère	dedans	relire	1328784712	reste à faire	320	41
+
+3111	s9W	from		février	bruno	kilianba	1328795676	RE: références=2C sources des data	323	28
+
+2905	s9W	to		donner	avis	vaut	1328866680	Re: skin la france 4 ème destination des investisse ments dans le monde	328	17
+
+3164	s9W	from		behaviour	clarification	tap	1328864390	FW: Bubbles	329	210
+
+3178	s9W	from		lucie	envoyée	balle	1328829805	RE: petit cachotier	332	64
+
+3296	s9W	from		sur	hello	set	1329079112	data la place de l'europe dans le monde	345	6
+
+3446	s9W	from		polytechnique	ruby	yannick	1329260240	RE: presque fin	362	122
+
+3447	s9W	to		pour	jerome	cette	1329396437	Re: presque fin	362	8
+
+3520	s9W	to		servir	raisonnable	specs	1329318361	besoindaire et les graphs	373	82
+
+3523	s9W	to		adresse	normalement	progress	1329319080	besoindaire.com vs www.besoindaire.com	374	33
+
+3602	s9W	to		projections	savez	transactions	1329428957	une idée pour vous	382	114
+
+3601	s9W	from		savez	transactions	dessue	1329472472	RE: une idée pour vous	382	137
+
+3967	s9W	to					1329998785	ça leur pendait au nez	418	0
+
+4524	s9W	from		pourrions	samuel	cécile	1330670892	FW: KPI sur les comptes twitter des candidats	498	67
+
+4525	s9W	to		noobs	poissons	récupérez	1330683260	Re: FW: KPI sur les comptes twitter des candidats	498	560
+
+4564	s9W	to		ensemble	business	pourrait	1330685748	peut-on se voir?	500	20
+
+4567	s9W	from		veux	parlons		1330696554	Re: peut-on se voir?	500	2
+
+4554	s9W	to		peux	après	merci	1330709291	Re: peut-on se voir?	500	5
+
+4550	s9W	from		subject	bruno	[mailto	1330887014	RE: peut-on se voir?	500	28
+
+4551	s9W	to		mais	plus	par	1330890748	Re: peut-on se voir?	500	9
+
+4557	s9W	from		[mailto	com]	vendredi	1330966111	RE: peut-on se voir?	500	30
+
+4552	s9W	to		vendredi	midi	rentrer	1330968527	Re: peut-on se voir?	500	25
+
+4558	s9W	to		est	qui	arrange	1331045700	Re: peut-on se voir?	500	3
+
+4569	s9W	from		jeudi	subject	bruno	1331052764	RE: peut-on se voir?	500	20
+
+4549	s9W	to		après	fin	jeudi	1331053520	Re: peut-on se voir?	500	3
+
+4555	s9W	to		des	from	some	1332187547	Re: peut-on se voir?	500	10
+
+4568	s9W	from		subject	assez	bruno	1332243857	RE: peut-on se voir?	500	30
+
+4559	s9W	to		vendredi	à+	bureau	1332245012	Re: peut-on se voir?	500	26
+
+4553	s9W	from		bureau	mars	prévu	1332245536	RE: peut-on se voir?	500	48
+
+4562	s9W	to		avec	etc	peux	1332246085	Re: peut-on se voir?	500	11
+
+4565	s9W	to		guénalle	aille	gault	1332411704	Re: peut-on se voir?	500	25
+
+4566	s9W	from		aille	gault	endroit	1332414290	RE: peut-on se voir?	500	51
+
+4560	s9W	to		vais	place	maintenant	1332414443	Re: peut-on se voir?	500	13
+
+4556	s9W	from		com]	walther	appelle	1332414614	RE: peut-on se voir?	500	29
+
+4563	s9W	to		administratif	ponctuellement	besoindaire	1336740428	Re: peut-on se voir?	500	102
+
+4561	s9W	from		merveilleux	ponctuellement	besoindaire	1336745234	RE: peut-on se voir?	500	124
+
+6120	s9W	to		low	grands	créer	1332755740	un groupe linkedin data tuesdays?	641	43
+
+6116	s9W	from		créé	gans	uns	1332937971	RE: un groupe linkedin data tuesdays?	641	64
+
+6119	s9W	to					1332938012	Re: un groupe linkedin data tuesdays?	641	0
+
+12143	s9W	to		innovant	rationaliser	arlette	1340365535	la dataviz c'est maintenant	1311	174
+
+12142	s9W	from		très	idée	bonne	1340367127	Re: la dataviz c'est maintenant	1311	3
+
+t565	s9W	to	mention	you	know	other	1325635882		t6	15
+
+t145	s9W	to	mention	surtout	bruno	site	1326417007		t77	14
+
+t1660	s9W	to	mention	walther	laguirlande	dataviz	1326417153		t78	4
+
+t148	s9W	to	mention	http	bruno	walther	1326673716		t86	20
+
+t151	s9W	to	mention	walther	lyrique	gaité	1326849381		t96	5
+
+t142	s9W	to	mention	semaine	bruno	mercredi	1327021747		t113	9
+
+t1373	s9W	to	mention	est	sans	bruno	1327107944		t116	13
+
+t951	s9W	to	mention	bruno	walther	ben	1327277409		t118	18
+
+t12	s9W	to	mention	http	idée	bruno	1327279458		t119	15
+
+t144	s9W	to	mention	bruno	walther	bernard	1328751367		t164	13
+
+t135	s9W	to	mention	bruno	tweets	bayrou	1329356167		t194	10
+
+t154	s9W	to	mention	est	qui	passe	1330563795		t273	10
+
+t1372	s9W	to	mention	sur	france	soir	1330909113		t295	18
+
+t1374	s9W	to	mention	poste	dash	captain	1331252013		t320	15
+
+t149	s9W	to	mention	http	bruno	walther	1331944353		t394	15
+
+t158	s9W	to	mention	sur	nous	fais	1332119036		t402	8
+
+t1609	s9W	to	mention	thanks	back	bruno	1333758097		t546	10
+
+t156	s9W	to	mention	comme	quoi	bruno	1335140437		t667	9
+
+t1370	s9W	to	mention	walther	founding	proposer	1336095513		t740	11
+
+t153	s9W	to	mention	bruno	walther	certain	1336267064		t750	11
+
+t150	s9W	to	mention	que	ton	faut	1336350097		t758	15
+
+t157	s9W	to	mention	est	pour	maintenant	1336350385		t760	1
+
+t159	s9W	to	mention	vois	bruno	walther	1336436111		t762	5
+
+t143	s9W	to	mention	que	ça	moins	1336438608		t769	14
+
+t1351	s9W	to	mention	par	http	monde	1336440689		t770	13
+
+t1371	s9W	to	mention	walther	jobs	dataviz	1336781999		t803	8
+
+t147	s9W	to	mention	dit	france	pays	1337303279		t849	15
+
+t146	s9W	to	mention	plus	non	trop	1337385757		t855	9
+
+t152	s9W	to	mention	bruno	walther	désolé	1337733446		t879	11
+
+t311	s9W	to	mention	bruno	walther	tard	1338336495		t940	5
+
+t155	s9W	to	mention	quel	walther	faisait	1339978364		t1093	15
+
+t1232	s9W	to	mention	mais	bon	bonne	1339978465		t1094	9
+
+t134	s9W	to	mention	walther	girlfriend	blaise	1339978612		t1095	14
+
+t141	s9W	to	mention	pas	est	comme	1339979613		t1103	9
+
+t162	s9W	to	mention	chez	semaine	dernière	1341883466		t1367	7
+
+t160	s9W	to	mention	avant	monde	bonnes	1341883889		t1368	11
+
+t978	s9W	to	mention	http	captaindash	congrats	1346722038		t1638	8
+
+t1056	s9W	to	mention	qui	http	dataviz	1346894044		t1664	13
+
+t510	s9W	from	mention	jcukier	note	bad	1346889978		t1664	13
+
+t1461	s9W	from	mention	qui	jcukier	http	1346894703		t1665	15
+
+t1376	s9W	to	mention	cartographie	gratuite	datatuesday	1347062958		t1674	14
+
+t1375	s9W	to	mention	petit	version	votre	1348360353		t1730	13
+
+t161	s9W	to	mention	que	pour	plus	1353370473		t2136	17
+
+t464	s9W	from	mention	nous	jcukier	depuis	1353370515		t2136	5
+
+t1652	s9W	from	mention	depuis	droite	opposition	1353370814		t2136	13
+
+t13	s9W	to	mention	for	looking	based	1356135236		t2359	4
+
+t383	s9W	from	mention	bien	très	jcukier	1356135656		t2359	15
+
+t907	s9W	to	mention	candidats	machine	sites	1329439225		t2397	15
+
+t1664	s9W	to	dm	data	demain	vas	1340067836		dm21	3
+

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head><style>
+body{margin:0px;}
+</style></head>
+<body>
+<!--<script src="../../../d3.v2.min.js"></script>-->
+<script src="http://mbostock.github.com/d3/d3.v2.min.js"></script>
+<div id="chart" style="width:500px;height:500px"></div>
+<script>
+var width = 500,
+    height = 500;
+
+var svg=d3.select("#chart").append("svg").attr({width:width,height:height})
+var defs=svg.append("defs")
+var p1="M-0.1,180 A180,180 0 1,1 0.1,180"
+var p2="M-0.1,-200 A200,200 0 1,0 0.1,-200"
+defs.append("path").attr({id:"gUp",d:p1});  // to write on circles.
+defs.append("path").attr({id:"gDown",d:p2});
+defs.append("marker").attr({id:"arrow",markerWidth:"5",markerHeight:"10",refX:5,refY:5,orient:"auto"})
+  .append("path").attr("d","M 0 0 5 5 0 10 Z").style("fill","#ccc")
+defs.append("marker").attr({id:"sArrow",markerWidth:"5",markerHeight:"10",refX:5,refY:5,orient:"auto"})
+  .append("path").attr("d","M 0 0 5 5 0 10 Z").style("fill","#ccc")
+defs.append("marker").attr({id:"gArrow",markerWidth:"5",markerHeight:"10",refX:5,refY:5,orient:"auto"})
+  .append("path").attr("d","M 0 0 5 5 0 10 Z").style("fill","darkgreen")
+defs.append("marker").attr({id:"bArrow",markerWidth:"5",markerHeight:"10",refX:5,refY:5,orient:"auto"})
+  .append("path").attr("d","M 0 0 5 5 0 10 Z").style("fill","blue")
+
+//svg.selectAll(".h").data(d3.range(20)).enter().append("path").attr("d",function(d) {return "M0,"+(25*d)+"h 500";}).style({stroke:"#ddd",fill:"none"});
+//svg.selectAll(".v").data(d3.range(20)).enter().append("path").attr("d",function(d) {return "M"+(25*d)+",0 v 500";}).style({stroke:"#ddd",fill:"none"});
+
+svg.append("path").attr("d","M250,0v500").style({stroke:"black","stroke-dasharray":"4 4"});
+svg.append("path").attr("d","M250,250,h250").style({stroke:"black","stroke-dasharray":"2 2"});
+
+
+svg=svg.append("g").attr("transform","translate(250,250)");
+
+svg.append("path").style({stroke:"#ccc","stroke-width":2,fill:"none","marker-end":"url(#arrow)"}).attr({d:p1});
+svg.append("path").style({stroke:"#ccc","stroke-width":2,fill:"none","marker-end":"url(#arrow)"}).attr({d:p2});
+
+svg.append("text").append("textPath")
+    .attr("xlink:href","#gUp")
+    .attr("startOffset","35%")
+    .attr("text-anchor","middle")
+    .text("angle<π : write on inner arc")
+    .style("fill","blue")
+
+svg.append("path").style({stroke:"blue",fill:"none"}).attr("d","M 0,0 L "+(Math.cos(.8*Math.PI)*180)+","+(-Math.sin(.8*Math.PI)*180))
+
+svg.append("path").style({stroke:"blue",fill:"none","stroke-dasharray":"2 2","marker-end":"url(#bArrow)"}).attr("d","M 50,0 A50,50 0 0,0"+(Math.cos(.8*Math.PI)*50)+","+(-Math.sin(.8*Math.PI)*50))
+svg.append("image").attr("xlink:href","4PI5.png").attr({x:40,y:-70,width:23,height:39})
+svg.append("path").style({stroke:"#888",fill:"none","stroke-dasharray":"4 4","marker-end":"url(#sArrow)"}).attr("d","M 0,125 A125,125 0 0,1 "+(Math.cos(.8*Math.PI)*125)+","+(-Math.sin(.8*Math.PI)*125))
+svg.append("text").text("35%").attr({x:-125,y:30,"text-anchor":"end"})
+
+svg.append("text").append("textPath")
+    .attr("xlink:href","#gDown")
+    .attr("startOffset","58.33%")
+    .attr("text-anchor","middle")
+    .text("angle>π: write on outer arc").style("fill","darkgreen")
+
+svg.append("path").style({stroke:"darkgreen",fill:"none"}).attr("d","M 0,0 L "+(Math.cos(Math.PI/3)*200)+","+(Math.sin(Math.PI/3)*200))
+svg.append("path").style({stroke:"darkgreen",fill:"none","stroke-dasharray":"2 2","marker-end":"url(#gArrow)"}).attr("d","M 25,0 A25,25 0 1,0 "+(Math.cos(Math.PI/3)*25)+","+(Math.sin(Math.PI/3)*25))
+svg.append("path").style({stroke:"#888",fill:"none","stroke-dasharray":"4 4","marker-end":"url(#sArrow)"}).attr("d","M 0,-100 A100,100 0 1,0 "+(Math.cos(Math.PI/3)*100)+","+(Math.sin(Math.PI/3)*100))
+
+svg.append("image").attr("xlink:href","5PI3.png").attr({x:-50,y:10,width:23,height:39})
+
+svg.append("text").text("58.33%").attr({x:10,y:120})
+
+</script>
+
+
+</body>
+</html>

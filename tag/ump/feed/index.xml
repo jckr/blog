@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>UMP &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/ump/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>Tableau 2012 politics contest &#8211; justification and making-of</title>
+		<link>/2012/09/05/tableau-2012-politics-contest-justification-and-making-of/</link>
+		<comments>/2012/09/05/tableau-2012-politics-contest-justification-and-making-of/#comments</comments>
+		<pubDate>Wed, 05 Sep 2012 18:14:30 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[contest]]></category>
+		<category><![CDATA[politics]]></category>
+		<category><![CDATA[sarkozy]]></category>
+		<category><![CDATA[Tableau]]></category>
+		<category><![CDATA[UMP]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1458</guid>
+		<description><![CDATA[what led me to those choices I was technically happy of my entry for the sports contest. I had done what I wanted: obtain a hard-to-find, interesting dataset, attempt to create an exotic, hard-to-make and never-tableau&#8217;d-before shape with aesthetic appeal and insights. Yet the rules stated that the entries shall be judged on the story-telling <a class="read-more" href="/2012/09/05/tableau-2012-politics-contest-justification-and-making-of/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<h2>what led me to those choices</h2>
+<p>I was technically happy of my entry for the <a href="http://www.jeromecukier.net/blog/2012/06/30/tableau-2012-sports-visualization-contest-entry/">sports contest</a>. I had done what I wanted: obtain a hard-to-find, interesting dataset, attempt to create an exotic, hard-to-make and never-tableau&#8217;d-before shape with aesthetic appeal and insights.</p>
+<p>Yet the rules stated that the entries shall be judged on the story-telling front. While there were interesting insights, indeed, they didn&#8217;t constitute a story, a structured narration with a beginning and an end. Having <a href="http://thevcl.com/storytelling/">worked</a> <a href="http://flowingdata.com/2011/11/04/telling-stories-with-data-visweek-2011/">on that subject</a> on occasion, I think there is an inherent contradiction between a dashboard tool that lets a user freely manipulate a bunch of data and that articulated story where the user is more led throughout a process.</p>
+<p>So that&#8217;s what led most of the work.</p>
+<p>The second idea was that there is an unspoken, but IMO unnecessary rule about making Tableau dashboards compact things, highly interactive and interconnected. First, the elephant in the room: Tableau public is slow. It&#8217;s too slow. So too many interactions do not make a pleasant experience. Second, it is true that in Tableau one <em>can</em> assemble a dashboard out of interconnected worksheets, where clicking on one makes things happen in another. But just because you can doesn&#8217;t mean you <em>should</em>. Remember the &lt;BLINK&gt; element in the webpage of the 1990s? And this is this interconnectivity that causes dashboards to be compact and fit over the fold. If clicking on one element causes changes on another, you&#8217;d better be able to see both even on a laptop screen.</p>
+<p>So the second idea was to create instead a long dashboard where a user would be held by the hand as she&#8217;s taken from point A to point B. Along the way, there would be texts and images to explain what&#8217;s going on, data &#8211; not necessarily interconnected, worksheets with little interactivity which can be understood at first sight, and which can stand some manipulation but don&#8217;t need to.</p>
+<p>When visualization and storytelling intersect <a href="http://www.slideshare.net/vozome/dont-take-my-word-for-it-10279298">there is one form that I like</a> which is to start with a preconception and to let the user find through manipulation that this idea is wrong. So I tried to use that in the dashboard as well.</p>
+<h2>The subject</h2>
+<p>That&#8217;s actually the #1 issue in French politics right now. Which strategy should the main right-wing party adopt? Typically, during the presidential campaign, both large parties fight for the votes of the center and are less radical than usual. But during this campaign the UMP, the party of the former president Nicolas Sarkozy, steered hard to the right in an attempt to steal back the voters gone to the far-right.</p>
+<p>Apparently, that strategy was successful, even if he lost the presidential rate, he managed to somehow catch up against his rival.</p>
+<p>Yet there are those who argue that if the party was more moderate, it would have been more successful and possibly win.</p>
+<p>Anyway. The presidential race is over. But now the party is deciding which way to go next by electing its next leader.</p>
+<p>Fortunately, there is data that can be used to determine whether the far-right or the moderate strategy can be more fruitful. This is what it is about.</p>
+<h2>Making the viz</h2>
+<p>Tableau dashboards can go up to 4000px in height, so that&#8217;s what I shot for.</p>
+<p>So let&#8217;s say it loud and clear, it&#8217;s hell to manipulate large dashboards in Tableau, even with a very strong computer. When you add a new worksheet the legend part and the quickfilter part are added whenever there is room which could be thousands of pixels away. Since you can&#8217;t drag an element across screens you may have to proceed in babysteps. Once there is a certain number of elements, be they text, blanks or very simple and stable worksheets, adding another element takes a very long time, so does moving them around, etc.</p>
+<p>As usual fixed size is your only friend, fixed heights, fixed widths, alternating horizontal and vertical layout containers.</p>
+<p>So up to the last 2 worksheets there is really nothing to write home about. Only this: when you interact on the published workbook on the web it is painstakingly slow as the dashboard is reloaded and recomputed in its entirety. While this is ok for most of the worksheet, for the most complex one (the one with many sliders) it&#8217;s just unacceptable because the sheet won&#8217;t have time to be redrawn between two interactions.</p>
+<p>So I came up with an idea: create a secondary dashboard with just that sheet, publish it independently, and then, in the previous dashboard, I have added a web page object. And that web page pointed to that other dashboard. So in effect, there is a dashboard within a dashboard, so when there is interactions in the complex worksheet, the secondary, smaller dashboard is the only one which is reloaded and recomputed, which is noticeably faster. Still not faster as in fast, but usable.</p>
+<p>now publishing aspects aside this worksheet is interesting. The idea is to update a model based on 19 criteria. For every record, the outcome depends the &#8220;closeness&#8221; of the answers of the record and those of the candidates. The 19 parameters control the position of one of the candidates: Nicolas Sarkozy. So what I&#8217;ve done is calculate, outside of Tableau, the &#8220;distance&#8221; between each record and each of the other 8, and in the data file, I&#8217;ve specified that minimal distance and the name of the corresponding candidate. Then, in Tableau, I compute in real time the distance between the record and the parameters, and if that score is inferior to the threshold in the data file, then Sarkozy is deemed to be the closest, else it is the one from the data file. The worksheet tallies up the number of records which are closest to each candidate. Also, in order to keep the parameters legible I have constrained them to 9 values, when they really represent numbers between -2 and 2.</p>
+<p>Also for the record, I have made a French and an English version. Why? Because I hope to get the French version published in a media and weight in on the debate, while I need the English version for the contest. This raises a lot of issues, all the worksheets need to exist in 2 versions, many variables need to be duplicated as well. As a sidenote the marks concerning a candidate are colored in tableau blue /orange in English in order to highlight candidate Sarkozy, but according to the campaign colors of the candidates in the French version.</p>
+<p>That&#8217;s about it. I hope you enjoy my viz!</p>
+]]></content:encoded>
+			<wfw:commentRss>/2012/09/05/tableau-2012-politics-contest-justification-and-making-of/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>Which way to the right?</title>
+		<link>/2012/09/05/which-way-to-the-right/</link>
+		<comments>/2012/09/05/which-way-to-the-right/#comments</comments>
+		<pubDate>Wed, 05 Sep 2012 18:14:03 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[contest]]></category>
+		<category><![CDATA[iron viz]]></category>
+		<category><![CDATA[politics]]></category>
+		<category><![CDATA[right-wing]]></category>
+		<category><![CDATA[sarkozy]]></category>
+		<category><![CDATA[Tableau]]></category>
+		<category><![CDATA[UMP]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1445</guid>
+		<description><![CDATA[Here is my entry for the Tableau 2012 politics contest. Source of the data: Economic statistics from OECD, opinion data from TNS Sofres. Making-of and explanation post to follow.]]></description>
+				<content:encoded><![CDATA[<p>Here is my entry for the Tableau 2012 politics contest.</p>
+<p><iframe style="border: 0px;" src="http://public.tableausoftware.com/views/politics/DashEN" scrolling="no" width="802px" height="4000px"></iframe></p>
+<p>Source of the data:</p>
+<p>Economic statistics from OECD, opinion data from TNS Sofres.</p>
+<p>Making-of and explanation post to follow.</p>
+]]></content:encoded>
+			<wfw:commentRss>/2012/09/05/which-way-to-the-right/feed/</wfw:commentRss>
+		<slash:comments>10</slash:comments>
+		</item>
+	</channel>
+</rss>

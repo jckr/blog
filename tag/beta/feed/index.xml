@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>beta &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/beta/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>More on Tableau Public</title>
+		<link>/2010/01/22/more-on-tableau-public/</link>
+		<comments>/2010/01/22/more-on-tableau-public/#respond</comments>
+		<pubDate>Fri, 22 Jan 2010 17:19:59 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[charts]]></category>
+		<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[beta]]></category>
+		<category><![CDATA[Tableau]]></category>
+		<category><![CDATA[Tableau Public]]></category>
+		<category><![CDATA[visualization]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=328</guid>
+		<description><![CDATA[Yesterday&#8217;s post on Tableau Public generated a surge of traffic so I thought I should add more examples and practical information for people interested in the software.   Here&#8217;s a quick one on health, based on OECD Health at a Glance: Just select two indicators, and you see how one influences the other. Or rather, <a class="read-more" href="/2010/01/22/more-on-tableau-public/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p><a href="http://www.jeromecukier.net/?p=313">Yesterday&#8217;s post</a> on <a href="http://public.tableausoftware.com/">Tableau Public </a> generated a surge of traffic so I thought I should add more examples and practical information for people interested in the software.</p>
+<p> </p>
+<p>Here&#8217;s a quick one on health, based on <a href="http://www.oecdilibrary.org/content/book/health_glance-2009-en">OECD Health at a Glance</a>:</p>
+<p><a href="http://publicbeta.tableausoftware.com/views/Health/Correlations"><img src="http://publicbeta.tableausoftware.com/static/images/Health-Correlations_rss.png" alt="click to interact" width="600" height="331" /></a></p>
+<p>Just select two indicators, and you see how one influences the other. Or rather, is correlated because correlation doesn&#8217;t imply causation!</p>
+<p>Here are links to more example done with Tableau Public.<br /> <a href="http://www.jeromecukier.net/wp-content/uploads/2010/01/unesco.jpg"><img class="alignnone size-full wp-image-335" title="unesco" src="http://www.jeromecukier.net/wp-content/uploads/2010/01/unesco.jpg" alt="" width="120" height="128" /></a><br /> Another Paris-based intergovernmental organisation is using Tableau &#8211; the <a href="http://www.unesco.org/en/efareport/dme/">UNESCO</a>.</p>
+<p>These 2 have been done by <a href="http://www.paho.org/">PAHO</a> to describe the situation in Haiti (the 2nd is really powered by Tableau Server, but it&#8217;s close enough)<br /> <a href="http://new.paho.org/hq/index.php?option=com_content&amp;task=blogcategory&amp;id=511&amp;Itemid=1864"><img class="alignnone size-full wp-image-337" style="margin-left: 10px; margin-right: 10px;" title="HaitiPAHO1" src="http://www.jeromecukier.net/wp-content/uploads/2010/01/HaitiPAHO1.png" alt="" width="128" height="128" /></a><a href="http://ais.paho.org/phip/viz/haiti_healthfacilities.asp"><img class="alignnone size-full wp-image-336" title="HaitiPAHO2" src="http://www.jeromecukier.net/wp-content/uploads/2010/01/HaitiPAHO2.png" alt="" width="128" height="128" /></a></p>
+<p> </p>
+<p>There are further examples on the<a href="http://www.tableausoftware.com/blog/"> Tableau blog.</a></p>
+<p>Now more about Tableau Public and the Beta.</p>
+<p>Tableau Public doesn&#8217;t exactly allow you to do everything that Tableau does <em>from </em>the web. To prepare the views which are going to be published on the web, you need to use a software that runs on your computer.  It lets you do whatever you can do with the regular Tableau Desktop, with a couple of limitations: you have to stick to basic source file types (access, excel, and text file, no exotic database) and you are limited to 100,000 records of data. One other difference with the regular Tableau Desktop  is that you can&#8217;t save your work locally: you have to save it on the web, in your private space on Tableau servers. However, there are the same analytical and visual features in Tableau Public than in Tableau Desktop.</p>
+<p>When your work is published, users don&#8217;t have access to all the tools you had when creating the view: they can&#8217;t move dimensions around, create exotic filters or calculations. They really see the chart as you intended it to be seen. There are a certain number of interactions built-in, however: users can select, highlight, sort and filter. If you are publishing a dashboard, the different tables and charts of the dashboard can be linked, meaning that an action (such as highlighting one dimension) in one place will be replicated elsewhere, or not. The underlying data can also be downloaded. So there is a great deal of interactivity, but not enough to twist your display beyond recognition. That being said, other Tableau Public users can download your workbook and manipulate it with the client software.</p>
+<p>About the Beta: currently, Tableau Public is in closed beta. It will be in open Beta in February, as far as I know. To get a spot in the close beta, you need to write to the people of Tableau.</p>
+<p> </p>
+]]></content:encoded>
+			<wfw:commentRss>/2010/01/22/more-on-tableau-public/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

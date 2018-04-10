@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: An open letter to Tableau</title>
+	<atom:link href="http://localhost/2011/11/04/an-open-letter-to-tableau/feed/" rel="self" type="application/rss+xml" />
+	<link>/2011/11/04/an-open-letter-to-tableau/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>By: Matt York</title>
+		<link>/2011/11/04/an-open-letter-to-tableau/#comment-213</link>
+		<dc:creator><![CDATA[Matt York]]></dc:creator>
+		<pubDate>Tue, 08 Nov 2011 02:09:57 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1081#comment-213</guid>
+		<description><![CDATA[Hey Jerome and commenting folk,
+
+Tableau Public engineer here. Just letting you know that we&#039;re listening and we love the feedback. Keep it coming. 
+
+Matt]]></description>
+		<content:encoded><![CDATA[<p>Hey Jerome and commenting folk,</p>
+<p>Tableau Public engineer here. Just letting you know that we&#8217;re listening and we love the feedback. Keep it coming. </p>
+<p>Matt</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: jerome</title>
+		<link>/2011/11/04/an-open-letter-to-tableau/#comment-212</link>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+		<pubDate>Fri, 04 Nov 2011 12:09:03 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1081#comment-212</guid>
+		<description><![CDATA[from what I&#039;ve seen in 7 it&#039;s arguably easier to layout dashboards.]]></description>
+		<content:encoded><![CDATA[<p>from what I&#8217;ve seen in 7 it&#8217;s arguably easier to layout dashboards.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Andrew Marritt</title>
+		<link>/2011/11/04/an-open-letter-to-tableau/#comment-211</link>
+		<dc:creator><![CDATA[Andrew Marritt]]></dc:creator>
+		<pubDate>Fri, 04 Nov 2011 12:05:44 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1081#comment-211</guid>
+		<description><![CDATA[I couldn&#039;t agree more with you on the font / colour / theme part.  I have quite tightly defined colours, fonts etc for the whole of my business and trying to get Tableau to meet these standards has been difficult. Currently I reckon 25% of my time creating dashboards is spent on these activities. It could all be sorted so easily with a set of user-defined themes.
+
+Whilst on a similar topic I&#039;d like more control over layout on dashboards. I&#039;d like to be able to set the dimensions of items like blank items by giving pixel dimensions.  Having proportions would be even better.  Oh, and some really simple drawing elements like lines and arrows would be great so I can link elements together.
+
+An example is that I have one report which clients love which is a graphical view of a high-level process, laid out like a process diagram. Onto it i add key figures such time.  Trying to do this currently in Tableau involves a big effort creating images for things such as the connecting lines in image editors and then assembling them on a dashboard. For a long time I just gave up and created a table which I then imported into excel to produce the image. 
+
+Treemaps and network diagrams - absolutely! I am an HR specialist and being able to show org charts would be a huge win.
+
+I missed the conference and didn&#039;t get a chance to see the v7 announcements but I&#039;m very interested in knowing more about how the improved statistics will be handled.]]></description>
+		<content:encoded><![CDATA[<p>I couldn&#8217;t agree more with you on the font / colour / theme part.  I have quite tightly defined colours, fonts etc for the whole of my business and trying to get Tableau to meet these standards has been difficult. Currently I reckon 25% of my time creating dashboards is spent on these activities. It could all be sorted so easily with a set of user-defined themes.</p>
+<p>Whilst on a similar topic I&#8217;d like more control over layout on dashboards. I&#8217;d like to be able to set the dimensions of items like blank items by giving pixel dimensions.  Having proportions would be even better.  Oh, and some really simple drawing elements like lines and arrows would be great so I can link elements together.</p>
+<p>An example is that I have one report which clients love which is a graphical view of a high-level process, laid out like a process diagram. Onto it i add key figures such time.  Trying to do this currently in Tableau involves a big effort creating images for things such as the connecting lines in image editors and then assembling them on a dashboard. For a long time I just gave up and created a table which I then imported into excel to produce the image. </p>
+<p>Treemaps and network diagrams &#8211; absolutely! I am an HR specialist and being able to show org charts would be a huge win.</p>
+<p>I missed the conference and didn&#8217;t get a chance to see the v7 announcements but I&#8217;m very interested in knowing more about how the improved statistics will be handled.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

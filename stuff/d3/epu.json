@@ -1,0 +1,25 @@
+{
+ "name": "e pluribus unum",
+ "children": [
+  {
+   "name": "shared",
+   "children": [
+    {"name": "2", "size": 2096},
+    {"name": "3", "size": 657},
+    {"name": "4", "size": 287},
+    {"name": "5", "size": 138}
+    {"name": "6", "size": 76},
+    {"name": "7", "size": 52},
+    {"name": "8", "size": 19}
+     ]
+    },
+  {"name": "datavis", "size": 3869},
+  {"name": "filwd", "size": 157},
+  {"name": "infosthetics", "size": 5484},
+  {"name": "jcukier", "size": 212},
+  {"name": "moritz_stefaner", "size": 951},
+  {"name": "visualisingdata", "size": 890},
+  {"name": "wiederkehr", "size": 236},
+  {"name": "janwillemtulp", "size": 413}
+  ]
+}

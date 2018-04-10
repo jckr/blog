@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>gerry mcgovern &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/gerry-mcgovern/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>Gerry McGovern paid us a visit</title>
+		<link>/2008/12/17/gerry-mcgovern-paid-us-a-visit/</link>
+		<comments>/2008/12/17/gerry-mcgovern-paid-us-a-visit/#respond</comments>
+		<pubDate>Wed, 17 Dec 2008 16:47:53 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[web sites]]></category>
+		<category><![CDATA[blogging]]></category>
+		<category><![CDATA[brand]]></category>
+		<category><![CDATA[content]]></category>
+		<category><![CDATA[conventions]]></category>
+		<category><![CDATA[editorial]]></category>
+		<category><![CDATA[findability]]></category>
+		<category><![CDATA[gerry mcgovern]]></category>
+		<category><![CDATA[home pages]]></category>
+		<category><![CDATA[monitor]]></category>
+		<category><![CDATA[navigation]]></category>
+		<category><![CDATA[task-centric internet]]></category>
+		<category><![CDATA[update]]></category>
+		<category><![CDATA[usability]]></category>
+		<category><![CDATA[writing for the web]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=116</guid>
+		<description><![CDATA[And he gave us a talk about the internet in general. While I enjoyed the talk in general, there were some ideas which I really liked and some with which I&#8217;d adamantly disagree. Here goes. The task-centric internet. That&#8217;s the main theory. We went from a tool-centric internet to a content-centric internet. Now the web <a class="read-more" href="/2008/12/17/gerry-mcgovern-paid-us-a-visit/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>And he gave us a talk about the internet in general. While I enjoyed the talk in general, there were some ideas which I really liked and some with which I&#8217;d adamantly disagree.</p>
+<p>Here goes.</p>
+<p><strong>The task-centric internet</strong>.<br />
+That&#8217;s the main theory. We went from a tool-centric internet to a content-centric internet. Now the web is (or should be) task-centric, that is focused around what people who come to your web site want to do. All the rest is clutter.</p>
+<p>I&#8217;m not too convinced about that. I like the idea of helping visitors achieve what they want to do, right from the homepage and without hassle. Now in a web site design, you should also consider what you want your visitors to do. Yes the choices a visitor faces should be kept to a minimum. But in my opinion it is ok to orient those choices. It is ok to send a message to tell your visitors about something they were not necessarily looking for, but which may be of interest to them.</p>
+<p><strong>Navigation should help people, not reflect the brand.<br />
+</strong>I mostly agree with that. This echoes what <a href="http://www.useit.com/alertbox/20040510.html">Jakob Nielsen says about links</a>, which should look like links, i.e. in blue and underlined, with a different color for visited links. Now Nielsen is more subtle about this than McGovern was. Navigation links, menu options etc. are seldom underlined and this is generally for the best.</p>
+<p><strong>In your text, use words that people search for. </strong><br />
+The two examples he gave were &#8220;low fares&#8221; vs. &#8220;cheap flights&#8221; and &#8220;climate change&#8221; vs. &#8220;global warming&#8221;. It turns out that airline companies liked to use &#8220;low fares&#8221; while customers were rather searching for &#8220;cheap flights&#8221;. And, in the academic litterature, you&#8217;d find more mentions of &#8220;climate change&#8221; than &#8220;global warming&#8221;, although, again, people search the latter. So the advice was to use the searched expressions.</p>
+<p>While it makes sense in the first case, it&#8217;s more questionable for the 2nd. If you write a website for academics, you want to attract the people who searched for &#8220;climate change&#8221;, not necessarily &#8220;global warming&#8221;, even if they are more numerous.</p>
+<p><strong>Don&#8217;t write links in paragraphs. </strong><br />
+Huh? While I agree you shouldn&#8217;t write a paragraph around a link when the link itself suffice, I don&#8217;t see anything wrong with using a link within a paragraph, far from it. When writing for the web, connecting with other resources and websites has many benefits. The rationale he gave was that people are either reading or clicking, hence the paradox. To that I say, not anymore! there are so many things you can do with a link, like opening it in a new tab, bookmarking it or tagging it for future reference, etc.</p>
+<p><strong>Keep headings short.<br />
+</strong>Indeed. There are only advantages to that. It was quite interesting to see him bashing our clippings.</p>
+<p>An interesting point he raised was that before the internet, news releases were never meant to be published. Now they are available to the main public, and often redistributed by some e-journalists as is.</p>
+<p><strong>Blogging is really a conversation. </strong><br />
+Blogging is about exchanging rather than proposing. I really didn&#8217;t like that analysis. In my book, unless you have something to say, unless you have substance, no one will want to exchange with you. You just can&#8217;t run a blog saying, ok you guys tell me what I should write about. Protagonists won&#8217;t materialize out of thin air. There are quite a few successful blogs without comments. In my view, comments are a side effect of blogging rather than its essence.</p>
+<p><strong>Update your content frequently. </strong><br />
+Some content has a shorter time span than other. He showed us great examples of that on our own website. Basically, everything you&#8217;d write in the future tense is soon outdated. There&#8217;s some content, however, that in my opinion can stay online for a while.</p>
+<p><strong>Monitor your content and take it out when needed.<br />
+</strong>That was a very interesting point. When you hear something like that, anyone&#8217;s reaction would be to say, my site is already huge, so I need extra resources to monitor my content. His approach is the opposite. He says that you should only build a site so big that you can monitor it with your current resources. If your web site is too big, you should downsize it. And in fact, most organizations are taking large chunks of their public web site offline!</p>
+]]></content:encoded>
+			<wfw:commentRss>/2008/12/17/gerry-mcgovern-paid-us-a-visit/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

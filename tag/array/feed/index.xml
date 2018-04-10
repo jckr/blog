@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>array &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/array/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>More fun with arrays in protovis</title>
+		<link>/2011/03/15/more-fun-with-arrays-in-protovis/</link>
+		<comments>/2011/03/15/more-fun-with-arrays-in-protovis/#comments</comments>
+		<pubDate>Tue, 15 Mar 2011 16:21:21 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[protovis]]></category>
+		<category><![CDATA[array]]></category>
+		<category><![CDATA[data]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=699</guid>
+		<description><![CDATA[In my short tutorial on working with data and protovis I briefly covered some standard javascript and protovis methods to work with arrays. The more I work with Protovis, the more I am convinced that efficient array manipulation is key to achieving just about anything with the library. So, I would like to go into <a class="read-more" href="/2011/03/15/more-fun-with-arrays-in-protovis/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[In my short tutorial on <a href="http://www.jeromecukier.net/?p=426">working with data and protovis</a> I briefly covered some standard javascript and protovis methods to <a href="http://www.jeromecukier.net/?p=494">work with arrays</a>.
+
+The more I work with Protovis, the more I am convinced that efficient array manipulation is key to achieving just about anything with the library. So, I would like to go into more detail in some javascript methods for building, processing and testing arrays that can really be helpful.
+<h3>Going through arrays: map and forEach</h3>
+I said rapidly that the map method was very useful in protovis especially used in combination with pv.range.
+But that's not very fair to map() to be treated this lightly.
+Protovis <a href="http://vis.stanford.edu/protovis/ex/">canon examples</a> do not use many traditional loops such as <em>for </em> or <em>while</em> statements.
+One reason for that is that many constructs in protovis are <em>de facto</em> loops: when we pass an array to protovis as a data file, to create a bar chart for instance (or panels, pie wedges, you name it), it will go through each element of the array to create individul bars (panels, wedges...), to position them, style them, and so on and so forth. This is why it is so important to have your <strong>data elements in the best possible shape</strong> when you first pass them to protovis. It makes the rest of your code much nicer.
+
+Remember our early example:
+<table>
+<tbody>
+<tr>
+<td><pre class="brush: jscript; title: ; notranslate">var categories = [&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;d&quot;,&quot;e&quot;,&quot;f&quot;];
+var vis = new pv.Panel()
+  .width(150)
+  .height(150);
+
+vis.add(pv.Bar)
+  .data([1, 1.2, 1.7, 1.5, .7, .3])
+  .width(20)
+  .height(function(d) d * 80)
+  .bottom(0)
+  .left(function() this.index * 25)
+  .anchor(&quot;bottom&quot;).add(pv.Label)
+    .text(function() categories[this.index]);
+
+vis.render();
+</pre></td>
+<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/categories.png"><img class="aligncenter size-full wp-image-483" title="categories" src="http://www.jeromecukier.net/wp-content/uploads/2011/02/categories.png" alt="" width="144" height="135" /></a></td>
+</tr>
+</tbody>
+</table>
+This is not ideal to have values and categories in two separate places, because one could be changed without updating the other.
+So let's try to use map to create one single variable.
+
+<pre class="brush: jscript; title: ; notranslate">var categories = [&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;d&quot;,&quot;e&quot;,&quot;f&quot;];
+var data=[1, 1.2, 1.7, 1.5, .7, .3].map(function(d,i) {return {value:d, key: categories[i]};});</pre>
+
+Let's look at our map() method here.
+First, it's right after an array. It will run against this array, so it will perform an operation on each element of this array, and the result will be another array of the same size with the outcome of each operation in the same order.
+The next thing here is a function with two arguments: d and i. Again the naming is arbitrary, call them what you want. And they are both optional. But it has to be a function. pv.range(3).map(3) will not return [3,3,3], you need to write pv.range(3).map(function() 3).
+
+The first argument refers to the current item of the array map is working on. So 1, then 1.2, etc. If the array is more complex, and is an array of arrays or similar, the current element can be itself an array, an object or anything. It doesn't have to be a number.
+Here, we want to create an array of associative arrays where the value handle corresponds to the values of the array, and where key corresponds to the category name.
+So we start our output by "{value: d,". This puts the value of each array element in sequence where we need it to be.
+
+The second argument corresponds to the index of the current item in the array, so - 0, 1, 2 etc. This is not unlike using "this.index" in other parts of protovis. This helps us getting the right category name, the one in the same position as the value we are fetching. So we write "key: categories[i]}".
+The rest of the code can then be changed to :
+
+<pre class="brush: jscript; first-line: 6; title: ; notranslate">vis.add(pv.Bar)
+  .data(data)
+  .width(20)
+  .height(function(d) d.value * 80)
+  .bottom(0)
+  .left(function() this.index * 25)
+  .anchor(&quot;bottom&quot;).add(pv.Label)
+    .text(function() d.key);
+vis.render();</pre>
+
+Now how about forEach()?
+forEach works in a very similar way to map(), the difference is that it doesn't output an array. It's just a function that runs on each element of the array. It can be used to perform an operation a number of times corresponding to the length of that array, for instance.
+<h3>Testing arrays</h3>
+There are some times when you need to know whether some or all the elements of your array fulfill a condition. And some other times, you need to be able to extract a subset of your array also on a conditional basis. Now, that would be possible using forEach or map methods as above, but fortunately javascript provides simpler means to achieve that.
+<h4>Testing a condition on an array at once</h4>
+There are two methods that do that: every() and some(). every() will return true is the condition is true for, well, every element of the array. some() will return true if the condition is true for at least one element of the array. So, they can also be used to tell if the condition is false for at least one element of the array, or all elements of the array respectively.
+
+This is how they work:
+
+<pre class="brush: jscript; title: ; notranslate">[0,1,2].every(function(d) {return d;})
+// will return false: 0 is false, 1 is true and 2 is true.
+[0,1,2].every(function(d) {return (d&lt;3);})
+// will return true. All elements are less than 3.
+
+[0,1,2].some(function(d) {return d;})
+// will return true. 1 is true, so at least one element in the array is true.
+</pre>
+
+<h4>Creating conditional subsets of an array</h4>
+It is also possible to get only the elements that fit a condition using the filter() method.
+
+<pre class="brush: jscript; title: ; notranslate">
+[0,1,2].filter(function(d) {return d;})
+// this will return [1,2]. 0 is evaluated as &quot;false&quot;.
+</pre>
+
+<pre class="brush: jscript; title: ; notranslate">
+[1,2,3,4,5].filter(function(d) {return (d&gt;2);})
+// this will return [3,4,5].
+</pre>
+
+Of course, the more complex the array, the more interesting these functions get. 
+With the barley array from <a href="http://www.jeromecukier.net/?p=502">part 4</a>:
+
+<pre class="brush: jscript; title: ; notranslate"> barley.filter(function(d) {return d.variety==&quot;Manchuria&quot;;}
+/* this will return: 
+  [{&quot;yield&quot;:27,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;University Farm&quot;},
+   {&quot;yield&quot;:48.86667,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Waseca&quot;},
+   {&quot;yield&quot;:27.43334,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Morris&quot;},
+   {&quot;yield&quot;:39.93333,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Crookston&quot;},
+   {&quot;yield&quot;:32.96667,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Grand Rapids&quot;},
+   {&quot;yield&quot;:28.96667,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Duluth&quot;},
+   {&quot;yield&quot;:26.9,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;University Farm&quot;},
+   {&quot;yield&quot;:33.46667,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Waseca&quot;},
+   {&quot;yield&quot;:34.36666,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Morris&quot;},
+   {&quot;yield&quot;:32.96667,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Crookston&quot;},
+   {&quot;yield&quot;:22.13333,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Grand Rapids&quot;},
+   {&quot;yield&quot;:22.56667,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Duluth&quot;}]*/</pre>
+<h3>Visualizing arrays</h3>
+(without plotting them, of course)
+When you are manipulating arrays, turning them into maps, performing roll-ups and sorts, you may want to get a glimpse of the array. But, unless it's a single, one-dimensional array, firebug or chrome debugger will represent it as a cryptic [ > Object, > Object, > Object ]. 
+
+Not being able to follow step by step what's happening to an array makes understanding the data functions much more difficult. 
+Fortunately, you can use the JSON.stringify() method.
+
+<pre class="brush: jscript; title: ; notranslate">JSON.stringify(barley)
+/*returns: 
+&quot;[
+{&quot;yield&quot;:27,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:48.86667,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:27.43334,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:39.93333,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:32.96667,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:28.96667,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:43.06666,&quot;variety&quot;:&quot;Glabron&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:55.2,&quot;variety&quot;:&quot;Glabron&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:28.76667,&quot;variety&quot;:&quot;Glabron&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:38.13333,&quot;variety&quot;:&quot;Glabron&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:29.13333,&quot;variety&quot;:&quot;Glabron&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:29.66667,&quot;variety&quot;:&quot;Glabron&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:35.13333,&quot;variety&quot;:&quot;Svansota&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:47.33333,&quot;variety&quot;:&quot;Svansota&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:25.76667,&quot;variety&quot;:&quot;Svansota&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:40.46667,&quot;variety&quot;:&quot;Svansota&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:29.66667,&quot;variety&quot;:&quot;Svansota&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:25.7,&quot;variety&quot;:&quot;Svansota&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:39.9,&quot;variety&quot;:&quot;Velvet&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:50.23333,&quot;variety&quot;:&quot;Velvet&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:26.13333,&quot;variety&quot;:&quot;Velvet&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:41.33333,&quot;variety&quot;:&quot;Velvet&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:23.03333,&quot;variety&quot;:&quot;Velvet&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:26.3,&quot;variety&quot;:&quot;Velvet&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:36.56666,&quot;variety&quot;:&quot;Trebi&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:63.8333,&quot;variety&quot;:&quot;Trebi&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:43.76667,&quot;variety&quot;:&quot;Trebi&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:46.93333,&quot;variety&quot;:&quot;Trebi&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:29.76667,&quot;variety&quot;:&quot;Trebi&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:33.93333,&quot;variety&quot;:&quot;Trebi&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:43.26667,&quot;variety&quot;:&quot;No. 457&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:58.1,&quot;variety&quot;:&quot;No. 457&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:28.7,&quot;variety&quot;:&quot;No. 457&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:45.66667,&quot;variety&quot;:&quot;No. 457&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:32.16667,&quot;variety&quot;:&quot;No. 457&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:33.6,&quot;variety&quot;:&quot;No. 457&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:36.6,&quot;variety&quot;:&quot;No. 462&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:65.7667,&quot;variety&quot;:&quot;No. 462&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:30.36667,&quot;variety&quot;:&quot;No. 462&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:48.56666,&quot;variety&quot;:&quot;No. 462&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:24.93334,&quot;variety&quot;:&quot;No. 462&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:28.1,&quot;variety&quot;:&quot;No. 462&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:32.76667,&quot;variety&quot;:&quot;Peatland&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:48.56666,&quot;variety&quot;:&quot;Peatland&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:29.86667,&quot;variety&quot;:&quot;Peatland&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:41.6,&quot;variety&quot;:&quot;Peatland&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:34.7,&quot;variety&quot;:&quot;Peatland&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:32,&quot;variety&quot;:&quot;Peatland&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:24.66667,&quot;variety&quot;:&quot;No. 475&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:46.76667,&quot;variety&quot;:&quot;No. 475&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:22.6,&quot;variety&quot;:&quot;No. 475&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:44.1,&quot;variety&quot;:&quot;No. 475&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:19.7,&quot;variety&quot;:&quot;No. 475&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:33.06666,&quot;variety&quot;:&quot;No. 475&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:39.3,&quot;variety&quot;:&quot;Wisconsin No. 38&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:58.8,&quot;variety&quot;:&quot;Wisconsin No. 38&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:29.46667,&quot;variety&quot;:&quot;Wisconsin No. 38&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:49.86667,&quot;variety&quot;:&quot;Wisconsin No. 38&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:34.46667,&quot;variety&quot;:&quot;Wisconsin No. 38&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:31.6,&quot;variety&quot;:&quot;Wisconsin No. 38&quot;,&quot;year&quot;:1931,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:26.9,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:33.46667,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:34.36666,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:32.96667,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:22.13333,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:22.56667,&quot;variety&quot;:&quot;Manchuria&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:36.8,&quot;variety&quot;:&quot;Glabron&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:37.73333,&quot;variety&quot;:&quot;Glabron&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:35.13333,&quot;variety&quot;:&quot;Glabron&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:26.16667,&quot;variety&quot;:&quot;Glabron&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:14.43333,&quot;variety&quot;:&quot;Glabron&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:25.86667,&quot;variety&quot;:&quot;Glabron&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:27.43334,&quot;variety&quot;:&quot;Svansota&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:38.5,&quot;variety&quot;:&quot;Svansota&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:35.03333,&quot;variety&quot;:&quot;Svansota&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:20.63333,&quot;variety&quot;:&quot;Svansota&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:16.63333,&quot;variety&quot;:&quot;Svansota&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:22.23333,&quot;variety&quot;:&quot;Svansota&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:26.8,&quot;variety&quot;:&quot;Velvet&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:37.4,&quot;variety&quot;:&quot;Velvet&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:38.83333,&quot;variety&quot;:&quot;Velvet&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:32.06666,&quot;variety&quot;:&quot;Velvet&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:32.23333,&quot;variety&quot;:&quot;Velvet&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:22.46667,&quot;variety&quot;:&quot;Velvet&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:29.06667,&quot;variety&quot;:&quot;Trebi&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:49.2333,&quot;variety&quot;:&quot;Trebi&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:46.63333,&quot;variety&quot;:&quot;Trebi&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:41.83333,&quot;variety&quot;:&quot;Trebi&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:20.63333,&quot;variety&quot;:&quot;Trebi&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:30.6,&quot;variety&quot;:&quot;Trebi&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:26.43334,&quot;variety&quot;:&quot;No. 457&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:42.2,&quot;variety&quot;:&quot;No. 457&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:43.53334,&quot;variety&quot;:&quot;No. 457&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:34.33333,&quot;variety&quot;:&quot;No. 457&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:19.46667,&quot;variety&quot;:&quot;No. 457&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:22.7,&quot;variety&quot;:&quot;No. 457&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:25.56667,&quot;variety&quot;:&quot;No. 462&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:44.7,&quot;variety&quot;:&quot;No. 462&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:47,&quot;variety&quot;:&quot;No. 462&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:30.53333,&quot;variety&quot;:&quot;No. 462&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:19.9,&quot;variety&quot;:&quot;No. 462&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:22.5,&quot;variety&quot;:&quot;No. 462&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:28.06667,&quot;variety&quot;:&quot;Peatland&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:36.03333,&quot;variety&quot;:&quot;Peatland&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:43.2,&quot;variety&quot;:&quot;Peatland&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:25.23333,&quot;variety&quot;:&quot;Peatland&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:26.76667,&quot;variety&quot;:&quot;Peatland&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:31.36667,&quot;variety&quot;:&quot;Peatland&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:30,&quot;variety&quot;:&quot;No. 475&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:41.26667,&quot;variety&quot;:&quot;No. 475&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:44.23333,&quot;variety&quot;:&quot;No. 475&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:32.13333,&quot;variety&quot;:&quot;No. 475&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:15.23333,&quot;variety&quot;:&quot;No. 475&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:27.36667,&quot;variety&quot;:&quot;No. 475&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Duluth&quot;},
+{&quot;yield&quot;:38,&quot;variety&quot;:&quot;Wisconsin No. 38&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;University Farm&quot;},
+{&quot;yield&quot;:58.16667,&quot;variety&quot;:&quot;Wisconsin No. 38&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Waseca&quot;},
+{&quot;yield&quot;:47.16667,&quot;variety&quot;:&quot;Wisconsin No. 38&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Morris&quot;},
+{&quot;yield&quot;:35.9,&quot;variety&quot;:&quot;Wisconsin No. 38&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Crookston&quot;},
+{&quot;yield&quot;:20.66667,&quot;variety&quot;:&quot;Wisconsin No. 38&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Grand Rapids&quot;},
+{&quot;yield&quot;:29.33333,&quot;variety&quot;:&quot;Wisconsin No. 38&quot;,&quot;year&quot;:1932,&quot;site&quot;:&quot;Duluth&quot;}
+]&quot;*/</pre>
+
+No matter the manipulations you inflict to an array you will always be able to make it reveal its innards by using this.
+
+]]></content:encoded>
+			<wfw:commentRss>/2011/03/15/more-fun-with-arrays-in-protovis/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,339 @@
+<html><head>
+<script type="text/javascript" src="http://blog.oecdfactblog.org/wp-includes/js/protovis-r3.2.js"></script>
+    <script type="text/javascript" src="/wp-content/uploads/2011/01/PLF2011.js"></script>
+    <style type="text/css">
+
+
+#fig {
+  width: 100%;
+}
+
+#footer {
+  font: 24pt helvetica neue;
+  color: #666;
+}
+
+input {
+  font: 24pt helvetica neue;
+  background: none;
+  border: none;
+  outline: 0;
+}
+
+#title1 {
+  font: 24pt Verdana, Tahoma, sans serif;
+  float: left;
+  text-align: left;
+  margin-right:10px;
+}
+#title {
+  font: 24pt Verdana, Tahoma, sans serif;
+  float: right;
+  text-align: right;
+  margin-right:10px;
+}
+body {font: 10pt Verdana, Tahoma, sans serif;}
+    </style>
+  </head>
+  <body><div id="center"><div id="fig">
+    <div id="title1">Dépenses de l'État</div>
+    <div id="title"></div>
+    <script type="text/javascript+protovis">
+    var myFont="10pt Verdana, Tahoma, sans serif";
+var tm={
+	0:{
+	  1:{
+	  	2:{3:112,4:534,5:328,6:32,7:0,8:11,9:0,10:1},
+		11:{12:59,13:201}
+	  },
+	  14:{
+	  	15:{16:1171,17:2135,18:30},
+		19:{20:134,21:3070,22:115},
+		23:{24:18041,25:29435,26:3865,27:7082,28:2082,29:1291},
+		30:{31:8452,32:345,33:909,34:1608,35:215,36:221},
+		37:{38:699,39:550},
+		40:{41:328,42:293,43:35},
+		44:{45:12270,46:2084,47:5132,48:1245,49:1393,50:1374,51:1077,52:197,53:122,54:300},
+		55:{56:3880,57:797,58:1353},
+		59:{60:705,61:232,62:9884,63:19,64:1527},
+		65:{66:209,67:212},
+		68:{69:6193,70:4448,71:77,72:745},
+		73:{74:1185,75:5285,76:518,77:618}
+	  },
+	  78:{
+	  	79:{80:1814,81:758,82:343,83:50},
+		84:{85:1654,86:185,87:611},
+		88:{89:2031,90:371,91:510,92:761},
+		93:{94:338,95:37,96:214},
+		97:{98:868,99:737,100:1068},
+		101:{102:1793,103:21921,104:3022,105:10685},
+		106:{107:578,108:92,109:439},
+		110:{111:4078,112:58,113:132,114:198,115:345,116:82,117:304,118:752,119:3584},
+		120:{121:1070,122:51,123:435,124:509},
+		125:{126:45382,127:227,128:1122,129:196},
+		130:{131:489,132:73},
+		133:{134:2960,135:2812,136:758,137:331,138:267},
+		139:{140:1332,141:646},
+		142:{143:776,144:492,145:892,146:354},
+		147:{148:71025,149:11128},
+		150:{151:583,152:638},
+		153:{154:9088,155:7731},
+		156:{157:265,158:170}
+	  }
+	}
+};
+
+var details=[
+{id: 0, lvl:0, label: "Dépenses totales", a:378231204238, c: 368436876724, cA: 0.999495137375702, cC: 0.982129498681491},
+{id: 1, lvl:1, label: "Missions constituées de dotations", a:1277680164, c: 1277680164, cA: 1.17202482733314, cC: 1.18727212810691},
+{id: 2, lvl:2, label: "Pouvoirs publics", a:1017915150, c: 1017915150, cA: 1.00026281688772, cC: 1.00026281688772},
+{id: 3, lvl:3, label: "Présidence de la République", a:112298700, c: 112298700, cA: 0.997911736661996, cC: 0.997911736661996},
+{id: 4, lvl:3, label: "Assemblée nationale", a:533910000, c: 533910000, cA: 1, cC: 1},
+{id: 5, lvl:3, label: "Sénat", a:327694000, c: 327694000, cA: 1, cC: 1},
+{id: 6, lvl:3, label: "La chaîne parlementaire", a:32125000, c: 32125000, cA: 1.0384677549701, cC: 1.0384677549701},
+{id: 7, lvl:3, label: "Indemnités des représentants français au Parlement européen", a:0, c: 0, cA: 1, cC: 1},
+{id: 8, lvl:3, label: "Conseil constitutionnel", a:11070000, c: 11070000, cA: 0.951570478106143, cC: 0.951570478106143},
+{id: 9, lvl:3, label: "Haute Cour", a:0, c: 0, cA: 1, cC: 1},
+{id: 10, lvl:3, label: "Cour de justice de la République", a:817450, c: 817450, cA: 0.868154567515758, cC: 0.868154567515758},
+{id: 11, lvl:2, label: "Provisions", a:259765014, c: 259765014, cA: 3.58296571034483, cC: 4.44042758974359},
+{id: 12, lvl:3, label: "Provision relative aux rémunérations publiques", a:59000000, c: 59000000, cA: 1, cC: 1},
+{id: 13, lvl:3, label: "Dépenses accidentelles et imprévisibles", a:200765014, c: 200765014, cA: 2.76917260689655, cC: 3.43188058119658},
+{id: 14, lvl:1, label: "Missions interministérielles", a:147248293495, c: 144947078759, cA: 1.0255720750362, cC: 1.00949549712627},
+{id: 15, lvl:2, label: "Aide publique au développement", a:4577896147, c: 3336110735, cA: 1.58840913840599, cC: 0.998392074701647},
+{id: 16, lvl:3, label: "Aide économique et financière au développement", a:2494005562, c: 1171141484, cA: 3.66681201706538, cC: 0.98679793370703},
+{id: 17, lvl:3, label: "Solidarité à l’égard des pays en développement", a:2053890585, c: 2134969251, cA: 0.944057598483506, cC: 1.00712190070311},
+{id: 18, lvl:3, label: "Développement solidaire et migrations", a:30000000, c: 30000000, cA: 1.14031968178087, cC: 0.862018681094178},
+{id: 19, lvl:2, label: "Anciens combattants, mémoire et liens avec la nation", a:3312738544, c: 3318992391, cA: 0.967242874137539, cC: 0.967432957164291},
+{id: 20, lvl:3, label: "Liens entre la nation et son armée", a:127360269, c: 134290269, cA: 0.848518557749884, cC: 0.86393287175903},
+{id: 21, lvl:3, label: "Reconnaissance et réparation en faveur du monde combattant", a:3069636338, c: 3069636338, cA: 0.965804656518728, cC: 0.965804656518728},
+{id: 22, lvl:3, label: "Indemnisation des victimes des persécutions antisémites et des actes de barbarie pendant la seconde guerre mondiale", a:115741937, c: 115065784, cA: 1.19924805069243, cC: 1.18673323686136},
+{id: 23, lvl:2, label: "Enseignement scolaire", a:61907403604, c: 61796818861, cA: 1.01714905502837, cC: 1.01612264193995},
+{id: 24, lvl:3, label: "Enseignement scolaire public du premier degré", a:18041254102, c: 18041254102, cA: 1.02457834762717, cC: 1.02457353561082},
+{id: 25, lvl:3, label: "Enseignement scolaire public du second degré", a:29434762889, c: 29434762889, cA: 1.01346877310119, cC: 1.01346018323588},
+{id: 26, lvl:3, label: "Vie de l’élève", a:3929532454, c: 3865014124, cA: 1.04685855285773, cC: 1.0287825668519},
+{id: 27, lvl:3, label: "Enseignement privé du premier et du second degrés", a:7082403910, c: 7082403910, cA: 1.00594171237163, cC: 1.00577119240715},
+{id: 28, lvl:3, label: "Soutien de la politique de l’éducation nationale", a:2122298762, c: 2081992349, cA: 0.989985213153716, cC: 0.988526991551887},
+{id: 29, lvl:3, label: "Enseignement technique agricole", a:1297151487, c: 1291391487, cA: 1.01847626257845, cC: 1.02563039210328},
+{id: 30, lvl:2, label: "Gestion des finances publiques et des ressources humaines", a:11724800483, c: 11749922836, cA: 1.01490929478674, cC: 1.01605200675199},
+{id: 31, lvl:3, label: "Gestion fiscale et financière de l’État et du secteur public local", a:8465195480, c: 8451957096, cA: 1.00894333585721, cC: 1.00787483231742},
+{id: 32, lvl:3, label: "Stratégie des finances publiques et modernisation de l’État", a:291366581, c: 344895972, cA: 1.58148741122171, cC: 1.11409858839121},
+{id: 33, lvl:3, label: "Conduite et pilotage des politiques économique et financière", a:925851633, c: 908953271, cA: 0.956682486420681, cC: 1.02828588845879},
+{id: 34, lvl:3, label: "Facilitation et sécurisation des échanges", a:1606067142, c: 1607843081, cA: 1.00519416877943, cC: 1.00835348241226},
+{id: 35, lvl:3, label: "Entretien des bâtiments de l’État", a:215039942, c: 215352862, cA: 1.27477455872019, cC: 1.27426579138857},
+{id: 36, lvl:3, label: "Fonction publique", a:221279705, c: 220920554, cA: 0.907126150341864, cC: 0.998174486580422},
+{id: 37, lvl:2, label: "Médias, livre et industries culturelles", a:1452439178, c: 1455939178, cA: 0.996222161198669, cC: 1.01959944298188},
+{id: 38, lvl:3, label: "Presse, livre et industries culturelles", a:695852418, c: 699352418, cA: 0.948694660602628, cC: 0.994826813192521},
+{id: 39, lvl:3, label: "Contribution à l’audiovisuel et à la diversité radiophonique", a:549900000, c: 549900000, cA: 1.0436654121425, cC: 1.0436654121425},
+{id: 40, lvl:2, label: "Action audiovisuelle extérieure", a:206686760, c: 206686760, cA: 1.04614445512983, cC: 1.04350360983491},
+{id: 41, lvl:3, label: "Politique des territoires", a:356309205, c: 327681150, cA: 0.931831948588286, cC: 0.871084578876279},
+{id: 42, lvl:3, label: "Impulsion et coordination de la politique d’aménagement du territoire", a:308627727, c: 292779811, cA: 0.898758253370813, cC: 0.86072990448673},
+{id: 43, lvl:3, label: "Interventions territoriales de l’État", a:47681478, c: 34901339, cA: 1.22318291779496, cC: 0.968859980647417},
+{id: 44, lvl:2, label: "Recherche et enseignement supérieur", a:25368984749, c: 25194200112, cA: 1.00193510016396, cC: 1.01892102904516},
+{id: 45, lvl:3, label: "Formations supérieures et recherche universitaire", a:12477756441, c: 12270039804, cA: 0.998182135336605, cC: 1.01026450919261},
+{id: 46, lvl:3, label: "Vie étudiante", a:2081485502, c: 2083895502, cA: 1.03282547344233, cC: 1.03453463889931},
+{id: 47, lvl:3, label: "Recherches scientifiques et technologiques pluridisciplinaires", a:5132326835, c: 5132326835, cA: 0.987261517405104, cC: 0.992799831489344},
+{id: 48, lvl:3, label: "Recherche dans le domaine de la gestion des milieux et des ressources", a:1245064278, c: 1245064278, cA: 1.00521377710237, cC: 1.00521377710237},
+{id: 49, lvl:3, label: "Recherche spatiale", a:1393253193, c: 1393253193, cA: 1.06988504587821, cC: 1.06988504587821},
+{id: 50, lvl:3, label: "Recherche dans les domaines de l’énergie, du développement et de l’aménagement durables", a:1335036461, c: 1374236461, cA: 0.947051001711015, cC: 1.06010651726606},
+{id: 51, lvl:3, label: "Recherche et enseignement supérieur en matière économique et industrielle", a:1087738988, c: 1076838988, cA: 1.05192874371536, cC: 1.14864894179987},
+{id: 52, lvl:3, label: "Recherche duale (civile et militaire)", a:196868745, c: 196868745, cA: 1.00160104049546, cC: 1},
+{id: 53, lvl:3, label: "Recherche culturelle et culture scientifique", a:121833034, c: 121533034, cA: 0.973908371069977, cC: 0.991726483751596},
+{id: 54, lvl:3, label: "Enseignement supérieur et recherche agricoles", a:297621272, c: 300143272, cA: 0.99404407753361, cC: 0.990478171241222},
+{id: 55, lvl:2, label: "Régimes sociaux et de retraite", a:6030948279, c: 6030948279, cA: 1.05310963871621, cC: 1.05310963871621},
+{id: 56, lvl:3, label: "Régimes sociaux et de retraite des transports terrestres", a:3880180000, c: 3880180000, cA: 1.01462508988691, cC: 1.01462508988691},
+{id: 57, lvl:3, label: "Régimes de retraite et de sécurité sociale des marins", a:797278279, c: 797278279, cA: 1.00602937413249, cC: 1.00602937413249},
+{id: 58, lvl:3, label: "Régimes de retraite des mines, de la SEITA et divers", a:1353490000, c: 1353490000, cA: 1.21930543669204, cC: 1.21930543669204},
+{id: 59, lvl:2, label: "Solidarité, insertion et égalité des chances", a:12372261092, c: 12366477409, cA: 0.975670344452808, cC: 0.973067024859117},
+{id: 60, lvl:3, label: "Lutte contre la pauvreté : revenu de solidarité active et expérimentations sociales", a:705000000, c: 705000000, cA: 0.440087984562223, cC: 0.438541141846702},
+{id: 61, lvl:3, label: "Actions en faveur des familles vulnérables", a:231850212, c: 231850212, cA: 0.567515908183348, cC: 0.567515908183348},
+{id: 62, lvl:3, label: "Handicap et dépendance", a:9886734198, c: 9883734198, cA: 1.08586714867709, cC: 1.08553765651307},
+{id: 63, lvl:3, label: "Égalité entre les hommes et les femmes", a:18639187, c: 18639187, cA: 1.05110890341044, cC: 1.04945159539647},
+{id: 64, lvl:3, label: "Conduite et soutien des politiques sanitaires, sociales, du sport, de la jeunesse et de la vie", a:1530037495, c: 1527253812, cA: 0.988626847308187, cC: 0.972808678933213},
+{id: 65, lvl:2, label: "Sport, jeunesse et vie associative", a:409385800, c: 420902168, cA: 0.96587353925523, cC: 0.963559877783967},
+{id: 66, lvl:3, label: "Sport", a:196985800, c: 208502168, cA: 0.851766010101592, cC: 0.855446787846918},
+{id: 67, lvl:3, label: "Jeunesse et vie associative", a:212400000, c: 212400000, cA: 1.10290219782134, cC: 1.10003297457602},
+{id: 68, lvl:2, label: "Travail et emploi", a:12237854277, c: 11463085448, cA: 1.07822495323888, cC: 1.00531328068025},
+{id: 69, lvl:3, label: "Accès et retour à l’emploi", a:6858111381, c: 6193152552, cA: 1.17560526377365, cC: 1.05353576077213},
+{id: 70, lvl:3, label: "Accompagnement des mutations économiques et développement de l’emploi", a:4396774090, c: 4448274090, cA: 0.94872215519399, cC: 0.959834664045336},
+{id: 71, lvl:3, label: "Amélioration de la qualité de l’emploi et des relations du travail", a:129410000, c: 77000000, cA: 2.13652181216079, cC: 0.983836964160225},
+{id: 72, lvl:3, label: "Conception, gestion et évaluation des politiques de l’emploi et du travail", a:853558806, c: 744658806, cA: 1.03924222406884, cC: 0.917775883554357},
+{id: 73, lvl:2, label: "Ville et logement", a:7646894582, c: 7606994582, cA: 0.993541976733257, cC: 0.974802474356966},
+{id: 74, lvl:3, label: "Prévention de l’exclusion et insertion des personnes vulnérables", a:1184880297, c: 1184880297, cA: 1.07546394006746, cC: 1.07546394006746},
+{id: 75, lvl:3, label: "Aide à l’accès au logement", a:5285354585, c: 5285354585, cA: 0.9842750559365, cC: 0.9842750559365},
+{id: 76, lvl:3, label: "Développement et amélioration de l’offre de logement", a:558400000, c: 518400000, cA: 1.09315237469549, cC: 0.823334127761826},
+{id: 77, lvl:3, label: "Politique de la ville", a:618259700, c: 618359700, cA: 0.865606742787744, cC: 0.880279214179165},
+{id: 78, lvl:1, label: "Missions ministérielles", a:229705230579, c: 222212117801, cA: 0.982673600786537, cC: 0.964123352929701},
+{id: 79, lvl:2, label: "Action extérieure de l’État", a:2962207818, c: 2965212901, cA: 1.04798045306725, cC: 1.05999185059562},
+{id: 80, lvl:3, label: "Action de la France en Europe et dans le monde", a:1801415033, c: 1814420116, cA: 1.03992192910441, cC: 1.06600989700958},
+{id: 81, lvl:3, label: "Diplomatie culturelle et d’influence", a:757616526, c: 757616526, cA: 0.98542948766067, cC: 0.984404510234662},
+{id: 82, lvl:3, label: "Français à l’étranger et affaires consulaires", a:343176259, c: 343176259, cA: 1.05427769065288, cC: 1.05363748728428},
+{id: 83, lvl:3, label: "Présidence française du G20 et du G8 (nouveau)", a:60000000, c: 50000000, cA: 1, cC: 1},
+{id: 84, lvl:2, label: "Administration générale et territoriale de l’État", a:2571120568, c: 2450129956, cA: 0.989755858974252, cC: 0.943838216312193},
+{id: 85, lvl:3, label: "Administration territoriale", a:1680257858, c: 1654089918, cA: 0.969533286151928, cC: 0.954175809054081},
+{id: 86, lvl:3, label: "Vie politique, cultuelle et associative", a:190913336, c: 184619928, cA: 0.70469609005223, cC: 0.687496561957272},
+{id: 87, lvl:3, label: "Conduite et pilotage des politiques de l’intérieur", a:699949374, c: 611420110, cA: 1.17884660931547, cC: 1.02957861354745},
+{id: 88, lvl:2, label: "Agriculture, pêche, alimentation, forêt et affaires rurales", a:3587970140, c: 3674050948, cA: 0.982411852516284, cC: 1.01771876428779},
+{id: 89, lvl:3, label: "Économie et développement durable de l’agriculture, de la pêche et des territoires", a:1974662750, c: 2031377089, cA: 1.0403468277341, cC: 1.0913827993379},
+{id: 90, lvl:3, label: "Forêt", a:360132013, c: 371343883, cA: 0.983796680868357, cC: 1.09605798811631},
+{id: 91, lvl:3, label: "Sécurité et qualité sanitaires de l’alimentation", a:505433589, c: 510082909, cA: 0.935051626820935, cC: 0.908708738357447},
+{id: 92, lvl:3, label: "Conduite et pilotage des politiques de l’agriculture", a:747741788, c: 761247067, cA: 0.882270183196015, cC: 0.896987658630065},
+{id: 93, lvl:2, label: "Conseil et contrôle de l’État", a:614802839, c: 588940461, cA: 1.04152391667279, cC: 1.03185311642831},
+{id: 94, lvl:3, label: "Conseil d’État et autres juridictions administratives", a:347909777, c: 337647399, cA: 1.00232694652552, cC: 1.04844588568128},
+{id: 95, lvl:3, label: "Conseil économique, social et environnemental", a:37452421, c: 37452421, cA: 0.996180340873802, cC: 0.995892746439335},
+{id: 96, lvl:3, label: "Cour des comptes et autres juridictions financières", a:229440641, c: 213840641, cA: 1.11599167979553, cC: 1.01294676999154},
+{id: 97, lvl:2, label: "Culture", a:2708009323, c: 2672811450, cA: 1.0403824965989, cC: 0.998461059002629},
+{id: 98, lvl:3, label: "Patrimoines", a:848331458, c: 868272839, cA: 1.1079479601448, cC: 1.01444170173132},
+{id: 99, lvl:3, label: "Création", a:753135807, c: 736865807, cA: 1.04241273616048, cC: 1.01839371705202},
+{id: 100, lvl:3, label: "Transmission des savoirs et démocratisation de la culture", a:1106542058, c: 1067672804, cA: 0.992657595782482, cC: 0.972856134075218},
+{id: 101, lvl:2, label: "Défense", a:41985177990, c: 37420581958, cA: 1.06949014447998, cC: 1.00742463334373},
+{id: 102, lvl:3, label: "Environnement et prospective de la politique de défense", a:1841933798, c: 1792614798, cA: 1.04988776350574, cC: 1.00685663426915},
+{id: 103, lvl:3, label: "Préparation et emploi des forces", a:22593527935, c: 21920737927, cA: 0.989033014549696, cC: 1.01763480591373},
+{id: 104, lvl:3, label: "Soutien de la politique de la défense", a:4383063365, c: 3022175724, cA: 1.45164864028734, cC: 1.21875505414183},
+{id: 105, lvl:3, label: "Équipement des forces", a:13166652892, c: 10685053509, cA: 1.13121869584876, cC: 0.941929293262323},
+{id: 106, lvl:2, label: "Direction de l’action du Gouvernement", a:1525023329, c: 1108894780, cA: 2.7196641570388, cC: 1.99465188304101},
+{id: 107, lvl:3, label: "Coordination du travail gouvernemental", a:585890993, c: 578417732, cA: 1.22559688636456, cC: 1.23905367605984},
+{id: 108, lvl:3, label: "Protection des droits et libertés", a:147666108, c: 91510820, cA: 1.78569000259934, cC: 1.02692128984243},
+{id: 109, lvl:3, label: "Moyens mutualisés des administrations déconcentrées (nouveau)", a:791466228, c: 438966228, cA: 1, cC: 1},
+{id: 110, lvl:2, label: "Écologie, développement et aménagement durables", a:10037545729, c: 9532597507, cA: 0.972558851430141, cC: 0.939750736411927},
+{id: 111, lvl:3, label: "Infrastructures et services de transports", a:4308830095, c: 4077503731, cA: 0.980023470119929, cC: 0.945408550205569},
+{id: 112, lvl:3, label: "Sécurité et circulation routières", a:57660000, c: 57660000, cA: 0.953983767385469, cC: 0.944690733222876},
+{id: 113, lvl:3, label: "Sécurité et affaires maritimes", a:129753514, c: 132143096, cA: 0.982248602682275, cC: 0.980336755665098},
+{id: 114, lvl:3, label: "Météorologie", a:198450000, c: 198450000, cA: 1.04833597464342, cC: 1.04833597464342},
+{id: 115, lvl:3, label: "Urbanisme, paysages, eau et biodiversité", a:349962642, c: 345192300, cA: 0.991327541455157, cC: 0.995584963845572},
+{id: 116, lvl:3, label: "Information géographique et cartographique", a:82009117, c: 82009117, cA: 1.11349785471826, cC: 1.11349785471826},
+{id: 117, lvl:3, label: "Prévention des risques", a:373565106, c: 303565106, cA: 1.07811679743185, cC: 0.989733293892905},
+{id: 118, lvl:3, label: "Énergie, climat et après-mines", a:741592430, c: 752172640, cA: 0.831026774394998, cC: 0.889401137833509},
+{id: 119, lvl:3, label: "Conduite et pilotage des politiques de l’écologie, de l’énergie, du développement durable et de la mer", a:3795722825, c: 3583901517, cA: 0.979110203117559, cC: 0.925385647437044},
+{id: 120, lvl:2, label: "Économie", a:2057934886, c: 2063525993, cA: 1.05364573478798, cC: 1.06679622667383},
+{id: 121, lvl:3, label: "Développement des entreprises et de l’emploi", a:1058888671, c: 1069679778, cA: 0.940344118264796, cC: 0.961628743325717},
+{id: 122, lvl:3, label: "Tourisme", a:52500009, c: 50600009, cA: 0.90388386433804, cC: 0.891127675555335},
+{id: 123, lvl:3, label: "Statistiques et études économiques", a:437923682, c: 434623682, cA: 1.03694692129242, cC: 1.0392823049136},
+{id: 124, lvl:3, label: "Stratégie économique et fiscale", a:508622524, c: 508622524, cA: 1.46708855603658, cC: 1.46585474014757},
+{id: 125, lvl:2, label: "Engagements financiers de l’État", a:46926813783, c: 46926813783, cA: 1.06274540371013, cC: 1.06273762154625},
+{id: 126, lvl:3, label: "Charge de la dette et trésorerie de l’État (crédits évaluatifs)", a:45382000000, c: 45382000000, cA: 1.06906949352179, cC: 1.06906949352179},
+{id: 127, lvl:3, label: "Appels en garantie de l’État (crédits évaluatifs)", a:227300000, c: 227300000, cA: 0.91727199354318, cC: 0.91727199354318},
+{id: 128, lvl:3, label: "Épargne", a:1121513783, c: 1121513783, cA: 0.894063921396684, cC: 0.894063921396684},
+{id: 129, lvl:3, label: "Majoration de rentes", a:196000000, c: 196000000, cA: 0.960717011731301, cC: 0.95919676784359},
+{id: 130, lvl:2, label: "Immigration, asile et intégration", a:563761795, c: 561511795, cA: 0.997849969026677, cC: 1.00727105265964},
+{id: 131, lvl:3, label: "Immigration et asile", a:490881080, c: 488631080, cA: 1.01066564090479, cC: 1.02211863348293},
+{id: 132, lvl:3, label: "Intégration et accès à la nationalité française", a:72880715, c: 72880715, cA: 0.919331855638765, cC: 0.917877240790855},
+{id: 133, lvl:2, label: "Justice", a:8797402417, c: 7127986406, cA: 1.19435687504171, cC: 1.04144734950378},
+{id: 134, lvl:3, label: "Justice judiciaire", a:4133008346, c: 2959680413, cA: 1.43580483714343, cC: 1.0439531115055},
+{id: 135, lvl:3, label: "Administration pénitentiaire", a:3270447658, c: 2811928579, cA: 1.06777105996265, cC: 1.04476849939876},
+{id: 136, lvl:3, label: "Protection judiciaire de la jeunesse", a:757933270, c: 757933270, cA: 0.983775253365328, cC: 0.979181941220437},
+{id: 137, lvl:3, label: "Accès au droit et à la justice", a:388012825, c: 331312825, cA: 1.1324784687716, cC: 1.12364175267789},
+{id: 138, lvl:3, label: "Conduite et pilotage de la politique de la justice", a:248000318, c: 267131319, cA: 0.796540189725802, cC: 1.07326037196989},
+{id: 139, lvl:2, label: "Outre-mer", a:2155962230, c: 1977305576, cA: 0.994541483378594, cC: 0.977210926728507},
+{id: 140, lvl:3, label: "Emploi outre-mer", a:1351831797, c: 1331601797, cA: 1.03019906463509, cC: 1.02204516046278},
+{id: 141, lvl:3, label: "Conditions de vie outre-mer", a:804130433, c: 645703779, cA: 0.939854078081721, cC: 0.896141466148473},
+{id: 142, lvl:2, label: "Relations avec les collectivités territoriales", a:2559670500, c: 2513445243, cA: 0.956973795542216, cC: 0.957838989187867},
+{id: 143, lvl:3, label: "Concours financiers aux communes et groupements de communes", a:815109747, c: 775776490, cA: 1.00040751114504, cC: 1.00165676570779},
+{id: 144, lvl:3, label: "Concours financiers aux départements", a:491707164, c: 491707164, cA: 1.00505049011277, cC: 1.00961765589033},
+{id: 145, lvl:3, label: "Concours financiers aux régions", a:891929648, c: 891929648, cA: 0.998065921306032, cC: 0.998065921306032},
+{id: 146, lvl:3, label: "Concours spécifiques et administration", a:360923941, c: 354031941, cA: 0.756522313618011, cC: 0.75501922686664},
+{id: 147, lvl:2, label: "Remboursements et dégrèvements", a:82152556000, c: 82152556000, cA: 0.872035143568185, cC: 0.872035143568185},
+{id: 148, lvl:3, label: "Remboursements et dégrèvements d’impôts d’État (crédits évaluatifs)", a:71024556000, c: 71024556000, cA: 0.907458531664783, cC: 0.907458531664783},
+{id: 149, lvl:3, label: "Remboursements et dégrèvements d’impôts locaux (crédits évaluatifs)", a:11128000000, c: 11128000000, cA: 0.698104803548239, cC: 0.698104803548239},
+{id: 150, lvl:2, label: "Santé", a:1221391919, c: 1221391919, cA: 1.03779040894676, cC: 1.02021281487772},
+{id: 151, lvl:3, label: "Prévention, sécurité sanitaire et offre de soins", a:583391919, c: 583391919, cA: 0.985607846412126, cC: 0.952961604672881},
+{id: 152, lvl:3, label: "Protection maladie", a:638000000, c: 638000000, cA: 1.09058896932505, cC: 1.09058896932505},
+{id: 153, lvl:2, label: "Sécurité", a:16818103856, c: 16819486999, cA: 1.01126391502595, cC: 1.02656119149805},
+{id: 154, lvl:3, label: "Police nationale", a:9142604485, c: 9088266756, cA: 1.02876241688895, cC: 1.03859969455616},
+{id: 155, lvl:3, label: "Gendarmerie nationale", a:7675499371, c: 7731220243, cA: 0.991182120039645, cC: 1.01276165287935},
+{id: 156, lvl:2, label: "Sécurité civile", a:459775457, c: 434874126, cA: 1.02463823336485, cC: 0.953737249760171},
+{id: 157, lvl:3, label: "Intervention des services opérationnels", a:259602600, c: 264840600, cA: 0.951113567340148, cC: 1.00012330823289},
+{id: 158, lvl:3, label: "Coordination des moyens de secours", a:200172857, c: 170033526, cA: 1.13880914816448, cC: 0.889480278970761}];
+
+;
+
+String.prototype.visualLength = function(fontFamily)
+	{
+	    var ruler = document.getElementById("ruler");
+	    ruler.style.font = fontFamily;
+	    ruler.innerHTML = this;
+	    return ruler.offsetWidth;
+	}
+
+/** Computes the full class name of a given node. */
+function title(d) {
+  return d.parentNode ? (title(d.parentNode) + " > " + (d.nodeName>-1?details[d.nodeName].label:"")) : (d.nodeName>-1?details[d.nodeName].label:"");
+}
+
+var re = "",
+    color = pv.Colors.category19().by(function(d) d.parentNode.nodeName)
+    nodes = pv.dom(tm).root("tm").nodes();
+
+var vis = new pv.Panel()
+    .width(function() window.innerWidth - 20)
+    .height(function() window.innerHeight - 100)
+    .margin(.5);
+
+var fill = pv.Scale.linear()
+    .domain(0.8, 1, 2)
+    //.range("#91bfdb", "#ffffbf", "#fc8d59")
+    .range("#67A9CF","#F7F7F7", "#EF8A62")
+    ;
+
+var treemap = vis.add(pv.Layout.Treemap)
+    .nodes(nodes)
+    .padding(6)
+    .paddingTop(20)
+    .round(true);
+
+treemap.node.add(pv.Panel)
+	.strokeStyle(function(d) (d.nodeName>-1)?(details[d.nodeName].lvl<3?"#000":"#fff"):"#fff")
+	//.lineWidth(function(d) (d.nodeName>-1)?(details[d.nodeName].lvl<3?5-details[d.nodeName].lvl:0):0)
+	.fillStyle(function(d) (d.nodeName>-1)?fill(details[d.nodeName].cC):undefined)
+	.title(function(d) (d.nodeName>-1)?details[d.nodeName].label+" ("+pv.Format.number().format((details[d.nodeName].c/1000000).toFixed(0))+" mE)":"")
+	.anchor("top").add(pv.Label)
+	.left(0)
+		.textAlign("left").textBaseline("top")
+		.text(function(d) (d.nodeName>-1)?((details[d.nodeName].label)+" ("+pv.Format.number().format((details[d.nodeName].c/1000000000).toFixed(1))+" milliards)").substr(0,d.dx/7):"")
+		.visible(function(d) (d.nodeName>-1)&&(details[d.nodeName].lvl<3)&&(d.dy>20)&&(d.dx>10))
+		.font(myFont);
+
+
+;
+
+
+
+
+vis.render();
+
+//** Counts the number of matching classes, updating the title element. */
+function count() {
+  var classes = 0, bytes = 0, total = 0;
+  for (var i = 0; i < nodes.length; i++) {
+    var n = nodes[i];
+    if(n.firstChild) continue;
+    total += n.nodeValue;
+    if (title(n).match(re)) {
+      classes++;
+      bytes += n.nodeValue;
+    }
+  }
+  var percent = bytes / total * 100;
+  document.getElementById("title").innerHTML
+      = classes + " postes; "
+      + (bytes / 1000)  + " milliards";
+}
+
+/** Updates the visualization and count when a new query is entered. */
+function update(query) {
+  if (query != re) {
+    re = new RegExp(query, "i");
+    count();
+    vis.render();
+  }
+}
+
+count();
+
+    </script>
+  </div></div>
+  <span id="ruler"></span>
+  </body>
+
+</html>
+
+

@@ -1,0 +1,97 @@
+<html>
+<head>
+<script type="text/javascript" src="http://blog.oecdfactblog.org/wp-includes/js/protovis-r3.2.js"></script>
+<script type="text/javascript" src="tags.js"></script>
+<style>
+.protovis {width:500; height:500; background: #fff;}
+#ruler { visibility: hidden; white-space: nowrap; }
+body {background: #222;}
+</style></head>
+
+<body><div class="protovis">
+
+
+<script type="text/javascript+protovis">
+String.prototype.visualLength = function(fontFamily)
+	{
+	    var ruler = document.getElementById("ruler");
+	    ruler.style.font = fontFamily;
+	    ruler.innerHTML = this;
+	    return ruler.offsetWidth;
+	}
+
+var w = 500,
+    h = 500;
+var i=1;
+var vis = new pv.Panel()
+    .width(w)
+    .height(h)
+    ;
+
+var nodes=[],links=[];
+function font(value) {
+	return "italic "+((/*Math.floor*/2*(6+Math.sqrt(value))))+"px Georgia";
+}
+
+function bubblesize(tag){
+	return tag.word.visualLength(font(tag.value));
+}
+
+// this puts the words in a spiral by order of importance. not necessary, but why not.
+pos=pv.range(tags.length)
+var posx=(.8*w)/2,posy=(.8*h)/2,posxstep=.8*w/Math.sqrt(pos.length),posystep=.8*h/Math.sqrt(pos.length);
+var posds=[[0,1],[-1,0],[0,-1],[1,0]], d=0,s=0,t=0, maxS=1;
+pos=pos.map(function(p,i) {
+var mypos={x:posx,y:posy,s:s,d:d,maxS:maxS,t:t}
+s++;if(s==maxS){s=0;if(t){maxS++;}
+t=1-t;d=++d%4;}	posx+=posds[d][0]*posxstep;posy+=posds[d][1]*posystep;return mypos;})
+
+
+tags.forEach(function(t,i) {
+	var x=pos[i].x+50;
+	var y=pos[i].y+50;
+
+	var n={x:x,y:y,p:{x:x,y:y},r:.5*bubblesize(t),code:t.word};
+	nodes.push(n);
+	if(i){
+		links.push({sourceNode:i-1,targetNode:i,length:1});
+	}
+})
+
+var collisionConstraint=pv.Constraint.collision(function(d) d.r+1)
+	positionConstraint=pv.Constraint.position(function(d) d.p)
+	linkConstraint = pv.Force.spring(100).links(links)
+
+;
+var sim=pv.simulation(nodes).constraint(collisionConstraint)
+.constraint(positionConstraint)
+.constraint(linkConstraint)
+.force(pv.Force.drag());
+;
+//vis.add(pv.Line).data(pos).left(function(d) d.x).top(function(d) d.y)
+vis.add(pv.Dot).data(nodes).left(function(d) d.x).top(function(d) d.y).radius(function(d) d.r).fillStyle(null).strokeStyle(pv.color("steelblue").alpha(.1))
+.anchor("center")
+.add(pv.Label).text(function(d) d.code).font(function() font(tags[this.index].value));
+
+
+
+ease = setInterval(function() {
+  if (i++ > 140) {
+    clearInterval(ease);
+    ease = null;
+  }
+  sim.step();
+  positionConstraint.alpha(Math.pow(.7, i + 2) + .03);
+  linkConstraint.damping(Math.pow(.7, i + 2) + .03);
+  vis.render();
+}, 42);
+
+
+
+
+    </script>
+
+</div>
+<span id="ruler"></span>
+  </body>
+</html>

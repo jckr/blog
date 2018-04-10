@@ -1,0 +1,166 @@
+message	correspondent	direction	tweet	word1	word2	word3	time	subject	thread	length
+
+13538	t4K	from		athanks	height	infrastructure	1341972143	d3 blog post on visually	1470	112
+
+13537	t4K	to		element	var	grab	1341988940	Re: d3 blog post on visually	1470	100
+
+13534	t4K	from		incorrect	spss	stata	1342041077	Re: d3 blog post on visually	1470	251
+
+13533	t4K	to		subscription	newer	reader	1342097974	Re: d3 blog post on visually	1470	298
+
+13540	t4K	from		cell	ave	heading	1343168161	Re: d3 blog post on visually	1470	62
+
+13539	t4K	to		little	bar	tweets	1343169862	Re: d3 blog post on visually	1470	24
+
+13532	t4K	from		little	yes	line	1343170408	Re: d3 blog post on visually	1470	26
+
+13535	t4K	to		essentially	cell	minus	1343227687	Re: d3 blog post on visually	1470	45
+
+13536	t4K	from		there	don	let	1343228608	Re: d3 blog post on visually	1470	15
+
+14589	t4K	from		ajon	athanks	sam	1343227912	introduction	1613	75
+
+14581	t4K	to		schwabish	controller	presidency	1343228100	Re: introduction	1613	367
+
+14586	t4K	from		lee	ajon	dissemination	1343244503	Re: introduction	1615	92
+
+14588	t4K	from		for	guys	wednesday	1343652477	Re: introduction	1636	5
+
+14587	t4K	to		good			1343654770	Re: introduction	1636	1
+
+15028	t4K	to		slee	vice	division	1343827585	Lunch	1657	78
+
+15027	t4K	from		schwabish	ajon	dissemination	1343829271	Re: Lunch	1658	96
+
+t571	t4K	to	mention	could	hope	view	1342137975		t1402	12
+
+t549	t4K	from	mention	week	place	next	1342659753		t1445	11
+
+t586	t4K	to	mention	know	really	don	1342660942		t1445	16
+
+t507	t4K	from	mention	class	tuesday	hit	1342661404		t1445	5
+
+t578	t4K	to	mention	can	then	free	1342661733		t1445	12
+
+t405	t4K	from	mention	with	but	get	1342744334		t1445	12
+
+t527	t4K	from	mention	tomorrow	night	class	1343179465		t1445	19
+
+t575	t4K	to	mention	for	good	jon	1343177816		t1445	14
+
+t404	t4K	from	mention	good	jcukier	too	1343179143		t1445	6
+
+t567	t4K	from	mention	after	try	today	1343175561		t1445	13
+
+t574	t4K	to	mention	you	like	look	1343174752		t1445	10
+
+t1211	t4K	from	mention	had	jcukier	down	1343179619		t1513	4
+
+t946	t4K	from	mention	class	learned	jon	1343176515		t1514	17
+
+t1037	t4K	from	mention	thanks	jcukier	today	1343262314		t1516	10
+
+t20	t4K	from	mention	and	jcukier	total	1343263766		t1516	19
+
+t1551	t4K	to	mention	new	use	better	1343868625		t1538	15
+
+t581	t4K	to	mention	that	after	meet	1345078935		t1596	11
+
+t512	t4K	from	mention	get	jcukier	did	1345079853		t1596	6
+
+t579	t4K	to	mention	the	and	washington	1345080003		t1596	12
+
+t441	t4K	from	mention	there	now	very	1345080153		t1596	12
+
+t580	t4K	to	mention	one	just	far	1345080386		t1596	4
+
+t486	t4K	from	mention	make	jcukier	may	1345162698		t1596	11
+
+t585	t4K	to	mention	actually	thing	pretty	1345164213		t1596	13
+
+t100	t4K	to	mention	after	actually	met	1346806616		t1644	8
+
+t375	t4K	from	mention	jcukier	arnicas	others	1346807373		t1644	5
+
+t1347	t4K	to	mention	you	for	this	1346805723		t1645	11
+
+t1644	t4K	from	mention	this	thanks	jcukier	1346807013		t1650	15
+
+t505	t4K	from	mention	visweek	able	night	1347758024		t1711	17
+
+t582	t4K	to	mention	think	morning	monday	1347754001		t1711	8
+
+t1274	t4K	from	mention	work	jcukier	http	1348017071		t1724	3
+
+t1161	t4K	from	mention	jcukier	before	start	1349224323		t1788	8
+
+t170	t4K	from	mention	really	jcukier	worldbank	1349568127		t1809	1
+
+t584	t4K	to	mention	you	now	see	1349568142		t1809	13
+
+t919	t4K	from	mention	about	jcukier	way	1350348119		t1838	18
+
+t1222	t4K	from	mention	from	don	then	1350349155		t1851	17
+
+t399	t4K	from	mention	was	jcukier	thought	1350521824		t1882	8
+
+t1410	t4K	to	mention	important	talk	his	1350521673		t1887	13
+
+t271	t4K	from	mention	each	while	both	1350609329		t1921	6
+
+t583	t4K	to	mention	but	not	will	1350609622		t1921	18
+
+t403	t4K	from	mention	just	think	also	1350609816		t1921	10
+
+t985	t4K	from	mention	place	group	amazon	1350693911		t1982	14
+
+t475	t4K	from	mention	first	taking	heard	1351041569		t2002	13
+
+t1641	t4K	from	mention	end	got	visweek	1351038839		t2003	15
+
+t1228	t4K	from	mention	kirk	datastories	haha	1351040388		t2004	9
+
+t1032	t4K	from	mention	hear	krees	jcukier	1351126953		t2006	11
+
+t576	t4K	from	mention	now	jcukier	actually	1351126995		t2006	9
+
+t1273	t4K	from	mention	nice	job	tutorial	1352247374		t2044	16
+
+t577	t4K	from	mention	guys	looking	another	1352334719		t2044	7
+
+t1273	t4K	from	mention	nice	job	tutorial	1352247374		t2045	16
+
+t825	t4K	to	mention	don	http	thank	1352854057		t2101	18
+
+t426	t4K	from	mention	jason	thank	took	1352855016		t2101	8
+
+t54	t4K	from	mention	the	that	one	1353456153		t2148	14
+
+t572	t4K	from	mention	are	jcukier	those	1353542944		t2148	11
+
+t54	t4K	from	mention	the	that	one	1353456153		t2149	14
+
+t573	t4K	to	mention	can	know	design	1355100096		t2235	7
+
+t1207	t4K	from	dm	more	need	first	1349830154		dm62	4
+
+t971	t4K	to	dm	are	not	let	1349832134		dm62	13
+
+t1223	t4K	from	dm	for	know	let	1350432985		dm62	14
+
+t1206	t4K	from	dm	right	last	name	1350691492		dm62	21
+
+t1721	t4K	to	dm	you	that	see	1350694364		dm62	23
+
+t1666	t4K	from	dm	that	can	good	1350694515		dm62	5
+
+t1004	t4K	from	dm	that	would	one	1350694627		dm62	5
+
+t1035	t4K	to	dm	while	order	andrew	1350695688		dm62	14
+
+t1061	t4K	from	dm	you	hope	genius	1350695857		dm62	9
+
+t921	t4K	to	dm	actually	twitter	never	1350695895		dm62	16
+
+t1631	t4K	to	dm	the	was	one	1350696029		dm62	15
+

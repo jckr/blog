@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>data publishing &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/data-publishing/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>New data services 3: data.gov</title>
+		<link>/2009/06/30/new-data-services-3-datagov/</link>
+		<comments>/2009/06/30/new-data-services-3-datagov/#respond</comments>
+		<pubDate>Tue, 30 Jun 2009 16:31:12 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[data publishing]]></category>
+		<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[data formats]]></category>
+		<category><![CDATA[data.gov]]></category>
+		<category><![CDATA[finding data]]></category>
+		<category><![CDATA[government]]></category>
+		<category><![CDATA[open data]]></category>
+		<category><![CDATA[xml]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=150</guid>
+		<description><![CDATA[The United States are the only western country without a centralized data office. Instead, official statistics are produced by well over 100 agencies. This makes obtaining official US data difficult, and that&#8217;s somewhat of a paradox because in most cases, these data are public and free. Of course, with data coming from so many sources, <a class="read-more" href="/2009/06/30/new-data-services-3-datagov/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>The United States are the only western country without a centralized data office. Instead, official statistics are produced by well over 100 agencies. This makes obtaining official US data difficult, and that&#8217;s somewhat of a paradox because in most cases, these data are public and free. Of course, with data coming from so many sources, they are also in a variety of shapes and sizes. Says <a href="http://www.wired.com/politics/onlinerights/magazine/17-07/mf_cio">Wired</a>,</p>
+<blockquote><p>Until now, the US government&#8217;s default position has been: If you can&#8217;t keep data secret, at least hide it on one of 24,000 federal Web sites, preferably in an incompatible or obsolete format.</p></blockquote>
+<p>A commitment made by the Obama administration was to tackle this and make data more widely available. To that end, a data portal was announced in early April and data.gov was officially launched end of May.</p>
+<p>Data.gov is three things in one.</p>
+<p>A sign that this administration wants to make the data more accessible, especially to <strong>developers</strong>.</p>
+<p>A shift towards open formats, such as XML.</p>
+<p>A catalogue of datasets published by US government agencies.</p>
+<p>The rationale is that with data.gov, data are available to wider audiences. There&#8217;s a fallacy in that, because the layperson cannot do much with an ESRI file. But hopefully, someone will and may build something out of it for the good of the community.</p>
+<p>The aspect I found most interesting is the catalogue proper. For each indexed dataset, data.gov builds an abstract, inspired by the Dublin-Core Metadata Initiative, with fields such as authoring agency, keywords, units, and the like. This, in itself, is not a technological breakthrough but imagine if all the datasets produced by all the agencies were described in such a uniform fashion. Then, retrieving data would be a breeze.</p>
+<p>Note that data.gov does not store the datasets. They provide a store-front which then redirects users to the proper location once a dataset has been selected.</p>
+<p>There have been other, similar initiatives. Fedstats.gov, allegedly, provided a link to every statistical item produced by the federal government. By their own admission, the home page was last updated in 2007, and its overall design hasn&#8217;t changed much since its <a href="http://www.fedstats.gov/osspress.html">launch</a> by the Clinton administration in 1997 (a laudable effort at the time). Another initiative, <a href="http://usgovxml.com/">http://usgovxml.com/</a>, is a private portal to all data available in XML format.</p>
+<p>So, back to &#8220;<strong>find </strong>&gt; <strong>access </strong>&gt; <strong>process </strong>&gt; <strong>present </strong>&gt; <strong>share&#8221;. Where does data.gov fall?</strong></p>
+<p><strong>It can come as a surprise that they don&#8217;t touch the last 3 steps. Well, it certainly will be a surprise for anyone expecting the government to open a user-centric, one-stop-shop for data. Data.gov is certainly not a destination website for lay audiences.</strong></p>
+<p>It doesn&#8217;t host the data either, however, its existence drives agencies to publish their datasets in compliance with its standards. So we can say that it indirectly addresses access.</p>
+<p>So what it really is about is finding data. Currently, the site has two services to direct users to a dataset: a search engine and a catalogue. The browsable catalogue has only one layer of hierarchy, and while this is fine with their initial volume (47 datasets, around 200 as of end of June) that won&#8217;t suffice if their ambition is to host 100,000 federal data feeds.</p>
+<p>All in all, it could be argued that data.gov doesn&#8217;t do much by itself. But what is interesting is what it enables others to do.</p>
+<p>On the longer term, it will drive all agencies to publish their data under one publication standard. And if you have 100,000 datasets published under that standard, and if people use it to find them, then we will have a <em>de facto </em>industry standard to describe data. The consequences of that cannot be overestimated.</p>
+<p>The other not obvious long-term advantage is what it will allow developer to create. There are virtually no technical barriers to creating interesting applications on top of these datasets. Chances are that some of these applications could change our daily lives. And they will be invented not by the government, but by individuals, researchers or entrepreneurs. quite something to be looking forward to.</p>
+]]></content:encoded>
+			<wfw:commentRss>/2009/06/30/new-data-services-3-datagov/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>New data services 2: Wolfram&#124;alpha</title>
+		<link>/2009/06/05/new-data-services-2-wolframalpha/</link>
+		<comments>/2009/06/05/new-data-services-2-wolframalpha/#respond</comments>
+		<pubDate>Fri, 05 Jun 2009 14:54:21 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[data publishing]]></category>
+		<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[web sites]]></category>
+		<category><![CDATA[charts]]></category>
+		<category><![CDATA[data]]></category>
+		<category><![CDATA[database]]></category>
+		<category><![CDATA[mathematica]]></category>
+		<category><![CDATA[semantic]]></category>
+		<category><![CDATA[sources]]></category>
+		<category><![CDATA[wolfram]]></category>
+		<category><![CDATA[wolfram alpha]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=145</guid>
+		<description><![CDATA[In March this year, überscientist Stephen Wolfram, of Mathematica fame, revealed the world he was working on something new, something big, something different. The first time I heard of this was through semantic web prophet Nova Spivack, who is not known to get excited by less-than-revolutionary projects. That, plus the fact that the project was <a class="read-more" href="/2009/06/05/new-data-services-2-wolframalpha/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>In March this year, überscientist <a href="http://en.wikipedia.org/wiki/Stephen_Wolfram">Stephen Wolfram</a>, of <a href="http://www.wolfram.com/products/mathematica/index.html">Mathematica </a>fame, revealed the world he was working on something new, something big, something different. The first time I heard of this was through semantic web prophet <a href="http://en.wikipedia.org/wiki/Nova_Spivack">Nova Spivack</a>, who is not known to get excited by less-than-revolutionary projects. That, plus the fact that the project was announced so short before its release, contributed to build anticipation to huge levels.</p>
+<p><img class="aligncenter size-medium wp-image-146" title="wolframalpha" src="http://www.jeromecukier.net/wp-content/uploads/2009/06/wolframalpha-275x300.png" alt="wolframalpha" width="275" height="300" /></p>
+<p><a href="http://www.wolframalpha.com/">Wolfram|alpha</a> describes itself as a &#8220;computational knowledge engine&#8221; or, simply put, as an &#8220;answer engine&#8221;. Like google and search engines, it tries to provide information based on a query. But while search engines simply try to retrieve the keywords of the query in their indexed pages, the answer engine tries to understand the query as a question and forms an educated answer. In a sense, this is similar to the <a href="http://www.freebase.com/">freebase</a> project, which is to put all the knowledge of a world in a database where links could be established across items.</p>
+<p>It attempts to detect the nature of each of the word of the query. Is that a city? a mathematic formula? foodstuff? an economic variable? Once it understands the terms of the query, it gives the user all the data it can to answer.</p>
+<p>Here for instance:</p>
+<p><img class="aligncenter size-full wp-image-147" title="wolframalpha-2" src="http://www.jeromecukier.net/wp-content/uploads/2009/06/wolframalpha-2.png" alt="wolframalpha-2" width="445" height="1052" /></p>
+<p>Using the same <strong>find </strong>&gt; <strong>access </strong>&gt; <strong>process </strong>&gt; <strong>present </strong>&gt; <strong>share</strong> <a href="http://www.jeromecukier.net/?p=124">diagram</a> as before,</p>
+<p>Wolfram|alpha&#8217;s got &#8220;find&#8221; covered. More about that below.</p>
+<p>It lets you access the data. If data have been used to produce a chart, then there is a query that will retrieve those bare numbers in a table format.</p>
+<p>Process is perhaps Wolfram|Alpha&#8217;s forte. It will internally reformulate and cook your query to produce all meaningful outputs in its capacity.</p>
+<p>The presentation is excellent. It is very legible, consistent across the site, efficient and unpretentious. When charts are provided which is often, the charts are small but both relevant and informative, only the necessary data are plotted. This is unusual enough to be worth mentioning.</p>
+<p>Wolfram|alpha doesn&#8217;t allow people to share its outputs <em>per se</em>, but since a given query will produce consistent results, users can simply exchange queries or communicate links to a successful query result.</p>
+<p>Now back to finding data.</p>
+<p>When a user submits a query, the engine does not query external sources of data in real time. Rather, it used its internal, freebase-like database. This, in turn, is updated by external sources when possible.</p>
+<p>For each query, sources are available. Unfortunately, the data sources provided are for the general categories. For instance, for all the country-related informations, the listed sources are the same, and some are accurate and dependable (national or international statistical offices), some are less reliable or verifiable (such as the CIA world factbook or what&#8217;s cited as Wolfram|Alpha curated data, 2009.). And to me that&#8217;s the big flaw of this otherwise impressive system.</p>
+<p>Granted, coverage is not perfect. That can only improve. Syntax is not always intuitive &#8211; to make some results appear in a particular way can be very elusive. But this, as well, will get gradually better over time. But to be able to verify the data presented, or not, is a huge difference &#8211; either it is possible or not. I&#8217;m really looking forward to this.</p>
+]]></content:encoded>
+			<wfw:commentRss>/2009/06/05/new-data-services-2-wolframalpha/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>New data services 1: Google&#8217;s public data</title>
+		<link>/2009/06/05/new-data-services-1-googles-public-data/</link>
+		<comments>/2009/06/05/new-data-services-1-googles-public-data/#respond</comments>
+		<pubDate>Fri, 05 Jun 2009 13:31:10 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[data publishing]]></category>
+		<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[web sites]]></category>
+		<category><![CDATA[google]]></category>
+		<category><![CDATA[public data]]></category>
+		<category><![CDATA[statistics]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=140</guid>
+		<description><![CDATA[Google&#8217;s public data has been launched somewhat unexpectedly at the end of April 2009. The principle is as follows. When someone enters a search query that could be interpreted as a time series, Google displays a line graph of this time series before other results. Click on it, and you can do some more things <a class="read-more" href="/2009/06/05/new-data-services-1-googles-public-data/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>Google&#8217;s public data has been launched somewhat unexpectedly at the end of April 2009.</p>
+<p>The principle is as follows. When someone enters a search query that could be interpreted as a time series, Google displays a line graph of this time series before other results. Click on it, and you can do some more things with the chart.</p>
+<p><img class="aligncenter size-medium wp-image-142" title="googlepublicdata1" src="http://www.jeromecukier.net/wp-content/uploads/2009/05/googlepublicdata1-300x210.png" alt="googlepublicdata1" width="450" height="315" /></p>
+<p>The name public data can seem ambiguous.</p>
+<p>Public, in one sense, refers to official, government-produced statistics. But, for content, public is also the opposite of copyrighted. And here, a little bit of digging reveals that it&#8217;s clearly the latter sense. If you want this service to point to your data, it must be copyright-free.</p>
+<p>I&#8217;ve seen Hans Rosling (of Gapminder fame, now Google&#8217;s data guru) deliver a few speeches to national statisticians to which he expressed all the difficulties he had to access their data, and battle with formatting or copyright issues. So I can understand where this is coming from. However. Imagine the outcry if google.com decided to stop indexing websites which were not in the public domain!</p>
+<p>Remember my <strong>find </strong>&gt; <strong>access </strong>&gt; <strong>process </strong>&gt; <strong>present </strong>&gt; <strong>share</strong> <a href="http://www.jeromecukier.net/?p=124">diagram</a>?</p>
+<p>I&#8217;d expect that google will solve the <strong>find</strong> problem. After all, they&#8217;re search people. But they don&#8217;t! You&#8217;d find a time series if you enter its exact name in google. There is no such thing (yet, as I imagine it would be easy to fix) as a list of their datasets.</p>
+<p>They don&#8217;t tackle the <strong>access</strong> problem either. Once you see the visualizations, you&#8217;re not any step closer to actually getting the  data. You can see them, point by point, by mousing over the chart. I was also disappointed by the inaccuracy of the citation of their datasets. I&#8217;d have imagined that they&#8217;d provide a direct link to their sources, but they only state which agency produced the dataset. And finding a dataset from an agency is not a trivial matter.</p>
+<p>They don&#8217;t deal with process, but who will hold that against them? Now what they offer is a very nice, very crisp representation of data (<strong>presenting data</strong>). I was impressed how legible the interface remained with many data series on the screen, while respecting Google&#8217;s look and feel and colour code.</p>
+<p>Finally, it is also possible to <strong>share </strong>charts. Or rather, you can have a link to an image generated by google&#8217;s chart API, which is more than decent. A link to this static image, and a link to the chart on google&#8217;s public data service, and that&#8217;s all you should need (except, obviously, a link to the data proper!)</p>
+<p>Another issue comes from the selection of the data sets proper.</p>
+<p>One of the datasets is the unemployment rates, which are available monthly and by USA county. Now I can understand the rationale to match a google query of &#8220;unemployment rates&#8221; to that specific dataset. But there are really many unemployment rates, depending on what you divide by what. <span style="color: #000000;"><span style="font-family: mceinline;">(are we counting unemployed people? unemployed jobseekers? which definition of unemployment are we using &#8211; ILO&#8217;s, or the BLS&#8217;s? and against what is the rate calculated &#8211; total population? population of working age? total labour force?) But how could that work if you expand the system to another country? To obtain the same level of granularity (to a very narrow geographic location, to a period of a month) would require some serious cooking of the data, so you can&#8217;t have granularity, comparability and accuracy. </span></span></p>
+<p><span style="color: #000000;"><span style="font-family: mceinline;">I don&#8217;t think the system is sustainable. I don&#8217;t like the idea that it gives the impression to people that economic statistics can be measured in real time at any level, just like web usage statistics for instance. They can&#8217;t be just observed, they&#8217;re calculated by people. </span></span></p>
+<p><span style="color: #000000;"><span style="font-family: mceinline;">Google public data is still in its infancy. To have a usable list of the datasets, for instance, would alleviate much of my negarive comments on the system. But for the time being, I&#8217;m not happy with the orientation they&#8217;ve chosen.</span></span></p>
+]]></content:encoded>
+			<wfw:commentRss>/2009/06/05/new-data-services-1-googles-public-data/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Google public data, Wolfram Alpha and data.gov</title>
+		<link>/2009/05/25/google-public-data-wolfram-alpha-and-datagov/</link>
+		<comments>/2009/05/25/google-public-data-wolfram-alpha-and-datagov/#respond</comments>
+		<pubDate>Mon, 25 May 2009 16:18:53 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[data publishing]]></category>
+		<category><![CDATA[data.gov]]></category>
+		<category><![CDATA[google.com]]></category>
+		<category><![CDATA[many-eyes]]></category>
+		<category><![CDATA[metadata]]></category>
+		<category><![CDATA[open data]]></category>
+		<category><![CDATA[public data]]></category>
+		<category><![CDATA[swivel]]></category>
+		<category><![CDATA[wolfram alpha]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=135</guid>
+		<description><![CDATA[This last two weeks, three high-profile data-related services have been released: google&#8217;s public data, Wolfram&#124;Alpha and data.gov. In the next couple of posts I&#8217;m going to review all three. But before I&#8217;d like to go back to 2007, when Swivel.com and Many-eyes.com were released. Those 2 services allow users to publish their own data visualizations, <a class="read-more" href="/2009/05/25/google-public-data-wolfram-alpha-and-datagov/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>This last two weeks, three high-profile data-related services have been released: google&#8217;s public data, Wolfram|Alpha and data.gov.</p>
+<p><a href="http://www.google.com/search?hl=en&amp;gl=us&amp;q=unemployment+rate+santa+clara&amp;aq=f&amp;oq=&amp;aqi=g1"><img class="aligncenter size-medium wp-image-137" title="google's public data" src="http://www.jeromecukier.net/wp-content/uploads/2009/05/googlepublicdata-300x210.png" alt="google's public data" width="300" height="210" /></a><a href="http://www.wolframalpha.com/"><img class="aligncenter size-medium wp-image-138" title="Wolfram|alpha" src="http://www.jeromecukier.net/wp-content/uploads/2009/05/wolframalpha-275x300.png" alt="Wolfram|alpha" width="275" height="300" /></a></p>
+<p><a href="http://data.gov/"><img class="aligncenter size-medium wp-image-136" title="data.gov screenshot" src="http://www.jeromecukier.net/wp-content/uploads/2009/05/datagov-300x223.png" alt="data.gov screenshot" width="300" height="223" /></a>In the next couple of posts I&#8217;m going to review all three.</p>
+<p>But before I&#8217;d like to go back to 2007, when Swivel.com and Many-eyes.com were released.</p>
+<p>Those 2 services allow users to publish their own data visualizations, based on datasets uploaded by themselves or by others. At the OECD, we had used the services extensively, uploading hundreds of datasets and creating that many visualizations.</p>
+<p>At the end of the day, my main gripe with both services was never the visualization proper, or the interface, or any of the services to the data publisher &#8211; which the developers knew to be highly perfectible. No, what bothered me was the navigation within the site and how all the datasets were organized. There wasn&#8217;t any way to group your datasets or visualizations, then to group these groupings. Sure, they had an author name attached to them, and later, a theme, so it was possible to see all datasets from a specific author, or about a specific theme. But at the end of the day, that was a very long list, so the top titles received all the exposure, and the others, none. And indeed, we realized that some of our data objects got all the traffic, while others, not necessarily less interesting, had none &#8211; they were simply not seen.</p>
+<p>My reaction to swivel and many-eyes was to tell them, you are not going to be able to allow users to search for data sets on your site. It&#8217;s too difficult and it&#8217;s not your focus. Forget about being a community site or a portal, and instead, allow users to share what they make on your sites in the environments they like. Allow them to download images, embed applets, you name it, but the navigation will have to happen on their site, not on yours.</p>
+<p>So let&#8217;s see how this applies to these 3 new services.</p>
+]]></content:encoded>
+			<wfw:commentRss>/2009/05/25/google-public-data-wolfram-alpha-and-datagov/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Finding data</title>
+		<link>/2009/05/19/finding-data/</link>
+		<comments>/2009/05/19/finding-data/#comments</comments>
+		<pubDate>Tue, 19 May 2009 14:11:06 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[data]]></category>
+		<category><![CDATA[data publishing]]></category>
+		<category><![CDATA[data standards]]></category>
+		<category><![CDATA[data tables]]></category>
+		<category><![CDATA[dataset]]></category>
+		<category><![CDATA[doi]]></category>
+		<category><![CDATA[finding data]]></category>
+		<category><![CDATA[metadata]]></category>
+		<category><![CDATA[publishing]]></category>
+		<category><![CDATA[search]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=124</guid>
+		<description><![CDATA[To solve any problem with data, there are 5 things you need to do in sequence.  First, find the relevant data source. Then, access it and get the numbers you need.  Then, process those numbers to make them answer your question.  Present the results, for instance, as a data visualization,  and, optionally, share your analysis with <a class="read-more" href="/2009/05/19/finding-data/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p style="text-align: left; "><img class="aligncenter size-full wp-image-130" title="data flow" src="http://www.jeromecukier.net/wp-content/uploads/2009/05/data-problem2.png" alt="data flow" width="448" height="298" /></p>
+<p style="text-align: left; ">To solve any problem with data, there are 5 things you need to do in sequence. </p>
+<ul>
+<li>First, <strong>find </strong>the relevant data source.</li>
+<li>Then, <strong>access </strong>it and get the numbers you need. </li>
+<li>Then, <strong>process </strong>those numbers to make them answer your question. </li>
+<li><strong>Present </strong>the results, for instance, as a data visualization, </li>
+<li>and, optionally, <strong>share</strong> your analysis with your colleagues or the world.</li>
+</ul>
+<p>I&#8217;m not going to go into details here on how the last 4 steps are getting a lot of attention and dedicated tools. </p>
+<p>That leaves us with finding data. </p>
+<p>In many cases, finding data is a given: to work with data, you have to start from a dataset. And many researchers know for a given where the data they need are, so they only need to get them, not to find them. </p>
+<p>And besides, since 2002, there&#8217;s a canned answer to every search-related question &#8211; google.</p>
+<p>But the fact is, finding data <em>is </em>difficult, and, currently, google isn&#8217;t doing a great job to help. </p>
+<p>Datasets are produced by subject-matter experts who describe them in their own language. If you have a loosely-defined question, its terms won&#8217;t match the scientific description of the dataset. And even if you find something, you can&#8217;t tell for sure if you found the most appropriate dataset, if it&#8217;s reliable, or find related objects &#8211; actions which are common when one is searching among objects of the same nature, like books or journal articles. </p>
+<p>Publishers in those two activities adressed the problem by coming up with a standard metadata, with systems like <a href="http://www.loc.gov/marc/">MARC records</a> or <a href="http://dublincore.org/">Dublin Core</a>. But that doesn&#8217;t work so well on data.</p>
+<p>To address this issue, the <span style="font-variant: small-caps;">oecd</span> published a white paper: <a href="http://dx.doi.org/10.1787/603233448430">We Need Publishing Standards for Datasets and Data Tables</a>. (I&#8217;m credited in the end, but didn&#8217;t do much).</p>
+<p>Without structured metadata standards for datasets, it&#8217;s impossible to search data across several publishers with any degree of reliability. But what a huge step that would be if an agreement could be found.</p>
+]]></content:encoded>
+			<wfw:commentRss>/2009/05/19/finding-data/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+	</channel>
+</rss>

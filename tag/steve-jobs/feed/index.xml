@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Steve Jobs &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/steve-jobs/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>The state of presentations in 2008</title>
+		<link>/2008/12/17/the-state-of-presentations-in-2008/</link>
+		<comments>/2008/12/17/the-state-of-presentations-in-2008/#respond</comments>
+		<pubDate>Wed, 17 Dec 2008 12:41:52 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[presentation]]></category>
+		<category><![CDATA[2008]]></category>
+		<category><![CDATA[Al Gore]]></category>
+		<category><![CDATA[An Inconvenient Truth]]></category>
+		<category><![CDATA[criticism]]></category>
+		<category><![CDATA[garr reynolds]]></category>
+		<category><![CDATA[guidelines]]></category>
+		<category><![CDATA[images]]></category>
+		<category><![CDATA[Nancy Duarte]]></category>
+		<category><![CDATA[powerpoint]]></category>
+		<category><![CDATA[presentation zen]]></category>
+		<category><![CDATA[slide:ology]]></category>
+		<category><![CDATA[slideshare]]></category>
+		<category><![CDATA[slideware]]></category>
+		<category><![CDATA[Steve Jobs]]></category>
+		<category><![CDATA[tools]]></category>
+		<category><![CDATA[typography]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=112</guid>
+		<description><![CDATA[There have been many changes in how people understand presentations in 2008. How far have we gone? In 2008, 2 major books on the topic have been published. Presentation Zen, by Garr Reynolds, and slide:ology, by Nancy Duarte. People are accepting that a well-executed presentation can change the world. An Inconvenient Truth got nothing less <a class="read-more" href="/2008/12/17/the-state-of-presentations-in-2008/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>There have been many changes in how people understand presentations in 2008. How far have we gone?</p>
+<p>In 2008, 2<strong> major books on the topic have been published</strong>. <a href="http://www.amazon.com/gp/product/0321525655?ie=UTF8&amp;tag=jeromecukiern-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0321525655">Presentation Zen</a>, by Garr Reynolds, and <a href="http://www.amazon.com/gp/product/0596522347?ie=UTF8&amp;tag=jeromecukiern-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0596522347">slide:ology</a><img style="border:none !important; margin:0px !important;" src="http://www.assoc-amazon.com/e/ir?t=jeromecukiern-20&amp;l=as2&amp;o=1&amp;a=0596522347" border="0" alt="" width="1" height="1" />, by Nancy Duarte.</p>
+<p><strong>People are accepting that a well-executed presentation can change the world</strong>. <a href="http://www.amazon.com/gp/product/B000ICL3KG?ie=UTF8&amp;tag=jeromecukiern-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=B000ICL3KG">An Inconvenient Truth</a><img style="border:none !important; margin:0px !important;" src="http://www.assoc-amazon.com/e/ir?t=jeromecukiern-20&amp;l=as2&amp;o=1&amp;a=B000ICL3KG" border="0" alt="" width="1" height="1" /> got nothing less than 2 academy awards and a nobel prize. And rumors about the health of master presenter Steve Jobs caused the stock markets to panic.</p>
+<p>People are also finding that <strong>tools to create successful presentations are incredibly commonplace</strong>. From a technical standpoint, anyone with a computer could have created &#8220;<a href="http://www.google.com/url?sa=U&amp;start=1&amp;q=http://www.youtube.com/watch%3Fv%3DpMcfrLYDm2U&amp;ei=ZexISZ_WN4zY0gXax5wP&amp;sig2=aVpciv4dx5iCWcZLlEr0ag&amp;usg=AFQjCNFCz0fx7wPiD-xtxo89i25mdVC78w">shift happens</a>&#8220;, which has been viewed by 5 to 10 million people.</p>
+<p>As a result, <strong>blogs are now swarming with sensible presentation advice</strong>. A google query for &#8220;<a href="http://en.wikipedia.org/wiki/Death_By_Powerpoint">death by powerpoint</a>&#8221; returns <a href="http://www.google.com/search?q=death+by+powerpoint">397000 hits</a> today. A year ago, searching for presentation tips yielded ideologic (as opposed to evidence-based) guidelines such as &#8220;no more than 7 bullets per slide&#8221; or &#8220;one slide per minute&#8221;. (you can still find those as well).</p>
+<p>2008 was also the year where <strong>Slideshare took off</strong>. Not only did the viewership and amount of contents increase drastically, but the quality, relevancy and sophistication of the best presentations is now incredible. Empowered by inspring examples, clear guidelines and adequate tools, many are thriving to emulate great presenters.</p>
+<p>So if I just end here, one could conclude that the world is definitely saved from ineffective presentations. The reality is slightly different.</p>
+<p>This year, I have seen so far approximately 400 live presentations, and god knows how many online. Some were excellent, many were good, most were at least adequate. But a good proportion of them were still boring and I&#8217;d be lying if I claimed I could remember as much as 10% of them.</p>
+<p>One explanation I came up with for that is that many presenters are still focusing on the final deliverable product rather than the fundamentals. These folks are very sensitive to advice like &#8220;mind your typography&#8221;, &#8220;illustrate your slides with large images&#8221;, or &#8220;forget bullets&#8221;. Now typography or images are important and can make a difference between a good and an excellent presentation. But it&#8217;s crucial to have a message to deliver and to focus on that message.</p>
+<p>Bulleted texts are accused of cluttering the presentations. But if every little point or anecdote is illustrated with a vividly-colored image, then the images themselves become the clutter and clog everyone&#8217;s limited attention. You&#8217;d remember the images and cool effects but not the point. And a week later, you&#8217;ll have forgotten the images and the presentation altogether.</p>
+<p>So my own piece of advice is that your big images won&#8217;t make your presentation. Your angle,  structure and consistency will. The best advice I got from Presentation Zen was to prepare a presentation away from a computer and only produce it once it&#8217;s final. It works. It really does.</p>
+<p>Once this will be an accepted practice, seminars, classes and meetings will be much more exciting (let&#8217;s hope!).</p>
+]]></content:encoded>
+			<wfw:commentRss>/2008/12/17/the-state-of-presentations-in-2008/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

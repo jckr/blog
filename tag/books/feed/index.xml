@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>books &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/books/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>Processing 1.0 released.</title>
+		<link>/2008/11/27/processing-10-released/</link>
+		<comments>/2008/11/27/processing-10-released/#respond</comments>
+		<pubDate>Thu, 27 Nov 2008 11:08:47 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[Ben Fry]]></category>
+		<category><![CDATA[books]]></category>
+		<category><![CDATA[Casey Reas]]></category>
+		<category><![CDATA[download]]></category>
+		<category><![CDATA[Ira Greenberg]]></category>
+		<category><![CDATA[processing]]></category>
+		<category><![CDATA[visualizing data]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=25</guid>
+		<description><![CDATA[Tuesday, Ben Fry announced on his blog that Processing 1.0 was released! I had a vague idea of was processing was about for a while, and thought it was not for me. I bought Ben Fry&#8217;s book by accident, because of its title and because I was generally interested on different opinions on how to <a class="read-more" href="/2008/11/27/processing-10-released/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>Tuesday, <a href="http://benfry.com/">Ben Fry</a> <a href="http://benfry.com/writing/archives/204">announced on his blog</a> that <a href="http://processing.org/">Processing </a>1.0 was released!</p>
+<p><a href="http://www.amazon.com/gp/product/0596514557?ie=UTF8&amp;tag=jeromecukiern-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0596514557"><img class="alignleft" style="margin: 10px;" src="https://images-na.ssl-images-amazon.com/images/I/51ZSwW3DtML._SL160_.jpg" border="0" alt="" width="122" height="160" /></a><img style="border:none !important; margin:0px !important;" src="http://www.assoc-amazon.com/e/ir?t=jeromecukiern-20&amp;l=as2&amp;o=1&amp;a=0596514557" border="0" alt="" width="1" height="1" /><br />
+I had a vague idea of was processing was about for a while, and thought it was not for me. I bought Ben Fry&#8217;s book by accident, because of its title and because I was generally interested on different opinions on how to make charts. When I first read it, I thought it was a fraud! that book was not about &#8220;visualizing data&#8221; as the name implies, but about practical uses of Processing to display data. Luckily for me, I read on and I am very happy to have learned Processing, or rather, to be continuously learning it.</p>
+<p>What I have found most interesting in this book is the focus that Fry put on the collection of data. Techniques and methods to represent data assume that you already have the data you want, neatly prepared. But in the real world, that just doesn&#8217;t happen. If you want to show something, you&#8217;ll have to find a way to obtain the raw data and process it first, before you can use it.</p>
+<p>Anyway. Today, I would want to congratulate Ben Fry, Casey Reas and all others who&#8217;ve contributed to processing. </p>
+<p><a href="http://processing.org/download">Download processing</a>:</p>
+<p>Other books on processing I can recommand are: </p>
+<p><a href="http://www.amazon.com/gp/product/159059617X?ie=UTF8&amp;tag=jeromecukiern-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=159059617X"><img style="margin: 10px;" src="https://images-na.ssl-images-amazon.com/images/I/41oELmX9vjL._SL160_.jpg" border="0" alt="" width="131" height="160" /></a><img style="border:none !important; margin:0px !important;" src="http://www.assoc-amazon.com/e/ir?t=jeromecukiern-20&amp;l=as2&amp;o=1&amp;a=159059617X" border="0" alt="" width="1" height="1" /></p>
+<p><a href="http://www.amazon.com/gp/product/0262182629?ie=UTF8&amp;tag=jeromecukiern-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0262182629"><img style="margin-top: 10px; margin-bottom: 10px;" src="https://images-na.ssl-images-amazon.com/images/I/51UPLtYbwkL._SL160_.jpg" border="0" alt="" width="125" height="160" /></a><img style="border:none !important; margin:0px !important;" src="http://www.assoc-amazon.com/e/ir?t=jeromecukiern-20&amp;l=as2&amp;o=1&amp;a=0262182629" border="0" alt="" width="1" height="1" /></p>
+<p><script src="http://www.assoc-amazon.com/s/link-enhancer?tag=jeromecukiern-20&amp;o=1" type="text/javascript"></script></p>
+<p><noscript><br />
+<img src="http://www.assoc-amazon.com/s/noscript?tag=jeromecukiern-20" alt="" /><br />
+</noscript></p>
+]]></content:encoded>
+			<wfw:commentRss>/2008/11/27/processing-10-released/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

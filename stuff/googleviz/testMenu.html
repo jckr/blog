@@ -1,0 +1,108 @@
+
+<!-- saved from url=(0031)file:///J:/epu/d3/d3-proto.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		<script type="text/javascript" src="./d3-proto_files/d3.js"></script>
+		<script type="text/javascript" src="./d3-proto_files/protovis-r3.2.js"></script>
+		<style>
+			<!--@import url("http://mbostock.github.com/d3/style.css?1.10.0");-->
+			@import url("http://mbostock.github.com/d3/syntax.css?1.10.0");
+		</style>
+		<style type="text/css">
+
+		        body { font-family:"bookman old style", Serif; font-size:1em; color:#000;}
+		        .desc { color:#6b6b6b;}
+		        .desc a {color:#0092dd;}
+
+		        .dropdown dd, .dropdown dt, .dropdown ul { margin:0px; padding:0px; }
+		        .dropdown dd { position:relative; }
+		        .dropdown a, .dropdown a:visited { color:#816c5b; text-decoration:none; outline:none;}
+		        .dropdown a:hover { color:#5d4617;}
+		        .dropdown dt a:hover, .dropdown dt a:focus { color:#5d4617; border: 1px solid #5d4617;}
+		        .dropdown dt a {background:#e4dfcb url(arrow.png) no-repeat scroll right center; display:block; padding-right:20px;
+		                        border:1px solid #d4ca9a; width:170px;}
+		        .dropdown dt a span {cursor:pointer; display:block; padding:5px;}
+		        .dropdown dd ul { background:#e4dfcb none repeat scroll 0 0; border:1px solid #d4ca9a; color:#C5C0B0; display:none;
+		                          left:0px; padding:5px 0px; position:absolute; top:2px; width:auto; min-width:190px; list-style:none;}
+		        .dropdown span.value { display:none;}
+		        .dropdown dd ul li a { padding:5px; display:block;}
+		        .dropdown dd ul li a:hover { background-color:#d0c9af;}
+				.invisible {display:none;}
+		        .dropdown img.flag { border:none; vertical-align:middle; margin-left:10px; }
+		        .flagvisibility { display:none;}
+				.c1 {position:absolute;top:100px;left:200px;}
+				.c2 {position:absolute;top:100px;left:450px;}
+
+
+		</style>
+	</head>
+	<body>
+		<div id="chart">
+			<dl class="dropdown c1">
+				<dt><a href="#"><span>Premier candidat</span></a></dt>
+				<dd>
+					<ul>
+					</ul>
+				</dd>
+			</dl>
+			<dl class="dropdown c2">
+				<dt><a href="#"><span>Premier candidat</span></a></dt>
+				<dd>
+					<ul>
+					</ul>
+				</dd>
+			</dl>
+		</div>
+
+		<script type="text/javascript">
+		var menuopen1=0,menuopen2=0;
+		categories=[
+			{short:"Joly",long:"Eva Joly"},
+			{short:"France TV",long:"France télévisions"},
+			{short:"UMP",long:"UMP"},
+			{short:"MLP",long:"Marine Le Pen"},
+			{short:"Modem",long:"Modem"},
+			{short:"TF1",long:"TF1"},
+			{short:"FN",long:"Front National"},
+			{short:"PS",long:"Parti Socialiste"},
+			{short:"EELV",long:"EELV"},
+			{short:"Hollande",long:"François Hollande"},
+			{short:"Libe",long:"Libération"},
+			{short:"Sarkozy",long:"Nicolas Sarkozy"},
+			{short:"Bayrou",long:"François Bayrou"},
+			{short:"LeMonde",long:"Le Monde"},
+			{short:"Figaro",long:"Le Figaro"}];
+		d3.select(".dropdown.c1 dd ul").selectAll("li").data(categories).enter()
+			.append("li").append("a").html(function(d) {return d.long;}).attr("href","#");
+		d3.select(".dropdown.c2 dd ul").selectAll("li").data(categories).enter()
+			.append("li").append("a").html(function(d) {return d.long;}).attr("href","#");
+
+		d3.selectAll(".dropdown.c1 dt a").on("click",function(d) {
+			menuopen1=1-menuopen1;
+			d3.selectAll(".dropdown.c1 dd ul").style("display",function() {return menuopen1?"block":"none";})
+		})
+		d3.selectAll(".dropdown.c2 dt a").on("click",function(d) {
+			menuopen2=1-menuopen2;
+			d3.selectAll(".dropdown.c2 dd ul").style("display",function() {return menuopen2?"block":"none";})
+		})
+
+		d3.selectAll(".dropdown.c1 dd ul li a").on("click",function(d,i) {
+			var text=d3.select(this).html();d3.selectAll(".dropdown.c1 dt a span").html(text);
+			menuopen1=0;
+			d3.selectAll(".dropdown.c1 dd ul ").style("display","none");
+			cat1=i;
+			d3.selectAll(".dropdown.c2 dd ul li").classed("invisible",function(d,j) {return ~~j==i;});// hide selected item in other list.
+			console.log(cat1);
+		})
+		d3.selectAll(".dropdown.c2 dd ul li a").on("click",function(d,i) {
+			var text=d3.select(this).html();d3.selectAll(".dropdown.c2 dt a span").html(text);
+			menuopen2=0;
+			d3.selectAll(".dropdown.c2 dd ul").style("display","none");
+			cat2=i;
+			d3.selectAll(".dropdown.c1 dd ul li").classed("invisible",function(d,j) {return ~~j==i;});// hide selected item in other list.
+			console.log(cat2);
+		})
+		</script>
+
+
+</body></html>

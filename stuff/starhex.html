@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+  <title></title>
+  <style> body {background-color: #000; margin: 0px;}</style>
+ </head>
+<body>
+<script src="../d3.v3.min.js"></script>
+
+<div id="chart"></div>
+<img id="canvasimage" src=""/>
+
+<script>
+
+var width = window.innerWidth; height = window.innerHeight;
+canvas = d3.select(chart)
+  .selectAll("canvas").data([{}]).enter()
+  .append("canvas")
+  .attr({width:width, height:height})
+  .node();
+ctx = canvas.getContext("2d");
+
+var i = 0, t = 0, j = 0, inc = .005;
+var x0 = width / 2, y0 = height / 2;
+var phase = 0;
+var step = d3.max([width, height])/30;
+var s3 = Math.sqrt(3);
+var s32 = s3 / 2;
+var ss3 = s3 * step;
+var ss32 = s32 * step;
+
+var interval;
+var hex = [];
+var stars = [];
+var l = 2 * width / step;
+
+function dist(x, y) {
+  return Math.sqrt((x - x0) * (x - x0) + (y - y0) * (y - y0));
+}
+
+function createData() {
+  hex = []; stars = [];
+  var r = 0, tr = 0;
+  for (var y = -.5 * step; y < height + step; y = y + 2 * step) {
+    var c = 0, even = 0;
+    for (var x = s32; x < width + ss3; x = x + ss3) {
+      odd = c % 2;
+      if (tr==1 || (tr == 0 && odd) || (tr == 2 && !odd)) {
+        var y1 = y - odd * step;
+        var d = dist(x, y1);
+        hex.push({x:x, y:y1, d:d, r:r, c:c, tr:tr, odd:odd});
+      }
+      c = c + 1;
+    }
+    r = r + 1; tr = r % 3;
+  }
+  var r = 0, tr = 0;
+  for (var y = -.5 * step; y < height + 1.5 * step; y = y + 3 * step) {
+    var c = 0, even = 0;
+    for (var x = -ss3; x < width + ss3; x = x + ss3) {
+      odd = c % 2;
+      var x1 = x - (1 - odd) * ss3 + (tr) * ss3;
+      var d = dist(x1, y);
+      stars.push({x:x1, y:y, d:d, r:r, c:c, tr:tr, odd:odd});
+      c = c + 1;
+    }
+    r = r + 1; tr = r % 2;
+  }
+  hex.sort(function(a,b) {return (a.d<b.d)?-1:1;})
+  stars.sort(function(a,b) {return (a.d<b.d)?-1:1;})
+  hex.forEach(function(d) {d.d = d.d/hex[hex.length-1].d;})
+  stars.forEach(function(d) {d.d = d.d/stars[stars.length-1].d;})
+
+
+}
+function drawRow(r) {
+  hex.filter(function(d) {return d.r==r}).map(function(d) {drawHex(d,0)});
+}
+function drawRowS(r) {
+  stars.filter(function(d) {return d.r==r}).map(function(d) {drawStar(d,0)});
+}
+function go() {
+  t = 0;
+  interval = setInterval(draw, 10);  
+}
+function stop() {clearInterval(interval);}
+
+function drawHex(d, angle, scale, debug) {
+  angle = angle || 0;
+  scale = scale || 1;
+  ctx.beginPath()
+  for(var i = 0; i < 6; i ++) {
+    var x = d.x + Math.cos(Math.PI * (i + .5) / 3 + angle) * scale * step;
+    var y = d.y + Math.sin(Math.PI * (i + .5) / 3 + angle) * scale * step;  
+    if (debug) {console.log(x,y)}
+
+    if (i) {
+      if (debug) {console.log("lineTo")}
+      ctx.lineTo(x, y);
+    } else {
+      if (debug) {console.log("moveTo")}
+      ctx.moveTo(x, y);
+    }
+  }
+  ctx.closePath();
+  ctx.fill();
+}
+
+function drawStar(d, angle, scale, debug) {
+  ctx.beginPath();
+  for(var i = 0; i < 12; i ++) {
+    var x = d.x + Math.cos(Math.PI * (i + 3) / 6 + angle) * scale * (i % 2 ? ss3 : step);
+    var y = d.y + Math.sin(Math.PI * (i + 3) / 6 + angle) * scale * (i % 2 ? ss3 : step);  
+    if (debug) {console.log(x,y)}
+
+    if (i) {
+      if (debug) {console.log("lineTo")}
+      ctx.lineTo(x, y);
+    } else {
+      if (debug) {console.log("moveTo")}
+      ctx.moveTo(x, y);
+    }
+  }
+  ctx.closePath();
+  ctx.fill();
+}
+
+/*function drawStar(d, a) {
+  ctx.beginPath();
+  ctx.moveTo(d.x - step, )
+}*/
+function draw() {
+  
+
+  t = t + inc; //if (t > .95 || t < 0.02) {direction = -1 * direction; }
+  i = t % 4;
+  if (i>1 && i <3) {i = i + inc; t = t + inc;}
+  j = d3.ease("cubic-in-out")(i%1);
+  a = Math.PI * j / 3;
+  s = 1;
+  //a = j;
+  //if (j<.5) {j = j * 2} else {j = 1 - j}
+  
+  //if (i>.97) {stop();return 0;}
+
+  /*ctx.strokeStyle = "#444";
+  for(var d = 0; d < width; d+=10) {
+    ctx.beginPath();
+    if (d < width / 2)
+    ctx.moveTo(d * 2, 0);
+    ctx.lineTo(width, (width - d * 2) / 2);
+    
+    ctx.moveTo(width - d * 2, 0);
+    ctx.lineTo(0, (width - d * 2) / 2);
+
+    if (d) {
+      ctx.moveTo(0, d);
+      if (d < width / 2) {
+        ctx.lineTo(width, width / 2 + d);
+      } else {
+        ctx.lineTo(2 * (width - d), height);
+      }
+      ctx.moveTo(width, d);
+      if (d < width / 2) {
+        ctx.lineTo(0, width / 2 + d);
+      } else {
+        ctx.lineTo(2 * d - width, height);
+      }
+    }
+    ctx.stroke();
+  }*/
+
+  if (i<1) {
+    back("#000");
+
+    ctx.fillStyle = "#fff";
+    hex.forEach(function(d) {
+      drawHex(d,0,j);
+    })
+    return;
+  } 
+  if (i<2) {
+    back("#fff");
+    ctx.fillStyle = "#000";
+    stars.forEach(function(d) {
+      drawStar(d,a,1);
+    })
+    return;
+  }
+  if (i<3) {
+    back("#000");
+
+    ctx.fillStyle = "#fff";
+    hex.forEach(function(d) {
+      drawHex(d,a,1);
+    })
+    return;
+  }
+  back("#000");
+    ctx.fillStyle = "#fff";
+    hex.forEach(function(d) {
+      drawHex(d,0,1-j);
+    })
+    return;
+   
+
+  //stop();
+}
+/*    ctx.fillStyle="#ccc";
+    for (var c = 0; c < l; c++) {
+      for (var r = 0; r < l; r++) {
+        if (((c % 2) == 0) && ((r % 2) == 0)) {
+          var coords = proj(r, c);
+          var x = coords[0], y = coords[1];
+          
+          var noBlock = (r / 2) % 3;
+          if ((c / 2) % 3 != noBlock) {
+          //  console.log(ctx.fillStyle);
+            ctx.beginPath();
+            ctx.moveTo(x, y - j * step);
+            ctx.lineTo(x + step, y - step / 2 - j * step);
+            ctx.lineTo(x + 2 * step, y - j * step);
+            ctx.lineTo(x + step, y + step / 2 - j * step);
+            ctx.lineTo(x, y - j * step);
+
+            ctx.moveTo(x + step, y + step / 2 - j * step);
+            ctx.lineTo(x + 2 * step, y - j * step);
+            ctx.lineTo(x + 2 * step, y);
+            ctx.lineTo(x + step, y + step / 2);
+            ctx.lineTo(x + step, y + step / 2 - j * step);
+            
+            ctx.moveTo(x + step, y + step / 2 - j * step);
+            ctx.lineTo(x, y - j * step);
+            ctx.lineTo(x, y);
+            ctx.lineTo(x + step, y + step / 2);
+            ctx.lineTo(x + step, y - step / 2 - j * step);        
+
+
+            ctx.fill();
+          }
+        } 
+      }
+    }
+  }
+
+  if (phase == 1) {
+    var backColor = d3.scale.linear().range(["#222", "#888"])(j);
+    back(backColor);
+
+     ctx.strokeStyle = "#444";
+    for(var d = 0; d < width; d+=10) {
+      
+      ctx.beginPath();
+      if (d < width / 2)
+      ctx.moveTo(d * 2, 0);
+      ctx.lineTo(width, (width - d * 2) / 2);
+      
+      ctx.moveTo(width - d * 2, 0);
+      ctx.lineTo(0, (width - d * 2) / 2);
+
+      if (d) {
+        ctx.moveTo(0, d);
+        if (d < width / 2) {
+          ctx.lineTo(width, width / 2 + d);
+        } else {
+          ctx.lineTo(2 * (width - d), height);
+        }
+        ctx.moveTo(width, d);
+        if (d < width / 2) {
+          ctx.lineTo(0, width / 2 + d);
+        } else {
+          ctx.lineTo(2 * d - width, height);
+        }
+      }
+      ctx.stroke();
+
+    }
+
+    for (var c = 0; c < l; c++) {
+      for (var r = 0; r < l; r++) {
+        if (((c % 2) == 0) && ((r % 2) == 0)) {
+          var coords = proj(r, c);
+          var x = coords[0], y = coords[1];
+          
+          var type = (3 + ((r / 2) % 3 - (c / 2) % 3)) % 3;
+
+          if (type == 2) { // column sinking
+          //  console.log(ctx.fillStyle);
+            ctx.fillStyle="#ccc";
+
+            ctx.beginPath();
+            ctx.moveTo(x, y - (1 - j) * step);
+            ctx.lineTo(x + step, y - step / 2 - (1 - j) * step);
+            ctx.lineTo(x + 2 * step, y - (1 - j) * step);
+            ctx.lineTo(x + step, y + step / 2 - (1 - j) * step);
+            ctx.lineTo(x, y - (1 - j) * step);
+
+            ctx.moveTo(x + step, y + step / 2 - (1 - j) * step);
+            ctx.lineTo(x + 2 * step, y - (1 - j) * step);
+            ctx.lineTo(x + 2 * step, y);
+            ctx.lineTo(x + step, y + step / 2);
+            ctx.lineTo(x + step, y + step / 2 - (1 - j) * step);
+            
+            ctx.moveTo(x + step, y + step / 2 - (1 - j) * step);
+            ctx.lineTo(x, y - (1 - j) * step);
+            ctx.lineTo(x, y);
+            ctx.lineTo(x + step, y + step / 2);
+            ctx.lineTo(x + step, y - step / 2 - (1 - j) * step);        
+
+            ctx.fill();
+          }
+
+          if (type == 1) { // column staying
+            ctx.fillStyle="#ccc";
+
+            ctx.beginPath();
+            ctx.moveTo(x, y - step);
+            ctx.lineTo(x + step, y - step / 2 - step);
+            ctx.lineTo(x + 2 * step, y - step);
+            ctx.lineTo(x + step, y + step / 2 - step);
+            ctx.lineTo(x, y - step);
+
+            ctx.moveTo(x + step, y + step / 2 - step);
+            ctx.lineTo(x + 2 * step, y - step);
+            ctx.lineTo(x + 2 * step, y);
+            ctx.lineTo(x + step, y + step / 2);
+            ctx.lineTo(x + step, y + step / 2 - step);
+            
+            ctx.moveTo(x + step, y + step / 2 - step);
+            ctx.lineTo(x, y - step);
+            ctx.lineTo(x, y);
+            ctx.lineTo(x + step, y + step / 2);
+            ctx.lineTo(x + step, y - step / 2 - step);        
+
+            ctx.fill();
+
+            // petals opening
+
+            ctx.fillStyle="#444";
+
+            var x0 = x + step;
+            var y0 = y - step / 2;
+            [[ 0,  -2,  0,   -1, 1, -1.5], 
+             [ 2,  -2,  1, -1.5, 2,   -1], 
+             [-1, -.5,  0,    0, 0,   -1],
+             [ 0,   1,  0,    0, 1,   .5], 
+             [ 2,   1,  1,   .5, 2,    0], 
+             [ 3, -.5,  1,    0, 1,   -1]].forEach(function(p, col) {
+              var px = d3.scale.linear().range([x0 + p[0] * step, x0])(k);
+              var py = d3.scale.linear().range([y0 + p[1] * step, y0])(k);
+              ctx.fillStyle = ["red","green","blue","yellow","cyan","magenta"][col];
+              ctx.beginPath()
+              ctx.moveTo(x0, y0);
+              ctx.lineTo(x + p[2] * step, y + p[3] * step);
+              ctx.lineTo(px, py);
+              ctx.lineTo(x + p[4] * step, y + p[5] * step);
+              ctx.lineTo(x0, y0);
+              ctx.fill();
+            })
+          }
+        } 
+      }
+    }
+  }
+  //if (phase >1 ) {stop();}
+
+
+  
+}*/
+
+function back(color) {
+  var oldColor = ctx.fillStyle;
+  ctx.clearRect(0, 0, width, height);
+  ctx.fillStyle = color;
+  ctx.fillRect(0, 0, width, height);
+  ctx.fillStyle = oldColor;
+}
+
+function proj(r,c) {
+   var x = - width  + c * step + r * step;
+   var y = height / 2 + (r * step / 2) - (c * step / 2);
+   return [x, y];
+}
+createData();
+go();
+
+</script>
+</body>
+</html>

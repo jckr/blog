@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+  <title></title>
+  <style> body {background-color: #000}</style>
+ </head>
+<body>
+<script src="../d3.v3.min.js"></script>
+
+<div id="chart"></div>
+<img id="canvasimage" src=""/>
+
+<script>
+
+var height = 500; width = 500;
+canvas = d3.select(chart)
+  .selectAll("canvas").data([{}]).enter()
+  .append("canvas")
+  .attr({width:width, height:height})
+  .node();
+ctx = canvas.getContext("2d");
+ctx.lineCap = "round";
+
+function draw() {
+  t = (t + .005);
+  var angle;
+   
+  ctx.clearRect(0,0,width,height);
+for (i = 0; i < nbArcs; i++) {
+  var c = d3.rgb(d3.hsl(360 * (i / nbArcs + t), .8, .5));
+  ctx.strokeStyle = "rgb(" + c.r + "," + c.g + "," + c.b + ")";
+  angle = (2 * Math.PI * (t + (i / nbArcs))) % (2 * Math.PI);
+  if (angle > Math.PI) {
+    angle = 2 * Math.PI - angle;
+  }
+
+  ctx.lineWidth = 1 + 11 * (1 - angle / Math.PI);
+  ctx.beginPath();
+  ctx.arc(250,250, r * i / nbArcs + 1,  angle, 2 * Math.PI - angle);
+  ctx.stroke();
+}
+}
+
+var nbArcs = 20;
+var r = 250;
+var t = 0;
+var timer = setInterval(draw, 10);
+
+
+
+</script>
+</body>
+</html>

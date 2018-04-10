@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>inheritance &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/inheritance/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>Working with data in protovis – part 2 of 5</title>
+		<link>/2011/02/08/working-with-data-in-protovis-part-2-of-5/</link>
+		<comments>/2011/02/08/working-with-data-in-protovis-part-2-of-5/#comments</comments>
+		<pubDate>Tue, 08 Feb 2011 17:51:01 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[charts]]></category>
+		<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[protovis]]></category>
+		<category><![CDATA[tips]]></category>
+		<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[hierarchy]]></category>
+		<category><![CDATA[inheritance]]></category>
+		<category><![CDATA[tutorial]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=479</guid>
+		<description><![CDATA[Previous post: simple arrays Multi-dimensional arrays, associative arrays and protovis Even for a simple chart, chances are that you’ll have more than a single series of numbers to represent. For instance, you could have labels to describe what they mean, several series, and so on and so forth. So, let’s say we want to add <a class="read-more" href="/2011/02/08/working-with-data-in-protovis-part-2-of-5/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>Previous post: <a href="http://www.jeromecukier.net/?p=429">simple arrays</a></p>
+<h2>Multi-dimensional arrays, associative arrays and protovis</h2>
+<p>Even for a simple chart, chances are that you’ll have more than a single series of numbers to represent. For instance, you could have labels to describe what they mean, several series, and so on and so forth.<br />
+So, let’s say we want to add these labels to our original examples, so we know what those bars represent.</p>
+<table>
+<tbody>
+<tr>
+<td>
+<pre class="brush: jscript; title: ; notranslate">var categories = [&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;d&quot;,&quot;e&quot;,&quot;f&quot;];
+var vis = new pv.Panel()
+  .width(150)
+  .height(150);
+
+vis.add(pv.Bar)
+  .data([1, 1.2, 1.7, 1.5, .7, .3])
+  .width(20)
+  .height(function(d) d * 80)
+  .bottom(0)
+  .left(function() this.index * 25)
+  .anchor(&quot;bottom&quot;).add(pv.Label)
+    .text(function() categories[this.index]);
+
+vis.render();
+</pre>
+</td>
+<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/categories.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/categories.png" alt="" title="categories" width="144" height="135" class="aligncenter size-full wp-image-483" /></a></td>
+</tr>
+</tbody>
+</table>
+<p>While this did the trick, nothing guarantees that the data proper and the category name will stay coordinated. If one data point is deleted or removed and this is not replicated on the categories, they will no longer match. A more integrated way to proceed would be to group category and data information, like this:</p>
+<pre class="brush: jscript; highlight: [16,20]; title: ; notranslate">var data = [
+  {key:&quot;a&quot;, value:1},
+  {key:&quot;b&quot;, value:1.2},
+  {key:&quot;c&quot;, value:1.7}, 
+  {key:&quot;d&quot;, value:1.5},
+  {key:&quot;e&quot;, value:.7},
+  {key:&quot;f&quot;, value:.3}
+];
+var vis = new pv.Panel()
+  .width(150)
+  .height(150);
+
+vis.add(pv.Bar)
+  .data(data)
+  .width(20)
+  .height(function(d) d.value * 80)
+  .bottom(0)
+  .left(function() this.index * 25)
+  .anchor(&quot;bottom&quot;).add(pv.Label)
+    .text(function(d) d.key);
+
+vis.render();</pre>
+<p>This time, we group the values and the category names in a single variable, an array of associative arrays.<br />
+When drawing the bar chart, protovis will go through this array and retrieve an associative array for each bar.<br />
+We have to change the way the height function is written. The data element being accessed is no longer of the form 1 or 1.7, but {key:”a”, value:1} or {key:”c”, value:1.7}. So to get the number part of it, we must write <strong>d.value</strong>.</p>
+<p>Likewise, instead of accessing an array of categories for the text part, we can use the current data element via an accessor function, and write <strong>d.key</strong>.</p>
+<h2>Hierarchy and inheritance</h2>
+<p>So we’ve seen that arrays, or associative arrays, can have several levels and can be nested one into another.<br />
+Interestingly, protovis elements, like panels, charts, mark etc. also work in a <em>hierarchy</em>. For instance, when you start working with protovis you create a panel object. Then, you add other objects to that panel, like a bar chart (our example), or another panel. You can add other objects to your new objects, or attach them to your first panel.<br />
+This diagram shows the hierarchy between elements in the previous example.</p>
+<table>
+<tr>
+<td>
+<pre class="brush: jscript; title: ; notranslate">var categories = [&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;d&quot;,&quot;e&quot;,&quot;f&quot;];
+var vis = new pv.Panel()
+  .width(150)
+  .height(150)
+
+var bar = vis.add(pv.Bar)
+  .data([1, 1.2, 1.7, 1.5, .7, .3])
+  .width(20)
+  .height(function(d) d * 80)
+  .bottom(0)
+  .left(function() this.index * 25)
+  .anchor(&quot;bottom&quot;).add(pv.Label)
+  .text(function() categories[this.index]);
+
+vis.render();</pre>
+</td>
+<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/hierarchy.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/hierarchy.png" alt="" title="hierarchy" width="220" height="170" class="aligncenter size-full wp-image-485" /></a></td>
+</tr>
+</table>
+<p>The bar object is considered to be the child of vis, who is its parent.</br><br />
+You may know that in protovis, children objects inherit properties of their parents.</br><br />
+For instance, if width wasn’t specified for the bar object, it would have the width of its parent, 150. Each mark would cover the whole screen.</p>
+<p>For data, when a new object is added, data is either specified at that level, or obtained from the parent element of this object.</p>
+<p>Let’s take our example and tweak it a bit.<br />
+<table>
+<tr>
+<td>
+<pre class="brush: jscript; highlight: [5]; title: ; notranslate">var vis = new pv.Panel().width(150).height(150);
+var bar = vis.add(pv.Bar)
+  .data([1, 1.2, 1.7, 1.5, .7, .3]).width(20) .bottom(0)
+  .height(function(d) d * 80).left(function() this.index * 25)
+  .anchor(&quot;top&quot;).add(pv.Label)
+vis.render();</pre>
+<td>
+<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/part3.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/part3.png" alt="" title="part3" width="154" height="154" class="aligncenter size-full wp-image-487" /></a></td>
+</tr>
+</table>
+<p>Here, I didn’t specify a data or a text value for the labels I added. They just took the value of its parent element – the marks of the pv.Bar object.<br />
+Here’s another variation:</p>
+<table>
+<tr>
+<td>
+<pre class="brush: jscript; highlight: [4]; title: ; notranslate">
+var vis = new pv.Panel().width(150).height(150);
+vis.add(pv.Panel)
+  .data([1, 1.2, 1.7, 1.5, .7, .3]) .left(function() this.index * 25)
+  .add(pv.Bar).width(20) .bottom(0)
+  .height(function(d) d * 80)
+  .anchor(&quot;top&quot;).add(pv.Label)
+vis.render();</pre>
+</td>
+<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/part4.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/part4.png" alt="" title="part4" width="154" height="154" class="aligncenter size-full wp-image-488" /></a></td>
+</tr>
+</table>
+<p>Here, I’m adding panels, then a bar in each panel.<br />
+From the root panel, I’m adding a group of panel with this data: [1, 1.2, 1.7, 1.5, .7, .3].<br />
+Since there are 6 elements here, I’m adding 6 panels.<br />
+Here, the left method applies to each of the panel. The first one is to the left, the next one is 25 pixels further, etc.<br />
+I’m then adding a bar object to each panel. Is that one group of bar? Technically yes, but each has only one element! Each pv.Bar <em>implicitly</em> gets the data element of its parent, so the first bar gets [1], the next one gets [1.2], etc. The height of each bar is determined by multiplying the value of that element by 80.<br />
+Note that since the fillStyle properties are not defined for the bars, they get the ones which are attributed by default, which explains the color changes.</p>
+<p>Further refinement: accessing the data of its parent!</p>
+<table>
+<tr>
+<td>
+<pre class="brush: jscript; highlight: [5]; title: ; notranslate">
+var vis = new pv.Panel().width(150).height(150);
+vis.add(pv.Panel)
+  .data([1, 1.2, 1.7, 1.5, .7, .3]) .left(function() this.index * 25)
+  .add(pv.Bar).width(20) .bottom(0)
+  .height(function(a,b) b * 80)
+  .anchor(&quot;top&quot;).add(pv.Label)
+vis.render();
+</pre>
+</td>
+<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/part4.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/part4.png" alt="" title="part4" width="154" height="154" class="aligncenter size-full wp-image-488" /></a></td>
+</tr>
+</table>
+<p>Well, the output is exactly the same, but how I obtained the data is different. Instead of getting the data using the standard accessor function, I passed two arguments: function(a, b).<br />
+What this does is that the first argument corresponds to the current data element of this object, and the second, to that of its parent.</p>
+<p>In this example, they happen to be the same, but this is how you can access the data of the parent objects.</p>
+<h2>Putting it all together</h2>
+<p>Let&#8217;s see how we can use protovis and the properties of hierarchy! This example is less trivial than the ones we&#8217;ve seen so far but with what we&#8217;ve seen it is quite accessible.<br />
+The challenge: re-create <a href="http://eagereyes.org/communication/Engaging-readers-with-square-pie-waffle-charts.html">square pie charts</a>.<br />
+How it&#8217;s done: </p>
+<pre class="brush: jscript; title: ; notranslate">var data=[36,78,63,24],  // arbitrary numbers
+cellSize = 16,
+cellPadding = 1,
+squarePadding=5,
+colors=pv.Colors.category20().range()
+;
+
+var vis=new pv.Panel()
+    .width(4*(10*cellSize+squarePadding))
+    .height(10*cellSize)
+    ;
+
+var square = vis.add(pv.Panel)
+    .data(data)
+    .width(10*cellSize)
+    .height(10*cellSize)
+    .left(function() this.index*(cellSize*10+squarePadding))
+    ;
+
+var row = square.add(pv.Panel)
+	.data([0,1,2,3,4,5,6,7,8,9])
+	.height(cellSize)
+	.bottom(function(d) d*cellSize)
+	;
+
+var cell = row.add(pv.Panel)
+    .data([0,1,2,3,4,5,6,7,8,9])
+    .height(cellSize-2*cellPadding)
+    .width(cellSize-2*cellPadding)
+    .top(cellPadding)
+    .left(function(d) d*cellSize+cellPadding)
+    .fillStyle(function(a,b,c) (b*10+a)&lt;c?colors[this.parent.parent.index].color:&quot;lightGrey&quot;)
+;
+
+square.anchor(&quot;center&quot;)
+  .add(pv.Label)
+    .text(function(d) d)
+    .textStyle(&quot;rgba(0,0,0,.1)&quot;)
+    .font(&quot;100px sans-serif&quot;);
+
+vis.render();</pre>
+<p>First, we initiate the data (4 arbitrary numbers from 1 to 100), and various parameters which will help size the square pie &#8211; size of the cells, space between them, space between the square pie charts. We also initiate a color palette.<br />
+Then, we are going to create 4 panels or groups of panels, each a child of the previous one.<br />
+First comes the <strong>vis</strong> panel, which groups everything,<br />
+Then the <strong>square </strong>panels, which correspond to each square pie. This is to this panel that our data is assigned.<br />
+Then come the <strong>row </strong>panels, and, finally, the <strong>cell </strong>panels.<br />
+The numbers which we want to represent are assigned to the square panel. So, what data are we passing to the row and the cell panels? The only thing we want is to have 10 rows and 10 cells per row. So, we can use an array with 10 items. We are going to use [0,1,2,3,4,5,6,7,8,9] so the data value of the row and that of the cell will correspond to the coordinate of the row and the cell, respectively. In other words, the 5th row will be assigned the data value of 4, and the 7th cell in that row will get the data value of 6. We could retrieve the same numbers using &#8220;this.index&#8221; but this can lead to obfuscated formulas.</p>
+<p>Note that in the next part of the tutorial, we&#8217;ll see that in Protovis, there is a more elegant way to write [0,1,2,3,4,5,6,7,8,9] or similar series of numbers. But, we&#8217;ll leave this more explicit form for now.</p>
+<p>Back to our row panel. We position it with bottom(function(d) d*cellSize). Here, again, d represents the rank of the row, so the 1st row will get 0, and its bottom value will be 0, the next row will get 1, and its bottom value will be 1*cellSize or 16, etc. </p>
+<p>Likewise, in the cell panel, the cells are positioned with left(function(d) d*cellSize+cellPadding). This is the same principle. (here, cellPadding is just used to fine-tune the position of the cell).</p>
+<p>This is in the final line that we are really going to use hierarchy.</p>
+<pre class="brush: jscript; title: ; notranslate">.fillStyle(function(a,b,c) (b*10+a)&lt;c?colors[this.parent.parent.index].color:&quot;lightGrey&quot;)</pre>
+<p>here, a represents the data value of the cell &#8211; in other words, the column number.<br />
+b, the data value of the cell&#8217;s parent, the row. This is the row number.<br />
+and c is the data value of the parent of the parent of the row, the square &#8211; this is the number that we are trying to represent.</p>
+<p>so, what we are going to determine is whether b*10+a&lt;c. If that&#8217;s the case, we color the cell, else, we leave it in pale grey. To get the color we need, we go back to the palette that we defined at the beginning, and take the color corresponding to the square number (0 to 3 from left to right).<br />
+The square number can be obtained by this.parent.parent.index.</p>
+<p>Finally, we add the numbers in large transparent gray digits on top of the squares.</p>
+<p>Here is the result:<br />
+<a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/squarePies.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/squarePies.png" alt="" title="squarePies" width="660" height="160" class="aligncenter size-full wp-image-559" /></a></p>
+<p>Next: <a href="http://www.jeromecukier.net/?p=49">Javascript and protovis array functions</a></p>
+]]></content:encoded>
+			<wfw:commentRss>/2011/02/08/working-with-data-in-protovis-part-2-of-5/feed/</wfw:commentRss>
+		<slash:comments>6</slash:comments>
+		</item>
+	</channel>
+</rss>

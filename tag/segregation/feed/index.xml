@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>segregation &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/segregation/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>Some simulation models</title>
+		<link>/2012/11/07/some-simulation-models/</link>
+		<comments>/2012/11/07/some-simulation-models/#comments</comments>
+		<pubDate>Wed, 07 Nov 2012 15:51:37 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[d3]]></category>
+		<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[cellular automata]]></category>
+		<category><![CDATA[cellular automaton]]></category>
+		<category><![CDATA[coursera]]></category>
+		<category><![CDATA[life]]></category>
+		<category><![CDATA[Markov]]></category>
+		<category><![CDATA[models]]></category>
+		<category><![CDATA[percolation]]></category>
+		<category><![CDATA[Polya]]></category>
+		<category><![CDATA[Schelling]]></category>
+		<category><![CDATA[Scott E Page]]></category>
+		<category><![CDATA[segregation]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1496</guid>
+		<description><![CDATA[Inspired by the coursera class on model thinking, by Scott E Page, I have implemented a bunch of simulation models with d3. It&#8217;s something I have done on and off for the past few weeks, and let&#8217;s say it&#8217;s really the first 6. Those interactive versions just graze the surface of all there is to <a class="read-more" href="/2012/11/07/some-simulation-models/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>Inspired by the <a href="http://coursera.org/">coursera</a> class on <a href="https://class.coursera.org/modelthinking-2012-002/class/index">model thinking</a>, by Scott E Page, I have implemented a bunch of <a href="http://jeromecukier.net/projects/models/models.html">simulation models</a> with <a href="http://d3js.org/">d3</a>. It&#8217;s something I have done on and off for the past few weeks, and let&#8217;s say it&#8217;s really the first 6. Those interactive versions just graze the surface of all there is to see.</p>
+<p>So what I have is: </p>
+<ul>
+<li><a href="http://www.jeromecukier.net/projects/models/life.html">Conway&#8217;s game of life </a></li>
+<li><a href="http://www.jeromecukier.net/projects/models/ca.html">1D cellular automata </a></li>
+<li><a href="http://www.jeromecukier.net/projects/models/polya.html">Polya&#8217;s process </a></li>
+<li><a href="http://www.jeromecukier.net/projects/models/percolate.html">square lattice percolation model </a></li>
+<li><a href="http://www.jeromecukier.net/projects/models/markov.html">Markov processes </a></li>
+<li><a href="http://www.jeromecukier.net/projects/models/segregate.html">Schelling&#8217;s segregation model </a></li>
+</ul>
+<p>Enjoy!</p>
+]]></content:encoded>
+			<wfw:commentRss>/2012/11/07/some-simulation-models/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+	</channel>
+</rss>

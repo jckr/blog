@@ -1,0 +1,161 @@
+<html>
+<head>
+<script type="text/javascript" src="http://blog.oecdfactblog.org/wp-includes/js/protovis-r3.2.js"></script>
+<script type="text/javascript" src="results.js"></script>
+<style>
+</style>
+</head>
+
+<body><div class="protovis">
+
+<script type="text/javascript+protovis">
+
+var croise=1;
+var score=4;
+
+var c1=Math.cos(.2*Math.PI),c2=Math.cos(.4*Math.PI),
+	s1=Math.sin(.2*Math.PI),s2=Math.sin(.4*Math.PI),
+	r=10,r1=r*c2/c1,
+	star=[[0,-r],
+		  [r1*s1,-r1*c1],
+		  [r*s2,-r*c2],
+		  [r1*s2,r1*c2],
+		  [r*s1,r*c1],
+		  [0,r1],
+		  [-r*s1,r*c1],
+		  [-r1*s2,r1*c2],
+		  [-r*s2,-r*c2],
+		  [-r1*s1,-r1*c1],
+		  [0,-r]];
+
+
+var vis = new pv.Panel()
+	.width(1000)
+	.height(1000)
+
+var currentMovie=0;
+
+var movieMax=movieTitles.length-1;
+vis.add(pv.Panel)
+	.height(30)
+	.anchor("left")
+	.left(50)
+	.add(pv.Label).text("Film 1 :").font("20px sans-serif").textBaseline("baseline").top(20).parent
+	.add(pv.Label).left(135).font("italic 24px serif").textBaseline("baseline").top(20)
+		.text(function() {return movieTitles[currentMovie];})
+		.textStyle("#9467bd")
+
+		;
+
+vis.add(pv.Dot)
+	.top(10)
+	.height(40).left(20).width(50).shape("triangle").angle(-Math.PI / 6).strokeStyle("green").fillStyle("green")
+	.event("click", function() {currentMovie--;if(currentMovie==croise){currentMovie--;}if(currentMovie<0){currentMovie=(croise==movieMax?movieMax-1:movieMax)};vis.render();})
+vis.add(pv.Dot)
+	.top(10)
+	.height(40).width(50).right(40).shape("triangle").angle(Math.PI / 6).strokeStyle("green").fillStyle("green")
+	.event("click", function() {currentMovie++;if(currentMovie==croise){currentMovie++;}if(currentMovie>movieMax){currentMovie=(croise==0?1:0)}vis.render();})
+
+vis.add(pv.Panel)
+	.top(30)
+	.height(30)
+	.anchor("left")
+	.left(50)
+	.add(pv.Label).text("Film 2 :").font("20px sans-serif").textBaseline("baseline").top(20).parent
+	.add(pv.Label).left(135).font("italic 24px serif").textBaseline("baseline").top(20)
+		.text(function() {return movieTitles[croise];})
+		.textStyle("#c5b0d5")
+
+
+vis.add(pv.Dot)
+	.top(40)
+	.height(40).left(20).width(50).shape("triangle").angle(-Math.PI / 6).strokeStyle("green").fillStyle("green")
+	.event("click", function() {croise--;if(croise==currentMovie){croise--;}if(croise<0){croise=(currentMovie==movieMax?movieMax-1:movieMax)};vis.render();})
+vis.add(pv.Dot)
+	.top(40)
+	.height(40).width(50).right(40).shape("triangle").angle(Math.PI / 6).strokeStyle("green").fillStyle("green")
+	.event("click", function() {croise++;if(croise==currentMovie){croise++;}if(croise>movieMax){croise=(currentMovie==0?1:0)};vis.render();})
+
+vis.add(pv.Panel)
+	.top(60)
+	.height(30)
+	.anchor("left")
+	.left(50)
+	.add(pv.Label)
+		.text("Note :")
+		.font("20px sans-serif")
+		.textBaseline("baseline").top(16)
+
+vis.add(pv.Panel)
+	.data(pv.range(5))
+	.top(68)
+	.left(function(d) {return 150+30*d;})
+	.add(pv.Line)
+	.data(star)
+	.left(function(d) {return d[0];}).top(function(d) {return d[1];}).fillStyle(function(b,a) {return a<score?"orange":null;}).strokeStyle("orange")
+vis.add(pv.Dot)
+	.top(70)
+	.height(40).left(20).width(50).shape("triangle").angle(-Math.PI / 6).strokeStyle("green").fillStyle("green")
+	.event("click", function() {score--;if(score<1){score=5};vis.render();})
+vis.add(pv.Dot)
+	.top(70)
+	.height(40).width(50).right(40).shape("triangle").angle(Math.PI / 6).strokeStyle("green").fillStyle("green")
+	.event("click", function() {score++;if(score>5){score=1};vis.render();})
+
+
+
+vis.add(pv.Bar)
+		.data(pv.range(5))
+		.left(200)
+		.height(40)
+		.top(function(d) 100+100*d)
+		.width(function(d) {return 500*data.filter(function(user) {return user[currentMovie]==(d+1);}).length/data.length;})
+		.fillStyle("#9467bd")
+
+
+vis.add(pv.Bar)
+		.data(pv.range(5))
+		.left(200)
+		.height(40)
+		.top(function(d) 140+100*d)
+		.width(function(d) {var pop=data.filter(function(user) {return user[croise]==score;});
+							return 500*pop.filter(function(user) {return user[currentMovie]==(d+1);}).length/pop.length;})
+		.fillStyle("#c5b0d5")
+
+vis.add(pv.Panel)
+	.data(pv.range(5))
+	.top(function(d) 140+100*d)
+	.add(pv.Panel)
+		.data(pv.range(5))
+		.left(function(d) 170-30*d)
+		.add(pv.Line)
+			.data(star)
+			.left(function(d) d[0])
+			.top(function(d) d[1])
+			.fillStyle(function(d,col,row) row>=col?"orange":null)
+			.strokeStyle("null")
+
+
+vis.add(pv.Panel)
+	.top(500)
+	.left(680)
+	.width(300)
+	.height(100)
+	//.fillStyle(pv.Color("#c5b0d5").brighter())
+	.fillStyle("aliceblue")
+	.add(pv.Panel).top(10).left(10).width(20).height(20).fillStyle("#9467bd").parent
+	.add(pv.Panel).top(40).left(10).width(20).height(20).fillStyle("#c5b0d5").parent
+	.add(pv.Label).top(25).left(40).text(function() "% des notes pour "+movieTitles[currentMovie]).parent
+	.add(pv.Label).top(55).left(40).text(function() "% des notes pour "+movieTitles[currentMovie]).parent
+	.add(pv.Label).top(70).left(40).text(function() "parmi ceux qui ont mis "+score+" étoile"+(score==1?"":"s")+" à :").parent
+	.add(pv.Label).top(85).left(40).text(function() movieTitles[croise]).parent
+	.strokeStyle(pv.color("aliceblue").darker()).lineWidth(1)
+vis.render();
+
+
+
+
+</script>
+</div>
+  </body>
+</html>

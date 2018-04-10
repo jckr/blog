@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>powerpoint &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/powerpoint/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>Testing Microsoft Office 2010</title>
+		<link>/2009/10/06/testing-microsoft-office-2010/</link>
+		<comments>/2009/10/06/testing-microsoft-office-2010/#comments</comments>
+		<pubDate>Tue, 06 Oct 2009 17:03:47 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[charts]]></category>
+		<category><![CDATA[presentation]]></category>
+		<category><![CDATA[Excel]]></category>
+		<category><![CDATA[excel 2010]]></category>
+		<category><![CDATA[office]]></category>
+		<category><![CDATA[office 2010]]></category>
+		<category><![CDATA[powerpoint]]></category>
+		<category><![CDATA[powerpoint 2010]]></category>
+		<category><![CDATA[word]]></category>
+		<category><![CDATA[word 2010]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=228</guid>
+		<description><![CDATA[If you are using computers for work, chances are that you are spending a good portion of your day with Microsoft products such as the Office suite. Some hate it, some love it, but to hundreds of millions it&#8217;s part of our daily lives and its design choices affect how we think and work in <a class="read-more" href="/2009/10/06/testing-microsoft-office-2010/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>If you are using computers for work, chances are that you are spending a good portion of your day with Microsoft products such as the Office suite. Some hate it, some love it, but to hundreds of millions it&#8217;s part of our daily lives and its design choices affect how we think and work in a much more profound way than we are aware of. So, the release of a new version of Office is always a significant event.</p>
+<p>I&#8217;ve just installed Office 2010 and here are my first impressions.</p>
+<h2>The UI is rationalized.</h2>
+<p><div id="attachment_235" style="width: 610px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2009/10/excel-2010.png"><img class="size-full wp-image-235" title="excel 2010" src="http://www.jeromecukier.net/wp-content/uploads/2009/10/excel-2010.png" alt="excel 2010" width="600" height="552" /></a><p class="wp-caption-text">The UI is rationalized.</p></div></p>
+<p style="text-align: center;">
+<p>The interface will be familiar to Office 2007 users &#8211; they are <strong>still using the ribbon</strong>. Only a few buttons have been added to the applications I&#8217;ve tested, and the others have fortunately not moved since the previous version. However, the ribbon&#8217;s colours have been muted to a conservative white to grey gradient, which is <strong>much easier on the eyes</strong>. The added benefit is to make highlighted sections of the ribbon stand out much more efficiently.</p>
+<p><div id="attachment_236" style="width: 808px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2009/10/excel-highlight.png"><img class="size-full wp-image-236" title="excel highlight" src="http://www.jeromecukier.net/wp-content/uploads/2009/10/excel-highlight.png" alt="excel highlight" width="798" height="509" /></a><p class="wp-caption-text">Highlighting a section works much better against a sober gray than against a vivid blue.</p></div></p>
+<p style="text-align: center;">
+<p>The one button that changed was the<strong> top-left Office button</strong>. Frankly, what it was for was obvious to no-one in Office 2007. Due to its appearance, it wasn&#8217;t really clear that it was clickable, and the commands it gave access to were a mixed bunch &#8211; file control, program options, printing, document properties&#8230; which, before, were not in the same top-category.</p>
+<p><div id="attachment_237" style="width: 646px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2009/10/office-backstage.png"><img class="size-full wp-image-237" title="office backstage" src="http://www.jeromecukier.net/wp-content/uploads/2009/10/office-backstage.png" alt="This new area is called &quot;Office backstage&quot; and is a welcome change to the akward &quot;file&quot; menu or office button from previous versions." width="636" height="553" /></a><p class="wp-caption-text">This new area is called &quot;Office backstage&quot; and is a welcome change to the akward &quot;file&quot; menu or office button from previous versions.</p></div></p>
+<p>In Office 2010, the Office button is still there, but this time, it looks like a button and is much more inviting. This time, it presents the user with the various commands on a separate screen. That way, commands are well-categorized, and there is ample space for UI designers to explain those commands which are not clear. This had not been possible when all those commands were forced to fit in one tiny menu.</p>
+<p>Another thing that jumped at me when I started manipulating the programs were the <strong>improvement in the copy/paste interface</strong>. It&#8217;s fair to say that pasting has always been a very time-consuming task. It had never been easy, for instance, to paste values only or to keep source formatting, without having to open menus and choose options which require time and effort. Besides, some pasting options descriptions are cryptic and a bit daunting, so novice users aren&#8217;t encouraged to use them for fear of what might happen.</p>
+<p><div id="attachment_238" style="width: 547px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2009/10/paste1.png"><img class="size-full wp-image-238" title="paste1" src="http://www.jeromecukier.net/wp-content/uploads/2009/10/paste1.png" alt="I've been using Excel for about 15 years so I know my way around. But improvement in the paste interface directly translates into productivity gains." width="537" height="491" /></a><p class="wp-caption-text">I&#39;ve been using Excel for about 15 years so I know my way around. But improvement in the paste interface directly translates into productivity gains.</p></div></p>
+<p>Now the various pasting options are promoted within the contextual menu &#8211; they are big icons, and it is possible to preview how pasted material would look before pasting. The best part is that these commands are now accessible via native keyboard shortcuts, so we no longer need a string of 4 mouse clicks, or having to key in <span style="text-decoration: line-through;">alt+E, V, S,  enter</span> alt + H, V, S, V, enter in sequence. After a normal paste (ctrl +V) you can hold control and choose a one key option, such as V for values, T for transposing, etc. Much better.</p>
+<h2>Changes in the Excel chart engine</h2>
+<p>There are 3 ways in Excel to represent numbers graphically: charts proper, pivot charts and sparklines.</p>
+<p><strong>Charts </strong>and pivot Charts<strong> didn&#8217;t see much improvement</strong> since the previous version of Excel. The formatting options move along in the direction initiated by Excel 2007: in addition to the controversed 3-D format set of options, users now have an advanced &#8220;shadow&#8221; and &#8220;glow and soft edges&#8221; submenus to spice up their charts. The interface for designing gradient fills has been upgraded. The underlying functionality remains unchanged but it is now easier to control. However, the pattern fill option returns, which is great news for people who print their graphs in B&amp;W.</p>
+<p><div id="attachment_239" style="width: 533px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2009/10/shadow-and-soft-edges.png"><img class="size-full wp-image-239" title="shadow and soft edges" src="http://www.jeromecukier.net/wp-content/uploads/2009/10/shadow-and-soft-edges.png" alt="Even more complex formatting options mean a greater chance to use them poorly" width="523" height="384" /></a><p class="wp-caption-text">Even more complex formatting options mean a greater chance to use them poorly</p></div></p>
+<p><strong>Sparklines are the real innovation of Excel 2010</strong>. Sparklines are a minimalist genre of chart that has been designed to fit in the regular flow of the text &#8211; they don&#8217;t require more space to be legible and efficient. While sparklines do not allow a user to look up the value of a specific data point, they are very efficient for communicating a trend. As such, they are increasingly used in dashboards and reports. There has been 3rd-party solutions to implement them in Excel but this native implementation is robust and well done. This will put sparklines on the radar for the great number of people who didn&#8217;t use them because they were not aware of their existence.</p>
+<p><div id="attachment_240" style="width: 603px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2009/10/sparklines.png"><img class="size-full wp-image-240" title="sparklines" src="http://www.jeromecukier.net/wp-content/uploads/2009/10/sparklines.png" alt="Sparklines give immediate insight on the trends in this data table. A dot marks when the maximum value was reached. That makes it easier to compare peaks at a glance." width="593" height="627" /></a><p class="wp-caption-text">Sparklines give immediate insight on the trends in this data table. A dot marks when the maximum value was reached. That makes it easier to compare peaks at a glance.</p></div></p>
+<h2>Changes in other applications</h2>
+<p><strong>Word </strong>has advanced options for opentype fonts, for instance, if your font has several character sets, you can now access them from Word. This is especially good for <a href="http://www.youtube.com/watch?v=WjhDWAXlAII">distressed fonts</a> or the excessively ornate ones. In addition to kerning, it is now possible to control ligatures (i.e. to allow users to specify how ff, fl or fi would appear on screen, as one unique glyph or as two separated letters). Another new feature of Word is an advanced spell checker who is able to warn you of possible word choice errors, when using homonyms for instance.</p>
+<p>On my setup, these 3 options didn&#8217;t really work, but it&#8217;s a beta and I understand the intent.</p>
+<p><div id="attachment_241" style="width: 553px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2009/10/word-spelling-ko.png"><img class="size-full wp-image-241" title="word spelling ko" src="http://www.jeromecukier.net/wp-content/uploads/2009/10/word-spelling-ko.png" alt="The advanced spell checker didn't catch those words which were quite obviously used out of context." width="543" height="550" /></a><p class="wp-caption-text">The advanced spell checker didn&#39;t catch those words which were quite obviously used out of context.</p></div></p>
+<p><div id="attachment_242" style="width: 553px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2009/10/word-spelling-ok.png"><img class="size-full wp-image-242" title="word spelling ok" src="http://www.jeromecukier.net/wp-content/uploads/2009/10/word-spelling-ok.png" alt="In French, it picked sides in a famous spelling controversy. Many people believe that Perrault originally wrote that Cindirella wore fur slippers (soulier de vair). Microsoft sides with Disney on that ones and glass slippers (souliers de verre)." width="543" height="550" /></a><p class="wp-caption-text">In French, it picked sides in a famous spelling controversy. Many people believe that Perrault originally wrote that Cindirella wore fur slippers (soulier de vair). Microsoft sides with Disney on that one and glass slippers (souliers de verre).</p></div></p>
+<p><strong>Powerpoint</strong> features 3 high-level changes: the possibility to structure a long presentation using sections, which somehow helps. However, as far as I could see, sections are only a grouping feature. There are few operations that can be performed on the section as a whole (as opposed to on all the presentation, or on each slide separately). For some tasks, you can think it is the case (as selecting the section implicitly selects its slides) but you&#8217;ll see that the operation only affected the current slide. Hmm. It can be useful to manage a presentation after it&#8217;s done, but IMO this will reduce the amount of time people spend designing their presentation <span style="text-decoration: underline;">away</span> from powerpoint which is ultimately a bad thing.</p>
+<p><div id="attachment_243" style="width: 622px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2009/10/ppnt-sections.png"><img class="size-full wp-image-243" title="ppnt sections" src="http://www.jeromecukier.net/wp-content/uploads/2009/10/ppnt-sections.png" alt="Powerpoint sections make it easier to manage very long documents." width="612" height="637" /></a><p class="wp-caption-text">Powerpoint sections make it easier to manage very long documents.</p></div></p>
+<p>Powerpoint 2010 also features 3D transitions not unlike those of Keynote &#8217;08. It is also possible to include movie clips in presentation. Wasn&#8217;t this already the case? Previously, you&#8217;d have to embed video <em>files </em>in your presentations. Now it is possible to embed online videos as well. I&#8217;m not quite sure about these two options really, the first one for ideologic reasons, the 2nd because I wouldn&#8217;t recommend any speaker to rely overly on an internet connection and a video hosting service during a live presentation.</p>
+<p><div id="attachment_244" style="width: 621px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2009/10/ppnt-insert-screenshot.png"><img class="size-full wp-image-244" title="ppnt insert screenshot" src="http://www.jeromecukier.net/wp-content/uploads/2009/10/ppnt-insert-screenshot.png" alt="The insert screenshot shows a gallery from all my open windows to choose from. The screen clipping tool allows one to insert only a section of the window. Neat!" width="611" height="637" /></a><p class="wp-caption-text">The insert screenshot shows a gallery from all my open windows to choose from. The screen clipping tool allows one to insert only a section of the window. Neat!</p></div></p>
+<p>There&#8217;s another thing available everywhere in Office but which is possibly most useful in powerpoint, that is, insert screenshot. By clicking on this button, you have a list of thumbnails of all your open windows to choose from, this really reduces the hassle of using a screen capture tool, or worse, to manually do a screen capture, paste it in an image editing program, crop the image, save it to an acceptable format and copy/paste it again where you need it. It is possible to only copy part of these screens, too. It&#8217; s quite well done.</p>
+<h2>Overall impressions</h2>
+<p>I&#8217;m impressed with the thinking that went into the interface. The ribbon was already a great demonstration of out-of-the-box thinking and looked great on paper. I wasn&#8217;t thrilled to use it as the commands I had been using for some 15 years were not always easily found, but it seems that first-time users of Office 2007 outweight those who&#8217;ve used previous versions. The execution of the ribbon in Office 2010 is improved, and the team allowed themselves to go beyond some arbitrary constraints they had imposed to themselves, such as the pasting options or the office button. Well done.</p>
+<p>I&#8217;m happy that sparklines have been added to Excel. In the next few years, we&#8217;ll find even better usage for them. However, I&#8217;m disappointed that the charting options remain essentially unchanged. Take the pie chart for instance. Everyone is aware of its limitations. There are many alternatives which would be easy to implement in Excel. Also, I&#8217;m disappointed that the charting mechanism remains the same: present the user with a long list of chart types, without supporting their reasoning in the choice of one over the other. There should be a chart wizard that would ask the user what do they want to show with the data and suggests the best choice (and not many possible choices) of chart.</p>
+<p>I am not sure about the improved spell checker. Improved means increased dependency on the tool, which is the reason why typos haven&#8217;t been eradicated despite the technology.</p>
+<p>I am very skeptical about all the advances of the Office product into design. Office users are not designers. Or rather, to be a designer requires a specific form of critical reasoning, not a new tool. More sophisticated graphical options allow novice users to achieve complex results without going through that phase of reasoning, which ultimately won&#8217;t help them.</p>
+]]></content:encoded>
+			<wfw:commentRss>/2009/10/06/testing-microsoft-office-2010/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+		<item>
+		<title>The state of presentations in 2008</title>
+		<link>/2008/12/17/the-state-of-presentations-in-2008/</link>
+		<comments>/2008/12/17/the-state-of-presentations-in-2008/#respond</comments>
+		<pubDate>Wed, 17 Dec 2008 12:41:52 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[presentation]]></category>
+		<category><![CDATA[2008]]></category>
+		<category><![CDATA[Al Gore]]></category>
+		<category><![CDATA[An Inconvenient Truth]]></category>
+		<category><![CDATA[criticism]]></category>
+		<category><![CDATA[garr reynolds]]></category>
+		<category><![CDATA[guidelines]]></category>
+		<category><![CDATA[images]]></category>
+		<category><![CDATA[Nancy Duarte]]></category>
+		<category><![CDATA[powerpoint]]></category>
+		<category><![CDATA[presentation zen]]></category>
+		<category><![CDATA[slide:ology]]></category>
+		<category><![CDATA[slideshare]]></category>
+		<category><![CDATA[slideware]]></category>
+		<category><![CDATA[Steve Jobs]]></category>
+		<category><![CDATA[tools]]></category>
+		<category><![CDATA[typography]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=112</guid>
+		<description><![CDATA[There have been many changes in how people understand presentations in 2008. How far have we gone? In 2008, 2 major books on the topic have been published. Presentation Zen, by Garr Reynolds, and slide:ology, by Nancy Duarte. People are accepting that a well-executed presentation can change the world. An Inconvenient Truth got nothing less <a class="read-more" href="/2008/12/17/the-state-of-presentations-in-2008/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>There have been many changes in how people understand presentations in 2008. How far have we gone?</p>
+<p>In 2008, 2<strong> major books on the topic have been published</strong>. <a href="http://www.amazon.com/gp/product/0321525655?ie=UTF8&amp;tag=jeromecukiern-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0321525655">Presentation Zen</a>, by Garr Reynolds, and <a href="http://www.amazon.com/gp/product/0596522347?ie=UTF8&amp;tag=jeromecukiern-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0596522347">slide:ology</a><img style="border:none !important; margin:0px !important;" src="http://www.assoc-amazon.com/e/ir?t=jeromecukiern-20&amp;l=as2&amp;o=1&amp;a=0596522347" border="0" alt="" width="1" height="1" />, by Nancy Duarte.</p>
+<p><strong>People are accepting that a well-executed presentation can change the world</strong>. <a href="http://www.amazon.com/gp/product/B000ICL3KG?ie=UTF8&amp;tag=jeromecukiern-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=B000ICL3KG">An Inconvenient Truth</a><img style="border:none !important; margin:0px !important;" src="http://www.assoc-amazon.com/e/ir?t=jeromecukiern-20&amp;l=as2&amp;o=1&amp;a=B000ICL3KG" border="0" alt="" width="1" height="1" /> got nothing less than 2 academy awards and a nobel prize. And rumors about the health of master presenter Steve Jobs caused the stock markets to panic.</p>
+<p>People are also finding that <strong>tools to create successful presentations are incredibly commonplace</strong>. From a technical standpoint, anyone with a computer could have created &#8220;<a href="http://www.google.com/url?sa=U&amp;start=1&amp;q=http://www.youtube.com/watch%3Fv%3DpMcfrLYDm2U&amp;ei=ZexISZ_WN4zY0gXax5wP&amp;sig2=aVpciv4dx5iCWcZLlEr0ag&amp;usg=AFQjCNFCz0fx7wPiD-xtxo89i25mdVC78w">shift happens</a>&#8220;, which has been viewed by 5 to 10 million people.</p>
+<p>As a result, <strong>blogs are now swarming with sensible presentation advice</strong>. A google query for &#8220;<a href="http://en.wikipedia.org/wiki/Death_By_Powerpoint">death by powerpoint</a>&#8221; returns <a href="http://www.google.com/search?q=death+by+powerpoint">397000 hits</a> today. A year ago, searching for presentation tips yielded ideologic (as opposed to evidence-based) guidelines such as &#8220;no more than 7 bullets per slide&#8221; or &#8220;one slide per minute&#8221;. (you can still find those as well).</p>
+<p>2008 was also the year where <strong>Slideshare took off</strong>. Not only did the viewership and amount of contents increase drastically, but the quality, relevancy and sophistication of the best presentations is now incredible. Empowered by inspring examples, clear guidelines and adequate tools, many are thriving to emulate great presenters.</p>
+<p>So if I just end here, one could conclude that the world is definitely saved from ineffective presentations. The reality is slightly different.</p>
+<p>This year, I have seen so far approximately 400 live presentations, and god knows how many online. Some were excellent, many were good, most were at least adequate. But a good proportion of them were still boring and I&#8217;d be lying if I claimed I could remember as much as 10% of them.</p>
+<p>One explanation I came up with for that is that many presenters are still focusing on the final deliverable product rather than the fundamentals. These folks are very sensitive to advice like &#8220;mind your typography&#8221;, &#8220;illustrate your slides with large images&#8221;, or &#8220;forget bullets&#8221;. Now typography or images are important and can make a difference between a good and an excellent presentation. But it&#8217;s crucial to have a message to deliver and to focus on that message.</p>
+<p>Bulleted texts are accused of cluttering the presentations. But if every little point or anecdote is illustrated with a vividly-colored image, then the images themselves become the clutter and clog everyone&#8217;s limited attention. You&#8217;d remember the images and cool effects but not the point. And a week later, you&#8217;ll have forgotten the images and the presentation altogether.</p>
+<p>So my own piece of advice is that your big images won&#8217;t make your presentation. Your angle,  structure and consistency will. The best advice I got from Presentation Zen was to prepare a presentation away from a computer and only produce it once it&#8217;s final. It works. It really does.</p>
+<p>Once this will be an accepted practice, seminars, classes and meetings will be much more exciting (let&#8217;s hope!).</p>
+]]></content:encoded>
+			<wfw:commentRss>/2008/12/17/the-state-of-presentations-in-2008/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Book review: Presentation Zen by Garr Reynolds</title>
+		<link>/2008/11/26/book-review-presentation-zen-by-garr-reynolds/</link>
+		<comments>/2008/11/26/book-review-presentation-zen-by-garr-reynolds/#comments</comments>
+		<pubDate>Wed, 26 Nov 2008 12:29:13 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[book review]]></category>
+		<category><![CDATA[presentation]]></category>
+		<category><![CDATA[advice]]></category>
+		<category><![CDATA[book]]></category>
+		<category><![CDATA[garr]]></category>
+		<category><![CDATA[garr reynolds]]></category>
+		<category><![CDATA[guidelines]]></category>
+		<category><![CDATA[image]]></category>
+		<category><![CDATA[powerpoint]]></category>
+		<category><![CDATA[presentation zen]]></category>
+		<category><![CDATA[slides]]></category>
+		<category><![CDATA[story]]></category>
+		<category><![CDATA[visual]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=15</guid>
+		<description><![CDATA[Presentation Zen, by Garr Reynolds, has been my favorite business book in 2008. Whatever your field, if you are a professional, chances are that you are going to make a presentation at least once a year. If you are looking for guidance, you could do worse than checking Garr&#8217;s website, aptly named presentation zen, or <a class="read-more" href="/2008/11/26/book-review-presentation-zen-by-garr-reynolds/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p><a href="http://www.amazon.com/dp/0321525655?tag=jeromecukiern-20&amp;camp=14573&amp;creative=327641&amp;linkCode=as1&amp;creativeASIN=0321525655&amp;adid=1SMVEYMJTKAVERYAM6YM&amp;"><img class="alignleft" style="padding:10px;" title="Presentation Zen cover" src="http://sixminutes.dlugan.com/wp-content/uploads/2008/01/presentation-zen-book.jpg" alt="" width="200" height="245" /></a>Presentation Zen, by Garr Reynolds, has been my favorite business book in 2008.</p>
+<p>Whatever your field, if you are a professional, chances are that you are going to make a presentation at least once a year. If you are looking for guidance, you could do worse than checking Garr&#8217;s website, aptly named <a href="http://www.presentationzen.com/">presentation zen</a>, or buying the book.</p>
+<p>Garr&#8217;s book will not teach you everything you need to know about presentations, but is a great starting point.</p>
+<p>If I were to summarize the book in one sentence, that would be:</p>
+<p><strong>Focus on your delivering your message.</strong></p>
+<p>Anything in your presentation that doesn&#8217;t help you deliver your key message must be removed. Conversely, there are ways to present your content that can enhance your message. Consider them.</p>
+<p>I could sum up his practical advice in 3 points.</p>
+<ul>
+<li>start to think offline.</li>
+<li>in your favorite presentation software, start from a blank slide.</li>
+<li>use visuals. And give your visuals all the space they need.</li>
+</ul>
+<div>Let&#8217;s ellaborate a bit.</div>
+<div><strong>Start to think offline</strong></div>
+<div>The first thing most business professionals would do when asked to design a presentation would be to fire up Powerpoint and create slides. Then, they will edit slides. Insert slides&#8230; remove slides. Edit them some more. Tweak the design&#8230; Insert that extra idea. Ah, but the slide is no longer aligned. So we&#8217;re back to more editing and more tweaking. The end result is often busy, neither consistent nor convincing. Sounds familiar?</div>
+<p style="text-align: center;"><a title="27062008661 by Nevon, on Flickr" href="http://www.flickr.com/photos/nevon/2621789613/"><img class="aligncenter" src="http://farm4.static.flickr.com/3162/2621789613_8153c4b7c5.jpg" alt="27062008661" width="400" height="300" /></a></p>
+<div>The solution to that problem is to start working on your presentation offline &#8211; determine the outline, how to structure your talk, what to say on each slide&#8230; A nice way to do this is with post-its.</div>
+<p style="text-align: center;"><a title="Outlining my dConstruct talk by adactio, on Flickr" href="http://www.flickr.com/photos/adactio/2735966814/"><img class="aligncenter" src="http://farm4.static.flickr.com/3136/2735966814_cce38ccc94.jpg" alt="Outlining my dConstruct talk" width="375" height="500" /></a></p>
+<div>Post-its are easy to group and reposition, and if text doesn&#8217;t fit on a post it, it&#8217;s probably too wordy to put on a slide, anyway.</div>
+<div><strong>Start from a blank template</strong></div>
+<div>Powerpoint and others have trained us to think in terms of bulleted lists. But what an awful way of presenting information! When you&#8217;re showing a bulleted list, you&#8217;re reading out loud your slide, to an audience who has alreay read it by the time you get to point 2. Garr, in this <a href="http://www.presentationzen.com/presentationzen/2006/01/contrasts_in_pr.html">star wars-themed slide show,</a> shows how bulleted lists are the &#8220;dark side of the force&#8221; type of presentations.</div>
+<div><strong>Use visuals</strong></div>
+<div><a href="http://presentationzen.blogs.com/presentationzen/2005/10/the_lessig_meth.html">Famous presenters</a> each have their signature style, and Garr&#8217;s is the use of full-bleed image with minimal legends (and Gill Sans, but what&#8217;s wrong with that? I love Gill Sans). Full-bleed means that instead of integrating a smaller image in a template, you make it occupy all the space in the slide.</div>
+<div><iframe src="https://www.slideshare.net/slideshow/embed_code/295996" width="425" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe><br/></div>
+<div>I won&#8217;t claim this is the single best way of presenting information, and by the way, neither does he. But it is fool-proof and easy to emulate. Finding the right image, which has never been that easy, and using it appropriately, will always have great impact.</div>
+<div></div>
+<div>In the book, Garr covers much more ground. It&#8217;s not only interesting, but it&#8217;s a nice read, and laced with examples you can actually use. I was quite surprised to see him redo charts I had done! (although, for my defense, they were never intended to be shown as is in a powerpoint).</div>
+<div>If you need to buy one book on presentations, buy this book. If you think you don&#8217;t need a book on presentation, buy this book as well.</div>
+<div></div>
+<div>PS. Since the book has been released, I can see lots of presentations, on <a href="http://www.slideshare.net/">slideshare</a> or elsewhere, that apply the visual style of Garr&#8217;s (nice, appropriately-chosen images, caption kept to an essential) but forget the other part of the story, which is the structure of the overall presentation. Both aspects are vital and complementary.</div>
+]]></content:encoded>
+			<wfw:commentRss>/2008/11/26/book-review-presentation-zen-by-garr-reynolds/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+	</channel>
+</rss>

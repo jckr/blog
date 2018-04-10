@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>runners &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/runners/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>The semi-marathon of Paris 2011</title>
+		<link>/2011/03/07/the-semi-marathon-of-paris-2011/</link>
+		<comments>/2011/03/07/the-semi-marathon-of-paris-2011/#comments</comments>
+		<pubDate>Mon, 07 Mar 2011 18:09:07 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[marathon]]></category>
+		<category><![CDATA[plot]]></category>
+		<category><![CDATA[runners]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=714</guid>
+		<description><![CDATA[This post is a tribute to my friends who ran this Sunday. If I had known in advance, I would surely had joined you guys, or found a better excuse not to. Anyway, about 30,000 people tried to finish the semi-marathon, and 23764 did (plotted below). Follow bib#: [Edit: this is the 2nd version of <a class="read-more" href="/2011/03/07/the-semi-marathon-of-paris-2011/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[This post is a tribute to my friends who ran this Sunday. If I had known in advance, I would surely had joined you guys, or found a better excuse not to.
+Anyway, about 30,000 people tried to finish the semi-marathon, and 23764 did (plotted below).</p>
+<span id="more-714"></span>
+<script type="text/javascript" src="http://blog.oecdfactblog.org/wp-includes/js/protovis-r3.2.js"></script>
+<script type="text/javascript" src="http://www.jeromecukier.net/wp-content/uploads/2011/03/runners.js"></script>
+<div>
+<script type="text/javascript+protovis">
+function pos(time5,time10,time15,timeF,time){
+	if(time5==-1||time10==-1||time15==-1||timeF==-1){return -1000;}
+	if(time<time5){
+		return 5000*time/time5;
+	} else if (time<time10){
+		return 5000+5000*(time-time5)/(time10-time5);
+	} else if (time<time15){
+		return 10000+5000*(time-time10)/(time15-time10);
+	} else if (time<timeF){
+		return 15000+6000*(time-time15)/(timeF-time15);
+	} else {return 21000;}
+}
+
+runners.forEach(function(r) {
+if(r.cat[1]=="F"){
+	r.sex=1
+} else {
+	r.sex=0
+}}
+)
+var colors=["rgba(30,144,255,0.1)","rgba(255,0,255,0.1)"]
+var time=0;
+
+function mapDossard(dossard){
+	myrunner=runners.filter(function(r) {return r.dossard==dossard;})
+	if (myrunner.length==1)
+		{return {"firstname":myrunner[0].name.split(", ")[1], "time5":myrunner[0].time5, "time10": myrunner[0].time10, "time15":myrunner[0].time15, "timeF":myrunner[0].timeF, "sex":myrunner[0].sex};}
+	else {return {};}
+}
+
+function showTime(time){
+return (time>3600?Math.floor(time/3600)+"h":"")+(time>60?Math.floor((time-Math.floor(time/3600)*3600)/60)+"m":"");
+}
+
+var followed=[30170,13815,30622].map(mapDossard);
+
+
+
+
+
+var w=750;
+var vis = new pv.Panel()
+    .width(w)
+    .height(450)
+    ;
+binsf=bins=pv.range(106).map(function() {return 0;});
+
+var dVisible=false;
+var dLine;
+
+vis.add(pv.Rule).data(pv.range(21))
+	.left(function() w*this.index/21).top(50).height(300).strokeStyle(function() this.index%5?"#eee":"#ccc")
+	.anchor("bottom").add(pv.Label).visible(function(d) !((d==0) || (d%5)))/*.textAlign("right").textBaseline("top")*/.text(function(d) d+"km").textStyle("#ccc")
+vis.add(pv.Rule).left(0).top(200).width(800).strokeStyle("#eee")
+
+var followedRules=vis.add(pv.Rule)
+	.data(followed)
+	.left(function(d) {return pos(d.time5,d.time10,d.time15,d.timeF, time)*w/21000;})
+	.top(function(d) {return d.sex?0:200;})
+	.height(200)
+	.strokeStyle(function(d) {return d.sex?["magenta","","darkmagenta","MediumVioletRed"][this.index]:["","dodgerblue","","teal"][this.index];})
+	.anchor(function(d) {return d.sex?"top":"bottom";})
+	.add(pv.Label)
+		.textBaseline(function(d) {return d.sex?"top":"bottom";})
+		.textAlign("right")
+		.top(function(d) {return d.sex?10*this.index:undefined;})
+		.bottom(function(d) {return !d.sex?40+10*this.index:undefined;})
+		.textStyle(function(d) {return d.sex?["magenta","","darkmagenta","MediumVioletRed"][this.index]:["","dodgerblue","","teal"][this.index];})
+		.text(function(d) {return (time>d.timeF?showTime(d.timeF):"")+d.firstname;})
+;
+
+
+var myBar=vis.add(pv.Bar)
+	.data(bins)
+	.left(function() this.index*w/105)
+	.width(w/105)
+	.bottom(250)
+	.height(function(d) d/30)
+	.fillStyle("magenta").strokeStyle(null)
+;
+
+var myBar2=vis.add(pv.Bar)
+	.data(binsf)
+	.left(function() this.index*w/105)
+	.width(w/105)
+	.top(200)
+	.height(function(d) d/30)
+	.fillStyle("dodgerblue").strokeStyle(null)
+	;
+
+
+
+
+vis.add(pv.Panel)
+	.right(20)
+	.bottom(10)
+	.width(50)
+	.height(20)
+	.fillStyle("#fff")
+
+
+
+	.anchor("center").add(pv.Label)
+		.text(function() "Time: "+showTime(time))
+		setInterval(function() {
+		(time>10200?time=0:time+=50);
+//		time=1000;
+		bins=pv.range(106).map(function() {return 0;});
+		binsf=pv.range(106).map(function() {return 0;});
+		runners.forEach(function(c) {
+			var p=pos(c.time5,c.time10,c.time15,c.timeF,time);
+			c.sex?bins[Math.floor(p/200)]++:binsf[Math.floor(p/200)]++;
+		})
+		myBar.data(bins)
+		myBar2.data(binsf)
+		vis.render();}, 10);
+//	vis.render();
+
+function search(text) {
+followed[3]=mapDossard(text)
+
+}
+    </script>
+</div>
+
+
+<div id="footer">
+   <label for="query">Follow bib#: </label>
+   <input id="query" type="text" onkeyup="search(this.value);">
+</div>
+[Edit: this is the 2nd version of the vis. The first, much slower one can be found <a href="http://jeromecukier.net/stuff/runners.html">here</a>. In the previous version I showed all individual runners, here they are binned so the vis is much quicker to draw]</p>
+All the data was scraped from <a href="http://org-results.semideparis.com/2011/">the result page</a>.</p>
+
+Runners, you can see your progresses by typing in your bib#. Vincent said he was humiliated by a Malory Greene, so Malory if you want to see you beating Vincent type in 20187. Oh and the winner has bib# 4. The fastest girl is #102.]]></content:encoded>
+			<wfw:commentRss>/2011/03/07/the-semi-marathon-of-paris-2011/feed/</wfw:commentRss>
+		<slash:comments>7</slash:comments>
+		</item>
+	</channel>
+</rss>

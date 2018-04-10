@@ -1,0 +1,8 @@
+Front National	153f8a
+MLP	153f8a
+UMP	0a599e
+Sarkozy	0a599e
+Hollande	b0bfff
+PS	e30040
+modem	fd7700
+EELV	7faa03

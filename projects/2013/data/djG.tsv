@@ -1,0 +1,30 @@
+message	correspondent	direction	tweet	word1	word2	word3	time	subject	thread	length
+
+7828	djG	to		tous	bonjour		1334936883	Diner à Paris	835	2
+
+7833	djG	to		sncf	thomas	excellente	1334945339	RE: Diner à Paris	835	40
+
+7829	djG	from		grassal	cador	fgrassal	1335164325	Fwd: Diner à Paris	843	77
+
+7827	djG	to		beige	remets	mariée	1335167037	Re: Diner à Paris	843	44
+
+7831	djG	from		copine	etre	invité	1335167476	Re: Diner à Paris	843	44
+
+7970	djG	to		trossat	rejoindre	organiser	1339408623	Diner anciens de Masséna jeudi 28 juin à Paris=21	844	66
+
+7962	djG	to		beaumarchais	pizzeria	aauriez	1339427475	Re : Diner anciens de Masséna jeudi 28 juin à Paris!	844	145
+
+7958	djG	from		boulot	arnaud	bonsoir	1339432021	Re: Re : Diner anciens de Masséna jeudi 28 juin à  Paris=21	844	25
+
+7963	djG	to		suquet	veille	gare	1339436664	RE: Re : Diner anciens de Masséna jeudi 28 juin à  Paris=21	844	61
+
+12595	djG	to		prépa	retard	voiture	1340815510	A demain!!	1356	69
+
+12594	djG	from		air	soirée	arnaud	1341049646	Re: A demain!!	1356	24
+
+12828	djG	from		hello	soir	nice	1341230762	Re: du 5 au 8	1373	12
+
+12829	djG	to		samedi	midi	adresse	1341237227	Re: du 5 au 8	1373	44
+
+12827	djG	from		jeudi	sinon	live	1341251590	Re: du 5 au 8	1373	20
+

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>distance &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/distance/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>A game of data</title>
+		<link>/2012/10/03/a-game-of-data/</link>
+		<comments>/2012/10/03/a-game-of-data/#comments</comments>
+		<pubDate>Tue, 02 Oct 2012 22:55:30 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[a game of thrones]]></category>
+		<category><![CDATA[distance]]></category>
+		<category><![CDATA[graph]]></category>
+		<category><![CDATA[places]]></category>
+		<category><![CDATA[topology]]></category>
+		<category><![CDATA[visualization]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1483</guid>
+		<description><![CDATA[Inspired by the, well, inspiring set of Lost visualizations released by Santiago Ortiz &#8211; Lostalgic, I decided to publish the one visualization on all the data I had gathered on the Song of Ice and Fire series of books. Click to see the vis Here&#8217;s the idea behind this one. Many books set in a <a class="read-more" href="/2012/10/03/a-game-of-data/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>Inspired by the, well, inspiring set of Lost visualizations released by Santiago Ortiz &#8211; <a href="http://intuitionanalytics.com/other/lostalgic/">Lostalgic</a>, I decided to publish the one visualization on all the data I had gathered on the Song of Ice and Fire series of books.</p>
+<p><a href="http://www.jeromecukier.net/projects/agot/places.html"><img src="http://www.jeromecukier.net/wp-content/uploads/2012/10/places.png" alt="" title="places" width="600" height="448" class="aligncenter size-full wp-image-1484" /></a></p>
+<p><a href="http://www.jeromecukier.net/projects/agot/places.html">Click to see the vis</a></p>
+<p>Here&#8217;s the idea behind this one. Many books set in a fantasy world come with a map where all the places mentioned in the books are situated. I end up looking up these places very often to get an idea for the distances, for instance. But the way these locations are placed on a map is one specific convention. If two places are supposed to be fairly close from each other on a map but that it is very inconvenient to travel from one to the other, it is as if they were far, and conversely, if two places are a world apart but travel between them is fast and easy, it is as if they were close. </p>
+<p>With that in mind I am drawing a subjective map of the Game of Thrones world.<br />
+In the books, chapters are broadly comparable. Since all chapters are narrated from the point of view of one character, I link two places between which this protagonist has travelled in the course of one chapter. I also add links for travels suggested in the chapter, even if not done by the point of view character.<br />
+Places which are linked are drawn one to the other. As a result, this creates an alternate, abstract geography, where distances represent the difficulties and obstacles in travel, rather than distance in the territory.</p>
+<p>In addition the size of the nodes depend on the number of times they are visited in the books. A node could be large even for a relatively empty place, if a lot of the action takes place there, this is true for Castle Winterfell or Castle Black. Then again, large cities which are alluded to in the story, but where not much happens in the books, such as Casterly Rock or Sunspear, will appear as tiny dots. King&#8217;s Landing, which is the settings of roughly 25% of the books, and also probably the largest city in this world, is the largest node.</p>
+]]></content:encoded>
+			<wfw:commentRss>/2012/10/03/a-game-of-data/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+	</channel>
+</rss>

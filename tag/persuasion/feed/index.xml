@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>persuasion &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/persuasion/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>Don&#8217;t take my word for it</title>
+		<link>/2011/11/24/dont-take-my-word-for-it/</link>
+		<comments>/2011/11/24/dont-take-my-word-for-it/#comments</comments>
+		<pubDate>Thu, 24 Nov 2011 01:18:23 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[presentation]]></category>
+		<category><![CDATA[data]]></category>
+		<category><![CDATA[interaction]]></category>
+		<category><![CDATA[model]]></category>
+		<category><![CDATA[persuasion]]></category>
+		<category><![CDATA[politics]]></category>
+		<category><![CDATA[rhetorics]]></category>
+		<category><![CDATA[stories]]></category>
+		<category><![CDATA[visweek]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1126</guid>
+		<description><![CDATA[Inspiration In June 2010, I attended a Wolfram&#124;Alpha event called the London Computational Knowledge Summit where speakers mostly focused on how computers can transform the way we teach and transmit knowledge. Several of the presentations made a lasting impression, and mostly the talk by Jon McLoone: Jon&#8217;s point was that academic papers today look an <a class="read-more" href="/2011/11/24/dont-take-my-word-for-it/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<h2>Inspiration</h2>
+<p>In June 2010, I attended a Wolfram|Alpha event called the London Computational Knowledge Summit where speakers mostly focused on how computers can transform the way we teach and transmit knowledge. Several of the presentations made a lasting impression, and mostly the talk by Jon McLoone:</p>
+<pre><code><iframe src="http://www.youtube.com/embed/tizMNn6xKFw?version=3&amp;start=380&amp;wmode=transparent" width="600" height="362" style="background-color:#000;display:block;margin-bottom:0;max-width:100%;" title="YouTube video player" frameborder="0" allowfullscreen></iframe><p style="font-size:11px;margin-top:0;"><a href="http://www.youtube.com/watch?v=tizMNn6xKFw" target="_blank" title="Watch on YouTube">Watch this video on YouTube</a>.</p></code></pre>
+<p>Jon&#8217;s point was that academic papers today look an awful lot like those in the 17th century. Granted, they&#8217;re not in latin, they can be displayed online and there is color, but as far as maths are concerned it&#8217;s still long pages of difficult language and long formulas. The computer, however, can do so much more than transmit information. In the clip above (around 6&#8217;20&#8221;) Jon shows how a paper on edge detection can be much more effective if instead of using a static example to demonstrate the technique, the paper were able to use a live example, such as input from the camera. In that talk and throughout the day, there were more examples on how interactive displays could be useful for teaching.</p>
+<p>Teaching, telling stories and getting a message across use similar functions. Fast forward to VisWeek 2010 and the first &#8220;<a href="http://thevcl.com/storytelling/">Telling Stories with Data</a>&#8221; workshop. Some of the presentations there (I&#8217;m thinking of <a href="http://thevcl.com/storytelling/speakers.html#nicholas_diakopoulos">Nick Diakopoulos</a> and <a href="http://thevcl.com/storytelling/speakers.html#matthias_shapiro">Matthias Shapiro</a> mostly) hinted that <strong>there could be a process</strong> through which readers/users/audience could be taken through so <strong>they can make the most of an intended message</strong>. Interestingly, this process is not about transmitting as much data as effortlessly as possible but rather to engage the audience, to get them to challenge their assumptions.</p>
+<p>Those two events really made me pause and think. Ever since I had started working in visualization, all my efforts had been focused on being as clear as possible, and my focus, on efficient visuals. However, for some tasks, <strong>clarity just isn&#8217;t optimal</strong>. That wasn&#8217;t much of an issue in most of my OECD work where such an approach makes a lot of sense but I started seeing that there was a world of possibility when it comes to changing people&#8217;s perception on a subject or even persuading them.</p>
+<h2>Application</h2>
+<h3>French pension reform</h3>
+<p>Right at the moment of visWeek 2010, France was plagued by strikes against the proposed pension reform. At the peak of contestation up to 3m people demonstrated (that&#8217;s as much as one adult out of 14). I was quite irritated by the protests. In theory, left and right had very comparable views on this problem and only disagreed on unsignificant details. They both knew reform was unavoidable, and, again, had similar plans. But when those of the current government were implemented, the opposition capitalized on the discontent and attacked the plan vigorously. <strong>Their rethoric were entirely verbal</strong> &#8211; no numbers were harmed in the making of their discourse! Consequently, protesters and a large part of the population started to develop notions about the state of pensions which were completely disconnected from reality.</p>
+<p style="text-align: center;"><a href="http://jeromecukier.net/stuff/visweek/datastories/index.html"><img class="aligncenter size-full wp-image-1143" title="retraites" src="http://www.jeromecukier.net/wp-content/uploads/2011/11/retraites.png" alt="" width="721" height="540" /></a></p>
+<p>I believe that if numbers had been used early enough, it would have been enough to provide a counterpoint to such fallacies and while it may not have prevented demonstrations, it would have greatly helped to dampen their effect. With that in mind and with official data I tried to build a model to show what would happen if one changed this or that parameter of pension policy. Pension mechanics are quite simple: what you give on one side, you take on another; the evolution of population is quite well known, so making such a model is pretty straight forward. But putting that in a visual application really showed how the current situation was unsustainable. In this application I challenge the user to find a solution &#8211; any solution &#8211; to the pension problem, by using the same levers as the policy makers. It turns out that there is just one viable possibility. Yet, letting people find that by themselves and challenge that idea as hard as they could was very different from paternalizing and telling people that this was just the way it is.</p>
+<p>On the course of the year I got involved in several occasions in situations like this where data visualization could be used to influence people&#8217;s opinion, and likewise I tried to use that approach. Instead of sending a top-down message (with or without data), instead confront the assumptions of the audience and get them to interact with a model. After this experience, their perception will have changed. This technique doesn&#8217;t try to bypass the viewers critical thinking, but instead to leverage their intelligence.</p>
+<h3>In politics</h3>
+<p>I am very concerned with the use of data visualization in politics for many reasons. One of them is because I&#8217;m a public servant. In my experience, most decisions are not taken by politicians, but by experts or technicians who are commited to the public good. Yet, when poorly  explained, these decisions can be misunderstood and attacked. Visualization, I believe, can help defend such decisions (those who are justifiable at least) and explain them better to a greater number.</p>
+<p>Although a lot of data is available out there (or perhaps for that very reason) only few people have a good grasp of the economic situation of their country. This just can&#8217;t be helped. It&#8217;s not possible to increase the percentage of people who can guestimate the unemployment rate and it&#8217;s not really important. Very few people need to know such a number, now what is important is to be able to use that information in context when it is useful. For instance, at election time, a voter should be able to know if the incumbent has created or destroyed jobs. This is something that data visualization can handle brilliantly.</p>
+<p>Finally, my issue with political communication is that it is written by activists, for activists. It works well to motivate people with a certain sensitivity but it is not very effective at getting others to change side. This is a bias which is difficult to detect by those in charge of political communications because, well, they&#8217;re activits too&#8230; and here this flavor of model-based data visualization, with its appearance of objectivity and neutrality, can complement the more verbal aspect of rhetoric quite well.</p>
+<p>In the talk I used Al Gore&#8217;s <em>An Inconvenient Truth </em>as a counter example. This movie is a fine example of story-telling, and operating at an emotional rather that at a rational novel. I trust that people who feel concerned about climate change will be reinforced in their beliefs after seeing the movie. However, those who do not were unconvinced. In fact, the movie also gave a strong boost to climate skeptics. There was a real barrage of blog posts and websites attempting to debunk the assertions of that &#8220;truth&#8221;, most often with data. There is a missed opportunity: if the really well-made stories of the movie had been complemented with a climate model that people could experiment with, it would have been perceived as less monolithic, less manichean, less dogmatic.</p>
+<h2>The conclusions</h2>
+<p>In my practice using an interactive model can help <strong>a lot</strong> to get a message across (and no, I don&#8217;t have a rigorous evaluation for &#8220;a lot&#8221;, that&#8217;s the advantage of not being an academic).</p>
+<p>Such models <strong>engage the users</strong>, they come out as <strong>more objective and truthful</strong> as static representations, and they can be very useful to <strong>address preconceptions</strong>. Chances are they&#8217;re more fun, too.</p>
+<p>Then again, just because a model is interactive and built on transparent data and equations doesn&#8217;t mean it&#8217;s objective. It is usually possible to <strong>control the model</strong> or the interface so that one interpretation is more likely than the other, and that&#8217;s precisely the point if you are using data visualization to influence.</p>
+<p>It can be very cheap and easy to turn a static representation into an interactive display. Every chart with more than 2 dimensions can be turned in a visualization where the user controls one dimension and sees data for the others evolve.</p>
+<p>And if you build a model like this, you must be very open and transparent about the data and the equations and sometimes find ways to get people to overcome their doubts.</p>
+<p>Besides, having a working interactive model is no guarantee of success. You really have to be careful that your users are not likely to interpret your visualization in ways you never intended.</p>
+<h2>The presentation</h2>
+<p><iframe src="https://www.slideshare.net/slideshow/embed_code/10279298" width="400" height="337" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe><br/><br />
+All examples I used in the presentation both good and bad, both mine and others can be found at <a href="http://www.jeromecukier.net/data-stories/">http://www.jeromecukier.net/data-stories/</a></p>
+]]></content:encoded>
+			<wfw:commentRss>/2011/11/24/dont-take-my-word-for-it/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+	</channel>
+</rss>

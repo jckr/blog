@@ -1,0 +1,2086 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="HandheldFriendly" content="True" />
+<meta name="MobileOptimized" content="320" />
+
+<title>d3 | jeromecukier.net</title>
+
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="/xmlrpc.php">
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Feed" href="/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Comments Feed" href="/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; d3 Tag Feed" href="/tag/d3/feed/" />
+<!-- This site uses the Google Analytics by MonsterInsights plugin v7.0.5 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+<!-- Note: MonsterInsights is not currently configured on this site. The site owner needs to authenticate with Google Analytics in the MonsterInsights settings panel. -->
+<!-- No UA code set -->
+<!-- / Google Analytics by MonsterInsights -->
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/localhost:8888\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6.10"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='YoutubeShortcodeMargenn-css'  href='/wp-content/plugins/youtube-shortcode/youtube-shortcode.css?ver=4.6.10' type='text/css' media='all' />
+<link rel='stylesheet' id='casper-google-fonts-css'  href='//fonts.googleapis.com/css?family=Noto+Serif%3A400%2C700%2C400italic%7COpen+Sans%3A700%2C400&#038;ver=4.6.10' type='text/css' media='all' />
+<link rel='stylesheet' id='casper-style-css'  href='/wp-content/themes/casper/style.css?ver=4.6.10' type='text/css' media='all' />
+<script type='text/javascript' src='/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.6.10" />
+
+   	<style type="text/css">
+					.blog-title a, .blog-description, .social-icons a { color: #ffffff; }
+		
+						                
+		
+							.main-navigation a { color: ; }
+		                                            </style>
+    		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+
+<body class="archive tag tag-d3 tag-91 group-blog">
+
+<header id="masthead" role="banner" class="site-head site-header" >
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+        <div>
+            <h1 class="menu-toggle">
+                <a class="icon-bars" href="#">
+                    <span class="hidden">Menu</span>
+                </a>
+            </h1>
+            <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+            <div class="menu"><ul><li ><a href="/">Home</a></li><li class="page_item page-item-6"><a href="/about/">About</a></li><li class="page_item page-item-1073"><a href="/data-stories/">Data with stories workshop &#8211; examples</a></li><li class="page_item page-item-437"><a href="/proofs-of-concept/">Private section</a></li><li class="page_item page-item-2"><a href="/sample-page/">Sample Page</a></li></ul></div>
+        </div>
+    </nav><!-- #site-navigation -->
+
+    <div class="vertical-row">
+        <div class="vertical">
+            <div class="site-head-content inner">
+                
+                <div class="social-icons">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                    </div>
+                <h1 class="blog-title"><a class="blog-logo" href='/' rel='home'>jeromecukier.net</a></h1>
+                <h2 class="blog-description">Just another WordPress site</h2>
+            </div>
+        </div>
+    </div>
+</header><!-- #masthead -->
+
+<main id="content" class="content" role="main">
+
+	<section id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		
+			<header class="page-header">
+				<h1 class="page-title">
+					d3				</h1>
+							</header><!-- .page-header -->
+
+						
+				
+<article id="post-1548" class="post-1548 post type-post status-publish format-standard hentry category-d3 category-data-visualization category-tips tag-append tag-d3 tag-enter tag-exit tag-insert tag-remove tag-select tag-selectall tag-selections tag-tutorial">
+		    <header class="post-header">
+        			<span class="post-meta">
+				<span class="posted-on"><a href="/2013/03/05/d3-tutorial-at-strata-redux/" rel="bookmark"><time class="entry-date published" datetime="2013-03-05T12:20:55+00:00">March 5, 2013</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/d3/" rel="category tag">d3</a>, <a href="/category/data-visualization/" rel="category tag">data visualization</a>, <a href="/category/tips/" rel="category tag">tips</a>			</span>
+		        <h1 class="post-title"><a href="/2013/03/05/d3-tutorial-at-strata-redux/" rel="bookmark">Selections in d3 &#8211; the long story</a></h1>
+         
+    </header>
+	<section class="post-content">
+
+		<p>This past week, Scott Murray and I presented a tutorial at Strata on d3 (of all things!)<br />
+First things first, you probably want to get <a href="http://amzn.com/1449339735">Scott&#8217;s book on the subject</a> when it&#8217;s out. I should be translating it into French eventually.<br />
+You&#8217;re also welcome to the slides and examples of the tutorial which can be found on <a href="https://github.com/alignedleft/strata-d3-tutorial">https://github.com/alignedleft/strata-d3-tutorial</a>. That include my <a href="https://github.com/alignedleft/strata-d3-tutorial/blob/master/d3%20Cheat%20Sheet.pdf">d3 cheat sheet</a>.</p>
+<p>We had done a d3 workshop a few months back at Visweek with Jeff Heer. This time around, we changed our approach: we covered less ground, went at a slower pace, but targeted what is in our opinion the most troublesome aspects of learning d3: selecting, creating and removing elements. </p>
+<p>I have learned d3 from deciphering script examples and in the earliest ones one ubiquitous construct was this sequence : select / selectAll / data / enter / append.<br />
+It does the work, so like everyone else I&#8217;ve copied it and reused very often. It happens to be the most proper way of adding new elements in most cases, but the point is, while learning d3, I (and many people before and after me) have copy/pasted it without understanding it deeply. Though, copy pasting something you don&#8217;t understand thoroughly is the best way to get errors you don&#8217;t understand any better, and it would prevent you from accessing the rest of the potential of the library. Conversely, once this is cleared, you can be &#8220;thinking in d3&#8221; and easily do many things you might have thought impossible before.</p>
+<p>We did the tutorial hands-on, live coding most of the time. To follow through, I invite you to create or open an empty page with d3 loaded (such as <a href="http://www.jeromecukier.net/projects/template.html" title="d3 template" target="_blank">this one</a> &#8211; the link opens a new tab) and then open the &#8220;console&#8221; or &#8220;web developer tools&#8221; which allow you to type javascript statements directly, without having to write and load scripts. Here are the shortcuts to the console: </p>
+<ul>
+<li>Chrome: Ctrl-J (windows), ⌥ ⌘+j (Mac)</li>
+<li>Firefox: Ctrl+Shift+k (windows), ⌥ ⌘+k (Mac)</li>
+<li>Safari: Ctrl+Alt+c (windows), ⌥ ⌘+c (Mac)</li>
+<li>IE9+: F12</li>
+</ul>
+<p>To make the best of this tutorial, please type the examples. Some tutorials show you impressive stuff and show you step by step how to do it. That&#8217;s not one of them. I&#8217;ve sticked to very, very basic and mundane things. We&#8217;ll be only manipulating HTML elements such as paragraphs, which I assume you have seen earlier (plot twist: you are reading one at this very moment)<br />
+Some of the code snippets don&#8217;t work. That&#8217;s the idea! I think you can&#8217;t progress by merely copying code that works. It&#8217;s important that you try out code that looks reasonable but that doesn&#8217;t produce the expected result or that causes an error, but then understand why. </p>
+<h2>Adding simple stuff</h2>
+<h3>Creating elements</h3>
+<p>Our empty page is, well, empty, so we are going to add stuff.<br />
+to create elements, we need the <strong>append</strong> method in d3, which takes as an argument the type of element that needs to be created, while the <strong>html</strong> method at the end allow us to specify a text.</p>
+<p>so let&#8217;s go ahead and type: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">d3.append(&quot;h1&quot;).html(&quot;My beautiful text&quot;)</pre>
+<p> and see what happens.</p>
+<p>what do we get? and why is that?<br />
+In d3, every element which is created cannot appear out of thin air, and must be <strong>added to a container</strong>. If we don&#8217;t specify a container element, we just can&#8217;t create anything.<br />
+In HTML, most elements can be containers, that is, it&#8217;s usually possible to add elements to almost everything. Then again, our template is fairly empty, so we can select the <body> tag and take it from there.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">d3.select(&quot;body&quot;).append(&quot;h1&quot;).html(&quot;My beautiful text&quot;)</pre>
+<p>we&#8217;re in business! as long as there is a sensible place to put them, you can create as much stuff as you like. Since we&#8217;re on a roll, why won&#8217;t we throw in a few paragraphs (<strong>p</strong> element in HTML):</p>
+<pre class="brush: jscript; title: ; notranslate" title="">d3.select(&quot;body&quot;).append(&quot;p&quot;).html(&quot;Look at me, I'm a paragraph.&quot;)
+d3.select(&quot;body&quot;).append(&quot;p&quot;).html(&quot;And I'm another paragraph!&quot;)
+d3.select(&quot;body&quot;).append(&quot;p&quot;).html(&quot;Woohoo! number 3 baby&quot;)</pre>
+<p>and lo and behold, all our paragraphs appear in sequence. Simply beautiful.<br />
+But wait! paragraphs are containers, too. Why don&#8217;t we try to add a <strong>span</strong> element to one paragraph? For those of you with no HTML knowledge, span elements are like paragraphs, except there is no line break by default at the end. </p>
+<p>So let&#8217;s try this:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">d3.select(&quot;p&quot;).append(&quot;span&quot;).html(&quot;and I'm a span!&quot;)</pre>
+<p>Before typing it, take a minute to think where you expect it to go.<br />
+Then go ahead and type it.</p>
+<p>Surprised?<br />
+you may have guessed that our new bit of text could go on a line of its own at the end of the document, or at the end of the last paragraph. But instead, it goes at the end of the first paragraph.<br />
+Why is that? well, our select method stops the first instance of whatever it tries to find. In our case, since we asked it to find paragraphs &#8211; p, it stopped at the first p element it found, and added the span at the end of it (app<em>end</em>).</p>
+<h3>Beyond creating new things</h3>
+<p>adding new elements to a page programmatically is kind of useful, but if d3 stopped at that you probably wouldn&#8217;t be so interested in this tutorial to begin with. You can also modify and manipulate elements. We&#8217;ve done that to some extent with the html method. But we can also modify the <em>style</em> of the elements, their <em>attributes</em> and their <em>properties</em>. For the time being, don&#8217;t bother too much about the difference between these three things. Style refers to the appearance of elements, attributes, to their structure, and properties, to what can be changed in realtime, like values in a form. But again, let&#8217;s not worry about that for now and let&#8217;s just follow along. Look at this code snippet:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">d3.select(&quot;p&quot;).style(&quot;color&quot;,&quot;red&quot;)</pre>
+<p>this will select the first paragraph and change its style, so that the text color is changed to red.<br />
+But wait! our first paragraph, isn&#8217;t that the one with a span at the end of it? What will happen to that bit of text? Well, type the statement to find out.<br />
+All the paragraph, including its children (that is, everything added to it, in our case the span) is turned to red.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">d3.select(&quot;span&quot;).style(&quot;color&quot;,&quot;blue&quot;)</pre>
+<p>That singles out our span and writes it in blue. Can this be overturned?</p>
+<pre class="brush: jscript; title: ; notranslate" title="">d3.select(&quot;p&quot;).style(&quot;color&quot;,&quot;red&quot;)</pre>
+<p>That won&#8217;t change a thing. Our first paragraph is, in fact, already red. But its child, the span, has a style which overrides that of its parent. To have it behave like the rest, we can remove its style like so: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">d3.select(&quot;span&quot;).style(&quot;color&quot;,null)</pre>
+<p>then </p>
+<pre class="brush: jscript; title: ; notranslate" title="">d3.select(&quot;p&quot;).style(&quot;color&quot;,&quot;green&quot;)</pre>
+<p>it will behave like its parent, the paragraph.<br />
+But let&#8217;s try something else: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">d3.select(&quot;span&quot;).style(&quot;color&quot;,&quot;blue&quot;)</pre>
+<p>we write our span in blue, </p>
+<pre class="brush: jscript; title: ; notranslate" title="">d3.select(&quot;span&quot;).style(&quot;color&quot;,&quot;green&quot;)</pre>
+<p>and now back in green, like its parent.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">d3.select(&quot;p&quot;).style(&quot;color&quot;,&quot;red&quot;)</pre>
+<p>What will happen?<br />
+well, the paragraph turns red, but the span doesn&#8217;t. It&#8217;s still following its specific instruction to be written in green.</p>
+<p>That goes to illustrate that children behave like their parents, unless they are given specific instructions. </p>
+<p>For HTML elements, we can play with styles, not so much with attributes or properties. One thing worth noting though is that an element can be given a class or an id.</p>
+<p>Classes and ids can be used to style elements using a cascading style sheet (CSS). Knowing how CSS works is entirely facultative in learning d3, since d3 by itself can take care of all styling needs. Though, knowing basic CSS is not the most useless of endeavors, and some sensible CSS statements can save a lot of tedious manipulation in d3.<br />
+The other use of classes and ids is that they can be used to select elements.</p>
+<p>Let&#8217;s reload our page so we start from scratch.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">d3.select(&quot;body&quot;).append(&quot;p&quot;).html(&quot;First paragraph&quot;);
+d3.select(&quot;body&quot;).append(&quot;p&quot;).html(&quot;Second paragraph&quot;).attr(&quot;class&quot;,&quot;p2&quot;);
+d3.select(&quot;body&quot;).append(&quot;p&quot;).html(&quot;Third paragraph&quot;).attr(&quot;id&quot;,&quot;p3&quot;);
+</pre>
+<p>without the use of classes and ids, it&#8217;s still possible to select and manipulate the 2nd or 3rd instance of an element, but it&#8217;s a chore. You have to use <em>pseudo-classes</em> like d3.select(&#8220;p:nth-of-type(2)&#8221;) to select the 2nd instance of a paragraph, for instance.<br />
+Personally, I&#8217;d rather avoid this and prefer using simpler statements. With classes and IDs set, we can write instead: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">d3.select(&quot;.p2&quot;).html(&quot;I'm classy&quot;);
+d3.select(&quot;#p3&quot;).html(&quot;I've got ideas&quot;);</pre>
+<p>To select things of a given class, you must use a period before the name of the class. To select things of a certain id, you must use the hash sign.<br />
+Here, we are looking for the first element of the p2 class. This happens to be our 2nd paragraph. When you know you will have to manipulate elements which are not easily accessible, you may as well give them classes which will make this easier down the road.</p>
+<p>In theory, there should only be one element of a given ID in one page, so I recommend not using them dynamically unless you can be 100% sure that there will not be duplicates. And, in case you were wandering, one element can have several (even many) classes. </p>
+<h2>Two birds, one stone</h2>
+<h3>Introducing selectAll</h3>
+<p>So far, we&#8217;ve changed properties of one element at a time. The exception was when we changed the colors of both a paragraph and a span, but even then, we were still technically only changing the characteristics of one paragraph, which its child, the span, just happened to inherit. </p>
+<p>For a complex document, that can be super tedious, especially since we&#8217;ve seen that it&#8217;s not easy to retrieve an element which is not the first of its kind.</p>
+<p>so let&#8217;s go ahead and type:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">d3.selectAll(&quot;p&quot;).style(&quot;font-weight&quot;,&quot;bold&quot;);</pre>
+<p>(for a little variety. I mean, changing text color is so 1994.)<br />
+What was that? Everything turned to bold!</p>
+<p>Indeed: while the select method returns the first element that matches the clause, selectAll matches them all.<br />
+Let&#8217;s do more.<br />
+We&#8217;re going to add a span to our first paragraph. </p>
+<pre class="brush: jscript; title: ; notranslate" title="">d3.select(&quot;p&quot;).append(&quot;span&quot;)
+.html(&quot;I'm a rebel child.&quot;)
+.style(&quot;background-color&quot;,&quot;firebrick&quot;)</pre>
+<p>we&#8217;re adding a gratuitous styling command.<br />
+Now, let&#8217;s change the background color of all the paragraphs.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">d3.selectAll(&quot;p&quot;).style(&quot;background-color&quot;,&quot;aliceblue&quot;)</pre>
+<p>As could be expected, the span doesn&#8217;t change its background color, and so it appears differently from its parent (which could be a desired effect &#8211; this gives us flexibility).<br />
+but what if we wanted to change the background color of everything? can we do better?</p>
+<pre class="brush: jscript; title: ; notranslate" title="">d3.selectAll(&quot;*&quot;).style(&quot;background-color&quot;,&quot;whitesmoke&quot;)</pre>
+<p> (quite fitting in these times of papal conclave)</p>
+<p>Well &#8211; everything gets a background color of &#8220;white smoke&#8221; (which is a fine background color btw.). Including the &#8220;body&#8221; element &#8211; that is, everything on the page!<br />
+selectAll(&#8220;*&#8221;) matches everything. With it, you can grab all the children, their children etc. (&#8220;descendants&#8221;. I know&#8230;) of a selection, or, if used directly like so: d3.selectAll(&#8220;*&#8221;), everything on the page.<br />
+So we&#8217;ve seen we can select moaar. But can we be finer? Can we select the paragraphs and the spans only, without touching the rest?</p>
+<p>we sure can!</p>
+<pre class="brush: jscript; title: ; notranslate" title="">d3.selectAll(&quot;p, span&quot;).style(&quot;background-color&quot;,&quot;lawngreen&quot;)</pre>
+<p>The outcome of that one statement probably won&#8217;t make it to our web design portfolio, but it does the trick: you can select as much as you like, or as little as you like. </p>
+<h3>Nested selections</h3>
+<p>To illustrate the next situation, let&#8217;s add a span to our document.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">d3.select(&quot;body&quot;).append(&quot;span&quot;).html(&quot;select me if you can&quot;)</pre>
+<p>Well, just like there is a way to select directly the 2nd paragraph using pseudo classes, there&#8217;s also a (complicated) way to select directly that last span (namely: selectAll(&#8220;span:not(p)&#8221;) )<br />
+there&#8217;s also a simpler way which is what we&#8217;re interested in.<br />
+let&#8217;s suppose we want to turn it to bold:<br />
+we can just do</p>
+<pre class="brush: jscript; title: ; notranslate" title="">d3.selectAll(&quot;span&quot;).style(&quot;font-weight&quot;,&quot;bold&quot;);</pre>
+<p>then change the first one: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">d3.select(&quot;p&quot;).select(&quot;span&quot;).style(&quot;font-weight&quot;,null);</pre>
+<p>Admittedly, the complicated way is more compact. But conceptually, the &#8220;simple&#8221; way is easier to follow: we can do a selection, and within that selection perform a newer selection, and so on and so forth. That way, we can get away with just using super simple selectors, as opposed to master the intricacies of CSS3 syntax. Do it for the people who will read your source code 🙂</p>
+<p><strong>At this point: </strong></p>
+<ul>
+<li>You know how to dynamically create content. Pretty cool!</li>
+<li>More! you can dynamically change every property of every element of the page. woot!</li>
+<li>Bonus! you&#8217;re equipped with tactics to easily reach any element you want to change.</li>
+</ul>
+<p>You should also have a good grasp of d3.select, d3.selectAll and the difference between the two.<br />
+what more could you possibly want? Well, since this is about data visualization, how about a way to tie our elements to data? This is what d3 is really about.</p>
+<h2>Putting the data in data visualization</h2>
+<h3>Introducing data: passing values to many elements at once</h3>
+<p>So far, we&#8217;ve entered &#8220;hard coded&#8221; values for all of our variables. That&#8217;s fine, but we can&#8217;t really set our elements one by one. I mean, we could, but it&#8217;s no way to &#8220;industrialize&#8221; the way elements are created.<br />
+Fortunately, d3 provides. Its more interesting characteristic is the ability to &#8220;bind&#8221; elements with data.</p>
+<p>If you&#8217;ve followed the instructions step by step, you should have 3 paragraphs in the page. Plus a span afterwards, but whatever.<br />
+Let&#8217;s introduce the data method. This will match an array of values to a selection of elements in the page. Let&#8217;s go: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">var fs=[&quot;10px&quot;,&quot;20px&quot;,&quot;30px&quot;];
+d3.selectAll(&quot;p&quot;).data(fs).style(&quot;font-size&quot;,function(d) {return d;})
+</pre>
+<p>wow wow wow what just happened?<br />
+First, we create an array of values which we intelligently call fs (for font size).<br />
+Then, right after the selectAll(&#8220;p&#8221;) which gathers a selection of elements (3 &#8220;p&#8221; elements to be exact), we specify a dataset using the data method.<br />
+It just happens that our dataset has just the same number of items as our selection of elements!</p>
+<p>finally, we use style, like we used to, with a twist: instead of providing one fixed value, which would affect our 3 p elements in the same way, we specify a function.<br />
+This function will parse the dataset, and for each element, it will return the result of an operation in the corresponding data point: the result of the function on the first item for the first p element, the result on the 2nd item for our 2nd paragraph, and lastly the result on the last item for our last paragraph.<br />
+We write the function with an argument: d. What is d? it&#8217;s nothing but a convention. We can call it anything. d is standard fare in d3 code because that&#8217;s the writing style of Mike Bostock, the author of the framework and of many of its examples.<br />
+This function is nothing special, it returns the element itself, so we are passing &#8220;10px&#8221; for the font-size of our first paragraph, and so on and so forth (20px, 30px).<br />
+As an aside, we can use the String function, which converts any element into a string, instead of writing function(d) {return d;}. So: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">d3.selectAll(&quot;p&quot;).data(fs).style(&quot;font-size&quot;,String)</pre>
+<p> would also work and is shorter to write.</p>
+<p>Let&#8217;s recap what just happened here, because this is important.<br />
+We want to apply a dynamic transformation to a bunch of existing elements, as opposed to finding a way to select each individual element, and passing it a hard-coded value.<br />
+What&#8217;s more, we want to apply a transformation of the same nature, but of a different magnitude, on each of these items. </p>
+<p>How to proceed?<br />
+well, first we create an array of values. That&#8217;s our fs boy over there.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">var fs=[&quot;10px&quot;,&quot;20px&quot;,&quot;30px&quot;];</pre>
+<p>Then, we will first select all of the elements we want to modify, then we&#8217;ll tie our dataset to that selection. This is what selectAll, then data does.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">var selection=d3.selectAll(&quot;p&quot;).data(fs);</pre>
+<p>By the way, I&#8217;ve stored the result of the selectAll then data in a variable. In the original example, I just &#8220;chained&#8221; the methods, that is, I followed each method by a period and another one. The two syntaxes are equivalent. Chaining works, because each of these methods returns a value which is itself a selection on which further operations can be done. This syntax works well through most of d3 with some exceptions which will be duly noted.</p>
+<p>Then, we are going to change the style of the selection, using a function on our data.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">selection.style(&quot;font-size&quot;,function(d) {return d;})</pre>
+<p> (or
+<pre class="brush: jscript; title: ; notranslate" title="">selection.style(&quot;font-size&quot;,String)</pre>
+<p>That function will run on each value of our dataset, and return one result per value, which will be passed to all elements in sequence.</p>
+<p>At this stage you may have two questions:</p>
+<ul>
+<li>Can we use more sophisticated functions, because this one is kind of meh?</li>
+<li>What happens if there is not the same number of items in the dataset and of elements?</li>
+</ul>
+<p>The second question is actually more complicated than the first, but we&#8217;ll answer it in painstaking detail.<br />
+So let&#8217;s take care of the question on functions first.<br />
+Yes, obviously, we can use the function not just to return the element, but to do any kind of calculation that a language such as javascript is capable of, which is nearly everything.<br />
+To illustrate that, here are some variations of our initial code which will return the same result, but with a different form.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+var fs=[10,20,30]; // no more px
+d3.selectAll(&quot;p&quot;).data(fs).style(&quot;font-size&quot;,function(d) {return d+&quot;px&quot;;})
+</pre>
+<p>Here, instead of returning just the element, we append &#8220;px&#8221; at its end. Sadly, style(&#8220;font-size&#8221;,10) doesn&#8217;t work, but style(&#8220;font-size&#8221;,10+&#8221;px&#8221;) &#8211; which is the same as style(&#8220;font-size&#8221;,&#8221;10px&#8221;) is valid. </p>
+<p>Here is yet another way.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">d3.selectAll(&quot;p&quot;).style(&quot;font-size&quot;,function(d,i) {return 10*(i+1)+&quot;px&quot;;})</pre>
+<p>function(d,i) ? what is this devilry?<br />
+Here, i (or anything we want to call it, as long as it&#8217;s the 2nd argument of this function) represents the order of the element in the selection, so the first gets a 0, the second a 1, etc. (well, in our example it goes to 3 elements, so the last one gets a 2).<br />
+This may be a bit abstract to say here, but even if we haven&#8217;t passed data, this would still work &#8211; i represent the order of the element, not the data item. so, if no data had been passed, within this function call, d would be undefined, but i would still be equal to 0,1,2, &#8230; </p>
+<p>The answer to the second question is the last great mystery of d3. Once you get this, you&#8217;re golden.</p>
+<h3>Creating or removing the right number of elements depending on data</h3>
+<p>Before we get further, let&#8217;s quickly introduce append&#8217;s reckless cousin, remove(). Writing remove at the end of a selection deletes all the corresponding elements from the document object model.<br />
+so,
+<pre class="brush: jscript; title: ; notranslate" title="">d3.selectAll(&quot;p&quot;).remove()</pre>
+<p> would remove our 3 paragraphs. Let&#8217;s do it and get rid of our paragraphs.<br />
+Actually, let&#8217;s do
+<pre class="brush: jscript; title: ; notranslate" title="">d3.select(&quot;body&quot;).selectAll(&quot;*&quot;).remove()</pre>
+<p> and remove everything below the body.</p>
+<p>Now, earlier, we were alluding to what could happen if we didn&#8217;t have the same number of elements as of items in our dataset.</p>
+<p>That means that we should be able to do the following: </p>
+<ul>
+<li>If there are fewer elements than items in a dataset, create the missing elements</li>
+<li>If there are fewer elements than items in a dataset, disregard the extra data items</li>
+<li>If there are more elements than items in a dataset, remove the extra elements</li>
+<li>If there are more elements than items in a dataset, don&#8217;t change the extra elements/li>
+<li>As data are updated, keep some elements, remove some, add some</li>
+</ul>
+<p>Why would we want to do all of this?<br />
+The first case is the most common. When we start a data visualization script, chances are that there are no elements yet but there is data, so you&#8217;ll want to add elements based on the data.<br />
+Then, if you have interaction or animation, your dataset may be updated, and depending on what you intend to do you may just want to update the existing elements, create new ones, remove old ones, etc. That&#8217;s when you may want to do 2, 3 or 4.<br />
+The last (5th case) is more complicated, but don&#8217;t worry, we&#8217;ve got you covered.</p>
+<p>Right now, we should have 0 p elements on our page (and if for some reason this is not the case, feel free to reload it).</p>
+<p>let&#8217;s create a variable like so: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">var text=[&quot;first paragraph&quot;,&quot;second paragraph&quot;,&quot;third paragraph&quot;];</pre>
+<p>somewhat uninspired, I know, but let&#8217;s keep typing to a minimum, if you want to go all lyrical please go ahead.</p>
+<p>We are smack in case 1: we&#8217;d like to create 3 paragraphs, we have 3 items in our dataset, but 0 elements yet.<br />
+Here&#8217;s what we&#8217;ll type: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">d3.select(&quot;body&quot;).selectAll(&quot;p&quot;).data(text).enter().append(&quot;p&quot;).html(String)</pre>
+<p>A-ha! we meet again, select selectAll data enter append.<br />
+After all we&#8217;ve done, select selectAll should make some sense, even though, at this stage, this selection returns 0 p elements. There are none yet.<br />
+Then we pass data as we&#8217;ve done before. Note that there are 3 items in our dataset.</p>
+<p>Then, we use the enter() statement. What it does is that it prepares one new element for every unmatched data item. We&#8217;ll expand a bit later on the true meaning of unmatched, but for the time being, let&#8217;s focus on the difference. We have 0 elements, but 3 data items. 3 &#8211; 0 = 3, so the enter() selection will prepare 3 new elements.<br />
+What does prepare means? the elements are not created yet at this stage, but they will with the next command. Right after enter(), think of what&#8217;s created as placeholders for future element (Scott&#8217;s vocabulary), or buds that will eventually blossom into full-fledge elements (mine).<br />
+After enter(), we specify an append(&#8220;p&#8221;) command. Previously, when we had used the append method, we created one element at a time. But in this case, we are going to create as many as there are placeholders returned by enter(). So, in our case, 3.<br />
+You may legitimately wonder why we needed a select statement to begin with &#8211; after all, enter() works on the difference between selectAll and data. But when we are going to append elements, we will need to create them somewhere, to build them upon a container. This is what the first select does. Omit it, and you&#8217;ll have an error, because the system will be asked to create something without knowing where.<br />
+The final method, html, will populate our paragraphs with text. The String function, which we have already seen, simply returns the content of each item in our dataset. </p>
+<p>We&#8217;re using select > selectAll > data > enter > append, but hopefully you will see why (and if you don&#8217;t, hang on to the end of the article, and feel free to ask questions).</p>
+<p>But let&#8217;s recap once more. Actually, let&#8217;s see the many ways to get this wrong (or, surprisingly, right)</p>
+<pre class="brush: jscript; title: ; notranslate" title="">d3.selectAll(&quot;p&quot;).data(text).enter().append(&quot;p&quot;).html(String)</pre>
+<p>We&#8217;ve alluded to that: without a container to put them in, p elements can&#8217;t be created. This will result in a DOM error.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">d3.select(&quot;body&quot;).selectAll(&quot;p&quot;).data(text).append(&quot;p&quot;).html(String)</pre>
+<p>No enter statement. After the selectAll, the selection has 0 items. This doesn&#8217;t change after the data method. As such, append creates 0 new elements, and nothing changes in the document. (but no error though)</p>
+<pre class="brush: jscript; title: ; notranslate" title="">d3.select(&quot;body&quot;).data(text).selectAll(&quot;p&quot;).enter().append(&quot;p&quot;).html(String)</pre>
+<p>In many cases in d3, it&#8217;s ok to switch the order of chained methods, but that&#8217;s not true here. selectAll must come before data. We bind data to elements. The other way round would have made sense, but that&#8217;s the way it is. First selectAll, then data. Here, we get an error, because enter() can&#8217;t be fired directly from selectAll. </p>
+<pre class="brush: jscript; title: ; notranslate" title="">d3.select(&quot;body&quot;).selectAll(&quot;wootwoot&quot;)
+.data(text).enter().append(&quot;p&quot;).html(String)</pre>
+<p>This actually works. Why?<br />
+There are actually 0 elements of type &#8220;wootwoot&#8221; in our document, which may or may not surprise you. There are still 3 items in the dataset, so enter() returns space for 3 new elements. the next append subsequently creates 3 p elements, which are populated by the html method.<br />
+It usually makes more sense to use the same selector in the selectAll and the append methods, but that&#8217;s not always the case. Sometimes, you will be selecting elements of a specific class, but in an append method, you have to specify the name of an element, not any selector. So you&#8217;d go </p>
+<pre class="brush: jscript; title: ; notranslate" title="">d3.select(&quot;body&quot;).selectAll(&quot;.myClass&quot;)
+.data(text).enter().append(&quot;p&quot;).html(String).attr(&quot;class&quot;,&quot;myClass&quot;)</pre>
+<p>Now that we&#8217;ve seen a few variations on the subject, here is a really cool use of enter. Check this out: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">d3.select(&quot;body&quot;).selectAll(&quot;h1&quot;).data([{}]).enter().insert(&quot;h1&quot;).html(&quot;My title&quot;)</pre>
+<p>ok there are 3 things here worth mentioning. 2 are just for show, though it doesn&#8217;t hurt to know them, but the 3rd one is really neat and useful.<br />
+In data, we&#8217;ve passed: [{}]. This is an array of one object which is empty. There are two interesting things with that construct, one is that there&#8217;s only one element, the other one is that it&#8217;s an object. When you pass objects, the functions you run on them (like in the attr or style methods) can be used to add properties to them or change them. If that doesn&#8217;t make sense yet, just accept for now that it gives you more flexibility than using, say, [0].<br />
+We&#8217;ve used insert instead of append. What this means is that we&#8217;re adding things before the first child of our container, not at the end (ie after the last child). In other words, our h1 (a title) will go at the top of the body element &#8211; fitting.</p>
+<p>But what&#8217;s really interesting is what would happen if you were to run that statement again &#8211; nothing. try it. See?<br />
+Why is that? Well, on your first go, at a point where there are no h1 elements yet, it works the standard way &#8211; you do a selectAll that returns nothing, you bind a dataset with more elements, then enter prepares space for the unmatched elements &#8211; 1 in our case &#8211; and then append creates that element. You may notice that the html part doesn&#8217;t use the data.<br />
+When you run it again, the selectAll finds one h1 element, there&#8217;s still one item in the dataset, so enter won&#8217;t find any unmatched element, so the subsequent append is ignored. </p>
+<p>So, you can run this kind of thing in a loop safely, it will only do what it&#8217;s supposed to do on the first go, it will be ignored afterwards. Don&#8217;t be afraid to use this construct for all the unique parts of your visualization, so you won&#8217;t have to worry about creating them multiple times.</p>
+<h3>Other cases of mismatch between data items and elements</h3>
+<p>All right, so now we have 3 p elements and 3 items in our dataset.<br />
+What happens if we do this: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">text2=[&quot;hello world&quot;]
+d3.selectAll(&quot;p&quot;).data(text2).html(String)</pre>
+<p> ?</p>
+<p>There is now one item in the data set, versus 3 p elements. Try to make a guess before you type this in. At the tutorial, the audience made a few reasonable guesses, namely: the last 2 paragraphs will be removed, only &#8220;hello world&#8221; will remain. Or: all paragraphs will be changed to &#8220;hello world&#8221;.<br />
+Either could happen if d3 was trying to be smart and guess your intent. Fortunately, d3 is no excel here and behaves consistently even if that means extra work for you. When you do that (and please try this now) what happens is that the first paragraph of text is changed and the other two are untouched.</p>
+<p>We are in the case, change the matched elements, ignore the others. </p>
+<p>By the way, by now you should be able to guess what would have happened if there had been an enter() right after the data. Do I hear&#8230; nothing? almost! There would be no unmatched data element, so enter() would not return anything. Besides, enter() would require an append afterwards to make anything. This is why you&#8217;ll get an error: html can&#8217;t work directly after enter(). you would need an append. </p>
+<p>Now what if we want to remove the extra 2 elements? This is where the exit() method comes into play.<br />
+exit() is pretty much to enter() what remove() is to append(). Kind of.</p>
+<p>let&#8217;s see how this work by example.</p>
+<p>let&#8217;s recreate our 3 p paragraphs just in case: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">d3.selectAll(&quot;p&quot;).remove();
+d3.select(&quot;body&quot;).selectAll(&quot;p&quot;).data(text).enter().append(&quot;p&quot;).html(String);</pre>
+<p>Now we pass the new dataset:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">d3.selectAll(&quot;p&quot;).data(text2).html(String)</pre>
+<p> &#8211; remember that only the first paragraph has changed, the other two are untouched.<br />
+Now, while all the items in the dataset are matched with elements, there are elements which are not matched with an item in the dataset: the last two. This is where exit() comes into play. exit() will select those two paragraphs, so they can be manipulated. Typically, what happens then is a remove(), but you could think of other options.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">d3.selectAll(&quot;p&quot;).data(text2).exit().style(&quot;color&quot;,&quot;red&quot;);</pre>
+<p>That will flag them instead of removing them.<br />
+But typically, you do: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">d3.selectAll(&quot;p&quot;).data(text2).exit().remove();</pre>
+<p>. </p>
+<p>note that even though you have already matched a one item dataset to that selection, to use exit(), you will need to use data before. selectAll(&#8220;p&#8221;).exit() won&#8217;t work. You&#8217;ll have to re-specify the data match. </p>
+<p>So that takes care of the case when you want to remove extraneous data items.<br />
+This leaves us with only one simple case: where you have more items in your dataset than you have elements and you don&#8217;t want to create elements for the extra data items.<br />
+That&#8217;s the simplest syntax, really.</p>
+<p>Here, for instance, we have only one paragraph left, but there are 3 items in the text variable.<br />
+so let&#8217;s do: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">d3.selectAll(&quot;p&quot;).data(text).html(String)</pre>
+<p> (no enter, no exit, no append).<br />
+The paragraph text will now come from the new dataset (from its first item to be precise), no extra paragraphs will be created, none will be deleted.</p>
+<h3>Data joins</h3>
+<p>the last case (pass a new dataset, create new elements as needed, make some elements stay and make some elements go) requires more complexity and actually I won&#8217;t cover it in detail here, instead I will explain the principle and refer you to this tutorial on <a href="http://bost.ocks.org/mike/constancy/">object constancy</a> by Mike Bostock.<br />
+In the general case, when you try to match your dataset to your elements, you count them and deal with the difference. So you have 5 data items and 3 elements: you can make 2 extra elements appear by using enter. With the concept of data joins, you can assign precisely each data item to one given element, so the first data item doesn&#8217;t have to be that of the first element, etc. Well, the first time it will be, and each element will receive a key, a unique identifier from the dataset. If the dataset is subsequently updated, the element will only be matched if there is an item in the dataset with the same key. Else, it will be found by an exit() method. </p>
+<p>And that&#8217;s the general gist of it.<br />
+At Strata, we went further &#8211; we discussed interaction and transition, but that is downward trivial once you have understood &#8211; and by that, really understood, with all the implications and nuances &#8211; the selections.</p>
+	    		<div class="clear">&nbsp;</div>
+	</section>
+</article><!-- #post-## -->
+			
+				
+<article id="post-1488" class="post-1488 post type-post status-publish format-standard hentry category-conferences category-d3 category-data-visualization category-presentation category-tips tag-d3 tag-jeff-heer tag-scott-murray tag-tutorial tag-visweek">
+		    <header class="post-header">
+        			<span class="post-meta">
+				<span class="posted-on"><a href="/2012/10/15/d3-tutorial-at-visweek-2012/" rel="bookmark"><time class="entry-date published" datetime="2012-10-15T21:11:32+00:00">October 15, 2012</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/conferences/" rel="category tag">conferences</a>, <a href="/category/d3/" rel="category tag">d3</a>, <a href="/category/data-visualization/" rel="category tag">data visualization</a>, <a href="/category/presentation/" rel="category tag">presentation</a>, <a href="/category/tips/" rel="category tag">tips</a>			</span>
+		        <h1 class="post-title"><a href="/2012/10/15/d3-tutorial-at-visweek-2012/" rel="bookmark">d3 tutorial at visWeek 2012</a></h1>
+         
+    </header>
+	<section class="post-content">
+
+		<p>Jeff Heer, Scott Murray and myself have done a d3 tutorial at visWeek 2012. You probably gathered that from the title of the post.</p>
+<p>Here is a link to all the slides and code examples that we have presented:</p>
+<p><a href="http://www.jeromecukier.net/d3_tutorial.zip">d3 tutorial</a></p>
+<p>For the purpose of the tutorial I have compiled a d3 cheat sheet, on 4 pages it groups some of the most common d3 functions. When I was learning d3 my number one problem was figuring out which property should be set using .attr, and which required .style. And also: which svg element support which property? All of this is addressed in the cheat sheet. It&#8217;s part of the link above, but if you want it directly without downloading a 13Mb file, here it is: </p>
+<p><a href="http://www.jeromecukier.net/wp-content/uploads/2012/10/d3-cheat-sheet.pdf">d3 cheat sheet</a></p>
+	    		<div class="clear">&nbsp;</div>
+	</section>
+</article><!-- #post-## -->
+			
+				
+<article id="post-1419" class="post-1419 post type-post status-publish format-standard hentry category-d3 category-tips tag-beginner tag-browser tag-css tag-d3 tag-data tag-easyphp tag-first-steps tag-html tag-introduction tag-javascript tag-sublimetext2 tag-text-editor tag-tutorial tag-web-server">
+		    <header class="post-header">
+        			<span class="post-meta">
+				<span class="posted-on"><a href="/2012/09/04/getting-to-hello-world-with-d3/" rel="bookmark"><time class="entry-date published" datetime="2012-09-04T17:20:53+00:00">September 4, 2012</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/d3/" rel="category tag">d3</a>, <a href="/category/tips/" rel="category tag">tips</a>			</span>
+		        <h1 class="post-title"><a href="/2012/09/04/getting-to-hello-world-with-d3/" rel="bookmark">Getting to &#8220;Hello world&#8221; with d3</a></h1>
+         
+    </header>
+	<section class="post-content">
+
+		<p>Back when I started learning programming, it was always fairly simple to achieve the canonical first step of accomplishments, that is, to get the system to announce that you are ready to do more by displaying &#8220;hello world&#8221; on the screen.</p>
+<p>In most systems then, there was a command prompt somewhere that would usually do that when you would type, say:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">PRINT &quot;hello world&quot;</pre>
+<p>.</p>
+<p>Things have changed a lot since the early 80s. In some fields like fashion, I would argue it&#8217;s a good thing, but we&#8217;re definitely not going in the way of less complexity.</p>
+<p>Now if you&#8217;re interested in web-oriented visualization and want to do it with d3.js, it&#8217;s still fairly simple, but it is built upon a number of technologies that you&#8217;re supposed to know a little. Front-end developers live and breathe the web and have been exposed to all things javascript, HTML, CSS, you name it, in enormous doses. Many developers probably have, at some point, tried to interface with the web and know enough of that to get started. So for this crowd, the amount of things you need to know to crack d3 code seems negligible, because they know all that and they are very familiar with it, just as well as people knew the first names of Friends characters by the end of the tenth season.</p>
+<p>But what about those who didn&#8217;t? and the people who don&#8217;t see themselves as developers ? do they have to reimmerse themselves in 10 -odd years of web development history to get started? It turns out that this sum of knowledge, while not insurmountable, is certainly not trivial.</p>
+<p>So without further ado, let&#8217;s get started</p>
+<h1>We&#8217;re cooking an omelette</h1>
+<p>And when we do, we need a few things: a pan, a recipe, eggs and stuff, a stove and then plates, knives and forks, etc.</p>
+<h2>The pan: a text editor</h2>
+<p>The first thing is really the pan. If you don&#8217;t have one when cooking eggs, you borrow one or go buy one. In our analogy the pan is the text editor. This is the tool with which you are going to make the files that will constitute your visualization.</p>
+<p>There was a time when it was ok to use notepad (textedit if you are of the apple persuasion). And it&#8217;s still possible, but you are not making your life easier. What I recommend instead is that you get a hold of a copy of SublimeText2. (<a href="http://www.sublimetext.com/2">http://www.sublimetext.com/2</a>). There are windows versions. And Mac versions. And linux versions. For windows users, there is a mobile version so you don&#8217;t need administrator access to install it. There is a free, unlimited evaluation version,  but unless you can&#8217;t spend $69, I strongly recommend that you buy it. Sublime Text 2 has a nearly infinite amount of niceties built in. And unlike some other powerful text editors, where the best features are only understandable by the tech masters, what&#8217;s really nice about Sublime Text 2 is that it would make you gain time even if you are an absolute beginner. One such nice things that it does is detect what language you are working with, automatically color and format the words as you type them depending on the category they fall in, and when possible, suggesting the word you are trying to type, automatically format and indent your code, all in a very unobtrusive and pleasant way. This will really help you troubleshoot problems like strings not closed properly or loose closing bracket which typically consume a lot of time.</p>
+<p><div id="attachment_1434" style="width: 423px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2012/09/ST0.png"><img class="size-full wp-image-1434" title="ST0" src="http://www.jeromecukier.net/wp-content/uploads/2012/09/ST0.png" alt="" width="413" height="253" /></a><p class="wp-caption-text">Let&#8217;s type a fairly common d3 statement to see how SublimeText2 can help. First, it recognized the var keyword as such and writes it in italics and cyan. Second, when I type my opening parenthesis, it adds a closing one, and as long as my cursor touches either it underlines them both.</p></div></p>
+<p><div id="attachment_1435" style="width: 423px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2012/09/ST1.png"><img class="size-full wp-image-1435" title="ST1" src="http://www.jeromecukier.net/wp-content/uploads/2012/09/ST1.png" alt="" width="413" height="253" /></a><p class="wp-caption-text">Let&#8217;s carry on. The function keyword is highlighted in italics cyan too &#8211; useful. The opening/closing thing works for curly braces too.</p></div></p>
+<p><div id="attachment_1426" style="width: 564px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2012/09/ST2.png"><img class="size-full wp-image-1426" title="ST2" src="http://www.jeromecukier.net/wp-content/uploads/2012/09/ST2.png" alt="" width="554" height="253" /></a><p class="wp-caption-text">The return statement is highlighted in red. With the cursor on the closing parenthesis, we are starting to get a feel that the underlining function is a useful safety net</p></div></p>
+<p><div id="attachment_1427" style="width: 564px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2012/09/ST3.png"><img class="size-full wp-image-1427" title="ST3" src="http://www.jeromecukier.net/wp-content/uploads/2012/09/ST3.png" alt="" width="554" height="253" /></a><p class="wp-caption-text">New line. Joy! the indentation is aligned with the line above.</p></div></p>
+<p><div id="attachment_1428" style="width: 564px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2012/09/ST4.png"><img class="size-full wp-image-1428" title="ST4" src="http://www.jeromecukier.net/wp-content/uploads/2012/09/ST4.png" alt="" width="554" height="253" /></a><p class="wp-caption-text">We now have four consecutive opening or closing curly braces and parentheses. Typically, this is where errors sneak in, and where sublime text 2 really shines.</p></div></p>
+<p><div id="attachment_1429" style="width: 564px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2012/09/ST5.png"><img class="size-full wp-image-1429" title="ST5" src="http://www.jeromecukier.net/wp-content/uploads/2012/09/ST5.png" alt="" width="554" height="253" /></a><p class="wp-caption-text">And we now have 5 consecutive closing curly braces and parentheses. This is fairly common in d3 code. Is the order correct? Thank you Sublime Text 2!</p></div></p>
+<p><div id="attachment_1430" style="width: 564px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2012/09/ST6.png"><img class="size-full wp-image-1430" title="ST6" src="http://www.jeromecukier.net/wp-content/uploads/2012/09/ST6.png" alt="" width="554" height="253" /></a><p class="wp-caption-text">we finish up writing the statement.</p></div></p>
+<p><div id="attachment_1431" style="width: 564px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2012/09/ST7.png"><img class="size-full wp-image-1431" title="ST7" src="http://www.jeromecukier.net/wp-content/uploads/2012/09/ST7.png" alt="" width="554" height="253" /></a><p class="wp-caption-text">When moving the cursor to the left side, where the line numbers are, we notice down-pointing arrows. We know our code is correct, and we don&#8217;t want to see it again, so&#8230;</p></div></p>
+<p><div id="attachment_1432" style="width: 564px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2012/09/ST8.png"><img class="size-full wp-image-1432" title="ST8" src="http://www.jeromecukier.net/wp-content/uploads/2012/09/ST8.png" alt="" width="554" height="253" /></a><p class="wp-caption-text">we just click on the top one to collapse this section. If we need to edit it again we can expand it.</p></div></p>
+<p><div id="attachment_1433" style="width: 564px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2012/09/ST9.png"><img class="size-full wp-image-1433" title="ST9" src="http://www.jeromecukier.net/wp-content/uploads/2012/09/ST9.png" alt="" width="554" height="253" /></a><p class="wp-caption-text">Finally, we add a comment above. Notice the syntax highlighting, comments are colored with an unobtrusive dark grey.</p></div></p>
+<h2>The recipe: a basic file structure</h2>
+<p>In d3, you can&#8217;t really type a &#8220;print&#8221; command from a prompt. You need to write some files, which are loaded by a browser (that&#8217;s your &#8220;plate&#8221; in the metaphor, but let&#8217;s not get ahead of ourselves).</p>
+<p>You are going to need up to 5 types of files.</p>
+<p>First, <strong>an html file</strong>. This will be the file that your browser will read, either locally, or uploaded on a website. We&#8217;ll get to cover this in detail in a minute.</p>
+<p>Second, believe it or not, you are going to need the <strong>d3 library</strong>, which is also a file. You may link to the version on the <a href="http://d3js.org/d3.vs.min.js">d3js.org</a> site, and so not worry about having the actual file handy. That has advantages (like the one we just said, also, you&#8217;re pretty sure to always have the latest version on hand), and two problems. First, you always need to have a live internet connection, so there&#8217;s no working in the park outside of free wifi space (for example), and also, it will probably be slower than having the file locally or on your own web space. And if having your own web server seems kind of scary, I&#8217;ll show you in a short while that it&#8217;s not.</p>
+<p>The three next kind of files are optional, but hey.</p>
+<p>The third file is a <strong>javascript .js file </strong>which would be where you put your code. Some people would rather put all their code in the html file, which is an option, especially for short programs. Personally, I prefer having a separate file. So to make d3 work, you <em>need</em> some script, but it doesn&#8217;t have to be in a separate file.</p>
+<p>The fourth file is a <strong>style sheet</strong>, or <strong>css</strong> file. This can be used to define some formatting options, for instance to make all your circles blue by default, or some circles that meet some pre-defined criterion. Like the javascript file, any style information can be contained within the html file, but unlike the script, it is completely optional. I also like to keep it separate from the html.</p>
+<p>Finally, you may want a <strong>data file</strong>, you know, with data (csv, txt, json, xml&#8230;). If you have lots of data to visualize, it&#8217;s easier to keep it in separate files than in variables within the script. But it doesn&#8217;t have to be that way. And you could also use d3 without data.</p>
+<h2>The ingredients: contents of the files</h2>
+<h3>The HTML file</h3>
+<p>So let&#8217;s see how this articulates by looking at a typical d3 html file. I am using templates which I try to change as little as possible from project to project.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+ &lt;head&gt;
+   &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html;charset=utf-8&quot;&gt;
+   &lt;title&gt;My project&lt;/title&gt;
+   &lt;script type=&quot;text/javascript&quot; src=&quot;../d3.v2.js&quot;&gt;&lt;/script&gt;
+   &lt;link href=&quot;style.css&quot; rel=&quot;stylesheet&quot;&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+   &lt;div id=&quot;chart&quot;&gt;
+   &lt;/div&gt;
+   &lt;script type=&quot;text/javascript&quot; src=&quot;script.js&quot;&gt;&lt;/script&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<p>Well. That is certainly longer than the BASIC one-liner (and we haven&#8217;t <em>even</em> printed &#8220;hello world&#8221; yet).</p>
+<p>Let&#8217;s take this piece by piece.</p>
+<p>The first line is a doctype declaration. What this does is that it tells your browser that what follows should be interpreted as standard, HTML5-compliant HTML (standards mode). If you omit the doctype documentation, your browser will read the html in &#8220;<a href="https://developer.mozilla.org/en/Mozilla%2527s_Quirks_Mode">quirks mode</a>&#8220;, i.e. by replicating the non-standard behavior of Nescape 4 or IE5. You can still try to run d3 under quirks mode, but don&#8217;t be surprised if your HTML doesn&#8217;t behave as expected.</p>
+<p>The doctype declaration doesn&#8217;t have to be more complicated than &lt;!DOCTYPE html&gt;.</p>
+<p>The second line opens the html document proper. Technically, it&#8217;s ok to omit &lt;html&gt;, &lt;head&gt; and &lt;body&gt; tags in HTML5. The document will still be considered valid by tools like the <a href="http://validator.w3.org/">W3C validator</a>. But it seems that some browsers, in some complex cases, don&#8217;t like that so much, and I as a person find it more convenient to find those tags when reading code.</p>
+<p>The next line opens the header section of the document. Again, it&#8217;s not absolutely necessary, but I consider it helpful to explicitly differentiate the header from the rest of the document.</p>
+<p>The next line, which goes</p>
+<pre class="brush: jscript; title: ; notranslate" title="">&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html;charset=utf-8&quot;&gt;</pre>
+<p>is not absolutely required either. It specifies the encoding of the page, that is, what kind of characters will be seen in the page. Since I use non-ascii characters often, being French and all, I make sure to use it all the time. After all, this is a template, not something I type from beginning to end each time.</p>
+<p>Next, we specify a title. This is what will appear in the title area of your browser, or, more likely, as the name of your tab.</p>
+<p>In the next line, we load the d3 library. This is my preferred syntax. This is how my files are set up:</p>
+<p>I have a directory where all my d3 projects are, and in this directory, I am also keeping (and maintaining reasonably up-to-date) a version of the d3 library, a file called d3.v2.min.js. (min stands for minified, which means that it&#8217;s not meant to be read by persons, but it&#8217;s faster to load). All my projects proper are in folders within that directory. So my html files are one level down from where the d3.v2.min.js file is kept. This is why the src attribute reads &#8220;../d3.v2.min.js&#8221;: the ../ part means, look one level up. If the d3.v2.min.js file were on the same directory where I keep my html, I would write src=&#8221;d3.v2.min.js&#8221;, if I kept it within a specific directory like &#8220;d3&#8243;, I could write src=&#8221;../d3/d3.v2.min.js&#8221;, and finally, there is always the option of getting it from the website, src=&#8221;http://d3js.org/d3.v2.min.js&#8221;.</p>
+<p>I don&#8217;t have to load the d3 library then. I could have done it at the end of the page. The only requirement is that it should be before the script that will use it. But honestly, the file is so small that it doesn&#8217;t make much of a difference (9ms on my machine).</p>
+<p>Next, I link to a style sheet. With this syntax, I am assuming that my style is specified in a file called style.css which will be in the same directory as this html page. And if there is no such file, it&#8217;s not a problem. It doesn&#8217;t prevent the page to load.</p>
+<p>Instead of using this syntax, I could have written:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+
+&lt;style&gt;
+
+... // my style definitions
+
+&lt;/style&gt;
+
+</pre>
+<p>in the html file. And frankly, it is sometimes more convenient. But again, for the general case, it&#8217;s just as well to leave it like this.</p>
+<p>Note that style information should always be in the header part of the file.</p>
+<p>And that concludes the header, as noted by the closing tag &lt;/head&gt;. Even if we use the &lt;head&gt; tag to mark the beginning of the header section, we may omit the closing tag &lt;/head&gt;, and still get away with a valid (and slightly shorter) document, but I keep it for clarity&#8217;s sake.</p>
+<p>The next part starts with &lt;body&gt;, and is where the content proper, which will get displayed on the screen, is described. &lt;body&gt; and &lt;/body&gt;, just like &lt;html&gt; and &lt;head&gt;, are not mandatory, but do help, somewhat, to make the document easier to read.</p>
+<p>So what do we find in the body section? Here, I&#8217;ve kept it very simple but also close to the conventions I use.</p>
+<p>There is one &lt;div&gt; element, which is the basic building block of HTML, and with an id attribute &#8211; a document-wide, unique identifier &#8211; called &#8220;chart&#8221;.</p>
+<p>Then, there is the &lt;script&gt; element, which is calling the javascript code we are going to use to create our visualization. It&#8217;s at the very bottom of the page, actually just before the closing tags (which, again, could be omitted, but let&#8217;s not).</p>
+<p>Like for the style element, it is possible to leave the script inside the html document. Instead of using a src attribute &#8211; which, incidentally, assumes that the script is within the same directory as the html document with this syntax -, we can write:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">&lt;script&gt;
+
+// all our javascript instructions
+
+&lt;/script&gt;</pre>
+<p>And that&#8217;s it for the html document! A final word about the contents of the &lt;body&gt; element. In most of my projects, there is an interface such as buttons or controls which is also done in HTML. In that case, the contents of the &lt;body&gt; element get more complex. I would add a button to tweet the page, copyright notices, and other stuff. But I almost always have a &lt;div&gt; element with an identifier named &#8220;chart&#8221;.</p>
+<p>ok, so now that you&#8217;re finished with writing your html file, you must save it under any name and use the &#8220;.html&#8221; extension (or .htm, but why no love for the l? why?)</p>
+<h3>The javascript file</h3>
+<p>In this section I will walk you through a very, very basic file, which includes things I do for every project.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+var w=960,h=500,
+svg=d3.select(&quot;#chart&quot;)
+.append(&quot;svg&quot;)
+.attr(&quot;width&quot;,w)
+.attr(&quot;height&quot;,h);
+
+var text=svg
+.append(&quot;text&quot;)
+.text(&quot;hello world&quot;)
+.attr(&quot;y&quot;,50);
+
+</pre>
+<p>I like to define variables that describe the width and length of the visualization that I am creating. By putting these in variables, at the beginning of the file, I can easily modify them in case I need to. 960 and 500 work well for visualizations that should appear on their own page, by the way. No scrolling should be necessary.</p>
+<p>The next statement use the d3.select construct. Here, it indicates that we are going to build something <em>on top </em> of the element that meets the criterion that is described between the parentheses. The syntax used by that is that of <a href="https://developer.mozilla.org/en/CSS/Getting_Started/Selectors">css selectors</a>, but long story short, #chart refers to whatever has an &#8220;id&#8221; attribute of &#8220;chart&#8221;. This is our lone &lt;div&gt; element in the html file. Then, we are going to add an svg element, which is what will hold the visualization proper in svg form, and give it a width of w and a height of h.</p>
+<p>I always use that syntax, an &#8220;svg&#8221; variable that holds the top-level svg container, which resides in a &lt;div&gt; element which has an id of &#8220;chart&#8221;.</p>
+<p>The final part of the file writes, finally, hello world proper. Note that I specify a y attribute (vertical position) else the text have its lower-left corner in the top-left corner of the browser window and will be effectively invisible.</p>
+<p>Now, the HTML file we just created expect this file to be called &#8220;script.js&#8221;, so let&#8217;s save it under this name.</p>
+<p>In this most simple example, we will not need a css file nor a data file. But, for the sake of discussion, let&#8217;s create a css file nonetheless.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+
+text:{font-size:36px;}
+
+</pre>
+<p>and let&#8217;s save this under style.css (the name that, again, our HTML file expects). What this does is that it changes the size of the font to whatever the default was to a more massive 36 pixels.</p>
+<h2>The stove: a web server</h2>
+<p>As far as writing hello world, we&#8217;re done. You can load the html file you created in a browser, you should see the encouraging inscription. Congratulations!</p>
+<p>Many visualizations can be seen in a browser directly, just by opening a local file. However, this won&#8217;t be the case for some, for instance, those who require external data. In that case, you need a web server. If you have web hosting, you may upload the files to your (remote) server, via FTP for instance, and see your visualization by typing the address of your site in the browser url bar. That said, it is a good idea to have a local web server, that is, one that runs on your computer, so you can view your files as if they were served by a web server, but with the added bonus that you can edit them and see the modifications directly without having to upload them each time you change them.</p>
+<p>On Macs, you&#8217;re pretty much all set. All you have to do is <a href="http://pagekite.net/wiki/Howto/Mac/PersonalWebServer/">enable web-sharing</a> in your system preferences. Then, http://localhost/~YOURNAME will point to /Users/YOURNAME/Sites where YOURNAME is your user name. Just put your files there and go at it.</p>
+<p>For windows, there are a bunch of solutions. The &#8220;Professional&#8221; versions of windows include the IIS web server, so, there. But beyond that, there is a lot of web server software available. I personally use <a href="http://www.easyphp.org/">EasyPHP</a>. EasyPHP comes up with a web server (Apache), a mySql database, a PHP preprocessor and other niceties. And, as an aside, it doesn&#8217;t require administrator rights, for you corporate users.</p>
+<p>EasyPHP installation is a breeze. When it&#8217;s on, by default, http://localhost/ points to the www/ directory in the install directory of EasyPHP, so you may want to install it in a place that suits you. Alternatively, you can create aliases in the admin panel of EasyPHP (<a href="http://localhost/home/index.php">http://localhost/home/index.php</a>), in other words to give a name to any part of your hard drive. This is what I do, I put all my projects there and have a shortcut to that name in my browser, so whenever I want to see a project I use that shortcut and I can see the visualization as if it were on the web.</p>
+<p><div id="attachment_1436" style="width: 787px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2012/09/easyPHPalias.png"><img class="size-full wp-image-1436" title="easyPHPalias" src="http://www.jeromecukier.net/wp-content/uploads/2012/09/easyPHPalias.png" alt="" width="777" height="526" /></a><p class="wp-caption-text">This is how you create aliases in EasyPHP.</p></div></p>
+<h2>The plate: a browser</h2>
+<p>We&#8217;ve talked browsers before, and chances are you have one (or several) on your computer.</p>
+<p>Now I wish that by browsers, we could just skip it and mean &#8220;the latest version of chrome&#8221;, but it turns out that there are slight differences in the way that browsers handle d3 code so you should really test your work in at least chrome and firefox. As of this writing, Chrome + Firefox (version 5 and up) represent just under 50% of the browser market share. If you add all browsers that are d3-capable (Safari, earlier versions of Firefox, Opera, IE9) you reach about 75% of the market. Sadly, IE8 and IE7 which account for slightly over 20% of the market are not d3-compatible, though they can use the Google <a href="http://www.google.com/chromeframe?hl=en&amp;quickenable=true">ChromeFrame</a> free plug-in and do pretty much all that chrome does.</p>
+<h2>Knives and forks: the console</h2>
+<p>At the beginning of my dad&#8217;s engineering career, code came on a punch card. People then, allegedly, thought it through. You didn&#8217;t want to be the kid who didn&#8217;t follow your algorithm carefully enough to forecast an avoidable bug and waste a perfectly good card and oh-so precious computing time.</p>
+<p>But now? no code is perfect by the time it hits the browser. You may want to launch incomplete code to get a feel for where you&#8217;re going. You may not be too sure of whether that should be a plus or a minus in that equation and just try either because it would be quicker to correct an unexpected outcome than to troubleshoot the formula on paper. You may want to iterate, to bring newer, more complex ideas to your visualization with each change to the code. Or just try out different aesthetic options.</p>
+<p>Not too long ago, debugging javascript was really a pain. You&#8217;d have to fire those annoying alert boxes to understand what was the value of the variables, and dispatch them manually. Fortunately, that time is gone and now is the age of the Console.</p>
+<p>There are console functionalities for Chrome, Firefox and Safari, and while the interface slightly varies, the idea is the same. The console allows you to do three main things:</p>
+<p>&#8211; first, to see if your code executed without errors or warning. Some of those messages can be generated by javascript, and some can be added by you if certain unfortunate conditions are met. You get the position of the error in your code, which helps you to understand what went wrong and fix it.</p>
+<p><div id="attachment_1437" style="width: 661px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2012/09/consoleError.png"><img class="wp-image-1437" title="consoleError" src="http://www.jeromecukier.net/wp-content/uploads/2012/09/consoleError.png" alt="" width="651" height="469" /></a><p class="wp-caption-text">I have planted an error at the end of the code and it&#8217;s been picked up by the console which explains what&#8217;s wrong and when. Notice the red cross in the lower-right corner which counts errors. If there were warning, they would be indicated by a yellow triangle.</p></div></p>
+<p>&#8211; second, to inspect elements, that is to find out all the information about the elements displayed on screen, even if (especially if) they have been generated at runtime. So you can see if those elements you really wanted to create have been indeed added, and if the right attributes have been passed.  third, to interact with the code after it&#8217;s run (or while it runs, if you manage to pause if with breakpoints). The most common use of this is, IMO, is to check the value of variables, which you can do simply by typing their name at the console command prompt. But you can also type in one-liner javascript statements, even if they are quite complicated. So it&#8217;s a way to test your code before you write it in your script file.</p>
+<p><div id="attachment_1439" style="width: 661px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2012/09/consoleInspect.png"><img class="wp-image-1439" title="consoleInspect" src="http://www.jeromecukier.net/wp-content/uploads/2012/09/consoleInspect.png" alt="" width="651" height="469" /></a><p class="wp-caption-text">What a relief! all those paths elements that were supposed to be created in the code have been added as expected.</p></div></p>
+<p>&#8211; third, it can be used to interact with the code after it&#8217;s run (or even during run-time, because you can pause the code with breakpoints using the console, but we won&#8217;t go into that). The most common use for that IMO is to check the value of variables, which can be changed during the code execution, but it can also be used to enter one-liner statements, which can be quite complicated. Such a use allows you to test and preview code hypothesis before you write it down in your script file, or to troubleshoot a problem that you could have difficulties seeing outside of the context.</p>
+<p><div id="attachment_1438" style="width: 661px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2012/09/consoleInteract.png"><img class="wp-image-1438" title="consoleInteract" src="http://www.jeromecukier.net/wp-content/uploads/2012/09/consoleInteract.png" alt="" width="651" height="469" /></a><p class="wp-caption-text">Here, I am using the console to check the value of one variable, and to enter a statement that turns all the shapes orange.</p></div></p>
+<p>Voilà! the last thing you need when you cook food is people to share it with, same goes for visualizations!</p>
+	    		<div class="clear">&nbsp;</div>
+	</section>
+</article><!-- #post-## -->
+			
+				
+<article id="post-1351" class="post-1351 post type-post status-publish format-standard hentry category-d3 category-tips tag-animations tag-d3 tag-transitions tag-tutorial">
+		    <header class="post-header">
+        			<span class="post-meta">
+				<span class="posted-on"><a href="/2012/07/16/animations-and-transitions/" rel="bookmark"><time class="entry-date published" datetime="2012-07-16T11:44:09+00:00">July 16, 2012</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/d3/" rel="category tag">d3</a>, <a href="/category/tips/" rel="category tag">tips</a>			</span>
+		        <h1 class="post-title"><a href="/2012/07/16/animations-and-transitions/" rel="bookmark">animations and transitions</a></h1>
+         
+    </header>
+	<section class="post-content">
+
+		<p><strong>That post originally appeared on <a href="/tag/d3/blog.visual.ly/creating-animations-and-transitions-with-d3-js/">visual.ly</a>, I&#8217;m reproducing it here for clarity and ease of retrieval</strong></p>
+<p>In interactive visualisation, there is the word reactive. Well, maybe not literally, but close enough.<br />
+The fact is that reactivity, or the propension of a visualisation to respond to user actions, can really help engage the user in a visualisation, and help them understand its results. Both of which are usually good things. And how can this reactivity be achieved? Through animations. </p>
+<p>So I&#8217;ll go ahead and state that <strong>animation, if done right, can make any interactive data visualization better.</strong>.<br />
+How is that?</p>
+<ul>
+<li>When coupled with interaction, it&#8217;s a very useful way to give feedback to the user. What has changed since their last command? If what&#8217;s on screen animates from one state to another, it&#8217;s obvious, it stands out and it makes sense. Or, when showing any form of real-time data, animation is pretty much required.</li>
+<li>Animation can bring focus on the important things as a chart loads. Our vision is very sensitive to movement, so using these <em>introduction transitions</em> sensibly helps a lot to ease the effort required to get the right information off a chart.<br />
+Compare these two charts:<br />
+<iframe src="http://www.jeromecukier.net/stuff/transitions.html#15" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+<iframe src="http://www.jeromecukier.net/stuff/transitions.html#16" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+Which is better at getting the viewer&#8217;s attention on the last bar?<br />
+<em>[side note on examples: they all use the same model. Click on the button to start an animation. If there is nothing on the chart, clicking the button will make something appear.]</em>
+</li>
+<li>animation works well with metaphors, like growing, expanding, moving, dwindling, etc. so it can really enhance the expressiveness of a visualization that tries to convey any of these ideas (those and many others)	</li>
+</ul>
+<p>That&#8217;s said, animation can definitely ruin your visualization, too. Here are three general problems. </p>
+<ul>
+<li>Animation is very prominent. That can be good to call attention to a specific, unambiguous part of your chart. But what happens when there is too much animation? without other cues it gets difficult for a viewer to determine where to focus their attention.</li>
+<li> Animation across many states (like a video of animated data) make them difficult to compare to one another, as opposed to showing still images of various states side by side. (see <a href="http://www.cc.gatech.edu/~john.stasko/papers/infovis08-anim.pdf" title="Effectiveness of Animation in Trend Visualization"></a> for more on this.</li>
+<li>If the animation is not continuous, if the chart is somehow wiped out during it, this caused <a href="http://nivea.psycho.univ-paris5.fr/Mudsplash/Nature_Supp_Inf/Movies/Movie_List.html">change blindness</a> which pretty much negates any benefit you may have hoped to reap from animation.<br />
+Look at this example.<br />
+<iframe src="http://www.jeromecukier.net/stuff/transitions.html#17" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+When animated, the line goes through a blank state which makes is close to impossible to track changes between the original and final state. The only way to detect change is to focus on one given point and memorize its original position, but this is very ineffective.
+</li>
+</ul>
+<h3>Now how to do it?</h3>
+<p>So we&#8217;ve seen how animation is helpful in data visualization. Now, let&#8217;s do it!<br />
+For this purpose, let&#8217;s use <a href="http://d3-js.org/">d3</a>. d3 has many, many possibilities when it comes to data animation which are relatively painless to implement.</p>
+<h4>The principle</h4>
+<p>If you know how to draw in d3, you almost know how to animate. (and if you don&#8217;t know yet, <a href="http://alignedleft.com/tutorials/">Alignedleft</a> has a splendid collection of tutorials to get you started, and the <a href="https://github.com/mbostock/d3/wiki/Tutorials">d3 site</a> lists more including some by <a href="http://www.jeromecukier.net/blog/category/d3/">yours truly</a>.)<br />
+Animations are called transitions in d3 for a reason. A technical definition of animation can be that over a certain lapse of time, one or more characteristics of an object would <i>transition</i> from one value to another. </p>
+<p>And what do we mean by characteristics? Well, just about anything that can be expressed numerically. </p>
+<h4>A few examples of transitions</h4>
+<p><iframe src="http://www.jeromecukier.net/stuff/transitions.html#0" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+Unsuprisingly, when you update the position of an item smoothly over time, it moves. In svg, position is determined for most shapes, such as our blue rectangle here, by the x and y attributes, which correspond to the top-left corner of the shape. For circles, you use cx and cy, or the coordinates of the center. For paths, such as our red triangle, you actually specify the position of all of the points in the &#8220;d&#8221; attribute.</p>
+<p><iframe src="http://www.jeromecukier.net/stuff/transitions.html#1" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+Likewise, when you change size, your object grows (or shrinks!). You can use width and height for shapes like rectangles, or r for circles. </p>
+<p><iframe src="http://www.jeromecukier.net/stuff/transitions.html#2" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+Color is really a numerical attribute too, and it&#8217;s indeed possible (and very useful) to transition from one color to another. In svg, color is a style attribute that is defined by fill or stroke.</p>
+<p><iframe src="http://www.jeromecukier.net/stuff/transitions.html#3" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+Not unlike color, it&#8217;s very useful to be able to vary opacity. When opacity is set to 0, the corresponding object is completely transparent. So transitioning on opacity is very useful to make objects fade in or out. </p>
+<h4>How this is done</h4>
+<p>Now that we&#8217;ve seen what transitions can do, let&#8217;s see how to code this in d3.<br />
+Let&#8217;s go back to our first example. In fact, let&#8217;s make it even simpler.</p>
+<p><iframe src="http://www.jeromecukier.net/stuff/transitions.html#4" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+To create a square like this in d3, we would write something like:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+var mySquare=svg.append(&quot;rect&quot;)
+  .attr(&quot;x&quot;,60)
+  .attr(&quot;y&quot;,60)
+  .attr(&quot;width&quot;,60)
+  .attr(&quot;height&quot;,60);
+</pre>
+<p>4 attributes. Simple enough.<br />
+so if we want to make it move to the right, we are going to update the x attribute. That&#8217;s how we do it: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+mySquare
+  .transition()
+  .attr(&quot;x&quot;,320);
+</pre>
+<p>It&#8217;s that simple: use the transition method, then specify all you want to see changed just as if you were creating a new item. And using that one principle, we can easily reproduce any of the above examples.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+mySquare
+  .transition()
+  .attr(&quot;width&quot;,120); // will make it bigger
+
+mySquare
+  .style(&quot;fill&quot;,&quot;white&quot;) // if the fill is originally left blank and comes
+                         //  from a style sheet, it will start as black 
+  .transition()
+  .style(&quot;fill&quot;,&quot;blue&quot;);
+
+mySquare
+  .transition()
+  .style(&quot;opacity&quot;,0);
+</pre>
+<p>Now, in our simple examples, this is not exactly what happens. The transitions occur after an event, namely, when the user clicks on the button. And indeed, transitions are most useful when linked to events and interaction. But this doesn&#8217;t add a whole new layer of complexity.<br />
+We can just write: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+button.on(&quot;click&quot;, function() {
+  mySquare.transition().attr(&quot;x&quot;,320);
+})
+</pre>
+<p>And now, our animation only starts when the button is clicked. Obviously, since the transition is within a function, we could even determine where the square should go programmatically, but let&#8217;s keep it simple for the examples. </p>
+<h4>Animation 102</h4>
+<p>So far, we&#8217;ve seen how we can do simple animations in d3 and even throw in a little interaction. We&#8217;ve seen that it&#8217;s really as simple as creating elements in the same place. But here are some good news. Transitions in d3 are extremely versatile and can be customized with a lot of finesse without getting overly complex to write. It&#8217;s more a matter of knowing what to do.</p>
+<p><iframe src="http://www.jeromecukier.net/stuff/transitions.html#5" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+After using the transition() method, it&#8217;s possible to specify a value for duration and delay. Duration is the number of milliseconds the transition will last, while delay is the number of milliseconds the system will wait before launching it.<br />
+The syntax is: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+mySquare.transition()
+  .attr(&quot;x&quot;,320)
+  .duration(1000) // this is 1s
+  .delay(100)     // this is 0.1s
+</pre>
+<p>The default is a 250ms duration, and no delay.<br />
+I find 250ms to be a bit harsh. In most cases, transitions should be noticeable, so I oftentimes find myself increasing the duration to 500 or 1000. But unless there is a very good reason for that, durations should not be too long. If you use them to support your data, you don&#8217;t want the transition to take center stage by having them take several seconds.<br />
+Consider the following two examples (which you&#8217;ll have to start with the button)<br />
+<iframe src="http://www.jeromecukier.net/stuff/transitions.html#13" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+<iframe src="http://www.jeromecukier.net/stuff/transitions.html#14" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+Isn&#8217;t the second one simply atrocious? You may find hard to believe that it only wasted 25 seconds of your time. </p>
+<p><iframe src="http://www.jeromecukier.net/stuff/transitions.html#6" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+Easing is the technical name of the actual function that turns time into attribute changes. From the previous examples, you may have noticed that the values change slowly first, and then faster, then slowly at the end? Well, it turns out that you can use different functions to get different results. In my practice, I&#8217;ve only seen the use for the 3 displayed here although there are <a href="https://github.com/mbostock/d3/wiki/Transitions#wiki-d3_ease">many others</a>. And yes, you can write your own, although we are not going to cover this here.<br />
+The syntax is similar to the above: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+mysquare.transition()
+  .attr(&quot;x&quot;,320)
+  .ease(&quot;elastic&quot;)
+</pre>
+<p>(and by the way, the order in which you change attributes or specify animation parameters has no effect, so feel free to use .ease first then .attr).</p>
+<p><iframe src="http://www.jeromecukier.net/stuff/transitions.html#7" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+For path objects, through transitions you can update the position of each point. This allows you to effectively turn one shape into another.<br />
+This can be especially interesting for line charts (or any chart which is a path)<br />
+<iframe src="http://www.jeromecukier.net/stuff/transitions.html#8" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+Like this, if the values that you are plotting change, you can spot these changes very efficiently. If, instead, you just erase your chart redraw your data if would be very difficult to spot where the data has changed.<br />
+For both of these examples, the &#8220;d&#8221; attribute of the path is updated (so they are not intrinsically different from the simplest example).</p>
+<p><iframe src="http://www.jeromecukier.net/stuff/transitions.html#9" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+Sometimes (and actually: often), you want to fire a transition right after another transition.<br />
+But in case you were wondering, the following doesn&#8217;t work: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+mysquare.transition()
+  .attr(&quot;x&quot;,320);
+mysquare.transition()
+  .attr(&quot;y&quot;,200);
+</pre>
+<p>You may think that this will move the square right, then down. But no: it will start to move the square right, then fire the second transition which will move it down. Since they have the same duration and no delay, what will happen is that only the second will have a visible effect.<br />
+If the second transition had a delay, smaller than the first transition&#8217;s duration, the first one will be in effect for a while until the delay expires. Then, the second transition will take over. However, chances are you don&#8217;t want to do that, because how much of the first transition will have been accomplished depends on the users machine, browser etc. and is therefore unpredictable.<br />
+So how about giving the second transition a delay which corresponds exactly to the duration of the first one? This will usually work, however, the delays and durations are not extremely accurate. Firing the transition proper takes a certain time (which is roughly 15ms on my machine and which may vary) so it is difficult to chain two transitions very precisely this way.<br />
+In more complex programs than our simplistic examples, sometimes, several events try to trigger transitions on the same object. When this happens, the first transaction is fired, and runs its course unless another transition starts. That second transition would interrupt, then replace the first one. What this means is that the attributes that were in the process of being changed by the first transition will remain as they were when the second transition starts, somewhere between their start and target value.<br />
+If you want to make sure that all your transitions update their attribute up to the value they are supposed to reach, you may want to re-specify the attributes of the first transition in subsequent ones, like so:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+mysquare.transition()
+  .attr(&quot;x&quot;,320);
+mysquare.transition()
+  .delay(250)
+  .attr(&quot;y&quot;,200)
+  .attr(&quot;x&quot;,320); // even if the first transition doesn't complete, 
+                  // this one will and will update x to 320.
+</pre>
+<p>There is a more certain way to chain two transitions. With the following syntax, another event will start exactly at the end of a transition. That other event can be another transition (which is the case in the above example).</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+mysquare
+ .transition() 
+
+ ...
+
+ .each(&quot;end&quot;, function() { ... });
+</pre>
+<p>here, what&#8217;s in the callback function on the last line, introduced by .each(&#8220;end&#8221;, will be fired exactly as the transition ends. </p>
+<p>What can be done then? Here are 3 common scenarios.</p>
+<p><iframe src="http://www.jeromecukier.net/stuff/transitions.html#9" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+(btw, if you&#8217;re wondering what&#8217;s the difference between this and the previous example, there is none &#8211; it&#8217;s just to save you some scrolling).<br />
+One possibility is to launch another transition on the same item. Here, the square moves right, then down.<br />
+Here&#8217;s how it&#8217;s done: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+mysquare
+  .transition()
+  .attr(&quot;x&quot;,320)
+  .each(&quot;end&quot;,function() { // as seen above
+    d3.select(this).       // this is the object 
+      transition()         // a new transition!
+        .attr(&quot;y&quot;,180);    // we could have had another
+                           // .each(&quot;end&quot; construct here.
+   });
+</pre>
+<p>Another possibility is to delete the object after the transition has run its course. This is super useful, especially when you are creating a lot of temporary objects. An interesting combo is when you decrease opacity all the way to 0, making it invisible, then using remove() if you don&#8217;t need it anymore.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+mysquare
+  .transition()
+  .attr(&quot;x&quot;,320)
+  .each(&quot;end&quot;,function() { 
+    d3.select(this).       // so far, as above
+      remove();            // we delete the object instead 
+   });
+</pre>
+<p>Finally, we can create a new object. That can be a nice way to add a special effect. Here&#8217;s an example: </p>
+<p><iframe src="http://www.jeromecukier.net/stuff/transitions.html#10" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+Here, at the end of the transition, a circle is created, a transition is started on that circle, which decreases opacity to 0, then the circle is removed. </p>
+<p><iframe src="http://www.jeromecukier.net/stuff/transitions.html#11" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+And here is a last example with several effects combined.</p>
+<h4>Going further</h4>
+<p>Believe it or not, we barely scratched the surface of what can be achieved with animations in d3.<br />
+There are two other uses of transition that we haven&#8217;t seen because they are slightly more complex, so I&#8217;ll just mention them here.<br />
+Up to now, we have always seen transitions based on the properties of one specific object. We make the x property of that one square vary from what it was to 200.<br />
+Sometimes, though, you want many parts of your visualization to be updated according to the changes in one variable.<br />
+That is possible, too, by using the .tween and .interpolate methods. All of this is explained in the <a href="https://github.com/mbostock/d3/wiki/Transitions#wiki-tween">d3 documentation</a>.<br />
+Another possibility is the use of the <a href="https://github.com/mbostock/d3/wiki/Transitions#wiki-d3_timer">d3 timer</a> method, which allows to call a function repeatedly, which can also be used to create animation.</p>
+<p>The point I was hoping to make was that it&#8217;s possible to do a lot with relatively simple code and technique if you know what you are trying to do. Especially, chaining transitions, particularly when adding and removing objects when appropriate, goes a long way in creating powerful effects.</p>
+	    		<div class="clear">&nbsp;</div>
+	</section>
+</article><!-- #post-## -->
+			
+				
+<article id="post-1395" class="post-1395 post type-post status-publish format-standard hentry category-d3 category-data-visualization category-tips tag-d3 tag-embedding tag-tableau tag-wordpress">
+		    <header class="post-header">
+        			<span class="post-meta">
+				<span class="posted-on"><a href="/2012/07/02/embedding-tableau-visualizations-on-the-web/" rel="bookmark"><time class="entry-date published" datetime="2012-07-02T19:42:13+00:00">July 2, 2012</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/d3/" rel="category tag">d3</a>, <a href="/category/data-visualization/" rel="category tag">data visualization</a>, <a href="/category/tips/" rel="category tag">tips</a>			</span>
+		        <h1 class="post-title"><a href="/2012/07/02/embedding-tableau-visualizations-on-the-web/" rel="bookmark">Embedding tableau visualizations on the web</a></h1>
+         
+    </header>
+	<section class="post-content">
+
+		<p>I&#8217;m writing this short post because I see that exact phrase come up in the search engine terms of the blog now and again (along with &#8220;<a href="http://thazing.com/hello-this-is-bathtub/#.T_HYBsXxqGM">Hello this is bathtub</a>&#8221; but I can&#8217;t really help there).</p>
+<p>Long story short. I run into problems all the time trying to properly embed Tableau vis into wordpress blog posts. Does it happen outside of wordpress, I don&#8217;t know, because I don&#8217;t really try to embed Tableau vis outside of wordpress. That said, I have the same problem with d3 vis in wordpress and I&#8217;ve been asked several times how do I do it.</p>
+<h3>iframes.</h3>
+<p>That&#8217;s how.</p>
+<p>Here is what I did <a href="http://www.jeromecukier.net/blog/2012/06/30/tableau-2012-sports-visualization-contest-entry/">last time</a>.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+&lt;iframe
+  style=&quot;border: 0px;&quot;
+  src=&quot;http://public.tableausoftware.com/views/champions/champions?:embed=y&amp;amp;:from_wg=true&quot;
+  scrolling=&quot;no&quot;
+  width=&quot;652px&quot;
+  height=&quot;756px&quot;&gt;
+&lt;/iframe&gt;
+</pre>
+<p>so you&#8217;ll have to go to HTML mode and type it out. When it&#8217;s done, you can safely go back to visual mode if you feel like it.<br />
+Let&#8217;s go through these lines one by one (btw, they don&#8217;t have to appear one line at a time, it&#8217;s just for presentation purposes).</p>
+<p>Most important, what in on src. That&#8217;s simply the link to the page of your tableau vis. And if that&#8217;s not clear enough, it goes like this:<br />
+http://public.tableausoftware.com/views/ + <em>name of your workbook</em> + / + <em>name of your dashboard or sheet</em>.</p>
+<p>Since I want to show a dashboard called champions in a workbook called champions as well, that&#8217;s http://public.tableausoftware.com/views/champions/champions.</p>
+<p>I&#8217;m not sure whether what&#8217;s after the dashboard name is important. I&#8217;ll leave that as an exercise to figure it out. I&#8217;m pretty confident things work without it.</p>
+<p>Then the rest.</p>
+<p>style=&#8221;border: 0px&#8221; Yes, because you don&#8217;t want an ugly border around your iframe. or do you?</p>
+<p>scrolling=&#8221;no&#8221;. So there&#8217;s no scrollbar. Look. Scrollbars in iframes were pretty rad in 1996, but if you want to give that embed feeling, you have to do without them.</p>
+<p>height=&#8230;px, width=&#8230;px. Here&#8217;s the tricky part. You have to manually set the size of your visualisation and add a couple of pixels for good measure.</p>
+<p>In tableau, when creating dashboards, I have always used the option to size them <em>exactly </em>at a precise size and I recommend you do that too. Then add 2-6 px to each dimension and use that as width and height.</p>
+<p>In my experience going through these steps is really less painful than using the &#8220;native&#8221; embed functionality of tableau vis which sometimes work and sometimes doesn&#8217;t. The added bonus is that the resulting html is much more legible than what Tableau generates, which, for the record, is:</p>
+<pre>&lt;script type="text/javascript" src="http://public.tableausoftware.com/javascripts/api/viz_v1.js"&gt;&lt;/script&gt;&lt;div style="width:654px; height:799px;"&gt;&lt;noscript&gt;&lt;a href="http:&amp;#47;&amp;#47;www.jeromecukier.net&amp;#47;blog&amp;#47;2012&amp;#47;06&amp;#47;30&amp;#47;tableau-2012-sports-visualization-contest-entry&amp;#47;"&gt;&lt;img alt="champions " src="http:&amp;#47;&amp;#47;public.tableausoftware.com&amp;#47;static&amp;#47;images&amp;#47;ch&amp;#47;champions&amp;#47;champions&amp;#47;1_rss.png" style="border: none" /&gt;&lt;/a&gt;&lt;/noscript&gt;&lt;object width="654" height="799" style="display:none;"&gt;&lt;param name="host_url" value="http%3A%2F%2Fpublic.tableausoftware.com%2F" /&gt;&lt;param name="site_root" value="" /&gt;&lt;param name="name" value="champions&amp;#47;champions" /&gt;&lt;param name="tabs" value="no" /&gt;&lt;param name="toolbar" value="yes" /&gt;&lt;param name="static_image" value="http:&amp;#47;&amp;#47;public.tableausoftware.com&amp;#47;static&amp;#47;images&amp;#47;ch&amp;#47;champions&amp;#47;champions&amp;#47;1.png" /&gt;&lt;param name="animate_transition" value="yes" /&gt;&lt;param name="display_static_image" value="yes" /&gt;&lt;param name="display_spinner" value="yes" /&gt;&lt;param name="display_overlay" value="yes" /&gt;&lt;param name="display_count" value="yes" /&gt;&lt;param name="from_wg" value="true" /&gt;&lt;/object&gt;&lt;/div&gt;&lt;div style="width:654px;height:22px;padding:0px 10px 0px 0px;color:black;font:normal 8pt verdana,helvetica,arial,sans-serif;"&gt;&lt;div style="float:right; padding-right:8px;"&gt;&lt;a href="http://www.tableausoftware.com/public?ref=http://public.tableausoftware.com/views/champions/champions" target="_blank"&gt;Powered by Tableau&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;</pre>
+<p>Yeah. You say &amp;#47; i say %2F. anyway, this is a bit difficult to troubleshoot.</p>
+<p>The drawback when using iframes is that you lose the nice static image which is generated for RSS flows and other environments without interactivity. If you don&#8217;t know what I&#8217;m talking about (if you&#8217;re not familiar with that large orange arrow at the center) you&#8217;ll have no regrets.</p>
+<h3>Bonus: d3.</h3>
+<p>It turns out that the iframe is the simplest solution to have d3 work within wordpress, too. Sure, in theory it is possible to upload a js file as a media file, so you get a url with the date in it or something, which you can link to from the&#8230; whatever. It just never works and it&#8217;s a pain to maintain.</p>
+<p>so instead, use iframes. Make your d3 visualisation into an html file which will have all the necessary links. Then upload the file to a location you know (and possibly dependencies) and you&#8217;re all set! set an iframe with the same guidelines as above. To make the process even less painful, I use a plug-in called <a href="http://wordpress.org/extend/plugins/wp-filemanager/">FileManager</a> which lets me upload and manage files from within my dashboard environment. On another server I use another app also called <a href="http://www.gerd-tentler.de/tools/filemanager/">FileManager</a> (quite a catchy name, apparently) which runs outside of the wordpress environment.</p>
+<p>Happy embedding!</p>
+	    		<div class="clear">&nbsp;</div>
+	</section>
+</article><!-- #post-## -->
+			
+				
+<article id="post-1204" class="post-1204 post type-post status-publish format-standard hentry category-d3 category-data-visualization tag-challenge tag-d3 tag-david-mccandless tag-hacks tag-iba tag-infobeauty-awards tag-tutorial">
+		    <header class="post-header">
+        			<span class="post-meta">
+				<span class="posted-on"><a href="/2012/04/22/hollywood-data-iii-our-infobeauty-awards-entry-bonus-making-of/" rel="bookmark"><time class="entry-date published" datetime="2012-04-22T17:08:14+00:00">April 22, 2012</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/d3/" rel="category tag">d3</a>, <a href="/category/data-visualization/" rel="category tag">data visualization</a>			</span>
+		        <h1 class="post-title"><a href="/2012/04/22/hollywood-data-iii-our-infobeauty-awards-entry-bonus-making-of/" rel="bookmark">Hollywood + data III: our info+beauty awards entry. Bonus: making of.</a></h1>
+         
+    </header>
+	<section class="post-content">
+
+		<p>So Jen and I released our <a href="http://bit.ly/starchallenge">Info+beauty awards entry</a>.</p>
+<p><a href="http://bit.ly/starchallenge"><img class="aligncenter size-full wp-image-1205" title="shootingstars" src="http://www.jeromecukier.net/wp-content/uploads/2012/02/shootingstars.png" alt="" width="628" height="636" /></a></p>
+<p>How did we end up with this?</p>
+<p>it&#8217;s really cool working around movies, because it&#8217;s something we can relate to.</p>
+<p><div id="attachment_1206" style="width: 610px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2012/02/20120203_105750.jpg"><img class="size-full wp-image-1206" title="20120203_105750" src="http://www.jeromecukier.net/wp-content/uploads/2012/02/20120203_105750.jpg" alt="" width="600" height="450" /></a><p class="wp-caption-text">A part of my movie ticket stubs stash.</p></div></p>
+<p>At first I wanted to do something out of keywords we could grab on the movies but  Jen came up with another idea I found more worth pursuing: working around the story types (which was the most interesting aspect of the curated contest dataset) and see if there was not some kind of grand truth we could unravel there. She also requested stars and glitter, because we were not going to work on this glamorous dataset with a tedious dashboard done in Excel.</p>
+<p>That truth didn&#8217;t take so much time to find: the most frequently used story types (like comedy or movies with monsters) do not perform well in the box office while different story types (stories of teens growing up, or when the main character turns into something else), which are used less often, are much more profitable. So why doesn&#8217;t hollywood make more Junos and Black Swans and fewer College Road Trips or Dylan Dogs?</p>
+<p>That&#8217;s the idea. Now the making.</p>
+<p><span style="color: #ff0000;">Fair warning &#8211; the rest of this post is fairly technical. </span></p>
+<h3>Making stars</h3>
+<p>If I had to contribute significantly to the project it had to be done in d3/svg.</p>
+<p>Fortunately, it&#8217;s easy to generate star shapes in d3. Once you have the coordinates of where the points of one unitary star should be, you can easily make stars of any size with a function and a parameter.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+var c1=Math.cos(.2*Math.PI),c2=Math.cos(.4*Math.PI),
+    s1=Math.sin(.2*Math.PI),s2=Math.sin(.4*Math.PI),
+    r=1,
+
+    // ok the constant after r1 is the thickness of the branches.
+    // 1 is a &quot;straight&quot; star, less is narrower, more is thicker.
+
+    r1=1.5*r*c2/c1,
+    star=[
+        [0,-r],
+        [r1*s1,-r1*c1],
+        [r*s2,-r*c2],
+        [r1*s2,r1*c2],
+        [r*s1,r*c1],
+        [0,r1],
+        [-r*s1,r*c1],
+        [-r1*s2,r1*c2],
+        [-r*s2,-r*c2],
+        [-r1*s1,-r1*c1],
+        [0,-r]
+        ];
+    // this is a list of the pair of coordinates of the points that make a star.
+lineStar=function(k) {
+	var line=d3.svg.line()
+		.x(function(d) {return d[0]*k;})
+		.y(function(d) {return d[1]*k;})
+	return line(star)+&quot;Z&quot;; // this will stitch everything together.
+}</pre>
+<p>Now, running lineStar(10) will return the path description of a star with a radius of 10, thusly:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">&quot;M0,-10L3.367709824346891,-4.635254915624212L9.510565162951535,-3.0901699437494745L5.449068960040206,
+1.770509831248423L5.877852522924732,8.090169943749475L0,5.729490168751577L-5.877852522924732,
+8.090169943749475L-5.449068960040206,1.770509831248423L-9.510565162951535,-3.0901699437494745
+L-3.367709824346891,-4.635254915624212L0,-10Z&quot;</pre>
+<h3>Placing, moving (and spinning) the stars</h3>
+<p>The next idea was placing the stars.</p>
+<p>And for this we need two things: being able to position them somewhere, and being able to move them easily from point A to point B, ideally with some cool effect in between.</p>
+<p>So, it would be possible to change the x and y attributes of the path, but each would have to be dealt with separately with a different function call. I found it a better approach to rely on the <strong>transform </strong>attribute and <strong>translate</strong>. Each time I want to position a star somewhere, I need it to be set at an x and y coordinate, which will always correspond to either the data of the star, or that of a group above it. For instance, a star corresponding to a movie will need to be at the position corresponding to the data of that movie, or that of the story type above it if it&#8217;s still collapsed, or that of the high-level grouping of story types if that&#8217;s collapsed.</p>
+<p>Now all of the data structures for that are array of objects which all have x and y keys. In other terms, for any star-shaped object, I can always expect the underlying datum d to have d.x and d.y values. So, I wrote a function <strong>translate(d)</strong> which works on those 2 properties. And as a result, when I need to position any object all I have to write is:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">.attr(&quot;transform&quot;,translate)</pre>
+<p>and the object will be positioned according to its underlying data. (this is equivalent to writing .attr(&#8220;transform&#8221;,function(d) {return translate(d);}) )</p>
+<p>If I need to be them elsewhere, i.e. at the position of their parent, I can pass the data of that parent as an argument, for instance:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">.attr(&quot;transform&quot;,function(d) {return translate(structs[d.struct]);})</pre>
+<p>For a cheap bit of extra action, I&#8217;ve added a spinning effect in the translate function. Since translate(d) returns a value for the transform attribute, nobody said it just had to be instructions for translation! so I&#8217;ve added a rotate after the translate. The arguments for the rotate function depend on the x and y properties of the argument as well, so when stars move across the screen, the rotate angle changes slightly with each increment of either coordinate, giving the impression of spinning.</p>
+<h3>Explosions, starlets and other effects</h3>
+<p>Most of the cool things happening in the visualization rely on one very simple principle about d3 transitions: <strong>chaining them. </strong><br />
+In the code you&#8217;ll find oftentimes this pattern:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">.selectAll(&quot;someobject&quot;).data(...).enter().append(...) // creates the items
+... // sets the initial attributes
+...
+.transition()
+... // change the attributes
+...
+...
+...
+.each(&quot;end&quot;, function() { // stuff to be done on each item after the transition is over
+</pre>
+<p>and within that function, you&#8217;ll find either:<br />
+another transition which starts exactly when the previous one ends, so for instance opacity can decrease (causing a fading effect): d3.select(this).transition()&#8230;</p>
+<p>or a command to remove the object: d3.select(this).remove().</p>
+<p>When another transition is called, there can be another one after, then another one, then another one, then eventually the object can be removed (or not).</p>
+<p>Now you may think of transitions as ways to get one object to change smoothly from state A to state B, like a rectangle moving across the screen. But if you start to think that the <strong>objects can be discarded after the transitions</strong>, you&#8217;ll realize that there is an unbelievable number of things that can be done with them.<br />
+For instance, upon clicking on some stars, I am creating another star shape at that same location. Initially it has a the same size as the star, but I increase that radius to a large number (1000px) while decreasing its opacity to 0. So it seems that the new star is both exploding and fading. When it&#8217;s become transparent I remove it.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">gStructs.append(&quot;svg:path&quot;) // here I'm creating a &quot;path&quot; shape
+.style(&quot;stroke&quot;,&quot;none&quot;) // with no outline
+.style(&quot;fill&quot;,colorXp)  // with the fill color of the explosion
+.style(&quot;opacity&quot;,0.2)  // and a low opacity to start with (translucent)
+.attr(&quot;d&quot;,lineStar(d.size[sizeAxis])) // I give it the shape of a star and the size of the
+                                      // star that's being clicked
+.attr(&quot;transform&quot;,translate(d)) // and I position it on that star
+
+.transition() // action!
+
+.duration(500)	// a 500ms transition. Long enough to see the effect.
+.attr(&quot;d&quot;,lineStar(1000)) // the star expands to a radius of 1000.
+.style(&quot;opacity&quot;,0) // while fading to transparency.
+
+.each(&quot;end&quot;,function() {d3.select(this).remove();}) // and when it's done - it's removed.
+</pre>
+<h3>Changing axes</h3>
+<p>In this visualization I let the user change what&#8217;s plotted along the axes. It&#8217;s not very difficult to do but it&#8217;s a hassle to do it late in the project as it has been our case because it requires a lot of housekeeping. This is really about the data structures that will support our items. Instead of having just one value for x, y and size they have an object with several keys, one per axis. Then we maintain one variable per axis type, so everywhere we should write: d.x, we write instead: d.x[xAxis].</p>
+<p>So when there is an axis change, of course, we do a transition so that the stars and everything move smoothly to their new position. But what if the objects were already moving? When an unplanned transition interferes with an ongoing one, the results are often ugly, especially if the current transition had chained transitions waiting to be triggered. In other words, this will leave a mess.</p>
+<p>The way I&#8217;ve dealt with this is by keeping a tab on the number of transitions going on at a certain time. The axis change could only occur if no other transitions were taken place. If that was the case they were simply denied. There are other ways to do that like a queue of actions but that seemed the simple and adequate way to deal with this.</p>
+<h3>Bootstrap and google fonts</h3>
+<p>This was the first non-trivial project where I used <a href="http://twitter.github.com/bootstrap/">bootstrap</a> and I&#8217;m just never going back. Bootstrap simply removes all the hassle of arranging all the elements of a visualization on a screen and is very easy to use. Plus, it comes up with sensible options for buttons, forms, and the like. Since the contest it has evolved faster than a pokémon, for instance it is now possible to specify custom colors in a form and bootstrap will generate the appropriate css files. <a href="http://www.google.com/webfonts">Google fonts</a> are another great help as they are a very easy solution to choose fonts among a relatively large number of choices without relying on the fact that all the users have these fonts on their computer.</p>
+<h3>Wrapping it up</h3>
+<p>There&#8217;s a lot of other hacks in the code which you are welcome to explore, I admit I don&#8217;t remember them all because I took too much time to write this blog post after creating the entry (bad). However if there is one point you would like be to explain please ask in the comments.<br />
+I&#8217;m not entirely sure of what happened when I submitted the entry though. First it wasn&#8217;t listed with the others, then I got a message saying it hadn&#8217;t been reviewed, so it didn&#8217;t win anything, yet some time after the prizes have been handled it appeared in the &#8220;shortlisted&#8221; visualizations for the contest (which I found by accident). So whether or not it was good, I let you guys judge, at any rate it was fun making.</p>
+	    		<div class="clear">&nbsp;</div>
+	</section>
+</article><!-- #post-## -->
+			
+				
+<article id="post-1211" class="post-1211 post type-post status-publish format-standard hentry category-d3 category-tips tag-d3 tag-tableau tag-treemaps tag-tutorial">
+		    <header class="post-header">
+        			<span class="post-meta">
+				<span class="posted-on"><a href="/2012/04/19/treemaps-in-tableau-can-be-done/" rel="bookmark"><time class="entry-date published" datetime="2012-04-19T13:16:13+00:00">April 19, 2012</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/d3/" rel="category tag">d3</a>, <a href="/category/tips/" rel="category tag">tips</a>			</span>
+		        <h1 class="post-title"><a href="/2012/04/19/treemaps-in-tableau-can-be-done/" rel="bookmark">Treemaps in Tableau? can be done.</a></h1>
+         
+    </header>
+	<section class="post-content">
+
+		Tableau can do many things natively but there are a couple of basic primitives that are not built in because they behave somewhat differently from the overall logic. And <a href="http://www.tableausoftware.com/about/blog/2011/05/alternative-tree-maps-0">treemaps is one of them</a>. Then again treemaps are arguably one of the best way to express complex hierarchical information, i.e. to show the proportions in a large dataset.</p>
+
+Fortunately, thanks to Tableau flexibility there are ways to do that. In the tutorial I'm going to cover 2 cases. First, we'll create a somewhat complex treemap off data which will not change in runtime. Then, we'll create mini-treemaps which can change dynamically.</p>
+<h2>A complex treemap</h2>
+<script type="text/javascript" src="http://public.tableausoftware.com/javascripts/api/viz_v1.js"></script>
+<noscript><a href="#"><img alt="ComplexTM " src="http:&#47;&#47;public.tableausoftware.com&#47;static&#47;images&#47;tr&#47;treemaps&#47;ComplexTM&#47;1_rss.png" style="border: none" /></a></noscript><object class="tableauViz" width="604" height="369" style="display:none;"><param name="host_url" value="http%3A%2F%2Fpublic.tableausoftware.com%2F" /><param name="site_root" value="" /><param name="name" value="treemaps&#47;ComplexTM" /><param name="tabs" value="no" /><param name="toolbar" value="yes" /><param name="static_image" value="http:&#47;&#47;public.tableausoftware.com&#47;static&#47;images&#47;tr&#47;treemaps&#47;ComplexTM&#47;1.png" /><param name="animate_transition" value="yes" /><param name="display_static_image" value="yes" /><param name="display_spinner" value="yes" /><param name="display_overlay" value="yes" /><param name="display_count" value="yes" /></object>
+<div style="width:604px;height:22px;padding:0px 10px 0px 0px;color:black;font:normal 8pt verdana,helvetica,arial,sans-serif;"><div style="float:right; padding-right:8px;"><a href="http://www.tableausoftware.com/public?ref=http://public.tableausoftware.com/views/treemaps/ComplexTM" target="_blank">Powered by Tableau</a></div></div>
+Before we go in the details the main ideas are deceptively simple.</p>
+<ul>
+	<li>we use the polygon mark,</li>
+	<li>we generate the treemap layout outside of tableau.</li>
+</ul>
+What we want (and what we'll get) is a dataset that can be directly imported in Tableau and -boom- makes a treemap in a few clicks.</p>
+
+To make this dataset we can use d3. The treemap I am making is directly inspired from the <a href="/tag/d3/mbostock.github.com/d3/ex/treemap.html">d3 treemap example</a>. d3 is already computing all of the node positions so what we'll do is modify the program slightly so that it outputs them in a way that can be directly used in Tableau.</p>
+
+Here is the <a href="http://www.jeromecukier.net/wp-content/uploads/2012/04/treemap.html">modified file</a> which you can download and run on your computer. To work it needs to be in the same folder as a <a href="http://www.jeromecukier.net/wp-content/uploads/2012/04/data.js">data file</a> called data.js which will hold your hiearchical data and which has the same structure as the one linked here.</p>
+
+You can just copy/paste the table that's displayed below the treemap and put it in Tableau or save it in a file for good measure. Here is <a href="http://www.jeromecukier.net/wp-content/uploads/2012/04/data.csv">the output</a> of the data file linked above.</p>
+
+Let's take a look at a few rows :</p>
+<table>
+<tbody>
+<tr>
+<td>Id</td>
+<td>Path</td>
+<td>Top-level category</td>
+<td>Name</td>
+<td>Value</td>
+<td>Corner</td>
+<td>x</td>
+<td>y</td>
+</tr>
+<tr>
+<td>0</td>
+<td>flare&gt;analytics&gt;cluster</td>
+<td>flare</td>
+<td>AgglomerativeCluster</td>
+<td>3938</td>
+<td>0</td>
+<td>89</td>
+<td>167</td>
+</tr>
+<tr>
+<td>0</td>
+<td>flare&gt;analytics&gt;cluster</td>
+<td>flare</td>
+<td>AgglomerativeCluster</td>
+<td>3938</td>
+<td>1</td>
+<td>167</td>
+<td>167</td>
+</tr>
+<tr>
+<td>0</td>
+<td>flare&gt;analytics&gt;cluster</td>
+<td>flare</td>
+<td>AgglomerativeCluster</td>
+<td>3938</td>
+<td>2</td>
+<td>167</td>
+<td>192</td>
+</tr>
+<tr>
+<td>0</td>
+<td>flare&gt;analytics&gt;cluster</td>
+<td>flare</td>
+<td>AgglomerativeCluster</td>
+<td>3938</td>
+<td>3</td>
+<td>89</td>
+<td>192</td>
+</tr>
+<tr>
+<td>1</td>
+<td>flare&gt;analytics&gt;cluster</td>
+<td>flare</td>
+<td>CommunityStructure</td>
+<td>3812</td>
+<td>0</td>
+<td>102</td>
+<td>138</td>
+</tr>
+<tr>
+<td>1</td>
+<td>flare&gt;analytics&gt;cluster</td>
+<td>flare</td>
+<td>CommunityStructure</td>
+<td>3812</td>
+<td>1</td>
+<td>167</td>
+<td>138</td>
+</tr>
+<tr>
+<td>1</td>
+<td>flare&gt;analytics&gt;cluster</td>
+<td>flare</td>
+<td>CommunityStructure</td>
+<td>3812</td>
+<td>2</td>
+<td>167</td>
+<td>167</td>
+</tr>
+<tr>
+<td>1</td>
+<td>flare&gt;analytics&gt;cluster</td>
+<td>flare</td>
+<td>CommunityStructure</td>
+<td>3812</td>
+<td>3</td>
+<td>102</td>
+<td>167</td>
+</tr>
+<tr>
+<td>2</td>
+<td>flare&gt;analytics&gt;cluster</td>
+<td>flare</td>
+<td>HierarchicalCluster</td>
+<td>6714</td>
+<td>0</td>
+<td>89</td>
+<td>192</td>
+</tr>
+<tr>
+<td>2</td>
+<td>flare&gt;analytics&gt;cluster</td>
+<td>flare</td>
+<td>HierarchicalCluster</td>
+<td>6714</td>
+<td>1</td>
+<td>167</td>
+<td>192</td>
+</tr>
+<tr>
+<td>2</td>
+<td>flare&gt;analytics&gt;cluster</td>
+<td>flare</td>
+<td>HierarchicalCluster</td>
+<td>6714</td>
+<td>2</td>
+<td>167</td>
+<td>236</td>
+</tr>
+<tr>
+<td>2</td>
+<td>flare&gt;analytics&gt;cluster</td>
+<td>flare</td>
+<td>HierarchicalCluster</td>
+<td>6714</td>
+<td>3</td>
+<td>89</td>
+<td>236</td>
+</tr>
+</tbody>
+</table>
+I'm creating 4 lines per "leaf" node. So in this example which has 220 nodes, that amounts to 880 lines. Why 4? Because to draw a rectangle in Tableau you really need to define 4 corners. This is why there is a column "Corner" which is worth 0,1,2 and 3. This, we will use to tell Tableau to read our corners in bottom left, bottom right, top right, top left order which produces a nice convex rectangle and not a concave hourglass shape.</p>
+
+Now off to Tableau with this data. <a href="http://www.jeromecukier.net/wp-content/uploads/2012/04/complex.png"><img class="aligncenter size-full wp-image-1212" title="complex" src="http://www.jeromecukier.net/wp-content/uploads/2012/04/complex.png" alt="" width="558" height="477" /></a></p>
+
+Now it's just a matter of doing like this screen. Unsurprisingly the columns and rows are going to be determined by x and y. You want a polygon mark, and you absolutely must use your corner measure in the path. For color, you'll have a choice, you can use the top-level category column (as I have) or the full path which will divide your treemap in finer parts. Finally, level of detail: you must use the Id and not the name in case several of your nodes have the same name. It's quite important at this point to uncheck aggregate measures in Analysis. You do NOT want aggregate measures (though it's quite pretty). To be able to use the name, you must first make a measure out of it. And finally, you'll want to update your infotip slightly.</p>
+
+All of this you can see if you download the tableau file.</p>
+
+And voilà! Treemaps for your Tableau workbooks.</p>
+
+<em>Caveat:</em> the polygon mark doesn't support labels so you can't write on top of the small rectangles what they are but that's not the point of the treemap, which is instead to give an immediate first impression of the relative size of large groups of your data, then allow you to explore them, to that end the infotip function works just fine.</p>
+<h2>Simpler but dynamic treemaps</h2>
+This is fine and dandy if your data doesn't change but it won't scale if you need to make many treemaps based on selections. What to do? You could use pie charts, but let's not.</p>
+
+To that end I've tried to emulate the <a href="http://www.congressspeaks.com/">Congress speaks</a> visualization by <a href="http://periscopic.com/">Periscopic</a>. I really like it. When you've selected representatives at the end of the process you are taken to a screen which shows the following mini-treemap:</p>
+
+<a href="http://www.jeromecukier.net/wp-content/uploads/2012/04/votingrecord.png"><img class="aligncenter size-full wp-image-1213" title="votingrecord" src="http://www.jeromecukier.net/wp-content/uploads/2012/04/votingrecord.png" alt="" width="246" height="166" /></a></p>
+
+There are just 5 rectangles. But they will change for any representative that we choose. Can this be done with Tableau? Obviously.</p>
+
+Now the Tableau part of this is slightly trickier than above. The idea is that we are going to use formulas to generate the coordinates of all 20 corners of the rectangles, in other words we are going to let Tableau calculate the layout. We can do it because the way that rectangles are going to be arranged is quite predictible. There is one on the left, then 4 stacked on the right one on top of the other. Again, we could compute all of these coordinates outside of Tableau but that would be a hassle and so for a large number of cases it becomes easier and more reliable to do this inside of Tableau.</p>
+<h3>Data</h3>
+For this I have used completely random data. I have <a href="http://www.kleimo.com/random/name.cfm">generated 20 names</a>, and for each I have generated 5 values in a likely range, number of possible votes, number of votes the representative actually voted, number of times they voted yes, number of times they voted yes with their party, and the same for no. (or nay, technically).</p>
+
+At the end of the day I need 20 records per representative (5 rectangles of 4 corners each), so I can either replicate the line 20 times, or use linked tables. The idea is to get something like this for all of the representatives that can somehow get into Tableau.</p>
+<table width="640" border="0" cellspacing="0" cellpadding="0"><colgroup> <col span="10" width="64" /> </colgroup>
+<tbody>
+<tr>
+<td width="64" height="17">Id</td>
+<td width="64">representative</td>
+<td width="64">corner</td>
+<td width="64">rectangle</td>
+<td width="64">possible votes</td>
+<td width="64">total votes</td>
+<td width="64">voted yes</td>
+<td width="64">yes with party</td>
+<td width="64">voted no</td>
+<td width="64">no with party</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">0</td>
+<td>no against party</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">1</td>
+<td>no against party</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">2</td>
+<td>no against party</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">3</td>
+<td>no against party</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">0</td>
+<td>no vote</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">1</td>
+<td>no vote</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">2</td>
+<td>no vote</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">3</td>
+<td>no vote</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">0</td>
+<td>no with party</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">1</td>
+<td>no with party</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">2</td>
+<td>no with party</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">3</td>
+<td>no with party</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">0</td>
+<td>yes against party</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">1</td>
+<td>yes against party</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">2</td>
+<td>yes against party</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">3</td>
+<td>yes against party</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">0</td>
+<td>yes with party</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">1</td>
+<td>yes with party</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">2</td>
+<td>yes with party</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">3</td>
+<td>yes with party</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+</tbody>
+</table>
+<h3>In Tableau</h3>
+In Tableau we are going to use the same idea as above: polygon mark, disable aggregate measures, and use x and y for columns and rows.</p>
+
+Only, x and y are going to be much more complex. Sorry about that. Well, not that complex but definitely longer.</p>
+
+Here's x:</p>
+
+<pre class="brush: plain; title: ; notranslate" title="">
+
+case [rectangle]
+when &quot;no vote&quot; then
+     case [corner]
+       when 0 then 0
+       when 1 then (([possible votes]-[total votes])/[possible votes])
+       when 2 then (([possible votes]-[total votes])/[possible votes])
+       when 3 then 0
+     end
+else
+     case [corner]
+       when 0 then (([possible votes]-[total votes])/[possible votes])
+       when 1 then 1
+       when 2 then 1
+       when 3 then (([possible votes]-[total votes])/[possible votes])
+   end
+end
+
+</pre>
+
+Depending on the rectangle we are trying to draw we can find ourselves in one of two cases (hence the use of case).</p>
+
+If we draw "no vote" then we are on the left of our vis. The left corners are on the leftmost side of the vis (hence value: 0) and the right corners correspond to the proportion of possible votes which where not cast by this representative, which we can compute as ([possible votes]-[total votes])/[possible votes].</p>
+
+In the other case, we are drawing one of the 4 stacked rectangles, so the right corners are on the rightmost side of the vis (hence value: 1) and the left corners correspond to the value we just computed.</p>
+
+And now, y:</p>
+
+<pre class="brush: plain; title: ; notranslate" title="">
+case [rectangle]
+when &quot;no vote&quot; then
+case [corner]
+when 0 then 0
+when 1 then 0
+when 2 then 1
+when 3 then 1
+end
+when &quot;yes against party&quot; then
+case [corner]
+when 0 then 0
+when 1 then 0
+when 2 then (([voted yes]-[yes with party])/[total votes])
+when 3 then (([voted yes]-[yes with party])/[total votes])
+end
+when &quot;yes with party&quot; then
+case [corner]
+when 0 then (([voted yes]-[yes with party])/[total votes])
+when 1 then (([voted yes]-[yes with party])/[total votes])
+when 2 then ((2*[voted yes]-[yes with party])/[total votes])
+when 3 then ((2*[voted yes]-[yes with party])/[total votes])
+end
+when &quot;no with party&quot; then
+case [corner]
+when 0 then ((2*[voted yes]-[yes with party])/[total votes])
+when 1 then ((2*[voted yes]-[yes with party])/[total votes])
+when 2 then ((2*[voted yes]+[no with party]-[yes with party])/[total votes])
+when 3 then ((2*[voted yes]+[no with party]-[yes with party])/[total votes])
+end
+when &quot;no against party&quot; then
+case [corner]
+when 0 then ((2*[voted yes]+[no with party]-[yes with party])/[total votes])
+when 1 then ((2*[voted yes]+[no with party]-[yes with party])/[total votes])
+when 2 then 1
+when 3 then 1
+end
+end
+</pre>
+
+y is longer but this is the same general idea. For the "no vote" rectangle, the corners are either to the top or bottom of the vis. But for the other, we can predict where the rectangle will start and when it will end, as a proportion of the [possible votes] field. The values we want are going to be correspond to these proportions, plus that of all the rectangles below so we can achieve that stacked effect (as opposed to have all rectangles superimposed at the bottom of the vis). This is why I am entering the rectangles in stacking order. Each time, the bottom corners get the value of the top corners of the previous rectangle.</p>
+
+Here is the final result:</p>
+
+&nbsp;
+<script type="text/javascript" src="http://public.tableausoftware.com/javascripts/api/viz_v1.js"></script>
+<noscript><a href="#"><img alt="mini TM " src="http:&#47;&#47;public.tableausoftware.com&#47;static&#47;images&#47;B5&#47;B5PW2XJWX&#47;1_rss.png" style="border: none" /></a></noscript>
+<object class="tableauViz" width="404" height="269" style="display:none;">
+<param name="host_url" value="http%3A%2F%2Fpublic.tableausoftware.com%2F" />
+<param name="path" value="shared&#47;B5PW2XJWX" />
+<param name="toolbar" value="yes" />
+<param name="static_image" value="http:&#47;&#47;public.tableausoftware.com&#47;static&#47;images&#47;B5&#47;B5PW2XJWX&#47;1.png" />
+<param name="animate_transition" value="yes" />
+<param name="display_static_image" value="yes" />
+<param name="display_spinner" value="yes" />
+<param name="display_overlay" value="yes" />
+<param name="display_count" value="yes" />
+</object>
+<div style="width:404px;height:22px;padding:0px 10px 0px 0px;color:black;font:normal 8pt verdana,helvetica,arial,sans-serif;"><div style="float:right; padding-right:8px;"><a href="http://www.tableausoftware.com/public?ref=http://public.tableausoftware.com/shared/B5PW2XJWX" target="_blank">Powered by Tableau</a></div></div>	    		<div class="clear">&nbsp;</div>
+	</section>
+</article><!-- #post-## -->
+			
+				
+<article id="post-1165" class="post-1165 post type-post status-publish format-standard hentry category-d3 category-tips tag-ajax tag-d3 tag-database tag-mysql tag-php tag-tutorial tag-xhr">
+		    <header class="post-header">
+        			<span class="post-meta">
+				<span class="posted-on"><a href="/2012/01/02/using-d3-with-a-mysql-database/" rel="bookmark"><time class="entry-date published" datetime="2012-01-02T20:15:59+00:00">January 2, 2012</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/d3/" rel="category tag">d3</a>, <a href="/category/tips/" rel="category tag">tips</a>			</span>
+		        <h1 class="post-title"><a href="/2012/01/02/using-d3-with-a-mysql-database/" rel="bookmark">Using d3 with a mySql database</a></h1>
+         
+    </header>
+	<section class="post-content">
+
+		<p>Creating visualizations from static files is fine and dandy but sometimes you need to be able to access dynamic data. And some other times, you may want to somehow record interactions from your users. One way to do that is by interacting with a mySql database.</p>
+<p>Without further ado here is the demo:</p>
+<p><iframe src="http://www.jeromecukier.net/stuff/sql_map/sqlmap.html" scrolling="no" width="542px" height="680px"></iframe></p>
+<h3>How does it work?</h3>
+<p>There are several parts to that.</p>
+<p>First, one <a href="http://www.jeromecukier.net/stuff/sql_map/sqlmap.html">html file</a> which holds everything together. By the way, for the styling I used Twitter&#8217;s <a href="http://twitter.github.com/bootstrap/">bootstrap</a> which makes it easy for all elements to find their place, and look at those purty buttons.</p>
+<p>Second, one <a href="http://www.jeromecukier.net/stuff/sql_map/sqlmap.js">javascript file</a> which contains the visualization proper.  If you have some familiarity with <a href="http://www.d3-js.org/">d3</a>, there is really nothing scary in this script. I&#8217;ll go back to the parts where the script interacts with databases in detail.</p>
+<p>Here&#8217;s what the rest does at a high level.</p>
+<ol>
+<li>We give some behaviors to the buttons</li>
+<li>Then we create a grid of small squares. All of these squares are positionned and given a class name, so that the square with class &#8220;r32&#8221; and &#8220;c17&#8221; is the 18th square from the left and 33th from the top (the class names start at 0).</li>
+<li>We catch the clicks on each square with a &#8220;clickme&#8221; function. In d3 logic, what is passed to that function is the underlying data of the element, in this case a 2-dimensional array with the x and y coordinates of the square which is being clicked on. In turn, the clickme function is going to update the data of the square, and those of the 4 surrounding squares (the one to the top, the bottom, the left and the right) by either increasing or decreasing the elevation of the terrain they represent</li>
+</ol>
+<p>When it gets interesting is how the data is initialized and how it is updated.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">d3.text(&quot;mapread.php&quot;, function(txt) {
+	d3.selectAll(&quot;#loading&quot;).remove();
+	txt.split(&quot;\n&quot;).forEach(function(line,i) {
+		line.split(&quot;,&quot;).forEach(function(d,j) {
+			data[i][j]=parseFloat(d);
+			d3.selectAll(&quot;.r&quot;+i+&quot;.c&quot;+j).style(&quot;fill&quot;,function() {return cScale(data[i][j]);});
+		})
+	});
+})</pre>
+<p>What&#8217;s really interesting here is the first line. We are asking d3 to go fetch a text file sitting at mapread.php, then do something with this file. The second part of the line, function(txt), calls a function with the contents of this text as argument.</p>
+<p>The second line just removes the loading message box. Then, d3 splits the text in lines, and each line being a string of comma-separated values, it splits that too and feeds a variable, data, with the result of all of this splitting. Then, it formats the squares by coloring them according to the retrieved values.</p>
+<p>At this stage you may think: but shouldn&#8217;t you load the data <em>before </em>drawing the scene? Well, what happens here is that loading the data takes much more time than drawing the scene, so it makes more sense to draw it first as an empty shell, load the data and then update the scene.</p>
+<p>And as you may have guessed, this mapread.php is no ordinary text file, but a dynamically-generated file from a mySql database. I won&#8217;t cover setting up a mySql database. Tutorials on the subject abound, there are ISPs that offer free mySql hosting, and if you can also install a local server on your computer, for instance <a href="http://www.easyphp.org/">EasyPHP</a> for windows users. And, if your ISP limits the number of mySql databases you can have, you don&#8217;t need to create a new one, just creating a new table within one will be fine. All you have to do really is find your mySql credentials.</p>
+<p>Next, you want to create a PHP file that goes like this:</p>
+<pre class="brush: php; title: ; notranslate" title="">&lt;?php
+$username=&quot;username&quot;; //replace with your mySql username
+$password=&quot;password&quot;;  //replace with your mySql password
+$dsn=&quot;database&quot;;  //replace with your mySql database name
+$host=&quot;host&quot;;  //replace with the name of the machine your mySql runs on
+$link=mysql_connect($host,$username,$password);
+?&gt;</pre>
+<p>You can call this: mysqlConfig.php or whatever, this  is a convenience file so you don&#8217;t have to type in your credentials each time you need to connect to your mySql database.</p>
+<p>Next, here is the script that reads the database and outputs a text file:</p>
+<pre class="brush: php; title: ; notranslate" title="">
+
+&lt;?php
+// load in mysql server configuration (connection string, user/pw, etc)
+include 'mysqlConfig.php';
+// connect to the database
+@mysql_select_db($dsn) or die( &quot;Unable to select database&quot;);
+
+// reads the map db
+
+$query=&quot;SELECT `height` FROM `v_map` ORDER BY `row`, `col`&quot;;
+mysql_query($query);
+
+$result = mysql_query($query,$link) or die('Errant query: '.$query);
+
+// outputs the db as lines of text.
+header('Content-type: text/plain; charset=us-ascii');
+$i=0;
+$line=&quot;&quot;;
+
+if(mysql_num_rows($result)) {
+ while($value = mysql_fetch_assoc($result)) {
+
+$line=$line.$value[&quot;height&quot;];
+ $i=$i+1;
+ if ($i==52) {
+ $i=0;
+ echo $line.&quot;\n&quot;;
+ $line=&quot;&quot;;}
+ else {$line=$line.&quot;,&quot;;}
+ }
+}
+mysql_close();
+?&gt;
+</pre>
+<p>And by the way, I am by no means a php expert. I hadn&#8217;t written a line of php in almost 10 years, so there may well be more effective ways to do that but the above works. The more interesting part is that we write an sql query which we store in $query and then we execute this query. Then, we loop over the results and echo the output.</p>
+<p>Back to our javascript file, we also interact with another php file when we update the data.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+function update(r,c,v) {
+	if(r&gt;=0 &amp;&amp; r&lt;y &amp;&amp; c&gt;=0 &amp;&amp; c&lt;x) {
+		data[r]=d3.max([d3.min([100,data[r]+v*build]),0]);
+		d3.selectAll(&quot;.r&quot;+r+&quot;.c&quot;+c).style(&quot;fill&quot;,function() {return cScale(data[r]);});
+		d3.text(&quot;mapupdate.php?height=&quot;+data[r]+&quot;&amp;col=&quot;+c+&quot;&amp;row=&quot;+r,function() {console.log(&quot;cell on row &quot;+r+&quot; and col&quot;+c+&quot; updated to &quot;+data[r]);});
+	}
+}</pre>
+<p>Here the last line is the interesting one. What it does is that, again, it attempts to fetch a text file from a url. In fact, there is no text there but just accessing this url will trigger an interaction with the database. (I guess it would be good practice to actually get some text in return, but hey).</p>
+<p>The program tries to read an url of the form mapupdate.php?height=20&amp;col=10&amp;row=32. By calling this url, we are actually passing these parameters to a php file, which will read them and use them to construct a query to the mySql database.</p>
+<p>Here goes:</p>
+<pre class="brush: php; title: ; notranslate" title="">&lt;?php
+
+// load in mysql server configuration (connection string, user/pw, etc)
+include 'mysqlConfig.php';
+// connect to the database
+@mysql_select_db($dsn) or die( &quot;Unable to select database&quot;);
+
+// updates the map db
+
+$query=&quot;UPDATE `v_map` SET `height`=&quot;.$_GET[&quot;height&quot;].&quot; WHERE `col`= &quot;.$_GET[&quot;col&quot;].&quot; and `row`= &quot;.$_GET[&quot;row&quot;];
+mysql_query($query);
+mysql_close();
+?&gt;</pre>
+<p>Here, the line that starts with $query is doing just that. The dot &#8220;.&#8221; is PHP concatenation operator, and the $_GET variable returns an associative array with the parameters passed to the script.</p>
+<p>For the sake of completeness, I had two other php scripts, one to initiate the table to begin with, and one to reset it if something went wrong. Those are just plain SQL queries so no need to reproduce them here.</p>
+<p>And voilà! now all of you can interact with this terrain builder, create islands, forests, mountains etc. The graphics are kind of crude, because when I was looking for an example I decided to recreate one of my earliest attempts in creative coding. In 1990 upon the release of <a href="http://en.wikipedia.org/wiki/Powermonger">Powermonger</a> I was so fascinated by the algorithmically-generated maps the game used as copy protection that I tried to code my own terrain generator, that was a time where 320x240x16 resolution was considered generous. Only here, it&#8217;s your clicks that replace the algorithm!</p>
+<p>I hope you enjoy the tutorial and working with persistant data with d3!</p>
+	    		<div class="clear">&nbsp;</div>
+	</section>
+</article><!-- #post-## -->
+			
+				
+<article id="post-1026" class="post-1026 post type-post status-publish format-standard hentry category-d3 category-protovis category-tips tag-color tag-color-palettes tag-d3 tag-hsl tag-linear tag-logarithmic tag-ordinal tag-power tag-protovis tag-quantitative tag-rgb tag-scales tag-tutorial">
+		    <header class="post-header">
+        			<span class="post-meta">
+				<span class="posted-on"><a href="/2011/08/11/d3-scales-and-color/" rel="bookmark"><time class="entry-date published" datetime="2011-08-11T12:03:21+00:00">August 11, 2011</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/d3/" rel="category tag">d3</a>, <a href="/category/protovis/" rel="category tag">protovis</a>, <a href="/category/tips/" rel="category tag">tips</a>			</span>
+		        <h1 class="post-title"><a href="/2011/08/11/d3-scales-and-color/" rel="bookmark">d3: scales, and color.</a></h1>
+         
+    </header>
+	<section class="post-content">
+
+		<p>In <a href="http://mbostock.github.com/protovis/docs/scale.html">protovis</a>, scales were super-useful in just about everything. That much hasn&#8217;t changed in d3, even though <a href="https://github.com/mbostock/d3/wiki/Scales">d3.scale</a> is a bit different from pv.Scale. (do note that <strong>d3.scale</strong> is in lowercase for starters).</p>
+<h2>Scales: the main idea</h2>
+<p>Simply put: scales transform a number in a certain interval (called the <em>domain</em>) into a number in another interval (called the <em>range</em>).<br />
+<img src="http://www.jeromecukier.net/wp-content/uploads/2011/08/d3scale1.png" alt="an example of how scales work" /><br />
+For instance, let&#8217;s suppose you <em>know</em> your data is always over 20 and always below 80. You would like to plot it, say, in a bar chart, which can be only 120 pixels tall.<br />
+You could, obviously, do the math:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">.attr(&quot;height&quot;, function(d) {return (d-20)*2;})</pre>
+<p>But what if you suddenly have more or less space? or your data changes? you&#8217;d have to go back to the entrails of your code and make the change. This is very error prone. So instead, you can use a scale: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">var y=d3.scale.linear().domain(20,80).range(0,120);
+...
+.attr(&quot;height&quot;, y)</pre>
+<p>this is much simpler, elegant, and easy to maintain. Oh, and the latter notation is equivalent to
+<pre class="brush: jscript; title: ; notranslate" title="">.attr(&quot;height&quot;, function(d) {return y(d);})</pre>
+<p>&#8230; only more legible and shorter.<br />
+And, there are tons of possibility with scales. </p>
+<h2>Fun with scales</h2>
+<p>In d3, quantitative scales can be of several types: </p>
+<ul>
+<li>linear scales (including <em>quantize</em> and <em>quantile</em> scales,</li>
+<li>logarithmic scales,</li>
+<li>power scales (including <em>square root</em> scales)</li>
+</ul>
+<p>While they behave differently, they have a lot in common. </p>
+<h3>Domain and range</h3>
+<p>For all scales, with the exception of quantize and quantile scales which are a bit different, domain and range work the same.<br />
+First, note that <strong>unlike in protovis</strong>, domain and range take an array as argument. Compare:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">var y=pv.Scale.linear().range(20,60).domain(0,120);
+var y=d3.scale.linear().range([20,60]).domain([0,120]);</pre>
+<p>This is because <strong>contrary to protovis</strong>, where domain could be a whole dataset, in d3, domain contains the bounds of the interval that is going to be transformed.<br />
+Typically, this is two numbers. If this is more, we are talking about a polypoint scale: there are as many segments in the intervals as there are numbers in the domain (minus one). The range must have as many numbers, and so as many segments. When using the scale, if a number is in the n-th segment of the domain, it is transformed into a number in the n-th segment of the range.<br />
+<img src="http://www.jeromecukier.net/wp-content/uploads/2011/08/d3scaleMultipoint.png" alt="illustration of a multipoint scale" /><br />
+With this example, 30 finds itself in the first segment of the domain. So it&#8217;s transformed to a value in the first segment of the range. 60, however, is in the 2nd segment, so it&#8217;s transformed into a value in the 2nd segment of the range.<br />
+Also, bounds of domain and range need not be numbers, as long as they can be converted to numbers. One useful examples are colors. Color names can be used as range, for instance, to create <em>color ramps</em>:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">var ramp=d3.scale.linear().domain([0,100]).range([&quot;red&quot;,&quot;blue&quot;]);</pre>
+<p>This will transform any value betwen 0 and 100 into the corresponding color between red and blue.</p>
+<h3>Clamping</h3>
+<p>What happends if the scale is asked to process a number outside of the domain? That&#8217;s what clamping controls. If it is set, then the bounds of the range are the minimum and maximum value that can be returned by the scale. Else, the same transformation applies to all numbers, whether they fall within the domain or not.<br />
+<img src="http://www.jeromecukier.net/wp-content/uploads/2011/08/d3clamping.png" alt="Clamping example" /><br />
+Here, with clamping, the result of the linear transformation is 120, but without it, it&#8217;s 160. </p>
+<pre class="brush: jscript; title: ; notranslate" title="">var clamp=d3.scale.linear().domain([20,80]).range([0,120]);
+clamp(100); // 160
+clamp.clamp(true);
+clamp(100); // 120</pre>
+<h3>Scales and nice numbers</h3>
+<p>More often than not, the bounds of the domain and/or those of the ranges will be calculated. So, chances are they won&#8217;t be round numbers, or numbers a human would like. Scales, however, come with a bunch of method to address that. d3 keeps in mind that scales are often used to position marks along an axis.</p>
+<h4>.nice()</h4>
+<p>When applied to a scale, the nice method expends the domain to &#8220;nicer&#8221; numbers. You wouldn&#8217;t want your axis to start at -2.347 and end at 7.431, right?<br />
+So, there. </p>
+<pre class="brush: jscript; title: ; notranslate" title="">var data=[-2.347, 4, 5.23,-1.234,6.234,7.431]; // or whatever.
+var y=d3.scale.linear().range([0,120]);
+y.domain([d3.min(data), d3.max(data)]); // domain takes bounds as arguments, not all numbers
+y.domain() // [-2.347, 7.431];
+y.nice() // [-3, 8]</pre>
+<h4>.ticks(n)</h4>
+<p>Given a domain, and a number n (which, <strong>contrary to protovis, is mandatory in d3</strong>), the ticks method will split your domain in (more or less) n convenient, human-readable values, and return an array of these values. This is especially useful to label axes. Passing these values to the scale allows them to position ticks nicely on an axis. </p>
+<pre class="brush: jscript; title: ; notranslate" title="">var y=d3.scale.linear([20,80]).range([0,120]);
+...
+var ticks=axis.selectAll(&quot;line&quot;)
+  .data(y.ticks(4)) // 20, 40, 60 and 80
+  .enter().append(&quot;svg:line&quot;);
+ticks
+  .attr(&quot;x1&quot;,0).attr(&quot;x2&quot;,5)
+  .attr(&quot;y1&quot;,y).attr(&quot;y2&quot;,y) // short and simple. 
+  .attr(&quot;stroke&quot;,&quot;black&quot;);</pre>
+<h4>.rangeRound()</h4>
+<p>If used instead of .range(), this will guarantee that the output of the scales are integers, which is better to position marks on the screen with pixel precision than numbers with decimals. </p>
+<h4>.invert()</h4>
+<p>The invert function turns the scale upside down: for one given number in the range, it returns which number of the domain would have been transformed into that number.<br />
+For instance: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">var y=d3.scale.linear([20,80]).range([0,120]);
+y(50); // 60
+y.invert(60); // 50</pre>
+<p>That&#8217;s quite useful, for instance, when a user mouses over a chart, and you would like to know to what value the mouse coordinates correspond. </p>
+<h3>Power scales and log scales</h3>
+<p>The <em>linear</em>scale is a function of the form y=ax+b which works for both ends of the domain and range. In the example we&#8217;ve used most often until now, this function is really f(x): y=2x-40.<br />
+Power and logarithm scales work the same, only we are looking for a function of the form y=ax<sup>k</sup>+b, or y=a.log(x)+b.<br />
+For the power scales, you can specify an exponent (k) with the .exponent() method. For instance, if we specify an exponent of 2, here is what the scale would look like:<br />
+<img src="http://www.jeromecukier.net/wp-content/uploads/2011/08/d3scalePower.png" alt="an example of a power scale" /><br />
+The equation is now f(x): y=x²/50-8. So 20 still becomes 0 and 80 still becomes 120, but other than that the values at the beginning of the domain would be lower than with the linear scale, and those at the end of the scale will be higher.<br />
+For convenience, d3 includes a d3.scale.sqrt() (the square root scale) so you never have to type d3.scale.pow.exponent(0.5) in full.<br />
+Also note that if you are using a log scale, you <strong>cannot</strong> have 0 in the domain. </p>
+<h3>Quantize and quantile</h3>
+<p>quantize and quantile are specific linear scales.<br />
+quantize works with a discrete, rather than continuous, range: in other terms, the output of quantize can only take a certain number of values.<br />
+For instance: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">var q=d3.scale.quantize().domain([0,10]).range([0,2,8]); 
+q(0); // 0
+q(3); // 0
+q(3.33); // 0
+q(3.34); // 2
+q(5); // 2
+q(6.66); // 2
+q(6.67); // 8
+q(8); // 8
+q(1000); // 8</pre>
+<p>quantile on the other hand matches values in the domain (which, this time, is the full dataset) with their respective quantile. The number of quantiles is specified by the range.<br />
+For instance: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+var q=d3.scale.quantile().domain([0,1,5,6,2,4,6,2,4,6,7,8]).range([0,100]);
+q.quantiles(); // [4.5], only one quantile - the median
+q(0); // 0
+q(4); // 0
+q(4.499); // 0
+q(4.5); // 100 - over the median
+q(5); // 100
+q(10000); // 100
+q.range([0,25,50,75,100]);
+q.quantiles(); // [2, 4, 5.6, 6];
+q(0); // 0 
+q(2); // 25 - greater than the first quantile limit
+q(3); // 25
+q(4); // 50
+q(6); // 100
+q(10000); // 100</pre>
+<h3>Ordinal scales</h3>
+<p>All the scales we&#8217;ve seen so far have been quantitative, but how about ordinal scales?<br />
+The big difference is that ordinal scales have <strong>a discrete domain</strong>, in other words, they turn a limited number of values into something else, without caring for what&#8217;s between those values.<br />
+Ordinal scales are very useful for positioning marks along an x axis. Let&#8217;s suppose you have 10 bars to position for your bar chart, each corresponding to a category, a month or whatever.<br />
+For instance: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+var x=d3.scale.ordinal()
+  .domain([&quot;Sunday&quot;,&quot;Monday&quot;,&quot;Tuesday&quot;,&quot;Wednesday&quot;,&quot;Thursday&quot;,&quot;Friday&quot;,&quot;Saturday&quot;]) // 7 items
+  .rangeBands([0,120]);
+x(&quot;Tuesday&quot;); // 34.285714285714285
+</pre>
+<p>There are 3 possibilites for range. Two are similar: the .rangePoints() and .rangeBands() methods, which both work with an array of two numbers &#8211; i.e. .rangeBands([0,120]). The last one is to specify all values in the range with .range(). </p>
+<h4>rangePoints() and rangeBands()</h4>
+<p>With .rangePoints(<em>interval</em>), d3 fits n points within the interval, n being the number of categories in the domain. In that case, the value of the first point is the beginning of the interval, that of the last point is the end of the interval.<br />
+With .rangeBands(<em>interval</em>), d3 fit n <em>bands</em> within the interval. Here, the value of the last item in the domain is less than the upper bound of the interval.<br />
+Those methods <strong>replace the protovis methods</strong> .split() and .splitBanded().<br />
+<img src="http://www.jeromecukier.net/wp-content/uploads/2011/08/d3ordinalRange.png" alt="difference between rangeBands and rangePoints" /><br />
+This chart illustrates the difference between using rangeBands and rangePoints. </p>
+<pre class="brush: jscript; title: ; notranslate" title="">var x=d3.scale.ordinal()
+  .domain([&quot;Sunday&quot;,&quot;Monday&quot;,&quot;Tuesday&quot;,&quot;Wednesday&quot;,&quot;Thursday&quot;,&quot;Friday&quot;,&quot;Saturday&quot;]);
+x.rangePoints([0,120]);
+x(&quot;Saturday&quot;); // 120
+x.rangeBands([0,120]);
+x(&quot;Saturday&quot;); // 102.85714285714286
+x(&quot;Saturday&quot;)+x.rangeBand(); // 120</pre>
+<h4>the range method</h4>
+<p>Finally, we can also use the .range method with several values.<br />
+We can specify the domain, or not. Then, if we use such a scale on a value which is not part of the domain (or if the domain is left empty), this value is added to the domain. If there are <em>n</em> values in the range, and more in the domain, then the n+1<sup>th</sup> value of the doamin is matched with the 1st value in the range, etc.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">var x=d3.scale.ordinal().range([&quot;hello&quot;, &quot;world&quot;]); 
+x.domain(); // [] - empty still.
+x(0); // &quot;hello&quot;
+x(1); // &quot;world&quot;
+x(2); // &quot;hello&quot;
+x.domain(); // [0,1,2]
+</pre>
+<h4>Color palettes</h4>
+<p><strong>Unlike in protovis</strong>, which had them under pv.Colors &#8211; i.e. pv.Colors.category10(), in d3, built-in color palettes can be accessed through scales. Well, even in protovis they had been ordinal scales all along, only not called this way.<br />
+There are <a href="https://github.com/mbostock/d3/wiki/Ordinal-Scales#category10">4 built-in color palette</a> in protovis: d3.scale.category10(), d3.scale.category20(), d3.scale.category20b(), and d3.scale.category20c().</p>
+<p>A palette like d3.scale.category10() works exactly like an ordinal scale. </p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+var p=d3.scale.category10();
+var r=p.range(); // [&quot;#1f77b4&quot;, &quot;#ff7f0e&quot;, &quot;#2ca02c&quot;, &quot;#d62728&quot;, &quot;#9467bd&quot;, 
+                      // &quot;#8c564b&quot;, &quot;#e377c2&quot;, &quot;#7f7f7f&quot;, &quot;#bcbd22&quot;, &quot;#17becf&quot;]
+var s=d3.scale.ordinal().range(r); 
+p.domain(); // [] - empty
+s.domain(); // [] - empty, see above
+p(0); // &quot;#1f77b4&quot;
+p(1); // &quot;#ff7f0e&quot;
+p(2); // &quot;#2ca02c&quot;
+p.domain(); // [0,1,2];
+s(0); // &quot;#1f77b4&quot;
+s(1); // &quot;#ff7f0e&quot;
+s(2); // &quot;#2ca02c&quot;
+s.domain(); // [0,1,2];</pre>
+<p>It&#8217;s noteworthy that in d3, color palette return strings, not pv.Color objects like in protovis.<br />
+Also: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+d3.scale.category10(1); // this doesn't work
+d3.scale.category10()(1); // this is the way.</pre>
+<h2>Colors</h2>
+<p>Compared to protovis, d3.color is simpler. The main reason is that protovis handled color and transparency together with the pv.Color object, whereas in SVG, those two are distinct attributes: you handle the background color of a filled object with <em>fill</em>, its transparency with <em>opacity</em>, the color of the outline with <em>stroke</em> and the transparency of that color with <em>stroke-opacity</em>. </p>
+<p>d3 has two color objects: d3_Rgb and d3_Hsl, which describe colors in the two of the most popular color spaces: red/green/blue, and hue/saturation/light. </p>
+<p>With d3.color, you can make operations on such objects, like converting colors between various formats, or make colors lighter or darker.</p>
+<p>d3.rgb(<em>color</em>), and d3.hsl(<em>color</em>) create such objects.<br />
+In this context, <em>color</em> can be (straight from <a href="https://github.com/mbostock/d3/wiki/Colors">the manual</a>):</p>
+<ul>
+<li>rgb decimal &#8211; &#8220;rgb(255,255,255)&#8221;</li>
+<li>hsl decimal &#8211; &#8220;hsl(120,50%,20%)&#8221;</li>
+<li>rgb hexadecimal &#8211; &#8220;#ffeeaa&#8221;</li>
+<li>rgb shorthand hexadecimal &#8211; &#8220;#fea&#8221;</li>
+<li>named &#8211; &#8220;red&#8221;, &#8220;white&#8221;, &#8220;blue&#8221;</li>
+</ul>
+<p>Once you have that object, you can make it brighter or darker with the appropriate method.<br />
+You can use .toString() to get it back in rgb hexadecimal format (or hsl decimal), and .rgb() or .hsl() to convert it to the object in the other color space. </p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+var c=d3.rgb(&quot;violet&quot;) // d3_Rgb object
+c.toString(); // &quot;#ee82ee&quot;
+c.darker().toString(); // &quot;#a65ba6&quot;
+c.darker(2).toString(); // &quot;#743f74&quot; - even darker
+c.brighter().toString();// &quot;ffb9ff&quot;
+c.brighter(0.1).toString(); // &quot;#f686f6&quot; - only slightly brighter
+c.hsl(); // d3_Hsl object
+c.hsl().toString() // &quot;hsl(300, 76, 72)&quot;</pre>
+	    		<div class="clear">&nbsp;</div>
+	</section>
+</article><!-- #post-## -->
+			
+				
+<article id="post-1012" class="post-1012 post type-post status-publish format-standard hentry category-d3 category-protovis category-tips tag-charts tag-d3 tag-javascript tag-protovis tag-selection tag-svg tag-tutorial">
+		    <header class="post-header">
+        			<span class="post-meta">
+				<span class="posted-on"><a href="/2011/08/09/d3-adding-stuff-and-oh-understanding-selections/" rel="bookmark"><time class="entry-date published" datetime="2011-08-09T14:49:23+00:00">August 9, 2011</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/d3/" rel="category tag">d3</a>, <a href="/category/protovis/" rel="category tag">protovis</a>, <a href="/category/tips/" rel="category tag">tips</a>			</span>
+		        <h1 class="post-title"><a href="/2011/08/09/d3-adding-stuff-and-oh-understanding-selections/" rel="bookmark">d3: adding stuff. And, oh, understanding selections</a></h1>
+         
+    </header>
+	<section class="post-content">
+
+		<h2>From data to graphics</h2>
+<p><img src="http://jeromecukier.net/wp-content/uploads/2011/08/d3principle.png" alt="the d3 principle (and also the protovis principle)" /><br />
+d3 and protovis are built around the same principle. Take data, put it into an array, and for each element of data a graphical object can be created, whose properties are derived from the data that was provided.</p>
+<p>Only d3 and protovis have a slightly different way of adding those graphical elements and getting data. </p>
+<p>In protovis, you start from a panel, a protovis-specific object, to which you add various marks. Each time you add a mark, you can either:</p>
+<ul>
+<li><strong>not</strong> specify data and add just one, </li>
+<li> or <strong>specify</strong> data and create as many as there are items in the array you pass as data.</li>
+</ul>
+<p>.</p>
+<h2>How de did it in protovis</h2>
+<pre class="brush: jscript; title: ; notranslate" title="">
+var vis=new pv.Panel().width(200).height(200); 
+vis.add(pv.Panel).top(10).left(10)
+  .add(pv.Bar)
+    .data([1,4,3,2,5])
+    .left(function() {return this.index*20;})
+    .width(15)
+    .bottom(0)
+    .height(function(d) {return d*10;});
+vis.render();</pre>
+<p><img src="http://jeromecukier.net/wp-content/uploads/2011/08/protoBar.png" alt="this simple bar chart in protovis" /><br />
+you first create a panel (first line), you may add an element without data (here, another panel, line 2), and add to this panel bars: there would be 5, one for each element in the array in line 4. </p>
+<h2>And in d3?</h2>
+<p>In d3, you also have a way to add either one object without passing data, or a series of objects &#8211; one per data element. </p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+var vis=d3.select(&quot;body&quot;).append(&quot;svg:svg&quot;).attr(&quot;width&quot;,200).attr(&quot;height&quot;,200);
+var rect=vis.selectAll(&quot;rect&quot;).data([1,4,3,2,5]).enter().append(&quot;svg:rect&quot;);
+rect.attr(&quot;height&quot;,function(d) {return d*20;})
+  .attr(&quot;width&quot;, 15)
+  .attr(&quot;x&quot;,function(d,i) {return i*20;})
+  .attr(&quot;y&quot;,function(d) {return 100-20*d;}
+  .attr(&quot;fill&quot;,&quot;steelblue&quot;);
+</pre>
+<p>In the first line, we are creating an svg document which will be the root of our graphical creation. It behaves just as the top-level panel in protovis. </p>
+<p>However we are not creating this out of thin air, but rather we are bolting it onto an existing part of the page, here the <body> tag. Essentially, we are looking through the page for a tag named <body> and once we find it (which should be the case often), that&#8217;s where we put the svg document. </p>
+<p>Oftentimes, instead of creating our document on <body>, we are going to add it to an existing &lt;div&gt; block, for instance: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+&lt;div id=&quot;chart&quot;&gt;&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+var vis=d3.select(&quot;#chart&quot;).append(&quot;svg:svg&quot;);
+...
+&lt;/script&gt;
+</pre>
+<p>Anyway. To <strong>add one element</strong>, regardless of data, what you do is: </p>
+<p>The logic is : d3.select(<em>where we would like to put our new object</em>).append(<em>type of new object</em>).</p>
+<p>Going back to our code: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+var vis=d3.select(&quot;body&quot;).append(&quot;svg:svg&quot;).attr(&quot;width&quot;,200).attr(&quot;height&quot;,200);
+var rect=vis.selectAll(&quot;rect&quot;).data([1,4,3,2,5]).enter().append(&quot;svg:rect&quot;);
+rect.attr(&quot;height&quot;,function(d) {return d*20;})
+  .attr(&quot;width&quot;, 15)
+  .attr(&quot;x&quot;,function(d,i) {return i*20;})
+  .attr(&quot;y&quot;,function(d) {return 100-20*d;}
+  .attr(&quot;fill&quot;,&quot;steelblue&quot;);
+</pre>
+<p>On line 2, we see a different construct:</p>
+<p><em>an existing selection, or a part of the page</em><br />
+.selectAll(<em>something</em>)<br />
+.data(<em>an array</em>)<br />
+.enter()<br />
+.append(<em>an object type</em>)</p>
+<p>This sequence of methods (selectAll, data, enter and append) are the way to add a series of elements. If all you need to know is to create a bar chart, just remember that, but if you plan on taking your d3 skills further than where you stopped with protovis, look at the end of the post for a more thorough explanation of the selection process. </p>
+<h2>Attributes and accessor functions</h2>
+<p>At this stage, we&#8217;ve added our new rectangles, and now we are going to shape and style them. </p>
+<pre class="brush: jscript; title: ; notranslate" title="">rect.attr(&quot;height&quot;,function(d) {return d*20;})
+  .attr(&quot;width&quot;, 15)
+  .attr(&quot;x&quot;,function(d,i) {return i*20;})
+  .attr(&quot;y&quot;,function(d) {return 100-20*d;}
+  .attr(&quot;fill&quot;,&quot;steelblue&quot;);
+</pre>
+<p>All the attributes of a graphical element are controlled by the method attr(). You specify the attribute you want to set, and the value you want to give.<br />
+In some cases, the value doesn&#8217;t depend on the data. All the bars will be 15 pixels wide, and they will all be of the steelblue color.<br />
+In some others, the value do depend on the data. We decide that the height of each bar is 20 times the value of the underlying data, in pixels (so 1 becomes 20, 5 becomes 100 etc.). Like in protovis, once data has been attributed to an element, function(<em>variable name</em>) enables to return a dynamic value in function on that element. By convention, we usually write function(d) {&#8230;;} (d for data) although it could be anything. Those functions are still called <strong>accessor functions</strong>.<br />
+so for instance: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">.attr(&quot;height&quot;,function(d) {return d*20;})</pre>
+<p>means that the height will be 20 times the value of the underlying data element (exactly what we said above).<br />
+In protovis, we could position the mark relatively to any corner of its parent, so we had a .top method and a .bottom method. But with SVG, objects are positioned relatively to the top-left corner. So when we specify the y position, it is also relative to the top of the document, not necessarily to the axis (and not in this case).<br />
+so &#8211;
+<pre class="brush: jscript; title: ; notranslate" title="">.attr(&quot;y&quot;, function(d) {return 100-d*20;})</pre>
+<p>if we use scales (see next post), all of this will have no impact whatsoever anyway.<br />
+Finally, there is an attribue here which doesn&#8217;t so much depend on the <em>value</em> of the data, but of its <em>rank</em> in the data items: the x position.<br />
+for this, we write: function(d,i) {return i*20;}<br />
+Here is a <strong>fundamental difference with protovis</strong>. In protovis, when we passed a second argument to such a function, it meant the data of the parent element (grand parent for the third, etc.). But here in d3, the second parameter is the position of the data element in its array. By convention, we write it i (for index).<br />
+And since you have to know: there is no easy way to retrieve the data of the parent element. </p>
+<h2>Bonus: understanding selections</h2>
+<p>To add many elements at once we&#8217;ve used the sequence: selectAll, data, enter, append.<br />
+Why use 4 methods for what appears to be one elementary task? If you don&#8217;t care about manipulating nodes individually, for instance for animations, you can just remember the sequence. But if you want to know more, here is what each method does. </p>
+<h3>selectAll</h3>
+<p><img src="http://jeromecukier.net/wp-content/uploads/2011/08/d3selectAll.png" alt="the selectAll method" /><br />
+First, we select a point on which to add your new graphical objects. When you are creating your objects and use the selectAll method, it will return an <em>empty selection</em> but based on that given point. You may also use selectAll in another context, to update your objects for instance. But here, an empty selection is expected. </p>
+<h3>data</h3>
+<p><img src="http://jeromecukier.net/wp-content/uploads/2011/08/d3data.png" alt="the data method" /><br />
+Then, you attribute data. This works quite similarly to protovis: d3 expects an array. d3 takes the concept further (with the concept of <em>data joins</em>) but you need not concern yourself with that until you look at transitions.<br />
+Anyway, at this stage you have an empty selection, based on a given point in the page, but with data.</p>
+<h3>enter</h3>
+<p><img src="http://jeromecukier.net/wp-content/uploads/2011/08/d3enter.png" alt="the enter method" /><br />
+The enter method updates the selection with nodes which have data, but no graphical representation. Using enter() is like creating stubs where the graphical elements will be grafted. </p>
+<h3>append</h3>
+<p><img src="http://jeromecukier.net/wp-content/uploads/2011/08/d3append.png" alt="the append method" /><br />
+Finally, by appending we actually create the graphical objects. Each is tied to one data element, so it can be further styled (for instance, through &#8220;attr&#8221;) to derive its characteristics from the value of that data.</p>
+	    		<div class="clear">&nbsp;</div>
+	</section>
+</article><!-- #post-## -->
+			
+				<nav class="pagination navigation paging-navigation" role="navigation">
+		<div class="nav-links">
+						<div class="older-posts"><a href="/tag/d3/page/2/" >Older Posts <span class="meta-nav">&rarr;</span></a></div>
+							<div class="page-number">Page 1 of 2</div>
+			
+		</div><!-- .nav-links -->
+	</nav><!-- .navigation -->
+	
+		
+		</main><!-- #main -->
+	</section><!-- #primary -->
+
+	<div id="secondary" class="widget-area" role="complementary">
+		<aside id="search-2" class="widget widget_search"><form role="search" method="get" class="search-form" action="/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit" value="Search" />
+			</form></aside>		<aside id="recent-posts-2" class="widget widget_recent_entries">		<h1 class="widget-title">Recent Posts</h1>		<ul>
+					<li>
+				<a href="/2018/04/09/hello-world/">Hello world!</a>
+						</li>
+					<li>
+				<a href="/2016/08/17/the-big-leagues/">The big leagues</a>
+						</li>
+					<li>
+				<a href="/2016/08/17/creating-a-react-visualization-web-app/">Creating a React visualization web app</a>
+						</li>
+					<li>
+				<a href="/2016/08/13/beyond-rendering/">Beyond rendering</a>
+						</li>
+					<li>
+				<a href="/2016/08/11/react-components/">React components</a>
+						</li>
+				</ul>
+		</aside>		<aside id="recent-comments-2" class="widget widget_recent_comments"><h1 class="widget-title">Recent Comments</h1><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link"><a href='https://wordpress.org/' rel='external nofollow' class='url'>A WordPress Commenter</a></span> on <a href="/2018/04/09/hello-world/#comment-1">Hello world!</a></li><li class="recentcomments"><span class="comment-author-link"><a href='http://omeraz.wordpress.com/' rel='external nofollow' class='url'>עומר עזריאל</a></span> on <a href="/2016/08/17/the-big-leagues/#comment-567">The big leagues</a></li><li class="recentcomments"><span class="comment-author-link">Carlos Ayres</span> on <a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-312">Manipulating data like a boss with d3</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://migrate.powertripanalytics.com/game-of-thrones-interactions-among-the-top-30-characters/' rel='external nofollow' class='url'>Game of ThronesInteractions Among the Top 30 Characters &#8211; PowerTrip Analytics</a></span> on <a href="/2013/05/13/making-the-game-of-thrones-visualization/#comment-466">Making the game of thrones visualization</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://abgoswam.wordpress.com/2016/10/08/d3-getting-started/' rel='external nofollow' class='url'>D3 &#8211; Getting Started | abgoswam&#039;s tech blog</a></span> on <a href="/2012/09/04/getting-to-hello-world-with-d3/#comment-419">Getting to &#8220;Hello world&#8221; with d3</a></li></ul></aside><aside id="archives-2" class="widget widget_archive"><h1 class="widget-title">Archives</h1>		<ul>
+			<li><a href='/2018/04/'>April 2018</a></li>
+	<li><a href='/2016/08/'>August 2016</a></li>
+	<li><a href='/2015/05/'>May 2015</a></li>
+	<li><a href='/2015/02/'>February 2015</a></li>
+	<li><a href='/2014/10/'>October 2014</a></li>
+	<li><a href='/2013/11/'>November 2013</a></li>
+	<li><a href='/2013/05/'>May 2013</a></li>
+	<li><a href='/2013/03/'>March 2013</a></li>
+	<li><a href='/2013/01/'>January 2013</a></li>
+	<li><a href='/2012/12/'>December 2012</a></li>
+	<li><a href='/2012/11/'>November 2012</a></li>
+	<li><a href='/2012/10/'>October 2012</a></li>
+	<li><a href='/2012/09/'>September 2012</a></li>
+	<li><a href='/2012/07/'>July 2012</a></li>
+	<li><a href='/2012/06/'>June 2012</a></li>
+	<li><a href='/2012/05/'>May 2012</a></li>
+	<li><a href='/2012/04/'>April 2012</a></li>
+	<li><a href='/2012/01/'>January 2012</a></li>
+	<li><a href='/2011/11/'>November 2011</a></li>
+	<li><a href='/2011/10/'>October 2011</a></li>
+	<li><a href='/2011/09/'>September 2011</a></li>
+	<li><a href='/2011/08/'>August 2011</a></li>
+	<li><a href='/2011/07/'>July 2011</a></li>
+	<li><a href='/2011/06/'>June 2011</a></li>
+	<li><a href='/2011/05/'>May 2011</a></li>
+	<li><a href='/2011/04/'>April 2011</a></li>
+	<li><a href='/2011/03/'>March 2011</a></li>
+	<li><a href='/2011/02/'>February 2011</a></li>
+	<li><a href='/2011/01/'>January 2011</a></li>
+	<li><a href='/2010/11/'>November 2010</a></li>
+	<li><a href='/2010/04/'>April 2010</a></li>
+	<li><a href='/2010/03/'>March 2010</a></li>
+	<li><a href='/2010/02/'>February 2010</a></li>
+	<li><a href='/2010/01/'>January 2010</a></li>
+	<li><a href='/2009/12/'>December 2009</a></li>
+	<li><a href='/2009/10/'>October 2009</a></li>
+	<li><a href='/2009/09/'>September 2009</a></li>
+	<li><a href='/2009/08/'>August 2009</a></li>
+	<li><a href='/2009/07/'>July 2009</a></li>
+	<li><a href='/2009/06/'>June 2009</a></li>
+	<li><a href='/2009/05/'>May 2009</a></li>
+	<li><a href='/2008/12/'>December 2008</a></li>
+	<li><a href='/2008/11/'>November 2008</a></li>
+	<li><a href='/2008/10/'>October 2008</a></li>
+		</ul>
+		</aside><aside id="categories-2" class="widget widget_categories"><h1 class="widget-title">Categories</h1>		<ul>
+	<li class="cat-item cat-item-2"><a href="/category/book-review/" >book review</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="/category/charts/" >charts</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="/category/conferences/" >conferences</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="/category/d3/" >d3</a>
+</li>
+	<li class="cat-item cat-item-6"><a href="/category/dashboards/" >dashboards</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="/category/data-publishing/" >data publishing</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="/category/data-visualization/" >data visualization</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="/category/francais/" >français</a>
+</li>
+	<li class="cat-item cat-item-10"><a href="/category/javascript/" >javascript</a>
+</li>
+	<li class="cat-item cat-item-11"><a href="/category/presentation/" >presentation</a>
+</li>
+	<li class="cat-item cat-item-12"><a href="/category/protovis/" >protovis</a>
+</li>
+	<li class="cat-item cat-item-13"><a href="/category/react/" >react</a>
+</li>
+	<li class="cat-item cat-item-14"><a href="/category/tips/" >tips</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="/category/uncategorized/" >Uncategorized</a>
+</li>
+	<li class="cat-item cat-item-15"><a href="/category/web-sites/" >web sites</a>
+</li>
+		</ul>
+</aside><aside id="meta-2" class="widget widget_meta"><h1 class="widget-title">Meta</h1>			<ul>
+						<li><a href="/wp-login.php">Log in</a></li>
+			<li><a href="/feed/">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="/comments/feed/">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>			</ul>
+			</aside>		<div class="clear">&nbsp;</div>
+	</div><!-- #secondary -->
+	<footer id="colophon" class="site-footer" role="contentinfo">
+	    <a class="subscribe icon-feed" href="/feed/"><span class="tooltip">Subscribe!</span></a>
+		<div class="site-info inner">
+		    <section class="copyright">
+		    			    		<a href="https://github.com/lacymorrow/casper" rel="home">Casper WP</a> by Lacy Morrow		    			    </section>
+		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+</main><!-- /#content -->
+
+<script type='text/javascript' src='/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js?ver=3.0.9b'></script>
+<script type='text/javascript' src='/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushJScript.js?ver=3.0.9b'></script>
+<script type='text/javascript' src='/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPlain.js?ver=3.0.9b'></script>
+<script type='text/javascript' src='/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPhp.js?ver=3.0.9b'></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "http://localhost:8888/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "http://localhost:8888/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+<script type='text/javascript' src='/wp-content/themes/casper/js/main.js?ver=1.0.0'></script>
+<script type='text/javascript' src='/wp-includes/js/wp-embed.min.js?ver=4.6.10'></script>
+<!--stats_footer_test--></body>
+</html>

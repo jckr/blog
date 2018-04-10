@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Working with data in protovis – part 3 of 5</title>
+	<atom:link href="http://localhost/2011/02/09/working-with-data-in-protovis-part-3-of-5/feed/" rel="self" type="application/rss+xml" />
+	<link>/2011/02/09/working-with-data-in-protovis-part-3-of-5/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>By: Jerome Cukier &#187; Protovis: analysis of the Map projections example</title>
+		<link>/2011/02/09/working-with-data-in-protovis-part-3-of-5/#comment-98</link>
+		<dc:creator><![CDATA[Jerome Cukier &#187; Protovis: analysis of the Map projections example]]></dc:creator>
+		<pubDate>Tue, 15 Mar 2011 16:17:38 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=494#comment-98</guid>
+		<description><![CDATA[[...] the remark says, this will precompute the country&#8217;s color once and for all. The forEach() method goes to every element of the countries array. the c.color = statement will add a color key to each [...]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] the remark says, this will precompute the country&#8217;s color once and for all. The forEach() method goes to every element of the countries array. the c.color = statement will add a color key to each [&#8230;]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Jerome Cukier &#187; Working with data in protovis</title>
+		<link>/2011/02/09/working-with-data-in-protovis-part-3-of-5/#comment-97</link>
+		<dc:creator><![CDATA[Jerome Cukier &#187; Working with data in protovis]]></dc:creator>
+		<pubDate>Sun, 06 Mar 2011 15:00:54 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=494#comment-97</guid>
+		<description><![CDATA[[...] we&#8217;ll take a break from protovis and look at the javascript methods to work with arrays, such as [...]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] we&#8217;ll take a break from protovis and look at the javascript methods to work with arrays, such as [&#8230;]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Jerome Cukier &#187; Working with data in protovis: part 5 of 5</title>
+		<link>/2011/02/09/working-with-data-in-protovis-part-3-of-5/#comment-96</link>
+		<dc:creator><![CDATA[Jerome Cukier &#187; Working with data in protovis: part 5 of 5]]></dc:creator>
+		<pubDate>Fri, 11 Feb 2011 18:11:57 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=494#comment-96</guid>
+		<description><![CDATA[[...] line 29, I&#8217;m using a map function to turn this array of strings, which is easier and shorter to type, into a bona fide 2-dimensional [...]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] line 29, I&#8217;m using a map function to turn this array of strings, which is easier and shorter to type, into a bona fide 2-dimensional [&#8230;]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Jerome Cukier &#187; Working with data in protovis &#8211; part 4 of 5</title>
+		<link>/2011/02/09/working-with-data-in-protovis-part-3-of-5/#comment-95</link>
+		<dc:creator><![CDATA[Jerome Cukier &#187; Working with data in protovis &#8211; part 4 of 5]]></dc:creator>
+		<pubDate>Fri, 11 Feb 2011 00:51:43 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=494#comment-95</guid>
+		<description><![CDATA[[...] Previous: array functions in javascript and protovis [...]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] Previous: array functions in javascript and protovis [&#8230;]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Jan Willem Tulp</title>
+		<link>/2011/02/09/working-with-data-in-protovis-part-3-of-5/#comment-94</link>
+		<dc:creator><![CDATA[Jan Willem Tulp]]></dc:creator>
+		<pubDate>Wed, 09 Feb 2011 20:23:13 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=494#comment-94</guid>
+		<description><![CDATA[Great tutorial again. I have to additional remarks to make:
+
+- in functional programming languages you may often see a function called zip(), which is essentially the same as pv.cross()
+
+- it is also good to realize that the pv.blend() function concatenates the two arrays. So your example will yield the same result as [1,2,3].concat([&quot;a&quot;,&quot;b&quot;,&quot;c&quot;]). However, in functional programming there is also often a function called flatten() (see for example: http://tech.karbassi.com/2009/12/17/pure-javascript-flatten-array/). If the Array object is extended to support the flatten() method (according to the example in the URL), then [[1,2,3],[&quot;a&quot;,&quot;b&quot;,&quot;c&quot;]].flatten() will also yield the same result as your example. However, since the result of pv.blend() is the same as applying the flatten() function, I personally think that the intention of the pv.blend() method is not entirely clear, since it&#039;s just a concatenation, and I haven&#039;t tested what will happen if you try to pv.blend() an array that is nested more deeply, like pv.blend([1,[2,[3]]]). At least, when applying flatten() this: [1,[2,[3]]].flatten(), the result is [1,2,3]. So, the flatten() function might be useful for your array toolbox as well.]]></description>
+		<content:encoded><![CDATA[<p>Great tutorial again. I have to additional remarks to make:</p>
+<p>&#8211; in functional programming languages you may often see a function called zip(), which is essentially the same as pv.cross()</p>
+<p>&#8211; it is also good to realize that the pv.blend() function concatenates the two arrays. So your example will yield the same result as [1,2,3].concat([&#8220;a&#8221;,&#8221;b&#8221;,&#8221;c&#8221;]). However, in functional programming there is also often a function called flatten() (see for example: <a href="http://tech.karbassi.com/2009/12/17/pure-javascript-flatten-array/" rel="nofollow">http://tech.karbassi.com/2009/12/17/pure-javascript-flatten-array/</a>). If the Array object is extended to support the flatten() method (according to the example in the URL), then [[1,2,3],[&#8220;a&#8221;,&#8221;b&#8221;,&#8221;c&#8221;]].flatten() will also yield the same result as your example. However, since the result of pv.blend() is the same as applying the flatten() function, I personally think that the intention of the pv.blend() method is not entirely clear, since it&#8217;s just a concatenation, and I haven&#8217;t tested what will happen if you try to pv.blend() an array that is nested more deeply, like pv.blend([1,[2,[3]]]). At least, when applying flatten() this: [1,[2,[3]]].flatten(), the result is [1,2,3]. So, the flatten() function might be useful for your array toolbox as well.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Tweets that mention Jerome Cukier » Working with data in protovis – part 3 of 5 -- Topsy.com</title>
+		<link>/2011/02/09/working-with-data-in-protovis-part-3-of-5/#comment-93</link>
+		<dc:creator><![CDATA[Tweets that mention Jerome Cukier » Working with data in protovis – part 3 of 5 -- Topsy.com]]></dc:creator>
+		<pubDate>Wed, 09 Feb 2011 19:09:18 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=494#comment-93</guid>
+		<description><![CDATA[[...] This post was mentioned on Twitter by Jérôme Cukier, Andy Kirk. Andy Kirk said: RT @jcukier: part 3/5 of my #protovis - working with data tutorial http://bit.ly/eMh2HL - javascript and protovis functions for working ... [...]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] This post was mentioned on Twitter by Jérôme Cukier, Andy Kirk. Andy Kirk said: RT @jcukier: part 3/5 of my #protovis &#8211; working with data tutorial <a href="http://bit.ly/eMh2HL" rel="nofollow">http://bit.ly/eMh2HL</a> &#8211; javascript and protovis functions for working &#8230; [&#8230;]</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

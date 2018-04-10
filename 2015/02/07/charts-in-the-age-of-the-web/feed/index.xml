@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Charts in the age of the web</title>
+	<atom:link href="http://localhost/2015/02/07/charts-in-the-age-of-the-web/feed/" rel="self" type="application/rss+xml" />
+	<link>/2015/02/07/charts-in-the-age-of-the-web/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>By: Dashboards ahoy! &#124; Jerome Cukier</title>
+		<link>/2015/02/07/charts-in-the-age-of-the-web/#comment-535</link>
+		<dc:creator><![CDATA[Dashboards ahoy! &#124; Jerome Cukier]]></dc:creator>
+		<pubDate>Sat, 07 Feb 2015 02:46:05 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1610#comment-535</guid>
+		<description><![CDATA[[&#8230;] the rules and best practices for charts that we keep perpetuating were thought for an old world of printed or otherwise static [&#8230;]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] the rules and best practices for charts that we keep perpetuating were thought for an old world of printed or otherwise static [&#8230;]</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

@@ -1,0 +1,29 @@
+extrême-droite	0	0	0	0	0	1
+fn	0	0	0	0	0	1
+le pen	0	0	0	0	0	1
+droite	0	0	0	1	1	1
+gouvernement	0	0	0	0	1	0
+sarkozy	0	0	0	0	1	0
+fillon	0	0	0	0	1	0
+copé	0	0	0	0	1	0
+guéant	0	0	0	0	1	0
+ministre	0	0	0	0	1	0
+président	0	0	0	0	1	0
+umps	0	0	1	0	1	0
+modem	0	0	0	1	0	0
+bayrou	0	0	0	1	0	0
+centre	0	0	0	1		0	0
+centristes	0	0	0	1	0	0
+hollande	0	0	1	0	0	0
+aubry	0	0	1	0	0	0
+ps	0	0	1	0	0	0
+socialiste	0	0	1	0	0	0
+socialistes	0	0	1	0	0	0
+gauche	1	1	1	0	0	0
+joly	0	1	0	0	0	0
+duflot	0	1	0	0	0	0
+eelv	0	1	0	0	0	0
+verts	0	1	0	0	0	0
+mélenchon	1	0	0	0	0	0
+front de gauche	1	0	0	0	0	0
+extrême-gauche	1	0	0	0	0	0

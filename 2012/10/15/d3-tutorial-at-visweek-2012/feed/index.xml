@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: d3 tutorial at visWeek 2012</title>
+	<atom:link href="http://localhost/2012/10/15/d3-tutorial-at-visweek-2012/feed/" rel="self" type="application/rss+xml" />
+	<link>/2012/10/15/d3-tutorial-at-visweek-2012/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>By: Alexandre Rousseau</title>
+		<link>/2012/10/15/d3-tutorial-at-visweek-2012/#comment-446</link>
+		<dc:creator><![CDATA[Alexandre Rousseau]]></dc:creator>
+		<pubDate>Fri, 11 Jan 2013 10:50:44 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1488#comment-446</guid>
+		<description><![CDATA[Thanks a lot for your cheat sheet. Very useful.]]></description>
+		<content:encoded><![CDATA[<p>Thanks a lot for your cheat sheet. Very useful.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: jerome</title>
+		<link>/2012/10/15/d3-tutorial-at-visweek-2012/#comment-445</link>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+		<pubDate>Thu, 13 Dec 2012 16:38:06 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1488#comment-445</guid>
+		<description><![CDATA[Hi, 
+i didn&#039;t write this one and there are a few things I find odd about this code, for instance the fill which is an attribute and which takes an rgb string as an argument. 
+if instead the fill is set as a style, and if the returned value is an RGB color object (ie d3.rgb(r,g,b)) this works just as expected with or without the transition. 
+ie
+function recolor() {
+				
+			    svg.selectAll(&quot;rect.bar&quot;)
+					//.transition()
+					//.duration(500)
+					.style(&quot;fill&quot;, function(d) {
+						var r = Math.random() * 255;					//Choose random red, green, blue values
+						var g = Math.random() * 255;
+						var b = Math.random() * 255;
+						return d3.rgb(r,g,b);							//Set fill to rgb value	
+					});
+
+			}
+this works]]></description>
+		<content:encoded><![CDATA[<p>Hi,<br />
+i didn&#8217;t write this one and there are a few things I find odd about this code, for instance the fill which is an attribute and which takes an rgb string as an argument.<br />
+if instead the fill is set as a style, and if the returned value is an RGB color object (ie d3.rgb(r,g,b)) this works just as expected with or without the transition.<br />
+ie<br />
+function recolor() {</p>
+<p>			    svg.selectAll(&#8220;rect.bar&#8221;)<br />
+					//.transition()<br />
+					//.duration(500)<br />
+					.style(&#8220;fill&#8221;, function(d) {<br />
+						var r = Math.random() * 255;					//Choose random red, green, blue values<br />
+						var g = Math.random() * 255;<br />
+						var b = Math.random() * 255;<br />
+						return d3.rgb(r,g,b);							//Set fill to rgb value<br />
+					});</p>
+<p>			}<br />
+this works</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Kuan</title>
+		<link>/2012/10/15/d3-tutorial-at-visweek-2012/#comment-444</link>
+		<dc:creator><![CDATA[Kuan]]></dc:creator>
+		<pubDate>Fri, 07 Dec 2012 19:59:13 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1488#comment-444</guid>
+		<description><![CDATA[Hi, J:
+Nice tutorial. I have a question about tutorial 8 transition_color in d3 tutorial at visWeek 2012.
+I wonder why all rects turn together into black or some other color rather  into varied colors when I remove transition() and duration(500)? Why can not I just directly add attr(&#039;fill&#039; function(){......return random color value here.....}) after rect appending?
+
+
+Thanks]]></description>
+		<content:encoded><![CDATA[<p>Hi, J:<br />
+Nice tutorial. I have a question about tutorial 8 transition_color in d3 tutorial at visWeek 2012.<br />
+I wonder why all rects turn together into black or some other color rather  into varied colors when I remove transition() and duration(500)? Why can not I just directly add attr(&#8216;fill&#8217; function(){&#8230;&#8230;return random color value here&#8230;..}) after rect appending?</p>
+<p>Thanks</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

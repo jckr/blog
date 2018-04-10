@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+  <title>CloudMade JavaScript API example</title>
+  <script type="text/javascript" src="samplepoints3.js"></script>
+  <style>
+  	#cm-accidents {width:600px;height:600px;float:left;}
+  	#vis {width:400px;height:600px;float:left;}
+  </style
+</head>
+<body>
+
+  <div id="cm-accidents"></div><div id="thisVis"></div>
+
+
+  <script type="text/javascript" src="http://tile.cloudmade.com/wml/latest/web-maps-lite.js"></script>
+  <script type="text/javascript" src="http://blog.oecdfactblog.org/wp-includes/js/protovis-r3.2.js"></script>
+  <script type="text/javascript+protovis">
+
+  	var vis, w,h;
+  	w=400;h=600;
+  	vis = new pv.Panel()
+        .width(w)
+        .height(h)
+      	.canvas("thisVis");
+
+  // initializing variables
+
+
+
+  // preparing "details" part
+
+  details.forEach(function(d) {d.date=new Date(2010,d.mois,d.jour);d.js=d.date.getDay();})
+
+
+
+
+	function createMarker(i) {
+		var marker=new CM.Marker(new CM.LatLng(samplepoints[i][0], samplepoints[i][1]), {icon:CloudMadeIcon});
+
+    	var mytext="Accident du "+details[i].jour+"/"+details[i].mois
+    	if(details[i].morts>0){
+    		mytext+=", "+details[i].morts;
+    		if(details[i].morts>1) {mytext+=" morts"} else {mytext+=" mort"}
+    	}
+    	if(details[i].blesses>0){
+		    		mytext+=", "+details[i].blesses;
+		    		if(details[i].blesses>1) {mytext+=" blessés"} else {mytext+=" blessé"}
+    	}
+    	if(details[i].alcool==1){mytext+=", alcool"}
+    	if(details[i].vitesse==1){mytext+=", vitesse"}
+    	if(details[i].ceinture==1){mytext+=", ceinture"}
+    	mytext+="."
+
+		marker.bindInfoWindow("<h3>Accident #"+i+"</h3>"+	mytext);
+    	//var myfunction= function() {alert('Accident numéro '+i+', '+mytext);};
+
+
+    	//CM.Event.addListener(marker, 'click', myfunction);
+    	return marker;
+    }
+
+
+	var CloudMadeIcon = new CM.Icon();
+	CloudMadeIcon.image = "carcrash.png";
+	CloudMadeIcon.iconSize = new CM.Size(32, 32);
+	CloudMadeIcon.iconAnchor = new CM.Point(16, 16);
+
+
+    //var cloudmade = new CM.Tiles.CloudMade.Web({key: 'b0e97d7c45a944c493831ed88f14f7c3', styleId:34040});
+    var cloudmade = new CM.Tiles.CloudMade.Web({key: 'b0e97d7c45a944c493831ed88f14f7c3'});
+    var map = new CM.Map('cm-accidents', cloudmade);
+    map.setCenter(new CM.LatLng(47.457, 1.692), 6);
+
+    var markers = [];
+    for (var i = 0; i < samplepoints.length; i++) {
+    	markers.push(createMarker(i));
+    }
+    var clusterer = new CM.MarkerClusterer(map, {clusterRadius:50});
+    clusterer.addMarkers(markers);
+    map.addControl(new CM.SmallMapControl());
+
+	count();
+
+	CM.Event.addListener(map, 'dragend', count);
+	CM.Event.addListener(map, 'zoomend', count);
+	function count() {
+		north=map.getBounds().getNorthEast().lat();
+		east=map.getBounds().getNorthEast().lng();
+		south=map.getBounds().getSouthWest().lat();
+		west=map.getBounds().getSouthWest().lng();
+
+		accidents=samplepoints.filter(function(d) {return d[0]<north&&d[0]>south&&d[1]>west&&d[1]<east;}).map(function(d) {return details[d[2]];})
+		accidents=accidents.filter(function(d) {return d!=undefined;});
+		vis.render();
+	};
+
+	// this is the vis part.
+
+
+      var fontTitle="bold 14px Georgia";
+      var fontStd="12px Verdana";
+      var fontSml="10px sans-serif";
+
+
+      var months=["J","F","M","A","M","J","J","A","S","O","N","D"];
+      var days=["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
+
+      var topP=vis.add(pv.Panel)
+      		.height(100);
+
+
+
+      function sumDeath(data) {return pv.sum(data, function(d) {return d.morts;});}
+      function sumAcc(data) {return data.length;}
+
+
+
+      topP.add(pv.Label).left(10).top(30).text("Accidents:").font(fontTitle);
+      topP.add(pv.Label).left(10).top(50).text("Tués:").font(fontTitle);
+      topP.add(pv.Label).left(10).top(70).text("Blessés graves:").font(fontTitle);
+
+	  topP.add(pv.Label).left(150).top(15).text("Total").font(fontStd);
+	  topP.add(pv.Label).left(250).top(15).text("À l'écran").font(fontStd);
+
+      topP.add(pv.Label).left(150).top(30).text(function() {return details.length;}).font(fontStd);
+      topP.add(pv.Label).left(150).top(50).text(function() {return pv.sum(details, function(d) {return d.morts;});}).font(fontStd);
+      topP.add(pv.Label).left(150).top(70).text(function() {return pv.sum(details, function(d) {return d.blesses;});}).font(fontStd);
+
+      topP.add(pv.Label).left(250).top(30).text(function() {return "("+accidents.length+")";}).font(fontStd).textStyle("#ccc");
+      topP.add(pv.Label).left(250).top(50).text(function() {return "("+pv.sum(accidents, function(d) {return d.morts;})+")";}).font(fontStd).textStyle("#ccc");
+      topP.add(pv.Label).left(250).top(70).text(function() {return "("+pv.sum(accidents, function(d) {return d.blesses;})+")";}).font(fontStd).textStyle("#ccc");
+
+      var monthP=vis.add(pv.Panel)
+      	.height(200)
+      	.width(200)
+      	.top(120)
+      	;
+
+      monthP.add(pv.Label)
+      	.left(100)
+      	.textAlign("center")
+      	.font(fontTitle)
+      	.text("Accidents par mois")
+      ;
+
+      monthP.add(pv.Bar)
+      		.data(function() {return pv.values(pv.nest(details).key(function(d) {return d.mois;}).rollup(sumAcc));})
+      		.left(function() {return 30+14*this.index;})
+      		.bottom(50)
+      		.height(function(d) {return 140*d/1000;})
+      		.width(12)
+      		.fillStyle("darkkhaki")
+      		.anchor("bottom").add(pv.Label).text(function() {return months[this.index];}).font(fontStd).textBaseline("top")
+      		;
+      monthP.add(pv.Rule)
+      		.data(pv.range(11))
+      		.left(30)
+      		.bottom(function(d) {return 50+140*d/10;})
+      		.width(170)
+      		.strokeStyle("rgba(255,255,255,.3)")
+      		.anchor("left").add(pv.Label)
+      			.text(function(d) {return d*100;}).font(fontSml)
+      			.textAlign("right")
+      			.textBaseline("middle")
+      	;
+
+      var dayP=vis.add(pv.Panel)
+      		.height(200)
+      		.width(200)
+      		.top(120)
+      		.left(200)
+      	;
+      dayP.add(pv.Label)
+      	.left(100)
+      	.textAlign("center")
+      	.font(fontTitle)
+      	.text("Accidents par jour")
+      ;
+
+      dayP.add(pv.Bar)
+      		.data(function () {return pv.values(pv.nest(details).key(function(d) {return d.js;}).rollup(sumAcc));})
+      		.left(80)
+      		.height(12)
+      		.width(function(d) {return 120*d/2000;})
+      		.top(function(d) {return 48+15*this.index;})
+      		.fillStyle("darkred")
+      		.anchor("left").add(pv.Label)
+      			.text(function() {return days[this.index];})
+      			.textAlign("right")
+      			.textBaseline("middle").font(fontStd)
+      		;
+
+      dayP.add(pv.Rule)
+      		.data(pv.range(5))
+      		.top(48)
+      		.left(function(d) {return 80+120*d/5;})
+      		.height(5+15*7)
+      		.strokeStyle("rgba(255,255,255,.3)")
+      		.anchor("bottom").add(pv.Label)
+      			.text(function(d) {return d*400;}).font(fontSml).textBaseline("top")
+      ;
+
+      var bottomP = vis.add(pv.Panel)
+      		.height(100)
+      		.width(w)
+      		.top(340)
+      ;
+
+
+
+
+      	bottomP.add(pv.Label).left(10).top(30).text("Alcool:").font(fontTitle);
+        bottomP.add(pv.Label).left(10).top(50).text("Vitesse:").font(fontTitle);
+        bottomP.add(pv.Label).left(10).top(70).text("Pas de ceinture:").font(fontTitle);
+
+        bottomP.add(pv.Label).left(130).top(10).text("Accidents:").font(fontTitle);
+    	bottomP.add(pv.Label).left(220).top(10).text("Morts:").font(fontTitle);
+        bottomP.add(pv.Label).left(300).top(10).text("Blessés:").font(fontTitle);
+
+        bottomP.add(pv.Label).left(150).top(30).text(function() {return details.filter(function(d) {return d.alcool==1;}).length;}).font(fontStd);
+        bottomP.add(pv.Label).left(150).top(50).text(function() {return details.filter(function(d) {return d.vitesse==1;}).length;}).font(fontStd);
+        bottomP.add(pv.Label).left(150).top(70).text(function() {return details.filter(function(d) {return d.ceinture==1;}).length;}).font(fontStd);
+
+        bottomP.add(pv.Label).left(230).top(30).text(function() {return pv.sum(details.filter(function(d) {return d.alcool==1;}), function(d) {return d.morts;});}).font(fontStd);
+    	bottomP.add(pv.Label).left(230).top(50).text(function() {return pv.sum(details.filter(function(d) {return d.vitesse==1;}), function(d) {return d.morts;});}).font(fontStd);
+        bottomP.add(pv.Label).left(230).top(70).text(function() {return pv.sum(details.filter(function(d) {return d.ceinture==1;}), function(d) {return d.morts;});}).font(fontStd);
+
+        bottomP.add(pv.Label).left(310).top(30).text(function() {return pv.sum(details.filter(function(d) {return d.alcool==1;}), function(d) {return d.blesses;});}).font(fontStd);
+    	bottomP.add(pv.Label).left(310).top(50).text(function() {return pv.sum(details.filter(function(d) {return d.vitesse==1;}), function(d) {return d.blesses;});}).font(fontStd);
+        bottomP.add(pv.Label).left(310).top(70).text(function() {return pv.sum(details.filter(function(d) {return d.ceinture==1;}), function(d) {return d.blesses;});}).font(fontStd);
+
+      vis.render();
+
+
+
+
+    </script>
+
+</body>
+</html>

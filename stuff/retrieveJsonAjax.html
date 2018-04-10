@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>img{ height: 100px; float: left; }</style>
+  <script src="http://code.jquery.com/jquery-1.5.js"></script>
+</head>
+<body>
+  <div id="images">
+
+</div>
+<script type="text/javascript">
+function createXHR() {
+    var request = false;
+        try {
+            request = new ActiveXObject('Msxml2.XMLHTTP');
+        }
+        catch (err2) {
+            try {
+                request = new ActiveXObject('Microsoft.XMLHTTP');
+            }
+            catch (err3) {
+		try {
+			request = new XMLHttpRequest();
+		}
+		catch (err1)
+		{
+			request = false;
+		}
+            }
+        }
+    return request;
+}
+var data;
+var xhr=createXHR();
+xhr.open("GET", "jerjer.txt",true);
+xhr.onreadystatechange=function()
+	{
+		if (xhr.readyState == 4)
+		{
+			if (xhr.status != 404)
+			{
+				data=eval("(" + xhr.responseText + ")");
+			}
+		}
+	}
+xhr.send(null);
+
+  </script>
+
+</body>
+</html>

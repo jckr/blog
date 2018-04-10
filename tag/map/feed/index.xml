@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>map &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/map/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>Gun murders in America</title>
+		<link>/2012/12/29/gun-murders-in-america/</link>
+		<comments>/2012/12/29/gun-murders-in-america/#comments</comments>
+		<pubDate>Sat, 29 Dec 2012 08:40:45 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[charts]]></category>
+		<category><![CDATA[d3]]></category>
+		<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[criminality]]></category>
+		<category><![CDATA[fbi]]></category>
+		<category><![CDATA[gun]]></category>
+		<category><![CDATA[homicide]]></category>
+		<category><![CDATA[map]]></category>
+		<category><![CDATA[mortality]]></category>
+		<category><![CDATA[murders]]></category>
+		<category><![CDATA[usa]]></category>
+		<category><![CDATA[violence]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1530</guid>
+		<description><![CDATA[Click for interactive visualization I have created this map of every homicide in the USA using firearms for the latest year where detailed information was available. Every, that is from all the agencies that report homicides to the FBI, which is not an obligation &#8211; this is why the map lacks Florida data. In the <a class="read-more" href="/2012/12/29/gun-murders-in-america/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p><a href="http://bit.ly/gunviolence"><img src="http://jeromecukier.net/projects/crime/murders.png" width="800" height="513" class="aligncenter" /></a><br />
+<a href="http://bit.ly/gunviolence"><strong>Click for interactive visualization</strong></a></p>
+<p>I have created this map of every homicide in the USA using firearms for the latest year where detailed information was available. Every, that is from all the agencies that report homicides to the FBI, which is not an obligation &#8211; this is why the map lacks Florida data.<br />
+In the interactive version you can see how murders happen through the year and explore them according to several criteria that were available in the database. While large shooting sprees receive media attention, unfortunately there are thousands of cases each year in just about every community.<br />
+Technically this is my first foray with <a href="http://d3js.org/">d3.v3</a> and it uses two of its major new features, topoJSON for easy, lightweight maps, and hex binning to represent many individual events in one hexagon. Thanks to Mike Bostock for tutoring on that.</p>
+]]></content:encoded>
+			<wfw:commentRss>/2012/12/29/gun-murders-in-america/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Building the France Dorling cartogram</title>
+		<link>/2011/03/27/building-the-france-dorling-cartogram/</link>
+		<comments>/2011/03/27/building-the-france-dorling-cartogram/#respond</comments>
+		<pubDate>Sun, 27 Mar 2011 12:28:33 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[protovis]]></category>
+		<category><![CDATA[cartogram]]></category>
+		<category><![CDATA[dorling]]></category>
+		<category><![CDATA[france]]></category>
+		<category><![CDATA[map]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=796</guid>
+		<description><![CDATA[This is a follow-up to the previous post where I used a Dorling cartogram to show election results in France. So how did I come up with that? Step 1: the data Without data, there wouldn&#8217;t be much to plot, right? So the first order of business was to fetch the data, which is theoretically <a class="read-more" href="/2011/03/27/building-the-france-dorling-cartogram/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>This is a follow-up to <a href="http://www.jeromecukier.net/?p=764">the previous post</a> where I used a Dorling cartogram to show election results in France. So how did I come up with that?</p>
+<h2>Step 1: the data</h2>
+<p>Without data, there wouldn&#8217;t be much to plot, right? So the first order of business was to fetch the data, which is theoretically available from an <a href="http://elections.interieur.gouv.fr/CN2011/">official source.</a> Unfortunately, there is no way to download those results at once, instead they are presented in a myriad of formatted HTML pages &#8211; over 2000 in all. </br><br />
+I used <a href="http://www.google.com/search?q=wget">wget</a> to download them all. wget allows for recursive download, that is, you can download a page, and all the links from that page, etc. You can also specify the depth of the recursive download, which is a good idea in that case because there are lots of duplicates of that information on the server, so trying to get everything will take a couple of hours vs about 10 minutes.</p>
+<p>Once that&#8217;s done, I used python and <a href="http://www.crummy.com/software/BeautifulSoup/">Beautiful Soup</a> to turn the HTML pages into nice JSON objects. Fortunately the pages followed the same strict template, so I could run a relatively simple extraction script, like: look at the second HTML table of the page, get the number of registered voters who didn&#8217;t vote from the 2nd cell of the 2nd row, etc.<br />
+Once that was done I came up with 2 files: <a href="http://www.jeromecukier.net/wp-content/uploads/2011/03/votes.js">one which listed the aggregate votes per county</a> and per party, and another one which listed all the candidates, their affiliation and their votes. I ended up using only the 1st one, actually at an even more aggregated level, but I may use the second one for further work.</p>
+<h2>Next up: setting the geography</h2>
+<p>A dorling cartogram is really a kind of <a href="http://en.wikipedia.org/wiki/Force-based_algorithms_(graph_drawing)">force-directed layout graph</a> where the nodes represent geographical entities, which are initially positioned at a place corresponding to their geography, but which are then resized by a variable, and whose movement is subject to several forces: each node is linked to its original geographical neighbors, which attract each other, but also cannot intersect with other nodes, so it pushes back its neighbors.</p>
+<p>So for this to work I had to:
+<ul>
+<li>find the initial position of my geographical entities (French <em>départements</em>) and</li>
+<li>list their neighbors.</li>
+</ul>
+<p>To get the initial position I fetched the list of all French towns and their lon-lat coordinates which I averaged for each département. That gave me a workable proxy of the centroid of that departement. Note that I didn&#8217;t need anything very accurate at this stage, since nodes are going to be pushing each other anyway.<br />
+I listed the neighbors manually, since the number of départements is workable. Else, one possible way to do that from a shape file is look at every point of every shape and list all the entities that use it. If two entities use it they are neighbors. Again at this stage it&#8217;s not mandatory to be exhaustive. If an entity is surrounded by 8 others and we only use 4 the results will look sensibly the same.<br />
+Anyone who wants to create dorling cartograms for France can <a href="http://www.jeromecukier.net/wp-content/uploads/2011/03/francedorling.js">reuse the file</a>. </p>
+<h2>Putting it all together</h2>
+<p>The rest is standard protovis fare. There is an example which uses <a href="http://vis.stanford.edu/protovis/ex/cartogram.html">Dorling cartograms</a> which I used as a basis. I prepared my data files so that I could aggregate the stuff I needed at the level of the département (which is about 20 counties). I never really considered showing anything at the county level because except for looking up specific results it is never too relevant. For instance, in most places there are some agreement between parties which don&#8217;t all present candidates in order to favor their allies. </p>
+<p>An interesting parameter when building the visualization is choosing the constant by which to multiply the size of the nodes. If it is too high, the cartogram will look like a featureless cluster of circles. If it is too low, it will ressemble the map a lot, and circles won&#8217;t touch each other.</p>
+]]></content:encoded>
+			<wfw:commentRss>/2011/03/27/building-the-france-dorling-cartogram/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Protovis: analysis of the Map projections example</title>
+		<link>/2011/03/15/protovis-analysis-of-the-map-projections-example/</link>
+		<comments>/2011/03/15/protovis-analysis-of-the-map-projections-example/#respond</comments>
+		<pubDate>Tue, 15 Mar 2011 16:17:31 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[protovis]]></category>
+		<category><![CDATA[arrays]]></category>
+		<category><![CDATA[data]]></category>
+		<category><![CDATA[map]]></category>
+		<category><![CDATA[projections]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=573</guid>
+		<description><![CDATA[What is a map? before we start looking at the code it may be a good idea to think of the best way to represent a country. Countries are areas of land surrounded by borders, which are imaginary (or sometimes physical) lines going through a set of points. Some countries are made of one of <a class="read-more" href="/2011/03/15/protovis-analysis-of-the-map-projections-example/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<h2>What is a map?</h2>
+<p>before we start looking at the code it may be a good idea to think of the best way to represent a country.<br />
+Countries are areas of land surrounded by borders, which are imaginary (or sometimes physical) <strong>lines</strong> going through a set of <strong>points</strong>.<br />
+<a href="http://www.jeromecukier.net/wp-content/uploads/2011/03/square.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/03/square.png" alt="" title="square" width="200" height="200" class="aligncenter size-full wp-image-748" /></a></p>
+<p>Some countries are made of one of such surfaces, but many countries are not one contiguous territory (they may include islands for instance) so they could be made out of <strong>several disjointed polygons</strong>.<br />
+<a href="http://www.jeromecukier.net/wp-content/uploads/2011/03/square1.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/03/square1.png" alt="" title="square" width="200" height="200" class="aligncenter size-full wp-image-749" /></a>.</p>
+<p>Now let&#8217;s put on our protovis hat. Let&#8217;s suppose we want to draw a map where each country could be colored differently (choropleth). What kind of data structure should be use to represent that?<br />
+First there should be a sort of array of countries. Each country should be an item in that array, so they can be indexed and assigned an individual color and various data points.<br />
+Then, at the lowest level, we would be drawing polygons, which are treated as pv.Line in protovis. For each polygon, we would require an array of coordinate pairs. To draw a country, we would need a list (array) of those polygons. </p>
+<p>So the data structure we are looking at is: </p>
+<pre class="brush: jscript; title: ; notranslate">var world=[  // an array of countries
+    [ // an array of polygons
+        [ // an array of pairs of coordinates
+            [x0, y0], // coordinates of the first point
+            [x1, y1], // coordinates of the next one
+                ... 
+            [xn, yn],
+            [x0, y0]  // coordinates of the first point to close the polygon
+        ]
+       ...              // another polygon, but maybe not.
+   ], 
+   [                    // next country
+  ...
+   ]
+...
+]</pre>
+<h2>the map projections example</h2>
+<p><a href="http://www.jeromecukier.net/wp-content/uploads/2011/03/projections.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/03/projections.png" alt="" title="projections" width="600" height="360" class="aligncenter size-full wp-image-754" /></a></p>
+<p>Can be found <a href="http://vis.stanford.edu/protovis/ex/projection.html">here: </a> http://vis.stanford.edu/protovis/ex/projection.html</p>
+<pre class="brush: jscript; title: ; notranslate">/*
+ * A diverging color scale, using previously-computed quantiles of population
+ * densities; in the future, we might use a quantile scale here to do this
+ * automatically. Map colors based on www.ColorBrewer.org, by Cynthia A. Brewer,
+ * Penn State.
+ */
+var fill = pv.Scale.linear()
+    .domain(140, 650, 1900)
+    .range(&quot;#91bfdb&quot;, &quot;#ffffbf&quot;, &quot;#fc8d59&quot;);
+
+/* Precompute the country's population density and color. */
+countries.forEach(function(c) {
+  c.color = stats[c.code].area
+      ? fill(stats[c.code].pop / stats[c.code].area)
+      : &quot;#ccc&quot;; // unknown
+});
+
+var w = 860,
+    h = 3 / 5 * w,
+    geo = pv.Geo.scale(&quot;hammer&quot;).range(w, h);
+
+var vis = new pv.Panel()
+    .width(w)
+    .height(h);
+
+/* Countries. */
+vis.add(pv.Panel)
+    .data(countries)
+  .add(pv.Panel)
+    .data(function(c) c.borders)
+  .add(pv.Line)
+    .data(function(b) b)
+    .left(geo.x)
+    .top(geo.y)
+    .title(function(d, b, c) c.name)
+    .fillStyle(function(d, b, c) c.color)
+    .strokeStyle(function() this.fillStyle().darker())
+    .lineWidth(1)
+    .antialias(false);
+
+/* Latitude ticks. */
+vis.add(pv.Panel)
+    .data(geo.ticks.lat())
+  .add(pv.Line)
+    .data(function(b) b)
+    .left(geo.x)
+    .top(geo.y)
+    .strokeStyle(&quot;rgba(128,128,128,.3)&quot;)
+    .lineWidth(1)
+    .interpolate(&quot;cardinal&quot;)
+    .antialias(false);
+
+/* Longitude ticks. */
+vis.add(pv.Panel)
+    .data(geo.ticks.lng())
+  .add(pv.Line)
+    .data(function(b) b)
+    .left(geo.x)
+    .top(geo.y)
+    .strokeStyle(&quot;rgba(128,128,128,.3)&quot;)
+    .lineWidth(1)
+    .interpolate(&quot;cardinal&quot;)
+    .antialias(false);
+
+vis.render();
+</pre>
+<p>In addition there are two arrays of the following shape:<br />
+First, stats which is an associative arrays of associative arrays, and which associate each 2-letter country code with values of population and area:</p>
+<pre class="brush: jscript; light: true; title: ; notranslate">
+var stats = {
+'AG': {pop:83039, area:44},
+'DZ': {pop:32854159, area:238174},
+...
+'US': {pop:299846449, area:915896},
+...
+};
+</pre>
+<p>Then, countries, which is an array of associative arrays.</p>
+<pre class="brush: jscript; light: true; title: ; notranslate">
+var countries = [
+{code:'AG', name:&quot;Antigua and Barbuda&quot;, 
+borders:[ // an array of one or several areas, 
+  [ // an array of coordinates, 
+    [ // a pair of the form longitude, lattitude
+       ...
+    ]
+  ]
+]}
+...
+]</pre>
+<p>Now this second data structure looks a lot like the one we&#8217;ve drafted in the prologue. All the geographic information is tucked in a property called &#8220;borders&#8221;. The array has other properties for comfort.<br />
+Because the data is put in the right shape and order, this script can produce a very good map with a remarkable economy of code.<br />
+This example has been put together to showcase the various map projections of protovis (identity, mercator, and so on.). These projections have zero impact on the way data should be assembled for making maps, so we&#8217;ll just treat them as &#8220;magic&#8221;. </p>
+<pre class="brush: jscript; title: ; notranslate">/*
+ * A diverging color scale, using previously-computed quantiles of population
+ * densities; in the future, we might use a quantile scale here to do this
+ * automatically. Map colors based on www.ColorBrewer.org, by Cynthia A. Brewer,
+ * Penn State.
+ */
+var fill = pv.Scale.linear()
+    .domain(140, 650, 1900)
+    .range(&quot;#91bfdb&quot;, &quot;#ffffbf&quot;, &quot;#fc8d59&quot;);
+</pre>
+<p>This part creates a color scale which will return a color according to the value passed to it. The color returned will be somewhere between the ones specified in the range, depending on where the value is relatively to the values specified in the domain. So a value of 140 will result in a color of #91bfdb (bluish), it will go towards the grey as the value moves up to 650, and towards #fc8d59 (redish) as the value goes up to 1900.</p>
+<pre class="brush: jscript; first-line: 11; title: ; notranslate">/* Precompute the country's population density and color. */
+countries.forEach(function(c) {
+  c.color = stats[c.code].area
+      ? fill(stats[c.code].pop / stats[c.code].area)
+      : &quot;#ccc&quot;; // unknown
+});</pre>
+<p>As the remark says, this will precompute the country&#8217;s color once and for all.<br />
+The <a href="http://www.jeromecukier.net/?p=494">forEach() method</a> goes to every element of the countries array.<br />
+the c.color = statement will add a color key to each element of that array (which, as you may recall, already has values for the code, name and borders keys.<br />
+What it does is that is retrieves the country code of that element of countries, c.code, and uses that to find out whether we have an area value for that country code (this is stats[/c].area?).<br />
+If this is the case, we are going to compute the color that should be attributed to the country, by passing the population divided by the area to the color scale we just made. Else, we just use light grey.</p>
+<p>The next few lines are standard constants that will shape the vis.<br />
+Note however </p>
+<pre class="brush: jscript; first-line: 20; title: ; notranslate">geo = pv.Geo.scale(&quot;hammer&quot;).range(w, h)</pre>
+<p>This is a geographic scale, which will be used to convert longitudes and latitudes to X and Y coordinates on the screen.</p>
+<pre class="brush: jscript; first-line: 26; title: ; notranslate">/* Countries. */
+vis.add(pv.Panel)
+    .data(countries)
+  .add(pv.Panel)
+    .data(function(c) c.borders)
+  .add(pv.Line)
+    .data(function(b) b)
+    .left(geo.x)
+    .top(geo.y)
+    .title(function(d, b, c) c.name)
+    .fillStyle(function(d, b, c) c.color)
+    .strokeStyle(function() this.fillStyle().darker())
+    .lineWidth(1)
+    .antialias(false);</pre>
+<p>This is where it all happens.<br />
+First, we create a series of panels, one for each country. So, we pass the countries array as data.<br />
+Then, we are going to create another series of panels for every country, that is, with as many panels as there are independent areas in the country. For instance, if there are islands, we are going to need extra panels to represent them. If the country is one contiguous mass of land, there will be just one panel here.<br />
+This time, we use function(c) c.borders as data. That is, we go into the borders array.</p>
+<p>Finally, we are going to create a filled polygon for each of these independent areas. This is achieved by adding a pv.Line to the previous panels. Likewise, we use (function(b) b) as data, meaning that we go yet another level into the borders array. Now, we are accessing the pairs of longitude + latitude numbers.</p>
+<p>geo.x and geo.y convert this pair of numbers to X and Y coordinates on the screen.<br />
+For the next two lines, title and fillStyle, we need to go back to the country level.<br />
+so, we use a function of the form <a href="http://www.jeromecukier.net/?p=479">function(d,b,c)</a>. d is the current item (pair of longitude, latitude), b its parent (individual area) and c, its grand-parent (the country).<br />
+so, function(d,b,c) c.name retrieves the country name, and function(d,b,c) c.color retrieves the color we had computed for that country to begin with.</p>
+<p>For the color of the border, we wish to use a darker version of the fill color. This is what the this.fillStyle().darker() does.</p>
+<p>The rest of the vis is longitude and latitude ticks, using the built-in properties of the scale.</p>
+]]></content:encoded>
+			<wfw:commentRss>/2011/03/15/protovis-analysis-of-the-map-projections-example/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

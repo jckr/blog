@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="HandheldFriendly" content="True" />
+<meta name="MobileOptimized" content="320" />
+
+<title>d3: scales, and color. | jeromecukier.net</title>
+
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="/xmlrpc.php">
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Feed" href="/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Comments Feed" href="/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; d3: scales, and color. Comments Feed" href="/2011/08/11/d3-scales-and-color/feed/" />
+<!-- This site uses the Google Analytics by MonsterInsights plugin v7.0.5 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+<!-- Note: MonsterInsights is not currently configured on this site. The site owner needs to authenticate with Google Analytics in the MonsterInsights settings panel. -->
+<!-- No UA code set -->
+<!-- / Google Analytics by MonsterInsights -->
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/localhost:8888\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6.10"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='YoutubeShortcodeMargenn-css'  href='/wp-content/plugins/youtube-shortcode/youtube-shortcode.css?ver=4.6.10' type='text/css' media='all' />
+<link rel='stylesheet' id='casper-google-fonts-css'  href='//fonts.googleapis.com/css?family=Noto+Serif%3A400%2C700%2C400italic%7COpen+Sans%3A700%2C400&#038;ver=4.6.10' type='text/css' media='all' />
+<link rel='stylesheet' id='casper-style-css'  href='/wp-content/themes/casper/style.css?ver=4.6.10' type='text/css' media='all' />
+<script type='text/javascript' src='/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='d3: adding stuff. And, oh, understanding selections' href='/2011/08/09/d3-adding-stuff-and-oh-understanding-selections/' />
+<link rel='next' title='Experiencing the sexperience 1000' href='/2011/09/05/experiencing-the-sexperience-1000/' />
+<meta name="generator" content="WordPress 4.6.10" />
+<link rel="canonical" href="/2011/08/11/d3-scales-and-color/" />
+<link rel='shortlink' href='http://wp.me/p-gy' />
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2Flocalhost%3A8888%2F2011%2F08%2F11%2Fd3-scales-and-color%2F" />
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2Flocalhost%3A8888%2F2011%2F08%2F11%2Fd3-scales-and-color%2F&#038;format=xml" />
+
+   	<style type="text/css">
+					.blog-title a, .blog-description, .social-icons a { color: #ffffff; }
+		
+						                
+		
+							.main-navigation a { color: ; }
+		                                            </style>
+    		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+
+<body class="single single-post postid-1026 single-format-standard group-blog">
+
+<header id="masthead" role="banner" class="site-head site-header" >
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+        <div>
+            <h1 class="menu-toggle">
+                <a class="icon-bars" href="#">
+                    <span class="hidden">Menu</span>
+                </a>
+            </h1>
+            <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+            <div class="menu"><ul><li ><a href="/">Home</a></li><li class="page_item page-item-6"><a href="/about/">About</a></li><li class="page_item page-item-1073"><a href="/data-stories/">Data with stories workshop &#8211; examples</a></li><li class="page_item page-item-437"><a href="/proofs-of-concept/">Private section</a></li><li class="page_item page-item-2"><a href="/sample-page/">Sample Page</a></li></ul></div>
+        </div>
+    </nav><!-- #site-navigation -->
+
+    <div class="vertical-row">
+        <div class="vertical">
+            <div class="site-head-content inner">
+                
+                <div class="social-icons">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                    </div>
+                <h1 class="blog-title"><a class="blog-logo" href='/' rel='home'>jeromecukier.net</a></h1>
+                <h2 class="blog-description">Just another WordPress site</h2>
+            </div>
+        </div>
+    </div>
+</header><!-- #masthead -->
+
+<main id="content" class="content" role="main">
+
+
+		
+			<article id="post-1026" class="post-1026 post type-post status-publish format-standard hentry category-d3 category-protovis category-tips tag-color tag-color-palettes tag-d3 tag-hsl tag-linear tag-logarithmic tag-ordinal tag-power tag-protovis tag-quantitative tag-rgb tag-scales tag-tutorial">
+    <header class="post-header">
+                	<span class="post-meta">
+        	    <span class="posted-on"><a href="/2011/08/11/d3-scales-and-color/" rel="bookmark"><time class="entry-date published" datetime="2011-08-11T12:03:21+00:00">August 11, 2011</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> | <a href="/category/d3/" rel="category tag">d3</a>, <a href="/category/protovis/" rel="category tag">protovis</a>, <a href="/category/tips/" rel="category tag">tips</a> in <a href="/tag/color/" rel="tag">color</a>, <a href="/tag/color-palettes/" rel="tag">color palettes</a>, <a href="/tag/d3/" rel="tag">d3</a>, <a href="/tag/hsl/" rel="tag">hsl</a>, <a href="/tag/linear/" rel="tag">linear</a>, <a href="/tag/logarithmic/" rel="tag">logarithmic</a>, <a href="/tag/ordinal/" rel="tag">ordinal</a>, <a href="/tag/power/" rel="tag">power</a>, <a href="/tag/protovis/" rel="tag">protovis</a>, <a href="/tag/quantitative/" rel="tag">quantitative</a>, <a href="/tag/rgb/" rel="tag">rgb</a>, <a href="/tag/scales/" rel="tag">scales</a>, <a href="/tag/tutorial/" rel="tag">tutorial</a>        	</span>
+		        <h1 class="post-title"><a href="/2011/08/11/d3-scales-and-color/" rel="bookmark">d3: scales, and color.</a></h1>
+        
+    </header>
+    		<section class="post-content">
+		    <p>In <a href="http://mbostock.github.com/protovis/docs/scale.html">protovis</a>, scales were super-useful in just about everything. That much hasn&#8217;t changed in d3, even though <a href="https://github.com/mbostock/d3/wiki/Scales">d3.scale</a> is a bit different from pv.Scale. (do note that <strong>d3.scale</strong> is in lowercase for starters).</p>
+<h2>Scales: the main idea</h2>
+<p>Simply put: scales transform a number in a certain interval (called the <em>domain</em>) into a number in another interval (called the <em>range</em>).<br />
+<img src="http://www.jeromecukier.net/wp-content/uploads/2011/08/d3scale1.png" alt="an example of how scales work" /><br />
+For instance, let&#8217;s suppose you <em>know</em> your data is always over 20 and always below 80. You would like to plot it, say, in a bar chart, which can be only 120 pixels tall.<br />
+You could, obviously, do the math:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">.attr(&quot;height&quot;, function(d) {return (d-20)*2;})</pre>
+<p>But what if you suddenly have more or less space? or your data changes? you&#8217;d have to go back to the entrails of your code and make the change. This is very error prone. So instead, you can use a scale: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">var y=d3.scale.linear().domain(20,80).range(0,120);
+...
+.attr(&quot;height&quot;, y)</pre>
+<p>this is much simpler, elegant, and easy to maintain. Oh, and the latter notation is equivalent to
+<pre class="brush: jscript; title: ; notranslate" title="">.attr(&quot;height&quot;, function(d) {return y(d);})</pre>
+<p>&#8230; only more legible and shorter.<br />
+And, there are tons of possibility with scales. </p>
+<h2>Fun with scales</h2>
+<p>In d3, quantitative scales can be of several types: </p>
+<ul>
+<li>linear scales (including <em>quantize</em> and <em>quantile</em> scales,</li>
+<li>logarithmic scales,</li>
+<li>power scales (including <em>square root</em> scales)</li>
+</ul>
+<p>While they behave differently, they have a lot in common. </p>
+<h3>Domain and range</h3>
+<p>For all scales, with the exception of quantize and quantile scales which are a bit different, domain and range work the same.<br />
+First, note that <strong>unlike in protovis</strong>, domain and range take an array as argument. Compare:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">var y=pv.Scale.linear().range(20,60).domain(0,120);
+var y=d3.scale.linear().range([20,60]).domain([0,120]);</pre>
+<p>This is because <strong>contrary to protovis</strong>, where domain could be a whole dataset, in d3, domain contains the bounds of the interval that is going to be transformed.<br />
+Typically, this is two numbers. If this is more, we are talking about a polypoint scale: there are as many segments in the intervals as there are numbers in the domain (minus one). The range must have as many numbers, and so as many segments. When using the scale, if a number is in the n-th segment of the domain, it is transformed into a number in the n-th segment of the range.<br />
+<img src="http://www.jeromecukier.net/wp-content/uploads/2011/08/d3scaleMultipoint.png" alt="illustration of a multipoint scale" /><br />
+With this example, 30 finds itself in the first segment of the domain. So it&#8217;s transformed to a value in the first segment of the range. 60, however, is in the 2nd segment, so it&#8217;s transformed into a value in the 2nd segment of the range.<br />
+Also, bounds of domain and range need not be numbers, as long as they can be converted to numbers. One useful examples are colors. Color names can be used as range, for instance, to create <em>color ramps</em>:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">var ramp=d3.scale.linear().domain([0,100]).range([&quot;red&quot;,&quot;blue&quot;]);</pre>
+<p>This will transform any value betwen 0 and 100 into the corresponding color between red and blue.</p>
+<h3>Clamping</h3>
+<p>What happends if the scale is asked to process a number outside of the domain? That&#8217;s what clamping controls. If it is set, then the bounds of the range are the minimum and maximum value that can be returned by the scale. Else, the same transformation applies to all numbers, whether they fall within the domain or not.<br />
+<img src="http://www.jeromecukier.net/wp-content/uploads/2011/08/d3clamping.png" alt="Clamping example" /><br />
+Here, with clamping, the result of the linear transformation is 120, but without it, it&#8217;s 160. </p>
+<pre class="brush: jscript; title: ; notranslate" title="">var clamp=d3.scale.linear().domain([20,80]).range([0,120]);
+clamp(100); // 160
+clamp.clamp(true);
+clamp(100); // 120</pre>
+<h3>Scales and nice numbers</h3>
+<p>More often than not, the bounds of the domain and/or those of the ranges will be calculated. So, chances are they won&#8217;t be round numbers, or numbers a human would like. Scales, however, come with a bunch of method to address that. d3 keeps in mind that scales are often used to position marks along an axis.</p>
+<h4>.nice()</h4>
+<p>When applied to a scale, the nice method expends the domain to &#8220;nicer&#8221; numbers. You wouldn&#8217;t want your axis to start at -2.347 and end at 7.431, right?<br />
+So, there. </p>
+<pre class="brush: jscript; title: ; notranslate" title="">var data=[-2.347, 4, 5.23,-1.234,6.234,7.431]; // or whatever.
+var y=d3.scale.linear().range([0,120]);
+y.domain([d3.min(data), d3.max(data)]); // domain takes bounds as arguments, not all numbers
+y.domain() // [-2.347, 7.431];
+y.nice() // [-3, 8]</pre>
+<h4>.ticks(n)</h4>
+<p>Given a domain, and a number n (which, <strong>contrary to protovis, is mandatory in d3</strong>), the ticks method will split your domain in (more or less) n convenient, human-readable values, and return an array of these values. This is especially useful to label axes. Passing these values to the scale allows them to position ticks nicely on an axis. </p>
+<pre class="brush: jscript; title: ; notranslate" title="">var y=d3.scale.linear([20,80]).range([0,120]);
+...
+var ticks=axis.selectAll(&quot;line&quot;)
+  .data(y.ticks(4)) // 20, 40, 60 and 80
+  .enter().append(&quot;svg:line&quot;);
+ticks
+  .attr(&quot;x1&quot;,0).attr(&quot;x2&quot;,5)
+  .attr(&quot;y1&quot;,y).attr(&quot;y2&quot;,y) // short and simple. 
+  .attr(&quot;stroke&quot;,&quot;black&quot;);</pre>
+<h4>.rangeRound()</h4>
+<p>If used instead of .range(), this will guarantee that the output of the scales are integers, which is better to position marks on the screen with pixel precision than numbers with decimals. </p>
+<h4>.invert()</h4>
+<p>The invert function turns the scale upside down: for one given number in the range, it returns which number of the domain would have been transformed into that number.<br />
+For instance: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">var y=d3.scale.linear([20,80]).range([0,120]);
+y(50); // 60
+y.invert(60); // 50</pre>
+<p>That&#8217;s quite useful, for instance, when a user mouses over a chart, and you would like to know to what value the mouse coordinates correspond. </p>
+<h3>Power scales and log scales</h3>
+<p>The <em>linear</em>scale is a function of the form y=ax+b which works for both ends of the domain and range. In the example we&#8217;ve used most often until now, this function is really f(x): y=2x-40.<br />
+Power and logarithm scales work the same, only we are looking for a function of the form y=ax<sup>k</sup>+b, or y=a.log(x)+b.<br />
+For the power scales, you can specify an exponent (k) with the .exponent() method. For instance, if we specify an exponent of 2, here is what the scale would look like:<br />
+<img src="http://www.jeromecukier.net/wp-content/uploads/2011/08/d3scalePower.png" alt="an example of a power scale" /><br />
+The equation is now f(x): y=x²/50-8. So 20 still becomes 0 and 80 still becomes 120, but other than that the values at the beginning of the domain would be lower than with the linear scale, and those at the end of the scale will be higher.<br />
+For convenience, d3 includes a d3.scale.sqrt() (the square root scale) so you never have to type d3.scale.pow.exponent(0.5) in full.<br />
+Also note that if you are using a log scale, you <strong>cannot</strong> have 0 in the domain. </p>
+<h3>Quantize and quantile</h3>
+<p>quantize and quantile are specific linear scales.<br />
+quantize works with a discrete, rather than continuous, range: in other terms, the output of quantize can only take a certain number of values.<br />
+For instance: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">var q=d3.scale.quantize().domain([0,10]).range([0,2,8]); 
+q(0); // 0
+q(3); // 0
+q(3.33); // 0
+q(3.34); // 2
+q(5); // 2
+q(6.66); // 2
+q(6.67); // 8
+q(8); // 8
+q(1000); // 8</pre>
+<p>quantile on the other hand matches values in the domain (which, this time, is the full dataset) with their respective quantile. The number of quantiles is specified by the range.<br />
+For instance: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+var q=d3.scale.quantile().domain([0,1,5,6,2,4,6,2,4,6,7,8]).range([0,100]);
+q.quantiles(); // [4.5], only one quantile - the median
+q(0); // 0
+q(4); // 0
+q(4.499); // 0
+q(4.5); // 100 - over the median
+q(5); // 100
+q(10000); // 100
+q.range([0,25,50,75,100]);
+q.quantiles(); // [2, 4, 5.6, 6];
+q(0); // 0 
+q(2); // 25 - greater than the first quantile limit
+q(3); // 25
+q(4); // 50
+q(6); // 100
+q(10000); // 100</pre>
+<h3>Ordinal scales</h3>
+<p>All the scales we&#8217;ve seen so far have been quantitative, but how about ordinal scales?<br />
+The big difference is that ordinal scales have <strong>a discrete domain</strong>, in other words, they turn a limited number of values into something else, without caring for what&#8217;s between those values.<br />
+Ordinal scales are very useful for positioning marks along an x axis. Let&#8217;s suppose you have 10 bars to position for your bar chart, each corresponding to a category, a month or whatever.<br />
+For instance: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+var x=d3.scale.ordinal()
+  .domain([&quot;Sunday&quot;,&quot;Monday&quot;,&quot;Tuesday&quot;,&quot;Wednesday&quot;,&quot;Thursday&quot;,&quot;Friday&quot;,&quot;Saturday&quot;]) // 7 items
+  .rangeBands([0,120]);
+x(&quot;Tuesday&quot;); // 34.285714285714285
+</pre>
+<p>There are 3 possibilites for range. Two are similar: the .rangePoints() and .rangeBands() methods, which both work with an array of two numbers &#8211; i.e. .rangeBands([0,120]). The last one is to specify all values in the range with .range(). </p>
+<h4>rangePoints() and rangeBands()</h4>
+<p>With .rangePoints(<em>interval</em>), d3 fits n points within the interval, n being the number of categories in the domain. In that case, the value of the first point is the beginning of the interval, that of the last point is the end of the interval.<br />
+With .rangeBands(<em>interval</em>), d3 fit n <em>bands</em> within the interval. Here, the value of the last item in the domain is less than the upper bound of the interval.<br />
+Those methods <strong>replace the protovis methods</strong> .split() and .splitBanded().<br />
+<img src="http://www.jeromecukier.net/wp-content/uploads/2011/08/d3ordinalRange.png" alt="difference between rangeBands and rangePoints" /><br />
+This chart illustrates the difference between using rangeBands and rangePoints. </p>
+<pre class="brush: jscript; title: ; notranslate" title="">var x=d3.scale.ordinal()
+  .domain([&quot;Sunday&quot;,&quot;Monday&quot;,&quot;Tuesday&quot;,&quot;Wednesday&quot;,&quot;Thursday&quot;,&quot;Friday&quot;,&quot;Saturday&quot;]);
+x.rangePoints([0,120]);
+x(&quot;Saturday&quot;); // 120
+x.rangeBands([0,120]);
+x(&quot;Saturday&quot;); // 102.85714285714286
+x(&quot;Saturday&quot;)+x.rangeBand(); // 120</pre>
+<h4>the range method</h4>
+<p>Finally, we can also use the .range method with several values.<br />
+We can specify the domain, or not. Then, if we use such a scale on a value which is not part of the domain (or if the domain is left empty), this value is added to the domain. If there are <em>n</em> values in the range, and more in the domain, then the n+1<sup>th</sup> value of the doamin is matched with the 1st value in the range, etc.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">var x=d3.scale.ordinal().range([&quot;hello&quot;, &quot;world&quot;]); 
+x.domain(); // [] - empty still.
+x(0); // &quot;hello&quot;
+x(1); // &quot;world&quot;
+x(2); // &quot;hello&quot;
+x.domain(); // [0,1,2]
+</pre>
+<h4>Color palettes</h4>
+<p><strong>Unlike in protovis</strong>, which had them under pv.Colors &#8211; i.e. pv.Colors.category10(), in d3, built-in color palettes can be accessed through scales. Well, even in protovis they had been ordinal scales all along, only not called this way.<br />
+There are <a href="https://github.com/mbostock/d3/wiki/Ordinal-Scales#category10">4 built-in color palette</a> in protovis: d3.scale.category10(), d3.scale.category20(), d3.scale.category20b(), and d3.scale.category20c().</p>
+<p>A palette like d3.scale.category10() works exactly like an ordinal scale. </p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+var p=d3.scale.category10();
+var r=p.range(); // [&quot;#1f77b4&quot;, &quot;#ff7f0e&quot;, &quot;#2ca02c&quot;, &quot;#d62728&quot;, &quot;#9467bd&quot;, 
+                      // &quot;#8c564b&quot;, &quot;#e377c2&quot;, &quot;#7f7f7f&quot;, &quot;#bcbd22&quot;, &quot;#17becf&quot;]
+var s=d3.scale.ordinal().range(r); 
+p.domain(); // [] - empty
+s.domain(); // [] - empty, see above
+p(0); // &quot;#1f77b4&quot;
+p(1); // &quot;#ff7f0e&quot;
+p(2); // &quot;#2ca02c&quot;
+p.domain(); // [0,1,2];
+s(0); // &quot;#1f77b4&quot;
+s(1); // &quot;#ff7f0e&quot;
+s(2); // &quot;#2ca02c&quot;
+s.domain(); // [0,1,2];</pre>
+<p>It&#8217;s noteworthy that in d3, color palette return strings, not pv.Color objects like in protovis.<br />
+Also: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+d3.scale.category10(1); // this doesn't work
+d3.scale.category10()(1); // this is the way.</pre>
+<h2>Colors</h2>
+<p>Compared to protovis, d3.color is simpler. The main reason is that protovis handled color and transparency together with the pv.Color object, whereas in SVG, those two are distinct attributes: you handle the background color of a filled object with <em>fill</em>, its transparency with <em>opacity</em>, the color of the outline with <em>stroke</em> and the transparency of that color with <em>stroke-opacity</em>. </p>
+<p>d3 has two color objects: d3_Rgb and d3_Hsl, which describe colors in the two of the most popular color spaces: red/green/blue, and hue/saturation/light. </p>
+<p>With d3.color, you can make operations on such objects, like converting colors between various formats, or make colors lighter or darker.</p>
+<p>d3.rgb(<em>color</em>), and d3.hsl(<em>color</em>) create such objects.<br />
+In this context, <em>color</em> can be (straight from <a href="https://github.com/mbostock/d3/wiki/Colors">the manual</a>):</p>
+<ul>
+<li>rgb decimal &#8211; &#8220;rgb(255,255,255)&#8221;</li>
+<li>hsl decimal &#8211; &#8220;hsl(120,50%,20%)&#8221;</li>
+<li>rgb hexadecimal &#8211; &#8220;#ffeeaa&#8221;</li>
+<li>rgb shorthand hexadecimal &#8211; &#8220;#fea&#8221;</li>
+<li>named &#8211; &#8220;red&#8221;, &#8220;white&#8221;, &#8220;blue&#8221;</li>
+</ul>
+<p>Once you have that object, you can make it brighter or darker with the appropriate method.<br />
+You can use .toString() to get it back in rgb hexadecimal format (or hsl decimal), and .rgb() or .hsl() to convert it to the object in the other color space. </p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+var c=d3.rgb(&quot;violet&quot;) // d3_Rgb object
+c.toString(); // &quot;#ee82ee&quot;
+c.darker().toString(); // &quot;#a65ba6&quot;
+c.darker(2).toString(); // &quot;#743f74&quot; - even darker
+c.brighter().toString();// &quot;ffb9ff&quot;
+c.brighter(0.1).toString(); // &quot;#f686f6&quot; - only slightly brighter
+c.hsl(); // d3_Hsl object
+c.hsl().toString() // &quot;hsl(300, 76, 72)&quot;</pre>
+		    			<div class="clear">&nbsp;</div>
+		</section>
+	
+	<footer class="post-footer">
+
+	    <section class="author">
+	    	<img alt='' src='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=100&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=200&amp;d=mm&amp;r=g 2x' class='avatar avatar-100 photo' height='100' width='100' />	        <h4>jerome</h4>
+	        <p></p>
+			<div class="clear">&nbsp;</div>
+	    </section>
+	</footer>
+</article><!-- #post-## -->
+
+				<nav class="pagination navigation post-navigation" role="navigation">
+		<div class="nav-links">
+			<div class="older-posts"><a href="/2011/08/09/d3-adding-stuff-and-oh-understanding-selections/" rel="prev">d3: adding stuff. And, oh, understanding selections <span class="meta-nav">&rarr;</span></a></div>				<div class="page-number">&bull;</div>
+				<div class="newer-posts"><a href="/2011/09/05/experiencing-the-sexperience-1000/" rel="next"><span class="meta-nav">&larr;</span> Experiencing the sexperience 1000</a></div>		</div><!-- .nav-links -->
+	</nav><!-- .navigation -->
+	
+			
+<div id="comments" class="comments-area">
+
+	
+			<h2 class="comments-title">
+			21 thoughts on &ldquo;<span>d3: scales, and color.</span>&rdquo;		</h2>
+
+		
+		<ol class="comment-list">
+					<li id="comment-178" class="comment even thread-even depth-1">
+			<article id="div-comment-178" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://1.gravatar.com/avatar/4e20a6d743890fc53147b4896c98cbc6?s=32&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4e20a6d743890fc53147b4896c98cbc6?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">NGUYEN Chien Cong</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2011/08/11/d3-scales-and-color/#comment-178">
+							<time datetime="2011-08-17T01:38:05+00:00">
+								August 17, 2011 at 1:38 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Very Nice article. Thanks</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2011/08/11/d3-scales-and-color/?replytocom=178#respond' onclick='return addComment.moveForm( "div-comment-178", "178", "respond", "1026" )' aria-label='Reply to NGUYEN Chien Cong'>Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-179" class="comment odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-179" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://2.gravatar.com/avatar/b8e50edf6eec966a819939a066e1672b?s=32&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b8e50edf6eec966a819939a066e1672b?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">Ilya Boyandin</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2011/08/11/d3-scales-and-color/#comment-179">
+							<time datetime="2011-11-04T18:58:08+00:00">
+								November 4, 2011 at 6:58 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>That&#8217;s a very useful addition to the API docs. Thanks a lot!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2011/08/11/d3-scales-and-color/?replytocom=179#respond' onclick='return addComment.moveForm( "div-comment-179", "179", "respond", "1026" )' aria-label='Reply to Ilya Boyandin'>Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-180" class="pingback even thread-even depth-1">
+			<div class="comment-body">
+				Pingback: <a href='http://blog.derhess.de/2012/02/21/my-most-important-twitter-messages-13/' rel='external nofollow' class='url'>My most important Twitter Messages #13 - Flash, Programming, Interaction | der hess</a> 			</div>
+<ol class="children">
+		<li id="comment-182" class="comment byuser comment-author-jerome bypostauthor odd alt depth-2">
+			<article id="div-comment-182" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://www.jeromecukier.net/' rel='external nofollow' class='url'>jerome</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2011/08/11/d3-scales-and-color/#comment-182">
+							<time datetime="2012-03-09T15:31:30+00:00">
+								March 9, 2012 at 3:31 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>it&#8217;s possible to change the interpolator used for scales by just any  function.<br />
+the interpolator is the function that does the actual conversion. </p>
+<p>this is the equivalent to a linear interpolator &#8211;<br />
+.interpolate(function(a,b) {return function(t) {return a+t*(b-a);};})</p>
+<p>where a and b are minimum and maximum of the range, and t is the number to be converted, normalized to [0,1].<br />
+(actually, the default interpolator is more powerful, because it can also work with more than just numbers, but that&#8217;s the idea).</p>
+<p>so, this can work with just any function that can turn an interval and a number into another value.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2011/08/11/d3-scales-and-color/?replytocom=182#respond' onclick='return addComment.moveForm( "div-comment-182", "182", "respond", "1026" )' aria-label='Reply to jerome'>Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-181" class="comment even thread-odd thread-alt depth-1">
+			<article id="div-comment-181" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://1.gravatar.com/avatar/1fe2e1eec94159c8d5bdf2abe4df7d7c?s=32&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/1fe2e1eec94159c8d5bdf2abe4df7d7c?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">S. Carvalho</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2011/08/11/d3-scales-and-color/#comment-181">
+							<time datetime="2012-03-08T22:39:18+00:00">
+								March 8, 2012 at 10:39 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Any ideas on how one would make a log based 2 scale in d3? In fact any tips on making axes without a scale if in fact it&#8217;s not possible to do log based 2 would be really helpful!<br />
+Thanks,<br />
+Shimona</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2011/08/11/d3-scales-and-color/?replytocom=181#respond' onclick='return addComment.moveForm( "div-comment-181", "181", "respond", "1026" )' aria-label='Reply to S. Carvalho'>Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-183" class="pingback odd alt thread-even depth-1">
+			<div class="comment-body">
+				Pingback: <a href='http://www.pearltrees.com/licth/d3-js/id4667412#pearl42460243&#038;show=reveal,6' rel='external nofollow' class='url'>d3.js | Pearltrees</a> 			</div>
+</li><!-- #comment-## -->
+		<li id="comment-184" class="comment even thread-odd thread-alt depth-1">
+			<article id="div-comment-184" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://1.gravatar.com/avatar/7b05922f79b58c09afa65322a3997642?s=32&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/7b05922f79b58c09afa65322a3997642?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://www.gettingcirrius.com/' rel='external nofollow' class='url'>Richard</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2011/08/11/d3-scales-and-color/#comment-184">
+							<time datetime="2012-10-14T00:08:37+00:00">
+								October 14, 2012 at 12:08 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Probably one of the best posts on d3, and certainly better than 90% of the blog posts on the internet.  Thank you so much, especially for the diagrams (a picture&#8217;s worth more than 1,000 words of API documentation).</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2011/08/11/d3-scales-and-color/?replytocom=184#respond' onclick='return addComment.moveForm( "div-comment-184", "184", "respond", "1026" )' aria-label='Reply to Richard'>Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-185" class="comment odd alt thread-even depth-1">
+			<article id="div-comment-185" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://2.gravatar.com/avatar/b146f5bd189b1329768ed131eb7d5e4c?s=32&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b146f5bd189b1329768ed131eb7d5e4c?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">Sandor</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2011/08/11/d3-scales-and-color/#comment-185">
+							<time datetime="2012-10-27T15:00:11+00:00">
+								October 27, 2012 at 3:00 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Jerome, what you&#8217;ve created here is the one of the best articles on d3 i&#8217;ve met so far.<br />
+Thank you for sharing this to the world!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2011/08/11/d3-scales-and-color/?replytocom=185#respond' onclick='return addComment.moveForm( "div-comment-185", "185", "respond", "1026" )' aria-label='Reply to Sandor'>Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-186" class="comment even thread-odd thread-alt depth-1">
+			<article id="div-comment-186" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://0.gravatar.com/avatar/344ab5c3ed6902d91f2e3db7f56ef7ed?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/344ab5c3ed6902d91f2e3db7f56ef7ed?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">Mitch</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2011/08/11/d3-scales-and-color/#comment-186">
+							<time datetime="2012-11-23T02:49:34+00:00">
+								November 23, 2012 at 2:49 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Finally &#8211; ordinal scales explained.<br />
+Thank you Jerome</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2011/08/11/d3-scales-and-color/?replytocom=186#respond' onclick='return addComment.moveForm( "div-comment-186", "186", "respond", "1026" )' aria-label='Reply to Mitch'>Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-187" class="comment odd alt thread-even depth-1 parent">
+			<article id="div-comment-187" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://1.gravatar.com/avatar/7128c3ba79c4a2b633da934fc062f281?s=32&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/7128c3ba79c4a2b633da934fc062f281?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">mg1075</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2011/08/11/d3-scales-and-color/#comment-187">
+							<time datetime="2013-01-23T20:50:03+00:00">
+								January 23, 2013 at 8:50 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Minor edit on ordinal scales section:<br />
+remove semicolon appearing between end of .domain and beginning of .range.<br />
+var x=d3.scale.ordinal()<br />
+  .domain([&#8220;Sunday&#8221;,&#8221;Monday&#8221;,&#8221;Tuesday&#8221;,&#8221;Wednesday&#8221;,&#8221;Thursday&#8221;,&#8221;Friday&#8221;,&#8221;Saturday&#8221;]) // 7 items<br />
+  .rangeBands([0,120]);</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2011/08/11/d3-scales-and-color/?replytocom=187#respond' onclick='return addComment.moveForm( "div-comment-187", "187", "respond", "1026" )' aria-label='Reply to mg1075'>Reply</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-188" class="comment byuser comment-author-jerome bypostauthor even depth-2">
+			<article id="div-comment-188" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://www.jeromecukier.net/' rel='external nofollow' class='url'>jerome</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2011/08/11/d3-scales-and-color/#comment-188">
+							<time datetime="2013-01-23T21:56:40+00:00">
+								January 23, 2013 at 9:56 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>thanks for your vigilance! corrected 🙂</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2011/08/11/d3-scales-and-color/?replytocom=188#respond' onclick='return addComment.moveForm( "div-comment-188", "188", "respond", "1026" )' aria-label='Reply to jerome'>Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-189" class="comment odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-189" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://1.gravatar.com/avatar/7128c3ba79c4a2b633da934fc062f281?s=32&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/7128c3ba79c4a2b633da934fc062f281?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">mg1075</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2011/08/11/d3-scales-and-color/#comment-189">
+							<time datetime="2013-01-28T14:54:16+00:00">
+								January 28, 2013 at 2:54 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Thank you for all the work on these d3 blog posts!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2011/08/11/d3-scales-and-color/?replytocom=189#respond' onclick='return addComment.moveForm( "div-comment-189", "189", "respond", "1026" )' aria-label='Reply to mg1075'>Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-190" class="comment even thread-even depth-1">
+			<article id="div-comment-190" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://0.gravatar.com/avatar/6fe9dfe819457b478646f170e1d746a3?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/6fe9dfe819457b478646f170e1d746a3?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">Thomas</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2011/08/11/d3-scales-and-color/#comment-190">
+							<time datetime="2013-03-27T22:20:50+00:00">
+								March 27, 2013 at 10:20 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Wow! After reading  a few d3 articles and the d3 api docs and not quite understanding domain and scales, this succinct article made it click.</p>
+<p>Thank you so much!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2011/08/11/d3-scales-and-color/?replytocom=190#respond' onclick='return addComment.moveForm( "div-comment-190", "190", "respond", "1026" )' aria-label='Reply to Thomas'>Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-191" class="pingback odd alt thread-odd thread-alt depth-1">
+			<div class="comment-body">
+				Pingback: <a href='http://smartagsw.com/?p=24' rel='external nofollow' class='url'>D3 &#8211; formation &#8211; cours 1 | KenstoK D3</a> 			</div>
+</li><!-- #comment-## -->
+		<li id="comment-197" class="comment even thread-even depth-1">
+			<article id="div-comment-197" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://2.gravatar.com/avatar/ef5e7c7efcc09ae691eff1007480a120?s=32&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/ef5e7c7efcc09ae691eff1007480a120?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://www.fabiobiondi.com/' rel='external nofollow' class='url'>Fabio</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2011/08/11/d3-scales-and-color/#comment-197">
+							<time datetime="2014-07-18T19:05:44+00:00">
+								July 18, 2014 at 7:05 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Great article. Very well explained</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2011/08/11/d3-scales-and-color/?replytocom=197#respond' onclick='return addComment.moveForm( "div-comment-197", "197", "respond", "1026" )' aria-label='Reply to Fabio'>Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-198" class="comment odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-198" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://1.gravatar.com/avatar/1fee8c40b3fa9eb9e734104a28cb90ca?s=32&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/1fee8c40b3fa9eb9e734104a28cb90ca?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://twitter.com/Dj3bbZ' rel='external nofollow' class='url'>Khalid Jebbari (@Dj3bbZ)</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2011/08/11/d3-scales-and-color/#comment-198">
+							<time datetime="2014-12-01T16:36:52+00:00">
+								December 1, 2014 at 4:36 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>It&#8217;s almost 2015, and your article is still very useful. Thanks !</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2011/08/11/d3-scales-and-color/?replytocom=198#respond' onclick='return addComment.moveForm( "div-comment-198", "198", "respond", "1026" )' aria-label='Reply to Khalid Jebbari (@Dj3bbZ)'>Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-199" class="comment even thread-even depth-1">
+			<article id="div-comment-199" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://2.gravatar.com/avatar/e27f98b70397fc67b1de95cf51d22694?s=32&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/e27f98b70397fc67b1de95cf51d22694?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='https://plus.google.com/102070267334484873829' rel='external nofollow' class='url'>kevinR</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2011/08/11/d3-scales-and-color/#comment-199">
+							<time datetime="2015-02-12T22:27:06+00:00">
+								February 12, 2015 at 10:27 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Never one to miss a parade: I too found this article very helpful; certainly in my top 5 of most useful d3 posts.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2011/08/11/d3-scales-and-color/?replytocom=199#respond' onclick='return addComment.moveForm( "div-comment-199", "199", "respond", "1026" )' aria-label='Reply to kevinR'>Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-205" class="comment odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-205" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://1.gravatar.com/avatar/a2c05874513618e95740013fabe8000c?s=32&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/a2c05874513618e95740013fabe8000c?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='https://www.facebook.com/app_scoped_user_id/10154232172982953/' rel='external nofollow' class='url'>Pierre Dechery</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2011/08/11/d3-scales-and-color/#comment-205">
+							<time datetime="2016-06-03T18:01:20+00:00">
+								June 3, 2016 at 6:01 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Indeed this is very helpful and a strong add-on to the official documentation. Thank you!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2011/08/11/d3-scales-and-color/?replytocom=205#respond' onclick='return addComment.moveForm( "div-comment-205", "205", "respond", "1026" )' aria-label='Reply to Pierre Dechery'>Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-207" class="pingback even thread-even depth-1">
+			<div class="comment-body">
+				Pingback: <a href='http://daftsolutions.co.uk/wp/2016/08/25/22/' rel='external nofollow' class='url'>Qlikview Extension in a few easy steps and with an improved template &#8211; Qlik and Dirty</a> 			</div>
+</li><!-- #comment-## -->
+		<li id="comment-208" class="pingback odd alt thread-odd thread-alt depth-1">
+			<div class="comment-body">
+				Pingback: <a href='http://qlikanddirty.com/2016/08/25/step1-creating-a-basic-d3-chart/' rel='external nofollow' class='url'>Step1 &#8211; Creating a basic D3 chart &#8211; Qlik and Dirty</a> 			</div>
+</li><!-- #comment-## -->
+		<li id="comment-209" class="pingback even thread-even depth-1">
+			<div class="comment-body">
+				Pingback: <a href='http://qlikanddirty.com/2016/09/13/step4-adding-axes-and-text/' rel='external nofollow' class='url'>Step4- Adding Axes and text &#8211; Qlik and Dirty</a> 			</div>
+</li><!-- #comment-## -->
+		</ol><!-- .comment-list -->
+
+		
+	
+	
+					<div id="respond" class="comment-respond">
+			<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/2011/08/11/d3-scales-and-color/#respond" style="display:none;">Cancel reply</a></small></h3>				<form action="/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+					<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" aria-required='true' required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" aria-required='true' required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='1026' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="bb56dbcf38" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="27"/></p>				</form>
+					</div><!-- #respond -->
+		
+</div><!-- #comments -->
+
+		
+
+	<div id="secondary" class="widget-area" role="complementary">
+		<aside id="search-2" class="widget widget_search"><form role="search" method="get" class="search-form" action="/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit" value="Search" />
+			</form></aside>		<aside id="recent-posts-2" class="widget widget_recent_entries">		<h1 class="widget-title">Recent Posts</h1>		<ul>
+					<li>
+				<a href="/2018/04/09/hello-world/">Hello world!</a>
+						</li>
+					<li>
+				<a href="/2016/08/17/the-big-leagues/">The big leagues</a>
+						</li>
+					<li>
+				<a href="/2016/08/17/creating-a-react-visualization-web-app/">Creating a React visualization web app</a>
+						</li>
+					<li>
+				<a href="/2016/08/13/beyond-rendering/">Beyond rendering</a>
+						</li>
+					<li>
+				<a href="/2016/08/11/react-components/">React components</a>
+						</li>
+				</ul>
+		</aside>		<aside id="recent-comments-2" class="widget widget_recent_comments"><h1 class="widget-title">Recent Comments</h1><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link"><a href='https://wordpress.org/' rel='external nofollow' class='url'>A WordPress Commenter</a></span> on <a href="/2018/04/09/hello-world/#comment-1">Hello world!</a></li><li class="recentcomments"><span class="comment-author-link"><a href='http://omeraz.wordpress.com/' rel='external nofollow' class='url'>עומר עזריאל</a></span> on <a href="/2016/08/17/the-big-leagues/#comment-567">The big leagues</a></li><li class="recentcomments"><span class="comment-author-link">Carlos Ayres</span> on <a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-312">Manipulating data like a boss with d3</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://migrate.powertripanalytics.com/game-of-thrones-interactions-among-the-top-30-characters/' rel='external nofollow' class='url'>Game of ThronesInteractions Among the Top 30 Characters &#8211; PowerTrip Analytics</a></span> on <a href="/2013/05/13/making-the-game-of-thrones-visualization/#comment-466">Making the game of thrones visualization</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://abgoswam.wordpress.com/2016/10/08/d3-getting-started/' rel='external nofollow' class='url'>D3 &#8211; Getting Started | abgoswam&#039;s tech blog</a></span> on <a href="/2012/09/04/getting-to-hello-world-with-d3/#comment-419">Getting to &#8220;Hello world&#8221; with d3</a></li></ul></aside><aside id="archives-2" class="widget widget_archive"><h1 class="widget-title">Archives</h1>		<ul>
+			<li><a href='/2018/04/'>April 2018</a></li>
+	<li><a href='/2016/08/'>August 2016</a></li>
+	<li><a href='/2015/05/'>May 2015</a></li>
+	<li><a href='/2015/02/'>February 2015</a></li>
+	<li><a href='/2014/10/'>October 2014</a></li>
+	<li><a href='/2013/11/'>November 2013</a></li>
+	<li><a href='/2013/05/'>May 2013</a></li>
+	<li><a href='/2013/03/'>March 2013</a></li>
+	<li><a href='/2013/01/'>January 2013</a></li>
+	<li><a href='/2012/12/'>December 2012</a></li>
+	<li><a href='/2012/11/'>November 2012</a></li>
+	<li><a href='/2012/10/'>October 2012</a></li>
+	<li><a href='/2012/09/'>September 2012</a></li>
+	<li><a href='/2012/07/'>July 2012</a></li>
+	<li><a href='/2012/06/'>June 2012</a></li>
+	<li><a href='/2012/05/'>May 2012</a></li>
+	<li><a href='/2012/04/'>April 2012</a></li>
+	<li><a href='/2012/01/'>January 2012</a></li>
+	<li><a href='/2011/11/'>November 2011</a></li>
+	<li><a href='/2011/10/'>October 2011</a></li>
+	<li><a href='/2011/09/'>September 2011</a></li>
+	<li><a href='/2011/08/'>August 2011</a></li>
+	<li><a href='/2011/07/'>July 2011</a></li>
+	<li><a href='/2011/06/'>June 2011</a></li>
+	<li><a href='/2011/05/'>May 2011</a></li>
+	<li><a href='/2011/04/'>April 2011</a></li>
+	<li><a href='/2011/03/'>March 2011</a></li>
+	<li><a href='/2011/02/'>February 2011</a></li>
+	<li><a href='/2011/01/'>January 2011</a></li>
+	<li><a href='/2010/11/'>November 2010</a></li>
+	<li><a href='/2010/04/'>April 2010</a></li>
+	<li><a href='/2010/03/'>March 2010</a></li>
+	<li><a href='/2010/02/'>February 2010</a></li>
+	<li><a href='/2010/01/'>January 2010</a></li>
+	<li><a href='/2009/12/'>December 2009</a></li>
+	<li><a href='/2009/10/'>October 2009</a></li>
+	<li><a href='/2009/09/'>September 2009</a></li>
+	<li><a href='/2009/08/'>August 2009</a></li>
+	<li><a href='/2009/07/'>July 2009</a></li>
+	<li><a href='/2009/06/'>June 2009</a></li>
+	<li><a href='/2009/05/'>May 2009</a></li>
+	<li><a href='/2008/12/'>December 2008</a></li>
+	<li><a href='/2008/11/'>November 2008</a></li>
+	<li><a href='/2008/10/'>October 2008</a></li>
+		</ul>
+		</aside><aside id="categories-2" class="widget widget_categories"><h1 class="widget-title">Categories</h1>		<ul>
+	<li class="cat-item cat-item-2"><a href="/category/book-review/" >book review</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="/category/charts/" >charts</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="/category/conferences/" >conferences</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="/category/d3/" >d3</a>
+</li>
+	<li class="cat-item cat-item-6"><a href="/category/dashboards/" >dashboards</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="/category/data-publishing/" >data publishing</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="/category/data-visualization/" >data visualization</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="/category/francais/" >français</a>
+</li>
+	<li class="cat-item cat-item-10"><a href="/category/javascript/" >javascript</a>
+</li>
+	<li class="cat-item cat-item-11"><a href="/category/presentation/" >presentation</a>
+</li>
+	<li class="cat-item cat-item-12"><a href="/category/protovis/" >protovis</a>
+</li>
+	<li class="cat-item cat-item-13"><a href="/category/react/" >react</a>
+</li>
+	<li class="cat-item cat-item-14"><a href="/category/tips/" >tips</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="/category/uncategorized/" >Uncategorized</a>
+</li>
+	<li class="cat-item cat-item-15"><a href="/category/web-sites/" >web sites</a>
+</li>
+		</ul>
+</aside><aside id="meta-2" class="widget widget_meta"><h1 class="widget-title">Meta</h1>			<ul>
+						<li><a href="/wp-login.php">Log in</a></li>
+			<li><a href="/feed/">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="/comments/feed/">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>			</ul>
+			</aside>		<div class="clear">&nbsp;</div>
+	</div><!-- #secondary -->
+	<footer id="colophon" class="site-footer" role="contentinfo">
+	    <a class="subscribe icon-feed" href="/feed/"><span class="tooltip">Subscribe!</span></a>
+		<div class="site-info inner">
+		    <section class="copyright">
+		    			    		<a href="https://github.com/lacymorrow/casper" rel="home">Casper WP</a> by Lacy Morrow		    			    </section>
+		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+</main><!-- /#content -->
+
+<script type='text/javascript' src='/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js?ver=3.0.9b'></script>
+<script type='text/javascript' src='/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushJScript.js?ver=3.0.9b'></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "http://localhost:8888/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "http://localhost:8888/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+<script type='text/javascript' src='/wp-content/themes/casper/js/main.js?ver=1.0.0'></script>
+<script type='text/javascript' src='/wp-includes/js/comment-reply.min.js?ver=4.6.10'></script>
+<script type='text/javascript' src='/wp-includes/js/wp-embed.min.js?ver=4.6.10'></script>
+<script async="async" type='text/javascript' src='/wp-content/plugins/akismet/_inc/form.js?ver=4.0.3'></script>
+<!--stats_footer_test--></body>
+</html>

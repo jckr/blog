@@ -1,0 +1,1432 @@
+	<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8">
+		<script type="text/javascript" src="http://mbostock.github.com/d3/d3.js?2.0.0"></script>
+		<!--<script type="text/javascript" src="d3.js"></script>-->
+		<!--<script type="text/javascript" src="http://blog.oecdfactblog.org/wp-includes/js/protovis-r3.2.js"></script>-->
+		<style>
+			@import url("http://mbostock.github.com/d3/style.css?1.10.0");
+			@import url("http://mbostock.github.com/d3/syntax.css?1.10.0");
+		</style>
+		<style>
+			.cell {
+					position:absolute;
+					overflow:hidden;
+					height:20;
+					width:20;
+					border:1px solid white;
+					text-align:center;
+					vertical-align:middle;
+					}
+		.cellSVG {height:20;width:20;}
+
+		ul.tab
+		{
+		 margin:0;
+		 padding: 3px 0 2px 0;
+		 border-bottom: 1px solid #778;
+		 font: bold 12px;
+		}
+
+		ul.tab li
+		{
+		 list-style: none;
+		 margin: 0;
+		 display: inline;
+		}
+
+		ul.tab li a
+		{
+		 padding: 3px 0.5em;
+		 margin-left: 3px;
+		 border: 1px solid #778;
+		 border-bottom: none;
+		 background: #dde;
+		 text-decoration: none;
+		}
+
+		ul.tab li a:link { color: #448; }
+		ul.tab li a:visited { color: #667; }
+
+		ul.tab li a:hover
+		{
+		 color: #000;
+		 background: #AAE;
+		 border-color: #227;
+		}
+
+		ul.tab li.tabactive a
+		{
+		 background-color: #fff;
+		 border-bottom: 1px solid #fff;
+		}
+
+		ul.tab li.tabactive a:hover
+		{
+		 color: #000;
+		 background: white;
+		 border-bottom: 1px solid white;
+		}
+
+		.tabs {
+		 padding:5px;
+		 border:1px solid #aaa;
+		 border-top:0;
+		}
+		#t4 {display:none;}
+
+		.rightPanel{position:relative;left:650px;width:350px;}
+		#chart {position:absolute;
+		top:100px;left:100px;width:600px;height:600px;
+		}
+		#labels {position:absolute;top:100px;left:20px;width:100px;height:600px;font:10px sans-serif}
+		#labels .valueLabel, percentLabel,numberLabel{margin:2px;color:black;}
+
+
+		#filters, #popup, #variables, #instructions {
+			display:none;border:1px solid #778;border-top:none;padding:10px;
+		}
+		#variables, #popup, #instructions {height:600px;}
+		.cubes path {stroke:#000;}
+		.selectedCube path {stroke:gold;}
+
+		#instructions {display:block;}
+
+		#closebutton {position:absolute;bottom:20px;right:20px;height:12px;width:30px;background:#ccc;color:black;text-align:center;padding:10;}
+
+		#variables ul {padding:3px;}
+		#variables li {display:inline; font:10px sans-serif; margin:3px; padding: 1px; border-radius:3px;-moz-border-radius:3px;
+		background: #ccc; color:black;border:1px solid #aaa;}
+		#variables li.varSelected {background: #000; color: white;border:1px solid #000;}
+		//.varNotSelected {background: #ccc; color:black;border:1px solid #aaa;}
+
+
+		.variableCubeFace {stroke:black;fill:white;}
+		.variableLine {stroke:black; stroke-dasharray:4,4;}
+
+		.variableLabel {position:absolute;font:10px sans-serif; text-align:center; margin:3px; width:80px; border-radius:3px;-moz-border-radius:3px}
+		#topVar.variableLabel {top:70px;left:175px;}
+		#bottomVar.variableLabel {top:340px;left:175px;}
+		#leftVar.variableLabel {top:200px;left:10px;}
+		#rightVar.variableLabel {top:200px;right:10px;}
+		#backVar.variableLabel {top:100px;right:10px;}
+		#frontVar.variableLabel {top:285px;left:50px;color:red;}
+
+		.axes {stroke:#000;stroke-opacity:0;}
+
+
+		.varFilter {
+			-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-o-user-select: none;user-select: none;
+			clear:both;}
+		.varFilterFlag {width:10px;height:10px;border:1px solid #000; background:white;float:left;margin-right:5px;}
+		.varFilterFlag.selected {background:green;}
+		.varFilterTitle {left-padding:20px;}
+		.varFilterValues {display:none;}
+		.filterValue {float:left;margin:3px;padding:2px;line-height:1.3em;border:1px solid #aaa;background:white;
+		-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-o-user-select: none;user-select: none;}
+		.filterValue.selected {background:#ccc;}
+
+		.clear {clear:both;}
+
+		.overlay {fill:white;opacity:0.01;}
+		.overlay.highlighted {opacity:.5;}
+		#labels .valueLabel.highlighted {color:red;}
+		</style>
+	</head>
+	<body>
+		<h1 id="title">
+		</h1>
+
+		<div id="labels">
+		</div>
+		<div id="chart">
+		</div>
+		<div class="rightPanel">
+			<ul class="tab">
+					<li id="t1" class="tabactive"><a href="#" onclick="showTab(1);">Instructions</a></li>
+					<li id="t2"><a href="#" onclick="showTab(2);">Filters</a></li>
+					<li id="t3"><a href="#" onclick="showTab(3);">Faces</a></li>
+					<li id="t4"><a href="#" onclick="showTab(4);">Details</a></li>
+			</ul>
+			<div id="instructions">
+			(well this will be made more elaborate later but for the time being...)</p>
+			rotate cube with <strong>arrows</strong>.</p>
+			turn cube into square pie with <strong>space bar</strong>. </p>
+			when cubes are arranged in square pie, change variable order with <strong>S</strong> sort by variable order &lt-&gt sort by value.</p>
+			filtering: click on variable to see possible values, click on value to exclude this value, double click to exclude all others.</p>
+			if one value is excluded for one variable, it's possible to clear the filtering for this variable by clicking on the green flag.</p>
+			values filtered out have a darker background.</p>
+			faces: click on a variable to assign this to the face of the cube facing you. Variables already assigned to a face have a darker background. I'll make this more visual soon.</p>
+
+			details: click on a cube for more information.</p>
+			</div>
+			<div id="filters">
+			</div>
+			<div id="popup">
+			<strong>ID: </strong><span id="id"></span></br>
+			<strong>Gender: </strong><span id="gender"></span></br>
+			<strong>Country: </strong><span id="country"></span> <span id="continent"></span></br>
+			<strong>Education: </strong><span id="edu"></span></br>
+			<strong>Years in field: </strong><span id="yearsin"></span></br></br>
+			<strong>Conferences:</strong><span id="conferences"></span></br>
+			<strong>Category: </strong><span id="category"></span> <span id="categorygroup"></span></br>
+			<strong>Length of stay: </strong><span id="stay"></span></br>
+			<strong>1st time?: </strong><span id="firsttime"></span></br>
+			<strong>Heard of VisWeek via :</strong><span id="hear"></span></br>
+			<strong>Organization: </strong><span id="organization"></span> <span id="organizationtype"></br>
+			<strong>Interests:</strong><span id="interests"></span>
+			<div id="closebutton" onClick='clearSelectedCube();'>Close</div>
+			</div>
+
+			<div id="variables">
+				<div class="variableLabel" id="topVar"></div>
+				<div class="variableLabel" id="bottomVar"></div>
+				<div class="variableLabel" id="leftVar"></div>
+				<div class="variableLabel" id="rightVar"></div>
+				<div class="variableLabel" id="frontVar"></div>
+				<div class="variableLabel" id="backVar"></div>
+				<ul>
+					<li id="v0" class="varSelected" onClick='switchV(0);'>Category</li>
+					<li id="v1" class="varSelected" onClick='switchV(1);'>Category group</li>
+					<li id="v2" class="varSelected" onClick='switchV(2);'>Country</li>
+					<li id="v3" class="varSelected" onClick='switchV(3);'>Continent</li>
+					<li id="v4" class="varSelected" onClick='switchV(4);'>Education</li>
+					<li id="v5" class="varSelected" onClick='switchV(5);'>Length of stay</li>
+					<li id="v6" onClick='switchV(6);'>First time?</li>
+					<li id="v7" onClick='switchV(7);'>Organization</li>
+					<li id="v8" onClick='switchV(8);'>Years in field</li>
+					<li id="v9" onClick='switchV(9);'>Heard of Visweek</li>
+					<li id="v10" onClick='switchV(10);'>Gender</li>
+					<li id="v11" onClick='switchV(11);'>Organization type</li>
+				</ul>
+				Click on a <span style="color:#ccc">free variable</span> to assign it to the <span style="color:red">front face</span> of the cube.
+			</div>
+		</div>
+
+		<script type="text/javascript" src="data.js"></script>
+		<script type="text/javascript">
+		/* version changes
+
+
+		8.000: key codes change various modes.
+		8.001: attribute set to faces now a variable, no longer magic number
+		8.002: cubes now delayed by attribute value and at once, no longer each dimension at a time.
+ 		8.003: some renaming, adding hidden faces
+ 		8.004: small cubes are part of a big cube
+ 		8.1  : now - big cube rotates or explode towards user, no longer project cubes to faces.
+ 		8.101: rotates by pi/2 increments along 2 axes
+ 		8.102: change attrProba to check if rotation works well
+ 		8.103: changing the scales so that 0,0,0 is at center of screen vs at one corner
+ 		8.104: first experiments with filtering
+		8.105: changed attrProba to normal
+		8.11 : adding filtering form
+		8.111: changing pos structure
+		8.112: adding visibility debugging functions
+		8.113: drawing axes
+		8.114: different way of drawing faces
+		9    : realistic data (2010)
+		9.1  : adding a pop-up
+		9.101: popup text color depends on variable
+		9.102: front face updated when rotating
+		9.11 : buttons added to change the variable of the front face
+		9.111: changed a glitch where faces kept adding on top of each other
+		9.112: changed a glitch which I hope will fix filtering
+		9.113: added interests to popup window
+	   10.001: proper rotation
+	   10.101: labels to left of square pie
+	   10.201: now real filtering
+	   10.202: filters plugged with filterupdate
+	   10.203: looking good, but a few wrinkles are left to iron
+	   10.204: an intuition for rotation & for filters
+	   10.205: pop up windows reorganized with tabs.
+	   10.206: double click implemented for fitlers
+	   10.207: faces manipulation with a cube
+	   10.208: selections changing outlines of cubes
+	   10.209: now we'll really rotate the cube. like it was intended at 10.001
+	   10.211: cubes rotation implemented as hoped.
+	   10.213: overlays for square pie.
+
+
+		*/
+
+		///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		//                                                                                                           //
+		// Variables declaration & preparation                                                                       //
+		//                                                                                                           //
+		///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+		var k=0.707106781;
+		var depth=k/2;
+		var u=15;
+		var a=u*depth;
+
+		var s=u+2*a;
+		var pi2=Math.PI/2;
+		var angleX1=.783*pi2;
+		var angleX2=-.34;
+		var angleY1=.34;
+		var angleY2=-.783*pi2;
+
+		var nb=data.length;
+
+		var maxDim=Math.ceil(Math.sqrt(nb));
+		var cubeEdge=Math.ceil(Math.pow(nb,1/3));
+
+		var frontFace=0, topFace=1, rightFace=2, backFace=5, bottomFace=4, leftFace=3;
+
+		data.forEach(function(d,i) {d.id=i;})
+
+		var matrix=d3.range(7).map(function(c) {return d3.range(nb).map(function(r) {return r;});})
+		var pos=data.map(function(d) {return {id:d.id,x:0,y:0,z:0,order:-1,visible:1};});
+
+		var nbVal = {};
+		data.forEach(function(d) {d.variables.forEach(function(v) {if (!nbVal[v]++) {nbVal[v]=1+v/10000;};});})
+		var sortVal=1;
+		var xScaleX=d3.scale.linear().domain([-maxDim/2,maxDim/2]).range([0,maxDim*u]),
+			xScaleZ=d3.scale.linear().domain([-maxDim/2,maxDim/2]).range([maxDim*a,0]),
+			yScaleY=d3.scale.linear().domain([-maxDim/2,maxDim/2]).range([maxDim*u,0]),
+			yScaleZ=d3.scale.linear().domain([-maxDim/2,maxDim/2]).range([0,0+maxDim*a]);
+
+		var filters;initFilters();
+
+		var transforming=0;
+		var wait=0;
+		var mode=0;rePos();
+
+		var selectedCube=-1;
+
+		var popup=d3.select("#popup");
+
+		var vis=d3.select("#chart").append("svg:svg").attr("width",600).attr("height",600)
+		//.attr("transform","translate(100,0)")
+		;
+		var bigcube=vis.append("svg:g").classed("bigcube",1);
+		var cubes=bigcube.selectAll("g").data(data).enter().append("svg:g").classed("cubes",1);
+
+		var axes=vis.append("svg:g");
+		var t,boxing,pathing,preping,rendering;
+
+		var boxModel=[[-.5,-.5,-.5],
+					  [.5,-.5,-.5],
+					  [-.5,-.5,.5],
+					  [.5,-.5,.5],
+					  [-.5,.5,-.5],
+					  [.5,.5,-.5],
+					  [-.5,.5,.5],
+					  [.5,.5,.5]];
+
+		var frontFaceCubes = new Array, backFaceCubes = new Array, leftFaceCubes = new Array, rightFaceCubes = new Array, topFaceCubes = new Array, bottomFaceCubes = new Array;
+		var spinner, spinnerCubes;
+
+		///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		//                                                                                                           //
+		// Main code						                                                                         //
+		//                                                                                                           //
+		///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+		axes.append("svg:path").attr("class","axes").attr("d",function() {return "M "+renderX([0,-maxDim,0])+" "+renderY([0,-maxDim,0])+" L "+renderX([0,maxDim,0])+" "+renderY([0,maxDim,0]);})
+		axes.append("svg:path").attr("class","axes").attr("d",function() {return "M "+renderX([-maxDim,0,0])+" "+renderY([-maxDim,0,0])+" L "+renderX([maxDim,0,0])+" "+renderY([maxDim,0,0]);})
+		axes.append("svg:path").attr("class","axes").attr("d",function() {return "M "+renderX([0,0,-maxDim])+" "+renderY([0,0,-maxDim])+" L "+renderX([0,0,maxDim])+" "+renderY([0,0,maxDim]);})
+
+		cubes
+		    .style("stroke","black")
+			.attr("id", function(d) {return "c"+d.id;})
+
+		cubes.each(function(d,i) {
+				var myPos=pos[d.id];
+				var myCube=d3.select(this);
+
+				myCube
+					.attr("transform", "translate(" + (xScaleX(myPos.x)+xScaleZ(myPos.z)) +", "+ (yScaleY(myPos.y)+yScaleZ(myPos.z)) +")")
+					;})
+
+		colorCubes();
+		d3.select("#title").html(variablesLong[frontFace]);
+		initFaces();
+		//showFilters();
+
+		///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		//                                                                                                           //
+		// Events							                                                                         //
+		//                                                                                                           //
+		///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+		cubes.on("click",function(d) {selectCube(d);})
+
+		d3.select(window).on("keydown", waitforkey);
+
+		///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		//                                                                                                           //
+		// Functions																								 //
+		//                                                                                                           //
+		///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+		/* function list
+		showData - shows the underlying data (deprecated)
+		showMatrix - shows the matrix which is used to sort the cube
+		renderX - wraps around the scales to compute the x coord of where to put a 3D point on the screen
+		renderY - similar to renderX but for the y coord
+		hideSome(k) - function to test filtering. filters out a k proportion of cubes.
+		allVisible() - equivalent to hideSome(0)
+		allHidden() - equivalent to hideSome(1)
+		rePos - recomputes the position of the cubes
+		filterUpdate - hides/shows cubes which are newly filtered in or out and repositions others
+		rotateXBox - real (angle-based) rotation of the cube, along the X axis
+		rotateYBox - same as above with the Y axis
+		rotate - handles the end of the rotation, like changing the x y z of cubes etc.
+		colorcubes - paint the cubes the first time around
+		recolorcubes - happens when a variable is changed or after rotation
+		waitforkey - handles keyboard strokes
+		transform - actually moves (and transitions) the cubes
+
+		initFaces - draws the face tab
+		updateFaces - changes faces variables whenever faces rotate, etc.
+		switchV - switches variables
+
+		selectCube - updates details tab when a cube is selected
+
+		showLabels - shows numbers of cubes
+		hideLabels - hide them
+
+		initFilters - define the working of filters
+		showFilters - shows filters
+		hideFilters - hide them
+
+		showtab - tab based navigation
+		*/
+
+
+
+		function showData() {data.forEach(function(d) {row=d.id+" ";d[variables].forEach(function(v) {row+=v+" ";});console.log(row);})}
+		function showMatrix() {data.forEach(function(i,d) {console.log(matrix[0][d]+" "+matrix[1][d]+" "+matrix[2][d]+" "+matrix[3][d]+" "+matrix[4][d]+" "+matrix[5][d]+" "+matrix[6][d]);})}
+
+
+		function renderX(vector) {return xScaleX(vector[0])+xScaleZ(vector[2]);}
+		function renderY(vector) {return yScaleY(vector[1])+yScaleZ(vector[2]);}
+
+		function allVisible() {pos.forEach(function(d,i) {pos[i].visible=1;})}
+		function allHidden() {pos.forEach(function(d,i) {pos[i].visible=0;})}
+		function hideSome(k) {pos.forEach(function(d,i) {pos[i].visible=(Math.random()<k)?1:0;})}
+
+		function showVisible() {return pos.map(function(d) {return d.visible;});}
+		function rePos() {
+			if (mode==0) {
+				var i=0;
+				pos.forEach(function(d,index) {
+					var x,y,z;
+
+					y=~~(i/(cubeEdge*cubeEdge));
+					x=(~~((i-(cubeEdge*cubeEdge)*y)/cubeEdge));
+					z=(i%cubeEdge);
+
+					y-=(cubeEdge/2);
+					x-=(cubeEdge/2);
+					z-=(cubeEdge/2);
+					ox=d.x;
+					oy=d.y;
+					oz=d.z;
+					pos[index]={id:d.id,x:x,y:y,z:z,ox:ox,oy:oy,oz:oz,order:i,delay:100,visible:d.visible};
+					if (d.visible){i++;}
+				})
+					hideLabels();
+			} else if (mode==1) {
+				var i=0;
+				pos.sort(function(a,b) {
+					if (sortVal) {return nbVal[data[a.id].variables[frontFace]]-nbVal[data[b.id].variables[frontFace]];}
+					else		 {return       data[a.id].variables[frontFace] -      data[b.id].variables[frontFace] ;}
+				})
+				.forEach(function(d,index) {
+					var x,y,z;
+					z=0;
+					y=~~(i/maxDim);
+					x=i%maxDim;
+					x-=maxDim/2;
+					y-=maxDim/2;
+					ox=d.x;
+					oy=d.y;
+					oz=d.z;
+					pos[index]={id:d.id,x:x,y:y,z:z,ox:ox,oy:oy,oz:oz,order:-1,delay:100,visible:d.visible};
+					if(d.visible){i++;}
+				})
+				showLabels();
+			}
+			pos.sort(function(a,b) {return (maxDim*maxDim*(a.y-b.y)+maxDim*(a.z-b.z)+a.x-b.x);});
+			pos.forEach(function(d,i) {pos[i]['order']=i;})
+			pos.sort(function(a,b) {return a.id-b.id;})
+		}
+
+
+		function filterUpdate() {
+			// two parts in this function.
+			// first we translate filters into pos.
+			// then we transform.
+			myNest=filters.map(function(v,i) {return d3.nest().key(function(d) {return d.value;}).map(filters[i].values);})
+			nb=0;nbVal = {};
+			data.forEach(
+				function(d) {
+					nb+=pos[d.id].visible=(
+						d.variables.some(
+							function(v,i) {
+
+								return myNest[i][v][0].filtered;;
+							}
+						)
+					)?0:1;
+					if (pos[d.id].visible){d.variables.forEach(function(v) {if (!nbVal[v]++) {nbVal[v]=1+v/10000;};})}
+				}
+			)
+
+
+
+
+			cubes.transition().style("opacity",function(d) {return (pos[d.id].visible);}).style("stroke-opacity",function(d) {return (pos[d.id].visible);});
+			if(mode){hideLabels();showLabels();}
+			rePos();transform();
+		}
+
+
+
+		function rotateDown() {
+		transforming=1;
+		// This will involve at some point rotateXBox(pi2)
+		d3.select(".bigcube").style("visibility","hidden");
+		defineFaces();
+
+		spinner=vis.append("svg:g").classed("spinner",1);
+		spinnerCubes=spinner.selectAll("g")
+			.data(data
+				.filter(function(d,i){
+					return include(frontFaceCubes,i)
+						 ||include(rightFaceCubes,i)
+						 ||include(topFaceCubes,i)
+						 ||include(backFaceCubes,i);
+				        })
+				  )
+			.enter().append("svg:g");
+			spinnerCubes.classed("cubes",1);
+			spinnerCubes.classed("selectedCube",function(d,i) {return (selectedCube==i)?1:0;});
+			spinnerCubes.append("svg:path").style("fill",function(d) {return dict[d.variables[topFace]].color;}).classed("f1",1)
+			spinnerCubes.append("svg:path").style("fill",function(d) {return dict[d.variables[rightFace]].color;}).classed("f2",1)
+			spinnerCubes.append("svg:path").style("fill",function(d) {return dict[d.variables[backFace]].color;}).classed("f5",1)
+			spinnerCubes.append("svg:path").style("fill",function(d) {return dict[d.variables[frontFace]].color;}).classed("f0",1)
+
+
+
+
+		d3.transition()
+		      .duration(1000)
+		      //.ease("elastic")
+		      .tween("myVar", function() {
+		        var i = d3.interpolate(0, pi2);
+		        return function(t) { rotateXBoxDown(i(t));};
+		      });
+		setTimeout("d3.select('.spinner').remove();rotate(false, -Math.PI/2);quietTransform();d3.select('.bigcube').style('visibility','visible');transforming=0",1000);
+
+		}
+
+		function rotateUp() {
+		transforming=1;
+
+		d3.select(".bigcube").style("visibility","hidden");
+				defineFaces();
+
+				spinner=vis.append("svg:g").classed("spinner",1);
+				spinnerCubes=spinner.selectAll("g")
+					.data(data
+						.filter(function(d,i){
+							return include(frontFaceCubes,i)
+								 ||include(rightFaceCubes,i)
+								 ||include(topFaceCubes,i)
+								 ||include(bottomFaceCubes,i);
+						        })
+						  )
+					.enter().append("svg:g");
+					spinnerCubes.classed("cubes",1);
+					spinnerCubes.classed("selectedCube",function(d,i) {return (selectedCube==i)?1:0;});
+					spinnerCubes.append("svg:path").style("fill",function(d) {return dict[d.variables[topFace]].color;}).classed("f1",1)
+					spinnerCubes.append("svg:path").style("fill",function(d) {return dict[d.variables[rightFace]].color;}).classed("f2",1)
+					spinnerCubes.append("svg:path").style("fill",function(d) {return dict[d.variables[bottomFace]].color;}).classed("f4",1)
+					spinnerCubes.append("svg:path").style("fill",function(d) {return dict[d.variables[frontFace]].color;}).classed("f0",1)
+
+
+
+
+				d3.transition()
+				      .duration(1000)
+				      //.ease("elastic")
+				      .tween("myVar", function() {
+				        var i = d3.interpolate(0, -pi2);
+				        return function(t) { rotateXBoxUp(i(t));};
+				      });
+				setTimeout("d3.select('.spinner').remove();rotate(false, Math.PI/2);quietTransform();d3.select('.bigcube').style('visibility','visible');transforming=0;",1000);
+
+		}
+
+		function rotateRight() {
+			transforming=1;
+
+			d3.select(".bigcube").style("visibility","hidden");
+			defineFaces();
+
+			spinner=vis.append("svg:g").classed("spinner",1);
+			spinnerCubes=spinner.selectAll("g")
+				.data(data
+					.filter(function(d,i){
+						return include(frontFaceCubes,i)
+							 ||include(rightFaceCubes,i)
+							 ||include(topFaceCubes,i)
+							 ||include(leftFaceCubes,i);
+							})
+					  )
+				.enter().append("svg:g");
+				spinnerCubes.classed("cubes",1);
+				spinnerCubes.classed("selectedCube",function(d,i) {return (selectedCube==i)?1:0;});
+				spinnerCubes.append("svg:path").style("fill",function(d) {return dict[d.variables[topFace]].color;}).classed("f1",1)
+				spinnerCubes.append("svg:path").style("fill",function(d) {return dict[d.variables[rightFace]].color;}).classed("f2",1)
+				spinnerCubes.append("svg:path").style("fill",function(d) {return dict[d.variables[leftFace]].color;}).classed("f3",1)
+				spinnerCubes.append("svg:path").style("fill",function(d) {return dict[d.variables[frontFace]].color;}).classed("f0",1)
+
+
+
+
+			d3.transition()
+				  .duration(1000)
+				  //.ease("elastic")
+				  .tween("myVar", function() {
+					var i = d3.interpolate(0, pi2);
+					return function(t) { rotateYBoxRight(i(t));};
+				  });
+			setTimeout("d3.select('.spinner').remove();rotate(true,Math.PI/2);quietTransform();d3.select('.bigcube').style('visibility','visible');transforming=0;",1000);
+
+		}
+
+		function rotateLeft() {
+		transforming=1;
+
+		d3.select(".bigcube").style("visibility","hidden");
+		defineFaces();
+
+		spinner=vis.append("svg:g").classed("spinner",1);
+		spinnerCubes=spinner.selectAll("g")
+			.data(data
+				.filter(function(d,i){
+					return include(frontFaceCubes,i)
+						 ||include(rightFaceCubes,i)
+						 ||include(topFaceCubes,i)
+						 ||include(backFaceCubes,i);
+						})
+				  )
+			.enter().append("svg:g");
+			spinnerCubes.classed("cubes",1);
+			spinnerCubes.classed("selectedCube",function(d,i) {return (selectedCube==i)?1:0;});
+			spinnerCubes.append("svg:path").style("fill",function(d) {return dict[d.variables[topFace]].color;}).classed("f1",1)
+			spinnerCubes.append("svg:path").style("fill",function(d) {return dict[d.variables[rightFace]].color;}).classed("f2",1)
+			spinnerCubes.append("svg:path").style("fill",function(d) {return dict[d.variables[backFace]].color;}).classed("f5",1)
+			spinnerCubes.append("svg:path").style("fill",function(d) {return dict[d.variables[frontFace]].color;}).classed("f0",1)
+		d3.transition()
+			  .duration(1000)
+			  //.ease("elastic")
+			  .tween("myVar", function() {
+				var i = d3.interpolate(0, -pi2);
+				return function(t) { rotateYBoxLeft(i(t));};
+			  });
+		setTimeout("d3.select('.spinner').remove();rotate(true,-Math.PI/2);quietTransform();d3.select('.bigcube').style('visibility','visible');transforming=0;",1000);
+
+		}
+
+		function resetT() {
+		vis.selectAll("g g").attr("transform","");
+		}
+
+
+		function rotateXBoxDown(angle){
+			var cos=Math.cos(angle),sin=Math.sin(angle);
+			var myCubes=[];
+			if(angle<angleX1) {myCubes=frontFaceCubes.concat(rightFaceCubes).concat(topFaceCubes);}
+			else {myCubes=frontFaceCubes.concat(backFaceCubes).concat(rightFaceCubes).concat(topFaceCubes);}
+
+			spinnerCubes.each(function(d) {var i=d.id;
+				if (include(myCubes,i)) {
+					var myPos=pos[d.id];
+					var myCube=d3.select(this);
+					box=boxModel.map(function(d) {return [d[0]+myPos.x,d[1]+myPos.y,d[2]+myPos.z];});
+					box=box.map(function(d) {return [d[0],cos*d[1]-sin*d[2],sin*d[1]+cos*d[2]];});
+
+					var ax=renderX(box[0]),ay=renderY(box[0]),
+					bx=renderX(box[1]),by=renderY(box[1]),
+					cx=renderX(box[2]),cy=renderY(box[2]),
+					dx=renderX(box[3]),dy=renderY(box[3]),
+					ex=renderX(box[4]),ey=renderY(box[4]),
+					fx=renderX(box[5]),fy=renderY(box[5]),
+					gx=renderX(box[6]),gy=renderY(box[6]),
+					hx=renderX(box[7]),hy=renderY(box[7]);
+
+					if (angle<angleX1) {
+						// 0 face - topFace
+						if(include(frontFaceCubes,i)) {
+							myCube.selectAll(".f0")
+								.attr("d","M "+cx+" "+cy+", L "+dx+" "+dy+", L "+hx+" "+hy+", L "+gx+" "+gy+" Z");
+						}
+						// 1 face - topFace
+						if(include(topFaceCubes,i)) {
+						myCube.selectAll(".f1")
+							.attr("d","M "+ex+" "+ey+", L "+fx+" "+fy+", L "+hx+" "+hy+", L "+gx+" "+gy+" Z");
+						}
+						// 2 face - rightFace
+						if(include(rightFaceCubes,i)) {
+						myCube.selectAll(".f2")
+							.attr("d","M "+bx+" "+by+", L "+fx+" "+fy+", L "+hx+" "+hy+", L "+dx+" "+dy+" Z");
+						}
+					} else {
+						if(include(backFaceCubes,i)) {
+						// 5 face - backFace
+						myCube.selectAll(".f5")
+							.attr("d","M "+ax+" "+ay+", L "+bx+" "+by+", L "+fx+" "+fy+", L "+ex+" "+ey+" Z");
+						}
+						// 1 face - topFace
+						if(include(topFaceCubes,i)) {
+						myCube.selectAll(".f1")
+							.attr("d","M "+ex+" "+ey+", L "+fx+" "+fy+", L "+hx+" "+hy+", L "+gx+" "+gy+" Z");
+						}
+						// 2 face - rightFace
+						if(include(rightFaceCubes,i)) {
+						myCube.selectAll(".f2")
+							.attr("d","M "+bx+" "+by+", L "+fx+" "+fy+", L "+hx+" "+hy+", L "+dx+" "+dy+" Z");
+						}
+						myCube.selectAll(".f0").style("visibility","hidden");
+					}
+
+					//myCube.selectAll(".f4")
+					//	.attr("d", "M "+ax+" "+ay+", L "+bx+" "+by+", L "+dx+" "+dy+", L "+cx+" "+cy+" Z")
+					//	.style("visibility",bottomFaceShow);
+
+				}
+			})
+
+		}
+
+		function rotateXBoxUp(angle){
+							var cos=Math.cos(angle),sin=Math.sin(angle);
+							var myCubes=[];
+							if(angle>angleX2) {myCubes=frontFaceCubes.concat(rightFaceCubes).concat(topFaceCubes);}
+							else {myCubes=frontFaceCubes.concat(bottomFaceCubes).concat(rightFaceCubes).concat(topFaceCubes);}
+
+							spinnerCubes.each(function(d) {var i=d.id;
+								if (include(myCubes,i)) {
+									var myPos=pos[d.id];
+									var myCube=d3.select(this);
+									box=boxModel.map(function(d) {return [d[0]+myPos.x,d[1]+myPos.y,d[2]+myPos.z];});
+									box=box.map(function(d) {return [d[0],cos*d[1]-sin*d[2],sin*d[1]+cos*d[2]];});
+
+									var ax=renderX(box[0]),ay=renderY(box[0]),
+									bx=renderX(box[1]),by=renderY(box[1]),
+									cx=renderX(box[2]),cy=renderY(box[2]),
+									dx=renderX(box[3]),dy=renderY(box[3]),
+									ex=renderX(box[4]),ey=renderY(box[4]),
+									fx=renderX(box[5]),fy=renderY(box[5]),
+									gx=renderX(box[6]),gy=renderY(box[6]),
+									hx=renderX(box[7]),hy=renderY(box[7]);
+
+									if (angle>angleX2) {
+										// 0 face - frontFace
+										if(include(frontFaceCubes,i)) {
+											myCube.selectAll(".f0")
+												.attr("d","M "+cx+" "+cy+", L "+dx+" "+dy+", L "+hx+" "+hy+", L "+gx+" "+gy+" Z");
+										}
+										// 1 face - topFace
+										if(include(topFaceCubes,i)) {
+										myCube.selectAll(".f1")
+											.attr("d","M "+ex+" "+ey+", L "+fx+" "+fy+", L "+hx+" "+hy+", L "+gx+" "+gy+" Z");
+										}
+										// 2 face - rightFace
+										if(include(rightFaceCubes,i)) {
+										myCube.selectAll(".f2")
+											.attr("d","M "+bx+" "+by+", L "+fx+" "+fy+", L "+hx+" "+hy+", L "+dx+" "+dy+" Z");
+										}
+									} else {
+										if(include(bottomFaceCubes,i)) {
+										// 4 face - bottomFace
+										myCube.selectAll(".f4")
+											.attr("d", "M "+ax+" "+ay+", L "+bx+" "+by+", L "+dx+" "+dy+", L "+cx+" "+cy+" Z");
+										}
+										// 0 face - frontFace
+										if(include(frontFaceCubes,i)) {
+											myCube.selectAll(".f0")
+											.attr("d","M "+cx+" "+cy+", L "+dx+" "+dy+", L "+hx+" "+hy+", L "+gx+" "+gy+" Z");
+										}
+										// 2 face - rightFace
+										if(include(rightFaceCubes,i)) {
+										myCube.selectAll(".f2")
+											.attr("d","M "+bx+" "+by+", L "+fx+" "+fy+", L "+hx+" "+hy+", L "+dx+" "+dy+" Z");
+										}
+										myCube.selectAll(".f1").style("visibility","hidden");
+									}
+
+								}
+							})
+
+						}
+		function rotateYBoxRight(angle){
+			var cos=Math.cos(angle),sin=Math.sin(angle);
+			var myCubes=[];
+			if(angle<angleY1) {myCubes=frontFaceCubes.concat(rightFaceCubes).concat(topFaceCubes);}
+			else {myCubes=frontFaceCubes.concat(leftFaceCubes).concat(rightFaceCubes).concat(topFaceCubes);}
+
+			spinnerCubes.each(function(d) {var i=d.id;
+				if (include(myCubes,i)) {
+					var myPos=pos[d.id];
+					var myCube=d3.select(this);
+					box=boxModel.map(function(d) {return [d[0]+myPos.x,d[1]+myPos.y,d[2]+myPos.z];});
+					box=box.map(function(d) {return [cos*d[0]+sin*d[2],d[1],cos*d[2]-sin*d[0]];});
+
+					var ax=renderX(box[0]),ay=renderY(box[0]),
+					bx=renderX(box[1]),by=renderY(box[1]),
+					cx=renderX(box[2]),cy=renderY(box[2]),
+					dx=renderX(box[3]),dy=renderY(box[3]),
+					ex=renderX(box[4]),ey=renderY(box[4]),
+					fx=renderX(box[5]),fy=renderY(box[5]),
+					gx=renderX(box[6]),gy=renderY(box[6]),
+					hx=renderX(box[7]),hy=renderY(box[7]);
+
+					if (angle<angleY1) {
+						// 0 face - topFace
+						if(include(frontFaceCubes,i)) {
+							myCube.selectAll(".f0")
+								.attr("d","M "+cx+" "+cy+", L "+dx+" "+dy+", L "+hx+" "+hy+", L "+gx+" "+gy+" Z");
+						}
+						// 1 face - topFace
+						if(include(topFaceCubes,i)) {
+							myCube.selectAll(".f1")
+								.attr("d","M "+ex+" "+ey+", L "+fx+" "+fy+", L "+hx+" "+hy+", L "+gx+" "+gy+" Z");
+						}
+						// 2 face - rightFace
+						if(include(rightFaceCubes,i)) {
+							myCube.selectAll(".f2")
+								.attr("d","M "+bx+" "+by+", L "+fx+" "+fy+", L "+hx+" "+hy+", L "+dx+" "+dy+" Z");
+						}
+					} else {
+						// 0 face - topFace
+						if(include(frontFaceCubes,i)) {
+							myCube.selectAll(".f0")
+								.attr("d","M "+cx+" "+cy+", L "+dx+" "+dy+", L "+hx+" "+hy+", L "+gx+" "+gy+" Z");
+						}
+						if(include(leftFaceCubes,i)) {
+						// 3 face - leftFace
+						myCube.selectAll(".f3")
+							.attr("d", "M "+ax+" "+ay+", L "+cx+" "+cy+", L "+gx+" "+gy+", L "+ex+" "+ey+" Z");
+						}
+						// 1 face - topFace
+						if(include(topFaceCubes,i)) {
+						myCube.selectAll(".f1")
+							.attr("d","M "+ex+" "+ey+", L "+fx+" "+fy+", L "+hx+" "+hy+", L "+gx+" "+gy+" Z");
+						}
+						myCube.selectAll(".f2").style("visibility","hidden");
+					}
+
+				}
+			})
+		}
+		function rotateYBoxLeft(angle){
+					var cos=Math.cos(angle),sin=Math.sin(angle);
+					var myCubes=[];
+					if(angle>angleY2) {myCubes=frontFaceCubes.concat(rightFaceCubes).concat(topFaceCubes);}
+					else {myCubes=frontFaceCubes.concat(backFaceCubes).concat(rightFaceCubes).concat(topFaceCubes);}
+
+					spinnerCubes.each(function(d) {var i=d.id;
+						if (include(myCubes,i)) {
+							var myPos=pos[d.id];
+							var myCube=d3.select(this);
+							box=boxModel.map(function(d) {return [d[0]+myPos.x,d[1]+myPos.y,d[2]+myPos.z];});
+							box=box.map(function(d) {return [cos*d[0]+sin*d[2],d[1],cos*d[2]-sin*d[0]];});
+
+							var ax=renderX(box[0]),ay=renderY(box[0]),
+							bx=renderX(box[1]),by=renderY(box[1]),
+							cx=renderX(box[2]),cy=renderY(box[2]),
+							dx=renderX(box[3]),dy=renderY(box[3]),
+							ex=renderX(box[4]),ey=renderY(box[4]),
+							fx=renderX(box[5]),fy=renderY(box[5]),
+							gx=renderX(box[6]),gy=renderY(box[6]),
+							hx=renderX(box[7]),hy=renderY(box[7]);
+
+							if (angle>angleY2) {
+								// 0 face - topFace
+								if(include(frontFaceCubes,i)) {
+									myCube.selectAll(".f0")
+										.attr("d","M "+cx+" "+cy+", L "+dx+" "+dy+", L "+hx+" "+hy+", L "+gx+" "+gy+" Z");
+								}
+								// 1 face - topFace
+								if(include(topFaceCubes,i)) {
+									myCube.selectAll(".f1")
+										.attr("d","M "+ex+" "+ey+", L "+fx+" "+fy+", L "+hx+" "+hy+", L "+gx+" "+gy+" Z");
+								}
+								// 2 face - rightFace
+								if(include(rightFaceCubes,i)) {
+									myCube.selectAll(".f2")
+										.attr("d","M "+bx+" "+by+", L "+fx+" "+fy+", L "+hx+" "+hy+", L "+dx+" "+dy+" Z");
+								}
+							} else {
+								if(include(backFaceCubes,i)) {
+								// 5 face - backFace
+								myCube.selectAll(".f5")
+									.attr("d","M "+ax+" "+ay+", L "+bx+" "+by+", L "+fx+" "+fy+", L "+ex+" "+ey+" Z");
+
+								}
+								// 1 face - topFace
+								if(include(topFaceCubes,i)) {
+								myCube.selectAll(".f1")
+									.attr("d","M "+ex+" "+ey+", L "+fx+" "+fy+", L "+hx+" "+hy+", L "+gx+" "+gy+" Z");
+								}
+								// 2 face - rightFace
+								if(include(rightFaceCubes,i)) {
+									myCube.selectAll(".f2")
+									.attr("d","M "+bx+" "+by+", L "+fx+" "+fy+", L "+hx+" "+hy+", L "+dx+" "+dy+" Z");
+								}
+								myCube.selectAll(".f0").style("visibility","hidden");
+							}
+
+						}
+					})
+		}
+
+		function rotate(yAxis, angle) {
+			// this is where the rotation ends
+			var sign=(angle>0)?1:-1;
+			var dummyFace=frontFace;
+			if(!yAxis) {
+				if (sign<0) {
+					frontFace=topFace;
+					topFace=backFace;
+					backFace=bottomFace;
+					bottomFace=dummyFace;
+				} else {
+					frontFace=bottomFace;
+					bottomFace=backFace;
+					backFace=topFace;
+					topFace=dummyFace;
+				}
+				pos.forEach(function(d,i) {
+					var x,y,z,ox=d.x,oy=d.y,oz=d.z;
+					x=ox;
+					y=sign*oz;
+					z=-sign*oy;
+					pos[i]={id:d.id,x:x,y:y,z:z,ox:ox,oy:oy,oz:oz,order:-1,delay:0,visible:d.visible};
+				})
+
+			} else {
+				if (sign>0) {
+					frontFace=leftFace;
+					leftFace=backFace;
+					backFace=rightFace;
+					rightFace=dummyFace;
+				} else {
+					frontFace=rightFace;
+					rightFace=backFace;
+					backFace=leftFace;
+					leftFace=dummyFace;
+				}
+				pos.forEach(function(d,i) {
+					var x,y,z,ox=d.x,oy=d.y,oz=d.z;
+					y=oy;
+					z=-sign*ox;
+					x=sign*oz;
+					pos[i]={id:d.id,x:x,y:y,z:z,ox:ox,oy:oy,oz:oz,order:-1,delay:0,visible:d.visible};
+				})
+			}
+			cubes.selectAll(".f0").style("fill", function(d) {return dict[d.variables[frontFace]].color;})
+			cubes.selectAll(".f1").style("fill", function(d) {return dict[d.variables[topFace]].color;})
+			cubes.selectAll(".f2").style("fill", function(d) {return dict[d.variables[rightFace]].color;})
+			pos.sort(function(a,b) {return maxDim*maxDim*(a.y-b.y)+maxDim*(a.z-b.z)+a.x-b.x;});
+			pos.forEach(function(d,i) {pos[i]['order']=i;})
+			pos.sort(function(a,b) {return a.id-b.id;})
+			updateVarFaces();
+		}
+
+
+
+
+
+		// not sure what this does vv
+
+				d3.range(6).forEach(function(i) {
+				  data.sort(function(a,b) {
+				    return a.variables[i]-b.variables[i]
+				  ;});
+				  matrix[i+1]=data.map(function(d) {return d.id;});
+				  data.sort(function(a,b) {return a.id-b.id;});
+  		})
+
+		function colorCubes() {
+		var ax,bx,cx,dx,ex,fx,gx,hx,ay,by,cy,dy,ey,fy,gy,hy;
+		ax=ex=gy=hy=.5*(a-u),
+		ay=by=dx=hx=.5*(u-a),
+		bx=fx=cy=dy=.5*(a+u),
+		cx=gx=ey=fy=-.5*(a+u);
+
+		// 0 face - frontFace
+		cubes.append("svg:path").attr("class","f0").attr("d","M " + cx + " " + cy + " h "+u+" v -"+u+" h -"+u+" Z").style("fill", function(d) {return dict[d.variables[frontFace]].color;})
+		// 1 face - topFace
+		cubes.append("svg:path").attr("class","f1").attr("d","M " + gx + " " + gy + " h "+u+" l "+a+" -"+a+" h -"+u+" Z").style("fill", function(d) {return dict[d.variables[topFace]].color;})
+		// 2 face - rightFace
+		cubes.append("svg:path").attr("class","f2").attr("d","M " + hx + " " + hy + " v "+u+" l "+a+" -"+a+" v -"+u+" Z").style("fill", function(d) {return dict[d.variables[rightFace]].color;})
+		// 3 face - leftFace
+		cubes.append("svg:path").attr("class","f3").attr("d","M 0 0").style("fill", function(d) {return dict[d.variables[leftFace]].color;})
+		// 4 face - bottomFace
+		cubes.append("svg:path").attr("class","f4").attr("d","M 0 0").style("fill", function(d) {return dict[d.variables[bottomFace]].color;})
+		// 5 face - backFace
+		cubes.append("svg:path").attr("class","f5").attr("d","M 0 0").style("fill", function(d) {return dict[d.variables[backFace]].color;})
+		}
+
+		function reColorCubes() {
+				var ax,bx,cx,dx,ex,fx,gx,hx,ay,by,cy,dy,ey,fy,gy,hy;
+				ax=ex=gy=hy=.5*(a-u),
+				ay=by=dx=hx=.5*(u-a),
+				bx=fx=cy=dy=.5*(a+u),
+				cx=gx=ey=fy=-.5*(a+u);
+
+				// 0 face - frontFace
+				cubes.selectAll(".f0").transition().style("fill", function(d) {return dict[d.variables[frontFace]].color;})
+				// 1 face - topFace
+				cubes.selectAll(".f1").transition().style("fill", function(d) {return dict[d.variables[topFace]].color;})
+				// 2 face - rightFace
+				cubes.selectAll(".f2").transition().style("fill", function(d) {return dict[d.variables[rightFace]].color;})
+				// 3 face - leftFace
+				cubes.selectAll(".f3").transition().style("fill", function(d) {return dict[d.variables[leftFace]].color;})
+				// 4 face - bottomFace
+				cubes.selectAll(".f4").transition().style("fill", function(d) {return dict[d.variables[bottomFace]].color;})
+				// 5 face - backFace
+				cubes.selectAll(".f5").transition().style("fill", function(d) {return dict[d.variables[backFace]].color;})
+		}
+
+
+
+		//cubes.on("mousedown", transform);
+
+		function waitforkey() {if(!transforming){
+			switch (d3.event.keyCode) {
+							case 32: mode = 1-mode; rePos(); transform(); break;
+							case 37: if(!mode){rotateLeft(); d3.select("#title").html(variablesLong[frontFace])};break;
+							case 39: if(!mode){rotateRight();d3.select("#title").html(variablesLong[frontFace])};break;
+							case 38: if(!mode){rotateUp();d3.select("#title").html(variablesLong[frontFace])};break;
+							case 40: if(!mode){rotateDown();d3.select("#title").html(variablesLong[frontFace])};break;
+							case 83: sortVal=1-sortVal;rePos();transform();if(mode==1){hideLabels();showLabels();};break;
+
+			}
+			//transform();
+			}
+		}
+
+		function transform(explode,delay,duration,ease) {
+			if (!delay) {delay=300;}
+			if (!duration) {duration=500;}
+			if (!ease) {ease="cubic-in-out";}
+
+			transforming=1;
+
+			cubes.filter(function(d,i) {return (pos[d.id].visible);}).each(function(d,i) {
+				var myPos=pos[d.id];
+				var myCube=d3.select(this);
+				if(explode) {
+					var a=Math.random()*4*pi2;
+					var r=(Math.random()*.6)*maxDim;
+					var randX=Math.cos(a)*r;
+					var randZ=Math.sin(a)*r;
+					//var randX=maxDim/2-Math.random()*maxDim,
+					randY=-5;//Math.random()*maxDim,
+					//randZ=maxDim/2-Math.random()*maxDim;
+					myCube.transition()
+						.ease(ease)
+						.attr("transform", "translate(" + (xScaleX(randX)+xScaleZ(randZ)) +", "+ (yScaleY(randY)+yScaleZ(randZ)) +")")
+						.style("opacity",1).style("stroke-opacity",1)
+						.delay(myPos.delay+delay)
+						.duration(duration);
+					}
+				myCube.transition()
+					.ease(ease)
+					.attr("transform", "translate(" + (xScaleX(myPos.x)+xScaleZ(myPos.z)) +", "+ (yScaleY(myPos.y)+yScaleZ(myPos.z)) +")")
+					.style("opacity",1).style("stroke-opacity",1)
+					.delay(myPos.delay+delay+explode?(delay+duration+300):0)
+					.duration(duration);
+			})
+
+
+
+			// sort them cubes
+			//
+			// cubes.sort(function(a,b) {var ai=matrix[mode][a.id]; bi=matrix[mode][b.id];return (maxDim*maxDim*(~~(ai/maxDim))+maxDim*(ai%maxDim))-(maxDim*maxDim*(~~(bi/maxDim))+maxDim*(bi%maxDim));})
+			//
+			cubes.sort(function(a,b) {return pos[a.id].order-pos[b.id].order;})
+			transforming=0;
+		}
+		function quietTransform() {
+
+					cubes.filter(function(d,i) {return (pos[d.id].visible);}).each(function(d,i) {
+						var myPos=pos[d.id];
+						var myCube=d3.select(this);
+						myCube.attr("transform", "translate(" + (xScaleX(myPos.x)+xScaleZ(myPos.z)) +", "+ (yScaleY(myPos.y)+yScaleZ(myPos.z)) +")")
+
+					})
+
+
+
+					cubes.sort(function(a,b) {return pos[a.id].order-pos[b.id].order;})
+
+		}
+
+
+		function initFaces() {
+
+			var facessvg=d3.select("#variables").insert("svg:svg","div").attr("height","400px").append("svg:g").attr("transform","translate(100,150)");
+			facessvg.append("svg:line").attr("x1",50+100*depth).attr("y1",50-100*depth).attr("x2",50+300*depth).attr("y2",50-300*depth);
+			facessvg.append("svg:line").attr("x1",50*depth).attr("y1",50-50*depth).attr("x2",50*depth-70).attr("y2",50-50*depth);
+			facessvg.append("svg:line").attr("x1",50+50*depth).attr("y1",100-50*depth).attr("x2",50+50*depth).attr("y2",170-50*depth);
+
+			facessvg.append("svg:path").attr("d","M 0 100 h 100 v -100 h -100 Z");
+			facessvg.append("svg:path").attr("d","M 100 0 v 100 l "+(100*depth)+" "+(-100*depth)+" v -100 Z");
+			facessvg.append("svg:path").attr("d","M 0 0 h 100 l "+(100*depth)+" "+(-100*depth)+" h -100 Z");
+
+			facessvg.append("svg:line").attr("x1",50).attr("y1",50).attr("x2",50-100*depth).attr("y2",50+100*depth);
+			facessvg.append("svg:line").attr("x1",50+50*depth).attr("y1",-50*depth).attr("x2",50+50*depth).attr("y2",-70-50*depth);
+			facessvg.append("svg:line").attr("x1",100+50*depth).attr("y1",50-50*depth).attr("x2",170+50*depth).attr("y2",50-50*depth);
+
+			facessvg.selectAll("path").classed("variableCubeFace",1)
+			facessvg.selectAll("line").classed("variableLine",1)
+
+			updateVarFaces();
+
+		}
+
+		function updateVarFaces() {
+			d3.select("#frontVar").html(variablesLong[frontFace]);
+			d3.select("#backVar").html(variablesLong[backFace]);
+			d3.select("#topVar").html(variablesLong[topFace]);
+			d3.select("#bottomVar").html(variablesLong[bottomFace]);
+			d3.select("#leftVar").html(variablesLong[leftFace]);
+			d3.select("#rightVar").html(variablesLong[rightFace]);
+			d3.select("#title").html(variablesLong[frontFace])
+
+		}
+
+		function switchV(variable) {
+			d3.select("#v"+frontFace).classed("varSelected",0);
+			d3.select("#v"+variable).classed("varSelected",1);
+
+			frontFace=variable;
+			updateVarFaces();
+
+			frontFace=variable;
+			reColorCubes();
+			if(mode==1){
+				mode=0;
+				rePos();transform();
+				mode=1;
+				setTimeout("rePos()",700);
+				setTimeout("transform()",800);
+			}
+
+
+		}
+
+		function showLabels() {
+		var lines={}, others={},nbOthers=0;
+		spVar=d3.keys(nbVal)
+			.filter(function(d) {return d>=frontFace*100&&d<frontFace*100+100;})
+			.map(function(d) {return {value:d, label: dict[d].label, nb:~~nbVal[d]};})
+			.sort(function(a,b) {return sortVal?(b.nb-a.nb):((b.value<a.value)?-1:1);});
+
+		var cursor=0;
+		spVar.forEach(function(d) {d.line=Math.ceil(cursor/maxDim);cursor+=d.nb;})
+		spVar.forEach(function(d) {d.percent=d.nb/(d.total=cursor);})
+
+		spVar.slice(0).reverse().forEach(function(d) {
+			if(!lines[d.line]&&d.nb>maxDim){lines[d.line]=d;}
+			else {others[nbOthers++]=d;}
+		})
+
+		var labels=d3.select("#labels").selectAll("div").data(d3.values(lines)).enter().append("div");
+		labels.style("position","absolute")
+			  .style("width",130)
+			  .style("text-align","right")
+			  .style("top",function(d) {
+			  	var y=15+~~(d.total/maxDim)-maxDim-d.line;
+
+			   	return renderY([0,y,0])+3;
+			   })
+			   .on("mouseover",function(d,i){
+			  		d3.select(this).select(".valueLabel").classed("highlighted",1);
+			  		d3.select("#o"+i).classed("highlighted",1);
+			  	})
+			  	.on("mouseout",function(d,i){
+			  		d3.select(this).select(".valueLabel").classed("highlighted",0);
+			  		d3.select("#o"+i).classed("highlighted",0);
+				 });
+
+		labels.append("span").attr("class","valueLabel")
+			  .attr("id",function(d,i){return "l"+i;})
+			  .html(function(d) {return ((d.label).length>10)?(d.label.slice(0,10)+"..."):d.label;})
+			  .attr("title", function(d) {return d.label;});
+		labels.append("span").attr("class","percentLabel").html(function(d) {return (d.percent*100).toFixed(0)+"%"});
+		labels.append("span").attr("class","numberLabel").html(function(d) {return d.nb+"/"+d.total;})
+		addOverlays();
+
+		}
+
+		function updateLabels() {
+				var lines={}, others={},nbOthers=0;
+				spVar=d3.keys(nbVal)
+					.filter(function(d) {return d>=frontFace*100&&d<frontFace*100+100;})
+					.map(function(d) {return {value:d, label: dict[d].label, nb:~~nbVal[d]};})
+					.sort(function(a,b) {return sortVal?(b.nb-a.nb):((b.value<a.value)?-1:1);});
+
+				var cursor=0;
+				spVar.forEach(function(d) {d.line=Math.ceil(cursor/maxDim);cursor+=d.nb;})
+				spVar.forEach(function(d) {d.percent=d.nb/(d.total=cursor);})
+
+				spVar.slice(0).reverse().forEach(function(d) {
+					if(!lines[d.line]&&d.nb>maxDim){lines[d.line]=d;}
+					else {others[nbOthers++]=d;}
+				})
+
+				var labels=d3.select("#labels").selectAll("div").data(d3.values(lines)).enter().append("div");
+				labels.transition().style("top",function(d) {
+					  	var y=15+~~(d.total/maxDim)-maxDim-d.line;
+
+					   	return renderY([0,y,0])+3;
+					   });
+				labels.on("mouseover",function(d,i){
+			  		d3.select(this).select(".valueLabel").classed("highlighted",1);
+			  		d3.select("#o"+i).classed("highlighted",1);
+			  	})
+			  	.on("mouseout",function(d,i){
+			  		d3.select(this).select(".valueLabel").classed("highlighted",0);
+			  		d3.select("#o"+i).classed("highlighted",0);
+				 });
+				labels.selectAll(".percentLabel").html(function(d) {return (d.percent*100).toFixed(0)+"%"});
+				labels.selectAll(".numberLabel").html(function(d) {return d.nb+"/"+d.total;})
+				labels.selectAll(".valueLabel").attr("id",function(d,i){return "l"+i;})
+				vis.select(".overlayg").remove();addOverlays();
+
+		}
+
+		function addOverlays() {
+			var currentNb=nb;
+			spVar.forEach(function(d,i) {
+				d.x1=currentNb-maxDim*(~~(currentNb/maxDim))-maxDim/2;
+				d.y1=-maxDim/2+(~~(currentNb/maxDim));
+				currentNb-=d.nb;
+				d.x2=currentNb-maxDim*(~~(currentNb/maxDim))-maxDim/2;
+				d.y2=-maxDim/2+(~~(currentNb/maxDim));
+			})
+			var overlay=vis.append("svg:g").classed("overlayg",1);
+			var overlays=overlay.selectAll(".overlay").data(spVar).enter().append("svg:path").classed("overlay",1);
+			overlays.attr("d", function(d) {
+				return "M "+renderX([d.x1-.5,d.y1-.5,.5])+" "+renderY([d.x1-.5,d.y1-.5,.5])+
+					  " v -"+u+
+					  " h -"+((d.x1+(maxDim/2))*u)+
+					  " v " +((d.y1-d.y2)*u)+
+					  " h " +((d.x2+(maxDim/2))*u)+
+					  " v " +u+
+					  " h " +(((maxDim/2)-d.x2)*u)+
+					  " v -"+((d.y1-d.y2)*u)+
+					  " Z";
+				}).attr("id",function(d,i){return "o"+i;});
+			overlays.on("mouseover",function(d,i){
+												d3.select(this).classed("highlighted",1);
+												d3.select("#l"+i).classed("highlighted",1);
+												})
+					.on("mouseout" ,function(d,i){
+												d3.select(this).classed("highlighted",0);
+												d3.select("#l"+i).classed("highlighted",0);}
+												)
+					.on("click", function() {var i,xclick,yclick;
+						xclick=~~((d3.event.pageX-170)/u)-(maxDim/2);yclick=~~((639-d3.event.pageY)/u)-(maxDim/2);
+						//console.log(d3.event.x+" "+xclick+" "+d3.event.y+" "+yclick);
+						i=pos.filter(function(p){return p.x==xclick&&p.y==yclick;})[0];
+						selectCube(data[i.id]);})
+
+		}
+
+
+		function hideLabels() {
+		d3.select("#labels").html("");
+		d3.selectAll(".overlayg").remove();
+		}
+
+		function initFilters() {
+			filters=variables
+				.map(function(v,i) {return {variable:v, values:
+				 d3.keys(nbVal)
+					.filter(function(d) {return d>=i*100&&d<(i*100+100);})
+					.map(function(d) {return {value:d, label:dict[d].label, filtered:0, variable:i};})};})
+			var filterDiv=d3.select("#filters");
+			var varFilterDiv = filterDiv.selectAll("div").data(filters).enter()
+				.append("div")
+					.attr("class","varFilter")
+					.attr("id",function(d,i) {return "f"+i});
+
+			varFilterDiv
+				.append("div")
+					.attr("class","varFitlerTitle")
+					.html(function(d) {return d.variable;})
+					.on("click", function(d,i) {
+						d3.select("#filters").selectAll(".varFilterValues").style("display","none");
+						d3.select("#f"+i).select(".varFilterValues").style("display","block");
+					})
+					.append("div").attr("class","varFilterFlag")
+						.on("click", function(d,i) {
+							d3.select("#f"+i).selectAll(".filterValue").classed("selected",0);
+							filters[i].values.forEach(function(v) {v.filtered=0;})
+							d3.select(this).classed("selected",0);
+							filterUpdate();
+						});
+
+			varFilterDiv
+				.append("div")
+					.attr("class","varFilterValues")
+					.attr("id",function(d,i) {return "fv"+i;})
+					.selectAll("span").data(function(d,i) {return filters[i].values;}).enter()
+						.append("span")
+							.attr("class", "filterValue")
+							.html(function(d) {return (d.label.length>10)?(d.label.slice(0,10)+"..."):d.label;})
+							.attr("title",function(d) {return d.label;})
+							.classed("selected", function(d) {return d.filtered;})
+							.on("click", function(d) {
+								if (d.filtered) {
+									d.filtered=0;
+									d3.select(this).classed("selected",0);
+									if(filters[d.variable].values.every(function(v) {return v.filtered==0;}))
+										{d3.select("#f"+d.variable).select(".varFilterFlag").classed("selected",0);}
+									filterUpdate();
+								} else {
+									d.filtered=1;
+									d3.select(this).classed("selected",1);
+									d3.select("#f"+d.variable).select(".varFilterFlag").classed("selected",1);
+									filterUpdate();
+								}
+							})
+							.on("dblclick", function(d) {
+								filters[d.variable].values.forEach(function(v) {v.filtered=1;})
+								d3.select("#f"+d.variable).selectAll(".filterValue").classed("selected",1);
+								d3.select(this).classed("selected",0);
+								d.filtered=0;
+								d3.select("#f"+d.variable).select(".varFilterFlag").classed("selected",1);
+								filterUpdate();
+							})
+			filterDiv.append("div").classed("clear",1).html("&nbsp;")
+		}
+		function showFilters() {
+			d3.select("#filters").style("display","block");
+		}
+
+		function hideFilters() {
+			d3.select("#filters").style("display","none");
+		}
+		function showTab(tab) {
+			d3.selectAll(".tabactive").classed("tabactive",0);
+			d3.selectAll("#instructions").style("display",function() {return (tab==1)?"block":"none";});
+			d3.selectAll("#filters").style("display",function() {return (tab==2)?"block":"none";})
+			d3.selectAll("#variables").style("display",function() {return (tab==3)?"block":"none";})
+			d3.selectAll("#popup").style("display",function() {return (tab==4)?"block":"none";})
+			d3.selectAll("#t"+tab).classed("tabactive",1);
+		}
+
+
+		function selectCube(d) {
+			if (selectedCube>-1){d3.select("#c"+selectedCube).classed("selectedCube",0)}
+			selectedCube=d.id;
+			d3.select("#c"+selectedCube).classed("selectedCube",1)
+			d3.select("#t4").style("display","inline");
+			showTab(4);
+			popup.select("#id").html(d.id);
+			popup.select("#gender").html(dict[d.variables[10]].label).style("color", dict[d.variables[10]].color);
+			popup.select("#country").html(dict[d.variables[2]].label).style("color", dict[d.variables[2]].color);
+			popup.select("#continent").html("("+dict[d.variables[3]].label+")").style("color", dict[d.variables[3]].color);
+			popup.select("#edu").html(dict[d.variables[4]].label).style("color", dict[d.variables[4]].color);
+			popup.select("#yearsin").html(dict[d.variables[8]].label).style("color", dict[d.variables[8]].color);
+			popup.select("#category").html(dict[d.variables[0]].label).style("color", dict[d.variables[0]].color);
+			popup.select("#categorygroup").html("("+dict[d.variables[1]].label+")").style("color", dict[d.variables[1]].color);
+			popup.select("#stay").html(dict[d.variables[5]].label).style("color", dict[d.variables[5]].color);
+			popup.select("#firsttime").html(dict[d.variables[6]].label).style("color", dict[d.variables[6]].color);
+			popup.select("#hear").html(dict[d.variables[9]].label).style("color", dict[d.variables[9]].color);
+			popup.select("#organization").html(dict[d.variables[7]].label).style("color", dict[d.variables[7]].color);
+			popup.select("#organizationgroup").html("("+dict[d.variables[11]].label+")").style("color", dict[d.variables[11]].color);
+
+			popup.select("#conferences").html(function() {var result="";
+			d3.range(3).forEach(function(i) {if (d.filters[0]&Math.pow(2,i)) {result+=(result==""?"":", ")+confs[i];}})
+			return result;})
+
+			popup.select("#interests").html(function() {var result="";
+			d3.range(21).forEach(function(i) {if (d.filters[1]&Math.pow(2,i)) {result+=(result==""?"":", ")+interests[i];}})
+			return result;})
+		}
+
+		function clearSelectedCube(d) {
+			d3.select("#c"+selectedCube).classed("selectedCube",0);
+			selectedCube=-1;
+			if(d3.select("#t4").attr("class")=="tabactive"){showTab(1);}
+			d3.select("#t4").style("display","none");
+		}
+
+
+		function defineFaces(){
+			var maxX,minX,maxY,minY,maxZ,minZ;
+
+			maxX=new Object;
+			minX=new Object;
+			maxY=new Object;
+			minY=new Object;
+			maxZ=new Object;
+			minZ=new Object;
+			d3.range(-5,6).forEach(function(d) {maxX[d]=new Object;minX[d]=new Object;maxY[d]=new Object;minY[d]=new Object;maxZ[d]=new Object;minZ[d]=new Object;})
+
+			pos.forEach(function(d) {
+				if (d.visible) {
+
+				if (maxX[d.y][d.z]===undefined)
+					{maxX[d.y][d.z]=d.id;};
+				if (pos[maxX[d.y][d.z]].x<d.x)
+					{maxX[d.y][d.z]=d.id;};
+
+				if (minX[d.y][d.z]===undefined)
+					{minX[d.y][d.z]=d.id;};
+				if (pos[minX[d.y][d.z]].x>d.x)
+					{minX[d.y][d.z]=d.id;};
+
+				if (maxY[d.x][d.z]===undefined)
+					{maxY[d.x][d.z]=d.id;};
+				if (pos[maxY[d.x][d.z]].y<d.y)
+					{maxY[d.x][d.z]=d.id;};
+
+
+				if (minY[d.x][d.z]===undefined)
+					{minY[d.x][d.z]=d.id;};
+				if (pos[maxY[d.x][d.z]].y>d.y)
+					{minY[d.x][d.z]=d.id;};
+
+				if (maxZ[d.x][d.y]===undefined)
+					{maxZ[d.x][d.y]=d.id;};
+				if (pos[maxZ[d.x][d.y]].z<d.z)
+					{maxZ[d.x][d.y]=d.id;};
+				if (minZ[d.x][d.y]===undefined)
+					{minZ[d.x][d.y]=d.id;};
+				if (pos[minZ[d.x][d.y]].z>d.z)
+					{minZ[d.x][d.y]=d.id;};
+			}})
+
+			frontFaceCubes=new Array;
+			d3.values(maxZ).forEach(function(d) {frontFaceCubes=frontFaceCubes.concat(d3.values(d));})
+			backFaceCubes=new Array;
+			d3.values(minZ).forEach(function(d) {backFaceCubes=backFaceCubes.concat(d3.values(d));})
+			rightFaceCubes=new Array;
+			d3.values(maxX).forEach(function(d) {rightFaceCubes=rightFaceCubes.concat(d3.values(d));})
+			leftFaceCubes=new Array;
+			d3.values(minX).forEach(function(d) {leftFaceCubes=leftFaceCubes.concat(d3.values(d));})
+			topFaceCubes=new Array;
+			d3.values(maxY).forEach(function(d) {topFaceCubes=topFaceCubes.concat(d3.values(d));})
+			bottomFaceCubes=new Array;
+			d3.values(minY).forEach(function(d) {bottomFaceCubes=bottomFaceCubes.concat(d3.values(d));})
+		}
+
+		</script>
+	</body>
+</html>
+

@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>stacked areas &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/stacked-areas/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>Working with data in protovis: part 5 of 5</title>
+		<link>/2011/02/11/working-with-data-in-protovis-part-5-of-5/</link>
+		<comments>/2011/02/11/working-with-data-in-protovis-part-5-of-5/#comments</comments>
+		<pubDate>Fri, 11 Feb 2011 18:11:22 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[charts]]></category>
+		<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[protovis]]></category>
+		<category><![CDATA[tips]]></category>
+		<category><![CDATA[arc diagrams]]></category>
+		<category><![CDATA[force-directed graphs]]></category>
+		<category><![CDATA[graphs]]></category>
+		<category><![CDATA[layouts]]></category>
+		<category><![CDATA[matrix diagrams]]></category>
+		<category><![CDATA[network]]></category>
+		<category><![CDATA[stacked areas]]></category>
+		<category><![CDATA[stacked bars]]></category>
+		<category><![CDATA[stacked columns]]></category>
+		<category><![CDATA[treemaps]]></category>
+		<category><![CDATA[trees]]></category>
+		<category><![CDATA[tutorial]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=623</guid>
+		<description><![CDATA[previous: reshaping complex arrays (4/5) Working with layouts In this final part, we&#8217;re going to look at how we can shape our data to use the protovis built-in layouts such as stacked areas, treemaps or force-directed graphs. This is not a tutorial on how to use layouts stricto sensu, and I advise anyone interested to <a class="read-more" href="/2011/02/11/working-with-data-in-protovis-part-5-of-5/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>previous: <a href="http://www.jeromecukier.net/?p=502">reshaping complex arrays (4/5)</a></p>
+<h2>Working with layouts</h2>
+<p>In this final part, we&#8217;re going to look at how we can shape our data to use the protovis built-in layouts such as stacked areas, treemaps or force-directed graphs.<br />
+This is not a tutorial on how to use layouts stricto sensu, and I advise anyone interested to first look at the <a href="http://vis.stanford.edu/protovis/docs/layout.html">protovis documentation</a> to see what can be done with this and to understand the underlying concepts. </p>
+<p>But if there is one thing to know about layouts, it&#8217;s that they allow you to <strong>create non-trivial visualizations in even less code than regular protovis</strong>, provided that you <strong>pass them data in a form they can use</strong>, and this is precisely where we come in.</p>
+<h3>Three great categories of layouts</h3>
+<p>Currently, there are no fewer than 13 types of layouts in Protovis. Fortunately, there are examples for all of them in the gallery.<br />
+There are layouts for: </p>
+<ul>
+<li>Arrays of data</li>
+<ul>
+<li>
+Grids or heatmaps <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Grid.html">doc</a> <a href="http://vis.stanford.edu/protovis/ex/heatmap.html">example</a>
+</li>
+<li>
+Stacked areas or streamgraphs <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Stack.html">doc</a> <a href="http://vis.stanford.edu/protovis/ex/stack.html">stacked areas</a> <a href="http://vis.stanford.edu/protovis/ex/stream.html">streamgraphs</a>
+</li>
+</ul>
+<li>Networks (nodes and links)</td>
+<td>Hierarchized data (trees)</li>
+<ul>
+<li>
+Arc diagrams <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Arc.html">doc</a> <a href="http://vis.stanford.edu/protovis/ex/arc.html">example</a></li>
+<li>
+Force-directed graphs <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Force.html">doc</a> <a href="http://vis.stanford.edu/protovis/ex/force.html">example </a>
+</li>
+<li>
+Relationship matrices <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Matrix.html">doc</a> <a href="http://vis.stanford.edu/protovis/ex/matrix.html">example</a>
+</li>
+<li>Rollup network<a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Rollup.html">doc</a> (no example in Protovis 3.2, but there is one in 3.3)</li>
+</ul>
+<li>Trees and hierarchized data</li>
+<ul>
+<li>
+Dendograms <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Cluster.html">doc </a><a href="http://vis.stanford.edu/protovis/ex/dendrogram.html">example</a>
+</li>
+<li>
+Indented trees <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Indent.html">doc</a> <a href="http://vis.stanford.edu/protovis/ex/indent.html">example</a>
+</li>
+<li>
+Packed circles <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Pack.html">doc</a> <a href="http://vis.stanford.edu/protovis/ex/pack.html">example</a>
+</li>
+<li>
+Sunbursts and icicles <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Partition.html">doc</a> <a href="http://vis.stanford.edu/protovis/ex/sunburst.html">sunbursts</a> <a href="http://vis.stanford.edu/protovis/ex/icicle.html">icicles</a>
+</li>
+<li>
+Node-link trees <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Tree.html">doc</a> <a href="http://vis.stanford.edu/protovis/ex/tree.html">example</a></li>
+<li>Treemaps <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Treemap.html">doc</a> <a href="http://vis.stanford.edu/protovis/ex/treemap.html">example</a></li>
+</ul>
+</ul>
+<p>In addition, there are layouts like <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Bullet.html">pv.Layout.Bullet</a> which require data to have a certain specific shape but the <a href="http://vis.stanford.edu/protovis/ex/bullet.html">example from the gallery</a> is very explicit. (et tu, <a href="http://vis.stanford.edu/protovis/ex/horizon.html">Horizon</a> layout).</p>
+<h3>Arrays of data</h3>
+<p>In order to work with this kind of layout, the simplest thing is to put your data in a 2-dimensional array: </p>
+<pre class="brush: jscript; title: ; notranslate">var data=[
+   [8,3,7,2,5],
+   [9,6,1,7,4],
+    ...
+   [7,4,3,6,8]
+];</pre>
+<p>For the grid layout, this gives you an array of cells divided in columns (number of elements in each line) and rows (number of lines).<br />
+The idea of the grid layout is that your cells are automatically positioned and sized, so afaik the only thing you can do is add a mark such as a pv.Bar which would fill them completely, but which you could still style with fillStyle or strokeStyle. You can&#8217;t really access the underlying data with functions but you can use methods that rely on default values, like adding labels.</p>
+<p>For instance, you can use it to generate a QR code: </p>
+<table>
+<tr>
+<td>
+<pre class="brush: jscript; title: ; notranslate">var qr=[
+&quot;000000000000000000000000000&quot;,
+&quot;011111110001010100011111110&quot;,
+&quot;010000010101001110010000010&quot;,
+&quot;010111010000010100010111010&quot;,
+&quot;010111010111011110010111010&quot;,
+&quot;010111010010000001010111010&quot;,
+&quot;010000010110110010010000010&quot;,
+&quot;011111110101010101011111110&quot;,
+&quot;000000000011100100000000000&quot;,
+&quot;011111011110101110101010100&quot;,
+&quot;000010101001010111101000100&quot;,
+&quot;010101111001001011111010110&quot;,
+&quot;001011000100010101010100010&quot;,
+&quot;001100010111011010010101110&quot;,
+&quot;010101100110001101001010100&quot;,
+&quot;010011010011111111100110110&quot;,
+&quot;010111101010100101000010010&quot;,
+&quot;010100110010111101111101000&quot;,
+&quot;000000000101010111000111000&quot;,
+&quot;011111110100011001010111110&quot;,
+&quot;010000010000110011000110110&quot;,
+&quot;010111010110001011111111000&quot;,
+&quot;010111010101101100110101110&quot;,
+&quot;010111010100000111001001010&quot;,
+&quot;010000010111010101101110010&quot;,
+&quot;011111110101001100011111110&quot;,
+&quot;000000000000000000000000000&quot;,
+].map(function(i) i.split(&quot;&quot;));
+
+var vis = new pv.Panel()
+    .width(216)
+    .height(216);
+vis.add(pv.Layout.Grid)
+    .rows(qr)
+ 	.cell.add(pv.Bar)
+ 	    .fillStyle(pv.colors(&quot;#fff&quot;, &quot;#000&quot;))
+     ;
+vis.render();</pre>
+</td>
+<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/QR-grid-big.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/QR-grid-big.png" alt="" title="QR-grid-big" width="216" height="216" class="aligncenter size-full wp-image-628" /></a>(BTW, this is the QR code to this page)</td>
+</tr>
+</table>
+<p>On line 29, I&#8217;m using a <a href="http://www.jeromecukier.net/?p=494">map function</a> to turn this array of strings, which is easier and shorter to type, into a <em>bona fide</em> 2-dimensional array. </p>
+<p>That&#8217;s all there is to grids, of all the layouts they are among the easiest to reproduce with regular protovis.</p>
+<p>Now, stacks.<br />
+The easiest way to use them is to pass them 2-dimensional arrays. Now it doesn&#8217;t have to be arrays of numbers, it can be arrays of associative arrays in case you need to do something exotic. But for the following examples let&#8217;s just assume you don&#8217;t. Here is how you&#8217;d do a stacked area, stacked columns and stacked bars respectively:</p>
+<table>
+<tr>
+<td>
+<pre class="brush: jscript; title: ; notranslate">var data=[
+[[1000,1200,1500,1700]]
+[[100,500,300,200]]
+]
+var vis=new pv.Panel().width(200).height(200);
+vis.add(pv.Layout.Stack)
+    .layers(data)
+    .x(function() 50*this.index)
+    .y(function(d) d/20)
+    .layer.add(pv.Area)</pre>
+</td>
+<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/stackedAreas.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/stackedAreas.png" alt="" title="stackedAreas" width="200" height="200" class="aligncenter size-full wp-image-636" /></a></td>
+</tr>
+</table>
+<p>all you need is to feed the layers, x, y properties of your stack, then say what you want to add to your layers.<br />
+Now, columns: </p>
+<table>
+<tr>
+<td>
+<pre class="brush: jscript; first-line: 6; title: ; notranslate">vis.add(pv.Layout.Stack)
+    .layers(data)
+    .x(function() 50*this.index)
+    .y(function(d) d/20)
+    .layer.add(pv.Bar).width(40)</pre>
+</td>
+<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/stackedColumns.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/stackedColumns.png" alt="" title="stackedColumns" width="200" height="200" class="aligncenter size-full wp-image-637" /></a></td>
+</tr>
+</table>
+<p>and finally, bars: </p>
+<table>
+<tr>
+<td>
+<pre class="brush: jscript; first-line: 6; highlight: [8,11]; title: ; notranslate">vis.add(pv.Layout.Stack)
+    .layers(data)
+    .orient(&quot;left&quot;)
+    .x(function() 50*this.index)
+    .y(function(d) d/20)
+    .layer.add(pv.Bar).height(40)</pre>
+</td>
+<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/stackedBars.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/stackedBars.png" alt="" title="stackedBars" width="200" height="200" class="aligncenter size-full wp-image-638" /></a></td>
+</tr>
+</table>
+<p>For bars, there is a little trick here. I specify that the layer orientation is horizontal (&#8220;left&#8221;) and I change the height instead of the width of the added pv.Bar.<br />
+And that all there is. You can create various streamgraphs by <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Stack.html#offset">playing with the order and offset properties</a> of the stack but this doesn&#8217;t change anything to the data structure, so we&#8217;re done here.</p>
+<h3>Representing networks</h3>
+<p>Protovis provides 3 cool layouts to easily exhibit relationships between nodes: arc diagrams, matrix diagrams and force-directed layouts.<br />
+The good news is that the shape of the data required by those three layouts is identical. </p>
+<p>They require an array that correponds to the nodes. This can be as simple as a pv.range(), or as sophisticated as an array of associative arrays if you want to style your network graph according to several potential attributes of the node. </p>
+<p>And they also require an array for the links. This array has a more rigid form, it must be an array of associative arrays of the shape: {source: #, target: #, value: #} where the values for source and target correspond to the position of a node in the node array, and value indicates the strength of the link. </p>
+<p>So let&#8217;s do a simple one. </p>
+<table>
+<tr>
+<td>
+<pre class="brush: jscript; title: ; notranslate">var nodes=pv.range(6); // why more complex, right?
+var links=[
+{source:0, target:1, value:2},
+{source:1, target:2, value:1},
+{source:1, target:3, value:1},
+{source:2, target:4, value:4},
+{source:3, target:5, value:1},
+{source:4, target:5, value:1},
+{source:1, target:5, value:3}
+]
+var vis = new pv.Panel()
+    .width(200)
+    .height(200)
+    ;
+var arc = vis.add(pv.Layout.Arc)
+    .nodes(nodes)
+    .links(links)
+	.bottom(100)
+arc.link.add(pv.Line);
+arc.node.add(pv.Dot)
+    .size(50)
+vis.render();</pre>
+</td>
+<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleNetwork1.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleNetwork1.png" alt="" title="simpleNetwork" width="200" height="200" class="aligncenter size-full wp-image-644" /></a></td>
+</tr>
+</table>
+<p>Here, by varying the strength of the link, the thickness of the arcs changes accordingly. The nodes are left unstyled, had we passed a more complicated dataset to the nodes array, we could have changed their properties (fillStyle, size, strokeStyle, labels etc.) with appropriate accessor functions. </p>
+<p>With little modifications we can create a force-directed layout and a matrix diagram.</p>
+<table>
+<tr>
+<td>
+<pre class="brush: jscript; first-line: 14; title: ; notranslate">
+var force = vis.add(pv.Layout.Force)
+    .nodes(nodes)
+    .links(links);
+
+force.link.add(pv.Line);
+
+force.node.add(pv.Dot)
+	.size(50)
+	.anchor(&quot;center&quot;).add(pv.Label)
+		.text(function() this.index);
+
+vis.render();
+</pre>
+</td>
+<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleForce.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleForce.png" alt="" title="simpleForce" width="200" height="200" class="aligncenter size-full wp-image-645" /></a></td>
+</tr>
+</table>
+<p>Here I labelled the nodes so one can tell which is which. This is done by adding a pv.Label to the pv.Dot that&#8217;s attached to the node, just like with any other mark.</p>
+<table>
+<tr>
+<td>
+<pre class="brush: jscript; first-line: 14; title: ; notranslate">
+var Matrix = vis.add(pv.Layout.Matrix)
+	.nodes(nodes)
+	.directed(true)
+	.links(links)
+	.top(20).left(20)
+
+Matrix.link.add(pv.Bar)
+    .fillStyle(function(d) pv.Scale.linear(0, 2, 4)
+      .range('#eee', 'yellow', 'green')(d.linkValue))
+
+Matrix.label.add(pv.Label).text(function() Math.floor(this.index/2))
+
+vis.render();</pre>
+</td>
+<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleMatrix1.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleMatrix1.png" alt="" title="simpleMatrix" width="200" height="200" class="aligncenter size-full wp-image-647" /></a></td>
+</tr>
+</table>
+<p>For the matrix things are slightly more complex than for the previous 2. Here I opted for a directed matrix, as opposed to a bidirectional one: this means that each link is shown once, to its source from its target, and not twice (ie from its target back to its source) which is the default.<br />
+I chose to color the bar attached to my links (which are cells of the matrix) according to the strength of my links. Again, if my nodes field was more qualified, I could have used these properties. </p>
+<p>Finally, we&#8217;ve added labels to the custom property Matrix.label. Only, the labels are numbered from 0 to 11 so to get numbers from 0 to 5 for both rows and columns I used Math.floor(this.index/2) (integer part of half of this number).</p>
+<h3>Hierarchized data</h3>
+<p>Like for networks, the shape of the data we can feed to treemaps, icicles and other hierarchical representation doesn&#8217;t change. So once you have your data in order, you can easily switch representations. </p>
+<p>Essentially, you will be passing a tree of the form: </p>
+<pre class="brush: jscript; title: ; notranslate">var myTree={
+   rootnode: {
+      node: {
+      ...  
+         node: {
+            leaf: value,
+            leaf: value,
+            ...
+            leaf: value
+         },
+      ...  
+}</pre>
+<p>The protovis examples use the hierarchy of <a href="http://vis.stanford.edu/protovis/ex/flare.js">flare source code</a> as an example, which really shows what can be done with a treemap and other tree represenations. </p>
+<p>For our purpose we are going for a simpler tree, inspired by the work of Periscopic on <a href="http://www.congressspeaks.com/">congressspeaks.com</a> which Kim Rees showed at <a href="http://now.periscopic.com/2011/02/lessons-in-visual-economy-at-strata/">Strata</a>.<br />
+Kim presentation featured tiny treemaps that showed the voting record for a congressperson, and whether they had voted for or against their party.</p>
+<p>So let&#8217;s play with the voting record of an hypothetic congressperson:</p>
+<pre class="brush: jscript; title: ; notranslate">var hasVoted={
+	didnt: 100,
+	voted: {
+	    yes: {
+	        yesWithParty: 241,
+	        yesAgainstParty: 23
+	    },
+	    no: {
+	        noWithParty: 73,
+	        noAgainstParty: 5
+	    }
+	}
+};</pre>
+<p>Once you have your tree, you will need to pass it to your layout using pv.dom, like this: </p>
+<pre class="brush: jscript; light: true; title: ; notranslate">pv.dom(hasVoted).root(&quot;hasVoted&quot;).nodes()</pre>
+<p>Based on that let&#8217;s do two hierarchical representations.<br />
+Let&#8217;s start with a tree: </p>
+<pre class="brush: jscript; first-line: 14; title: ; notranslate">var vis = new pv.Panel()
+    .width(500)
+    .height(200)
+    ;
+var tree = vis.add(pv.Layout.Tree)
+    .nodes(pv.dom(hasVoted).root(&quot;hasVoted&quot;).nodes())
+    .depth(40)
+    .breadth(100)
+    .top(30)
+    .right(100)
+    ;
+tree.link.add(pv.Line);
+tree.node.add(pv.Dot)
+    .size(function(n) n.nodeValue)
+	.anchor(&quot;center&quot;).add(pv.Label).textAlign(&quot;center&quot;).text(function(n) n.nodeName)
+vis.render();</pre>
+<p>And here is the result:<br />
+<a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleTree.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleTree.png" alt="" title="simpleTree" width="500" height="200" class="aligncenter size-full wp-image-652" /></a></p>
+<p>There are many styling possibilities obviously left unexplored in this simple example (you can control properties of the tree.link, tree.node, tree.labels which we didn&#8217;t use here, etc.), but this won&#8217;t change much as far as data are concerned. </p>
+<p>Now let&#8217;s try a treemap with the same dataset.</p>
+<pre class="brush: jscript; first-line: 14; title: ; notranslate">var vis = new pv.Panel()
+    .width(400)
+    .height(200)
+    ;
+
+var tree = vis.add(pv.Layout.Treemap)
+	.width(200).height(200)
+    .nodes(pv.dom(hasVoted).root(&quot;hasVoted&quot;).nodes())
+    ;
+
+tree.leaf.add(pv.Panel)
+	.fillStyle(function(d) d.nodeName==&quot;didnt&quot;?&quot;darkgrey&quot;:d.nodeName.slice(0,3)==&quot;yes&quot;?
+	d.nodeName.slice(-9)==&quot;WithParty&quot;?&quot;powderblue&quot;:&quot;steelblue&quot;:
+	d.nodeName.slice(-9)==&quot;WithParty&quot;?&quot;lightsalmon&quot;:&quot;salmon&quot;)
+
+vis.add(pv.Panel)
+	.data([
+		   {label:&quot;yes with party&quot;, 	color: &quot;powderblue&quot;},
+		   {label:&quot;yes against party&quot;, 	color: &quot;steelblue&quot;},
+		   {label:&quot;no with party&quot;, 		color: &quot;lightsalmon&quot;},
+		   {label:&quot;no against party&quot;, 	color: &quot;salmon&quot;},
+		   {label:&quot;didn't vote&quot;, 		color: &quot;darkgrey&quot;}
+		   ])
+	.left(220)
+	.top(function() 50+20*this.index)
+	.height(15)
+	.width(20)
+	.fillStyle(function(d) d.color)
+	.anchor(&quot;right&quot;).add(pv.Label).textAlign(&quot;left&quot;).text(function(d) d.label)
+
+vis.render();
+</pre>
+<p>and what took the longest part of the code was making the legend.</p>
+<p>Here is the outcome:<br />
+<a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleTreemap.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleTreemap.png" alt="" title="simpleTreemap" width="400" height="200" class="aligncenter size-full wp-image-653" /></a></p>
+]]></content:encoded>
+			<wfw:commentRss>/2011/02/11/working-with-data-in-protovis-part-5-of-5/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+	</channel>
+</rss>

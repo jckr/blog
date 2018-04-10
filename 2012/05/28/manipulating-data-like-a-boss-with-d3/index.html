@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="HandheldFriendly" content="True" />
+<meta name="MobileOptimized" content="320" />
+
+<title>Manipulating data like a boss with d3 | jeromecukier.net</title>
+
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="/xmlrpc.php">
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Feed" href="/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Comments Feed" href="/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Manipulating data like a boss with d3 Comments Feed" href="/2012/05/28/manipulating-data-like-a-boss-with-d3/feed/" />
+<!-- This site uses the Google Analytics by MonsterInsights plugin v7.0.5 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+<!-- Note: MonsterInsights is not currently configured on this site. The site owner needs to authenticate with Google Analytics in the MonsterInsights settings panel. -->
+<!-- No UA code set -->
+<!-- / Google Analytics by MonsterInsights -->
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/localhost:8888\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6.10"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='YoutubeShortcodeMargenn-css'  href='/wp-content/plugins/youtube-shortcode/youtube-shortcode.css?ver=4.6.10' type='text/css' media='all' />
+<link rel='stylesheet' id='casper-google-fonts-css'  href='//fonts.googleapis.com/css?family=Noto+Serif%3A400%2C700%2C400italic%7COpen+Sans%3A700%2C400&#038;ver=4.6.10' type='text/css' media='all' />
+<link rel='stylesheet' id='casper-style-css'  href='/wp-content/themes/casper/style.css?ver=4.6.10' type='text/css' media='all' />
+<script type='text/javascript' src='/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Making-of: the map of congress equality' href='/2012/05/24/making-of-the-map-of-congress-equality/' />
+<link rel='next' title='Tableau 2012 sports visualization contest entry' href='/2012/06/30/tableau-2012-sports-visualization-contest-entry/' />
+<meta name="generator" content="WordPress 4.6.10" />
+<link rel="canonical" href="/2012/05/28/manipulating-data-like-a-boss-with-d3/" />
+<link rel='shortlink' href='http://wp.me/p-k6' />
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2Flocalhost%3A8888%2F2012%2F05%2F28%2Fmanipulating-data-like-a-boss-with-d3%2F" />
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2Flocalhost%3A8888%2F2012%2F05%2F28%2Fmanipulating-data-like-a-boss-with-d3%2F&#038;format=xml" />
+
+   	<style type="text/css">
+					.blog-title a, .blog-description, .social-icons a { color: #ffffff; }
+		
+						                
+		
+							.main-navigation a { color: ; }
+		                                            </style>
+    		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+
+<body class="single single-post postid-1246 single-format-standard group-blog">
+
+<header id="masthead" role="banner" class="site-head site-header" >
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+        <div>
+            <h1 class="menu-toggle">
+                <a class="icon-bars" href="#">
+                    <span class="hidden">Menu</span>
+                </a>
+            </h1>
+            <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+            <div class="menu"><ul><li ><a href="/">Home</a></li><li class="page_item page-item-6"><a href="/about/">About</a></li><li class="page_item page-item-1073"><a href="/data-stories/">Data with stories workshop &#8211; examples</a></li><li class="page_item page-item-437"><a href="/proofs-of-concept/">Private section</a></li><li class="page_item page-item-2"><a href="/sample-page/">Sample Page</a></li></ul></div>
+        </div>
+    </nav><!-- #site-navigation -->
+
+    <div class="vertical-row">
+        <div class="vertical">
+            <div class="site-head-content inner">
+                
+                <div class="social-icons">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                    </div>
+                <h1 class="blog-title"><a class="blog-logo" href='/' rel='home'>jeromecukier.net</a></h1>
+                <h2 class="blog-description">Just another WordPress site</h2>
+            </div>
+        </div>
+    </div>
+</header><!-- #masthead -->
+
+<main id="content" class="content" role="main">
+
+
+		
+			<article id="post-1246" class="post-1246 post type-post status-publish format-standard hentry category-d3 category-data-visualization category-tips">
+    <header class="post-header">
+                	<span class="post-meta">
+        	    <span class="posted-on"><a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/" rel="bookmark"><time class="entry-date published" datetime="2012-05-28T03:27:24+00:00">May 28, 2012</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> | <a href="/category/d3/" rel="category tag">d3</a>, <a href="/category/data-visualization/" rel="category tag">data visualization</a>, <a href="/category/tips/" rel="category tag">tips</a>        	</span>
+		        <h1 class="post-title"><a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/" rel="bookmark">Manipulating data like a boss with d3</a></h1>
+        
+    </header>
+    		<section class="post-content">
+		    <p>Updates:<br />
+1) I&#8217;ve put all the code examples in http://codepen.io/collection/njzYxo/<br />
+2) I will rewrite this post after I&#8217;m done publishing my <a href="http://wp.me/po630-rQ">Visualization with React</a> series, because it&#8217;s 4 years old and there are other ways to do this now.</p>
+<p>Data is the first D in d3 (or possibly the 3rd, but it&#8217;s definitely one of these).</p>
+<p>Anyway. Putting your data in the right form is crucial to have concise code that runs fast and is easy to read (and, later, troubleshoot).</p>
+<p>So what shape should your data be in?<br />
+You undoubtedly have many options. </p>
+<p>To follow through this tutorial, let&#8217;s assume you want to plot the relationship between R&#038;D expenditure and GDP growth for a number of countries. You have got <a href="http://www.jeromecukier.net/stuff/data%20example/data.csv">this file</a>, full of tabular data, which lists for every country a name, a continent, the gross R&#038;D expenditure as a percentage of GDP, GDP growth, and for context population and GDP per capita.</p>
+<p>So one very basic approach would be to put each of these variables into one independent array.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">var GERD=[2.21367, 2.74826, 1.96158, 1.80213, 0.39451, 1.52652, 3.01937, 1.44122, 3.84137, 2.20646, 2.78056, 0.5921, 1.14821, 2.64107, 1.78988, 4.2504, 1.26841, 3.33499, 3.3609, 1.67862, 0.41322, 1.81965, 1.13693, 1.75922, 0.67502, 1.65519, 1.24252, 0.48056, 1.85642, 0.92523, 1.38357, 3.61562, 2.99525, 0.84902, 1.82434, 2.78518];
+var growth=[2.48590317, 3.10741128, 1.89308521, 3.21494841, 5.19813626, 1.65489834, 1.04974368, 7.63563272, 2.85477157, 1.47996142, 2.99558644, -6.90796403, 1.69192342, -3.99988322, -0.42935239, 4.84602001, 0.43108032, 3.96559062, 6.16184325, 2.67806902, 5.56185685, 1.18517739, 2.33052515, 1.59773989, 4.34962928, -1.60958484, 4.03428262, 3.34920254, -0.17459255, 2.784, -0.06947685, 3.93555895, 2.71404473, 9.00558548, 2.09209263, 3.02171711];
+var GDPcap=[40718.78167, 42118.46375, 38809.66436, 39069.91407, 15106.73205, 25956.76492, 40169.83173, 22403.02459, 37577.71225, 34147.98907, 39389.25874, 26878.00015, 21731.55484, 35641.55402, 40457.94273, 28595.68799, 32580.06572, 33751.23348, 29101.34563, 86226.3276, 15200.22119, 43455.30129, 29870.67748, 57230.89, 19882.99226, 25425.59561, 19833, 24429.61828, 27559.75186, 10497.583, 32779.3288, 41526.2995, 46621.77334, 15666.18783, 35715.4691, 46587.61843];
+var population=[22319.07, 8427.318, 10590.44, 33909.7, 17248.45, 10286.3, 5495.246, 1335.347, 5366.482, 62747.78, 82852.47, 11312.16, 9993.116, 308.038, 4394.382, 7623.6, 59059.66, 126912.8, 48988.83, 483.701, 109219.9, 16480.79, 4291.9, 4789.628, 37725.21, 10684.97, 142822.5, 5404.493, 2029.418, 50384.55, 44835.48, 9276.365, 7889.345, 73497, 62761.35, 313232];
+var country=[&quot;Australia&quot;, &quot;Austria&quot;, &quot;Belgium&quot;, &quot;Canada&quot;, &quot;Chile&quot;, &quot;Czech Republic&quot;, &quot;Denmark&quot;, &quot;Estonia&quot;, &quot;Finland&quot;, &quot;France&quot;, &quot;Germany&quot;, &quot;Greece&quot;, &quot;Hungary&quot;, &quot;Iceland&quot;, &quot;Ireland&quot;, &quot;Israel&quot;, &quot;Italy&quot;, &quot;Japan&quot;, &quot;Korea&quot;, &quot;Luxembourg&quot;, &quot;Mexico&quot;, &quot;Netherlands&quot;, &quot;New Zealand&quot;, &quot;Norway&quot;, &quot;Poland&quot;, &quot;Portugal&quot;, &quot;Russian Federation&quot;, &quot;Slovak Republic&quot;, &quot;Slovenia&quot;, &quot;South Africa&quot;, &quot;Spain&quot;, &quot;Sweden&quot;, &quot;Switzerland&quot;, &quot;Turkey&quot;, &quot;United Kingdom&quot;, &quot;United States&quot;];
+var continent=[&quot;Oceania&quot;, &quot;Europe&quot;, &quot;Europe&quot;, &quot;America&quot;, &quot;America&quot;, &quot;Europe&quot;, &quot;Europe&quot;, &quot;Europe&quot;, &quot;Europe&quot;, &quot;Europe&quot;, &quot;Europe&quot;, &quot;Europe&quot;, &quot;Europe&quot;, &quot;Europe&quot;, &quot;Europe&quot;, &quot;Asia&quot;, &quot;Europe&quot;, &quot;Asia&quot;, &quot;Asia&quot;, &quot;Europe&quot;, &quot;America&quot;, &quot;Europe&quot;, &quot;Oceania&quot;, &quot;Europe&quot;, &quot;Europe&quot;, &quot;Europe&quot;, &quot;Europe&quot;, &quot;Europe&quot;, &quot;Europe&quot;, &quot;Africa&quot;, &quot;Europe&quot;, &quot;Europe&quot;, &quot;Europe&quot;, &quot;Europe&quot;, &quot;Europe&quot;, &quot;America&quot;];</pre>
+<p>(don&#8217;t bother scrolling, it&#8217;s more of the same 🙂 )<br />
+Then, you can just create marks for each data item and fetch each attribute independently.<br />
+Let&#8217;s do a bubble chart for instance.<br />
+(small aside: in the post I won&#8217;t go through the code to set up the svg container or the scales, instead focusing on the data structures. That code, which is really nothing special, can be found in the source code of the examples).</p>
+<p>So to create our circles we would write something like: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">svg.selectAll(&quot;circle&quot;).data(country).enter()
+  .append(&quot;circle&quot;)
+  .attr(&quot;cx&quot;,function(d,i) {return x(GERD[i]);})
+  .attr(&quot;cy&quot;,function(d,i) {return y(growth[i]);})
+  .attr(&quot;r&quot;,function(d,i) {return r(Math.sqrt(population[i]));})
+
+  .style(&quot;fill&quot;,function(d,i) {return c(continent[i]);})
+  .style(&quot;opacity&quot;,function(d,i) {return o(GDPcap[i]);})
+
+    .append(&quot;title&quot;)
+    .text(String)</pre>
+<p>and this works:<br />
+<iframe src="http://www.jeromecukier.net/stuff/data%20example/data-example0.html" width=512px height=520px scrolling=no style="border:0px"></iframe><br />
+<a href="http://www.jeromecukier.net/stuff/data%20example/data-example0.html">See example in its own tab or window</a><br />
+but this is hell to maintain. If for some reason there is an error in one of the values, for instance due to a cat or a small child in the proximity of the computer, the error will be very difficult to troubleshoot.<br />
+Another problem is that it&#8217;s very difficult to apply any kind of subsequent treatment to the data. For instance, you will notice that there are smaller bubbles entirely within the large orange bubble which happens to be on top of them. So it&#8217;s not possible to mouseover the smaller bubbles. One way to address that would be to sort data in order of decreasing population (the size of the bubbles) so that it would be impossible to have this kind of situation. Now while it is possible sorting 6 arrays according to the values of one, it&#8217;s very messy.</p>
+<p><strong>Ideally, you should have all the values that will be translated graphically within one, single object.</strong> You want to have an array of these objects that you will pass to the data method, and be able to write something like: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">svg.selectAll(&quot;circle&quot;).data(data).enter()
+  .append(&quot;circle&quot;)
+  .attr(&quot;cx&quot;,function(d) {return x(+d.GERD);})
+  .attr(&quot;cy&quot;,function(d) {return y(+d.growth);})
+  .attr(&quot;r&quot;,function(d) {return r(Math.sqrt(+d.population));})
+
+  .style(&quot;fill&quot;,function(d) {return c(d.continent);})
+  .style(&quot;opacity&quot;,function(d) {return o(+d.GDPcap);})</pre>
+<p>Here, you have just one data source, which is much safer. </p>
+<p>So if you&#8217;re thinking: I know, I should create a variable like this: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">var data=[
+  {&quot;country&quot;:&quot;Australia&quot;,&quot;continent&quot;:&quot;Oceania&quot;,&quot;population&quot;:22319.07,&quot;GDPcap&quot;:40718.78167,&quot;GERD&quot;:2.21367,&quot;growth&quot;:2.48590317},
+  {&quot;country&quot;:&quot;Austria&quot;,&quot;continent&quot;:&quot;Europe&quot;,&quot;population&quot;:8427.318,&quot;GDPcap&quot;:42118.46375,&quot;GERD&quot;:2.74826,&quot;growth&quot;:3.10741128},
+  {&quot;country&quot;:&quot;Belgium&quot;,&quot;continent&quot;:&quot;Europe&quot;,&quot;population&quot;:10590.44,&quot;GDPcap&quot;:38809.66436,&quot;GERD&quot;:1.96158,&quot;growth&quot;:1.89308521},
+  {&quot;country&quot;:&quot;Canada&quot;,&quot;continent&quot;:&quot;America&quot;,&quot;population&quot;:33909.7,&quot;GDPcap&quot;:39069.91407,&quot;GERD&quot;:1.80213,&quot;growth&quot;:3.21494841},
+  {&quot;country&quot;:&quot;Chile&quot;,&quot;continent&quot;:&quot;America&quot;,&quot;population&quot;:17248.45,&quot;GDPcap&quot;:15106.73205,&quot;GERD&quot;:0.39451,&quot;growth&quot;:5.19813626},
+  {&quot;country&quot;:&quot;Czech Republic&quot;,&quot;continent&quot;:&quot;Europe&quot;,&quot;population&quot;:10286.3,&quot;GDPcap&quot;:25956.76492,&quot;GERD&quot;:1.52652,&quot;growth&quot;:1.65489834},
+  {&quot;country&quot;:&quot;Denmark&quot;,&quot;continent&quot;:&quot;Europe&quot;,&quot;population&quot;:5495.246,&quot;GDPcap&quot;:40169.83173,&quot;GERD&quot;:3.01937,&quot;growth&quot;:1.04974368},
+  {&quot;country&quot;:&quot;Estonia&quot;,&quot;continent&quot;:&quot;Europe&quot;,&quot;population&quot;:1335.347,&quot;GDPcap&quot;:22403.02459,&quot;GERD&quot;:1.44122,&quot;growth&quot;:7.63563272},
+  {&quot;country&quot;:&quot;Finland&quot;,&quot;continent&quot;:&quot;Europe&quot;,&quot;population&quot;:5366.482,&quot;GDPcap&quot;:37577.71225,&quot;GERD&quot;:3.84137,&quot;growth&quot;:2.85477157},
+  {&quot;country&quot;:&quot;France&quot;,&quot;continent&quot;:&quot;Europe&quot;,&quot;population&quot;:62747.78,&quot;GDPcap&quot;:34147.98907,&quot;GERD&quot;:2.20646,&quot;growth&quot;:1.47996142},
+  {&quot;country&quot;:&quot;Germany&quot;,&quot;continent&quot;:&quot;Europe&quot;,&quot;population&quot;:82852.47,&quot;GDPcap&quot;:39389.25874,&quot;GERD&quot;:2.78056,&quot;growth&quot;:2.99558644},
+  {&quot;country&quot;:&quot;Greece&quot;,&quot;continent&quot;:&quot;Europe&quot;,&quot;population&quot;:11312.16,&quot;GDPcap&quot;:26878.00015,&quot;GERD&quot;:0.5921,&quot;growth&quot;:-6.90796403},
+  {&quot;country&quot;:&quot;Hungary&quot;,&quot;continent&quot;:&quot;Europe&quot;,&quot;population&quot;:9993.116,&quot;GDPcap&quot;:21731.55484,&quot;GERD&quot;:1.14821,&quot;growth&quot;:1.69192342},
+  {&quot;country&quot;:&quot;Iceland&quot;,&quot;continent&quot;:&quot;Europe&quot;,&quot;population&quot;:308.038,&quot;GDPcap&quot;:35641.55402,&quot;GERD&quot;:2.64107,&quot;growth&quot;:-3.99988322},
+  {&quot;country&quot;:&quot;Ireland&quot;,&quot;continent&quot;:&quot;Europe&quot;,&quot;population&quot;:4394.382,&quot;GDPcap&quot;:40457.94273,&quot;GERD&quot;:1.78988,&quot;growth&quot;:-0.42935239},
+  {&quot;country&quot;:&quot;Israel&quot;,&quot;continent&quot;:&quot;Asia&quot;,&quot;population&quot;:7623.6,&quot;GDPcap&quot;:28595.68799,&quot;GERD&quot;:4.2504,&quot;growth&quot;:4.84602001},
+  {&quot;country&quot;:&quot;Italy&quot;,&quot;continent&quot;:&quot;Europe&quot;,&quot;population&quot;:59059.66,&quot;GDPcap&quot;:32580.06572,&quot;GERD&quot;:1.26841,&quot;growth&quot;:0.43108032},
+  {&quot;country&quot;:&quot;Japan&quot;,&quot;continent&quot;:&quot;Asia&quot;,&quot;population&quot;:126912.8,&quot;GDPcap&quot;:33751.23348,&quot;GERD&quot;:3.33499,&quot;growth&quot;:3.96559062},
+  {&quot;country&quot;:&quot;Korea&quot;,&quot;continent&quot;:&quot;Asia&quot;,&quot;population&quot;:48988.83,&quot;GDPcap&quot;:29101.34563,&quot;GERD&quot;:3.3609,&quot;growth&quot;:6.16184325},
+  {&quot;country&quot;:&quot;Luxembourg&quot;,&quot;continent&quot;:&quot;Europe&quot;,&quot;population&quot;:483.701,&quot;GDPcap&quot;:86226.3276,&quot;GERD&quot;:1.67862,&quot;growth&quot;:2.67806902},
+  {&quot;country&quot;:&quot;Mexico&quot;,&quot;continent&quot;:&quot;America&quot;,&quot;population&quot;:109219.9,&quot;GDPcap&quot;:15200.22119,&quot;GERD&quot;:0.41322,&quot;growth&quot;:5.56185685},
+  {&quot;country&quot;:&quot;Netherlands&quot;,&quot;continent&quot;:&quot;Europe&quot;,&quot;population&quot;:16480.79,&quot;GDPcap&quot;:43455.30129,&quot;GERD&quot;:1.81965,&quot;growth&quot;:1.18517739},
+  {&quot;country&quot;:&quot;New Zealand&quot;,&quot;continent&quot;:&quot;Oceania&quot;,&quot;population&quot;:4291.9,&quot;GDPcap&quot;:29870.67748,&quot;GERD&quot;:1.13693,&quot;growth&quot;:2.33052515},
+  {&quot;country&quot;:&quot;Norway&quot;,&quot;continent&quot;:&quot;Europe&quot;,&quot;population&quot;:4789.628,&quot;GDPcap&quot;:57230.89,&quot;GERD&quot;:1.75922,&quot;growth&quot;:1.59773989},
+  {&quot;country&quot;:&quot;Poland&quot;,&quot;continent&quot;:&quot;Europe&quot;,&quot;population&quot;:37725.21,&quot;GDPcap&quot;:19882.99226,&quot;GERD&quot;:0.67502,&quot;growth&quot;:4.34962928},
+  {&quot;country&quot;:&quot;Portugal&quot;,&quot;continent&quot;:&quot;Europe&quot;,&quot;population&quot;:10684.97,&quot;GDPcap&quot;:25425.59561,&quot;GERD&quot;:1.65519,&quot;growth&quot;:-1.60958484},
+  {&quot;country&quot;:&quot;Russian Federation&quot;,&quot;continent&quot;:&quot;Europe&quot;,&quot;population&quot;:142822.5,&quot;GDPcap&quot;:19833,&quot;GERD&quot;:1.24252,&quot;growth&quot;:4.03428262},
+  {&quot;country&quot;:&quot;Slovak Republic&quot;,&quot;continent&quot;:&quot;Europe&quot;,&quot;population&quot;:5404.493,&quot;GDPcap&quot;:24429.61828,&quot;GERD&quot;:0.48056,&quot;growth&quot;:3.34920254},
+  {&quot;country&quot;:&quot;Slovenia&quot;,&quot;continent&quot;:&quot;Europe&quot;,&quot;population&quot;:2029.418,&quot;GDPcap&quot;:27559.75186,&quot;GERD&quot;:1.85642,&quot;growth&quot;:-0.17459255},
+  {&quot;country&quot;:&quot;South Africa&quot;,&quot;continent&quot;:&quot;Africa&quot;,&quot;population&quot;:50384.55,&quot;GDPcap&quot;:10497.583,&quot;GERD&quot;:0.92523,&quot;growth&quot;:2.784},
+  {&quot;country&quot;:&quot;Spain&quot;,&quot;continent&quot;:&quot;Europe&quot;,&quot;population&quot;:44835.48,&quot;GDPcap&quot;:32779.3288,&quot;GERD&quot;:1.38357,&quot;growth&quot;:-0.06947685},
+  {&quot;country&quot;:&quot;Sweden&quot;,&quot;continent&quot;:&quot;Europe&quot;,&quot;population&quot;:9276.365,&quot;GDPcap&quot;:41526.2995,&quot;GERD&quot;:3.61562,&quot;growth&quot;:3.93555895},
+  {&quot;country&quot;:&quot;Switzerland&quot;,&quot;continent&quot;:&quot;Europe&quot;,&quot;population&quot;:7889.345,&quot;GDPcap&quot;:46621.77334,&quot;GERD&quot;:2.99525,&quot;growth&quot;:2.71404473},
+  {&quot;country&quot;:&quot;Turkey&quot;,&quot;continent&quot;:&quot;Europe&quot;,&quot;population&quot;:73497,&quot;GDPcap&quot;:15666.18783,&quot;GERD&quot;:0.84902,&quot;growth&quot;:9.00558548},
+  {&quot;country&quot;:&quot;United Kingdom&quot;,&quot;continent&quot;:&quot;Europe&quot;,&quot;population&quot;:62761.35,&quot;GDPcap&quot;:35715.4691,&quot;GERD&quot;:1.82434,&quot;growth&quot;:2.09209263},
+  {&quot;country&quot;:&quot;United States&quot;,&quot;continent&quot;:&quot;America&quot;,&quot;population&quot;:313232,&quot;GDPcap&quot;:46587.61843,&quot;GERD&quot;:2.78518,&quot;growth&quot;:3.02171711}
+]</pre>
+<p>and get this done, and furthermore if you are thinking &#8220;Hey, I can do this in Excel from my csv file, with one formula that I will copy across the rows&#8221;, <strong>you need to stop right now in the name of all that is good and holy</strong>.<br />
+Even though it works: </p>
+<p><iframe src="http://www.jeromecukier.net/stuff/data%20example/data-example1.html" width=512px height=520px scrolling=no style="border:0px"></iframe><br />
+<a href="http://www.jeromecukier.net/stuff/data%20example/data-example1.html">See example in its own tab or window</a></p>
+<p>This approach has a number of flaws which you can all avoid if you read on.<br />
+First, the execution of your program will be stopped while your browser reads the source code that contains the &#8220;data&#8221; variable. This is negligible for 36 rows, but as objects get bigger and more complex, an equivalent variable may take seconds or even minutes to load. And now we have a problem.<br />
+That&#8217;s a problem for your users. Now to you: creating a JSON variable from tabular data is tedious and error prone. The formula editing interface in Excel doesn&#8217;t really help you spot where you have misplaced a quote or a colon. As a result, this is very time-consuming. </p>
+<p>Don&#8217;t do that: there is a much simpler way.</p>
+<p>Enters the d3.csv function.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">d3.csv(&quot;data.csv&quot;,function(csv) {
+  // we first sort the data
+
+  csv.sort(function(a,b) {return b.population-a.population;});
+
+  // then we create the marks, which we put in an initial position
+
+  svg.selectAll(&quot;circle&quot;).data(csv).enter()
+    .append(&quot;circle&quot;)
+    .attr(&quot;cx&quot;,function(d) {return x(0);})
+    .attr(&quot;cy&quot;,function(d) {return y(0);})
+    .attr(&quot;r&quot;,function(d) {return r(0);})
+
+    .style(&quot;fill&quot;,function(d) {return c(d.continent);})
+    .style(&quot;opacity&quot;,function(d) {return o(+d.GDPcap);})
+
+      .append(&quot;title&quot;)
+      .text(function(d) {return d.country;})
+  
+  // now we initiate - moving the marks to their position
+
+  svg.selectAll(&quot;circle&quot;).transition().duration(1000)
+    .attr(&quot;cx&quot;,function(d) {return x(+d.GERD);})
+    .attr(&quot;cy&quot;,function(d) {return y(+d.growth);})
+    .attr(&quot;r&quot;,function(d) {return r(Math.sqrt(+d.population));})
+})</pre>
+<p>Here&#8217;s how it works.<br />
+You tell your d3.csv function the location of a csv file, (which we had all along) and a function that must run on the array of objects (what we always wanted) created by using the first row as keys.<br />
+In other words, once inside the d3.csv function, the &#8220;csv&#8221; variable will be worth exactly what we assigned to &#8220;data&#8221; earlier, with one major difference, it&#8217;s that we didn&#8217;t have to manufacture this variable or do any kind of manual intervention: we are certain it corresponds to the file exactly. </p>
+<p>One nice thing with this method is that since your variable is not explicitly in the source code, your browser can read it much faster. The data is only read when the d3.csv function is called, as opposed to the previous approach where the entirety of the source code (including the data) had to be read before the first statement could be executed. Of course, it only makes a difference when the data size is significant. But using the d3.csv approach would let you display a &#8220;loading data&#8221; warning somewhere on your page, and remove it when inside d3.csv. Much better than a blank page.</p>
+<p>Three caveats with this method.</p>
+<ul>
+<li>This will no longer work in a local file system (ie opening a file in the browser). The resulting file can only run on a webserver, which can be local (ie the page has a url). </li>
+<li>whatever happens within the d3.csv function is no longer in the global scope of the program. This means that after the program has run its course you cannot open the javascript console and inspect the value of &#8220;csv&#8221;, for instance. This makes these programs slightly more difficult to debug (there are obviously ways, though).</li>
+<li>Everything read from the file is treated as strings. Javascript does a lot of type conversion but be mindful of that or you will have surprises. This is why I wrote x(+d.GERD) for instance (+ before a string converts it to a number).</li>
+</ul>
+<p>To celebrate this superior way of aquiring data, we&#8217;ve thrown in animated data entry: the circles are initiated at a default value and move towards their position. You may want to check the link to see the transition effect.</p>
+<p><iframe src="http://www.jeromecukier.net/stuff/data%20example/data-example2.html" width=512px height=520px scrolling=no style="border:0px"></iframe><br />
+<a href="http://www.jeromecukier.net/stuff/data%20example/data-example2.html">See example in its own tab or window</a></p>
+<p>So, at the level of the mark (ie our circles) the most comfortable form of data is an object with at least as many keys as there will be graphical properties to change dynamically.<br />
+One flat array of data is fine if we have just one series of data. But what if we have several series? Indeed, most visualizations have a structure and a hierarchy.<br />
+So let&#8217;s proceed with our data but now let&#8217;s assume that we want to show values for different continents as different little scatterplots (&#8220;small multiples&#8221;).<br />
+Intuitively:
+<ul>
+<li>we&#8217;ll want to add 5 &#8220;g&#8221; groups to our svg container, one for each continent,</li>
+<li>and then add one dots per country in each continent to those groups.</li>
+</ul>
+<p>Our flat array won&#8217;t work so well then. What to do?</p>
+<p>The d3 answer to this problem is the d3.nest() set of methods.<br />
+d3.nest() turns a flat array of objects, which thanks to d3.csv() is a very easily available format, in an array of arrays with the hierarchy you need.<br />
+Following our intuition, wouldn&#8217;t it be nice if our data would be: </p>
+<ul>
+<li>An array of 5 items, one for each continent, so we could create the &#8220;g&#8221; groups, </li>
+<li>And if each of these 5 items contained an array with the data of all the corresponding countries, still in that object format that we love? </li>
+</ul>
+<p>This is exactly what d3.nest() does. d3.nest(), go!</p>
+<pre class="brush: jscript; title: ; notranslate" title="">var data=d3.nest()
+  .key(function(d) {return d.continent;})
+  .sortKeys(d3.ascending)
+  .entries(csv);</pre>
+<p>With the .key() method, we are indicating what we will be using to create the hierarchy. We want to group those data by continent, so we use this syntax.<br />
+.sortKeys is used to sort the keys in alphabetical order, so our panels appear in the alphabetical order of the continents. If we omit that, the panels will show up in the order of the data (ie Oceania first as Australia is the first country). We could have avoided that by sorting the data by continent first before nesting it, but it&#8217;s easier like this.<br />
+Here, we just have one level of grouping, but we could have several by chaining several .key() methods.<br />
+The last part of the statement, .entries(csv), says that we want to do that operation on our csv variable.</p>
+<p>Here is what the data variable will look like: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">[
+  {&quot;key&quot;:&quot;Africa&quot;,&quot;values&quot;:[...]},
+  {&quot;key&quot;:&quot;America&quot;,&quot;values&quot;:[
+    {&quot;country&quot;:&quot;United States&quot;,&quot;continent&quot;:&quot;America&quot;,&quot;population&quot;:&quot;313232&quot;,&quot;GDPcap&quot;:&quot;46587.61843&quot;,&quot;GERD&quot;:&quot;2.78518&quot;,&quot;growth&quot;:&quot;3.02171711&quot;},
+     {&quot;country&quot;:&quot;Mexico&quot;,&quot;continent&quot;:&quot;America&quot;,&quot;population&quot;:&quot;109219.9&quot;,&quot;GDPcap&quot;:&quot;15200.22119&quot;,&quot;GERD&quot;:&quot;0.41322&quot;,&quot;growth&quot;:&quot;5.56185685&quot;},
+      {&quot;country&quot;:&quot;Canada&quot;,&quot;continent&quot;:&quot;America&quot;,&quot;population&quot;:&quot;33909.7&quot;,&quot;GDPcap&quot;:&quot;39069.91407&quot;,&quot;GERD&quot;:&quot;1.80213&quot;,&quot;growth&quot;:&quot;3.21494841&quot;},      {&quot;country&quot;:&quot;Chile&quot;,&quot;continent&quot;:&quot;America&quot;,&quot;population&quot;:&quot;17248.45&quot;,&quot;GDPcap&quot;:&quot;15106.73205&quot;,&quot;GERD&quot;:&quot;0.39451&quot;,&quot;growth&quot;:&quot;5.19813626&quot;}
+  ]
+}, 
+  {&quot;key&quot;:&quot;Asia&quot;,&quot;values&quot;:[...]},
+  {&quot;key&quot;:&quot;Europe&quot;,&quot;values&quot;:[...]},
+  {&quot;key&quot;:&quot;Oceania&quot;,&quot;values&quot;:[...]},
+]</pre>
+<p>Now that we have our data in an ideal form let&#8217;s draw those marks: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">  // One cell for each continent
+  var g=svg.selectAll(&quot;g&quot;).data(data).enter()
+    .append(&quot;g&quot;)
+    .attr(&quot;transform&quot;,function(d,i) {return &quot;translate(&quot;+(100*i)+&quot;,0)&quot;;});
+  // we add a rect element with a title element
+  // so that mousing over the cell will tell us which continent it is
+  g
+    .append(&quot;rect&quot;)
+    .attr(&quot;x&quot;,cmargin)
+    .attr(&quot;y&quot;,cmargin)
+    .attr(&quot;width&quot;,cwidth-2*cmargin)
+    .attr(&quot;height&quot;,cheight-2*cmargin)
+      .append(&quot;title&quot;)
+      .text(function(d) {return d.key;})
+  // we also write its name below.
+  g
+    .append(&quot;text&quot;)
+    .attr(&quot;y&quot;,cheight+10)
+    .attr(&quot;x&quot;,cmargin)
+    .text(function(d) {return d.key;})
+  
+  // now marks, initiated to default values
+  g.selectAll(&quot;circle&quot;)
+  // we are getting the values of the countries like this:
+  .data(function(d) {return d.values}) 
+  .enter()
+      .append(&quot;circle&quot;)
+      .attr(&quot;cx&quot;,cmargin)
+      .attr(&quot;cy&quot;,cheight-cmargin)
+      .attr(&quot;r&quot;,1)
+      // throwing in a title element
+      .append(&quot;title&quot;)
+        .text(function(d) {return d.country;});
+
+  // finally, we animate our marks in position
+  g.selectAll(&quot;circle&quot;).transition().duration(1000)
+      .attr(&quot;r&quot;,3)
+      .attr(&quot;cx&quot;,function(d) {return x(+d.GERD);})
+      .attr(&quot;cy&quot;,function(d) {return y(+d.growth);})
+      .style(&quot;opacity&quot;,function(d) {return o(d.population)})
+      .style(&quot;opacity&quot;,function(d) {return o(+d.GDPcap);})</pre>
+<p>(you may want to click on the link to see the transition effect and read the full source).<br />
+<iframe src="http://www.jeromecukier.net/stuff/data%20example/data-example3.html" width=512px height=122px scrolling=no style="border:0px"></iframe><br />
+<a href="http://www.jeromecukier.net/stuff/data%20example/data-example3.html">See example in its own tab or window</a></p>
+<p>This is all very nice but wouldn&#8217;t it be better if we could characterize some aggregate information from the continents? Let&#8217;s try to find out the average values for R&#038;D expenditure and GDP growth. </p>
+<p>Can it be done easily? This is a job for the other main d3.nest method, rollup.</p>
+<p>rollup is the aggregating function. Here&#8217;s an example.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">var avgs=d3.nest()
+    .key(function(d) {return d.continent;})
+    .sortKeys(d3.ascending)
+    .rollup(function(d) {
+      return {
+        GERD:d3.mean(d,function(g) {return +g.GERD;}),
+        growth:d3.mean(d,function(g) {return +g.growth})
+      };
+    })
+    .entries(csv);
+</pre>
+<p>Remember how the combination of .key() and .entries() rearranges an array into arrays of smaller arrays, depending on these keys? well, the value that is being passed to the function inside the rollup method is each of these arrays (ie an array of all the objects corresponding to countries in America, then an array of all the objects corresponding to countries in Europe, etc.)<br />
+Also, if we use sortKeys in our previous nesting effort we&#8217;d better use it here too.<br />
+Here is what the variable will look like: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">[
+  {
+    &quot;key&quot;:&quot;Africa&quot;,
+    &quot;values&quot;:{
+      &quot;GERD&quot;:0.92523,
+      &quot;growth&quot;:2.784
+    }
+  },  
+  {
+    &quot;key&quot;:&quot;America&quot;,
+    &quot;values&quot;:{
+      &quot;GERD&quot;:1.34876,
+      &quot;growth&quot;:4.2491646575
+    }
+  },
+  {
+    &quot;key&quot;:&quot;Asia&quot;,
+    &quot;values&quot;:{
+      &quot;GERD&quot;:3.6487633333333336,
+      &quot;growth&quot;:4.991151293333334
+    }
+  },
+  {
+    &quot;key&quot;:&quot;Europe&quot;,
+    &quot;values&quot;:{
+      &quot;GERD&quot;:1.8769234615384616,
+      &quot;growth&quot;:1.7901778096153846
+    }
+  },
+  {
+    &quot;key&quot;:&quot;Oceania&quot;,
+    &quot;values&quot;:{
+      &quot;GERD&quot;:1.6753,
+      &quot;growth&quot;:2.40821416
+    }
+  }
+]</pre>
+<p>Incredible! just the values we need.<br />
+Now it&#8217;s just a matter of adding them to the sketch. Two little additions here: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">// we add 2 lines for the average. They will start at a default value.
+  g
+    .append(&quot;line&quot;).classed(&quot;growth&quot;,1)
+    .attr(&quot;x1&quot;,cmargin).attr(&quot;x2&quot;,cwidth-cmargin)
+    .attr(&quot;y1&quot;,cheight-cmargin)
+    .attr(&quot;y2&quot;,cheight-cmargin)
+    // we give these lines a title for mouseover interaction.
+      .append(&quot;title&quot;).text(function(d,i) {
+        return &quot;Average growth:&quot;+avgs[i].values.growth
+      });
+  g.append(&quot;line&quot;).classed(&quot;GERD&quot;,1)
+    .attr(&quot;y1&quot;,cmargin)
+    .attr(&quot;y2&quot;,cheight-cmargin)
+    .attr(&quot;x1&quot;,cmargin)
+    .attr(&quot;x2&quot;,cmargin)
+      .append(&quot;title&quot;).text(function(d,i) {
+        return &quot;Average GERD:&quot;+avgs[i].values.GERD
+      });
+
+ ...
+  // we also animate the lines
+  g.select(&quot;.growth&quot;).transition().duration(1000)
+    .attr(&quot;y1&quot;,function(d,i) {return y(avgs[i].values.growth);})
+    .attr(&quot;y2&quot;,function(d,i) {return y(avgs[i].values.growth);})
+  g.select(&quot;.GERD&quot;).transition().duration(1000)
+    .attr(&quot;x1&quot;,function(d,i) {return x(avgs[i].values.GERD);})
+    .attr(&quot;x2&quot;,function(d,i) {return x(avgs[i].values.GERD);})</pre>
+<p>This is the final example &#8211; again you may want to click on the link to see the transition and get the entirety of the source.<br />
+<iframe src="http://www.jeromecukier.net/stuff/data%20example/data-example4.html" width=512px height=122px scrolling=no style="border:0px"></iframe><br />
+<a href="http://www.jeromecukier.net/stuff/data%20example/data-example4.html">See example in its own tab or window</a></p>
+<p>To wrap up:</p>
+<ul>
+<li>At the mark level, you want to have objects with as many properties as you need graphical variables (like x,y, fill, etc.)</li>
+<li>using d3.csv() and a flat file will make this easy (d3 also provides functions like d3.json or d3.xml to process data in another format).</li>
+<li>d3.nest can help you group your entries to structure your data and create more sophisticated visualizations</li>
+<li>rollup can be used to aggregate the data grouped using d3.nest</li>
+</ul>
+		    			<div class="clear">&nbsp;</div>
+		</section>
+	
+	<footer class="post-footer">
+
+	    <section class="author">
+	    	<img alt='' src='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=100&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=200&amp;d=mm&amp;r=g 2x' class='avatar avatar-100 photo' height='100' width='100' />	        <h4>jerome</h4>
+	        <p></p>
+			<div class="clear">&nbsp;</div>
+	    </section>
+	</footer>
+</article><!-- #post-## -->
+
+				<nav class="pagination navigation post-navigation" role="navigation">
+		<div class="nav-links">
+			<div class="older-posts"><a href="/2012/05/24/making-of-the-map-of-congress-equality/" rel="prev">Making-of: the map of congress equality <span class="meta-nav">&rarr;</span></a></div>				<div class="page-number">&bull;</div>
+				<div class="newer-posts"><a href="/2012/06/30/tableau-2012-sports-visualization-contest-entry/" rel="next"><span class="meta-nav">&larr;</span> Tableau 2012 sports visualization contest entry</a></div>		</div><!-- .nav-links -->
+	</nav><!-- .navigation -->
+	
+			
+<div id="comments" class="comments-area">
+
+	
+			<h2 class="comments-title">
+			34 thoughts on &ldquo;<span>Manipulating data like a boss with d3</span>&rdquo;		</h2>
+
+		
+		<ol class="comment-list">
+					<li id="comment-269" class="comment even thread-even depth-1">
+			<article id="div-comment-269" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://2.gravatar.com/avatar/ea61fc97aab700c9413a1b2f34ab6afc?s=32&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/ea61fc97aab700c9413a1b2f34ab6afc?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://visual-baseball.com/' rel='external nofollow' class='url'>Ken Cherven</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-269">
+							<time datetime="2012-05-28T21:40:30+00:00">
+								May 28, 2012 at 9:40 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Excellent tutorial Jerome &#8211; while CSV doesn&#8217;t provide &#8220;spontaneous&#8221; data like a MySQL query, it does improve considerably on the manual entry approach. I suppose the CSV could be designed with enough flexibility and detail to simulate a database, using various filters in d3.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2012/05/28/manipulating-data-like-a-boss-with-d3/?replytocom=269#respond' onclick='return addComment.moveForm( "div-comment-269", "269", "respond", "1246" )' aria-label='Reply to Ken Cherven'>Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-270" class="comment byuser comment-author-jerome bypostauthor odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-270" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://www.jeromecukier.net/' rel='external nofollow' class='url'>jerome</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-270">
+							<time datetime="2012-05-29T09:10:36+00:00">
+								May 29, 2012 at 9:10 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Hi, thanks; though d3 can completely interact with a database like mySQL with a similar approach <a href="http://www.jeromecukier.net/blog/2012/01/02/using-d3-with-a-mysql-database/" rel="nofollow">http://www.jeromecukier.net/blog/2012/01/02/using-d3-with-a-mysql-database/</a><br />
+but if you have data in tabular format to begin with, d3.csv is very practical</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2012/05/28/manipulating-data-like-a-boss-with-d3/?replytocom=270#respond' onclick='return addComment.moveForm( "div-comment-270", "270", "respond", "1246" )' aria-label='Reply to jerome'>Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-271" class="pingback even thread-even depth-1">
+			<div class="comment-body">
+				Pingback: <a href='http://revue-du-web.owni.fr/2012/06/08/les-resultats-probables-des-legislatives-par-circonscription/' rel='external nofollow' class='url'>Les résultats (probables) des législatives par circonscription &raquo; revue du web, Just another weblog</a> 			</div>
+</li><!-- #comment-## -->
+		<li id="comment-272" class="comment odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-272" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://1.gravatar.com/avatar/7005b0353700331ae983ee90c81b2e69?s=32&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/7005b0353700331ae983ee90c81b2e69?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">EvanZ</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-272">
+							<time datetime="2012-07-02T06:59:25+00:00">
+								July 2, 2012 at 6:59 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Great tutorial. I wonder if MongoDB might be a good database for D3.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2012/05/28/manipulating-data-like-a-boss-with-d3/?replytocom=272#respond' onclick='return addComment.moveForm( "div-comment-272", "272", "respond", "1246" )' aria-label='Reply to EvanZ'>Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-273" class="comment even thread-even depth-1 parent">
+			<article id="div-comment-273" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://0.gravatar.com/avatar/0914468667cea81f7c28d10cc4702f8a?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/0914468667cea81f7c28d10cc4702f8a?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">Gorkem Yurtseven</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-273">
+							<time datetime="2012-07-06T15:51:05+00:00">
+								July 6, 2012 at 3:51 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>great tutorial, I wonder if your next tutorial is going to be about transitions or zooming.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2012/05/28/manipulating-data-like-a-boss-with-d3/?replytocom=273#respond' onclick='return addComment.moveForm( "div-comment-273", "273", "respond", "1246" )' aria-label='Reply to Gorkem Yurtseven'>Reply</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-274" class="comment byuser comment-author-jerome bypostauthor odd alt depth-2">
+			<article id="div-comment-274" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://www.jeromecukier.net/' rel='external nofollow' class='url'>jerome</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-274">
+							<time datetime="2012-07-06T16:01:08+00:00">
+								July 6, 2012 at 4:01 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>As a matter of fact I have a transition tutorial published just yesterday on visual.ly blog <a href="http://blog.visual.ly/creating-animations-and-transitions-with-d3-js/" rel="nofollow">http://blog.visual.ly/creating-animations-and-transitions-with-d3-js/</a></p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2012/05/28/manipulating-data-like-a-boss-with-d3/?replytocom=274#respond' onclick='return addComment.moveForm( "div-comment-274", "274", "respond", "1246" )' aria-label='Reply to jerome'>Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-275" class="comment even thread-odd thread-alt depth-1">
+			<article id="div-comment-275" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://0.gravatar.com/avatar/0914468667cea81f7c28d10cc4702f8a?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/0914468667cea81f7c28d10cc4702f8a?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">Gorkem Yurtseven</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-275">
+							<time datetime="2012-07-06T17:14:29+00:00">
+								July 6, 2012 at 5:14 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Wow, thanks I am going to get on that asap.. Is there any way you can help me with my question below? </p>
+<p><a href="http://stackoverflow.com/questions/11364809/d3-js-transitions" rel="nofollow">http://stackoverflow.com/questions/11364809/d3-js-transitions</a></p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2012/05/28/manipulating-data-like-a-boss-with-d3/?replytocom=275#respond' onclick='return addComment.moveForm( "div-comment-275", "275", "respond", "1246" )' aria-label='Reply to Gorkem Yurtseven'>Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-276" class="pingback odd alt thread-even depth-1">
+			<div class="comment-body">
+				Pingback: <a href='http://www.simonthepiman.co.uk/a-dump-of-my-current-open-tabs-in-my-chrome-web-browser/' rel='external nofollow' class='url'>A dump of my current open tabs in my Chrome web browser. - Simon the Pi man</a> 			</div>
+</li><!-- #comment-## -->
+		<li id="comment-277" class="comment even thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-277" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://0.gravatar.com/avatar/f3c0ff913750ee7ed0050049e34729b0?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/f3c0ff913750ee7ed0050049e34729b0?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">Jade</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-277">
+							<time datetime="2012-09-20T02:24:55+00:00">
+								September 20, 2012 at 2:24 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Hi, this is great. I don&#8217;t like the variable way either.<br />
+How can this be done using d3.xml? That is, loading data from an XML file, to a d3 tree layout/dendrogram.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2012/05/28/manipulating-data-like-a-boss-with-d3/?replytocom=277#respond' onclick='return addComment.moveForm( "div-comment-277", "277", "respond", "1246" )' aria-label='Reply to Jade'>Reply</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-279" class="comment byuser comment-author-jerome bypostauthor odd alt depth-2">
+			<article id="div-comment-279" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://www.jeromecukier.net/' rel='external nofollow' class='url'>jerome</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-279">
+							<time datetime="2012-09-25T12:37:55+00:00">
+								September 25, 2012 at 12:37 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>I don&#8217;t use d3.xml often, but the idea is that when you write something like d3.xml(&#8220;http://path/to/my/xmlfile.xml&#8221;, function(xml) {&#8230;})<br />
+the xml variable inside the function call will hold the entire xml document, which you can then parse.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2012/05/28/manipulating-data-like-a-boss-with-d3/?replytocom=279#respond' onclick='return addComment.moveForm( "div-comment-279", "279", "respond", "1246" )' aria-label='Reply to jerome'>Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-278" class="comment even thread-even depth-1">
+			<article id="div-comment-278" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://0.gravatar.com/avatar/002bb32dee0f3f90893d5a0251193f16?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/002bb32dee0f3f90893d5a0251193f16?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">Newbie D3 User</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-278">
+							<time datetime="2012-09-24T23:30:21+00:00">
+								September 24, 2012 at 11:30 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Great tutorial on CSV. Everywhere else I got basic data structure like arrays or json data to create d3 visualization. Yours is the best tutorial on explaining how to generate d3 visualizations quickly using csv file. Great job, helped me a lot!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2012/05/28/manipulating-data-like-a-boss-with-d3/?replytocom=278#respond' onclick='return addComment.moveForm( "div-comment-278", "278", "respond", "1246" )' aria-label='Reply to Newbie D3 User'>Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-280" class="comment odd alt thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-280" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://0.gravatar.com/avatar/fc24bd19be9763553b4a7b37bf550bbf?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/fc24bd19be9763553b4a7b37bf550bbf?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">TapioK</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-280">
+							<time datetime="2012-10-11T21:27:34+00:00">
+								October 11, 2012 at 9:27 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>This is very helpful! One question, though: I&#8217;ve tried to get this to work on partition-icicle-zoom. And to get it to work, I have to manipulate the csv to replace key -&gt; name and values-&gt; children. Is this possible in a newbie-kind-of-way?<br />
+So that:<br />
+ &#8220;key&#8221;:&#8221;Africa&#8221;,<br />
+    &#8220;values&#8221;:{<br />
+      &#8220;GERD&#8221;:0.92523,<br />
+      &#8220;growth&#8221;:2.784</p>
+<p>Will be</p>
+<p> &#8220;name&#8221;:&#8221;Africa&#8221;,<br />
+    &#8220;children&#8221;:{<br />
+      &#8220;GERD&#8221;:0.92523,<br />
+      &#8220;growth&#8221;:2.784</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2012/05/28/manipulating-data-like-a-boss-with-d3/?replytocom=280#respond' onclick='return addComment.moveForm( "div-comment-280", "280", "respond", "1246" )' aria-label='Reply to TapioK'>Reply</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-281" class="comment byuser comment-author-jerome bypostauthor even depth-2">
+			<article id="div-comment-281" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://www.jeromecukier.net/' rel='external nofollow' class='url'>jerome</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-281">
+							<time datetime="2012-10-14T00:48:09+00:00">
+								October 14, 2012 at 12:48 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>in that particular code you have this line:</p>
+<p> .attr(&#8220;fill&#8221;, function(d) { return color((d.children ? d : d.parent).<em>name</em>); })</p>
+<p>which is the reason why it expects &#8220;name&#8221; instead of &#8220;key&#8221;. you can change name into key here and keep key in the data, or do the opposite.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2012/05/28/manipulating-data-like-a-boss-with-d3/?replytocom=281#respond' onclick='return addComment.moveForm( "div-comment-281", "281", "respond", "1246" )' aria-label='Reply to jerome'>Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-282" class="comment odd alt thread-even depth-1 parent">
+			<article id="div-comment-282" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://2.gravatar.com/avatar/8849ba5dc510cc528ebd922949cfc094?s=32&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/8849ba5dc510cc528ebd922949cfc094?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">Etienne Ramstein</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-282">
+							<time datetime="2012-11-30T21:41:54+00:00">
+								November 30, 2012 at 9:41 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Merci !<br />
+Though the D3 API is well documented, it lacks examples for simple mortals like me.<br />
+Did you learn D3 just by reading the API, or did you initially get help on message boards? Do you have some advices to understand the API better ? One example of something I found not obvious: the nest.rollup method &#8211; it&#8217;s quite easy when you see the example in this tutorial, but from the API you kinda have to guess what parameters get passed to the function (though one could argue it&#8217;s pretty logical, it becomes logical only when you are already a bit familiar with D3).</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2012/05/28/manipulating-data-like-a-boss-with-d3/?replytocom=282#respond' onclick='return addComment.moveForm( "div-comment-282", "282", "respond", "1246" )' aria-label='Reply to Etienne Ramstein'>Reply</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-283" class="comment byuser comment-author-jerome bypostauthor even depth-2">
+			<article id="div-comment-283" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://www.jeromecukier.net/' rel='external nofollow' class='url'>jerome</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-283">
+							<time datetime="2012-12-07T20:45:01+00:00">
+								December 7, 2012 at 8:45 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>i learned d3 by practicing and looking at other people&#8217;s code mostly.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2012/05/28/manipulating-data-like-a-boss-with-d3/?replytocom=283#respond' onclick='return addComment.moveForm( "div-comment-283", "283", "respond", "1246" )' aria-label='Reply to jerome'>Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-284" class="comment odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-284" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://1.gravatar.com/avatar/7005b0353700331ae983ee90c81b2e69?s=32&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/7005b0353700331ae983ee90c81b2e69?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">EvanZ</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-284">
+							<time datetime="2012-12-07T20:48:56+00:00">
+								December 7, 2012 at 8:48 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Etienne, there is now an O&#8217;Reilly book on D3 from Scott Murray who blogs at alignedleft.com:</p>
+<p>&#8220;Interactive Data Visualization for the Web<br />
+An Introduction to Designing With D3&#8243;</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2012/05/28/manipulating-data-like-a-boss-with-d3/?replytocom=284#respond' onclick='return addComment.moveForm( "div-comment-284", "284", "respond", "1246" )' aria-label='Reply to EvanZ'>Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-285" class="comment even thread-even depth-1 parent">
+			<article id="div-comment-285" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://0.gravatar.com/avatar/9c35a77d69f69a2c121bc65b887d256e?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9c35a77d69f69a2c121bc65b887d256e?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">kamesh peri</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-285">
+							<time datetime="2012-12-20T18:14:29+00:00">
+								December 20, 2012 at 6:14 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Great tutorial. Can D3 interact with MongoDB.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2012/05/28/manipulating-data-like-a-boss-with-d3/?replytocom=285#respond' onclick='return addComment.moveForm( "div-comment-285", "285", "respond", "1246" )' aria-label='Reply to kamesh peri'>Reply</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-286" class="comment byuser comment-author-jerome bypostauthor odd alt depth-2">
+			<article id="div-comment-286" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://www.jeromecukier.net/' rel='external nofollow' class='url'>jerome</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-286">
+							<time datetime="2012-12-22T13:54:10+00:00">
+								December 22, 2012 at 1:54 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>yes, do queries that return a json object or txt,csv,tsv files etc., those can be loaded by d3.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2012/05/28/manipulating-data-like-a-boss-with-d3/?replytocom=286#respond' onclick='return addComment.moveForm( "div-comment-286", "286", "respond", "1246" )' aria-label='Reply to jerome'>Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-287" class="comment even thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-287" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://2.gravatar.com/avatar/5fb086d2860f5bbc18fa390ad0591d85?s=32&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/5fb086d2860f5bbc18fa390ad0591d85?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">Fiore</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-287">
+							<time datetime="2013-01-18T06:23:27+00:00">
+								January 18, 2013 at 6:23 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Very useful tutorial!<br />
+I&#8217;d like to ask two questions:<br />
+first :can I rename the attributes GERD and growth,say , as avg_GERD or avg_growth instead of using the old name? (Think of the AS keyword in SQL )</p>
+<p>second question: Am I forced to group previously all the countries in order to average the same attributes (in this case, GERD and growth) over the array of countries in a continent? I&#8217;m supposed to work on a similarly nested structure and I&#8217;ve some trouble since I can&#8217;t define an accessor for the d3.mean() function. </p>
+<p>Thanks in advance!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2012/05/28/manipulating-data-like-a-boss-with-d3/?replytocom=287#respond' onclick='return addComment.moveForm( "div-comment-287", "287", "respond", "1246" )' aria-label='Reply to Fiore'>Reply</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-288" class="comment byuser comment-author-jerome bypostauthor odd alt depth-2">
+			<article id="div-comment-288" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://www.jeromecukier.net/' rel='external nofollow' class='url'>jerome</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-288">
+							<time datetime="2013-01-18T11:18:18+00:00">
+								January 18, 2013 at 11:18 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>1) yes.<br />
+var avgs=d3.nest()<br />
+    .key(function(d) {return d.continent;})<br />
+    .sortKeys(d3.ascending)<br />
+    .rollup(function(d) {<br />
+      return {<br />
+        a:d3.mean(d,function(g) {return +g.GERD;}),<br />
+        b:d3.mean(d,function(g) {return +g.growth})<br />
+      };<br />
+    })<br />
+    .entries(csv);</p>
+<p>would work. (or any valid key name instead of a and b).<br />
+2) technically, no. but you may want to.<br />
+For any data operation in d3 or javascript in general, and this is something I could have put in the tutorial, there is the possibility to start from an empty structure (either an empty array or an empty object), loop through the source data and add something to the structure.<br />
+for instance I could write:<br />
+avgs={}<br />
+csv.forEach(function (d) {<br />
+  var c=d.continent;<br />
+  if(avgs) {<br />
+    avgs.n=avgs.n+1;<br />
+    avgs.GERD=avgs.GERD+d.GERD;<br />
+    avgs.growth=avgs.growth+d.growth;<br />
+  } else {<br />
+    avgs={n:1,GERD:+d.GERD,growth:+d.growth}<br />
+  }<br />
+});</p>
+<p>keys(avgs).forEach(function(c) {<br />
+  avgs.GERD=avgs.GERD/avgs.n;<br />
+  avgs.growth=avgs.growth/avgs.n;<br />
+});</p>
+<p>this will produce the same output as before without a nesting function, it&#8217;s a bit longer to write but possibly clearer. Less trivial operations are possible during the loop as well.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2012/05/28/manipulating-data-like-a-boss-with-d3/?replytocom=288#respond' onclick='return addComment.moveForm( "div-comment-288", "288", "respond", "1246" )' aria-label='Reply to jerome'>Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-289" class="comment even thread-even depth-1">
+			<article id="div-comment-289" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://2.gravatar.com/avatar/5fb086d2860f5bbc18fa390ad0591d85?s=32&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/5fb086d2860f5bbc18fa390ad0591d85?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">fiore</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-289">
+							<time datetime="2013-01-18T13:30:13+00:00">
+								January 18, 2013 at 1:30 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Thanks a lot for the rapid answer! Eventually I did the same except for the fact I used just plain javascript .. I was curious if one could perform the task inside the .rollup() function. 🙂</p>
+<p>PS:kudos for your great teaching style, I&#8217;m learning d3 and this tutorial has been incredibly useful.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2012/05/28/manipulating-data-like-a-boss-with-d3/?replytocom=289#respond' onclick='return addComment.moveForm( "div-comment-289", "289", "respond", "1246" )' aria-label='Reply to fiore'>Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-290" class="pingback odd alt thread-odd thread-alt depth-1">
+			<div class="comment-body">
+				Pingback: <a href='http://datacommunitydc.org/blog/2013/01/d3-js-meta-tutorial/' rel='external nofollow' class='url'>D3.js Meta Tutorial</a> 			</div>
+</li><!-- #comment-## -->
+		<li id="comment-291" class="comment even thread-even depth-1">
+			<article id="div-comment-291" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://2.gravatar.com/avatar/b057f1329d7fa1fbd53ddde7288ef4d5?s=32&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b057f1329d7fa1fbd53ddde7288ef4d5?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://ueye.info/' rel='external nofollow' class='url'>centerofme</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-291">
+							<time datetime="2013-03-15T14:37:42+00:00">
+								March 15, 2013 at 2:37 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>bunch of comments here talking about working with a real database however the nice thing about this being from csv is that you can always be pulling the data from your database and be writing csv files with it &#8211; this way the data is both downloadable and works with the tutorial quite nicely.  That would obv give the user more flexibility to use the data in other ways should they want to or need to.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2012/05/28/manipulating-data-like-a-boss-with-d3/?replytocom=291#respond' onclick='return addComment.moveForm( "div-comment-291", "291", "respond", "1246" )' aria-label='Reply to centerofme'>Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-292" class="comment odd alt thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-292" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://1.gravatar.com/avatar/79926c16912be46da4af9737ab747124?s=32&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/79926c16912be46da4af9737ab747124?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">Paul</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-292">
+							<time datetime="2013-11-01T23:32:26+00:00">
+								November 1, 2013 at 11:32 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Hi Jerome. This is incredibly helpful for me. One question &#8211; how do I execute your code without knowing the names of the attributes (continent, gdp, etc)? I&#8217;m very new to d3 so sorry if this is simple. Your code for reference below:</p>
+<p>d3.csv(&#8220;data.csv&#8221;,function(csv) {<br />
+  // we first sort the data</p>
+<p>  csv.sort(function(a,b) {return b.population-a.population;});</p>
+<p>  // then we create the marks, which we put in an initial position</p>
+<p>  svg.selectAll(&#8220;circle&#8221;).data(csv).enter()<br />
+    .append(&#8220;circle&#8221;)<br />
+    .attr(&#8220;cx&#8221;,function(d) {return x(0);})<br />
+    .attr(&#8220;cy&#8221;,function(d) {return y(0);})<br />
+    .attr(&#8220;r&#8221;,function(d) {return r(0);})</p>
+<p>    .style(&#8220;fill&#8221;,function(d) {return c(d.continent);})<br />
+    .style(&#8220;opacity&#8221;,function(d) {return o(+d.GDPcap);})</p>
+<p>      .append(&#8220;title&#8221;)<br />
+      .text(function(d) {return d.country;})</p>
+<p>  // now we initiate &#8211; moving the marks to their position</p>
+<p>  svg.selectAll(&#8220;circle&#8221;).transition().duration(1000)<br />
+    .attr(&#8220;cx&#8221;,function(d) {return x(+d.GERD);})<br />
+    .attr(&#8220;cy&#8221;,function(d) {return y(+d.growth);})<br />
+    .attr(&#8220;r&#8221;,function(d) {return r(Math.sqrt(+d.population));})<br />
+})</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2012/05/28/manipulating-data-like-a-boss-with-d3/?replytocom=292#respond' onclick='return addComment.moveForm( "div-comment-292", "292", "respond", "1246" )' aria-label='Reply to Paul'>Reply</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-295" class="comment byuser comment-author-jerome bypostauthor even depth-2">
+			<article id="div-comment-295" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://www.jeromecukier.net/' rel='external nofollow' class='url'>jerome</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-295">
+							<time datetime="2013-11-19T17:20:11+00:00">
+								November 19, 2013 at 5:20 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>well, the name of the attributes would come from your data file. so this assumes that you know your data file.<br />
+that being said, for any element of the array, you can do d3.keys() which will return the list of properties of that element. ie d3.keys(csv[0]).</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2012/05/28/manipulating-data-like-a-boss-with-d3/?replytocom=295#respond' onclick='return addComment.moveForm( "div-comment-295", "295", "respond", "1246" )' aria-label='Reply to jerome'>Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-293" class="comment odd alt thread-even depth-1 parent">
+			<article id="div-comment-293" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://1.gravatar.com/avatar/7eb61278c974ea3fde3540174254aeec?s=32&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/7eb61278c974ea3fde3540174254aeec?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">maadso</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-293">
+							<time datetime="2013-11-15T20:23:36+00:00">
+								November 15, 2013 at 8:23 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Hi Jerome, </p>
+<p>Great tutorial, this was super helpful for my entrance into d3 with csvs!  I&#8217;m trying to make a line chart with date as the x-axis, sum of orders as the y-axis, and a line/color for each of my three stores.  My dataset has a row for each order, so I need to sum the order by date and store: </p>
+<p>d3.csv(file, function(error, data) {</p>
+<p>  color.domain(d3.keys(data[0]).filter(function(key) { return key == &#8220;store&#8221;; }));</p>
+<p>  data = data.map( function (d) {<br />
+    return {<br />
+      store: d.store,<br />
+      date: parseDate(d.date),<br />
+      orders: +d.orders };<br />
+});   </p>
+<p>  data = d3.nest()<br />
+         .key(function(d) {return d.date;})<br />
+         .sortKeys(d3.ascending)<br />
+         .key(function(d) { return d.store; })<br />
+         .sortKeys(d3.ascending)<br />
+         .rollup(function(d) {<br />
+            return {<br />
+                    orders: d3.sum(d,function(t) {return +t.orders;})<br />
+                  };<br />
+    }).entries(data);</p>
+<p>I keep getting an error at this line in the code, and though the axis are drawn on the page, there is no data:</p>
+<p>  store.append(&#8220;path&#8221;)<br />
+      .attr(&#8220;class&#8221;, &#8220;line&#8221;)<br />
+      .attr(&#8220;d&#8221;, function(d) { console.log(d);return line(d.values); })<br />
+      .style(&#8220;stroke&#8221;, function(d) { return color(d.key); });</p>
+<p>Can you offer any insight? Thanks in advance!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2012/05/28/manipulating-data-like-a-boss-with-d3/?replytocom=293#respond' onclick='return addComment.moveForm( "div-comment-293", "293", "respond", "1246" )' aria-label='Reply to maadso'>Reply</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-294" class="comment byuser comment-author-jerome bypostauthor even depth-2">
+			<article id="div-comment-294" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://www.jeromecukier.net/' rel='external nofollow' class='url'>jerome</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-294">
+							<time datetime="2013-11-19T17:15:10+00:00">
+								November 19, 2013 at 5:15 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>i can&#8217;t be definitive without seeing your data file but mostly, do you define your line function somewhere?</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2012/05/28/manipulating-data-like-a-boss-with-d3/?replytocom=294#respond' onclick='return addComment.moveForm( "div-comment-294", "294", "respond", "1246" )' aria-label='Reply to jerome'>Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-296" class="comment odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-296" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://2.gravatar.com/avatar/25d868f796d5f7fd001dfd1f2aadd744?s=32&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/25d868f796d5f7fd001dfd1f2aadd744?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">Emesh</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-296">
+							<time datetime="2013-12-05T01:34:02+00:00">
+								December 5, 2013 at 1:34 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Hi Jerome,<br />
+I am very new to D3.js, currently i was working on a school project using d3  and json. Your tutorial was very helpful so i decide to implement it in my project  since it the nested data its much more similar to mine even though mine is json file  . at the moment  it groups the data correctly unfortunately the individual data which is represented by the circle faille to work. i was wondering what went wrong, I really appreciate it if you can take a look at it.<br />
+here is the link to the project    (<a href="https://github.com/emesh/IPU-Zabbix-D3" rel="nofollow">https://github.com/emesh/IPU-Zabbix-D3</a>)<br />
+Thanks in advance!!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2012/05/28/manipulating-data-like-a-boss-with-d3/?replytocom=296#respond' onclick='return addComment.moveForm( "div-comment-296", "296", "respond", "1246" )' aria-label='Reply to Emesh'>Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-297" class="comment even thread-even depth-1">
+			<article id="div-comment-297" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://1.gravatar.com/avatar/75f5707160697b2164444fc3f5054084?s=32&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/75f5707160697b2164444fc3f5054084?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://stevebennett.me/' rel='external nofollow' class='url'>Steve Bennett</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-297">
+							<time datetime="2014-01-21T08:42:04+00:00">
+								January 21, 2014 at 8:42 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Hey, thanks for the tutorial. I was a bit put off by the 3 caveats, but they&#8217;re actually much more minor than you make them sound:</p>
+<p>1. A really easy way to make something run on a webserver is using site44 &#8211; host the files from your dropbox.<br />
+2. Not sure I understand this one. Just define a global variable, then assign values to it in the callback.<br />
+3. Yep.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2012/05/28/manipulating-data-like-a-boss-with-d3/?replytocom=297#respond' onclick='return addComment.moveForm( "div-comment-297", "297", "respond", "1246" )' aria-label='Reply to Steve Bennett'>Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-304" class="pingback odd alt thread-odd thread-alt depth-1">
+			<div class="comment-body">
+				Pingback: <a href='https://drawingthedata.wordpress.com/2015/04/15/resources-for-using-multiple-graphs-in-d3-js-from-knightd3-teachers-students/' rel='external nofollow' class='url'>Resources for using multiple graphs in D3.js, from #knightD3 teachers / students | Drawing the Data</a> 			</div>
+</li><!-- #comment-## -->
+		<li id="comment-305" class="pingback even thread-even depth-1">
+			<div class="comment-body">
+				Pingback: <a href='http://www.jeromecukier.net/blog/2015/05/19/you-may-not-need-d3/' rel='external nofollow' class='url'>You may not need d3 | Jerome Cukier</a> 			</div>
+</li><!-- #comment-## -->
+		<li id="comment-310" class="comment odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-310" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://1.gravatar.com/avatar/170fecc990709d765e5307b3e3d9513f?s=32&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/170fecc990709d765e5307b3e3d9513f?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='https://plus.google.com/+MohammadAlshafey' rel='external nofollow' class='url'>Mohammad Alshafey</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-310">
+							<time datetime="2016-05-28T04:03:09+00:00">
+								May 28, 2016 at 4:03 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Many tutorials about how to use json or csv with d3.json or d3.csv, but the simplest idea of using an array or data object is still a mystery&#8230;</p>
+<p>For simple applications, updating a json or csv file dynamically is a nightmare. Being able to load an object with the needed data dynamically should be simple, darn it!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2012/05/28/manipulating-data-like-a-boss-with-d3/?replytocom=310#respond' onclick='return addComment.moveForm( "div-comment-310", "310", "respond", "1246" )' aria-label='Reply to Mohammad Alshafey'>Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-311" class="comment even thread-even depth-1">
+			<article id="div-comment-311" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://0.gravatar.com/avatar/0df0e70c58b3c085cd5f888f609dd77a?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/0df0e70c58b3c085cd5f888f609dd77a?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://thewsnblog.wordpress.com/' rel='external nofollow' class='url'>rookalkar</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-311">
+							<time datetime="2016-08-05T14:07:16+00:00">
+								August 5, 2016 at 2:07 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Really helpful tutorial. Thanks!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2012/05/28/manipulating-data-like-a-boss-with-d3/?replytocom=311#respond' onclick='return addComment.moveForm( "div-comment-311", "311", "respond", "1246" )' aria-label='Reply to rookalkar'>Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-312" class="comment odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-312" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://1.gravatar.com/avatar/7e038996082ba53b42300d8d323d2a35?s=32&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/7e038996082ba53b42300d8d323d2a35?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">Carlos Ayres</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-312">
+							<time datetime="2016-11-01T12:04:23+00:00">
+								November 1, 2016 at 12:04 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Yes, an old post, but still excelent. Thanks for sharing</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2012/05/28/manipulating-data-like-a-boss-with-d3/?replytocom=312#respond' onclick='return addComment.moveForm( "div-comment-312", "312", "respond", "1246" )' aria-label='Reply to Carlos Ayres'>Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		</ol><!-- .comment-list -->
+
+		
+	
+	
+					<div id="respond" class="comment-respond">
+			<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#respond" style="display:none;">Cancel reply</a></small></h3>				<form action="/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+					<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" aria-required='true' required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" aria-required='true' required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='1246' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="d3ba52731a" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="240"/></p>				</form>
+					</div><!-- #respond -->
+		
+</div><!-- #comments -->
+
+		
+
+	<div id="secondary" class="widget-area" role="complementary">
+		<aside id="search-2" class="widget widget_search"><form role="search" method="get" class="search-form" action="/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit" value="Search" />
+			</form></aside>		<aside id="recent-posts-2" class="widget widget_recent_entries">		<h1 class="widget-title">Recent Posts</h1>		<ul>
+					<li>
+				<a href="/2018/04/09/hello-world/">Hello world!</a>
+						</li>
+					<li>
+				<a href="/2016/08/17/the-big-leagues/">The big leagues</a>
+						</li>
+					<li>
+				<a href="/2016/08/17/creating-a-react-visualization-web-app/">Creating a React visualization web app</a>
+						</li>
+					<li>
+				<a href="/2016/08/13/beyond-rendering/">Beyond rendering</a>
+						</li>
+					<li>
+				<a href="/2016/08/11/react-components/">React components</a>
+						</li>
+				</ul>
+		</aside>		<aside id="recent-comments-2" class="widget widget_recent_comments"><h1 class="widget-title">Recent Comments</h1><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link"><a href='https://wordpress.org/' rel='external nofollow' class='url'>A WordPress Commenter</a></span> on <a href="/2018/04/09/hello-world/#comment-1">Hello world!</a></li><li class="recentcomments"><span class="comment-author-link"><a href='http://omeraz.wordpress.com/' rel='external nofollow' class='url'>עומר עזריאל</a></span> on <a href="/2016/08/17/the-big-leagues/#comment-567">The big leagues</a></li><li class="recentcomments"><span class="comment-author-link">Carlos Ayres</span> on <a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-312">Manipulating data like a boss with d3</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://migrate.powertripanalytics.com/game-of-thrones-interactions-among-the-top-30-characters/' rel='external nofollow' class='url'>Game of ThronesInteractions Among the Top 30 Characters &#8211; PowerTrip Analytics</a></span> on <a href="/2013/05/13/making-the-game-of-thrones-visualization/#comment-466">Making the game of thrones visualization</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://abgoswam.wordpress.com/2016/10/08/d3-getting-started/' rel='external nofollow' class='url'>D3 &#8211; Getting Started | abgoswam&#039;s tech blog</a></span> on <a href="/2012/09/04/getting-to-hello-world-with-d3/#comment-419">Getting to &#8220;Hello world&#8221; with d3</a></li></ul></aside><aside id="archives-2" class="widget widget_archive"><h1 class="widget-title">Archives</h1>		<ul>
+			<li><a href='/2018/04/'>April 2018</a></li>
+	<li><a href='/2016/08/'>August 2016</a></li>
+	<li><a href='/2015/05/'>May 2015</a></li>
+	<li><a href='/2015/02/'>February 2015</a></li>
+	<li><a href='/2014/10/'>October 2014</a></li>
+	<li><a href='/2013/11/'>November 2013</a></li>
+	<li><a href='/2013/05/'>May 2013</a></li>
+	<li><a href='/2013/03/'>March 2013</a></li>
+	<li><a href='/2013/01/'>January 2013</a></li>
+	<li><a href='/2012/12/'>December 2012</a></li>
+	<li><a href='/2012/11/'>November 2012</a></li>
+	<li><a href='/2012/10/'>October 2012</a></li>
+	<li><a href='/2012/09/'>September 2012</a></li>
+	<li><a href='/2012/07/'>July 2012</a></li>
+	<li><a href='/2012/06/'>June 2012</a></li>
+	<li><a href='/2012/05/'>May 2012</a></li>
+	<li><a href='/2012/04/'>April 2012</a></li>
+	<li><a href='/2012/01/'>January 2012</a></li>
+	<li><a href='/2011/11/'>November 2011</a></li>
+	<li><a href='/2011/10/'>October 2011</a></li>
+	<li><a href='/2011/09/'>September 2011</a></li>
+	<li><a href='/2011/08/'>August 2011</a></li>
+	<li><a href='/2011/07/'>July 2011</a></li>
+	<li><a href='/2011/06/'>June 2011</a></li>
+	<li><a href='/2011/05/'>May 2011</a></li>
+	<li><a href='/2011/04/'>April 2011</a></li>
+	<li><a href='/2011/03/'>March 2011</a></li>
+	<li><a href='/2011/02/'>February 2011</a></li>
+	<li><a href='/2011/01/'>January 2011</a></li>
+	<li><a href='/2010/11/'>November 2010</a></li>
+	<li><a href='/2010/04/'>April 2010</a></li>
+	<li><a href='/2010/03/'>March 2010</a></li>
+	<li><a href='/2010/02/'>February 2010</a></li>
+	<li><a href='/2010/01/'>January 2010</a></li>
+	<li><a href='/2009/12/'>December 2009</a></li>
+	<li><a href='/2009/10/'>October 2009</a></li>
+	<li><a href='/2009/09/'>September 2009</a></li>
+	<li><a href='/2009/08/'>August 2009</a></li>
+	<li><a href='/2009/07/'>July 2009</a></li>
+	<li><a href='/2009/06/'>June 2009</a></li>
+	<li><a href='/2009/05/'>May 2009</a></li>
+	<li><a href='/2008/12/'>December 2008</a></li>
+	<li><a href='/2008/11/'>November 2008</a></li>
+	<li><a href='/2008/10/'>October 2008</a></li>
+		</ul>
+		</aside><aside id="categories-2" class="widget widget_categories"><h1 class="widget-title">Categories</h1>		<ul>
+	<li class="cat-item cat-item-2"><a href="/category/book-review/" >book review</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="/category/charts/" >charts</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="/category/conferences/" >conferences</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="/category/d3/" >d3</a>
+</li>
+	<li class="cat-item cat-item-6"><a href="/category/dashboards/" >dashboards</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="/category/data-publishing/" >data publishing</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="/category/data-visualization/" >data visualization</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="/category/francais/" >français</a>
+</li>
+	<li class="cat-item cat-item-10"><a href="/category/javascript/" >javascript</a>
+</li>
+	<li class="cat-item cat-item-11"><a href="/category/presentation/" >presentation</a>
+</li>
+	<li class="cat-item cat-item-12"><a href="/category/protovis/" >protovis</a>
+</li>
+	<li class="cat-item cat-item-13"><a href="/category/react/" >react</a>
+</li>
+	<li class="cat-item cat-item-14"><a href="/category/tips/" >tips</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="/category/uncategorized/" >Uncategorized</a>
+</li>
+	<li class="cat-item cat-item-15"><a href="/category/web-sites/" >web sites</a>
+</li>
+		</ul>
+</aside><aside id="meta-2" class="widget widget_meta"><h1 class="widget-title">Meta</h1>			<ul>
+						<li><a href="/wp-login.php">Log in</a></li>
+			<li><a href="/feed/">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="/comments/feed/">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>			</ul>
+			</aside>		<div class="clear">&nbsp;</div>
+	</div><!-- #secondary -->
+	<footer id="colophon" class="site-footer" role="contentinfo">
+	    <a class="subscribe icon-feed" href="/feed/"><span class="tooltip">Subscribe!</span></a>
+		<div class="site-info inner">
+		    <section class="copyright">
+		    			    		<a href="https://github.com/lacymorrow/casper" rel="home">Casper WP</a> by Lacy Morrow		    			    </section>
+		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+</main><!-- /#content -->
+
+<script type='text/javascript' src='/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js?ver=3.0.9b'></script>
+<script type='text/javascript' src='/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushJScript.js?ver=3.0.9b'></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "http://localhost:8888/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "http://localhost:8888/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+<script type='text/javascript' src='/wp-content/themes/casper/js/main.js?ver=1.0.0'></script>
+<script type='text/javascript' src='/wp-includes/js/comment-reply.min.js?ver=4.6.10'></script>
+<script type='text/javascript' src='/wp-includes/js/wp-embed.min.js?ver=4.6.10'></script>
+<script async="async" type='text/javascript' src='/wp-content/plugins/akismet/_inc/form.js?ver=4.0.3'></script>
+<!--stats_footer_test--></body>
+</html>

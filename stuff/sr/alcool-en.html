@@ -1,0 +1,193 @@
+<html>
+<head>
+<script type="text/javascript" src="http://blog.oecdfactblog.org/wp-includes/js/protovis-r3.2.js"></script>
+</head>
+
+<body><div class="protovis">
+<script type="text/javascript+protovis">
+var time=0;
+var hour=7;
+var minutes=0;
+var mode=1;
+var hourAngle=0;minuteAngle=0;
+
+function timeAngle() {
+	hourAngle=(Math.PI)*2*(1-(hour-3)/12);
+	minuteAngle=(Math.PI)*2*(1-(minutes-15)/60);
+}
+
+
+
+
+var gender=0;
+var bodyType=0;
+var poids=[[50,65,80],[70,85,100]];
+var intake=pv.range(32).map(function() 0),alco=pv.range(32).map(function() 0);
+
+function updateAlco(){
+	for(var i=0;i<time;i++){
+		if(i>0){alco[i]=alco[i-1];}
+		alco[i]+=(intake[i]*12)/((gender?.68:.55)*poids[gender][bodyType]);
+		if(i>0){
+			if(alco[i]>0) {
+				alco[i]-=0.0375; // élimination de l'alcool au rythme de 0.15g/l/h
+			}
+		}
+	}
+}
+
+var drinks=[
+{key:"beer",value:1},
+{key:"whisky",value:1},
+{key:"vodka",value:1},
+{key:"wine (red)", value:1},
+{key:"coffee",value:0},
+{key:"soda",value:0},
+{key:"snack",value:0},
+{key:"meal",value:0},
+{key:"water",value:0},
+{key:"wine (white)", value:1},
+{key:"shot", value:1},
+{key:"champagne", value:1},
+//{key:"cocktail", value:1},
+];
+
+drinks.sort(function(a,b){return (a.key>b.key)-(b.key>a.key);});
+
+vis=new pv.Panel()
+	.width(600)
+	.height(600)
+	;
+var w=600;
+
+sexButtons=vis.add(pv.Panel).top(150).add(pv.Panel)
+	.visible(function() {return mode==1;})  
+        .data(pv.range(0,2)).left(function() {return 205+100*this.index;})
+        .width(90)
+	.height(20)
+	.top(5)
+	.fillStyle(function(d) {return d==gender?"steelblue":"silver";})
+	.strokeStyle("gray").visible(function() {return mode==1;});
+
+sexButtons.anchor("center").add(pv.Label).text(function(d) {return ["Female","Male"][d];});
+sexButtons.event("click", function(d) {gender=d;sexButtons.render();})
+
+weightButtons=vis.add(pv.Panel).top(350).add(pv.Panel)
+	.visible(function() {return mode==1;})
+        .data(pv.range(0,3)).left(function() {return 155+100*this.index;})
+        .width(90)
+	.height(20)
+	.top(5)
+	.fillStyle(function(d) {return d==bodyType?"steelblue":"silver";})
+	.strokeStyle("gray").visible(function() {return mode==1;});
+
+weightButtons.anchor("center").add(pv.Label).text(function(d) {return ["Small","Medium","Large"][d];});
+weightButtons.event("click", function(d) {bodyType=d;weightButtons.render();})
+
+startButton=vis.add(pv.Panel).top(450).add(pv.Panel).left(255)
+	.visible(function() {return mode==1;})
+	.width(90)
+	.height(20)
+	.fillStyle("silver")
+	.strokeStyle("gray")
+	.event("click", function() {mode=2;vis.render();})
+	.anchor("center").add(pv.Label).text("Start");
+
+var buttonRows=vis.add(pv.Panel)
+	.visible(function() mode>1)
+	.data(pv.range(3))
+	.top(function() {return 400+30*this.index;});
+
+var buttons=buttonRows.add(pv.Panel)
+	.visible(function() mode>1)
+	.data(pv.range(4))
+	.left(function() {return 5+100*this.index;})
+	.width(90)
+	.height(20)
+	.top(5)
+	.fillStyle("silver")
+	.strokeStyle("gray");
+
+buttons.anchor("center").add(pv.Label).text(function() drinks[(this.parent.parent.index*4)+this.parent.index].key);
+
+buttons.event("click", function() {intake[time]+=drinks[(this.parent.index*4)+this.index].value;})
+
+
+vis.add(pv.Rule)
+	.visible(function() mode>1)
+	.data(pv.range(10))
+	.left(25)
+	.bottom(function(d) 250+25*d)
+	.width(31*12)
+	.strokeStyle(function(d) d==2?"#222":"#ddd")
+	.anchor("left").add(pv.Label).text(function() (0.25*this.index).toFixed(2)).textAlign("right").textBaseline("middle")
+
+vis.add(pv.Rule)
+	.data(pv.range(32))
+	.left(function() 25+12*this.index)
+	.visible(function() {return (!(this.index%4))&&(mode>1);})
+	.bottom(247)
+	.height(3)
+	.anchor("bottom").add(pv.Label)
+		.text(function() ((this.index<24)?(19+(this.index/4)):(this.index-20)/4)+"h")
+		.visible(function() {return (!(this.index%4))&&(mode>1);})
+
+var myAlco=vis.add(pv.Line)
+	.data(function() alco.slice(0,time))
+	.left(function() 25+12*this.index)
+	.bottom(function(d) 250+100*d)
+	.interpolate("basis")
+	.segmented(true)
+	.strokeStyle(function() {return alco[this.index]>.5?"red":(alco[this.index]>0?"orange":"blue");})
+	.visible(function() mode>1)
+
+
+
+
+
+var clock=vis.add(pv.Dot).top(50).right(250).fillStyle("silver").size(500).strokeStyle(null)
+	.visible(function() mode>1);
+//vis.add(pv.Panel).top(25).right(25).width(50).height(50).strokeStyle("grey").fillStyle(null);
+
+smallHand=vis.add(pv.Line)
+	.data(function() [[w-250,50],[w-250+15*Math.cos(hourAngle),50-15*Math.sin(hourAngle)]])
+	.top(function(d) d[1])
+	.left(function(d) d[0])
+	.strokeStyle("grey")
+	.lineWidth(1)
+	.visible(function() mode>1)
+	;
+
+bigHand=vis.add(pv.Line)
+	.data(function() [[w-250,50],[w-250+20*Math.cos(minuteAngle),50-20*Math.sin(minuteAngle)]])
+	.top(function(d) d[1])
+	.left(function(d) d[0])
+	.strokeStyle("grey")
+	.lineWidth(1)
+	.visible(function() mode>1)
+	;
+
+
+
+//vis.add(pv.Label).top(20).right(50).text(function() time);
+	//.anchor("center").add(pv.Label)
+	//	.text(function() "Time: "+showTime(time))
+
+		setInterval(function() {
+		if(mode==2){
+		if (minutes==45) {
+			minutes=0;if(hour==11) {hour=0} else {hour++}}
+		else {minutes+=15;}
+		time++;timeAngle();
+		updateAlco();
+		if(time==32){mode=3;}
+		}
+		vis.render();}, 1000);
+
+
+    </script>
+</div>
+
+
+  </body>
+</html>

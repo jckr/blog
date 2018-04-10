@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>embedding &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/embedding/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>Embedding tableau visualizations on the web</title>
+		<link>/2012/07/02/embedding-tableau-visualizations-on-the-web/</link>
+		<comments>/2012/07/02/embedding-tableau-visualizations-on-the-web/#comments</comments>
+		<pubDate>Mon, 02 Jul 2012 17:42:13 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[d3]]></category>
+		<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[tips]]></category>
+		<category><![CDATA[embedding]]></category>
+		<category><![CDATA[Tableau]]></category>
+		<category><![CDATA[wordpress]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1395</guid>
+		<description><![CDATA[I&#8217;m writing this short post because I see that exact phrase come up in the search engine terms of the blog now and again (along with &#8220;Hello this is bathtub&#8221; but I can&#8217;t really help there). Long story short. I run into problems all the time trying to properly embed Tableau vis into wordpress blog <a class="read-more" href="/2012/07/02/embedding-tableau-visualizations-on-the-web/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>I&#8217;m writing this short post because I see that exact phrase come up in the search engine terms of the blog now and again (along with &#8220;<a href="http://thazing.com/hello-this-is-bathtub/#.T_HYBsXxqGM">Hello this is bathtub</a>&#8221; but I can&#8217;t really help there).</p>
+<p>Long story short. I run into problems all the time trying to properly embed Tableau vis into wordpress blog posts. Does it happen outside of wordpress, I don&#8217;t know, because I don&#8217;t really try to embed Tableau vis outside of wordpress. That said, I have the same problem with d3 vis in wordpress and I&#8217;ve been asked several times how do I do it.</p>
+<h3>iframes.</h3>
+<p>That&#8217;s how.</p>
+<p>Here is what I did <a href="http://www.jeromecukier.net/blog/2012/06/30/tableau-2012-sports-visualization-contest-entry/">last time</a>.</p>
+<pre class="brush: jscript; title: ; notranslate">
+&lt;iframe
+  style=&quot;border: 0px;&quot;
+  src=&quot;http://public.tableausoftware.com/views/champions/champions?:embed=y&amp;amp;:from_wg=true&quot;
+  scrolling=&quot;no&quot;
+  width=&quot;652px&quot;
+  height=&quot;756px&quot;&gt;
+&lt;/iframe&gt;
+</pre>
+<p>so you&#8217;ll have to go to HTML mode and type it out. When it&#8217;s done, you can safely go back to visual mode if you feel like it.<br />
+Let&#8217;s go through these lines one by one (btw, they don&#8217;t have to appear one line at a time, it&#8217;s just for presentation purposes).</p>
+<p>Most important, what in on src. That&#8217;s simply the link to the page of your tableau vis. And if that&#8217;s not clear enough, it goes like this:<br />
+http://public.tableausoftware.com/views/ + <em>name of your workbook</em> + / + <em>name of your dashboard or sheet</em>.</p>
+<p>Since I want to show a dashboard called champions in a workbook called champions as well, that&#8217;s http://public.tableausoftware.com/views/champions/champions.</p>
+<p>I&#8217;m not sure whether what&#8217;s after the dashboard name is important. I&#8217;ll leave that as an exercise to figure it out. I&#8217;m pretty confident things work without it.</p>
+<p>Then the rest.</p>
+<p>style=&#8221;border: 0px&#8221; Yes, because you don&#8217;t want an ugly border around your iframe. or do you?</p>
+<p>scrolling=&#8221;no&#8221;. So there&#8217;s no scrollbar. Look. Scrollbars in iframes were pretty rad in 1996, but if you want to give that embed feeling, you have to do without them.</p>
+<p>height=&#8230;px, width=&#8230;px. Here&#8217;s the tricky part. You have to manually set the size of your visualisation and add a couple of pixels for good measure.</p>
+<p>In tableau, when creating dashboards, I have always used the option to size them <em>exactly </em>at a precise size and I recommend you do that too. Then add 2-6 px to each dimension and use that as width and height.</p>
+<p>In my experience going through these steps is really less painful than using the &#8220;native&#8221; embed functionality of tableau vis which sometimes work and sometimes doesn&#8217;t. The added bonus is that the resulting html is much more legible than what Tableau generates, which, for the record, is:</p>
+<pre>&lt;script type="text/javascript" src="http://public.tableausoftware.com/javascripts/api/viz_v1.js"&gt;&lt;/script&gt;&lt;div style="width:654px; height:799px;"&gt;&lt;noscript&gt;&lt;a href="http:&amp;#47;&amp;#47;www.jeromecukier.net&amp;#47;blog&amp;#47;2012&amp;#47;06&amp;#47;30&amp;#47;tableau-2012-sports-visualization-contest-entry&amp;#47;"&gt;&lt;img alt="champions " src="http:&amp;#47;&amp;#47;public.tableausoftware.com&amp;#47;static&amp;#47;images&amp;#47;ch&amp;#47;champions&amp;#47;champions&amp;#47;1_rss.png" style="border: none" /&gt;&lt;/a&gt;&lt;/noscript&gt;&lt;object width="654" height="799" style="display:none;"&gt;&lt;param name="host_url" value="http%3A%2F%2Fpublic.tableausoftware.com%2F" /&gt;&lt;param name="site_root" value="" /&gt;&lt;param name="name" value="champions&amp;#47;champions" /&gt;&lt;param name="tabs" value="no" /&gt;&lt;param name="toolbar" value="yes" /&gt;&lt;param name="static_image" value="http:&amp;#47;&amp;#47;public.tableausoftware.com&amp;#47;static&amp;#47;images&amp;#47;ch&amp;#47;champions&amp;#47;champions&amp;#47;1.png" /&gt;&lt;param name="animate_transition" value="yes" /&gt;&lt;param name="display_static_image" value="yes" /&gt;&lt;param name="display_spinner" value="yes" /&gt;&lt;param name="display_overlay" value="yes" /&gt;&lt;param name="display_count" value="yes" /&gt;&lt;param name="from_wg" value="true" /&gt;&lt;/object&gt;&lt;/div&gt;&lt;div style="width:654px;height:22px;padding:0px 10px 0px 0px;color:black;font:normal 8pt verdana,helvetica,arial,sans-serif;"&gt;&lt;div style="float:right; padding-right:8px;"&gt;&lt;a href="http://www.tableausoftware.com/public?ref=http://public.tableausoftware.com/views/champions/champions" target="_blank"&gt;Powered by Tableau&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;</pre>
+<p>Yeah. You say &amp;#47; i say %2F. anyway, this is a bit difficult to troubleshoot.</p>
+<p>The drawback when using iframes is that you lose the nice static image which is generated for RSS flows and other environments without interactivity. If you don&#8217;t know what I&#8217;m talking about (if you&#8217;re not familiar with that large orange arrow at the center) you&#8217;ll have no regrets.</p>
+<h3>Bonus: d3.</h3>
+<p>It turns out that the iframe is the simplest solution to have d3 work within wordpress, too. Sure, in theory it is possible to upload a js file as a media file, so you get a url with the date in it or something, which you can link to from the&#8230; whatever. It just never works and it&#8217;s a pain to maintain.</p>
+<p>so instead, use iframes. Make your d3 visualisation into an html file which will have all the necessary links. Then upload the file to a location you know (and possibly dependencies) and you&#8217;re all set! set an iframe with the same guidelines as above. To make the process even less painful, I use a plug-in called <a href="http://wordpress.org/extend/plugins/wp-filemanager/">FileManager</a> which lets me upload and manage files from within my dashboard environment. On another server I use another app also called <a href="http://www.gerd-tentler.de/tools/filemanager/">FileManager</a> (quite a catchy name, apparently) which runs outside of the wordpress environment.</p>
+<p>Happy embedding!</p>
+]]></content:encoded>
+			<wfw:commentRss>/2012/07/02/embedding-tableau-visualizations-on-the-web/feed/</wfw:commentRss>
+		<slash:comments>15</slash:comments>
+		</item>
+	</channel>
+</rss>

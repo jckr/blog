@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>manhattan &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/manhattan/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>Tableau contest 2011</title>
+		<link>/2011/06/03/tableau-contest-2011/</link>
+		<comments>/2011/06/03/tableau-contest-2011/#comments</comments>
+		<pubDate>Fri, 03 Jun 2011 00:17:19 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[2011]]></category>
+		<category><![CDATA[contest]]></category>
+		<category><![CDATA[manhattan]]></category>
+		<category><![CDATA[real estate]]></category>
+		<category><![CDATA[scatterplot]]></category>
+		<category><![CDATA[Tableau]]></category>
+		<category><![CDATA[viz]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=906</guid>
+		<description><![CDATA[Real-estate transactions in ManhattanResidential buildings, 2003-present Powered by Tableau Here is my Tableau contest 2011 entry. The rules stipulated it had to be about business, real-estate or finance, so I chose real-estate. Since everyone loves New-York, and since the data for real-estate transaction is relatively easy to get, that&#8217;s what I show. In order to <a class="read-more" href="/2011/06/03/tableau-contest-2011/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p><script type="text/javascript" src="http://public.tableausoftware.com/javascripts/api/viz_v1.js"></script><object class="tableauViz" width="654" height="719" style="display:none;"><param name="host_url" value="http%3A%2F%2Fpublic.tableausoftware.com%2F" /><param name="name" value="contest2011&#47;Winning" /><param name="tabs" value="no" /><param name="toolbar" value="yes" /><param name="animate_transition" value="yes" /><param name="display_static_image" value="yes" /><param name="display_spinner" value="yes" /><param name="display_overlay" value="yes" /></object><noscript>Real-estate transactions in ManhattanResidential buildings, 2003-present <br /><a href="#"><img alt="Real-estate transactions in ManhattanResidential buildings, 2003-present " src="http:&#47;&#47;public.tableausoftware.com&#47;static&#47;images&#47;co&#47;contest2011&#47;Winning&#47;1_rss.png" height="100%" /></a></noscript>
+<div style="width:654px;height:22px;padding:0px 10px 0px 0px;color:black;font:normal 8pt verdana,helvetica,arial,sans-serif;">
+<div style="float:right; padding-right:8px;"><a href="http://www.tableausoftware.com/public?ref=http://public.tableausoftware.com/views/contest2011/Winning" target="_blank">Powered by Tableau</a></div>
+</div>
+<p>Here is my Tableau contest 2011 entry.<br />
+The rules stipulated it had to be about business, real-estate or finance, so I chose real-estate. Since everyone loves New-York, and since the data for real-estate transaction is <a href="http://www.nyc.gov/html/dof/html/property/property_val_sales.shtml">relatively easy to get</a>, that&#8217;s what I show. In order to be within Tableau Public 100,000 row limit, I chose to show only the residential transactions (apartment buildings or buildings converted to apartment buildings), larger than 100 square foot and sold at at least $1. </p>
+<p>Before I started, I wanted to create a Tableau that would be legible as a static image.<br />
+We tableau tribe have seen a lot of interactive dashboards with sophisticated action. Here, I wanted to cater to the discriminate analyst who gets their kicks from seeing patterns emerge with a glance to 90k datapoints. </p>
+<p>What does it show for instance? well, while the bulk of transactions are at a price close to the average there are a large part which are done considerably below that, and comparatively, very few which are markedly over that.<br />
+The marks which are aligned show either many transactions at the same price (there are distinct $1, $10 and $100 lines for instance) or sales of similar properties. There were a string of sales of identical apartments at 1335 6th Avenue, for instance.</p>
+<p>It&#8217;s possible to switch the function of the Y-axis of the scatterplot, which can either represent square feet or sale price. The largest transaction on the period was around $4 billion, and the largest in terms of area was just above 10m square feet.<br />
+It is also possible to explore through the lists on the right. By selecting &#8220;other types&#8221; of buildings for instance you can see which apartment buildings once were yeshivas or fire stations or (what?) &#8220;detention houses for wayward girls&#8221; (there&#8217;s one in upper east side).<br />
+You can also switch to a <a href="http://public.tableausoftware.com/views/contest2011/WMap">map-based version of this dashboard</a>. Speaking of maps, a right-click on any mark can open a google maps window centered on that address for you.</p>
+<p>So here goes, enjoy the viz and good luck to all contestants</p>
+]]></content:encoded>
+			<wfw:commentRss>/2011/06/03/tableau-contest-2011/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+	</channel>
+</rss>

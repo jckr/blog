@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: d3: adding stuff. And, oh, understanding selections</title>
+	<atom:link href="http://localhost/2011/08/09/d3-adding-stuff-and-oh-understanding-selections/feed/" rel="self" type="application/rss+xml" />
+	<link>/2011/08/09/d3-adding-stuff-and-oh-understanding-selections/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>By: You may not need d3 &#124; Jerome Cukier</title>
+		<link>/2011/08/09/d3-adding-stuff-and-oh-understanding-selections/#comment-177</link>
+		<dc:creator><![CDATA[You may not need d3 &#124; Jerome Cukier]]></dc:creator>
+		<pubDate>Tue, 19 May 2015 21:16:10 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1012#comment-177</guid>
+		<description><![CDATA[[&#8230;] the most intriguing and the most characteristic way to create new elements in d3js is to use a data [&#8230;]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] the most intriguing and the most characteristic way to create new elements in d3js is to use a data [&#8230;]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: jerome</title>
+		<link>/2011/08/09/d3-adding-stuff-and-oh-understanding-selections/#comment-173</link>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+		<pubDate>Mon, 04 Mar 2013 13:41:59 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1012#comment-173</guid>
+		<description><![CDATA[it&#039;s possible to access the parent, but not straightforward. you can get by with constructs like
+d3.select(...).node().parentElement.__data__ but it&#039;s simpler not to.]]></description>
+		<content:encoded><![CDATA[<p>it&#8217;s possible to access the parent, but not straightforward. you can get by with constructs like<br />
+d3.select(&#8230;).node().parentElement.__data__ but it&#8217;s simpler not to.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: YC</title>
+		<link>/2011/08/09/d3-adding-stuff-and-oh-understanding-selections/#comment-172</link>
+		<dc:creator><![CDATA[YC]]></dc:creator>
+		<pubDate>Sat, 02 Mar 2013 15:56:54 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1012#comment-172</guid>
+		<description><![CDATA[&#062;  And since you have to know: there is no easy way to retrieve the data of the parent element. 
+
+Thanks for the great tutorials, and thanks for being so thorough! Coming from protovis, I had been searching everywhere for how to do this in d3, and I&#039;m glad I found this, so I can at least stop looking... so I&#039;ll have to rethink my data flow then! 
+
+Thanks.]]></description>
+		<content:encoded><![CDATA[<p>&gt;  And since you have to know: there is no easy way to retrieve the data of the parent element. </p>
+<p>Thanks for the great tutorials, and thanks for being so thorough! Coming from protovis, I had been searching everywhere for how to do this in d3, and I&#8217;m glad I found this, so I can at least stop looking&#8230; so I&#8217;ll have to rethink my data flow then! </p>
+<p>Thanks.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: eerieshadow</title>
+		<link>/2011/08/09/d3-adding-stuff-and-oh-understanding-selections/#comment-171</link>
+		<dc:creator><![CDATA[eerieshadow]]></dc:creator>
+		<pubDate>Fri, 23 Nov 2012 05:38:40 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1012#comment-171</guid>
+		<description><![CDATA[I appreciate this tutorial a lot! Finally a person that can explain selection in a quick and concise way. Thank you!]]></description>
+		<content:encoded><![CDATA[<p>I appreciate this tutorial a lot! Finally a person that can explain selection in a quick and concise way. Thank you!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: knowledge stockpile</title>
+		<link>/2011/08/09/d3-adding-stuff-and-oh-understanding-selections/#comment-170</link>
+		<dc:creator><![CDATA[knowledge stockpile]]></dc:creator>
+		<pubDate>Mon, 02 Jan 2012 17:31:21 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1012#comment-170</guid>
+		<description><![CDATA[Thanks! I am learning D3 and found this helpful.]]></description>
+		<content:encoded><![CDATA[<p>Thanks! I am learning D3 and found this helpful.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Jim</title>
+		<link>/2011/08/09/d3-adding-stuff-and-oh-understanding-selections/#comment-169</link>
+		<dc:creator><![CDATA[Jim]]></dc:creator>
+		<pubDate>Mon, 21 Nov 2011 21:42:42 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1012#comment-169</guid>
+		<description><![CDATA[I&#039;ve poked around looking for D3 tutorials, and this is the best one by far! Thanks!]]></description>
+		<content:encoded><![CDATA[<p>I&#8217;ve poked around looking for D3 tutorials, and this is the best one by far! Thanks!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: jerome</title>
+		<link>/2011/08/09/d3-adding-stuff-and-oh-understanding-selections/#comment-168</link>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+		<pubDate>Tue, 11 Oct 2011 14:44:01 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1012#comment-168</guid>
+		<description><![CDATA[stick with it! it gets very rewarding once you can get past the initial hurdle]]></description>
+		<content:encoded><![CDATA[<p>stick with it! it gets very rewarding once you can get past the initial hurdle</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Donny</title>
+		<link>/2011/08/09/d3-adding-stuff-and-oh-understanding-selections/#comment-167</link>
+		<dc:creator><![CDATA[Donny]]></dc:creator>
+		<pubDate>Tue, 11 Oct 2011 11:37:22 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1012#comment-167</guid>
+		<description><![CDATA[Thank you very much for this amazingly lucid explanation of the d3 selections. I had given up on d3 a few weeks back because I just couldn&#039;t understand the magic ..]]></description>
+		<content:encoded><![CDATA[<p>Thank you very much for this amazingly lucid explanation of the d3 selections. I had given up on d3 a few weeks back because I just couldn&#8217;t understand the magic ..</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: jake lin</title>
+		<link>/2011/08/09/d3-adding-stuff-and-oh-understanding-selections/#comment-166</link>
+		<dc:creator><![CDATA[jake lin]]></dc:creator>
+		<pubDate>Fri, 16 Sep 2011 20:19:51 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1012#comment-166</guid>
+		<description><![CDATA[Very impressive protovis and d3 postings.]]></description>
+		<content:encoded><![CDATA[<p>Very impressive protovis and d3 postings.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Sundar Ramalingam</title>
+		<link>/2011/08/09/d3-adding-stuff-and-oh-understanding-selections/#comment-165</link>
+		<dc:creator><![CDATA[Sundar Ramalingam]]></dc:creator>
+		<pubDate>Thu, 11 Aug 2011 03:25:44 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1012#comment-165</guid>
+		<description><![CDATA[Explained very well with pictures. Very nice. Please explain all important functions in d3 like this.]]></description>
+		<content:encoded><![CDATA[<p>Explained very well with pictures. Very nice. Please explain all important functions in d3 like this.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

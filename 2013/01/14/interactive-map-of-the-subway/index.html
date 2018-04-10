@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="HandheldFriendly" content="True" />
+<meta name="MobileOptimized" content="320" />
+
+<title>Interactive map of the subway | jeromecukier.net</title>
+
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="/xmlrpc.php">
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Feed" href="/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Comments Feed" href="/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Interactive map of the subway Comments Feed" href="/2013/01/14/interactive-map-of-the-subway/feed/" />
+<!-- This site uses the Google Analytics by MonsterInsights plugin v7.0.5 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+<!-- Note: MonsterInsights is not currently configured on this site. The site owner needs to authenticate with Google Analytics in the MonsterInsights settings panel. -->
+<!-- No UA code set -->
+<!-- / Google Analytics by MonsterInsights -->
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/localhost:8888\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6.10"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='YoutubeShortcodeMargenn-css'  href='/wp-content/plugins/youtube-shortcode/youtube-shortcode.css?ver=4.6.10' type='text/css' media='all' />
+<link rel='stylesheet' id='casper-google-fonts-css'  href='//fonts.googleapis.com/css?family=Noto+Serif%3A400%2C700%2C400italic%7COpen+Sans%3A700%2C400&#038;ver=4.6.10' type='text/css' media='all' />
+<link rel='stylesheet' id='casper-style-css'  href='/wp-content/themes/casper/style.css?ver=4.6.10' type='text/css' media='all' />
+<script type='text/javascript' src='/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Gun murders in America' href='/2012/12/29/gun-murders-in-america/' />
+<link rel='next' title='Selections in d3 &#8211; the long story' href='/2013/03/05/d3-tutorial-at-strata-redux/' />
+<meta name="generator" content="WordPress 4.6.10" />
+<link rel="canonical" href="/2013/01/14/interactive-map-of-the-subway/" />
+<link rel='shortlink' href='http://wp.me/p-oJ' />
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2Flocalhost%3A8888%2F2013%2F01%2F14%2Finteractive-map-of-the-subway%2F" />
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2Flocalhost%3A8888%2F2013%2F01%2F14%2Finteractive-map-of-the-subway%2F&#038;format=xml" />
+
+   	<style type="text/css">
+					.blog-title a, .blog-description, .social-icons a { color: #ffffff; }
+		
+						                
+		
+							.main-navigation a { color: ; }
+		                                            </style>
+    		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+
+<body class="single single-post postid-1533 single-format-standard group-blog">
+
+<header id="masthead" role="banner" class="site-head site-header" >
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+        <div>
+            <h1 class="menu-toggle">
+                <a class="icon-bars" href="#">
+                    <span class="hidden">Menu</span>
+                </a>
+            </h1>
+            <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+            <div class="menu"><ul><li ><a href="/">Home</a></li><li class="page_item page-item-6"><a href="/about/">About</a></li><li class="page_item page-item-1073"><a href="/data-stories/">Data with stories workshop &#8211; examples</a></li><li class="page_item page-item-437"><a href="/proofs-of-concept/">Private section</a></li><li class="page_item page-item-2"><a href="/sample-page/">Sample Page</a></li></ul></div>
+        </div>
+    </nav><!-- #site-navigation -->
+
+    <div class="vertical-row">
+        <div class="vertical">
+            <div class="site-head-content inner">
+                
+                <div class="social-icons">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                    </div>
+                <h1 class="blog-title"><a class="blog-logo" href='/' rel='home'>jeromecukier.net</a></h1>
+                <h2 class="blog-description">Just another WordPress site</h2>
+            </div>
+        </div>
+    </div>
+</header><!-- #masthead -->
+
+<main id="content" class="content" role="main">
+
+
+		
+			<article id="post-1533" class="post-1533 post type-post status-publish format-standard hentry category-uncategorized">
+    <header class="post-header">
+                	<span class="post-meta">
+        	    <span class="posted-on"><a href="/2013/01/14/interactive-map-of-the-subway/" rel="bookmark"><time class="entry-date published" datetime="2013-01-14T00:51:21+00:00">January 14, 2013</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> | <a href="/category/uncategorized/" rel="category tag">Uncategorized</a>        	</span>
+		        <h1 class="post-title"><a href="/2013/01/14/interactive-map-of-the-subway/" rel="bookmark">Interactive map of the subway</a></h1>
+        
+    </header>
+    		<section class="post-content">
+		    <p>My last project is an interactive map of the Paris subway.<br />
+<a href="http://www.jeromecukier.net/projects/metro/map.html"><img src="http://jeromecukier.net/projects/metro/sshot.png" alt="Interacive subway map" /></a></p>
+<p><a href="http://www.jeromecukier.net/projects/metro/map.html">Interactive subway map</a></p>
+<p>Quite some time ago, I had seen Tom Carden&#8217;s <a href="http://www.tom-carden.co.uk/p5/tube_map_travel_times/applet/">Tube Travel Times</a> and was fascinated. So while I initially had tried to do something different I ended up borrowing a lot of his design, so it wouldn&#8217;t be fair to start this post without acknowledging that.<br />
+Then again, there are a few original things in this worth writing about.<br />
+A subway system can be seen as a network of nodes and edges. Nodes would be the stations, and edges, the subway lines that connect them. Finding the shortest path between two parts of the graph is a classic problem of computer science. That path is the sum of the length of all the edges it takes to traverse the graph from the source to the destination.<br />
+However a typical subway journey, and I should know, is not entirely spent in a train. You first have to get from the street to the platform, wait for your train; in the event of a connection, you have to go from one platform to another, wait for another train; and eventually you have to return to the street level.<br />
+So in my representation of the subway system in addition to the stations themselves, I&#8217;ve added nodes for all the platforms within a station and edges between them. So if you have to go from one station A to station B, which is three stops away on a given subway line, you would really traverse 5 edges: station A to platform, stop 1, stop 2, stop 3, then platform to station B.<br />
+While the Paris subway agency, RATP, has recently publicized its open data intent, the travel times between two stations are not public. I actually had reliable and accurate measured travel times for 90% of the network, on the basis of which I could estimate the rest. The great unknown that remains is the complexity of the stations, some are very straightforward so going from the street to a train is a matter of seconds, while some are downright mazes. While I think I have travelled through almost every stations by now, I definitely not have stopped in many of them. So as part of the project I am asking users to complement my data on the stations they know well. Actually, I didn&#8217;t use much of the datasets that RATP published. The position of the stations on the canonical plan has a lot of inaccuracies. For the geographical positions I used my own measures rather than the published data (I had been playing on and off with subway data for close to 5 years now, <a href="http://www.openprocessing.org/sketch/22252">http://www.openprocessing.org/sketch/22252</a>). I did use the trafic data to give an idea of the occupancy of a given section, and the official color codes as well. Because I am using my own measures, I have not added other railway systems like the RER or tramway for which I don&#8217;t have enough data. </p>
+<p>So when a user selects a station, the rest of the network moves according to their (shortest path) distance to the selected station. So at the heart of the exercise there is a shortest path calculation from any station to any other. Including stations, platforms, connections, entrances and exits, that&#8217;s a network of 680 nodes and 1710 edges (for 299 stations, I didn&#8217;t include a couple of the very last ones). And it&#8217;s a directed network, because there are some sections which go in only one direction. At most, a network that big could have close to 500,000 edges, so it&#8217;s fairly sparse.<br />
+There are several algorithms to compute shortest paths in the code. I am using the best known one, Dijkstra, which works on path with no negative edge length. The way it is implemented here, with binary heaps, makes it so fast that it&#8217;s not noticeable. Not using that improvement, or relying on a more versatile but slower shortest path algorithm, would result in considerably greater computing times. </p>
+<p>When a user selects one station a few things happen. First, all of the others are arranged around the selected station. Imagine the station is the fixed point in a polar coordinate system, all the other stations retain their angular coordinate but their radii now depends on the shortest path time. That idea came directly from Tom&#8217;s applet. Another thing I took from him is the addition of rings in the background which give an indication of the travelling time to those destinations. But I settled for that after much fumbling and with the conviction that there was no better solution.<br />
+What also happens is that all the edges which are not part of any shortest path disappear. So subway lines are no longer continuous.<br />
+Once a station is selected, more things happen when hovering on a second station, the actual shortest path is revealed while all others fade out, and the station marks are hidden except those of the start, destination and all connections on the way, for which names are displayed.<br />
+Finally, an interace appears that let users enter estimations for the times I don&#8217;t know so well about the stations. I haven&#8217;t added any hard figures there so I am only asking for impressions, but I believe that with some usage the time estimations can get much more accurate. </p>
+<hr>
+<strong>Edit 1</strong><br />
+the vis has been quite successful, so I decided to awesomize it a bit.<br />
+Now by clicking on any colored line, it&#8217;s possible to &#8220;block&#8221; any given subway section. The shortest routes become those which do not go through that section. You can simulate what happens, for instance, when a given line is down.<br />
+The other change is that I&#8217;ve added walking distances. For each station I&#8217;ve computed the beeline distance with its 5 nearest neighbors. I&#8217;ve translated that distance into time (knowing that pedestrians can&#8217;t traverse buildings, have to mind trafic etc.).<br />
+But in many cases it is still quicker to go from one station to the next on foot than by train.</p>
+		    			<div class="clear">&nbsp;</div>
+		</section>
+	
+	<footer class="post-footer">
+
+	    <section class="author">
+	    	<img alt='' src='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=100&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=200&amp;d=mm&amp;r=g 2x' class='avatar avatar-100 photo' height='100' width='100' />	        <h4>jerome</h4>
+	        <p></p>
+			<div class="clear">&nbsp;</div>
+	    </section>
+	</footer>
+</article><!-- #post-## -->
+
+				<nav class="pagination navigation post-navigation" role="navigation">
+		<div class="nav-links">
+			<div class="older-posts"><a href="/2012/12/29/gun-murders-in-america/" rel="prev">Gun murders in America <span class="meta-nav">&rarr;</span></a></div>				<div class="page-number">&bull;</div>
+				<div class="newer-posts"><a href="/2013/03/05/d3-tutorial-at-strata-redux/" rel="next"><span class="meta-nav">&larr;</span> Selections in d3 &#8211; the long story</a></div>		</div><!-- .nav-links -->
+	</nav><!-- .navigation -->
+	
+			
+<div id="comments" class="comments-area">
+
+	
+			<h2 class="comments-title">
+			6 thoughts on &ldquo;<span>Interactive map of the subway</span>&rdquo;		</h2>
+
+		
+		<ol class="comment-list">
+					<li id="comment-468" class="comment even thread-even depth-1">
+			<article id="div-comment-468" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://2.gravatar.com/avatar/ea61fc97aab700c9413a1b2f34ab6afc?s=32&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/ea61fc97aab700c9413a1b2f34ab6afc?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://visual-baseball.com/' rel='external nofollow' class='url'>Ken Cherven</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2013/01/14/interactive-map-of-the-subway/#comment-468">
+							<time datetime="2013-01-14T04:27:15+00:00">
+								January 14, 2013 at 4:27 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Fantastic work on the Paris Metro! Centering the selected station and highlighting the best rote is especially effective.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2013/01/14/interactive-map-of-the-subway/?replytocom=468#respond' onclick='return addComment.moveForm( "div-comment-468", "468", "respond", "1533" )' aria-label='Reply to Ken Cherven'>Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-469" class="comment odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-469" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://2.gravatar.com/avatar/ea61fc97aab700c9413a1b2f34ab6afc?s=32&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/ea61fc97aab700c9413a1b2f34ab6afc?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://visual-baseball.com/' rel='external nofollow' class='url'>Ken Cherven</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2013/01/14/interactive-map-of-the-subway/#comment-469">
+							<time datetime="2013-01-14T04:28:07+00:00">
+								January 14, 2013 at 4:28 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>route &#8211; not rote</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2013/01/14/interactive-map-of-the-subway/?replytocom=469#respond' onclick='return addComment.moveForm( "div-comment-469", "469", "respond", "1533" )' aria-label='Reply to Ken Cherven'>Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-470" class="comment even thread-even depth-1">
+			<article id="div-comment-470" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://2.gravatar.com/avatar/e0a4c128e7ed1d0bf0f90257f81d01e1?s=32&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/e0a4c128e7ed1d0bf0f90257f81d01e1?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://www.groundtruthtrekking.org/' rel='external nofollow' class='url'>Hig</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2013/01/14/interactive-map-of-the-subway/#comment-470">
+							<time datetime="2013-01-14T10:56:32+00:00">
+								January 14, 2013 at 10:56 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>I love it!</p>
+<p>Except one fiddly detail&#8230; the transition animation shows circles appearing and disappearing from the center, but it seems like it should be from the edge.  The circles should stretch to be larger if you click on a station that is more central (thus closer to everywhere) and they should shrink to be smaller if you do the opposite.  But instead new circles pop into or out of existence at the middle, so the circle that once referred to a certain time now refers to a different time.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2013/01/14/interactive-map-of-the-subway/?replytocom=470#respond' onclick='return addComment.moveForm( "div-comment-470", "470", "respond", "1533" )' aria-label='Reply to Hig'>Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-471" class="comment odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-471" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://0.gravatar.com/avatar/014a5cf5146e5b9dd30f35d6c47b0838?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/014a5cf5146e5b9dd30f35d6c47b0838?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">Victor Blaer</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2013/01/14/interactive-map-of-the-subway/#comment-471">
+							<time datetime="2013-01-15T14:35:23+00:00">
+								January 15, 2013 at 2:35 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>holy cow that is some awesome work.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2013/01/14/interactive-map-of-the-subway/?replytocom=471#respond' onclick='return addComment.moveForm( "div-comment-471", "471", "respond", "1533" )' aria-label='Reply to Victor Blaer'>Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-472" class="comment even thread-even depth-1 parent">
+			<article id="div-comment-472" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://1.gravatar.com/avatar/a2b625f331361a7110da59a907d79e95?s=32&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/a2b625f331361a7110da59a907d79e95?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">JulienW</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2013/01/14/interactive-map-of-the-subway/#comment-472">
+							<time datetime="2013-01-17T10:08:58+00:00">
+								January 17, 2013 at 10:08 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>I love the idea.</p>
+<p>Small comments:<br />
+&#8211; If I understand correctly, for those cases where 2 different lines run between the 2 same stations, only the fastest one is displayed ?<br />
+&#8211; I&#8217;d choose &#8220;red&#8221; for the most central stations and make the color fade away when we go in the periphery<br />
+&#8211; when the user clicks on a station, eg Montmarnasse-Bienvenüe, then we can see that sometimes the lines goes back in time. Does that mean that it takes longer to go out of the station ? For instance, it&#8217;s faster to go out of Porte d&#8217;Orléans than out of Alesia ?<br />
+&#8211; there are several entrances/exits for a station; an extreme one is &#8220;Les Halles&#8221; on line 4, which have a very fast entrance and some that are very far away. How do you think this could be handled on your map ?</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2013/01/14/interactive-map-of-the-subway/?replytocom=472#respond' onclick='return addComment.moveForm( "div-comment-472", "472", "respond", "1533" )' aria-label='Reply to JulienW'>Reply</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-473" class="comment byuser comment-author-jerome bypostauthor odd alt depth-2">
+			<article id="div-comment-473" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://www.jeromecukier.net/' rel='external nofollow' class='url'>jerome</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2013/01/14/interactive-map-of-the-subway/#comment-473">
+							<time datetime="2013-01-17T16:14:56+00:00">
+								January 17, 2013 at 4:14 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>1) yes. In the second view the segments which are not part of any shortest path are not displayed. For instance, from Montparnasse, there are large chunks of ligne 8 that should never be used, because it&#8217;s always faster not to use it.<br />
+2) that is a remnant of the first project I did with that data.<br />
+3) in some cases, it is indeed quicker to go to a station which is one or two stops further because it can be quicker to exit. many people who live halfway across two stops have a preference which &#8220;feels quicker&#8221; even though the number of stops actually increases.<br />
+4) originally there were about 1700 edges in the graph. If I had included all paths from each platform to each exit, I could have added a good 5 to 10000 more. besides, I don&#8217;t have a reliable list of all exits. so instead I rely on a subjective measure. the question is, how far does the platform feel from your exit? My feeling is that the average of that can be useful, more than an arbitrary value (&#8220;it&#8217;s always 5 minutes&#8221;) and more than not taking entering/leaving the station into account.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2013/01/14/interactive-map-of-the-subway/?replytocom=473#respond' onclick='return addComment.moveForm( "div-comment-473", "473", "respond", "1533" )' aria-label='Reply to jerome'>Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		</ol><!-- .comment-list -->
+
+		
+	
+	
+					<div id="respond" class="comment-respond">
+			<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/2013/01/14/interactive-map-of-the-subway/#respond" style="display:none;">Cancel reply</a></small></h3>				<form action="/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+					<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" aria-required='true' required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" aria-required='true' required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='1533' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="d3f5c15cf5" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="1"/></p>				</form>
+					</div><!-- #respond -->
+		
+</div><!-- #comments -->
+
+		
+
+	<div id="secondary" class="widget-area" role="complementary">
+		<aside id="search-2" class="widget widget_search"><form role="search" method="get" class="search-form" action="/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit" value="Search" />
+			</form></aside>		<aside id="recent-posts-2" class="widget widget_recent_entries">		<h1 class="widget-title">Recent Posts</h1>		<ul>
+					<li>
+				<a href="/2018/04/09/hello-world/">Hello world!</a>
+						</li>
+					<li>
+				<a href="/2016/08/17/the-big-leagues/">The big leagues</a>
+						</li>
+					<li>
+				<a href="/2016/08/17/creating-a-react-visualization-web-app/">Creating a React visualization web app</a>
+						</li>
+					<li>
+				<a href="/2016/08/13/beyond-rendering/">Beyond rendering</a>
+						</li>
+					<li>
+				<a href="/2016/08/11/react-components/">React components</a>
+						</li>
+				</ul>
+		</aside>		<aside id="recent-comments-2" class="widget widget_recent_comments"><h1 class="widget-title">Recent Comments</h1><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link"><a href='https://wordpress.org/' rel='external nofollow' class='url'>A WordPress Commenter</a></span> on <a href="/2018/04/09/hello-world/#comment-1">Hello world!</a></li><li class="recentcomments"><span class="comment-author-link"><a href='http://omeraz.wordpress.com/' rel='external nofollow' class='url'>עומר עזריאל</a></span> on <a href="/2016/08/17/the-big-leagues/#comment-567">The big leagues</a></li><li class="recentcomments"><span class="comment-author-link">Carlos Ayres</span> on <a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-312">Manipulating data like a boss with d3</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://migrate.powertripanalytics.com/game-of-thrones-interactions-among-the-top-30-characters/' rel='external nofollow' class='url'>Game of ThronesInteractions Among the Top 30 Characters &#8211; PowerTrip Analytics</a></span> on <a href="/2013/05/13/making-the-game-of-thrones-visualization/#comment-466">Making the game of thrones visualization</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://abgoswam.wordpress.com/2016/10/08/d3-getting-started/' rel='external nofollow' class='url'>D3 &#8211; Getting Started | abgoswam&#039;s tech blog</a></span> on <a href="/2012/09/04/getting-to-hello-world-with-d3/#comment-419">Getting to &#8220;Hello world&#8221; with d3</a></li></ul></aside><aside id="archives-2" class="widget widget_archive"><h1 class="widget-title">Archives</h1>		<ul>
+			<li><a href='/2018/04/'>April 2018</a></li>
+	<li><a href='/2016/08/'>August 2016</a></li>
+	<li><a href='/2015/05/'>May 2015</a></li>
+	<li><a href='/2015/02/'>February 2015</a></li>
+	<li><a href='/2014/10/'>October 2014</a></li>
+	<li><a href='/2013/11/'>November 2013</a></li>
+	<li><a href='/2013/05/'>May 2013</a></li>
+	<li><a href='/2013/03/'>March 2013</a></li>
+	<li><a href='/2013/01/'>January 2013</a></li>
+	<li><a href='/2012/12/'>December 2012</a></li>
+	<li><a href='/2012/11/'>November 2012</a></li>
+	<li><a href='/2012/10/'>October 2012</a></li>
+	<li><a href='/2012/09/'>September 2012</a></li>
+	<li><a href='/2012/07/'>July 2012</a></li>
+	<li><a href='/2012/06/'>June 2012</a></li>
+	<li><a href='/2012/05/'>May 2012</a></li>
+	<li><a href='/2012/04/'>April 2012</a></li>
+	<li><a href='/2012/01/'>January 2012</a></li>
+	<li><a href='/2011/11/'>November 2011</a></li>
+	<li><a href='/2011/10/'>October 2011</a></li>
+	<li><a href='/2011/09/'>September 2011</a></li>
+	<li><a href='/2011/08/'>August 2011</a></li>
+	<li><a href='/2011/07/'>July 2011</a></li>
+	<li><a href='/2011/06/'>June 2011</a></li>
+	<li><a href='/2011/05/'>May 2011</a></li>
+	<li><a href='/2011/04/'>April 2011</a></li>
+	<li><a href='/2011/03/'>March 2011</a></li>
+	<li><a href='/2011/02/'>February 2011</a></li>
+	<li><a href='/2011/01/'>January 2011</a></li>
+	<li><a href='/2010/11/'>November 2010</a></li>
+	<li><a href='/2010/04/'>April 2010</a></li>
+	<li><a href='/2010/03/'>March 2010</a></li>
+	<li><a href='/2010/02/'>February 2010</a></li>
+	<li><a href='/2010/01/'>January 2010</a></li>
+	<li><a href='/2009/12/'>December 2009</a></li>
+	<li><a href='/2009/10/'>October 2009</a></li>
+	<li><a href='/2009/09/'>September 2009</a></li>
+	<li><a href='/2009/08/'>August 2009</a></li>
+	<li><a href='/2009/07/'>July 2009</a></li>
+	<li><a href='/2009/06/'>June 2009</a></li>
+	<li><a href='/2009/05/'>May 2009</a></li>
+	<li><a href='/2008/12/'>December 2008</a></li>
+	<li><a href='/2008/11/'>November 2008</a></li>
+	<li><a href='/2008/10/'>October 2008</a></li>
+		</ul>
+		</aside><aside id="categories-2" class="widget widget_categories"><h1 class="widget-title">Categories</h1>		<ul>
+	<li class="cat-item cat-item-2"><a href="/category/book-review/" >book review</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="/category/charts/" >charts</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="/category/conferences/" >conferences</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="/category/d3/" >d3</a>
+</li>
+	<li class="cat-item cat-item-6"><a href="/category/dashboards/" >dashboards</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="/category/data-publishing/" >data publishing</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="/category/data-visualization/" >data visualization</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="/category/francais/" >français</a>
+</li>
+	<li class="cat-item cat-item-10"><a href="/category/javascript/" >javascript</a>
+</li>
+	<li class="cat-item cat-item-11"><a href="/category/presentation/" >presentation</a>
+</li>
+	<li class="cat-item cat-item-12"><a href="/category/protovis/" >protovis</a>
+</li>
+	<li class="cat-item cat-item-13"><a href="/category/react/" >react</a>
+</li>
+	<li class="cat-item cat-item-14"><a href="/category/tips/" >tips</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="/category/uncategorized/" >Uncategorized</a>
+</li>
+	<li class="cat-item cat-item-15"><a href="/category/web-sites/" >web sites</a>
+</li>
+		</ul>
+</aside><aside id="meta-2" class="widget widget_meta"><h1 class="widget-title">Meta</h1>			<ul>
+						<li><a href="/wp-login.php">Log in</a></li>
+			<li><a href="/feed/">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="/comments/feed/">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>			</ul>
+			</aside>		<div class="clear">&nbsp;</div>
+	</div><!-- #secondary -->
+	<footer id="colophon" class="site-footer" role="contentinfo">
+	    <a class="subscribe icon-feed" href="/feed/"><span class="tooltip">Subscribe!</span></a>
+		<div class="site-info inner">
+		    <section class="copyright">
+		    			    		<a href="https://github.com/lacymorrow/casper" rel="home">Casper WP</a> by Lacy Morrow		    			    </section>
+		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+</main><!-- /#content -->
+
+<script type='text/javascript' src='/wp-content/themes/casper/js/main.js?ver=1.0.0'></script>
+<script type='text/javascript' src='/wp-includes/js/comment-reply.min.js?ver=4.6.10'></script>
+<script type='text/javascript' src='/wp-includes/js/wp-embed.min.js?ver=4.6.10'></script>
+<script async="async" type='text/javascript' src='/wp-content/plugins/akismet/_inc/form.js?ver=4.0.3'></script>
+<!--stats_footer_test--></body>
+</html>

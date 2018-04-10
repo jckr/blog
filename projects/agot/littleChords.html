@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head><style>
+body{margin:0px;}
+</style></head>
+<body>
+<script src="../../../d3.v2.min.js"></script>
+<script src="http://mbostock.github.com/d3/d3.v2.min.js"></script>
+<div id="chart" style="width:800px;height:500px"></div>
+<script>
+var width = 800,
+    height = 500;
+
+var svg=d3.select("#chart").append("svg").attr({width:width,height:height})
+svg.append("rect").attr({width:500,height:500}).style("fill","white").on("click",init);
+var chart=svg.append("g").attr("transform","translate(500,0)");
+svg=svg.append("g").attr("transform","translate(250,250)").on("click",init);
+init();
+function init() {
+  chart.selectAll("*").remove();
+
+  svg.selectAll("*").remove();
+  var n=Math.floor((5+5*Math.random()));
+  //console.log(n);
+raw=d3.range(n).map(function(d) {return Math.floor(1+10*(Math.random()));})
+traw=d3.sum(raw);
+data=raw.map(function(d) {return Math.sqrt(d);})
+total=d3.sum(data);
+var t=0,r0=150;
+var xy=data.map(function(d) {var a=Math.PI*2*d/total,xy={x:Math.cos(t)*r0,y:Math.sin(t)*r0};t=t+a;return xy;})
+var xy3=xy.map(function(d,i) {var e;
+  if(i<(n-1)) {e=xy[i+1]} else {e=xy[0]};
+  var f={x:(d.x+e.x)/2,y:(d.y+e.y)/2};
+  var dist=Math.sqrt(f.x*f.x+f.y*f.y);
+  var ratio=r0/dist;
+  var f1={x:f.x*ratio,y:f.y*ratio};
+  //console.log(ratio);
+  var d2={x:d.x+(f1.x-f.x),y:d.y+(f1.y-f.y)}
+  var e2={x:e.x+(f1.x-f.x),y:e.y+(f1.y-f.y)}
+  var r=Math.sqrt((d.x-e.x)*(d.x-e.x)+(d.y-e.y)*(d.y-e.y))/2;
+  return [d,e,f,d2,e2,r];})
+var tr=d3.sum(xy3,function(d) {return d[5];})
+var tr2=d3.sum(xy3,function(d) {return d[5]*d[5];});
+//data.forEach(function(d,i) {console.log(100*d/total,100*xy3[i][5]/tr,100*xy3[i][5]*xy3[i][5]/tr2)});
+svg.append("circle").attr("r",r0).style({stroke:"black",fill:"none","stroke-opacity":.2})
+svg.selectAll(".circles").data(xy3).enter().append("circle").style({stroke:"#ddd",fill:"darkorange","fill-opacity":0}).attr({cx:function(d) {return (d[3].x+d[4].x)/2;},cy:function(d) {return (d[3].y+d[4].y)/2;},r:function(d) {return d[5];},class:function(d,i) {return "circle c"+i;}})
+svg.selectAll(".chords").data(xy3).enter().append("path").style({stroke:"black",fill:"none","stroke-dasharray":"2 4"}).attr("d",function(d) {return "M"+d[0].x+","+d[0].y+" L "+d[1].x+" "+d[1].y+" L "+d[4].x+","+d[4].y+" "+d[3].x+","+d[3].y+"Z";})
+
+//svg.selectAll(".chords").data(xy3).enter().append("path").style({stroke:"black",fill:"none"}).attr("d",function(d) {return "M"+d[3].x+","+d[3].y+" L "+d[4].x+" "+d[4].y;})
+
+svg.selectAll(".ray").data(xy3).enter().append("path").style({stroke:"black","stroke-opacity":.2,fill:"none"}).attr("d",function(d) {return "M0,0L"+d[0].x+","+d[0].y;})
+.attr("class",function(d,i) {if(!i) {return "r"+i+" r"+(n-1);} else {return "r"+(i-1)+" r"+i;}})
+svg.selectAll(".points").data(xy).enter().append("circle").style({fill:"white",stroke:"black"}).attr({cx:function(d) {return d.x;},cy:function(d) {return d.y},r:5});
+svg.selectAll(".points").data(xy3).enter().append("circle").style({fill:"black",stroke:"black"}).attr({cx:function(d) {return (d[3].x+d[4].x)/2;},cy:function(d) {return (d[3].y+d[4].y)/2;},r:3});
+
+var x=d3.scale.linear().domain([0,n]).range([0,300]);
+var y=d3.scale.linear().range([300,100]);
+var max=d3.max([d3.max(data,function(d) {return d/total;}),d3.max(xy3,function(d) {return d[5]*d[5]/tr2;})]);
+y.domain([0,max]);
+chart.append("path").attr("d","M0,100 v200 h300").style({stroke:"black",fill:"none"})
+var bands=chart.selectAll(".angle").data(raw).enter().append("g").attr("transform",function(d,i) {return "translate("+x(i)+",0)"});
+bands
+  .append("rect").attr({width:300/n,y:99,x:1,height:200}).style({"fill":function(d,i) {return (i%2?"white":"#f8f8f8");}})
+  .on("mouseout",function(d,i)  {
+    d3.selectAll(".r"+i).transition().style({"stroke":"black","stroke-opacity":.2,"stroke-width":1});
+    d3.selectAll(".circle").transition().style("fill-opacity",0);
+  })
+  .on("mouseover",function(d,i) {
+    d3.selectAll(".r"+i).transition().style({"stroke":"steelblue","stroke-width":1.5,"stroke-opacity":1});
+    d3.selectAll(".c"+i).transition().style({"fill-opacity":.2});
+  });
+ 
+bands
+  .append("circle").style({stroke:"steelblue",fill:"white","fill-opacity":.01,"stroke-opacity":.5,"stroke-width":2})
+  .attr({cx:150/n,cy:function(d) {return y(d/traw);},r:5})
+  
+bands
+  .append("circle").style({stroke:"darkorange",fill:"white","fill-opacity":.01,"stroke-opacity":.5,"stroke-width":2})
+  .attr({cx:150/n,cy:function(a,i) {var d=xy3[i];return y(d[5]*d[5]/tr2);},r:5})
+
+chart.append("circle").style({stroke:"steelblue",fill:"white","fill-opacity":.01,"stroke-opacity":.5,"stroke-width":2})
+  .attr({cx:5,cy:320,r:5})
+chart.append("circle").style({stroke:"darkorange",fill:"white","fill-opacity":.01,"stroke-opacity":.5,"stroke-width":2})
+   .attr({cx:5,cy:340,r:5})
+chart.append("text").text("Value of the datapoint as % of the series total").attr({x:15,y:325})
+chart.append("text").text("Area of that circle as % of areas of all circles").attr({x:15,y:345})
+
+}
+</script>
+
+
+</body>
+</html>

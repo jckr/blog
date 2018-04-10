@@ -1,0 +1,298 @@
+<html>
+<head>
+<script type="text/javascript" src="protovisr3.2.js"></script>
+<script type="text/javascript" src="data.js"></script>
+<style>
+.protovis {width:1200; height:900; background: #fff;}
+
+</style></head>
+
+<body><div class="protovis">
+<script type="text/javascript+protovis">
+
+
+
+function sum(data) pv.sum(data, function(d) d.chars);
+
+
+var matrix=pv.nest(data)
+	.key(function(d) {return d.Race;})
+	.key(function(d) {return d.Class;})
+	.rollup(sum);
+var details=pv.nest(data)
+	.key(function(d) {return d.Race;})
+	.key(function(d) {return d.Class;})
+	.key(function(d) {return d.Specialization;})
+	.key(function(d) {return d.level;})
+	.rollup(sum);
+var nCombos=pv.nest(data)
+	.key(function(d) {return d.Race;})
+	.key(function(d) {return d.Class;})
+	.key(function(d) {return d.Specialization;})
+	.entries();
+
+function get(combo, level) {return details[combo.Race][combo.Class][combo.Specialization][level]/byLevel[level];}
+
+var byRace=pv.nest(data)
+	.key(function(d) {return d.Race;})
+	.rollup(sum);
+
+byRace=pv.flatten(byRace).key("Race").key("chars").array().sort(function(a,b) a.chars-b.chars);
+
+var byClass=pv.nest(data)
+	.key(function(d) {return d.Class;})
+	.rollup(sum);
+
+byClass=pv.flatten(byClass).key("Class").key("chars").array().sort(function(a,b) b.chars-a.chars);
+
+var byLevel=pv.nest(data)
+	.key(function(d) {return d.level;})
+	.rollup(sum)
+	;
+
+var total=pv.sum(byClass, function(d) {return d.chars;});
+
+
+// here we are creating an index for combos. All race/class/specs combinations will be listed in an array.
+var combos=data.filter(function(d) {return d.level==0;});
+combos.forEach(function(c,i) {c.id=i;})
+
+
+
+// now we create the parallel coordinates dataset proper. It will be of the form:
+//
+// [
+//  {id: 0, 0:1266, 1: 1727, 2: 2082, 3: 1802, 4: 3428, 5: 3161, 6: 9884, 7: 9833, 8: 3285, 9: 1573, 10: 1528, 11: 1981, 12: 1439},
+//  {id: 1, ...}
+//  ...
+//  where 0, 1, 2 ... are the numbers of chars of each level range for each combo.
+
+var pcData=combos.map(function(c) {
+var subset=data.filter(function(d) {return (d.Race==c.Race)&&(d.Class==c.Class)&&(d.Specialization==c.Specialization);});
+var map=pv.nest(subset)
+	.key(function(d) {return d.level;})
+	.rollup(sum);
+
+map.id=c.id;
+return map;
+});
+
+var selLine=-1;
+
+// The units and dimensions to visualize, in order.
+var units = {0: {name: "Lvl 10-19", unit: ""},
+  			 1: {name: "Lvl 20-29", unit: ""},
+ 			 2: {name: "Lvl 30-39", unit: ""},
+  			 3: {name: "Lvl 40-49", unit: ""},
+  			 4: {name: "Lvl 50-59", unit: ""},
+  			 5: {name: "Lvl 60-69", unit: ""},
+  			 6: {name: "Lvl 70-79", unit: ""},
+  			 7: {name: "Lvl 80", unit: ""},
+  	 		 8: {name: "Lvl 81", unit: ""},
+  			 9: {name: "Lvl 82", unit: ""},
+  			10: {name: "Lvl 83", unit: ""},
+  			11: {name: "Lvl 84", unit: ""},
+  			12: {name: "Lvl 85", unit: ""}
+};
+
+var dims = pv.keys(units);
+
+/* Sizing and scales. */
+var w = 820, tw=1200;
+    h = 800, th=900;
+    var rpl=880,
+    fudge = 0.5,
+    x = pv.Scale.ordinal(dims).splitFlush(0, w),
+    y = pv.dict(dims, function(t) pv.Scale.linear(
+        pcData.filter(function(d) !isNaN(d[t])),
+        function(d) Math.floor(d[t])-fudge,
+        function(d) Math.ceil(d[t]) +fudge
+        ).range(0, h)),
+    c = pv.dict(dims, function(t) pv.Scale.linear(
+        pcData.filter(function(d) !isNaN(d[t])),
+        function(d) Math.floor(d[t])-fudge,
+        function(d) Math.ceil(d[t]) +fudge
+        ).range("darkkhaki", "indigo"));
+
+/* Interaction state. */
+var filter = pv.dict(dims, function(t) {
+    return {min: y[t].domain()[0], max: y[t].domain()[1]};
+  }), active = "0";
+
+/* the root panel */
+var vis=new pv.Panel()
+	.width(tw)
+	.height(th)
+.strokeStyle("silver")
+;
+/* The pc panel. */
+var pcPan= vis.add(pv.Panel)
+    .width(w)
+    .height(h)
+    .left(30)
+    .right(30)
+    .top(30)
+    .bottom(20);
+
+// The parallel coordinates display.
+pcPan.add(pv.Panel)
+    .data(pcData)
+    /*.visible(function(d) dims.every(function(t)
+        (d[t] >= filter[t].min) && (d[t] <= filter[t].max)))*/
+  .add(pv.Line)
+    .data(dims)
+    .left(function(t, d) x(t))
+    .bottom(function(t, d) y[t](d[t]))
+    .strokeStyle("#ddd")
+    .lineWidth(1)
+    .antialias(false);
+
+// Rule per dimension.
+rule = pcPan.add(pv.Rule)
+    .data(dims)
+    .left(x);
+
+// Dimension label
+rule.anchor("top").add(pv.Label)
+    .top(-12)
+    .font("bold 10px sans-serif")
+    .text(function(d) units[d].name);
+
+// The parallel coordinates display.
+var change = pcPan.add(pv.Panel);
+
+var line = change.add(pv.Panel)
+    .data(pcData)
+    .visible(function(d) {var selected=dims.every(function(t)
+        (d[t] >= filter[t].min) && (d[t] <= filter[t].max));
+        pcData[this.index].selected=selected;
+        return d.selected;}
+        )
+  .add(pv.Line)
+    .data(dims)
+    .left(function(t, d) x(t))
+    .bottom(function(t, d) y[t](d[t]))
+    .strokeStyle(function(t, d) (t==selLine)?("red"):(pv.color(c[active](d[active]).alpha(.5))))
+    .lineWidth(function(t) (t==selLine)?5:1)
+
+// Updater for slider and resizer.
+function update(d) {
+  var t = d.dim;
+  filter[t].min = Math.max(y[t].domain()[0], y[t].invert(h - d.y - d.dy));
+  filter[t].max = Math.min(y[t].domain()[1], y[t].invert(h - d.y));
+  active = t;
+ // change.render();
+ // rightPanel.render();
+ vis.render();
+  return false;
+}
+
+// Updater for slider and resizer.
+function selectAll(d) {
+  if (d.dy < 3) {
+    var t = d.dim;
+    filter[t].min = Math.max(y[t].domain()[0], y[t].invert(0));
+    filter[t].max = Math.min(y[t].domain()[1], y[t].invert(h));
+    d.y = 0; d.dy = h;
+    active = t;
+ //   change.render();
+ //   rightPanel.render();
+ vis.render();
+  }
+  return false;
+}
+
+/* Handle select and drag */
+var handle = change.add(pv.Panel)
+    .data(dims.map(function(dim) { return {y:0, dy:h, dim:dim}; }))
+    .left(function(t) x(t.dim) - 30)
+    .width(60)
+    .fillStyle("rgba(0,0,0,.001)")
+    .cursor("crosshair")
+    .event("mousedown", pv.Behavior.select())
+    .event("select", update)
+    .event("selectend", selectAll)
+  .add(pv.Bar)
+    .left(25)
+    .top(function(d) d.y)
+    .width(10)
+    .height(function(d) d.dy)
+    .fillStyle(function(t) t.dim == active
+        ? c[t.dim]((filter[t.dim].max + filter[t.dim].min) / 2)
+        : "hsla(0,0,50%,.5)")
+    .strokeStyle("white")
+    .cursor("move")
+    .event("mousedown", pv.Behavior.drag())
+    .event("dragstart", update)
+    .event("drag", update);
+
+handle.anchor("bottom").add(pv.Label)
+    .textBaseline("top")
+    .text(function(d) filter[d.dim].min.toFixed(0) + units[d.dim].unit);
+
+handle.anchor("top").add(pv.Label)
+    .textBaseline("bottom")
+    .text(function(d) filter[d.dim].max.toFixed(0) + units[d.dim].unit);
+
+
+// now the right panel
+var rightPanel=vis.add(pv.Panel).left(rpl).width(tw-rpl).height(th).top(0)
+	//.fillStyle("#1A0F09").strokeStyle("#2E2218")  medieval style... I think not.
+	.fillStyle("#fff").anchor("left").add(pv.Rule).top(10).height(th-20).strokeStyle("dimgrey") // more like it
+	.parent
+	.add(pv.Panel) // races
+	.data(nCombos)
+	.top(function() 8+this.index*22+
+		11*pv.sum(pv.range(this.index).map(function(d) {return (nCombos[d]["values"]).length;})) // now there may be a more straightforward way to pull this off but wth
+	)
+	.height(function(d) 20+pv.values(d)[1].length)
+		.anchor("top").add(pv.Label).textBaseline("top").left(5).textAlign("left").text(function(d) d.key).font("12px sans-serif bold ")
+		.textStyle(function(x,race) {var myData=combos.filter(function(combo) {return (combo.Race==race.key);}).map(function(d) {return pcData[d.id];})
+				var selected=myData.some(function(d) {return d.selected;});
+				return selected?"#000":"#ccc";
+				})
+		.parent
+		.add(pv.Panel) // classes
+			.data(function(d) d.values)
+			.top(function() -4+20+this.index*11)
+			.add(pv.Panel).left(6).top(1).fillStyle("#eee").visible(function() this.parent.index%2).right(6).height(11).parent
+			.anchor("top").add(pv.Label).textBaseline("top").left(5).textAlign("left").text(function(d) d.key).font("10px Verdana")
+			.textStyle(function(x, class,race) {
+				var myData=combos.filter(function(combo) {return (combo.Race==race.key)&&(combo.Class==class.key);}).map(function(d) {return pcData[d.id];})
+				var selected=myData.some(function(d) {return d.selected;});
+				return selected?"#000":"#ccc";
+				})
+
+		.parent
+			.add(pv.Panel) // specs
+			.data(function(d) d.values)
+/*.visible	(function(spec,class,race) {
+				var id=combos.filter(function(combo) {return (combo.Race==race.key)&&(combo.Class==class.key)&&(combo.Specialization==spec.key);})[0].id;
+				var d=pcData[id];
+				return dims.every(function(t) {return (d[t] >= filter[t].min) && (d[t] <= filter[t].max);});
+				})*/
+
+
+			.top(function() -4+20+this.parent.index*11)
+			//.top(function() this.parent.top())
+			.left(function() 80+80*this.index)
+			.anchor("left").add(pv.Label).textBaseline("bottom").left(0).textAlign("left").text(function(d) d.key).font("10 px Verdana")
+			.textStyle(function(x,spec, class,race) {
+				var myData=combos.filter(function(combo) {return (combo.Race==race.key)&&(combo.Class==class.key)&&(combo.Specialization==spec.key);}).map(function(d) {return pcData[d.id];})
+				var selected=myData.some(function(d) {return d.selected;});
+				return selected?"#555":"#ccc";
+				})
+
+
+
+
+vis.render();
+
+
+
+
+    </script>
+
+</div>
+  </body>
+</html>

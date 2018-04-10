@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>prénom &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/prenom/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>Votre prénom est-il de droite?</title>
+		<link>/2011/04/01/votre-prenom-est-il-de-droite/</link>
+		<comments>/2011/04/01/votre-prenom-est-il-de-droite/#comments</comments>
+		<pubDate>Fri, 01 Apr 2011 20:47:27 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[protovis]]></category>
+		<category><![CDATA[cantonales]]></category>
+		<category><![CDATA[discrimination]]></category>
+		<category><![CDATA[élections]]></category>
+		<category><![CDATA[français]]></category>
+		<category><![CDATA[nom]]></category>
+		<category><![CDATA[prénom]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=804</guid>
+		<description><![CDATA[[another post in French. sorry for my English readers, but since it's again based on election data it really is only relevant to French people] Donner un prénom à ses enfants, c'est peut-être la décision qui va le plus influencer le regard des autres à son égard... surtout quand ils ne l'ont pas encore vu. <a class="read-more" href="/2011/04/01/votre-prenom-est-il-de-droite/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[[another post in French. sorry for my English readers, but since it's again based on election data it really is only relevant to French people]</p>
+Donner un prénom à ses enfants, c'est peut-être la décision qui va le plus influencer le regard des autres à son égard... surtout quand ils ne l'ont pas encore vu. Qu'est-ce qu'on peut s'imaginer d'un Édouard ou d'une Jacqueline avant de les connaître? sûrement pas la même chose. Est-ce qu'on peut deviner leur couleur politique? </p>
+pour vérifier ça j'ai pris la liste de tous les candidats aux dernières élections cantonales,soit 10361 personnes avec 1247 prénoms différents qui ont rendu publiques leurs convictions politiques. </p>
+Alors, est-ce que tous les Nicolas sont de droite? et les Jean-Marie? Tous les Jean-Luc et les Olivier sont-ils de gauche? Bon, Ségolène, on savait tous que ça faisait pas très socialiste. Mais Martine? Ou François?</p>
+
+La taille des cercles représente le nombre de candidats qui portent tel ou tel prénom, et la couleur, où ils se situent sur une échelle gauche-droite. En cliquant sur un candidat, on peut voir tous les candidats qui portent son prénom, par parti. </p>
+
+Quelques trouvailles: tous les Kévin sont au front national. Toutes les Arlette, aussi - les temps changent! J'ai laissé toutes les orthographes et tous les accents. Par exemple, Michaël est de gauche, mais Mickaël de droite. Et Mickael, de gauche. A quoi ça tient!</p>
+
+Parmi les prénoms qu'on trouve plus de 5 fois, les plus marqués à gauche sont Mathilde, Marianne, Régine, Norbert et Aline. A droite, on trouve Laura, Edouard, Marie-Christine, Adrien et Thérèse.</p>
+
+Et... si Jean-Marie est plutôt de droite, les Nicolas sont d'habitude à gauche, mais pas les François. On trouve plus de Jean-Luc, de Martine et de Dominique à gauche, mais pas d'Olivier!</p><hr/></p>
+<script type="text/javascript" src="http://blog.oecdfactblog.org/wp-includes/js/protovis-r3.2.js"></script>
+<script type="text/javascript" src="http://www.jeromecukier.net/wp-content/uploads/2011/04/candidats.js" charset="ISO-8859-1"></script>
+<script type="text/javascript+protovis">
+var re="", sp=-1;
+partisDetails={
+	EXG:{nom:"Extrême gauche", color:"red", order:0},
+	COM:{nom:"Communistes", color:"firebrick",order:1},
+	PG:{nom:"Parti de Gauche", color:"crimson",order:2},
+	SOC:{nom:"Parti socialiste", color:"lightcoral",order:3},
+	RDG:{nom:"Radicaux de gauche", color:"yellow",order:4},
+	DVG:{nom:"Divers gauche", color:"pink",order:5},
+	VEC:{nom:"Verts, Europe écologie", color:"limegreen",order:6},
+	ECO:{nom:"Écologistes", color:"green",order:7},
+	REG:{nom:"Régionalistes", color: "saddlebrown",order:8},
+	AUT:{nom:"Autres", color: "grey",order:9},
+	MODM:{nom:"MODEM", color: "gold",order:10},
+	"M-NC":{nom:"Majorité présidentielle", color: "mediumblue",order:11},
+	M:{nom:"Autres candidats majorité présidentielle", color: "blue",order:12},
+	UMP:{nom:"Union pour un Mouvement Populaire", color:"royalblue",order:13},
+	DVD:{nom:"Divers droite", color:"steelblue",order:14},
+	FN:{nom:"Front National", color: "skyblue",order:15},
+	EXD:{nom:"Extrême droite", color: "sienna",order:16}
+};
+partis=pv.keys(partisDetails);
+partiScore={"EXG":-5, "COM":-5, "PG":-5, "SOC":-2, "RDG":-1, "DVG":-3, "VEC":-4, "ECO":-1, "REG":0, "AUT":0, "MODM":1, "M-NC":3, "M":3, "UMP":3, "DVD":3, "FN":5, "EXD":5}
+
+
+candidats.forEach(function(c) {var n=c.name.split(" ");pre="";nom="";var inNom=false;n.forEach(function(s) {if(s.toUpperCase()==s){inNom=true;};if(inNom){nom+=s+" ";}else{pre+=s+" ";}});pre=pre.trim();nom=nom.trim();c["prenom"]=pre;c["nom"]=nom;})
+
+//prenoms=pv.nest(candidats).key(function(c) {return c.prenom;}).rollup(function(prenom) {return pv.mean(prenom, function(d) {return partiScore[d.party];});})
+prenoms=pv.values(pv.nest(candidats).key(function(c) {return c.prenom;}).rollup(function(prenom) {
+return {prenom:prenom[0].prenom,
+        score:pv.mean(prenom, function(d) {return partiScore[d.party];}),
+        frequence:prenom.length}
+;}))
+prenoms.forEach(function(p) {p["partis"]=pv.nest(candidats.filter(function(c) {return c.prenom==p.prenom;})).key(function(d) {return d.party;}).rollup(function(d) {return d.length;});})
+
+var prenomParti=[];
+
+cScale=pv.Scale.linear(-5,0,5).range("red","#eee","blue")
+//pf=prenoms.filter(function(p) {return p.frequence>1;}).sort(function(b,a) {return (a.frequence>b.frequence)-(b.frequence>a.frequence);});
+pf=prenoms.sort(function(b,a) {return (a.frequence>b.frequence)-(b.frequence>a.frequence);});
+pnode0=pv.nest(candidats).key(function(c) {return c.prenom;}).rollup(function(prenom) {return prenom.length;})
+pnode={};pscore={};
+
+pv.keys(pnode0).forEach(function(p,i) {
+	if(p!="") {
+		pnode[p]=pv.values(pnode0)[i];
+		pscore[p]=pf.filter(function(d) {return d.prenom==p;})[0].score;
+	}})
+pv.keys(pnode).forEach(function(p,i) {pscore[pv.values(pf)[i].prenom]=pv.values(pf)[i].score;})
+vis=new pv.Panel().width(600).height(600);
+
+vis2=vis.add(pv.Panel).width(450).height(450).event("click", function() {sp=-1;prenom="";vis.render();});
+var pack = vis2.add(pv.Layout.Pack)
+    .nodes(pv.dom(pnode).root("prenoms").nodes())
+    .size(function(d) {return d.nodeValue;})
+    //.order(null)
+    ;
+pack.node.strokeStyle(null);
+pack.node.add(pv.Dot)
+    .fillStyle(function(d) {if(d.index) {return cScale(pscore[d.nodeName]);} else {return "white";}})
+    .title(function(d) {if (d.index) {return d.nodeName;} else {return null;}})
+
+    .event("click", function(d) {if(this.index) {
+    	console.log(d.nodeName);
+    	select(d.nodeName);
+    } else {sp=-1;prenom="";vis.render();}
+    smallP.render();})
+
+
+    //.title(function(d) {if (d.index) {return d.nodeName+" "+pscore[d.nodeName];} else {return null;}})
+    .strokeStyle(function(d) {return re?((d.nodeName).match(re) ? "#000" : null):null;})
+    ;
+
+function update(query) {
+	if (query != re) {
+	    re = new RegExp(query, "i");
+	    vis2.render();
+	}
+}
+
+var nameList, nameSlice, nameLength;
+function select(prenom) {
+	console.log(prenom);
+	sp=1;
+	prenomParti=prenoms.filter(function(p) {return p.prenom==prenom;})[0];
+	nameList=candidats.filter(function(c) {return c.prenom==prenom;});
+	nameSlice=0;
+	nameLength=nameList.length;
+	vis.render();
+}
+
+var partiScale=pv.Scale.linear()
+	.domain(0,80)
+	.range(0,100);
+
+var smallP=vis.add(pv.Panel)
+	.left(440).height(600)
+	.visible(function() {return sp!=-1;});
+var box=smallP.add(pv.Panel)
+	.height(function() {return 30+12*pv.keys(prenomParti.partis).length;}).width(160)
+	.fillStyle("#ddd");
+box.add(pv.Label).top(1).left(5).textBaseline("top").text(function() {return prenomParti.prenom+" ("+prenomParti.frequence+")";})
+
+var partyBars=box.add(pv.Panel).top(15).left(1).height(function() {return this.parent.height()-16;}).width(158).fillStyle("white")
+		.add(pv.Bar)
+			.data(function() {return pv.keys(prenomParti.partis)
+				.sort(function(a,b) {return (partisDetails[a].order>partisDetails[b].order)-(partisDetails[a].order<partisDetails[b].order);})
+			;})
+			.top(function() {return 10+this.index*12;})
+			.left(40)
+			.height(10)
+			.width(function(d) {return partiScale(prenomParti.partis[d]);})
+			.fillStyle(function(d) {return partisDetails[d].color;})
+			.title(function(d) {return partisDetails[d].nom;});
+
+partyBars.anchor("left").add(pv.Label)
+				.textAlign("right")
+partyBars.anchor("right").add(pv.Label)
+				.textAlign("left")
+				.text(function(d) {return prenomParti.partis[d];})
+				.textStyle("#ccc")
+
+var box2=smallP.add(pv.Panel).top(270).height(330).fillStyle("#ddd");
+var nameListing=box2.add(pv.Panel)
+	.top(1)
+	.height(328)
+	.left(1)
+	.width(158)
+	.fillStyle("#fff")
+	.add(pv.Panel)
+		.data(function() {return nameList.slice(nameSlice,nameSlice+24);})
+		.top(function() {return 5+this.index*12;})
+		.left(10).height(10)
+		.fillStyle("rgba(255,255,255,.01)")
+		.title(function(d) {return d.name+" ("+((d.depId[0]==0)?"":d.depId[0])+d.depId.slice(1,3)+")";})
+		.add(pv.Panel)
+			.top(3).left(-8).width(7).height(7).fillStyle(function(d) partisDetails[d.party].color)
+			.title(function(d) partisDetails[d.party].nom)
+			.parent
+		.add(pv.Label)
+			.textBaseline("top").textAlign("left")
+			.text(function(d) {return d.name+" ("+((d.depId[0]==0)?"":d.depId[0])+d.depId.slice(1,3)+")";})
+	;
+
+box2.add(pv.Panel).left(158).top(5).height(320).width(1).fillStyle("#fff");
+box2.add(pv.Panel).left(159).top(5).height(320).width(1).fillStyle("#ddd");
+
+var moreBox = smallP.add(pv.Panel)
+	.fillStyle("#eee")
+	.height(20)
+	.left(90)
+	.width(60)
+	.top(570)
+	.visible(function() {return nameSlice+24<=nameLength;})
+	.event("click", function() {nameSlice+=24;box2.render();moreBox.render();lessBox.render();});
+moreBox.anchor("center").add(pv.Label).text("suivants")
+	;
+
+var lessBox = smallP.add(pv.Panel)
+	.fillStyle("#eee")
+	.height(20)
+	.left(10)
+	.width(60)
+	.top(570)
+	.visible(function() {return nameSlice>=24;})
+	.event("click", function() {nameSlice-=24;box2.render();moreBox.render();lessBox.render();});
+lessBox.anchor("center").add(pv.Label).text("précédents")
+	;
+
+
+    vis.render();
+
+</script>
+<div class="protovis" style="float:left;"></div>
+<div>
+	<label for="search">Trouver un prénom : </label>
+	<input type="text" id="search" onkeyup="update(this.value)">
+</div>
+<p/><hr/>
+]]></content:encoded>
+			<wfw:commentRss>/2011/04/01/votre-prenom-est-il-de-droite/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+	</channel>
+</rss>

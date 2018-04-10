@@ -1,0 +1,7132 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="HandheldFriendly" content="True" />
+<meta name="MobileOptimized" content="320" />
+
+<title>regression | jeromecukier.net</title>
+
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="/xmlrpc.php">
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Feed" href="/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Comments Feed" href="/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; regression Tag Feed" href="/tag/regression/feed/" />
+<!-- This site uses the Google Analytics by MonsterInsights plugin v7.0.5 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+<!-- Note: MonsterInsights is not currently configured on this site. The site owner needs to authenticate with Google Analytics in the MonsterInsights settings panel. -->
+<!-- No UA code set -->
+<!-- / Google Analytics by MonsterInsights -->
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/localhost:8888\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6.10"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='YoutubeShortcodeMargenn-css'  href='/wp-content/plugins/youtube-shortcode/youtube-shortcode.css?ver=4.6.10' type='text/css' media='all' />
+<link rel='stylesheet' id='casper-google-fonts-css'  href='//fonts.googleapis.com/css?family=Noto+Serif%3A400%2C700%2C400italic%7COpen+Sans%3A700%2C400&#038;ver=4.6.10' type='text/css' media='all' />
+<link rel='stylesheet' id='casper-style-css'  href='/wp-content/themes/casper/style.css?ver=4.6.10' type='text/css' media='all' />
+<script type='text/javascript' src='/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.6.10" />
+
+   	<style type="text/css">
+					.blog-title a, .blog-description, .social-icons a { color: #ffffff; }
+		
+						                
+		
+							.main-navigation a { color: ; }
+		                                            </style>
+    		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+
+<body class="archive tag tag-regression tag-311 group-blog">
+
+<header id="masthead" role="banner" class="site-head site-header" >
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+        <div>
+            <h1 class="menu-toggle">
+                <a class="icon-bars" href="#">
+                    <span class="hidden">Menu</span>
+                </a>
+            </h1>
+            <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+            <div class="menu"><ul><li ><a href="/">Home</a></li><li class="page_item page-item-6"><a href="/about/">About</a></li><li class="page_item page-item-1073"><a href="/data-stories/">Data with stories workshop &#8211; examples</a></li><li class="page_item page-item-437"><a href="/proofs-of-concept/">Private section</a></li><li class="page_item page-item-2"><a href="/sample-page/">Sample Page</a></li></ul></div>
+        </div>
+    </nav><!-- #site-navigation -->
+
+    <div class="vertical-row">
+        <div class="vertical">
+            <div class="site-head-content inner">
+                
+                <div class="social-icons">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                    </div>
+                <h1 class="blog-title"><a class="blog-logo" href='/' rel='home'>jeromecukier.net</a></h1>
+                <h2 class="blog-description">Just another WordPress site</h2>
+            </div>
+        </div>
+    </div>
+</header><!-- #masthead -->
+
+<main id="content" class="content" role="main">
+
+	<section id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		
+			<header class="page-header">
+				<h1 class="page-title">
+					regression				</h1>
+							</header><!-- .page-header -->
+
+						
+				
+<article id="post-1197" class="post-1197 post type-post status-publish format-standard hentry category-data-visualization tag-beautiful-awards tag-contest tag-crunching tag-data tag-emma-stone tag-kirsten-dunst tag-machine-learning tag-movies tag-nicolas-cage tag-regression">
+		    <header class="post-header">
+        			<span class="post-meta">
+				<span class="posted-on"><a href="/2012/01/28/hollywood-data-ii-the-sequel/" rel="bookmark"><time class="entry-date published" datetime="2012-01-28T17:31:03+00:00">January 28, 2012</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/data-visualization/" rel="category tag">data visualization</a>			</span>
+		        <h1 class="post-title"><a href="/2012/01/28/hollywood-data-ii-the-sequel/" rel="bookmark">Hollywood + data II: the sequel</a></h1>
+         
+    </header>
+	<section class="post-content">
+
+		<p>a couple of days ago I posted the <a href="http://www.jeromecukier.net/wp-admin/post.php?post=1185&amp;action=edit">contribution of relative keywords to the earnings of a given movie</a>.</p>
+<p>Well, it occurs that the cast of a movie is much easier to obtain than keywords and much less messy. So, I also had scraped the 4 lead actors for each movie of the <a href="/tag/regression/www.informationisbeautifulawards.com/2012/01/challenge-of-the-stars/">Beautiful Information awards</a> in order to determine their contribution.</p>
+<p>I&#8217;ve done it slightly differently than with the keywords. I&#8217;ve also taken the budget of the movie into account. So, in order to predict the earnings of a movie, you take the budget, multiply it by 3, remove 8 millions and then add (or remove) the contribution of each star.</p>
+<p>Since the movie budget already (mostly 🙂 ) includes the pay of the lead actors, the way to read this contribution is <strong>how much extra these actor should be paid when they appear on film</strong>. For instance, each time Emma Stone does her thing, it would be fair to pay her $500k more.</p>
+<p><div id="attachment_1201" style="width: 650px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2012/01/emma-stone.jpg"><img class="size-full wp-image-1201" title="emma stone" src="http://www.jeromecukier.net/wp-content/uploads/2012/01/emma-stone.jpg" alt="" width="640" height="427" /></a><p class="wp-caption-text">the bang being a modest 500k pay raise.</p></div></p>
+<p>Likewise, Kirsten Dunst here could be paid an extra 200k per movie, like Rebecca Hall or Rooney Mara. But I mostly felt like posting a picture of Kirsten to stand up against what google autosuggests as keywords when you look her up.</p>
+<p><div id="attachment_1198" style="width: 310px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2012/01/kirsten.jpg"><img class="size-full wp-image-1198" title="kirsten" src="http://www.jeromecukier.net/wp-content/uploads/2012/01/kirsten.jpg" alt="" width="300" height="400" /></a><p class="wp-caption-text">Kirsten, too, should be paid more.</p></div></p>
+<p><a href="http://gifolascage.tumblr.com/">Nicolas Cage</a>, somewhat unsurprisingly,  should refund $2.44m for each movie he stars in.</p>
+<p>Actors of movies who&#8217;ve done exceedingly well such as Avatar or the Harry Potter or Twilight sagas, movies which, it&#8217;s fair to say, owe their success to more than the actors, come out of this over valued. And because of how this is calculated, actors who have costarred with them in less ambitious movies come out undervalued: for instance, Elizabeth Banks or Anton Yelchin who both played with Sam Worthington are &#8220;paying&#8221; the fact that Man on the Ledge or Terminator: Renaissance haven&#8217;t been as successful as Avatar.</p>
+<p>Twilight fans take note, though, that Harry Potter actors are considered more valuable.</p>
+<p>Now &#8211; the data.</p>
+<table width="600" border="0" cellspacing="10" cellpadding="10">
+<colgroup>
+<col width="64" />
+<col width="180" />
+<col width="64" /> </colgroup>
+<tbody>
+<tr>
+<td align="right" width="64" height="17">-8.72132</td>
+<td style="text-align: center;" width="180">base value, million dollars</td>
+<td width="64"></td>
+</tr>
+<tr>
+<td align="right" height="17">3.028754</td>
+<td> x your budget</td>
+<td></td>
+</tr>
+<tr>
+<td height="17"></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td height="17">contribution<br />
+(million dollars)</td>
+<td>actor</td>
+<td>occurrences</td>
+</tr>
+<tr>
+<td align="right" height="17">6.820566</td>
+<td>Daniel Radcliffe</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">6.820566</td>
+<td>Rupert Grint</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">6.589512</td>
+<td>Emma Watson</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="right" height="17">6.469722</td>
+<td>Michelle Rodriguez</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">5.919662</td>
+<td>Zoe Saldana</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">5.869411</td>
+<td>Sam Worthington</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">5.39418</td>
+<td>Sigourney Weaver</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">4.66799</td>
+<td>Robert Pattinson</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="right" height="17">4.486437</td>
+<td>Kristen Stewart</td>
+<td align="right">7</td>
+</tr>
+<tr>
+<td align="right" height="17">4.131046</td>
+<td>Taylor Lautner</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">3.511325</td>
+<td>Michael Gambon</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">3.328213</td>
+<td>Shia LaBeouf</td>
+<td align="right">8</td>
+</tr>
+<tr>
+<td align="right" height="17">3.091938</td>
+<td>Josh Duhamel</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">2.771696</td>
+<td>Tyrese Gibson</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">2.430676</td>
+<td>Justin Bartha</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">2.177533</td>
+<td>Anne Hathaway</td>
+<td align="right">8</td>
+</tr>
+<tr>
+<td align="right" height="17">2.145379</td>
+<td>Ed Helms</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">1.985782</td>
+<td>Helena Bonham Carter</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">1.922826</td>
+<td>Ray Romano</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">1.922826</td>
+<td>Denis Leary</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">1.922826</td>
+<td>Eunice Cho</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">1.860584</td>
+<td>Bradley Cooper</td>
+<td align="right">7</td>
+</tr>
+<tr>
+<td align="right" height="17">1.830633</td>
+<td>Zach Galifianakis</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="right" height="17">1.809581</td>
+<td>John Leguizamo</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">1.770726</td>
+<td>Geoffrey Rush</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">1.722315</td>
+<td>Christina Jastrzembska</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">1.681332</td>
+<td>Rosie Huntington-Whiteley</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">1.654913</td>
+<td>Ellen Page</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">1.521321</td>
+<td>Xavier Samuel</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">1.495329</td>
+<td>Antonio Banderas</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">1.487379</td>
+<td>Brendan Gleeson</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">1.427076</td>
+<td>Tim Allen</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">1.40105</td>
+<td>Mia Wasikowska</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">1.391394</td>
+<td>Heath Ledger</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">1.374587</td>
+<td>Mike Myers</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">1.366225</td>
+<td>Sandra Bullock</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">1.363958</td>
+<td>Ned Beatty</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">1.339647</td>
+<td>Johnny Depp</td>
+<td align="right">8</td>
+</tr>
+<tr>
+<td align="right" height="17">1.305249</td>
+<td>Stellan Skarsgard</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">1.260785</td>
+<td>Michael Caine</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">1.217668</td>
+<td>Jae Head</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">1.169856</td>
+<td>Tom Hanks</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">1.167732</td>
+<td>Jason Lee</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">1.167732</td>
+<td>David Cross</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">1.167722</td>
+<td>Jason Segel</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="right" height="17">1.161184</td>
+<td>Amanda Seyfried</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="right" height="17">1.134598</td>
+<td>Freida Pinto</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">1.083914</td>
+<td>Ken Watanabe</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">1.081577</td>
+<td>Katie Featherston</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">1.081577</td>
+<td>Micah Sloat</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">1.072914</td>
+<td>Paul Walker</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">1.072914</td>
+<td>Jordana Brewster</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">1.07084</td>
+<td>Jason Bateman</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td align="right" height="17">1.055046</td>
+<td>Aaron Eckhart</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="right" height="17">1.031855</td>
+<td>Joseph Gordon-Levitt</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="right" height="17">0.990123</td>
+<td>Megan Fox</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">0.9881</td>
+<td>Gerard Butler</td>
+<td align="right">9</td>
+</tr>
+<tr>
+<td align="right" height="17">0.973714</td>
+<td>Julie Andrews</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.95887</td>
+<td>Rose Byrne</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">0.953622</td>
+<td>Dan Castellaneta</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.953622</td>
+<td>Julie Kavner</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.953622</td>
+<td>Nancy Cartwright</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.953622</td>
+<td>Yeardley Smith</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.946414</td>
+<td>Gil Birmingham</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.921095</td>
+<td>Pierce Brosnan</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">0.888618</td>
+<td>Vin Diesel</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">0.869224</td>
+<td>George Lopez</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.865954</td>
+<td>Cameron Diaz</td>
+<td align="right">8</td>
+</tr>
+<tr>
+<td align="right" height="17">0.858122</td>
+<td>Jackie Chan</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">0.857169</td>
+<td>Tobin Bell</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">0.857169</td>
+<td>Costas Mandylor</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">0.827224</td>
+<td>Lena Headey</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.809226</td>
+<td>Mila Kunis</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="right" height="17">0.775858</td>
+<td>Vincent Cassel</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.768506</td>
+<td>Russell Brand</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">0.758058</td>
+<td>Wenwen Han</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.75382</td>
+<td>Justin Timberlake</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="right" height="17">0.746798</td>
+<td>Kim Cattrall</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.746798</td>
+<td>Cynthia Nixon</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.746798</td>
+<td>Kristin Davis</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.738043</td>
+<td>Taraji P. Henson</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">0.737633</td>
+<td>Katy Perry</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.737633</td>
+<td>Jonathan Winters</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.73718</td>
+<td>Karen Allen</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.719066</td>
+<td>Neil Patrick Harris</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">0.706771</td>
+<td>Diane Kruger</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">0.697058</td>
+<td>Will Smith</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">0.691195</td>
+<td>Meryl Streep</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="right" height="17">0.68017</td>
+<td>Karen Disher</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.677442</td>
+<td>Jesse Eisenberg</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="right" height="17">0.676622</td>
+<td>Dominic West</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">0.661994</td>
+<td>Zac Efron</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">0.661289</td>
+<td>Lucas Grabeel</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.659597</td>
+<td>Quinton Aaron</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.646669</td>
+<td>Justin Long</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="right" height="17">0.645497</td>
+<td>Edward Asner</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.645497</td>
+<td>Jordan Nagai</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.645497</td>
+<td>John Ratzenberger</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.644743</td>
+<td>Eddie Murphy</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="right" height="17">0.644017</td>
+<td>Hank Azaria</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.633971</td>
+<td>Derek Jacobi</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.621914</td>
+<td>Craig T. Nelson</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.599633</td>
+<td>Tim McGraw</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.59531</td>
+<td>Chloe Csengery</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.59531</td>
+<td>Jessica Tyler Brown</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.59531</td>
+<td>Christopher Nicholas Smith</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.59531</td>
+<td>Lauren Bittner</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.586817</td>
+<td>Scott Patterson</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.585204</td>
+<td>John Lithgow</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.562875</td>
+<td>Christopher Plummer</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">0.562458</td>
+<td>Dustin Hoffman</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">0.557976</td>
+<td>Terry Crews</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.557014</td>
+<td>Jaden Smith</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.55002</td>
+<td>Brad Garrett</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.55002</td>
+<td>Lou Romano</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.55002</td>
+<td>Ian Holm</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.545008</td>
+<td>Mark Fredrichs</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.545008</td>
+<td>Amber Armstrong</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.542971</td>
+<td>Adam G. Sevani</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.542553</td>
+<td>Ian McShane</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">0.536569</td>
+<td>Molly Ephraim</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.536569</td>
+<td>David Bierend</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.528423</td>
+<td>Natalie Portman</td>
+<td align="right">8</td>
+</tr>
+<tr>
+<td align="right" height="17">0.519192</td>
+<td>Emma Stone</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="right" height="17">0.517328</td>
+<td>Leonardo DiCaprio</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">0.508157</td>
+<td>Dwayne Johnson</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="right" height="17">0.506053</td>
+<td>Liam Neeson</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="right" height="17">0.504138</td>
+<td>Betsy Russell</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">0.498758</td>
+<td>Winona Ryder</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.498382</td>
+<td>Lucy Punch</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.489967</td>
+<td>Katherine Heigl</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="right" height="17">0.489965</td>
+<td>Saurabh Shukla</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.489965</td>
+<td>Anil Kapoor</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.486999</td>
+<td>Famke Janssen</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.486999</td>
+<td>Leland Orser</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.482205</td>
+<td>Javier Bardem</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">0.481332</td>
+<td>Ross Bagdasarian Jr.</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.481332</td>
+<td>Janice Karman</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.460322</td>
+<td>Maya Rudolph</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.45842</td>
+<td>Kristen Wiig</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">0.455105</td>
+<td>Bryce Dallas Howard</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.449823</td>
+<td>Cary Elwes</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.443563</td>
+<td>Hailee Steinfeld</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.442303</td>
+<td>Ashley Tisdale</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.436495</td>
+<td>Ali Larter</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.434599</td>
+<td>Salli Richardson-Whitfield</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.424407</td>
+<td>Sarah Clarke</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.423429</td>
+<td>Penélope Cruz</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">0.413782</td>
+<td>Thandie Newton</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">0.412704</td>
+<td>Patton Oswalt</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">0.401531</td>
+<td>Octavia Spencer</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.401112</td>
+<td>James Franco</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">0.385048</td>
+<td>Terence Stamp</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.377733</td>
+<td>Wentworth Miller</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.377733</td>
+<td>Kim Coates</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.375668</td>
+<td>Jason Flemyng</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.374325</td>
+<td>Matt Damon</td>
+<td align="right">7</td>
+</tr>
+<tr>
+<td align="right" height="17">0.374325</td>
+<td>Christian Bale</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="right" height="17">0.372746</td>
+<td>David James</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.372746</td>
+<td>Jason Cope</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.372746</td>
+<td>Nathalie Boltt</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.368065</td>
+<td>Chiwetel Ejiofor</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">0.368005</td>
+<td>Ã‰dgar Ramirez</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.368005</td>
+<td>Julia Stiles</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.367801</td>
+<td>Mélanie Laurent</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.362202</td>
+<td>Vera Farmiga</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">0.356965</td>
+<td>Johnny Knoxville</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.356965</td>
+<td>Steve-O</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.356965</td>
+<td>Bam Margera</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.356965</td>
+<td>Ryan Dunn</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.356953</td>
+<td>Bill Nighy</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="right" height="17">0.356736</td>
+<td>Elle Fanning</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.356736</td>
+<td>Amanda Michalka</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.356736</td>
+<td>Kyle Chandler</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.356736</td>
+<td>Joel Courtney</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.356158</td>
+<td>Sarah Jessica Parker</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">0.355846</td>
+<td>Maggie Grace</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.353032</td>
+<td>Louis Ferreira</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.351145</td>
+<td>Ralph Fiennes</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">0.343755</td>
+<td>Keir O&#8217;Donnell</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.343755</td>
+<td>Jayma Mays</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.343755</td>
+<td>Raini Rodriguez</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.339988</td>
+<td>P.J. Byrne</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.33941</td>
+<td>Christopher Mintz-Plasse</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">0.338666</td>
+<td>Anna Kendrick</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.338404</td>
+<td>Eli Roth</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.338222</td>
+<td>Morgan Lily</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.338222</td>
+<td>Trenton Rogers</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.313245</td>
+<td>Jessica Lucas</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.313245</td>
+<td>Lizzy Caplan</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.312825</td>
+<td>Cassie Ventura</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.307954</td>
+<td>Viola Davis</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">0.30272</td>
+<td>Ty Simpkins</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.30272</td>
+<td>Lin Shaye</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.298112</td>
+<td>Bree Turner</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.298112</td>
+<td>Eric Winter</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.296847</td>
+<td>Andy Serkis</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.294687</td>
+<td>Mike Vogel</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.294687</td>
+<td>T.J. Miller</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.292065</td>
+<td>Kurt Fuller</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.286915</td>
+<td>Maggie Smith</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.286915</td>
+<td>Ashley Jensen</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.284681</td>
+<td>Seth Meyers</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.280837</td>
+<td>Tobey Maguire</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.280773</td>
+<td>Jason Sudeikis</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.269573</td>
+<td>Kyra Sedgwick</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.269573</td>
+<td>Madison Pettis</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.269573</td>
+<td>Roselyn Sanchez</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.268595</td>
+<td>Lisa Kudrow</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.258727</td>
+<td>Patrick Dempsey</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.257049</td>
+<td>David Wenham</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">0.254023</td>
+<td>Briana Evigan</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.252523</td>
+<td>Matthew Perry</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.252523</td>
+<td>Thomas Lennon</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.246058</td>
+<td>John Cusack</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">0.240009</td>
+<td>Michael Jackson</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.240009</td>
+<td>Alex Al</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.240009</td>
+<td>Alexandra Apjarova</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.240009</td>
+<td>Nick Bass</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.238714</td>
+<td>Patricia Clarkson</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">0.235798</td>
+<td>Brian Kerwin</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.230146</td>
+<td>Sharni Vinson</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.230146</td>
+<td>Rick Malambri</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.230146</td>
+<td>Alyson Stoner</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.229488</td>
+<td>Topher Grace</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">0.22835</td>
+<td>Meagan Good</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.224193</td>
+<td>Jaime King</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.221369</td>
+<td>Zachary Gordon</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.221369</td>
+<td>Robert Capron</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.221369</td>
+<td>Rachael Harris</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.219378</td>
+<td>Alice Braga</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">0.219044</td>
+<td>Rooney Mara</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.215264</td>
+<td>Kirsten Dunst</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.20931</td>
+<td>Rebecca Hall</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">0.20615</td>
+<td>Orlando Bloom</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.205058</td>
+<td>Patrick Fabian</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.205058</td>
+<td>Ashley Bell</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.205058</td>
+<td>Iris Bahr</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.205058</td>
+<td>Louis Herthum</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.20394</td>
+<td>Michael Cera</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="right" height="17">0.202696</td>
+<td>Woody Harrelson</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">0.202054</td>
+<td>Aaron Yoo</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.195742</td>
+<td>Jensen Ackles</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.195742</td>
+<td>Kerr Smith</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.195742</td>
+<td>Betsy Rue</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.192528</td>
+<td>Michael Mantell</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.190413</td>
+<td>David Morse</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.190413</td>
+<td>Carrie-Anne Moss</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.189054</td>
+<td>Piper Perabo</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.189054</td>
+<td>Manolo Cardona</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.187252</td>
+<td>Charlie Day</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.183573</td>
+<td>Will Arnett</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">0.182781</td>
+<td>Charlie Tahan</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.181449</td>
+<td>Kate Bosworth</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.175751</td>
+<td>Tommy Lee Jones</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.173441</td>
+<td>Scott Speedman</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.173441</td>
+<td>Gemma Ward</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.173441</td>
+<td>Alex Fisher</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.170702</td>
+<td>Mary Steenburgen</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">0.169352</td>
+<td>Amanda Bynes</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.169352</td>
+<td>Dan Byrd</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.165945</td>
+<td>Chloë Grace Moretz</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.164513</td>
+<td>Dougray Scott</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.163693</td>
+<td>Rachel McAdams</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="right" height="17">0.157617</td>
+<td>Harry Connick Jr.</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.156691</td>
+<td>Emily Osment</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.156691</td>
+<td>Billy Ray Cyrus</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.156691</td>
+<td>Jason Earles</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.154703</td>
+<td>Matt Lanter</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">0.153793</td>
+<td>Amanda Peet</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">0.152353</td>
+<td>Jenna Elfman</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.141247</td>
+<td>January Jones</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.141247</td>
+<td>Aidan Quinn</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.14017</td>
+<td>Nika Futterman</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.14017</td>
+<td>Tom Kane</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.14017</td>
+<td>Ashley Eckstein</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.140131</td>
+<td>Henry Thomas</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.140122</td>
+<td>Jack Nicholson</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.140122</td>
+<td>Sean Hayes</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.140122</td>
+<td>Beverly Todd</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.138843</td>
+<td>Chris Rock</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">0.138691</td>
+<td>Jennifer Aniston</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="right" height="17">0.136256</td>
+<td>Kevin Spacey</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">0.13405</td>
+<td>Emma Bell</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.13405</td>
+<td>Arlen Escarpeta</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.13405</td>
+<td>Miles Fisher</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.130048</td>
+<td>André Benjamin</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.130048</td>
+<td>Maura Tierney</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.128801</td>
+<td>Kathy Bates</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">0.128594</td>
+<td>Anita Briem</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.127092</td>
+<td>Ayelet Zurer</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.12695</td>
+<td>Geoffrey Arend</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.124268</td>
+<td>An Nguyen</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.123344</td>
+<td>Danielle Panabaker</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.122693</td>
+<td>Jared Padalecki</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.122693</td>
+<td>Amanda Righetti</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.122693</td>
+<td>Derek Mears</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.122554</td>
+<td>Chandler Canterbury</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.122554</td>
+<td>Lara Robinson</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.120986</td>
+<td>Jon Hamm</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.120861</td>
+<td>Ne-Yo</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.117797</td>
+<td>Bruce McGill</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.117466</td>
+<td>Nick Zano</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.117466</td>
+<td>Krista Allen</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.117466</td>
+<td>Andrew Fiscella</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.117466</td>
+<td>Bobby Campo</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.114774</td>
+<td>Kirk Cameron</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.114774</td>
+<td>Erin Bethea</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.114774</td>
+<td>Ken Bevel</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.114774</td>
+<td>Stephen Dervan</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.113006</td>
+<td>Donald Faison</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.111429</td>
+<td>Chris Messina</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.110646</td>
+<td>Devon Bostick</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.109958</td>
+<td>Paul Rudd</td>
+<td align="right">7</td>
+</tr>
+<tr>
+<td align="right" height="17">0.10794</td>
+<td>Dolph Lundgren</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.107433</td>
+<td>Liam Hemsworth</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.107433</td>
+<td>Bobby Coleman</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.105983</td>
+<td>Christopher Evan Welch</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.105053</td>
+<td>Bill Hader</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.101652</td>
+<td>Dev Patel</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.100744</td>
+<td>Melissa Leo</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">0.099702</td>
+<td>Jerry O&#8217;Connell</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.09952</td>
+<td>Jennifer Coolidge</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.09952</td>
+<td>Adam Campbell</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.099046</td>
+<td>Caroline Dhavernas</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.099046</td>
+<td>Bokeem Woodbine</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.099046</td>
+<td>Logan Marshall-Green</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.097749</td>
+<td>Nick Bacon</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.096496</td>
+<td>Penn Badgley</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.095386</td>
+<td>Amber Valletta</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.09417</td>
+<td>Eric Balfour</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.09417</td>
+<td>Scottie Thompson</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.09417</td>
+<td>Brittany Daniel</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.093839</td>
+<td>Robert Hoffman</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.091974</td>
+<td>Gary Cole</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.091644</td>
+<td>Robert Knepper</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.090532</td>
+<td>Bebe Neuwirth</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.090532</td>
+<td>Megan Mullally</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.090532</td>
+<td>Kay Panabaker</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.090298</td>
+<td>Candice Bergen</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.090298</td>
+<td>Bryan Greenberg</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.089631</td>
+<td>Joshua Jackson</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.089631</td>
+<td>Rachael Taylor</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.089631</td>
+<td>James Kyson</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.089631</td>
+<td>Megumi Okina</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.088905</td>
+<td>Angela Lansbury</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.088905</td>
+<td>Ophelia Lovibond</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.088475</td>
+<td>Julian McMahon</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.088475</td>
+<td>Shyann McClure</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.087343</td>
+<td>Rowan Atkinson</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.087343</td>
+<td>Roger Barclay</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.084964</td>
+<td>Bryan Cranston</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.084964</td>
+<td>Albert Brooks</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.081511</td>
+<td>Alessandro Nivola</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.081511</td>
+<td>Parker Posey</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.081511</td>
+<td>Rade Serbedzija</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.080952</td>
+<td>Kal Penn</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">0.077884</td>
+<td>Jenn Proske</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.077884</td>
+<td>Diedrich Bader</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.077884</td>
+<td>Chris Riggi</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.07668</td>
+<td>Marcia Gay Harden</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.074429</td>
+<td>Andrew Garfield</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.073885</td>
+<td>Rhys Wakefield</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.073885</td>
+<td>Allison Cratchley</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.073885</td>
+<td>Christopher Baker</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.073885</td>
+<td>Richard Roxburgh</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.073624</td>
+<td>Michael O&#8217;Keefe</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.07336</td>
+<td>Daeg Faerch</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.073189</td>
+<td>Kevin Kline</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.071229</td>
+<td>Eugenio Derbez</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.071229</td>
+<td>Kate del Castillo</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.071229</td>
+<td>Adrian Alonso</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.071229</td>
+<td>Maya Zapata</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.070675</td>
+<td>Sarah Roemer</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">0.067179</td>
+<td>Nathan Fillion</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.067179</td>
+<td>Jeremy Sisto</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.066353</td>
+<td>Scout Taylor-Compton</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.066353</td>
+<td>Malcolm McDowell</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.066353</td>
+<td>Tyler Mane</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.065523</td>
+<td>Steve Zahn</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.065485</td>
+<td>Gio Perez</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.065485</td>
+<td>Joel Garland</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.063306</td>
+<td>Mark Rolston</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.06132</td>
+<td>Jude Law</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">0.0578</td>
+<td>David Schwimmer</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.0578</td>
+<td>Jada Pinkett Smith</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.057107</td>
+<td>Jake T. Austin</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.056938</td>
+<td>Khalid Abdalla</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.056938</td>
+<td>Ahmad Khan Mahmoodzada</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.056938</td>
+<td>Atossa Leoni</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.056938</td>
+<td>Shaun Toub</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.05549</td>
+<td>José Luis Garcia Pérez</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.05549</td>
+<td>Robert Paterson</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.05549</td>
+<td>Stephen Tobolowsky</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.054836</td>
+<td>Jeremy Renner</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.050369</td>
+<td>Malik Yoba</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.048526</td>
+<td>Warren Christie</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.048526</td>
+<td>Ryan Robbins</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.048526</td>
+<td>Ali Liebert</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.048526</td>
+<td>Lloyd Owen</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.048392</td>
+<td>Nick Sullivan</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.047911</td>
+<td>Richard Jenkins</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="right" height="17">0.046161</td>
+<td>Annette Bening</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">0.045566</td>
+<td>Carol Burnett</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.044954</td>
+<td>Tom Mison</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.043956</td>
+<td>Walter Raney</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.043917</td>
+<td>Reiko Aylesworth</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.043917</td>
+<td>Steven Pasquale</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.043917</td>
+<td>John Ortiz</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.043917</td>
+<td>Johnny Lewis</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.043044</td>
+<td>Michael Moore</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.043044</td>
+<td>Tucker Albrizzi</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.043044</td>
+<td>Tony Benn</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.043044</td>
+<td>George W. Bush</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.041406</td>
+<td>Catherine Zeta-Jones</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.04094</td>
+<td>Elisabeth Shue</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.038995</td>
+<td>Garrett M. Brown</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.038936</td>
+<td>Jon Voight</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.037779</td>
+<td>Alfre Woodard</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.037779</td>
+<td>Sanaa Lathan</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.037779</td>
+<td>Rockmond Dunbar</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.036524</td>
+<td>Joseph Ruskin</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.036472</td>
+<td>Kate Mara</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.036472</td>
+<td>Sean Bott</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.036463</td>
+<td>Cillian Murphy</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.036463</td>
+<td>Shyloh Oostwald</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.035315</td>
+<td>Jeffrey Wright</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.034615</td>
+<td>Haaz Sleiman</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.034615</td>
+<td>Danai Gurira</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.034615</td>
+<td>Hiam Abbass</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.033809</td>
+<td>Sylvester Stallone</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.033294</td>
+<td>Lauren German</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.033294</td>
+<td>Heather Matarazzo</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.033294</td>
+<td>Bijou Phillips</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.033294</td>
+<td>Roger Bart</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.033228</td>
+<td>Bill Maher</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.033228</td>
+<td>Tal Bachman</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.033228</td>
+<td>Jonathan Boulden</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.033228</td>
+<td>Steve Burg</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.03308</td>
+<td>Emilie de Ravin</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.03308</td>
+<td>Caitlyn Rund</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.03308</td>
+<td>Moisés Acevedo</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.032157</td>
+<td>Jeremy Piven</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.031753</td>
+<td>Jennifer Hudson</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.031753</td>
+<td>Alicia Keys</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.0313</td>
+<td>Sacha Baron Cohen</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.0313</td>
+<td>Gustaf Hammarsten</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.0313</td>
+<td>Clifford BaÃ±agale</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.0313</td>
+<td>Chibundu Orukwowu</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.029753</td>
+<td>Tyler Perry</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">0.029491</td>
+<td>Saffron Burrows</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.029491</td>
+<td>Daniel Mays</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.029397</td>
+<td>Goran Visnjic</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.028255</td>
+<td>Odette Annable</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.025992</td>
+<td>Brittany Snow</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.025992</td>
+<td>Jessica Stroup</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.025992</td>
+<td>Dana Davis</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.025977</td>
+<td>Kyle Gallner</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.024707</td>
+<td>Thomas Jane</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.024707</td>
+<td>Laurie Holden</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.024707</td>
+<td>Andre Braugher</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.024175</td>
+<td>Kelsey Grammer</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.021951</td>
+<td>Kat Dennings</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.021924</td>
+<td>Will Patton</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.021924</td>
+<td>Charlotte Milchard</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.021893</td>
+<td>Nicholas D&#8217;Agosto</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.021888</td>
+<td>John Hawkes</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.021888</td>
+<td>Garret Dillahunt</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.021888</td>
+<td>Isaiah Stone</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.021701</td>
+<td>Paul Dano</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.021701</td>
+<td>Martin Stringer</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.020605</td>
+<td>Rafi Gavron</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.020451</td>
+<td>Paul Schneider</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.02036</td>
+<td>Jennifer Carpenter</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.02036</td>
+<td>Jay Hernandez</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.01921</td>
+<td>Alan Rickman</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.01921</td>
+<td>Timothy Spall</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.018948</td>
+<td>Sarah Burns</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.018836</td>
+<td>Mike Epps</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.018836</td>
+<td>Wood Harris</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.018712</td>
+<td>Jill Scott</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.017932</td>
+<td>Brit Marling</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.017932</td>
+<td>William Mapother</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.017932</td>
+<td>Matthew-Lee Erlbach</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.017932</td>
+<td>DJ Flava</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.017423</td>
+<td>Jason Spevack</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.017114</td>
+<td>Josh Hutcherson</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.016759</td>
+<td>Fred Willard</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.01642</td>
+<td>Cuba Gooding Jr.</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.01642</td>
+<td>Lochlyn Munro</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.01642</td>
+<td>Richard Gant</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.01642</td>
+<td>Tamala Jones</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.015848</td>
+<td>Katt Williams</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.015441</td>
+<td>Haley Bennett</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.015441</td>
+<td>Chace Crawford</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.015441</td>
+<td>Jake Weber</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.015441</td>
+<td>Shannon Woodward</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.014565</td>
+<td>Chris Hemsworth</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.014565</td>
+<td>Tom Hiddleston</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.014266</td>
+<td>Michael Stuhlbarg</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.014266</td>
+<td>Richard Kind</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.014266</td>
+<td>Sari Lennick</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.014266</td>
+<td>Fred Melamed</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.010856</td>
+<td>Bridget Moynahan</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.010856</td>
+<td>Ramon Rodriguez</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.010561</td>
+<td>Debra Messing</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.008341</td>
+<td>Vanessa Hudgens</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">0.007363</td>
+<td>Don Cheadle</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">0.007136</td>
+<td>Ben Stein</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.007136</td>
+<td>Lili Asvar</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.007136</td>
+<td>Peter Atkins</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.007136</td>
+<td>Hector Avalos</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.00691</td>
+<td>Michael C. Hall</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.006893</td>
+<td>Janet Jackson</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">0.004992</td>
+<td>Alison Lohman</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.004992</td>
+<td>Ruth Livier</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.004992</td>
+<td>Lorna Raver</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.004762</td>
+<td>Sharlto Copley</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.004547</td>
+<td>Clifton Collins Jr.</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.004547</td>
+<td>Dwight Yoakam</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.003298</td>
+<td>Katie Cassidy</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.002413</td>
+<td>Alan Arkin</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">0.002303</td>
+<td>Asa Butterfield</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.002303</td>
+<td>Rupert Friend</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.002303</td>
+<td>Zac Mattoon O&#8217;Brien</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.002073</td>
+<td>Elise Ivy</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.001311</td>
+<td>Morris Chestnut</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.001311</td>
+<td>Maeve Quinlan</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.001311</td>
+<td>Kevin Hart</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.001177</td>
+<td>Gwyneth Paltrow</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">0.000214</td>
+<td>Elizabeth Perkins</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">0.000214</td>
+<td>Kaley Cuoco</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.00043</td>
+<td>Sean Maguire</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.00043</td>
+<td>Kevin Sorbo</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.00043</td>
+<td>Ken Davitian</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.0007</td>
+<td>Aaron Johnson</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.00302</td>
+<td>Scarlett Johansson</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.00381</td>
+<td>Dominic Cooper</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.00381</td>
+<td>Charlotte Rampling</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.00437</td>
+<td>Joel McHale</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.00437</td>
+<td>Rowan Blanchard</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.00452</td>
+<td>Joan Allen</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.00581</td>
+<td>Minka Kelly</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.00581</td>
+<td>Shirley Norris</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.00598</td>
+<td>Ted Ludzik</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.00701</td>
+<td>Sheri Moon Zombie</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.00739</td>
+<td>Daniella Alonso</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.00739</td>
+<td>Jacob Vargas</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.00739</td>
+<td>Michael Bailey Smith</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.00739</td>
+<td>Michael McMillian</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.00748</td>
+<td>Joaquin Phoenix</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.00748</td>
+<td>Danny Hoch</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.00758</td>
+<td>Cary-Hiroyuki Tagawa</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.00913</td>
+<td>Scott Porter</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.00925</td>
+<td>Beyoncé Knowles</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.00936</td>
+<td>Loretta Devine</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.01051</td>
+<td>Willem Dafoe</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.01051</td>
+<td>Sam Neill</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.01051</td>
+<td>Claudia Karvan</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.01133</td>
+<td>Eva Longoria</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.01183</td>
+<td>Helen Hunt</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.01183</td>
+<td>Lorraine Nicholson</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.01272</td>
+<td>Charles S. Dutton</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.01272</td>
+<td>Lucas Black</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.01276</td>
+<td>Diego Luna</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.01285</td>
+<td>Kenny Wormald</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.01285</td>
+<td>Julianne Hough</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.01285</td>
+<td>Andie MacDowell</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.01341</td>
+<td>Patrick Stewart</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.01341</td>
+<td>Mako</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.01341</td>
+<td>Nolan North</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.01393</td>
+<td>Jeff Goldblum</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.01461</td>
+<td>Julianna Margulies</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.01668</td>
+<td>Alec Baldwin</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.01764</td>
+<td>Emma Roberts</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.01805</td>
+<td>Michael Parks</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.01805</td>
+<td>John Goodman</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.01838</td>
+<td>Michael Carman</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.01856</td>
+<td>Alice Eve</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.01857</td>
+<td>John Cho</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.01872</td>
+<td>Ryan Gosling</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.01881</td>
+<td>Gael Garcia Bernal</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.01881</td>
+<td>Marcia DeBonis</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.01899</td>
+<td>Angelina Jolie</td>
+<td align="right">7</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.01907</td>
+<td>Meg Ryan</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.01973</td>
+<td>Christopher Jordan Wallace</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.02072</td>
+<td>Emma Thompson</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.02072</td>
+<td>Maggie Gyllenhaal</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.02072</td>
+<td>Oscar Steer</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.02083</td>
+<td>George Clooney</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.0215</td>
+<td>Laura Linney</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.02431</td>
+<td>Virginia Madsen</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.02431</td>
+<td>Martin Donovan</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.02516</td>
+<td>Shea Whigham</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.02516</td>
+<td>Tova Stewart</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.02519</td>
+<td>Jon Favreau</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.02534</td>
+<td>Elizabeth Berrington</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.02621</td>
+<td>Isabelle Fuhrman</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.02621</td>
+<td>CCH Pounder</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.02631</td>
+<td>Mickey Rourke</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.02666</td>
+<td>Michael Sheen</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.02666</td>
+<td>Steven Mackintosh</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.02671</td>
+<td>Kadeem Hardison</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.02734</td>
+<td>Paolo Bonacelli</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.02734</td>
+<td>Violante Placido</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.02734</td>
+<td>Thekla Reuten</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.02787</td>
+<td>Christopher Meloni</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.0281</td>
+<td>Colin O&#8217;Donoghue</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.02839</td>
+<td>Common</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.02839</td>
+<td>James Pickens Jr.</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.02906</td>
+<td>Wesley Snipes</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.02948</td>
+<td>Connor Price</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.02963</td>
+<td>Kelsey Ford</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.02963</td>
+<td>Elena Anaya</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.03052</td>
+<td>Tom Sturridge</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.03199</td>
+<td>Ron Glass</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.03202</td>
+<td>Edward Burns</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.03202</td>
+<td>Shannyn Sossamon</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.03202</td>
+<td>Ana Claudia TalancÃ³n</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.03202</td>
+<td>Ray Wise</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.03285</td>
+<td>Alexandria M. Salling</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.03299</td>
+<td>Larry David</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.03299</td>
+<td>Adam Brooks</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.0341</td>
+<td>Jamal Woolard</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.0341</td>
+<td>Mohamed Dione</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.03417</td>
+<td>Keira Knightley</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.03504</td>
+<td>Stephen Campbell Moore</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.03591</td>
+<td>Ashlyn Sanchez</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.03644</td>
+<td>Amara Karan</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.03933</td>
+<td>Tamela J. Mann</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.03933</td>
+<td>David Mann</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.03957</td>
+<td>Ethan Hawke</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.04132</td>
+<td>Ludacris</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.0447</td>
+<td>Josh Lucas</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.0447</td>
+<td>Alexis Clagett</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.0452</td>
+<td>Kiele Sanchez</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.04542</td>
+<td>Richard Dreyfuss</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.04634</td>
+<td>Josh Hartnett</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.04634</td>
+<td>Melissa George</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.04698</td>
+<td>Danny Trejo</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.04699</td>
+<td>Selena Gomez</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.04699</td>
+<td>Cory Monteith</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.04823</td>
+<td>Beau Bridges</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.04834</td>
+<td>Sean Faris</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.04834</td>
+<td>Djimon Hounsou</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.04848</td>
+<td>John Carroll Lynch</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.04855</td>
+<td>Will Forte</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.04855</td>
+<td>Val Kilmer</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.04988</td>
+<td>Mia Stallard</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.05001</td>
+<td>Devin Brochu</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.05014</td>
+<td>Nikki Blonsky</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.05014</td>
+<td>Michelle Pfeiffer</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.05018</td>
+<td>Clifton Powell</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.05062</td>
+<td>Luke Wilson</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.05062</td>
+<td>Frank Whaley</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.05062</td>
+<td>Ethan Embry</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.05137</td>
+<td>Michelle Williams</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.05137</td>
+<td>Eddie Redmayne</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.05137</td>
+<td>Julia Ormond</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.05152</td>
+<td>Timothy Dalton</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.05268</td>
+<td>Michael Kelly</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.05269</td>
+<td>Mary-Kate Olsen</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.05269</td>
+<td>Justin Bradley</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.05378</td>
+<td>Neve Campbell</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.05378</td>
+<td>David Arquette</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.05378</td>
+<td>Lucy Hale</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.05387</td>
+<td>Nathan Gamble</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.0553</td>
+<td>Richard E. Grant</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.05587</td>
+<td>Brooklyn Decker</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.0564</td>
+<td>Ben Hollingsworth</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.05818</td>
+<td>Anne Heche</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.05818</td>
+<td>Isiah Whitlock Jr.</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.0588</td>
+<td>Rumer Willis</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.0588</td>
+<td>Carrie Fisher</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.0588</td>
+<td>Teri Andrzejewski</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.059</td>
+<td>Lily Collins</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.059</td>
+<td>Jake Andolina</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.05922</td>
+<td>Christina Applegate</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.05929</td>
+<td>Mos Def</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.05943</td>
+<td>Matthew Goode</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.05943</td>
+<td>Adam Scott</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.05956</td>
+<td>Amber Tamblyn</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.05961</td>
+<td>Rodrigo Santoro</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.06019</td>
+<td>Thomas Haden Church</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.06219</td>
+<td>Whoopi Goldberg</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.06219</td>
+<td>Kimberly Elise</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.06228</td>
+<td>Vicky Krieps</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.06293</td>
+<td>Cheryl Hines</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.06335</td>
+<td>Vanessa Minnillo</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.06335</td>
+<td>Nicole Parker</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.06378</td>
+<td>Carmen Electra</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.06453</td>
+<td>Claire Foy</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.06484</td>
+<td>Kerry Washington</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.06553</td>
+<td>Rosemarie DeWitt</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.06553</td>
+<td>Debra Winger</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.06553</td>
+<td>Sebastian Stan</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.06615</td>
+<td>Brian Geraghty</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.06636</td>
+<td>Madeline Carroll</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.0668</td>
+<td>Mark Ruffalo</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.06737</td>
+<td>Adrien Brody</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.06842</td>
+<td>Thomas D. Mahard</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.06852</td>
+<td>Jason Biggs</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.06862</td>
+<td>Chris Brown</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.06876</td>
+<td>Stella Maeve</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.06949</td>
+<td>Jennifer Lopez</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.06949</td>
+<td>Alex O&#8217;Loughlin</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.06949</td>
+<td>Michaela Watkins</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.07143</td>
+<td>Leslie Mann</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.07286</td>
+<td>Dylan Walsh</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.07286</td>
+<td>Sela Ward</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.07287</td>
+<td>Natalya Rudakova</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.07287</td>
+<td>FranÃ§ois Berléand</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.07344</td>
+<td>Ari Graynor</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.07413</td>
+<td>Matthew Marsden</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.07413</td>
+<td>Graham McTavish</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.07432</td>
+<td>Milla Jovovich</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.07449</td>
+<td>Tracy Morgan</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.07474</td>
+<td>Tate Donovan</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.07474</td>
+<td>Craig Gellis</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.07611</td>
+<td>Drew Barrymore</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.07615</td>
+<td>Demi Moore</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.07663</td>
+<td>Zachary Quinto</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.07686</td>
+<td>Dennis Hopper</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.07698</td>
+<td>Amy Smart</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.07733</td>
+<td>Jacob Latimore</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.07746</td>
+<td>Sarah Habel</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.07813</td>
+<td>Mia Farrow</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.07923</td>
+<td>Jamie Lee Curtis</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.07995</td>
+<td>Tony Hale</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.07995</td>
+<td>Lucas McHugh Carroll</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.08153</td>
+<td>Kiefer Sutherland</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.08153</td>
+<td>Cameron Boyce</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.0823</td>
+<td>Justin Chatwin</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.0823</td>
+<td>James Marsters</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.0823</td>
+<td>Yun-Fat Chow</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.0823</td>
+<td>Emmy Rossum</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.08247</td>
+<td>Laurence Fishburne</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.08276</td>
+<td>Ben Burtt</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.08276</td>
+<td>Elissa Knight</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.08276</td>
+<td>Jeff Garlin</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.08358</td>
+<td>Tim Hodge</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.08358</td>
+<td>Mike Nawrocki</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.08358</td>
+<td>Phil Vischer</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.08358</td>
+<td>Cam Clarke</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.08405</td>
+<td>Stephen Merchant</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.08611</td>
+<td>Kevin Costner</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.08636</td>
+<td>Nia Vardalos</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.08636</td>
+<td>Rachel Dratch</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.08636</td>
+<td>Alexis Georgoulis</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.0876</td>
+<td>Ed Harris</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.0876</td>
+<td>Jeremy Irons</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.08809</td>
+<td>Leonard Nimoy</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.08989</td>
+<td>Rachel Bilson</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.08997</td>
+<td>Gerry Bednob</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.09033</td>
+<td>Juan Carlos Hernàndez</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.09033</td>
+<td>Cory Fernandez</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.09096</td>
+<td>Portia Doubleday</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.09096</td>
+<td>Jean Smart</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.09157</td>
+<td>Dianna Agron</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.09398</td>
+<td>Shailene Woodley</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.09398</td>
+<td>Amara Miller</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.09398</td>
+<td>Nick Krause</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.09433</td>
+<td>Izzy Meikle-Small</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.09496</td>
+<td>Téa Leoni</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.09496</td>
+<td>Jordan Carlos</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.09575</td>
+<td>Daniel Olbrychski</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.09586</td>
+<td>Dustin Milligan</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.09586</td>
+<td>Chris Carmack</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.09586</td>
+<td>Katharine McPhee</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.09603</td>
+<td>America Ferrera</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.09662</td>
+<td>Yifei Liu</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.09665</td>
+<td>Steve Harris</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.0978</td>
+<td>Gillian Anderson</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.0978</td>
+<td>Billy Connolly</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.09831</td>
+<td>Lukas Haas</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.09851</td>
+<td>Michelle Nolden</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.09879</td>
+<td>John Michael Higgins</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.09889</td>
+<td>John Turturro</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.09889</td>
+<td>Emmanuelle Chriqui</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.10018</td>
+<td>Charlize Theron</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.10183</td>
+<td>Sarah Mahoney</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.10183</td>
+<td>Roxana Ortega</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.10214</td>
+<td>Tom Cavanagh</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.10263</td>
+<td>Paul Rust</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.10263</td>
+<td>Jack Carpenter</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.10263</td>
+<td>Lauren London</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.10292</td>
+<td>Gemma Jones</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.10305</td>
+<td>Sam Shepard</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.10313</td>
+<td>James Earl Jones</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.10313</td>
+<td>Margaret Avery</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.10387</td>
+<td>Michael Keaton</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.10387</td>
+<td>Zach Gilford</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.10396</td>
+<td>Blythe Danner</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.10608</td>
+<td>Adam Brody</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.10638</td>
+<td>Ted Danson</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.10643</td>
+<td>Dane Cook</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.10786</td>
+<td>Suzanne Rico</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.10843</td>
+<td>Danny DeVito</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.10878</td>
+<td>Jonah Hill</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.10929</td>
+<td>Archie Panjabi</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.10929</td>
+<td>Saïd Taghmaoui</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.11021</td>
+<td>Carice van Houten</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.1118</td>
+<td>Colin Firth</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.11216</td>
+<td>Molly Sims</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.11276</td>
+<td>Leighton Meester</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.11281</td>
+<td>Hunter McCracken</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.11283</td>
+<td>Maggie Q</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.11339</td>
+<td>Robert Redford</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.11467</td>
+<td>Michael Angarano</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.11492</td>
+<td>John Hurt</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.11492</td>
+<td>Stephen Dorff</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.11535</td>
+<td>Trevor Gagnon</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.11535</td>
+<td>Philip Bolden</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.11535</td>
+<td>David Gore</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.11535</td>
+<td>Christopher Lloyd</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.11589</td>
+<td>Shawn Wayans</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.11589</td>
+<td>Shoshana Bush</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.11589</td>
+<td>Damon Wayans Jr.</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.11672</td>
+<td>Bailee Madison</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.11672</td>
+<td>Bruce Gleeson</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.11701</td>
+<td>John Cena</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.11701</td>
+<td>Ashley Scott</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.11701</td>
+<td>Aidan Gillen</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.11778</td>
+<td>Joan Cusack</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.11808</td>
+<td>Aziz Ansari</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.121</td>
+<td>Juliette Binoche</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.121</td>
+<td>James Ransone</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.12193</td>
+<td>Alexander Ludwig</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.12267</td>
+<td>Kate Winslet</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.12448</td>
+<td>Marco Khan</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.12448</td>
+<td>Cliff Curtis</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.12498</td>
+<td>Kelly Preston</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.12557</td>
+<td>Sean Penn</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.12565</td>
+<td>Ray Liotta</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.12714</td>
+<td>Stanley Tucci</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.12778</td>
+<td>Josh Zuckerman</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.12813</td>
+<td>Russell Means</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.12921</td>
+<td>Billy Burke</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.12988</td>
+<td>Michael Buie</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.13011</td>
+<td>Andy Samberg</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.13011</td>
+<td>Jeff Daniels</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.13042</td>
+<td>Istvàn GÃ¶z</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.13061</td>
+<td>Larry the Cable Guy</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.13115</td>
+<td>Mauricio Lopez</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.13207</td>
+<td>Will Poulter</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.13287</td>
+<td>Aly Michalka</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.13287</td>
+<td>Gaelan Connell</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.1335</td>
+<td>Jeffrey Dean Morgan</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.13599</td>
+<td>James Rebhorn</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.13792</td>
+<td>Ashley Judd</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.13797</td>
+<td>Jessica Chastain</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.13797</td>
+<td>Simon Pegg</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.13835</td>
+<td>Marisa Tomei</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.13901</td>
+<td>Hayley Atwell</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.1391</td>
+<td>Steven Strait</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.14098</td>
+<td>Jodelle Ferland</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.14218</td>
+<td>Craig Ferguson</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.14296</td>
+<td>Jerry Stiller</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.14426</td>
+<td>Alex Pettyfer</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.14453</td>
+<td>Tom Hardy</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.14453</td>
+<td>Nick Nolte</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.14453</td>
+<td>Jennifer Morrison</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.14562</td>
+<td>Shawn Ashmore</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.14562</td>
+<td>Jonathan Tucker</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.14562</td>
+<td>Laura Ramsey</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.14615</td>
+<td>David Tennant</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.14615</td>
+<td>Toni Collette</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.14626</td>
+<td>Joseph Cross</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.14674</td>
+<td>Kathleen Turner</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.14783</td>
+<td>Allison Janney</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.14783</td>
+<td>Carmen Ejogo</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.14791</td>
+<td>Henry Cavill</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.15115</td>
+<td>Ricky Gervais</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.15316</td>
+<td>Queen Latifah</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.15327</td>
+<td>William H. Macy</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.1542</td>
+<td>David Duchovny</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.15482</td>
+<td>John Magaro</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.15482</td>
+<td>Denzel Whitaker</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.15482</td>
+<td>Zena Grey</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.15609</td>
+<td>Brandon Routh</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.15609</td>
+<td>Sam Huntington</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.15609</td>
+<td>Taye Diggs</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.1568</td>
+<td>Cherry Jones</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.15881</td>
+<td>Rashida Jones</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.15924</td>
+<td>Colm Meaney</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.15932</td>
+<td>Louis C.K.</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.15975</td>
+<td>Jim Cummings</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.15975</td>
+<td>Bud Luckey</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.16027</td>
+<td>Frances Conroy</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.16048</td>
+<td>David Morrissey</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.16131</td>
+<td>Alicia Witt</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.16131</td>
+<td>Ben McKenzie</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.16131</td>
+<td>Leelee Sobieski</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.16158</td>
+<td>Kenneth Branagh</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.16271</td>
+<td>Susan Sarandon</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.16305</td>
+<td>Teri Hatcher</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.16305</td>
+<td>John Hodgman</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.16305</td>
+<td>Jennifer Saunders</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.16324</td>
+<td>Steve Coogan</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.16324</td>
+<td>Brandon T. Jackson</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.16746</td>
+<td>James Marsden</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.16798</td>
+<td>Evangeline Lilly</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.16798</td>
+<td>Dakota Goyo</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.16863</td>
+<td>Lily Rabe</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.1693</td>
+<td>Keanu Reeves</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.17142</td>
+<td>Kodi Smit-McPhee</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.1731</td>
+<td>Noah Bean</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.17413</td>
+<td>Diane Lane</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.17575</td>
+<td>Michael Vartan</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.17575</td>
+<td>Callum Blue</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.17627</td>
+<td>Paula Patton</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.17794</td>
+<td>Molly Shannon</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.17794</td>
+<td>Steve Buscemi</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.17794</td>
+<td>Myleene Klass</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.17946</td>
+<td>Darrin Dewitt Henson</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.17949</td>
+<td>Hayden Panettiere</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.1843</td>
+<td>Mélanie Thierry</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.1843</td>
+<td>Gérard Depardieu</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.18736</td>
+<td>Teri Polo</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.18816</td>
+<td>Matt Dillon</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.18819</td>
+<td>Noah Emmerich</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.1885</td>
+<td>Lee Pace</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.1885</td>
+<td>George</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.18979</td>
+<td>Jamie Bell</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.18995</td>
+<td>Kevin McKidd</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.19227</td>
+<td>Oprah Winfrey</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.19227</td>
+<td>Bruno Campos</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.19379</td>
+<td>Olga Kurylenko</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.19412</td>
+<td>Tony Goldwyn</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.19669</td>
+<td>Brooke Shields</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.19669</td>
+<td>Ricky Garcia</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.19669</td>
+<td>Eugene Cordero</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.19796</td>
+<td>Colin Ford</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.1999</td>
+<td>Alexis Bledel</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.20019</td>
+<td>Josh Peck</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.20019</td>
+<td>Alex Frost</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.20019</td>
+<td>Nate Hartley</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.20054</td>
+<td>Armie Hammer</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.20054</td>
+<td>Josh Hamilton</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.20082</td>
+<td>Ken Jeong</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.201</td>
+<td>Jennifer Garner</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.20531</td>
+<td>Hayden Christensen</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.21062</td>
+<td>Ice Cube</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.21392</td>
+<td>Charlie Cox</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.21392</td>
+<td>Claire Danes</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.21392</td>
+<td>Sienna Miller</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.21392</td>
+<td>Ian McKellen</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.21416</td>
+<td>Josh Brolin</td>
+<td align="right">8</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.21465</td>
+<td>Miley Cyrus</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.21491</td>
+<td>Greta Gerwig</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.21652</td>
+<td>David Thewlis</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.21697</td>
+<td>Nick Swardson</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.21737</td>
+<td>Olivia Williams</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.21737</td>
+<td>Jon Bernthal</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.21748</td>
+<td>Keith David</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.218</td>
+<td>Robert Downey Jr.</td>
+<td align="right">7</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.21882</td>
+<td>Rhys Ifans</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.21882</td>
+<td>Sebastian Armesto</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.21891</td>
+<td>Brad Pitt</td>
+<td align="right">7</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.21899</td>
+<td>Carter Jenkins</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.21899</td>
+<td>Austin Butler</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.22287</td>
+<td>Demetri Martin</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.22287</td>
+<td>Henry Goodman</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.22287</td>
+<td>Edward Hibbert</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.22287</td>
+<td>Imelda Staunton</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.22299</td>
+<td>Meredith Droeger</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.22329</td>
+<td>Bob Hoskins</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.22329</td>
+<td>Alexander Siddig</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.22329</td>
+<td>Caryn Peterson</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.22569</td>
+<td>Abigail Breslin</td>
+<td align="right">7</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.22647</td>
+<td>Keke Palmer</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.22647</td>
+<td>Tasha Smith</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.22647</td>
+<td>Jill Marie Jones</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.22956</td>
+<td>Max Thieriot</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.23105</td>
+<td>Tracey Ullman</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.23431</td>
+<td>John Malkovich</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.23522</td>
+<td>Idris Elba</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.23559</td>
+<td>Jeff Kahn</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.23763</td>
+<td>Vanessa Redgrave</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.23795</td>
+<td>Doug Hutchison</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.24264</td>
+<td>Gabriel Macht</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.24452</td>
+<td>David Krumholtz</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.24452</td>
+<td>Nat Faxon</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.24508</td>
+<td>Clark Duke</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.25125</td>
+<td>Ron Livingston</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.25182</td>
+<td>Kim Basinger</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.25248</td>
+<td>Emily Mortimer</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.2531</td>
+<td>Bruce Campbell</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.25446</td>
+<td>Selma Blair</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.25446</td>
+<td>Doug Jones</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.25446</td>
+<td>John Alexander</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.25446</td>
+<td>Anika Noni Rose</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.25658</td>
+<td>Seann William Scott</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.25883</td>
+<td>Armin Mueller-Stahl</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.26063</td>
+<td>Jason Schwartzman</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.26107</td>
+<td>Kathy Baker</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.26156</td>
+<td>Monica Bellucci</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.26156</td>
+<td>Stephen McHattie</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.26745</td>
+<td>Timothy Olyphant</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.26757</td>
+<td>Chris Massoglia</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.26811</td>
+<td>James Caan</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.26866</td>
+<td>Steve Carell</td>
+<td align="right">7</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.27004</td>
+<td>Colin Hanks</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.27109</td>
+<td>Tom Skerritt</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.27329</td>
+<td>Liv Tyler</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.27555</td>
+<td>Ben Affleck</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.27608</td>
+<td>Zooey Deschanel</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.27655</td>
+<td>James Russo</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.27655</td>
+<td>Charlie Yeung</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.27655</td>
+<td>Shahkrit Yamnarm</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.27655</td>
+<td>Panward Hemmanee</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.27851</td>
+<td>Hugh Grant</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.27948</td>
+<td>Diane Keaton</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.28318</td>
+<td>Judy Greer</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.28336</td>
+<td>Carey Mulligan</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.28797</td>
+<td>Colm Feore</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.28797</td>
+<td>Amy Ryan</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.28797</td>
+<td>Gattlin Griffith</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.28933</td>
+<td>Eva Mendes</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.29241</td>
+<td>Matt Long</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.29307</td>
+<td>Ben Mendelsohn</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.29363</td>
+<td>Emily Barclay</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.29414</td>
+<td>Rain</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.29414</td>
+<td>Rick Yune</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.29414</td>
+<td>Naomie Harris</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.29414</td>
+<td>Ben Miles</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.29423</td>
+<td>AnnaSophia Robb</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.29464</td>
+<td>Dan Aykroyd</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.29572</td>
+<td>Christopher Eccleston</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.29799</td>
+<td>Hugh Dancy</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.29799</td>
+<td>Krysten Ritter</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.29968</td>
+<td>Toby Jones</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.29968</td>
+<td>David Ryall</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.29993</td>
+<td>Antje Traue</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.30149</td>
+<td>Jonathan Rhys Meyers</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.30149</td>
+<td>Kasia Smutniak</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.30149</td>
+<td>Richard Durden</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.30374</td>
+<td>Jenna Fischer</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.30433</td>
+<td>Alan Alda</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.30445</td>
+<td>Shea Adams</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.30445</td>
+<td>Eddie Baroo</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.30461</td>
+<td>Frank Langella</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.3085</td>
+<td>50 Cent</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.30904</td>
+<td>William Fichtner</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.31005</td>
+<td>Joe Anderson</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.31069</td>
+<td>Andy Garcia</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.3107</td>
+<td>Dana Fuchs</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.31076</td>
+<td>Sarah Michelle Gellar</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.31076</td>
+<td>George Carlin</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.31208</td>
+<td>Julie Benz</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.31313</td>
+<td>Hilary Swank</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.3135</td>
+<td>Alexis Dziena</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.31375</td>
+<td>Arielle Kebbel</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.31742</td>
+<td>Columbus Short</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.32086</td>
+<td>Cher</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.32086</td>
+<td>Christina Aguilera</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.32086</td>
+<td>Alan Cumming</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.32091</td>
+<td>Anthony Mackie</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.32244</td>
+<td>Camilla Belle</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.32251</td>
+<td>Terrence Howard</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.32407</td>
+<td>Anthony Edwards</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.32658</td>
+<td>Elias Koteas</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.33024</td>
+<td>Danny Glover</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.33186</td>
+<td>Rosamund Pike</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.3343</td>
+<td>Bruce Willis</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.33616</td>
+<td>Michael Hadley</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.3371</td>
+<td>Sarah Bolger</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.33889</td>
+<td>Julianne Moore</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.33895</td>
+<td>Michelle Monaghan</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.33954</td>
+<td>Frances McDormand</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.3401</td>
+<td>Zahf Paroo</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.34013</td>
+<td>Giovanni Ribisi</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.34013</td>
+<td>Michael Rispoli</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.34041</td>
+<td>Sharon Leal</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.34369</td>
+<td>Evan Rachel Wood</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.34673</td>
+<td>Mary-Louise Parker</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.34779</td>
+<td>Eliza Bennett</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.34779</td>
+<td>Sienna Guillory</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.3497</td>
+<td>Jennifer Lawrence</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.35049</td>
+<td>Paul Bettany</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.35309</td>
+<td>Ryan Phillippe</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.35499</td>
+<td>Michael Shannon</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.3563</td>
+<td>Leslie Bibb</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.35831</td>
+<td>Mathieu Amalric</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.35831</td>
+<td>Judi Dench</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.35885</td>
+<td>Kevin James</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.35968</td>
+<td>Colin Farrell</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.36023</td>
+<td>Richard Gere</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.36129</td>
+<td>Stephanie Szostak</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.36722</td>
+<td>Drake Bell</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.36722</td>
+<td>Leslie Nielsen</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.36722</td>
+<td>Christopher McDonald</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.37159</td>
+<td>Kevin Bacon</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.37197</td>
+<td>Rasmus Hardiker</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.37287</td>
+<td>Christoph Waltz</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.37325</td>
+<td>Laz Alonso</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.37325</td>
+<td>Omar Benson Miller</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.37446</td>
+<td>Tony Kgoroge</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.37446</td>
+<td>Patrick Mofokeng</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.37481</td>
+<td>Kate Hudson</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.37761</td>
+<td>Jet Li</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.37826</td>
+<td>Ving Rhames</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.3796</td>
+<td>Amanda Crew</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.38001</td>
+<td>John Cleese</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.38141</td>
+<td>Abbie Cornish</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.38142</td>
+<td>Derek Jeter</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.38538</td>
+<td>Gabrielle Union</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.38538</td>
+<td>Scott Caan</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.38604</td>
+<td>Nick Frost</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.38614</td>
+<td>Catherine Keener</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.3877</td>
+<td>Daniel Hansen</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.3877</td>
+<td>Wesley Singerman</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.3877</td>
+<td>Jordan Fry</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.38831</td>
+<td>Noah Ringer</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.38831</td>
+<td>Nicola Peltz</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.38831</td>
+<td>Jackson Rathbone</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.38893</td>
+<td>Maria Bello</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.39071</td>
+<td>Tom Selleck</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.39332</td>
+<td>Jay Chou</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.39413</td>
+<td>Jennifer Connelly</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.39438</td>
+<td>Kieran Culkin</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.39438</td>
+<td>Alison Pill</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.39473</td>
+<td>David de Vries</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.39492</td>
+<td>Joel Edgerton</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.39802</td>
+<td>Dakota Fanning</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.39804</td>
+<td>Tilda Swinton</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.39875</td>
+<td>Casey Affleck</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.40121</td>
+<td>Viggo Mortensen</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.40188</td>
+<td>Thomas Kretschmann</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.40735</td>
+<td>Derek Luke</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.40949</td>
+<td>Bernie Mac</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.40949</td>
+<td>Adam Herschman</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.41029</td>
+<td>Kristin Kreuk</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.41029</td>
+<td>Neal McDonough</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.41029</td>
+<td>Michael Clarke Duncan</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.41029</td>
+<td>Chris Klein</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.41274</td>
+<td>Jon Heder</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.41518</td>
+<td>Julia Roberts</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.41561</td>
+<td>Jean Reno</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.41773</td>
+<td>Naveen Andrews</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.41773</td>
+<td>Nicky Katt</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.41835</td>
+<td>Ioan Gruffudd</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.41855</td>
+<td>Radha Mitchell</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.4238</td>
+<td>Tom Hollander</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.42492</td>
+<td>Stephen Colbert</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.42514</td>
+<td>Bette Midler</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.42514</td>
+<td>Chris O&#8217;Donnell</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.42514</td>
+<td>Jack McBrayer</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.42584</td>
+<td>Karl Urban</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.42594</td>
+<td>Yara Shahidi</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.42594</td>
+<td>Ronny Cox</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.42702</td>
+<td>Angela Bassett</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.42845</td>
+<td>Clancy Brown</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.429</td>
+<td>Tom Wilkinson</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.42952</td>
+<td>Anna Friel</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.43227</td>
+<td>Greg Kinnear</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.43263</td>
+<td>Hugo Weaving</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.43371</td>
+<td>Robert Duvall</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.43428</td>
+<td>Patrick Wilson</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.43428</td>
+<td>Jordi MollÃ</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.43598</td>
+<td>Romany Malco</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.43598</td>
+<td>Jessica Simpson</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.44493</td>
+<td>Oliver Platt</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.44639</td>
+<td>Billy Bob Thornton</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.44673</td>
+<td>Tim Roth</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.45012</td>
+<td>Jason Behr</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.45012</td>
+<td>Amanda Brooks</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.45012</td>
+<td>Robert Forster</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.45081</td>
+<td>Elisabeth Moss</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.45444</td>
+<td>Kate Beckinsale</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.45459</td>
+<td>Elodie Tougne</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.45644</td>
+<td>Michael PeÃ±a</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.45749</td>
+<td>Ethan Suplee</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.46307</td>
+<td>Sara Paxton</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.46648</td>
+<td>William Hurt</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.46705</td>
+<td>Dominic Purcell</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.4676</td>
+<td>Eric Dane</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.47286</td>
+<td>Ewan McGregor</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.47372</td>
+<td>Bojana Novakovic</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.47493</td>
+<td>Rainn Wilson</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.47496</td>
+<td>Michael Douglas</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.47656</td>
+<td>Salma Hayek</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.47821</td>
+<td>Michael Chiklis</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.47877</td>
+<td>Susie Essman</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.47877</td>
+<td>Mark Walton</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.48214</td>
+<td>Tom Cruise</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.48289</td>
+<td>Rob Brown</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.48494</td>
+<td>Chris Tucker</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.48494</td>
+<td>Hiroyuki Sanada</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.48495</td>
+<td>Jerry Seinfeld</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.48664</td>
+<td>Amber Heard</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.49151</td>
+<td>Jeff Bridges</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.49254</td>
+<td>Julia Ormond</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.49388</td>
+<td>Jim Sturgess</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.49397</td>
+<td>David Alexander</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.49599</td>
+<td>Dakota Blue Richards</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.49599</td>
+<td>Ben Walker</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.49633</td>
+<td>Jack Black</td>
+<td align="right">7</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.49996</td>
+<td>Rachel Weisz</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.50207</td>
+<td>Rhona Mitra</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.50598</td>
+<td>Kristen Bell</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.50922</td>
+<td>Ulrich Thomsen</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.50958</td>
+<td>Paul Giamatti</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.51353</td>
+<td>Courteney Cox</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.52123</td>
+<td>Eric Christian Olsen</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.52388</td>
+<td>Bill Murray</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.5256</td>
+<td>Helen Mirren</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.5371</td>
+<td>Liev Schreiber</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.53777</td>
+<td>Luis Guzmàn</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.53777</td>
+<td>Victor Gojcaj</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.53964</td>
+<td>William Moseley</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.54075</td>
+<td>Amy Poehler</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.54559</td>
+<td>Chris Pine</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.55487</td>
+<td>Golshifteh Farahani</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.56183</td>
+<td>Ciaràn Hinds</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.56769</td>
+<td>Matthew McConaughey</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.57323</td>
+<td>Michelle Yeoh</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.59291</td>
+<td>Jodie Foster</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.59744</td>
+<td>Jeremy Northam</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.59744</td>
+<td>Jackson Bond</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.61008</td>
+<td>Harrison Ford</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.61034</td>
+<td>Zachary Levi</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.61171</td>
+<td>Ben Kingsley</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.61301</td>
+<td>Jena Malone</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.61555</td>
+<td>Keri Russell</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.61562</td>
+<td>Daniel Day-Lewis</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.61821</td>
+<td>Jessica Alba</td>
+<td align="right">8</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.62343</td>
+<td>Malin Akerman</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.63052</td>
+<td>Mel Gibson</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.63521</td>
+<td>John Krasinski</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.63733</td>
+<td>Marion Cotillard</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.63733</td>
+<td>Sophia Loren</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.63784</td>
+<td>Cate Blanchett</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.63804</td>
+<td>Donald Sutherland</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.63962</td>
+<td>Steve Martin</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.64079</td>
+<td>Jackie Earle Haley</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.64477</td>
+<td>Mary Elizabeth Winstead</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.64757</td>
+<td>Max Records</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.64757</td>
+<td>Pepita Emmerichs</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.65084</td>
+<td>David Strathairn</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.65479</td>
+<td>Vince Vaughn</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.65669</td>
+<td>Tina Fey</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.65691</td>
+<td>Bruce Boxleitner</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.65739</td>
+<td>Craig Robinson</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.66044</td>
+<td>Logan Lerman</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.662</td>
+<td>Saoirse Ronan</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.66534</td>
+<td>Jamie Foxx</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.66583</td>
+<td>Jim Carrey</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.66613</td>
+<td>Jason Momoa</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.66613</td>
+<td>Rose McGowan</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.66613</td>
+<td>Stephen Lang</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.66867</td>
+<td>Sam Elliott</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.6712</td>
+<td>Adewale Akinnuoye-Agbaje</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.67171</td>
+<td>Ben Barnes</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.67171</td>
+<td>Skandar Keynes</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.67171</td>
+<td>Georgie Henley</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.67769</td>
+<td>Katie Holmes</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.68674</td>
+<td>Eric Bana</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.68959</td>
+<td>Hugh Jackman</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.69001</td>
+<td>Anna Faris</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.69111</td>
+<td>Matthew Fox</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.69807</td>
+<td>Jorma Taccone</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.70598</td>
+<td>Jay Baruchel</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.71044</td>
+<td>Lake Bell</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.71601</td>
+<td>Matthew Broderick</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.71688</td>
+<td>Garrett Hedlund</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.72146</td>
+<td>Clint Eastwood</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.72146</td>
+<td>Bee Vang</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.72146</td>
+<td>Christopher Carley</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.72146</td>
+<td>Ahney Her</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.72206</td>
+<td>Reese Witherspoon</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.72222</td>
+<td>Forest Whitaker</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.73722</td>
+<td>Danny Huston</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.73748</td>
+<td>Michael Ealy</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.74577</td>
+<td>Steve Valentine</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.74612</td>
+<td>Chris Cooper</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.7519</td>
+<td>Guy Pearce</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.75576</td>
+<td>Ray Stevenson</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.76908</td>
+<td>Ben Foster</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.7697</td>
+<td>Emile Hirsch</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.77558</td>
+<td>John C. Reilly</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.77761</td>
+<td>Rob Corddry</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.7787</td>
+<td>Isla Fisher</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.78113</td>
+<td>Emily Browning</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.78249</td>
+<td>Channing Tatum</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.78709</td>
+<td>Marlon Wayans</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.79442</td>
+<td>Amy Adams</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.79518</td>
+<td>Edward Norton</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.79572</td>
+<td>Patrick Warburton</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.80053</td>
+<td>Gemma Arterton</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.80891</td>
+<td>Nicholas Elia</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.81369</td>
+<td>Ryan Reynolds</td>
+<td align="right">8</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.81879</td>
+<td>Chris Evans</td>
+<td align="right">7</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.82393</td>
+<td>Freddie Highmore</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.82719</td>
+<td>Moon Bloodgood</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.83737</td>
+<td>Cam Gigandet</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.84704</td>
+<td>Ashton Kutcher</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.85929</td>
+<td>Mark Wahlberg</td>
+<td align="right">8</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.86703</td>
+<td>Philip Seymour Hoffman</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.87171</td>
+<td>Brendan Fraser</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.8803</td>
+<td>Crispin Glover</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.90228</td>
+<td>Seth Rogen</td>
+<td align="right">9</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.90251</td>
+<td>Michael Fassbender</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.90605</td>
+<td>Ben Stiller</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.907</td>
+<td>Pink</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.907</td>
+<td>Carlos Alazraqui</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.91934</td>
+<td>Naomi Watts</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.94107</td>
+<td>Christina Ricci</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.94334</td>
+<td>Benicio Del Toro</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.94334</td>
+<td>Simon Merrells</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.95701</td>
+<td>Jason Statham</td>
+<td align="right">7</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.98138</td>
+<td>Emily Blunt</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.98557</td>
+<td>Morgan Freeman</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.9859</td>
+<td>Gary Oldman</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.98804</td>
+<td>Teresa Palmer</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-0.99282</td>
+<td>Samuel L. Jackson</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="right" height="17">-1.002</td>
+<td>Anton Yelchin</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-1.01902</td>
+<td>Elijah Wood</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-1.0212</td>
+<td>James McAvoy</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="right" height="17">-1.03203</td>
+<td>Elizabeth Banks</td>
+<td align="right">7</td>
+</tr>
+<tr>
+<td align="right" height="17">-1.0326</td>
+<td>Carla Gugino</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">-1.03435</td>
+<td>Robert De Niro</td>
+<td align="right">7</td>
+</tr>
+<tr>
+<td align="right" height="17">-1.03828</td>
+<td>Catherine O&#8217;Hara</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-1.0454</td>
+<td>Al Pacino</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">-1.05981</td>
+<td>Anthony Hopkins</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">-1.06493</td>
+<td>Hugh Laurie</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-1.06704</td>
+<td>Robin Wright</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-1.07278</td>
+<td>Lauren Graham</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-1.0907</td>
+<td>Owen Wilson</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td align="right" height="17">-1.09614</td>
+<td>Danny McBride</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">-1.09668</td>
+<td>Jim Broadbent</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-1.10827</td>
+<td>Renée Zellweger</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">-1.10958</td>
+<td>Matthew Macfadyen</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-1.12118</td>
+<td>Robin Williams</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-1.12426</td>
+<td>Raven-Symoné</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-1.12426</td>
+<td>Kym Whitley</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-1.12426</td>
+<td>Adam LeFevre</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-1.13515</td>
+<td>Rosario Dawson</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">-1.14922</td>
+<td>Johnny Simmons</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-1.15232</td>
+<td>Sam Rockwell</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-1.18263</td>
+<td>Jessica Biel</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">-1.20545</td>
+<td>Dennis Quaid</td>
+<td align="right">8</td>
+</tr>
+<tr>
+<td align="right" height="17">-1.21903</td>
+<td>Jake Gyllenhaal</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="right" height="17">-1.242</td>
+<td>Ray Winstone</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-1.25532</td>
+<td>Blake Lively</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-1.25729</td>
+<td>Elisabeth Harnois</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right" height="17">-1.2839</td>
+<td>Martin Lawrence</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">-1.28437</td>
+<td>Clive Owen</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">-1.30597</td>
+<td>Mark Strong</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-1.31824</td>
+<td>Donna Murphy</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-1.32204</td>
+<td>Denzel Washington</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">-1.32601</td>
+<td>Max von Sydow</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-1.38227</td>
+<td>Seth Green</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-1.38594</td>
+<td>Mandy Moore</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right" height="17">-1.44403</td>
+<td>Peter Sarsgaard</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-1.44474</td>
+<td>Will Ferrell</td>
+<td align="right">7</td>
+</tr>
+<tr>
+<td align="right" height="17">-1.52446</td>
+<td>John Travolta</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="right" height="17">-1.52673</td>
+<td>Dan Fogler</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">-1.56454</td>
+<td>Alfred Molina</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right" height="17">-1.56534</td>
+<td>Adam Sandler</td>
+<td align="right">7</td>
+</tr>
+<tr>
+<td align="right" height="17">-1.74681</td>
+<td>Nicole Kidman</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="right" height="17">-2.09692</td>
+<td>Russell Crowe</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="right" height="17">-2.20621</td>
+<td>Olivia Wilde</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">-2.28186</td>
+<td>Ron Perlman</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right" height="17">-2.44066</td>
+<td>Nicolas Cage</td>
+<td align="right">11</td>
+</tr>
+<tr>
+<td align="right" height="17">-2.7271</td>
+<td>Daniel Craig</td>
+<td align="right">5</td>
+</tr>
+</tbody>
+</table>
+<p><span style="font-family: Verdana, Arial, Helvetica, sans-serif;"><span style="font-size: 11px; line-height: normal;"><br />
+</span></span></p>
+	    		<div class="clear">&nbsp;</div>
+	</section>
+</article><!-- #post-## -->
+			
+				
+<article id="post-1185" class="post-1185 post type-post status-publish format-standard hentry category-data-visualization tag-business tag-dinosaurs tag-dogs tag-industry tag-machine-learning tag-money tag-movies tag-regression">
+		    <header class="post-header">
+        			<span class="post-meta">
+				<span class="posted-on"><a href="/2012/01/23/hollywood-data/" rel="bookmark"><time class="entry-date published" datetime="2012-01-23T22:53:55+00:00">January 23, 2012</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/data-visualization/" rel="category tag">data visualization</a>			</span>
+		        <h1 class="post-title"><a href="/2012/01/23/hollywood-data/" rel="bookmark">Hollywood + data</a></h1>
+         
+    </header>
+	<section class="post-content">
+
+		<p>Ever heard of the <a href="http://www.informationisbeautifulawards.com/">Information is Beautiful awards</a>? It&#8217;s visualization competitions a monthly visualization competition put together by David McCandless of Information is Beautiful fame.</p>
+<p>Part of it are monthly competitions that run on a curated dataset. <a href="http://www.datatelling.com/">Jen Lowe</a> and I are making a team for the current one <a href="http://www.informationisbeautifulawards.com/2012/01/challenge-of-the-stars/">about the movie industry</a> and we are going to deliver a competitive entry! even our drafts are rocking! But, while we were looking for that one great idea I explored the data.</p>
+<p>Part of the dataset is the total box office earnings of over 600 of the movies released in the US in the last 5 years. What I did is cross that list with the <a href="http://www.imdb.com/Sections/Keywords/">user-contributed plot keywords</a> on <a href="http://www.imdb.com/">imdb</a>. Then, I ran a regression on that to find out <strong>how much each keyword would generate in the box office? </strong>(I only kept those keywords mentioned over 5 times, that&#8217;s just over 2500, because else the full list is  20,000+). The full list is at the end of the article.</p>
+<p> <a href="/2012/01/23/hollywood-data/#more-1185" class="more-link">&hellip;&nbsp;<span class="meta-nav">&rarr;</span></a></p>
+	    		<div class="clear">&nbsp;</div>
+	</section>
+</article><!-- #post-## -->
+			
+			
+		
+		</main><!-- #main -->
+	</section><!-- #primary -->
+
+	<div id="secondary" class="widget-area" role="complementary">
+		<aside id="search-2" class="widget widget_search"><form role="search" method="get" class="search-form" action="/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit" value="Search" />
+			</form></aside>		<aside id="recent-posts-2" class="widget widget_recent_entries">		<h1 class="widget-title">Recent Posts</h1>		<ul>
+					<li>
+				<a href="/2018/04/09/hello-world/">Hello world!</a>
+						</li>
+					<li>
+				<a href="/2016/08/17/the-big-leagues/">The big leagues</a>
+						</li>
+					<li>
+				<a href="/2016/08/17/creating-a-react-visualization-web-app/">Creating a React visualization web app</a>
+						</li>
+					<li>
+				<a href="/2016/08/13/beyond-rendering/">Beyond rendering</a>
+						</li>
+					<li>
+				<a href="/2016/08/11/react-components/">React components</a>
+						</li>
+				</ul>
+		</aside>		<aside id="recent-comments-2" class="widget widget_recent_comments"><h1 class="widget-title">Recent Comments</h1><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link"><a href='https://wordpress.org/' rel='external nofollow' class='url'>A WordPress Commenter</a></span> on <a href="/2018/04/09/hello-world/#comment-1">Hello world!</a></li><li class="recentcomments"><span class="comment-author-link"><a href='http://omeraz.wordpress.com/' rel='external nofollow' class='url'>עומר עזריאל</a></span> on <a href="/2016/08/17/the-big-leagues/#comment-567">The big leagues</a></li><li class="recentcomments"><span class="comment-author-link">Carlos Ayres</span> on <a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-312">Manipulating data like a boss with d3</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://migrate.powertripanalytics.com/game-of-thrones-interactions-among-the-top-30-characters/' rel='external nofollow' class='url'>Game of ThronesInteractions Among the Top 30 Characters &#8211; PowerTrip Analytics</a></span> on <a href="/2013/05/13/making-the-game-of-thrones-visualization/#comment-466">Making the game of thrones visualization</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://abgoswam.wordpress.com/2016/10/08/d3-getting-started/' rel='external nofollow' class='url'>D3 &#8211; Getting Started | abgoswam&#039;s tech blog</a></span> on <a href="/2012/09/04/getting-to-hello-world-with-d3/#comment-419">Getting to &#8220;Hello world&#8221; with d3</a></li></ul></aside><aside id="archives-2" class="widget widget_archive"><h1 class="widget-title">Archives</h1>		<ul>
+			<li><a href='/2018/04/'>April 2018</a></li>
+	<li><a href='/2016/08/'>August 2016</a></li>
+	<li><a href='/2015/05/'>May 2015</a></li>
+	<li><a href='/2015/02/'>February 2015</a></li>
+	<li><a href='/2014/10/'>October 2014</a></li>
+	<li><a href='/2013/11/'>November 2013</a></li>
+	<li><a href='/2013/05/'>May 2013</a></li>
+	<li><a href='/2013/03/'>March 2013</a></li>
+	<li><a href='/2013/01/'>January 2013</a></li>
+	<li><a href='/2012/12/'>December 2012</a></li>
+	<li><a href='/2012/11/'>November 2012</a></li>
+	<li><a href='/2012/10/'>October 2012</a></li>
+	<li><a href='/2012/09/'>September 2012</a></li>
+	<li><a href='/2012/07/'>July 2012</a></li>
+	<li><a href='/2012/06/'>June 2012</a></li>
+	<li><a href='/2012/05/'>May 2012</a></li>
+	<li><a href='/2012/04/'>April 2012</a></li>
+	<li><a href='/2012/01/'>January 2012</a></li>
+	<li><a href='/2011/11/'>November 2011</a></li>
+	<li><a href='/2011/10/'>October 2011</a></li>
+	<li><a href='/2011/09/'>September 2011</a></li>
+	<li><a href='/2011/08/'>August 2011</a></li>
+	<li><a href='/2011/07/'>July 2011</a></li>
+	<li><a href='/2011/06/'>June 2011</a></li>
+	<li><a href='/2011/05/'>May 2011</a></li>
+	<li><a href='/2011/04/'>April 2011</a></li>
+	<li><a href='/2011/03/'>March 2011</a></li>
+	<li><a href='/2011/02/'>February 2011</a></li>
+	<li><a href='/2011/01/'>January 2011</a></li>
+	<li><a href='/2010/11/'>November 2010</a></li>
+	<li><a href='/2010/04/'>April 2010</a></li>
+	<li><a href='/2010/03/'>March 2010</a></li>
+	<li><a href='/2010/02/'>February 2010</a></li>
+	<li><a href='/2010/01/'>January 2010</a></li>
+	<li><a href='/2009/12/'>December 2009</a></li>
+	<li><a href='/2009/10/'>October 2009</a></li>
+	<li><a href='/2009/09/'>September 2009</a></li>
+	<li><a href='/2009/08/'>August 2009</a></li>
+	<li><a href='/2009/07/'>July 2009</a></li>
+	<li><a href='/2009/06/'>June 2009</a></li>
+	<li><a href='/2009/05/'>May 2009</a></li>
+	<li><a href='/2008/12/'>December 2008</a></li>
+	<li><a href='/2008/11/'>November 2008</a></li>
+	<li><a href='/2008/10/'>October 2008</a></li>
+		</ul>
+		</aside><aside id="categories-2" class="widget widget_categories"><h1 class="widget-title">Categories</h1>		<ul>
+	<li class="cat-item cat-item-2"><a href="/category/book-review/" >book review</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="/category/charts/" >charts</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="/category/conferences/" >conferences</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="/category/d3/" >d3</a>
+</li>
+	<li class="cat-item cat-item-6"><a href="/category/dashboards/" >dashboards</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="/category/data-publishing/" >data publishing</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="/category/data-visualization/" >data visualization</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="/category/francais/" >français</a>
+</li>
+	<li class="cat-item cat-item-10"><a href="/category/javascript/" >javascript</a>
+</li>
+	<li class="cat-item cat-item-11"><a href="/category/presentation/" >presentation</a>
+</li>
+	<li class="cat-item cat-item-12"><a href="/category/protovis/" >protovis</a>
+</li>
+	<li class="cat-item cat-item-13"><a href="/category/react/" >react</a>
+</li>
+	<li class="cat-item cat-item-14"><a href="/category/tips/" >tips</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="/category/uncategorized/" >Uncategorized</a>
+</li>
+	<li class="cat-item cat-item-15"><a href="/category/web-sites/" >web sites</a>
+</li>
+		</ul>
+</aside><aside id="meta-2" class="widget widget_meta"><h1 class="widget-title">Meta</h1>			<ul>
+						<li><a href="/wp-login.php">Log in</a></li>
+			<li><a href="/feed/">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="/comments/feed/">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>			</ul>
+			</aside>		<div class="clear">&nbsp;</div>
+	</div><!-- #secondary -->
+	<footer id="colophon" class="site-footer" role="contentinfo">
+	    <a class="subscribe icon-feed" href="/feed/"><span class="tooltip">Subscribe!</span></a>
+		<div class="site-info inner">
+		    <section class="copyright">
+		    			    		<a href="https://github.com/lacymorrow/casper" rel="home">Casper WP</a> by Lacy Morrow		    			    </section>
+		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+</main><!-- /#content -->
+
+<script type='text/javascript' src='/wp-content/themes/casper/js/main.js?ver=1.0.0'></script>
+<script type='text/javascript' src='/wp-includes/js/wp-embed.min.js?ver=4.6.10'></script>
+<!--stats_footer_test--></body>
+</html>

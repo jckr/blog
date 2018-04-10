@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: datavizchallenge.org: my entry</title>
+	<atom:link href="http://localhost/2011/03/27/datavizchallenge-org-my-entry/feed/" rel="self" type="application/rss+xml" />
+	<link>/2011/03/27/datavizchallenge-org-my-entry/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>By: Thiagu</title>
+		<link>/2011/03/27/datavizchallenge-org-my-entry/#comment-135</link>
+		<dc:creator><![CDATA[Thiagu]]></dc:creator>
+		<pubDate>Sun, 27 Mar 2011 21:01:00 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=799#comment-135</guid>
+		<description><![CDATA[Cool. All the best for competition.
+
+One more suggestion. 
+-could you add save/share: &quot;my proposal to the 2010 federal budget&quot; with others.
+
+I really like to see how others allot their preferences for 2010 federal budget.]]></description>
+		<content:encoded><![CDATA[<p>Cool. All the best for competition.</p>
+<p>One more suggestion.<br />
+-could you add save/share: &#8220;my proposal to the 2010 federal budget&#8221; with others.</p>
+<p>I really like to see how others allot their preferences for 2010 federal budget.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

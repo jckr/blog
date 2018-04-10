@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>visweek &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/visweek/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>d3 tutorial at visWeek 2012</title>
+		<link>/2012/10/15/d3-tutorial-at-visweek-2012/</link>
+		<comments>/2012/10/15/d3-tutorial-at-visweek-2012/#comments</comments>
+		<pubDate>Mon, 15 Oct 2012 19:11:32 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[conferences]]></category>
+		<category><![CDATA[d3]]></category>
+		<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[presentation]]></category>
+		<category><![CDATA[tips]]></category>
+		<category><![CDATA[Jeff Heer]]></category>
+		<category><![CDATA[Scott Murray]]></category>
+		<category><![CDATA[tutorial]]></category>
+		<category><![CDATA[visweek]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1488</guid>
+		<description><![CDATA[Jeff Heer, Scott Murray and myself have done a d3 tutorial at visWeek 2012. You probably gathered that from the title of the post. Here is a link to all the slides and code examples that we have presented: d3 tutorial For the purpose of the tutorial I have compiled a d3 cheat sheet, on <a class="read-more" href="/2012/10/15/d3-tutorial-at-visweek-2012/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>Jeff Heer, Scott Murray and myself have done a d3 tutorial at visWeek 2012. You probably gathered that from the title of the post.</p>
+<p>Here is a link to all the slides and code examples that we have presented:</p>
+<p><a href="http://www.jeromecukier.net/d3_tutorial.zip">d3 tutorial</a></p>
+<p>For the purpose of the tutorial I have compiled a d3 cheat sheet, on 4 pages it groups some of the most common d3 functions. When I was learning d3 my number one problem was figuring out which property should be set using .attr, and which required .style. And also: which svg element support which property? All of this is addressed in the cheat sheet. It&#8217;s part of the link above, but if you want it directly without downloading a 13Mb file, here it is: </p>
+<p><a href="http://www.jeromecukier.net/wp-content/uploads/2012/10/d3-cheat-sheet.pdf">d3 cheat sheet</a></p>
+]]></content:encoded>
+			<wfw:commentRss>/2012/10/15/d3-tutorial-at-visweek-2012/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+		<item>
+		<title>Don&#8217;t take my word for it</title>
+		<link>/2011/11/24/dont-take-my-word-for-it/</link>
+		<comments>/2011/11/24/dont-take-my-word-for-it/#comments</comments>
+		<pubDate>Thu, 24 Nov 2011 01:18:23 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[presentation]]></category>
+		<category><![CDATA[data]]></category>
+		<category><![CDATA[interaction]]></category>
+		<category><![CDATA[model]]></category>
+		<category><![CDATA[persuasion]]></category>
+		<category><![CDATA[politics]]></category>
+		<category><![CDATA[rhetorics]]></category>
+		<category><![CDATA[stories]]></category>
+		<category><![CDATA[visweek]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1126</guid>
+		<description><![CDATA[Inspiration In June 2010, I attended a Wolfram&#124;Alpha event called the London Computational Knowledge Summit where speakers mostly focused on how computers can transform the way we teach and transmit knowledge. Several of the presentations made a lasting impression, and mostly the talk by Jon McLoone: Jon&#8217;s point was that academic papers today look an <a class="read-more" href="/2011/11/24/dont-take-my-word-for-it/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<h2>Inspiration</h2>
+<p>In June 2010, I attended a Wolfram|Alpha event called the London Computational Knowledge Summit where speakers mostly focused on how computers can transform the way we teach and transmit knowledge. Several of the presentations made a lasting impression, and mostly the talk by Jon McLoone:</p>
+<pre><code><iframe src="http://www.youtube.com/embed/tizMNn6xKFw?version=3&amp;start=380&amp;wmode=transparent" width="600" height="362" style="background-color:#000;display:block;margin-bottom:0;max-width:100%;" title="YouTube video player" frameborder="0" allowfullscreen></iframe><p style="font-size:11px;margin-top:0;"><a href="http://www.youtube.com/watch?v=tizMNn6xKFw" target="_blank" title="Watch on YouTube">Watch this video on YouTube</a>.</p></code></pre>
+<p>Jon&#8217;s point was that academic papers today look an awful lot like those in the 17th century. Granted, they&#8217;re not in latin, they can be displayed online and there is color, but as far as maths are concerned it&#8217;s still long pages of difficult language and long formulas. The computer, however, can do so much more than transmit information. In the clip above (around 6&#8217;20&#8221;) Jon shows how a paper on edge detection can be much more effective if instead of using a static example to demonstrate the technique, the paper were able to use a live example, such as input from the camera. In that talk and throughout the day, there were more examples on how interactive displays could be useful for teaching.</p>
+<p>Teaching, telling stories and getting a message across use similar functions. Fast forward to VisWeek 2010 and the first &#8220;<a href="http://thevcl.com/storytelling/">Telling Stories with Data</a>&#8221; workshop. Some of the presentations there (I&#8217;m thinking of <a href="http://thevcl.com/storytelling/speakers.html#nicholas_diakopoulos">Nick Diakopoulos</a> and <a href="http://thevcl.com/storytelling/speakers.html#matthias_shapiro">Matthias Shapiro</a> mostly) hinted that <strong>there could be a process</strong> through which readers/users/audience could be taken through so <strong>they can make the most of an intended message</strong>. Interestingly, this process is not about transmitting as much data as effortlessly as possible but rather to engage the audience, to get them to challenge their assumptions.</p>
+<p>Those two events really made me pause and think. Ever since I had started working in visualization, all my efforts had been focused on being as clear as possible, and my focus, on efficient visuals. However, for some tasks, <strong>clarity just isn&#8217;t optimal</strong>. That wasn&#8217;t much of an issue in most of my OECD work where such an approach makes a lot of sense but I started seeing that there was a world of possibility when it comes to changing people&#8217;s perception on a subject or even persuading them.</p>
+<h2>Application</h2>
+<h3>French pension reform</h3>
+<p>Right at the moment of visWeek 2010, France was plagued by strikes against the proposed pension reform. At the peak of contestation up to 3m people demonstrated (that&#8217;s as much as one adult out of 14). I was quite irritated by the protests. In theory, left and right had very comparable views on this problem and only disagreed on unsignificant details. They both knew reform was unavoidable, and, again, had similar plans. But when those of the current government were implemented, the opposition capitalized on the discontent and attacked the plan vigorously. <strong>Their rethoric were entirely verbal</strong> &#8211; no numbers were harmed in the making of their discourse! Consequently, protesters and a large part of the population started to develop notions about the state of pensions which were completely disconnected from reality.</p>
+<p style="text-align: center;"><a href="http://jeromecukier.net/stuff/visweek/datastories/index.html"><img class="aligncenter size-full wp-image-1143" title="retraites" src="http://www.jeromecukier.net/wp-content/uploads/2011/11/retraites.png" alt="" width="721" height="540" /></a></p>
+<p>I believe that if numbers had been used early enough, it would have been enough to provide a counterpoint to such fallacies and while it may not have prevented demonstrations, it would have greatly helped to dampen their effect. With that in mind and with official data I tried to build a model to show what would happen if one changed this or that parameter of pension policy. Pension mechanics are quite simple: what you give on one side, you take on another; the evolution of population is quite well known, so making such a model is pretty straight forward. But putting that in a visual application really showed how the current situation was unsustainable. In this application I challenge the user to find a solution &#8211; any solution &#8211; to the pension problem, by using the same levers as the policy makers. It turns out that there is just one viable possibility. Yet, letting people find that by themselves and challenge that idea as hard as they could was very different from paternalizing and telling people that this was just the way it is.</p>
+<p>On the course of the year I got involved in several occasions in situations like this where data visualization could be used to influence people&#8217;s opinion, and likewise I tried to use that approach. Instead of sending a top-down message (with or without data), instead confront the assumptions of the audience and get them to interact with a model. After this experience, their perception will have changed. This technique doesn&#8217;t try to bypass the viewers critical thinking, but instead to leverage their intelligence.</p>
+<h3>In politics</h3>
+<p>I am very concerned with the use of data visualization in politics for many reasons. One of them is because I&#8217;m a public servant. In my experience, most decisions are not taken by politicians, but by experts or technicians who are commited to the public good. Yet, when poorly  explained, these decisions can be misunderstood and attacked. Visualization, I believe, can help defend such decisions (those who are justifiable at least) and explain them better to a greater number.</p>
+<p>Although a lot of data is available out there (or perhaps for that very reason) only few people have a good grasp of the economic situation of their country. This just can&#8217;t be helped. It&#8217;s not possible to increase the percentage of people who can guestimate the unemployment rate and it&#8217;s not really important. Very few people need to know such a number, now what is important is to be able to use that information in context when it is useful. For instance, at election time, a voter should be able to know if the incumbent has created or destroyed jobs. This is something that data visualization can handle brilliantly.</p>
+<p>Finally, my issue with political communication is that it is written by activists, for activists. It works well to motivate people with a certain sensitivity but it is not very effective at getting others to change side. This is a bias which is difficult to detect by those in charge of political communications because, well, they&#8217;re activits too&#8230; and here this flavor of model-based data visualization, with its appearance of objectivity and neutrality, can complement the more verbal aspect of rhetoric quite well.</p>
+<p>In the talk I used Al Gore&#8217;s <em>An Inconvenient Truth </em>as a counter example. This movie is a fine example of story-telling, and operating at an emotional rather that at a rational novel. I trust that people who feel concerned about climate change will be reinforced in their beliefs after seeing the movie. However, those who do not were unconvinced. In fact, the movie also gave a strong boost to climate skeptics. There was a real barrage of blog posts and websites attempting to debunk the assertions of that &#8220;truth&#8221;, most often with data. There is a missed opportunity: if the really well-made stories of the movie had been complemented with a climate model that people could experiment with, it would have been perceived as less monolithic, less manichean, less dogmatic.</p>
+<h2>The conclusions</h2>
+<p>In my practice using an interactive model can help <strong>a lot</strong> to get a message across (and no, I don&#8217;t have a rigorous evaluation for &#8220;a lot&#8221;, that&#8217;s the advantage of not being an academic).</p>
+<p>Such models <strong>engage the users</strong>, they come out as <strong>more objective and truthful</strong> as static representations, and they can be very useful to <strong>address preconceptions</strong>. Chances are they&#8217;re more fun, too.</p>
+<p>Then again, just because a model is interactive and built on transparent data and equations doesn&#8217;t mean it&#8217;s objective. It is usually possible to <strong>control the model</strong> or the interface so that one interpretation is more likely than the other, and that&#8217;s precisely the point if you are using data visualization to influence.</p>
+<p>It can be very cheap and easy to turn a static representation into an interactive display. Every chart with more than 2 dimensions can be turned in a visualization where the user controls one dimension and sees data for the others evolve.</p>
+<p>And if you build a model like this, you must be very open and transparent about the data and the equations and sometimes find ways to get people to overcome their doubts.</p>
+<p>Besides, having a working interactive model is no guarantee of success. You really have to be careful that your users are not likely to interpret your visualization in ways you never intended.</p>
+<h2>The presentation</h2>
+<p><iframe src="https://www.slideshare.net/slideshow/embed_code/10279298" width="400" height="337" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe><br/><br />
+All examples I used in the presentation both good and bad, both mine and others can be found at <a href="http://www.jeromecukier.net/data-stories/">http://www.jeromecukier.net/data-stories/</a></p>
+]]></content:encoded>
+			<wfw:commentRss>/2011/11/24/dont-take-my-word-for-it/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>Promising difficulties</title>
+		<link>/2011/11/13/promising-difficulties/</link>
+		<comments>/2011/11/13/promising-difficulties/#comments</comments>
+		<pubDate>Sun, 13 Nov 2011 20:18:28 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[cognitive cost]]></category>
+		<category><![CDATA[critique]]></category>
+		<category><![CDATA[desirable difficulty]]></category>
+		<category><![CDATA[infovis]]></category>
+		<category><![CDATA[storytelling]]></category>
+		<category><![CDATA[theory]]></category>
+		<category><![CDATA[visweek]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1111</guid>
+		<description><![CDATA[At the recent VisWeek conference, Jessica Hullman and her coauthors presented &#8220;Benefitting Infovis with Visual Difficulties (pdf)&#8221;, a paper that suggests that the charts which are read almost effortlessly are not necessarily the ones that readers understand or remember best. To answer that claim, Stephen Few wrote a rather harsh critique of this paper (pdf). As I read this <a class="read-more" href="/2011/11/13/promising-difficulties/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>At the recent VisWeek conference, Jessica Hullman and her coauthors presented &#8220;<a href="http://www.cond.org/difficulties.pdf">Benefitting Infovis with Visual Difficulties</a> (pdf)&#8221;, a paper that suggests that the charts which are read almost effortlessly are not necessarily the ones that readers understand or remember best. To answer that claim, Stephen Few wrote <a href="http://www.perceptualedge.com/articles/visual_business_intelligence/visual_difficulties.pdf">a rather harsh critique of this paper</a> (pdf). As I read this I felt the original paper was not always fairly represented, but more importantly, that the views develop by both parties are not at all inreconcilable. Let me explain.</p>
+<h2>What is cognitive efficiency, or &#8220;say it with bar charts&#8221;</h2>
+<p>For quite some time, we were told that to better communicate with data, we had to make visuals as clear as possible.</p>
+<p>The more complicated way of saying that is talking of &#8220;cognitive efficiency&#8221;. By reducing the number of tasks needed to understand a chart and simplifying them, which is sometimes called reducing the &#8220;cognitive cost&#8221; or &#8220;cognitive load&#8221;, we improve all virtues of the chart.</p>
+<p><div id="attachment_1115" style="width: 683px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2011/11/frompietobar.png"><img class="size-full wp-image-1115" title="frompietobar" src="http://www.jeromecukier.net/wp-content/uploads/2011/11/frompietobar.png" alt="Various charts based on the same data points, shown in order of cognitive cost" width="673" height="142" /></a><p class="wp-caption-text">Various charts based on the same data points. From left to right, they make the task of comparing individuals value increasingly easier</p></div></p>
+<p>For instance: bar charts are easier to process than pie charts, because it&#8217;s easier for the human eye to compare lengths than angles. So, with equivalent data, bar charts have a lower cognitive cost than pie charts. Likewise, bar charts which are ordered by value (smallest bars to largest bars) are easier to read than unordered ones. Ordered bar charts have an even lower cognitive cost than unordered ones.</p>
+<p>Conversely, adding non-data elements add extra tasks for the reader and increase cognitive cost. These non-data elements have been reviled by Edward Tufte as &#8220;chartjunk&#8221;. His data-ink theory says that out of all the ink used for the chart, as much as possible should be devoted to data elements. Again, this goes in the direction of data efficiency.</p>
+<h2>Engagement rather than immediacy?</h2>
+<p>Again for quite some times those rules were held to be universal. Yet, several tried to challenge them, the latest being Jessica Hullman in her paper &#8220;<a href="http://www.cond.org/difficulties.pdf">Benefitting Infovis with Visual Difficulties</a>&#8220;. This paper was so thought-provoking that it received an honorable mention at the recent IEEE Information Visualization Conference 2011 (as a note to the non-academic reader, this is quite a competitive achievement).</p>
+<p>New information visualisation techniques are often <strong>evaluated</strong>.  This paper argues that such evaluations typically consider response time or accuracy, and not how well users are able to interpret and remember visuals. When only the former criteria are taken into account then cognitive efficiency is the superior framework. But this is not the case of data storytelling (which is, arguably, a small subset of  all data visualizations).</p>
+<p>When visualizations attempt to transmit a message, then how well users can receive this message, as well their capacity to remember this for a long time are of utmost importance, much more than the ease with which a visualization is read.</p>
+<p>In that case, Jessica Hullman proposes a trade-off between cognitive efficiency and &#8220;obstructions&#8221;. The idea is that such obstructions, or <strong>visual difficulties, can trigger active learning processes</strong>. In other words, if when trying to read a chart, a user doesn&#8217;t understand it effortlessly, but is somehow willing to get to the bottom of it, she will apply all her active brainpower to it. This effort surge will lead her to not only better interpret it but also to better remember it. To sum up, these obstructions can have positive effects, this is why when this effect works, they are called <em>desirable difficulties</em>.</p>
+<p>Desirable difficulties are tricky, because if the &#8220;obstruction&#8221; is too large, if a small additional effort is not enough to understand the chart, then it will not work. So, this is definitely not about maximizing the difficulty to understand the visualizations.</p>
+<p>In the recommendations parts of the paper the authors say:</p>
+<blockquote><p>Instead of minimizing the steps required to process visualization, induce <strong>constructive</strong>, self-directed, cognitive activity on the part of the user.</p></blockquote>
+<p>This doesn&#8217;t mean that anything goes. This paper does not argue to add as many difficulties as possible, to use every gratuitous effect in the book. Instead, the paper goes on to give actionable design suggestions to enhance reader stimulation and active information processing.</p>
+<p><a href="http://www.jeromecukier.net/wp-content/uploads/2011/05/bli.png"><img class="aligncenter size-full wp-image-880" title="bli" src="http://www.jeromecukier.net/wp-content/uploads/2011/05/bli.png" alt="" /></a></p>
+<p><a href="http://www.jeromecukier.net/blog/2011/05/25/better-life-index-a-post-mortem/">In my practice,</a> for instance with the <a href="http://oe.cd/bli">Better Life Index</a>, I verify the analyses of the Hullman paper: the novelty of the form and the aesthetic appeal of the representation drive the users to overcome the difficulty posed by the unusual shape of the flower/glyph. Would bar charts have conveyed the data more efficiently and more accurately? Definitely! would the user engagement have been comparable? Definitely not.</p>
+<h1>A critique by Stephen Few</h1>
+<p>Stephen Few, whose work I have praised at multiple occasions in this blog, has published a <a href="http://www.perceptualedge.com/articles/visual_business_intelligence/visual_difficulties.pdf">critique of this paper</a> (pdf). Reading his article, then the paper again, I had the feeling that they didn&#8217;t talk about the same things. In certain contexts, difficulties are not desirable at all and must be eradicated. Yet, in other contexts, cognitive efficiency does not provide the  optimal solution.</p>
+<p>For instance, Stephen writes:</p>
+<blockquote><p>Long-term recall is rarely the purpose of information visualization.</p></blockquote>
+<p>Fair enough! so let&#8217;s agree that when it is not the case, we should not trouble ourselves with seeking to add obstructions to the display. For instance: business intelligence systems, dashboards (for monitoring), visual analytics (and more on this shortly). Spreadsheets, mostly. All usages of data that support decision, and most usages in the corporate world. The Hullman paper only applies in the other cases anyway.</p>
+<p>He would also write (emphasis by me):</p>
+<blockquote><p><strong>Skilled data analysts</strong> learn to view data from many perspectives to prevent knee-jerk conclusions based on inappropriate heuristics.</p></blockquote>
+<p>Agreed! and by all means, let them analyse and let them view data from as many perspectives as they see fit, and don&#8217;t get in the way of their job.</p>
+<p><div id="attachment_1116" style="width: 815px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2011/11/palantir-fraud.png"><img class="size-full wp-image-1116" title="palantir-fraud" src="http://www.jeromecukier.net/wp-content/uploads/2011/11/palantir-fraud.png" alt="" width="805" height="605" /></a><p class="wp-caption-text">For context, check out www.palantirtech.com/government/analysis-blog/mortgage-fraud</p></div></p>
+<p>This here is taken from a demo from Palantir government. Here analysts are tracking mortgage fraud. Each yellow dot on the top display is a transaction where a house has been sold for over 200% of its purchase value, and the ones which are connected are about the same house. We can immediately see 2 suspicious clusters where a property has been resold 4 times in these conditions. And if at the end of their work day the analysts don&#8217;t remember the address of the fraudulent transaction, it&#8217;s no big deal as long as they have identified a wrong practice.</p>
+<p>Conversely, at the risk of repetition, the paper authors write of a trade-off between efficiency and obstructions &#8211; cognitive efficiency being generally positive. They say that obstructions become desirable difficulties only if they are <em>constructive, </em>that is if they are able to trigger active information processing. They are <strong>not </strong>championning 3D pie charts or atrocious dashboards as the one at the end of Stephen&#8217;s article.  Jessica signals that novelty enhance active information processing. I don&#8217;t know how to characterize speed dials in dashboards, for instance, but novel would not be the word I&#8217;d use, and again they wouldn&#8217;t be favoured by the authors of the paper. So, I think it&#8217;s a bit unfair to associate the paper with the terrible, terrible visuals presented in Stephen&#8217;s article, the ones in the original paper being a little bit more defendable.</p>
+<p><div id="attachment_1119" style="width: 610px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2011/11/mortgage-delinquency.png"><img class="size-full wp-image-1119" title="mortgage-delinquency" src="http://www.jeromecukier.net/wp-content/uploads/2011/11/mortgage-delinquency.png" alt="" width="600" height="283" /></a><p class="wp-caption-text">To see this chart in context see http://www.oecd.org/dataoecd/41/50/47984536.pdf</p></div></p>
+<p>Consider this other chart (and let&#8217;s assume for the sake of discussion that its cognitive cost is low, while it could be much lower by showing fewer time series for instance). This was published in an OECD publication almost 2 years before the 2008 crisis. I would say this chart is easy to read (we see mortgage delinquency rates dropping in most countries) but difficult to interpret and to recall. Like other charts of the document, this one is an oracle of financial apocalypse, as the proportion of delinquent mortgage in the US, the only one without a downward trend, will have the consequences that we know. So if a different way of showing the same data could have made that more obvious at the cost of legibility, I think it would have been worth a shot.</p>
+<h2>Are we on common ground yet?</h2>
+<p>If not, let&#8217;s assume now that there exists visualizations where long-term recall is, indeed, the main purpose. Examples would include use in journalism, politics, advocacy, marketing&#8230; Jessica has been involved in the series of workshop <a href="http://data-stories.com/">Telling stories with data</a> at VisWeek. This suggests an interesting distinction.</p>
+<ul>
+<li>visualizations which are tools with which a user accesses or manipulates data.</li>
+<li>visualizations where an author, with a specific intent, tries to frame data in a certain way to an audience. In that case, the author wants to make sure the audience receives the message as intended, and remembers it.</li>
+</ul>
+<div>See where I&#8217;m going?</div>
+<div>In the <strong>first</strong> case, we want <strong>cognitive efficiency</strong> all the way.</div>
+<div>In the <strong>second</strong>, we are mostly concerned with <strong>getting our message across</strong> and <strong>making it stick</strong>.</div>
+<div>So, <strong>there is no contradiction</strong> between having a set of rules for one category of visuals, and a different one for the other, especially since the criteria of success are so different. To illustrate this I note that both the article and the paper refer to Tableau, a &#8220;cognitive efficiency&#8221; company. Yet, it turns out that Tableau is also very interested in doing as well as possible in the story telling front, and that questions asked at the paper&#8217;s presentation by Tableau representatives show their interest in this research.</div>
+<h2>Where to from there?</h2>
+<div>We have proven methods to reduce the cognitive cost of a visual, and we can thank Stephen Few for making them more accessible. It&#8217;s much more difficult, though, to optimize the characteristics of a successful &#8220;data narrative&#8221;, that is interpretation and memorability. It&#8217;s an infographics jungle out there. Those of us who haven&#8217;t seen their share of undefendable visuals just haven&#8217;t searched enough, but absolutely anything goes.</div>
+<div>We still do not have an equivalent framework for visualizations that tell stories. InfoVis started to study them (such as in the remarkable <a href="http://vis.stanford.edu/papers/narrative">Narrative Visualization: Telling Stories With Data</a>) and characterize them, but we don&#8217;t have a systematic, reproducible way to make sure that data narrative will work well, just as we can do the perfect dashboard.  We do know that the best examples at large do not comply with the rules of cognitive efficiency though. Fortunately, practitioners have not waited for convincing resarch and are leading the way, even though many get lost in the process. This is why we need more research on that front! I for one is looking forward new developments in this area of InfoVis.</div>
+<pre></pre>
+]]></content:encoded>
+			<wfw:commentRss>/2011/11/13/promising-difficulties/feed/</wfw:commentRss>
+		<slash:comments>14</slash:comments>
+		</item>
+		<item>
+		<title>VAST challenge 2011</title>
+		<link>/2011/07/01/vast-challenge-2011/</link>
+		<comments>/2011/07/01/vast-challenge-2011/#comments</comments>
+		<pubDate>Thu, 30 Jun 2011 22:09:33 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[protovis]]></category>
+		<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[contest]]></category>
+		<category><![CDATA[disease]]></category>
+		<category><![CDATA[terrorism]]></category>
+		<category><![CDATA[twitter]]></category>
+		<category><![CDATA[vast]]></category>
+		<category><![CDATA[VAST challenge]]></category>
+		<category><![CDATA[Vastopolis]]></category>
+		<category><![CDATA[video]]></category>
+		<category><![CDATA[visweek]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=930</guid>
+		<description><![CDATA[This year I have participated to the VAST Challenge (VAST stands for visual analytics science and technology). The VAST symposium is part of the yearly VisWeek conferences. Anyway. The rules required contestants to send videos with voiceovers, so without further ado here they are. Watch me in HD instead!! Watch me in HD too!! If <a class="read-more" href="/2011/07/01/vast-challenge-2011/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>This year I have participated to the <a href="http://hcil.cs.umd.edu/localphp/hcil/vast11/index.php/">VAST Challenge</a> (VAST stands for visual analytics science and technology). The VAST symposium is part of the yearly VisWeek conferences. </p>
+<p>Anyway. The rules required contestants to send videos with voiceovers, so without further ado here they are. </p>
+<p><object width="560" height="349"><param name="movie" value="http://www.youtube.com/v/i5g7_iX9tVQ?version=3&amp;hl=fr_FR"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/i5g7_iX9tVQ?version=3&amp;hl=fr_FR" type="application/x-shockwave-flash" width="560" height="349" allowscriptaccess="always" allowfullscreen="true"></embed></object><br />
+<a href="http://www.youtube.com/watch?v=i5g7_iX9tVQ&#038;hd=1">Watch me in HD instead!!</a></p>
+<p><object width="560" height="349"><param name="movie" value="http://www.youtube.com/v/CMPZJLms9tU?version=3&amp;hl=fr_FR&amp;rel=0"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/CMPZJLms9tU?version=3&amp;hl=fr_FR&amp;rel=0" type="application/x-shockwave-flash" width="560" height="349" allowscriptaccess="always" allowfullscreen="true"></embed></object><br />
+<a href="http://www.youtube.com/watch?v=CMPZJLms9tU&#038;hd=1">Watch me in HD too!!</a></p>
+<p>If you want to play with the tools you can download them here: <a href="http://dl.dropbox.com/u/5259106/mc1.zip">mini-challenge 1</a>, <a href="http://dl.dropbox.com/u/5259106/mc3.zip">mini-challenge 3</a>. </p>
+<p>Unfortunately, I couldn&#8217;t find the time to complete mini-challenge 2 and the grand challenge. I&#8217;m making this on my free time and I had to balance all kinds of commitments, so I couldn&#8217;t secure enough time to finish. Unlike previous years, though, I managed to find enough time to start ! so, in the words of Charlie Sheen: winning.</p>
+<p>So what is this about?<br />
+In the fictional Vastopolis, a mysterious infection strikes. Where does it come from and how is this transmitted? To answer these questions we have one million tweets sent by residents in the past 3 weeks. and among that million, there are quite a few about people reporting symptoms. </p>
+<p>The first thing that I did was coming up for a method to tell whether one tweet was actually about a disease or not. so I scored them. I made a list of words that were required to consider that one message related to sickness, they were fairly univoquial like sick, flu, pneumonia, etc. Each of those words added one point to a &#8220;sickness&#8221; score. Then there was a second list of more ambiguous words like &#8220;a lot&#8221;, &#8220;pain&#8221;, &#8220;fire&#8221; etc. I added one point for each of these words or phrase, if a message already contains a required word. So, there were a few false negative, a few false positive, but all in all it was fairly accurate. </p>
+<p>Fairly soon I had the idea to show the sums of all the scores of a part of the map, rather than showing each individual tweet. But originally, the sectors were quite large and I showed data by day.<br />
+ <a href="http://www.jeromecukier.net/wp-content/uploads/2011/06/earlyshot.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/06/earlyshot.png" alt="" title="earlyshot" class="aligncenter size-full wp-image-931" /></a></p>
+<p>Then, I worked with finer sectors and by 6 hours chunks. That&#8217;s how I could exhibit how people moved towards the center of the map by day, and back to its edges every night. With finer geographic details I could also see some spikes in various areas of the map during the period that I couldn&#8217;t see before, which were not necessarily related to the disease.</p>
+<p><a href="http://www.jeromecukier.net/wp-content/uploads/2011/06/nextshot.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/06/nextshot.png" alt="" title="nextshot" class="aligncenter size-full wp-image-932" /></a></p>
+<p>Eventually, I wanted to read what the tweets corresponded to, so I loaded the full text of the messages so that clicking on a square would reveal what was said at that moment. In this dataset, every spike in volume corresponds with an event that&#8217;s been added by the designers, so it was fun to discover everything happening there, from baseball games to accidents or buildings catching fire. Often, there were articles in the mini-challenge 3 dataset that would give more information about what really happened.</p>
+<p>so, what was mini-challenge 3 about? nothing less than diagnosing possible terrorist threat. This time we were given not one million tweets, but thousands of articles which were much longer than 140 characters! From reading a few sample articles, I saw that most didn&#8217;t talk about terrorism or vastopolis at all. But couldn&#8217;t they contain clues that could link 2 and 2? </p>
+<p>my first idea was to find all entities in the articles, that is names of people, or names of organizations (which follow a certain syntax) and arrange them in a network. The problem is that there were just too many names and groups (thousands of both) and I couldn&#8217;t tell from such a list which sounded suspicious. Although, a group called &#8220;network of hate&#8221; is probably not a charity. I&#8217;m sure it is possible to solve the challenge like this, but I chose another way to get my first leads.</p>
+<p>I just did like in mini-challenge 1 and scored my articles, but I gave them several scores instead of just one by comparing them to several series of words. One series, for instance, was all the proper names in Vastopolis, like names of neighborhoods, because articles <em>about</em> Vastopolis are probably more interesting. The other series corresponded to various kind of threats. </p>
+<p>That allowed me to create the scatterplot form which I used both to represent articles and to narrow the selection by selecting an area if needed. Then, as time went by I added more and more features to the tool, for instance an interface to read articles with keywords highlighted, the possibility to filter articles by keyword in addition to a graphical interface, being able to see all the articles as a list and select from that list, not just from the scatterplot, and finally the possiblity to mark articles as interesting and regroup them in another list&#8230;</p>
+<p>That was about when I felt I could run out of time, so I didn&#8217;t add the other features I had planned or worked on making a decent interface. Also, I spent a lot of time not just trying to solve the challenge, but reading all the stories that were planted in the dataset, linking them to the tweets of MC1, etc. </p>
+<p>Anyway. I quite enjoyed working on that and really, really appreciated the humongous work that went into creating the vast challenge universe. I&#8217;m looking forward seeing what other teams came up with. On a side note, it&#8217;s probably my last protovis projects as it makes sense to completely switch to D3 now&#8230;</p>
+]]></content:encoded>
+			<wfw:commentRss>/2011/07/01/vast-challenge-2011/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>VisWeek 2010: the one-minute edition.</title>
+		<link>/2010/11/04/visweek-2010-the-one-minute-edition/</link>
+		<comments>/2010/11/04/visweek-2010-the-one-minute-edition/#respond</comments>
+		<pubDate>Thu, 04 Nov 2010 15:19:46 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[conference]]></category>
+		<category><![CDATA[ieee]]></category>
+		<category><![CDATA[infovis]]></category>
+		<category><![CDATA[salt lake city]]></category>
+		<category><![CDATA[vast]]></category>
+		<category><![CDATA[vis]]></category>
+		<category><![CDATA[visweek]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=420</guid>
+		<description><![CDATA[Vis week 2010 View more presentations from Jérôme Cukier. Visweek 2010 is just over. With lectures and presentations going on in up to 4  rooms simultaneously for 6 straight and very full days, it&#8217;s impossible to see everything let alone to describe it. And even that would be ignoring all exchanges and social interactions which <a class="read-more" href="/2010/11/04/visweek-2010-the-one-minute-edition/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<div id="__ss_5667704" style="width: 425px;"><strong><a title="Vis week 2010" href="http://www.slideshare.net/vozome/vis-week-2010-5667704">Vis week 2010</a></strong><object id="__sse5667704" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="425" height="355" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="allowFullScreen" value="true" /><param name="allowScriptAccess" value="always" /><param name="src" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=visweek2010-101104100223-phpapp01&amp;stripped_title=vis-week-2010-5667704&amp;userName=vozome" /><param name="name" value="__sse5667704" /><param name="allowfullscreen" value="true" /><embed id="__sse5667704" type="application/x-shockwave-flash" width="425" height="355" src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=visweek2010-101104100223-phpapp01&amp;stripped_title=vis-week-2010-5667704&amp;userName=vozome" name="__sse5667704" allowscriptaccess="always" allowfullscreen="true"></embed></object></p>
+<div style="padding:5px 0 12px">View more <a href="http://www.slideshare.net/">presentations</a> from <a href="http://www.slideshare.net/vozome">Jérôme Cukier</a>.</div>
+</div>
+<p><a href="http://vis.computer.org/VisWeek2010/">Visweek 2010</a> is just over.</p>
+<p>With lectures and presentations going on in up to 4  rooms simultaneously for 6 straight and very full days, it&#8217;s impossible to see everything let alone to describe it. And even that would be ignoring all exchanges and social interactions which are precisely the point of visweek.</p>
+<p>So instead, I&#8217;m showing what I liked best,  one image per day.</p>
+]]></content:encoded>
+			<wfw:commentRss>/2010/11/04/visweek-2010-the-one-minute-edition/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Changing the world with data visualization</title>
+		<link>/2009/10/18/changing-the-world-with-data-visualization/</link>
+		<comments>/2009/10/18/changing-the-world-with-data-visualization/#respond</comments>
+		<pubDate>Sat, 17 Oct 2009 23:05:36 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[presentation]]></category>
+		<category><![CDATA[infovis]]></category>
+		<category><![CDATA[martin wattenberg]]></category>
+		<category><![CDATA[panel]]></category>
+		<category><![CDATA[robert kosara]]></category>
+		<category><![CDATA[sarah cohen]]></category>
+		<category><![CDATA[visweek]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=249</guid>
+		<description><![CDATA[This Wednesday, I had the privilege of talking at Visweek at a panel with Robert Kosara, Sarah Cohen and Martin Wattenberg. That was a truly great experience (at least from that side of the microphone). We all had a different approach to the subject. Sarah showed some of the stories she ran on the Washington <a class="read-more" href="/2009/10/18/changing-the-world-with-data-visualization/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>This Wednesday, I had the privilege of talking at <a href="http://vis.computer.org/VisWeek2009/">Visweek </a>at a panel with <a href="http://eagereyes.org/blog/2009/visweek-changing-the-world-with-visualization-panel">Robert Kosara</a>, <a href="http://www.cs.duke.edu/courses/cps082/fall09/visitors/cohen.html">Sarah Cohen</a> and <a href="http://www.bewitched.com/">Martin Wattenberg</a>. That was a truly great experience (at least from that side of the microphone). We all had a different approach to the subject. Sarah showed some of the stories she ran on the Washington Post where showing data visually helped expose scandals and move things forward. Martin made insightful comparisons with writing &#8211; information verbalization. As for myself I elaborated on the OECD mantra that if people had better knowledge, they could make better decisions and that data visualization can help by providing the people that knowledge, without requiring them to actually know the data.</p>
+<p>But as with panels, the most interesting part is always the discussion. And I was quite surprised to see where it was headed.</p>
+<p>I have reserves in my belief that data visualization can save the world. For instance, I have been slightly disappointed by the outcome of the sunlight foundation <a href="http://www.sunlightlabs.com/contests/appsforamerica/">apps for America contest</a>. I thought the idea was fantastic and the finalist applications were very well designed, but not necessary useful. But I had read many positive reactions on blogs on this, or on anything related to data.gov, I thought I would be the skeptical one.</p>
+<p>But during the panel, during the discussions and in the subsequent days, I really found myself in the opposite role. I think <strong>data </strong><strong>visualization can achieve much more than what we ask it to do!</strong></p>
+<p>let&#8217;s put it this way. Currently there are approximately 1.7 billion internet users. That&#8217;s a order of magnitude of  the number of people that data visualization could help. Now before the before the panel, we had a talk about the number of visits that a successful data representation gets, and we convened that 100,000 viewers for one visualization is a lot. In other words, we still have <strong>more than 99.99% of the population to reach!</strong></p>
+<p>True, we can use data visualization to inform better. But we can do more! use it to support decisions! couldn&#8217;t the subprime crisis have been avoided, for instance, if households were helped to make the right ones?</p>
+<p>Raising the level of adoption of data visualization &#8211; not increasing it, but multiplying it &#8211; should really be a challenge of the field. However, academics seem to be more concerned with designing novel solutions which could turn into published papers. Then again, if public interest for data visualization was higher, funding would be more easily available to researchers.</p>
+<p>As an aside, Excel has also been discussed. Is it the problem? Partly. If a data representation is not a canonical chart type in Excel, people are not aware it exists, and mainstream media or others with a long reach will not use it for fear that potential users may be confused. Even scatterplots, to Martin&#8217;s lament, although they are in Excel and that they are pretty straightforward to use and understand, generate that aura of fear.</p>
+<p>Another comment which I really took to heart was the regret that while data visualization was thought to computer scientists, using data analytics isn&#8217;t tought in business schools. Wouldn&#8217;t it be part of the solution?</p>
+]]></content:encoded>
+			<wfw:commentRss>/2009/10/18/changing-the-world-with-data-visualization/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

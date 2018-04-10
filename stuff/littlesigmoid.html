@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head><style>
+body{margin:0px;}
+svg {
+  //border: solid 1px #666;
+  overflow: hidden;
+}
+
+path {
+  fill: yellow;
+  stroke: #000;
+  stroke-width: .5px;
+}
+
+circle {
+  fill: #ccc;
+  stroke: #000;
+  pointer-events: none;
+}</style></head>
+<body>
+<script src="http://mbostock.github.com/d3/d3.v2.min.js?2.8.1"></script>
+<div id="chart" style="width:500px;height:250px"></div>
+<span id="legend" style="margin-left:10px">Mouseover for value</span>
+<script>
+var width = 500,
+    height = 250;
+
+var points=d3.range(0,1.01,.01);
+
+var sigmoid =function(x) {return 1/(1+Math.exp(19.55-39.109*x));}
+
+var x=d3.scale.linear().range([10,width-10]);
+var y=d3.scale.linear().range([height-10,10]);
+var sigmoidScaled = function(x) {return y(sigmoid(x));}
+var moveCircle;
+
+var line = d3.svg.line()
+    .x(x).interpolate("basis")
+    .y(sigmoidScaled);
+
+var svg = d3.select("#chart")
+  .append("svg")
+    .attr("width", width)
+    .attr("height", height)
+
+svg.append("line").attr("x1",10).attr("x2",width-10).attr("y1",height-10).attr("y2",height-10).style("stroke","black").style("stroke-width",.25)
+svg.append("line").attr("x1",x(.5)).attr("x2",x(.5)).attr("y1",10).attr("y2",height-10).style("stroke","black").style("stroke-width",.25)
+
+svg.selectAll("path").data([points])
+  .enter().append("path")
+    .style("fill","none").style("stroke-width",3)
+    .style("stroke","black")
+    .attr("d", line).on("mouseon",function() {moveCircle(d3.event.x);})    
+    ;
+
+
+
+
+svg.selectAll("rect").data(points)
+  .enter().append("rect")
+    .style("fill","white").style("opacity",.01).style("stroke","none")
+    .attr("x",x).attr("width",x(.01))
+    .attr("y",y(1)).attr("height",y(0)-y(1))
+    .on("mouseover",function(d) {update(d);})
+
+function update(d) {
+  d3.select("span").html(
+      "For "+
+      d3.format("%")(d)+
+      " chances are "+
+      d3.format("%")(sigmoid(d))
+      
+  )
+}
+
+
+
+</script>
+
+
+</body>
+</html>

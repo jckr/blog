@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+	<title>Dating age</title>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+	<style>
+		body {font-family:"Helvetica Neue";font-size:12px;font-weight: 400}
+		.background {fill:none;stroke:#e5e6e7;}
+		text {fill:#a2b2bb;}
+		rect.cluster  {fill:#eceff5;}
+		path.cluster  {stroke:#33629a;stroke-width:1px;fill:none;}
+		.fans	   {fill:#eceff5;}
+		.all	   {fill:#adb2bb;}
+
+		.axis {stroke:#5f6470;stroke-width:1px;}
+		.ticks line {stroke:#a3a8b2;stroke-width:1px;}
+		.ticks text {font-size:7px;}
+
+		.gridline  line {stroke:#e5e6e7;}
+		.gridline  text {font-size:10px;}
+
+	</style>
+</head>
+<body>
+<script src="http://d3js.org/d3.v3.min.js">
+</script>
+
+<div class="title">
+<h1> </h1>
+</div>
+<div class="container">
+  <div class="row" id="r1">
+  	<div class="span" id="chart"></div>
+  	Show me couples of <select id="partner1">
+  		<option value="total" selected>any gender</option>
+  		<option value="F" >women</option>
+  		<option value="M" >men</option> 		
+   	</select> with <select id="partner2">
+  		<option value="total" selected>any gender</option>
+  		<option value="F" >women</option>
+  		<option value="M" >men</option> 		
+   	</select> who are <select id="status">
+   		<option value="total" selected>in any form of relationship</option>
+   		<option value="2">in a relationship</option>
+   		<option value="3">in an open relationship</option>
+   		<option value="4">married</option>
+   		<option value="5">engaged</option>
+   		<option value="6">in a "complicated" situation</option>
+   		<option value="10">in a civil union</option>
+   		<option value="11">in a domestic partnership</option>
+   	</select></br>
+    <a href="#" id="flip">Flip genders</a>
+
+  </div>
+  
+</div> 
+<script src="couples.js"></script>
+<script>
+couples.init();
+</script>
+</body>
+</html>

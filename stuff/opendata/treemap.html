@@ -1,0 +1,238 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8">
+		<script type="text/javascript" src="http://mbostock.github.com/d3/d3.js?2.0.0"></script>
+		<script type="text/javascript" src="http://mbostock.github.com/d3/d3.layout.js?2.2.0"> </script>
+		<script type="text/javascript" src="https://www.google.com/jsapi?key=oTcss7ZQFHKW+iZGWOcMDFOHvZ+CmEQY"></script>
+		<script type="text/javascript">
+		  google.load("jquery", "1.6.4");
+		</script>
+		<script type='text/javascript' src='./javascripts/jquery.tipsy.js'></script>
+		<link rel="stylesheet" href="./stylesheets/tipsy.css" type="text/css" />
+		<!--<script type="text/javascript" src="http://blog.oecdfactblog.org/wp-includes/js/protovis-r3.2.js"></script>-->
+		<style>
+			@import url("http://mbostock.github.com/d3/style.css?1.10.0");
+			@import url("http://mbostock.github.com/d3/syntax.css?1.10.0");
+
+			.cell {
+			  border: solid 1px #000;
+			  font: 10px sans-serif;
+			  line-height: 12px;
+			  overflow: hidden;
+			  position: absolute;
+			  text-indent: 2px;
+			  vertical-align:middle;
+			  text-align:center;
+			}
+			.text {display:inline;vertical-align:middle;}
+			.title {//text-align:left;
+					vertical-align:top;font:bold 12px 'Frutiger Linotype, Caecilia Roman, Gill Sans, Arial, sans-serif';}
+			tr {vertical-align:middle;}
+			td {text-align:center;line-height:12px;font: 11px 'Arial, sans-serif';}
+			#header {width:800px;margin-bottom:25px;}
+
+			.nc, .nci, .csr, .nr {color:red;font: bold 12px 'Frutiger, Helvetica,  sans-serif';}
+			.rsr, .rp {color: orangered;font: bold 12px 'Frutiger, Helvetica,  sans-serif';}
+			.r {color: lightgreen;font: bold 12px 'Frutiger, Helvetica,  sans-serif';}
+
+		</style>
+
+
+	</head>
+	<body>
+		<h1>Open data: la gratuité est-elle la norme ?</h1>
+		<div id="header">
+		<a href="http://www.legifrance.gouv.fr/affichTexte.do?cidTexte=LEGITEXT000006068643&dateTexte=20110921">La loi du 17 juillet 1978</a> garantit le droit de toute personne à l'information et assure le principe de la liberté d'accès aux documents administratifs.
+		Cependant elle précise aussi de nombreuses exceptions à ce principe :</div>
+		<div id="chart">
+		</div>
+
+		<script type="text/javascript">
+var data=[{
+name:0, children:[
+  {name:1, children:[
+    {name:2, size:10},
+    {name:3, children:[
+      {name:4, size:10},
+      {name:5, size:10},
+      {name:6, size:10}
+    ]},
+    {name:7, children:[
+      {name:8, size:10}
+    ]},
+    {name:9, children:[
+      {name:10, children:[
+        {name:11, size:10},
+        {name:12, size:10},
+        {name:13, size:10},
+        {name:14, size:10},
+        {name:15, size:10},
+        {name:16, size:10},
+        {name:17, size:10},
+        {name:18, size:10}
+      ]},
+      {name:19, children:[
+        {name:20, children:[
+          {name:21, size:10},
+          {name:22, size:10},
+          {name:23, size:10}
+        ]},
+        {name:24, size:10},
+        {name:25, size:10},
+        {name:26, size:10},
+        {name:27, size:10},
+        {name:28, size:10},
+        {name:29, size:10}
+      ]},
+      {name:30, children:[
+        {name:31, size:10},
+        {name:32, size:10},
+        {name:33, size:10},
+        {name:34, size:10},
+        {name:35, size:10}
+      ]},
+      {name:58, children:[{name:36, size:10}]}
+    ]},
+  ]},
+  {name:37, children:[
+    {name:38, children:[
+      {name:39, size:10},
+      {name:40, size:10},
+      {name:41, size:10}
+    ]},
+    {name:42, children:[
+      {name:43, size:10},
+      {name:44, size:10},
+      {name:45, size:10}
+    ]},
+    {name:46, children:[
+      {name:47, children:[
+        {name:48, size:10},
+        {name:49, size:10},
+        {name:50, size:10},
+        {name:51, size:10}
+      ]},
+      {name:52, size:10},
+      {name:53, size:10}
+     // {name:53, children:[
+     //   {name:54, children:[
+     //     {name:55, size:10},
+     //     {name:56, size:10}
+     //   ]},
+     //   {name:57, size:10}
+     //]}
+    ]}
+  ]}
+]}];
+
+var dict={
+0:{title:"Documents administratifs", color:"white", tipsy:false, longtitle: ""},
+1:{title:"Non couverts par le droit à communication", color:"lightcoral", tipsy:false, longtitle: ""},
+2:{title:"documents en cours d'élaboration",  g:'w', color:"lightcoral", tipsy:true, longtitle: "<h3 class=\"nc\">Non-communicables</h3>Le droit à communication ne s'applique qu'à des documents achevés. Il ne concerne pas les documents préparatoires à une décision administrative tant qu'elle est en cours d'élaboration. Il ne s'exerce plus lorsque les documents font l'objet d'une diffusion publique.</br><a href=\"http://www.legifrance.gouv.fr/affichTexte.do?cidTexte=LEGITEXT000006068643&dateTexte=20110921#LEGIARTI000020566900\">Article 2</a>"},
+3:{title:"Demandes abusives", color:"lightcoral", tipsy:false, longtitle: ""},
+4:{title:"répétitives", color:"lightcoral",  g:'w', tipsy:true, longtitle: "<h3 class=\"nc\">Non-communicables</h3>L'administration n'est pas tenue de donner suite aux demandes abusives, en particulier par leur nombre, leur caractère répétitif ou systématique.</br><a href=\"http://www.legifrance.gouv.fr/affichTexte.do?cidTexte=LEGITEXT000006068643&dateTexte=20110921#LEGIARTI000020566900\">Article 2</a>"},
+5:{title:"nombreuses", color:"lightcoral",  g:'w', tipsy:true, longtitle: "<h3 class=\"nc\">Non-communicables</h3>L'administration n'est pas tenue de donner suite aux demandes abusives, en particulier par leur nombre, leur caractère répétitif ou systématique.</br><a href=\"http://www.legifrance.gouv.fr/affichTexte.do?cidTexte=LEGITEXT000006068643&dateTexte=20110921#LEGIARTI000020566900\">Article 2</a>"},
+6:{title:"systéma-tiques", color:"lightcoral",  g:'w', tipsy:true, longtitle: "<h3 class=\"nc\">Non-communicables</h3>L'administration n'est pas tenue de donner suite aux demandes abusives, en particulier par leur nombre, leur caractère répétitif ou systématique.</br><a href=\"http://www.legifrance.gouv.fr/affichTexte.do?cidTexte=LEGITEXT000006068643&dateTexte=20110921#LEGIARTI000020566900\">Article 2</a>"},
+7:{title:"Selon les moyens", color:"lightcoral", tipsy:false, longtitle: ""},
+8:{title:"possibilités techniques de l'administration",  g:'w', color:"lightcoral", tipsy:true, longtitle: "<h3 class=\"nc\">Non-communicables</h3>L'accès aux documents administratifs s'exerce [...] dans la limite des possibilités techniques de l'administration.</br><a href=\"http://www.legifrance.gouv.fr/affichTexte.do?cidTexte=LEGITEXT000006068643&dateTexte=20110921#LEGIARTI000006528223\">Article 4</a>"},
+9:{title:"Pas librement communicables", color:"lightcoral", tipsy:false, longtitle: ""},
+10:{title:"Catégories de documents exclus", color:"lightcoral", tipsy:false, longtitle: ""},
+11:{title:"avis du conseil d'État", color:"lightcoral", tipsy:true, longtitle: "<h3 class=\"nc\">Non-communicables</h3>Ne sont pas communicables :[...]Les avis du Conseil d'Etat et des juridictions administratives</br><a href=\"http://www.legifrance.gouv.fr/affichTexte.do?cidTexte=LEGITEXT000006068643&dateTexte=20110921#LEGIARTI000024026942\">Article 6</a>"},
+12:{title:"avis des tribunaux administratifs", color:"lightcoral", tipsy:true, longtitle: "<h3 class=\"nc\">Non-communicables</h3>Ne sont pas communicables :[...]Les avis du Conseil d'Etat et des juridictions administratives</br><a href=\"http://www.legifrance.gouv.fr/affichTexte.do?cidTexte=LEGITEXT000006068643&dateTexte=20110921#LEGIARTI000024026942\">Article 6</a>"},
+13:{title:"avis des cours d'appel administratives", color:"lightcoral", tipsy:true, longtitle: "<h3 class=\"nc\">Non-communicables</h3>Ne sont pas communicables :[...]Les avis du Conseil d'Etat et des juridictions administratives</br><a href=\"http://www.legifrance.gouv.fr/affichTexte.do?cidTexte=LEGITEXT000006068643&dateTexte=20110921#LEGIARTI000024026942\">Article 6</a>"},
+14:{title:"certains documents de la cour des comptes", color:"lightcoral", tipsy:true, longtitle: "<h3 class=\"nc\">Non-communicables</h3>Ne sont pas communicables :[...]les documents de la Cour des comptes mentionnés à l'article L. 141-10 du code des juridictions financières</br><a href=\"http://www.legifrance.gouv.fr/affichTexte.do?cidTexte=LEGITEXT000006068643&dateTexte=20110921#LEGIARTI000024026942\">Article 6</a>"},
+15:{title:"certains documents des chambres régionales des comptes", color:"lightcoral", tipsy:true, longtitle: "<h3 class=\"nc\">Non-communicables</h3>Ne sont pas communicables :[...]les documents des chambres régionales des comptes mentionnés à l'article L. 241-6 du même code [code des juridictions financières]</br><a href=\"http://www.legifrance.gouv.fr/affichTexte.do?cidTexte=LEGITEXT000006068643&dateTexte=20110921#LEGIARTI000024026942\">Article 6</a>"},
+16:{title:"certains documents de la Haute autorité de Santé", color:"lightcoral", tipsy:true, longtitle: "<h3 class=\"nc\">Non-communicables</h3>Ne sont pas communicables :[...]les documents préalables à l'élaboration du rapport d'accréditation des établissements de santé prévu à l'article L. 6113-6 du code de la santé publique, les documents préalables à l'accréditation des personnels de santé prévue à l'article L. 1414-3-3 du code de la santé publique</br><a href=\"http://www.legifrance.gouv.fr/affichTexte.do?cidTexte=LEGITEXT000006068643&dateTexte=20110921#LEGIARTI000024026942\">Article 6</a>"},
+17:{title:"certains documents de l'Autorité de la concurrence", color:"lightcoral", tipsy:true, longtitle: "<h3 class=\"nc\">Non-communicables</h3>Ne sont pas communicables :[...]les documents élaborés ou détenus par l'Autorité de la concurrence dans le cadre de l'exercice de ses pouvoirs d'enquête, d'instruction et de décision</br><a href=\"http://www.legifrance.gouv.fr/affichTexte.do?cidTexte=LEGITEXT000006068643&dateTexte=20110921#LEGIARTI000024026942\">Article 6</a>"},
+18:{title:"certains documents des établissements de santé", color:"lightcoral", tipsy:true, longtitle: "<h3 class=\"nc\">Non-communicables</h3>Ne sont pas communicables :[...]les rapports d'audit des établissements de santé mentionnés à l'article 40 de la loi n° 2000-1257 du 23 décembre 2000 de financement de la sécurité sociale pour 2001 et les documents réalisés en exécution d'un contrat de prestation de services exécuté pour le compte d'une ou de plusieurs personnes déterminées</br><a href=\"http://www.legifrance.gouv.fr/affichTexte.do?cidTexte=LEGITEXT000006068643&dateTexte=20110921#LEGIARTI000024026942\">Article 6</a>"},
+19:{title:"Posant des risques", color:"lightcoral", tipsy:false, longtitle: ""},
+20:{title:"Risques relatifs au secret", color:"lightcoral", tipsy:false, longtitle: ""},
+21:{title:"des délibérations de l'éxécutif", g:'e',color:"lightcoral", tipsy:true, longtitle: "<h3 class=\"nc\">Non-communicables</h3>Ne sont pas communicables :[...] Les autres documents administratifs dont la consultation ou la communication porterait atteinte :Au secret des délibérations du Gouvernement et des autorités responsables relevant du pouvoir exécutif ;</br><a href=\"http://www.legifrance.gouv.fr/affichTexte.do?cidTexte=LEGITEXT000006068643&dateTexte=20110921#LEGIARTI000024026942\">Article 6</a>"},
+22:{title:"de la défense nationale", color:"lightcoral", tipsy:true, longtitle: "<h3 class=\"nc\">Non-communicables</h3>Ne sont pas communicables :[...] Les autres documents administratifs dont la consultation ou la communication porterait atteinte : [...]Au secret de la défense nationale ;</br><a href=\"http://www.legifrance.gouv.fr/affichTexte.do?cidTexte=LEGITEXT000006068643&dateTexte=20110921#LEGIARTI000024026942\">Article 6</a>"},
+23:{title:"autres secrets protégés par la loi", color:"lightcoral", tipsy:true, longtitle: "<h3 class=\"nc\">Non-communicables</h3>Ne sont pas communicables :[...] Les autres documents administratifs dont la consultation ou la communication porterait atteinte : [...]sous réserve de l'article L. 124-4 du code de l'environnement, aux autres secrets protégés par la loi. ;</br><a href=\"http://www.legifrance.gouv.fr/affichTexte.do?cidTexte=LEGITEXT000006068643&dateTexte=20110921#LEGIARTI000024026942\">Article 6</a>"},
+24:{title:"pour la politique extérieure", g:'e', color:"lightcoral", tipsy:true, longtitle: "<h3 class=\"nc\">Non-communicables</h3>Ne sont pas communicables :[...] Les autres documents administratifs dont la consultation ou la communication porterait atteinte : [...]A la conduite de la politique extérieure de la France</br><a href=\"http://www.legifrance.gouv.fr/affichTexte.do?cidTexte=LEGITEXT000006068643&dateTexte=20110921#LEGIARTI000024026942\">Article 6</a>"},
+25:{title:"pour la sûreté de l'État", color:"lightcoral", tipsy:true, longtitle: "<h3 class=\"nc\">Non-communicables</h3>Ne sont pas communicables :[...] Les autres documents administratifs dont la consultation ou la communication porterait atteinte : [...]A la sûreté de l'Etat</br><a href=\"http://www.legifrance.gouv.fr/affichTexte.do?cidTexte=LEGITEXT000006068643&dateTexte=20110921#LEGIARTI000024026942\">Article 6</a>"},
+26:{title:"pour la sécurité des personnes", color:"lightcoral", tipsy:true, longtitle: "<h3 class=\"nc\">Non-communicables</h3>Ne sont pas communicables :[...] Les autres documents administratifs dont la consultation ou la communication porterait atteinte : [...]à la sécurité publique ou à la sécurité des personnes</br><a href=\"http://www.legifrance.gouv.fr/affichTexte.do?cidTexte=LEGITEXT000006068643&dateTexte=20110921#LEGIARTI000024026942\">Article 6</a>"},
+27:{title:"pour la monnaie ou le crédit public", g:'e', color:"lightcoral", tipsy:true, longtitle: "<h3 class=\"nc\">Non-communicables</h3>Ne sont pas communicables :[...] Les autres documents administratifs dont la consultation ou la communication porterait atteinte : [...]A la monnaie et au crédit public</br><a href=\"http://www.legifrance.gouv.fr/affichTexte.do?cidTexte=LEGITEXT000006068643&dateTexte=20110921#LEGIARTI000024026942\">Article 6</a>"},
+28:{title:"pour des procédures judiciaires en cours", color:"lightcoral", tipsy:true, longtitle: "<h3 class=\"nc\">Non-communicables</h3>Ne sont pas communicables :[...] Les autres documents administratifs dont la consultation ou la communication porterait atteinte : [...]Au déroulement des procédures engagées devant les juridictions ou d'opérations préliminaires à de telles procédures, sauf autorisation donnée par l'autorité compétente</br><a href=\"http://www.legifrance.gouv.fr/affichTexte.do?cidTexte=LEGITEXT000006068643&dateTexte=20110921#LEGIARTI000024026942\">Article 6</a>"},
+29:{title:"pour les infractions fiscales ou douanières", color:"lightcoral", tipsy:true, longtitle: "<h3 class=\"nc\">Non-communicables</h3>Ne sont pas communicables :[...] Les autres documents administratifs dont la consultation ou la communication porterait atteinte : [...]A la recherche, par les services compétents, des infractions fiscales et douanières</br><a href=\"http://www.legifrance.gouv.fr/affichTexte.do?cidTexte=LEGITEXT000006068643&dateTexte=20110921#LEGIARTI000024026942\">Article 6</a>"},
+30:{title:"Seulement à l'intéressé", color:"lightcoral", tipsy:false, longtitle: ""},
+31:{title:"vie privée", color:"lightcoral", tipsy:true, longtitle: "<h3 class=\"nci\">Communicables qu'à l'intéressé</h3>II.-Ne sont communicables qu'à l'intéressé les documents administratifs :-dont la communication porterait atteinte à la protection de la vie privée</br><a href=\"http://www.legifrance.gouv.fr/affichTexte.do?cidTexte=LEGITEXT000006068643&dateTexte=20110921#LEGIARTI000024026942\">Article 6</a>"},
+32:{title:"secret médical", color:"lightcoral", tipsy:true, longtitle: "<h3 class=\"nci\">Communicables qu'à l'intéressé</h3>II.-Ne sont communicables qu'à l'intéressé les documents administratifs :-dont la communication porterait atteinte [...] au secret médical</br><a href=\"http://www.legifrance.gouv.fr/affichTexte.do?cidTexte=LEGITEXT000006068643&dateTexte=20110921#LEGIARTI000024026942\">Article 6</a>"},
+33:{title:"secret commercial", color:"lightcoral", tipsy:true, longtitle: "<h3 class=\"nci\">Communicables qu'à l'intéressé</h3>II.-Ne sont communicables qu'à l'intéressé les documents administratifs :-dont la communication porterait atteinte [...] au secret en matière commerciale et industrielle</br><a href=\"http://www.legifrance.gouv.fr/affichTexte.do?cidTexte=LEGITEXT000006068643&dateTexte=20110921#LEGIARTI000024026942\">Article 6</a>"},
+34:{title:"jugement sur une personne identifiable", color:"lightcoral", tipsy:true, longtitle: "<h3 class=\"nci\">Communicables qu'à l'intéressé</h3>II.-Ne sont communicables qu'à l'intéressé les documents administratifs : [...] portant une appréciation ou un jugement de valeur sur une personne physique, nommément désignée ou facilement identifiable</br><a href=\"http://www.legifrance.gouv.fr/affichTexte.do?cidTexte=LEGITEXT000006068643&dateTexte=20110921#LEGIARTI000024026942\">Article 6</a>"},
+35:{title:"pouvent porter préjudice à une personne identifiable", color:"lightcoral", tipsy:true, longtitle: "<h3 class=\"nci\">Communicables qu'à l'intéressé</h3>II.-Ne sont communicables qu'à l'intéressé les documents administratifs : [...] faisant apparaître le comportement d'une personne, dès lors que la divulgation de ce comportement pourrait lui porter préjudice</br><a href=\"http://www.legifrance.gouv.fr/affichTexte.do?cidTexte=LEGITEXT000006068643&dateTexte=20110921#LEGIARTI000024026942\">Article 6</a>"},
+36:{title:"soumis aux droits d'auteur", color:"lightcoral", tipsy:true, longtitle: "<h3 class=\"csr\">Communicables sous réserve</h3>Les documents administratifs sont communiqués sous réserve des droits de propriété littéraire et artistique.</br><a href=\"http://www.legifrance.gouv.fr/affichTexte.do?cidTexte=LEGITEXT000006068643&dateTexte=20110921#LEGIARTI000006528239\">Article 9</a>"},
+37:{title:"Couverts par le droit à communication", color:"white", tipsy:false, longtitle: ""},
+38:{title:"Pas réutilisables", color:"coral", tipsy:false, longtitle: ""},
+39:{title:"mission à caractère industriel ou commercial",  g:'w', color:"coral", tipsy:true, longtitle: "<h3 class=\"nr\">Non réutilisables</h3>Ne sont pas considérées comme des informations publiques […] les informations contenues dans des documents [...] produits ou reçus par les administrations mentionnées à l'article 1er dans l'exercice d'une mission de service public à caractère industriel ou commercial</br><a href=\"http://www.legifrance.gouv.fr/affichTexte.do?cidTexte=LEGITEXT000006068643&dateTexte=20110921#LEGIARTI000020566918\">Article 10</a>"},
+40:{title:"sur lesquels d'autres ont des droits", color:"coral", tipsy:true, longtitle: "<h3 class=\"nr\">Non réutilisables</h3>Ne sont pas considérées comme des informations publiques […] les informations contenues dans des documents [...] sur lesquels des tiers détiennent des droits de propriété intellectuelle</br><a href=\"http://www.legifrance.gouv.fr/affichTexte.do?cidTexte=LEGITEXT000006068643&dateTexte=20110921#LEGIARTI000020566918\">Article 10</a>"},
+41:{title:"si un droit d'exclusivité a été accordé",  g:'w', color:"coral", tipsy:true, longtitle: "<h3 class=\"nr\">Non réutilisables</h3>La réutilisation d'informations publiques ne peut faire l'objet d'un droit d'exclusivité accordé à un tiers, sauf si un tel droit est nécessaire à l'exercice d'une mission de service public.</br><a href=\"http://www.legifrance.gouv.fr/affichTexte.do?cidTexte=LEGITEXT000006068643&dateTexte=20110921#LEGIARTI000006528248\">Article 14</a>"},
+42:{title:"À la discrétion des auteurs", color:"coral", tipsy:false, longtitle: ""},
+43:{title:"institutions de recherche", g:'w', color:"coral", tipsy:true, longtitle: "<h3 class=\"rsr\">Réutilisables sous réserve</h3>Par dérogation au présent chapitre, les conditions dans lesquelles les informations peuvent être réutilisées sont fixées, le cas échéant, par les administrations mentionnées aux a et b du présent article lorsqu'elles figurent dans des documents produits ou reçus par :a) Des établissements et institutions d'enseignement et de recherche ;</br><a href=\"http://www.legifrance.gouv.fr/affichTexte.do?cidTexte=LEGITEXT000006068643&dateTexte=20110921#LEGIARTI000020566916\">Article 11</a>"},
+44:{title:"institutions d'enseignement", g:'w', color:"coral", tipsy:true, longtitle: "<h3 class=\"rsr\">Réutilisables sous réserve</h3>Par dérogation au présent chapitre, les conditions dans lesquelles les informations peuvent être réutilisées sont fixées, le cas échéant, par les administrations mentionnées aux a et b du présent article lorsqu'elles figurent dans des documents produits ou reçus par :a) Des établissements et institutions d'enseignement et de recherche ;</br><a href=\"http://www.legifrance.gouv.fr/affichTexte.do?cidTexte=LEGITEXT000006068643&dateTexte=20110921#LEGIARTI000020566916\">Article 11</a>"},
+45:{title:"organismes culturels", g:'w', color:"coral", tipsy:true, longtitle: "<h3 class=\"rsr\">Réutilisables sous réserve</h3>Par dérogation au présent chapitre, les conditions dans lesquelles les informations peuvent être réutilisées sont fixées, le cas échéant, par les administrations mentionnées aux a et b du présent article lorsqu'elles figurent dans des documents produits ou reçus par : [...]b) Des établissements, organismes ou services culturels.</br><a href=\"http://www.legifrance.gouv.fr/affichTexte.do?cidTexte=LEGITEXT000006068643&dateTexte=20110921#LEGIARTI000020566916\">Article 11</a>"},
+46:{title:"Réutilisables", color:"white", tipsy:false, longtitle: ""},
+47:{title:"Sauf si", color:"coral", tipsy:false, longtitle: ""},
+48:{title:"les données sont altérées", g:'e', color:"coral", tipsy:true, longtitle: "<h3 class=\"rsr\">Réutilisables sous réserve</h3>Sauf accord de l'administration, la réutilisation des informations publiques est soumise à la condition que ces dernières ne soient pas altérées</br><a href=\"http://www.legifrance.gouv.fr/affichTexte.do?cidTexte=LEGITEXT000006068643&dateTexte=20110921#LEGIARTI000006528243\">Article 12</a>"},
+49:{title:"la source et la date ne sont pas citées",  g:'e', color:"coral", tipsy:true, longtitle: "<h3 class=\"rsr\">Réutilisables sous réserve</h3>Sauf accord de l'administration, la réutilisation des informations publiques est soumise à la condition que [...] leurs sources et la date de leur dernière mise à jour soient mentionnées</br><a href=\"http://www.legifrance.gouv.fr/affichTexte.do?cidTexte=LEGITEXT000006068643&dateTexte=20110921#LEGIARTI000006528243\">Article 12</a>"},
+50:{title:"le sens est dénaturé", color:"coral", tipsy:true, longtitle: "<h3 class=\"rsr\">Réutilisables sous réserve</h3>Sauf accord de l'administration, la réutilisation des informations publiques est soumise à la condition [...] que leur sens ne soit pas dénaturé</br><a href=\"http://www.legifrance.gouv.fr/affichTexte.do?cidTexte=LEGITEXT000006068643&dateTexte=20110921#LEGIARTI000006528243\">Article 12</a>"},
+51:{title:"données personnelles non anonymisées, sans consentement",  g:'e',color:"coral", tipsy:true, longtitle: "<h3 class=\"rsr\">Réutilisables sous réserve</h3>Les informations publiques comportant des données à caractère personnel peuvent faire l'objet d'une réutilisation soit lorsque la personne intéressée y a consenti, soit si l'autorité détentrice est en mesure de les rendre anonymes ou, à défaut d'anonymisation, si une disposition législative ou réglementaire le permet.</br><a href=\"http://www.legifrance.gouv.fr/affichTexte.do?cidTexte=LEGITEXT000006068643&dateTexte=20110921#LEGIARTI000020566920\">Article 13</a>"},
+52:{title:"avec redevance", color:"powderblue", g:'n', tipsy:true, longtitle: "<h3 class=\"rp\">Réutilisables avec redevance</h3>La réutilisation d'informations publiques peut donner lieu au versement de redevances.</p>Pour l'établissement des redevances, l'administration qui a produit ou reçu les documents contenant des informations publiques susceptibles d'être réutilisées tient compte des coûts de mise à disposition des informations, notamment, le cas échéant, du coût d'un traitement permettant de les rendre anonymes.</p>L'administration peut aussi tenir compte des coûts de collecte et de production des informations et inclure dans l'assiette de la redevance une rémunération raisonnable de ses investissements comprenant, le cas échéant, une part au titre des droits de propriété intellectuelle. Dans ce cas, l'administration doit s'assurer que les redevances sont fixées de manière non discriminatoire et que leur produit total, évalué sur une période comptable appropriée en fonction de l'amortissement des investissements, ne dépasse pas le total formé, d'une part, des coûts de collecte, de production et de mise à disposition des informations et, d'autre part, le cas échéant, de la rémunération définie au présent alinéa.</p>Lorsque l'administration qui a produit ou reçu des documents contenant des informations publiques utilise ces informations dans le cadre d'activités commerciales, elle ne peut en facturer la réutilisation aux autres opérateurs à un coût supérieur à celui qu'elle s'impute, ni leur imposer des conditions moins favorables que celles qu'elle s'applique à elle-même.</br><a href=\"http://www.legifrance.gouv.fr/affichTexte.do?cidTexte=LEGITEXT000006068643&dateTexte=20110921#LEGIARTI000020566923\">Article 15</a>"},
+53:{title:"gratuits", color:"white", tipsy:true, longtitle: "<h3 class=\"r\">Réutilisables gratuitement</h3>"},
+54:{title:"demandés", color:"white", tipsy:false, longtitle: ""},
+55:{title:"refusés", color:"orange", tipsy:true, longtitle: ""},
+56:{title:"acceptés", color:"white", tipsy:true, longtitle: ""},
+57:{title:"disponibles", color:"white", tipsy:true, longtitle: "<h3 class=\"r\">Réutilisables gratuitement</h3>"},
+58:{title:"Sous réserve",color:"lightcoral",tipsy:false,longtitle:""}
+};
+
+
+		var w = 800,
+		    h = 800,
+		    color = d3.scale.category20c();
+
+
+
+		var treemap = d3.layout.treemap()
+		    .size([w, h])
+			.padding([20,5,5,5])
+		    .value(function(d) { return d.size; });
+
+		var div = d3.select("#chart").append("div")
+		    .style("position", "relative")
+		    .style("width", w + "px")
+		    .style("height", h + "px");
+
+		  div.data(data).selectAll("div")
+		      .data(treemap.nodes)
+		    .enter().append("div")
+		     	.attr("class","cell")
+		     	.attr("id",function(d) {return d.name;})
+		     	.attr("title",function(d) {return dict[d.name].longtitle;})
+		     // .attr("class", function(d) {return d.children ? "cell title" :"cell";})
+		      .style("border", function(d) { return "solid 1px "+d3.rgb(dict[d.name].color).darker(); })
+		      .style("background", function(d) { var c=dict[d.name].color;return d.children ? d3.rgb(c).brighter():c;})
+		     // .style("opacity", function(d) { return d.children ? .2 : 1; })
+
+
+		      .call(cell)
+		      .append("table")
+		      	.append("tr").style("height", function(d) {return (d.dy-5)+"px";}).attr("class", function(d) {return d.children?"title":"";})
+		      		.append("td").style("width", function(d) {return (d.dx-5)+"px";}).attr("class", function(d) {return d.children?"title":"";})
+		      			.text(function(d) { return dict[d.name].title; });
+
+
+		d3.keys(dict).forEach(function(d) {if (dict[d].tipsy) {
+		$('#'+d).tipsy({html: true, gravity:dict[d].g?dict[d].g:'s' });}})
+
+		function cell() {
+		  this
+		      .style("left", function(d) { return d.x + "px"; })
+		      .style("top", function(d) { return d.y + "px"; })
+		      .style("width", function(d) { return d.dx - 5 + "px"; })
+		      .style("height", function(d) { return d.dy - 5 + "px"; });
+}
+		</script>
+	</body>
+</html>

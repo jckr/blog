@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Making-of: the map of congress equality</title>
+	<atom:link href="http://localhost/2012/05/24/making-of-the-map-of-congress-equality/feed/" rel="self" type="application/rss+xml" />
+	<link>/2012/05/24/making-of-the-map-of-congress-equality/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>By: mehmet alp</title>
+		<link>/2012/05/24/making-of-the-map-of-congress-equality/#comment-329</link>
+		<dc:creator><![CDATA[mehmet alp]]></dc:creator>
+		<pubDate>Fri, 08 Feb 2013 08:22:07 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1297#comment-329</guid>
+		<description><![CDATA[thank you.. great tutorial.]]></description>
+		<content:encoded><![CDATA[<p>thank you.. great tutorial.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: oscar6echo</title>
+		<link>/2012/05/24/making-of-the-map-of-congress-equality/#comment-328</link>
+		<dc:creator><![CDATA[oscar6echo]]></dc:creator>
+		<pubDate>Fri, 04 Jan 2013 01:09:49 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1297#comment-328</guid>
+		<description><![CDATA[In case it is still relevant.
+You can get a shape file a country&#039; administrative areas from http://www.gadm.org/country. For France, at least, it very accurately gives 5 (!) admin levels (region, departement, and then I don&#039;t know...) You can then simplify (if necessary) it using mapshaper.com/test/MapShaper.swf (~80% reduction is hardly visible), and turn it to a geoJSON/totpoJSON file with ogr2ogr (cf http://bost.ocks.org/mike/map/).
+Hope this helps.]]></description>
+		<content:encoded><![CDATA[<p>In case it is still relevant.<br />
+You can get a shape file a country&#8217; administrative areas from <a href="http://www.gadm.org/country" rel="nofollow">http://www.gadm.org/country</a>. For France, at least, it very accurately gives 5 (!) admin levels (region, departement, and then I don&#8217;t know&#8230;) You can then simplify (if necessary) it using mapshaper.com/test/MapShaper.swf (~80% reduction is hardly visible), and turn it to a geoJSON/totpoJSON file with ogr2ogr (cf <a href="http://bost.ocks.org/mike/map/" rel="nofollow">http://bost.ocks.org/mike/map/</a>).<br />
+Hope this helps.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

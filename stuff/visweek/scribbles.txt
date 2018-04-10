@@ -1,0 +1,256 @@
+
+var box=[[0,0,0],[5,0,0],[0,0,10],[5,0,10],[0,1,0],[5,1,0],[0,1,10],[5,1,10]];
+var flipped=false;
+
+var k=0.707106781;
+	var depth=k/2;
+	var u=10;
+	var a=u*depth;
+var maxDim=10;
+
+var xScaleX=d3.scale.linear().domain([0,maxDim]).range([0,maxDim*u]),
+	xScaleZ=d3.scale.linear().domain([0,maxDim]).range([maxDim*a,0]),
+	yScaleY=d3.scale.linear().domain([0,maxDim]).range([50+maxDim*u,50]),
+	yScaleZ=d3.scale.linear().domain([0,maxDim]).range([50,50+maxDim*a]);
+	
+function renderX(vector) {return xScaleX(vector[0])+xScaleZ(vector[2]);}
+function renderY(vector) {return yScaleY(vector[1])+yScaleZ(vector[2]);}
+
+
+
+
+
+		var s=u+2*a;
+		var nb=1000;
+
+		var maxDim=Math.ceil(Math.sqrt(nb));
+		var cubeEdge=Math.ceil(Math.pow(nb,1/3));
+
+		var attrProba=[[15,15,10,7,6,4,2,2,2],
+			       [1,1,1,1,1,1,1,1,1],
+			       [3,5,2,4,6,4,2,1,5],
+			       [20,20,20,20,5,5,5,5,5],
+		               [1,2,3,4,5,6,7,8,9],
+			       [60,50,40,20,10,30,70,80,90]]
+
+		attrProba=attrProba.map(function(v) {return v.map(function(d) {return d/d3.sum(v);});});
+
+		var frontFace=0, topFace=1, rightFace=2, leftFace=3, backFace=5,bottomFace=4;
+
+		function detAttr(arg,attr) {var i=0;p=attrProba[attr][0];while(i<attrProba[attr].length){if(arg<p){return i;}else{p+=attrProba[attr][++i];}}}
+		function showData() {data.forEach(function(d) {console.log(d.id+" "+d.attr[0]+" "+d.attr[1]+" "+d.attr[2]+" "+d.attr[3]+" "+d.attr[4]+" "+d.attr[5]);})}
+		function showMatrix() {data.forEach(function(i,d) {console.log(matrix[0][d]+" "+matrix[1][d]+" "+matrix[2][d]+" "+matrix[3][d]+" "+matrix[4][d]+" "+matrix[5][d]+" "+matrix[6][d]);})}
+
+		var data=d3.range(nb).map(function(d) {return {'attr':d3.range(6).map(function(d) {return detAttr(Math.random(),d);}), 'id':d};})
+		//data=[{id:0,attr:[0,2,5,1,7,6]},{id:1,attr:[0,3,4,0,3,0]},{id:2,attr:[0,3,4,8,7,4]},{id:3,attr:[0,2,4,0,6,8]},{id:4,attr:[1,3,4,8,3,2]},{id:5,attr:[0,2,5,3,5,8]},{id:6,attr:[0,2,4,3,5,3]},{id:7,attr:[0,2,4,3,2,8]}];
+
+		var matrix=d3.range(7).map(function(c) {return d3.range(nb).map(function(r) {return r;});})
+		var pos=data.map(function(d) {return {id:d.id,x:0,y:0,z:0,order:-1};});
+
+
+
+function updateBox(angle){
+var cos=Math.cos(angle),sin=Math.sin(angle);
+box=box.map(function(d) {return [d[0],cos*d[1]-sin*d[2],sin*d[1]+cos*d[2]];});
+}
+
+function drawBrick() {
+var ax=renderX(box[0]),ay=renderY(box[0]),
+    bx=renderX(box[1]),by=renderY(box[1]),
+    cx=renderX(box[2]),cy=renderY(box[2]),
+    dx=renderX(box[3]),dy=renderY(box[3]),
+    ex=renderX(box[4]),ey=renderY(box[4]),
+    fx=renderX(box[5]),fy=renderY(box[5]),
+    gx=renderX(box[6]),gy=renderY(box[6]),
+    hx=renderX(box[7]),hy=renderY(box[7]);
+    
+    function pathTop(angle)=
+    
+    if (flipped^(gy<cy)) {
+    	if (gy>cy) {
+    		
+    		backFace.attr("d","M "+ax+" "+ay+", L "+bx+" "+by+", L "+fx+" "+fy+", L "+ex+" "+ey+" Z");
+    	} else 	   {
+    		
+    		frontFace.attr("d","M "+cx+" "+cy+", L "+dx+" "+dy+", L "+hx+" "+hy+", L "+gx+" "+gy+" Z");
+    	}
+    }
+    
+    flipped=gy<cy;
+    
+    topFace.transition().attr("d","M "+ex+" "+ey+", L "+fx+" "+fy+", L "+hx+" "+hy+", L "+gx+" "+gy+" Z");
+    rightFace.transition().attr("d","M "+bx+" "+by+", L "+fx+" "+fy+", L "+hx+" "+hy+", L "+dx+" "+dy+" Z");
+    frontFace.transition().attr("d","M "+cx+" "+cy+", L "+dx+" "+dy+", L "+hx+" "+hy+", L "+gx+" "+gy+" Z");
+    backFace.transition().attr("d","M "+ax+" "+ay+", L "+bx+" "+by+", L "+fx+" "+fy+", L "+ex+" "+ey+" Z");
+    if (flipped) {backFace.style("visibility","hidden");frontFace.style("visibility","visible");} else 
+    		 {backFace.style("visibility","visible");frontFace.style("visibility","hidden");}
+}
+
+
+
+function poorManRotation(steps) {
+var increment=Math.PI/(2*steps);
+d3.range(steps).forEach(function() {setTimeOut(function() {updateBox(increment);drawBrick();}, 250/steps);});
+}
+
+var mode=0;
+
+		cols=["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf"];
+		var vis=d3.select("body").append("svg:svg").attr("width",1500).attr("height",900)
+var brick=vis.append("svg:g").attr("transform","translate(3.5355339050000225, 529.6015510550001)").style("stroke","black");
+var topFace=brick.append("svg:path").style("fill","#fff");
+var frontFace=brick.append("svg:path").style("fill","#eee");
+var rightFace=brick.append("svg:path").style("fill","#aaa");
+var backFace=brick.append("svg:path").style("fill","#fff");
+var bottomFace=brick.append("svg:path").style("fill","#eee");
+var leftFace=brick.append("svg:path").style("fill","#aaa");
+
+
+
+function slabify() {
+// creating the slab
+
+bigCube.style("visibility", "hidden");
+slab=vis.append("svg:g");
+
+	var posSlab=pos;
+	posSlab.sort(function(a,b) {return a.order-b.order;});
+
+// slab cube matrix is now sorted by z then by x.
+// now we are going to isolate the faces we need.
+//
+// normally, the slab looks like this:
+//
+//         --------------
+//       /              /|
+//      /              //
+//     /              //
+//    /              //
+//   /      ________//
+//  /______/|______|/
+//  |_____|/
+
+// first to be drawn: frontFaces of the lower row.
+
+var zmax=d3.max(pos,function(d) {return d.z;});
+var xmax=d3.max(pos,function(d) {return x.z;});
+
+var lowerRowIds=pos.filter(function(d) {return d.z==zmax;}).map(function(d) {return [d.id,0];});
+
+// note: lowerRow[lowerRow.length-1] is one corner of the slab.
+
+// next: frontFaces of the next row.
+var nextRowIds=pos.filter(function(d) {return (d.z==(zmax-1))&&(d.x>lowerRow.length);});.map(function(d) {return [d.id,0];})
+
+
+// next: rightFaces of the right row
+var rightColIds=pos.filter(function(d) {return d.x==xmax;}).map(function(d) {return [d.id,0];});
+
+// then, we'll draw backFaces of the top row
+var topRowIds=pos.filter(function(d) {return d.z==0;}).map(function(d) {return [d.id,0];});
+
+// and finally: topFaces of all cubes
+allCubesIds=pos.map(function(d) {return [d.id,0];});
+
+// now draw them motherfuckers
+
+
+function topFacePath(angle,i) {
+	var x=i%maxDim, z=~~(i/maxDim),s=Math.sin(angle),c=Math.cos(angle);
+	var ex=renderX([x,c-s*z,s+c*z]), ey=renderY([x,c-s*z,s+c*z]),
+	    fx=renderX([(x+1),s*z,s+c*z]),fy=renderY([(x+1),c-s*z,s+c*z]),
+	    hx=renderX([(x+1),c-s*(z+1),s+c*(z+1)]),hy=renderY([(x+1),c-s*(z+1),s+c*(z+1)]),
+	    gx=renderX([x,c-s*(z+1),s+c*(z+1)]),gy=renderY([x,c-s*(z+1),s+c*(z+1)]);
+    
+	return ("M "+ex+" "+ey+" L "+fx+" "+fy+" L "+hx+" "+hy+" L "+gx+" "+gy+" Z");
+}
+function topFaceFill(angle,i) {return data[allCubesIds[i]].attr[topFace];}
+
+function lowerRowFrontFacePath(angle,i) {
+	var x=i, z=zmax,s=Math.sin(angle),c=Math.cos(angle);
+	var cx=renderX([x,-s*(z+1), c*(z+1)]),cy=renderY([x,-s*(z+1), c*(z+1)]),
+	    dx=renderX([x+1,-s*(z+1), c*(z+1)]),dy=renderY([x+1,-s*(z+1), c*(z+1)]),
+	    hx=renderX([(x+1),c-s*(z+1),s+c*(z+1)]),hy=renderY([(x+1),c-s*(z+1),s+c*(z+1)]),
+	    gx=renderX([x,c-s*(z+1),s+c*(z+1)]),gy=renderY([x,c-s*(z+1),s+c*(z+1)]);
+	    
+	return ("M "+cx+" "+cy+" L "+dx+" "+dy+" L "+hx+" "+hy+" L "+gx+" "+gy+" Z");
+}
+function lowerRowFrontFaceFill(angle,i) {return data[lowerRowIds[i]].attr[frontFace];}
+
+
+function nextRowFrontFace(angle,i) {
+	var x=i+lowerRowIds.length;, z=zmax-1,s=Math.sin(angle),c=Math.cos(angle);
+	var cx=renderX([x,-s*(z+1), c*(z+1)]),cy=renderY([x,-s*(z+1), c*(z+1)]),
+	    dx=renderX([x+1,-s*(z+1), c*(z+1)]),dy=renderY([x+1,-s*(z+1), c*(z+1)]),
+	    hx=renderX([(x+1),c-s*(z+1),s+c*(z+1)]),hy=renderY([(x+1),c-s*(z+1),s+c*(z+1)]),
+	    gx=renderX([x,c-s*(z+1),s+c*(z+1)]),gy=renderY([x,c-s*(z+1),s+c*(z+1)]);
+	    
+	return ("M "+cx+" "+cy+" L "+dx+" "+dy+" L "+hx+" "+hy+" L "+gx+" "+gy+" Z");
+}
+function frontFaceNextRowFill(angle,i) {return data[nextRowIds[i]].attr[frontFace];}
+
+function rightColRightFacePath(angle,i) {
+	var x=xmax, z=i,s=Math.sin(angle),c=Math.cos(angle);
+	var bx=renderX([x+1,-s*z, c*z)]),by=renderY([x+1,-s*z, c*z]),
+	    dx=renderX([x+1,-s*(z+1), c*(z+1)]),dy=renderY([x+1,-s*(z+1), c*(z+1)]),
+	    hx=renderX([(x+1),c-s*(z+1),s+c*(z+1)]),hy=renderY([(x+1),c-s*(z+1),s+c*(z+1)]),
+	    fx=renderX([(x+1),s*z,s+c*z]),ey=renderY([(x+1),c-s*z,s+c*z]),
+	    
+	return ("M "+bx+" "+by+" L "+dx+" "+dy+" L "+hx+" "+hy+" L "+fx+" "+fy+" Z");
+}
+
+function rightColRightFaceFill(angle,i) {return data[rightColIds[i]].attr[rightFace];}
+
+function cornerRightFacePath(angle,i) {
+	var x=lowerRowIds.length-1;var z=zmax;
+	,s=Math.sin(angle),c=Math.cos(angle);
+		var bx=renderX([x+1,-s*z, c*z)]),by=renderY([x+1,-s*z, c*z]),
+		    dx=renderX([x+1,-s*(z+1), c*(z+1)]),dy=renderY([x+1,-s*(z+1), c*(z+1)]),
+		    hx=renderX([(x+1),c-s*(z+1),s+c*(z+1)]),hy=renderY([(x+1),c-s*(z+1),s+c*(z+1)]),
+		    fx=renderX([(x+1),s*z,s+c*z]),ey=renderY([(x+1),c-s*z,s+c*z]),
+		    
+
+	return ("M "+bx+" "+by+" L "+dx+" "+dy+" L "+hx+" "+hy+" L "+fx+" "+fy+" Z");
+}
+function cornerRightFaceFill(angle,i) {return data[lowerRowIds[lowerRowIds.length-1]].attr[rightFace];}
+
+function topRowBackFacePath(angle,i) {
+	var x=i, z=0,s=Math.sin(angle),c=Math.cos(angle);
+	var bx=renderX([x,-s*z, c*z)]),by=renderY([x,-s*z, c*z]),
+	    bx=renderX([x+1,-s*z, c*z)]),by=renderY([x+1,-s*z, c*z]),
+	    cx=renderX([x,-s*(z+1), c*(z+1)]),cy=renderY([x,-s*(z+1), c*(z+1)]),   
+	    fx=renderX([(x+1),s*z,s+c*z]),ey=renderY([(x+1),c-s*z,s+c*z]),
+	    
+	return ("M "+ax+" "+ay+" L "+bx+" "+by+" L "+fx+" "+fy+" L "+ex+" "+ey+" Z");
+}
+
+function topRowBackFaceFill(angle,i) {return data[lowerRowIds[lowerRowIds.length-1]].attr[backFace];}
+
+
+var lowerRowFrontFaces=slab.data(lowerRowIds.map(function() {return 0;})).enter().append("svg:path").attr("d",frontFaceLowerRowPath).style("fill",frontFaceLowerRowFill);
+var nextRowFrontFaces=slab.data(nextRowIds.map(function() {return 0;})).enter().append("svg:path").attr("d",nextFaceLowerRowPath).style("fill",nextFaceLowerRowFill);
+var topRowBackFaces=slab.data(topRowIds.map(function() {return 0;})).enter().append("svg:path").attr("d",topRowBackFacePath).style("fill",topRowBackFaceFill);
+var cornerRightFace=slab.data([0]).enter().append("svg:path").attr("d",cornerRightFacePath).style("fill",cornerRightFaceFill);
+var rightColRightFaces=slab.data(rightColIds.map(function() {return 0;})).enter().append("svg:path").attr("d",rightColRightFacePath).style("fill",rightColRightFaceFill);
+var topFaces=slab.data(allCubesIds.map(function() {return 0;})).enter().append("svg:path").attr("d",topFacePath).style("fill","topFaceFill);
+
+// now here goes nothing
+
+lowerRowFrontFaces.data(lowerRowIds.map(function() {return -Math.PI/2;}).transition().attr("d",frontFaceLowerRowPath);
+nextRowFrontFaces.data(nextRowIds.map(function() {return -Math.PI/2;})).transition().attr("d",nextFaceLowerRowPath);
+topRowBackFaces.data(topRowIds.map(function() {return -Math.PI/2;})).transition().attr("d",topRowBackFacePath);
+cornerRightFace.data([-Math.PI/2]).transition().attr("d",cornerRightFacePath);
+rightColRightFaces.data(rightColIds.map(function() {return -Math.PI/2;})).transition().attr("d",rightColRightFacePath);
+topFaces.data(allCubesIds.map(function() {return -Math.PI/2;})).transition().attr("d",topFacePath);
+
+// back to normal?
+
+function revert() {var dummy=backFace;
+backFace=bottomFace;bottomFace=frontFace;frontFace=topFace;topFace=dummy;
+colorCubes();
+bigCube.style("visibility","visible");
+slab.remove();
+}
+
+setTimeout(revert, 300);
+}

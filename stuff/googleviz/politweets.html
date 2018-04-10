@@ -1,0 +1,293 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<script type="text/javascript" src="d3.js"></script>
+		<script type="text/javascript" src="d3.time.js"></script>
+		<script type="text/javascript" src="scored.js"></script>
+		<script type="text/javascript" src="corpora.js"></script>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+
+		<script type="text/javascript">
+
+				  var _gaq = _gaq || [];
+				  _gaq.push(['_setAccount', 'UA-27690071-1']);
+				  _gaq.push(['_setDomainName', 'jeromecukier.net']);
+				  _gaq.push(['_trackPageview']);
+
+				  (function() {
+				    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+				  })();
+
+		</script>
+
+		<style>
+
+
+		</style>
+		<style type="text/css">
+				body { font-family:'Open Sans',arial, sans-serif;font-size:13px;}
+
+				#chart{height:765px;width:960px;}
+
+				.desc { color:#6b6b6b;}
+				.desc a {color:#0092dd;}
+				.dropdown {z-index:10;}
+				.dropdown dd, .dropdown dt, .dropdown ul { margin:0px; padding:0px; }
+				.dropdown dd { position:relative; }
+				.dropdown a, .dropdown a:visited { color:#000; text-decoration:none; outline:none;}
+				.dropdown a:hover { }
+				.dropdown dt a:hover, .dropdown dt a:focus { color:#ccc; border: 1px solid #ccc;}
+				.dropdown dt a {background:white url(arrow.png) no-repeat scroll right center; display:block; padding-right:20px;
+								border:1px solid #ccc; width:200px;font-size:14px;font-weight:bold;}
+				.dropdown dt a span {cursor:pointer; display:block; padding:5px;}
+				.dropdown dd ul { background:white none repeat scroll 0 0; border:1px solid #ccc; display:none;
+								  left:0px; padding:5px 0px; position:absolute; top:2px; width:auto; min-width:220px; list-style:none;}
+				.dropdown span.value { display:none;}
+				.dropdown dd ul li a { padding:5px; display:block;}
+				.dropdown dd ul li a:hover { background-color:#eee;}
+				.c1 dd ul li a:hover { background-color:#eaebad;}
+				.c2 dd ul li a:hover { background-color:#adc4eb}
+				.invisible {display:none;}
+				.dropdown img.flag { border:none; vertical-align:middle; margin-left:10px; }
+				.flagvisibility { display:none;}
+				.c1, .c3, .c4, .titreqtq, .search {position:absolute;top:78px;left:260px;}
+				.titreqtq, .search {font-size:14px;font-weight:bold;}
+				.search {top:90px;}
+				.searchb {top:90px;width:50px;height:22px;position:absolute;left:460px;border: 1px solid #ccc;cursor:pointer;}
+				.searchb:hover {border:1px solid darkorange;}
+				.c2 {position:absolute;top:78px;left:657px;}
+				.cand1,.sujet,.cand3, .searchtitle {position:absolute;top:70px;left:260px;}
+				img.cand1, img.cand3 {left:490px;}
+				.cand2 {position:absolute;top:70px;left:657px;}
+				img.cand2 {left:887px;}
+				.titretl {position:absolute;left:260px;top:132px;}
+				.legendbars {position:absolute;left:530px;top:200px;color:#ccc;font-style:italic;}
+				.l1,.l2,.l3,.l4 {float:left;margin-right:5px;}
+				.l1 {width:20px;height:20px;background:"darkorange";}
+				.l3 {width:20px;border-bottom: 4px solid black;}
+				.tweet {position:absolute;top:650px;left:260px;width:675px;
+
+				height:84px;z-index:2;
+				font-size:12px;background:#eee;
+				}
+				.tweetimg {position:relative;margin:10px;border:none;float:left;z-index:10;}
+				.tweet .right {position:relative;margin:10px;width:592px;}
+				.tweet .right .author {font-weight:bold;}
+				.tweet .right .id {font-style:italic;}
+				.tweet .right .time {color:#ccc;}
+				.mode {position:absolute;left:260px;top:130px;padding:3px;border:1px solid #ccc;width:667px;background:#eee;}
+				.mode0,.mode1,.mode2{float:right;margin-left:5px;}
+				.modedesc {float:left;}
+				.mode0 .selected,.mode1 .selected,.mode2 .selected {text-decoration:none !important;font-weight:bold;}
+				.labels a {text-decoration:none;color:steelblue}
+
+
+				.abstractCritere,.abstractCat {font-style:italic;position:absolute;top:70px;left:510px;width:425px;}
+				.abstractCat {left:550px;width:385px;}
+				.backButton {position:absolute;top:50px;left:50px;padding:10px;background:#eee;border:1px solid #ccc;}
+				.nomCat {font-size:2em;font-weight:bold;position:absolute;top:100px;left:200px;}
+
+				.mostT,.most,.uniqueT,.Unique {position:absolute;left:25px;}
+				.mostT,.uniqueT{font-weight:bold;font-size:1em;}
+				.mostT{top:250px;}
+				.most{top:270px;width:350px;height:140px;}
+				.uniqueT{top:410px;}
+				.unique{top:430px;overflow-y:auto;overflow-x:hidden;width:370px;height:200px;padding-right:10px}
+				.axisMonth{fill:#888;font-weight:bold;}
+
+				.l1{position:absolute;top:180px;left:30px;}
+				.l2{position:absolute;top:180px;left:155;}
+				.l1 a, .titretl a, .l2 a {text-decoration:none;font-weight:bold;color:#000;}
+				.l1 a:hover, , .titretl a:hover, .l2 a:hover {text-decoration:underline;}
+
+				.methodologie{display:none;padding:15px;top:250px;left:100px;width:760px;position:absolute;z-index:100;
+				background:#FFF1A8;
+				-moz-box-shadow: 3px 3px 4px #ccc;
+				-webkit-box-shadow: 3px 3px 4px #ccc;
+				box-shadow: 3px 3px 4px #ccc;
+				}
+				.closeme {float:right;}
+				.alwaysthere, .page {position:absolute;top:10px;left:10px;z-index:2;}
+				.topleftmenu {position:absolute;top:32px;left:10px;padding:10px;background:#eee;width:170px;}
+				.topleftmenu a {text-decoration:none;color:#000;}
+				.topleftmenu .selected {font-weight:bold;}
+				.topleftmenu a:hover {text-decoration:underline;}
+				.topleftmenu ul {list-style-type: none;padding:0px;margin:0px;}
+
+				#a1,#a2,#a3,#a4,#a5,#a6,#v1,#v2,#v3,#v4,#v5,#v6 {position:absolute;top:180px;left:200px;}
+				#page4 a {text-decoration:none;font-weight:bold;color:#000;}
+				#page4  a:hover {text-decoration:underline;}
+				#a1 a,#a2 a,#a3 a,#a4 a,#a5 a,#a6 a {text-align:center;}
+				#v1 a,#v2 a,#v3 a,#v4 a,#v5 a,#v6 a {text-align:right;}
+				#a1 {left:280px;}
+				#a2 {left:335px;}
+				#a3 {left:400px;}
+				#a4 {left:445px;}
+				#a5 {left:515px;}
+				#a6 {left:580px;}
+				#v1 {top:220px;}
+				#v2 {top:270px;}
+				#v3 {top:320px;}
+				#v4 {top:370px;}
+				#v5 {top:420px;}
+				#v6 {top:470px;}
+				.attacking {position:absolute;top:180px;right:770px;}
+				.hitting {position:absolute;top:220px;right:770px;}
+				.footer {background:#eee;position:absolute;height:20px;top:745px;width:960px;border-top:1px solid #ccc;padding:0px 5px;}
+
+		</style>
+	</head>
+	<body>
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=6355934660";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+		<div id="chart">
+			<div id="page1" class="page invisible">
+				<div class="mode">
+						<div class="modedesc">Choisissez une représentation:</div>
+						<div class="mode0"><a href="#">carrés</a></div>
+						<div class="mode1"><a href="#">coches</a></div>
+						<div class="mode2"><a href="#" class="selected">aires</a></div>
+				</div>
+				<div class="cand1">Premier compte :</div>
+				<img class="cand1" height="48" width="48" />
+				<dl class="dropdown c1">
+					<dt><a href="#"><span>Premier candidat</span></a></dt>
+					<dd>
+						<ul>
+						</ul>
+					</dd>
+				</dl>
+				<div class="cand2">Deuxième compte :</div>
+				<img class="cand2" height="48" width="48" />
+				<dl class="dropdown c2">
+					<dt><a href="#"><span>Deuxième candidat</span></a></dt>
+					<dd>
+						<ul>
+						</ul>
+					</dd>
+				</dl>
+
+				</div>
+			</div>
+
+			<div id="page2" class="page invisible">
+				<div class="mode">
+					<div class="modedesc">Choisissez une échelle:</div>
+					<div class="mode0"><a href="#" class="selected">relative</a></div>
+					<div class="mode1"><a href="#">absolue</a></div>
+				</div>
+				<div class="l1"><a href="#">Comptes&nbsp;:</a></div>
+				<div class="l2"><a href="#">Fréquence&nbsp;:</a></div>
+				<div class="sujet">Choisissez un sujet&nbsp;:</div>
+				<dl class="dropdown c3">
+				<dt><a href="#"><span>Thème</span></a></dt>
+					<dd>
+						<ul>
+						</ul>
+					</dd>
+				</dl>
+				<div class="abstractCritere"></div>
+			</div>
+
+			<div id="page3" class="page invisible">
+				<img class="cand3" height="48" width="48" />
+				<div class="sujet">Choisissez un compte :</div>
+				<dl class="dropdown c4">
+					<dt><a href="#"><span>Premier candidat</span></a></dt>
+					<dd>
+						<ul>
+						</ul>
+					</dd>
+				</dl>
+				<div class="abstractCat"></div>
+				<div class="mostT">Mots les plus fréquents&nbsp;:</div>
+				<div class="most"></div>
+				<div class="uniqueT">Mots uniques&nbsp;:</div>
+				<div class="unique"></div>
+				<div class="titretl"><a href="#" onclick="initPage1()">Volume de tweets dans le temps :</a></div>
+
+				<div class="legendbars">mentions de mots-clé de chaque thème en % du total</div>
+			</div>
+
+			<div id="page4" class="page invisible">
+				<div class="titreqtq"><strong>Qui tape qui?</strong></div>
+				<div class="attacking">Volume de tweets envoyés par :</div>
+				<div class="hitting">Visant :</div>
+				<div class="attackers">
+					<a href="#" id="a1">FDG</a>
+					<a href="#" id="a2">EELV</a>
+					<a href="#" id="a3">PS</a>
+					<a href="#" id="a4">Modem</a>
+					<a href="#" id="a5">UMP</a>
+					<a href="#" id="a6">FN</a>
+				</div>
+				<div class="victims">
+					<a href="#" id="v1">FDG</a>
+					<a href="#" id="v2">EELV</a>
+					<a href="#" id="v3">PS</a>
+					<a href="#" id="v4">Modem</a>
+					<a href="#" id="v5">UMP</a>
+					<a href="#" id="v6">FN</a>
+				</div>
+
+
+			</div>
+
+			<div id="page5" class="page invisible">
+				<div class="searchtitle">Recherchez un terme dans les tweets:</div>
+				<input class="search" type="text" />
+				<img class="searchb" src="magnifier.png"/>
+			</div>
+
+			<div class="alwaysthere">
+				<div class="topleftmenu">
+					<ul><li class="selected" id="li1"><a href="#" onclick="initPage1()">Comparer dans le temps</a></li>
+					<li id="li2"><a href="#" onclick="initPage2()">Vue par sujet</a></li>
+					<li id="li3"><a href="#" onclick="initPage3()">Vue par candidat</a></li>
+					<li id="li5"><a href="#" onclick="initPage5()">Qui a dit?</a></li>
+					<li id="li4"><a href="#" onclick="initPage4()">Qui tape qui?</a></li>
+
+				</div>
+				<div class="tweet">
+					<img class="tweetimg" height="64" width="64" />
+					<div class="right">
+					<span class="author"></span><span class="id"></span></br><span class="text">Cliquez sur le graphique pour lire les tweets</span></br><span class="time"></span>
+				</div>
+				</div>
+
+			<div class="methodologie">
+				<div class="closeme"><a href="#" onclick='d3.selectAll(".methodologie").style("display","none")'>fermer</a></div>
+				<strong>Comment les scores sont-ils calculés?</strong></p>
+				Les tweets des candidats des derniers 45 jours sont notés en fonction de la présence de <a href="mots.txt" target="_blank">mots-clés</a> dans leur libellé. </br>
+				Chaque mot-clé est associé à un sujet. Par exemple, un candidat qui dit: </p>
+				<blockquote>je serai demain l'invité du journal de 20h de TF1</blockquote>
+				est dans la promotion. Ainsi les mots "je", "serai", "invité", "20h", "TF1" lorsqu'ils sont trouvés dans le libellé d'un tweet permettent de l'orienter vers la catégorie "auto-promotion". </br>
+				De même, un tweet rédigé ainsi : </p>
+				<blockquote>Le #FNJ réagit suite à la mort d'#Agnès, treize ans, assassinée en Haute-Loire par un récidiviste.</blockquote>
+				est dans le registre de la peur, comme l'indiquent les mots "mort", "assassinée" ou "récidiviste".</p>
+				Le programme compte ensuite chaque mention de mot-clé. Un même tweet peut se retrouver dans plusieurs catégories. </p>
+				Chaque score est finalement divisé par le nombre total de tweets d'un candidat pour gommer les différences de volume.
+			</div>
+			<div class="footer">
+								<div style="float:left;"><a href="https://twitter.com/share" class="twitter-share-button" data-text="Compare les discours des politiques sur twitter avec #politweets #googleviz #2012" data-count="horizontal" data-via="jcukier" data-lang="fr">Tweeter</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script></div>
+								<div style="float:left;"><a name="fb_share"></a><script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share"type="text/javascript"></script></div>
+								<div class="fb-like" style="float:left;" data-href="http://jeromecukier.net/stuff/googleviz/politweets.html" data-send="true" data-width="450" data-show-faces="true"></div>
+								<div style="float:left;">&nbsp;<strong>Politweets</strong>&nbsp;-&nbsp;<a href="http://www.jeromecukier.net/">Jérôme Cukier</a></div>
+								<div style="float:right;"><a href="#" onclick='d3.selectAll(".methodologie").style("display","block");'>Méthodologie</a></div>
+			</div>
+		</div>
+
+
+		<script type="text/javascript" src="politweets.js"></script>
+		<script type="text/javascript">
+		initPage4();
+		</script>
+
+
+</body></html>

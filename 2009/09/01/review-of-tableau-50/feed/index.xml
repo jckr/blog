@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Review of Tableau 5.0</title>
+	<atom:link href="http://localhost/2009/09/01/review-of-tableau-50/feed/" rel="self" type="application/rss+xml" />
+	<link>/2009/09/01/review-of-tableau-50/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>By: Jerome Cukier &#187; Using Tableau Public: first thoughts</title>
+		<link>/2009/09/01/review-of-tableau-50/#comment-32</link>
+		<dc:creator><![CDATA[Jerome Cukier &#187; Using Tableau Public: first thoughts]]></dc:creator>
+		<pubDate>Thu, 21 Jan 2010 13:44:25 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=194#comment-32</guid>
+		<description><![CDATA[[...] am currently beta testing Tableau Public. Essentially Tableau Public let you bring the power of Tableau analysis online. With Tableau public, your audience doesn&#8217;t need to download a workbook file [...]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] am currently beta testing Tableau Public. Essentially Tableau Public let you bring the power of Tableau analysis online. With Tableau public, your audience doesn&#8217;t need to download a workbook file [&#8230;]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Dan Jewett</title>
+		<link>/2009/09/01/review-of-tableau-50/#comment-31</link>
+		<dc:creator><![CDATA[Dan Jewett]]></dc:creator>
+		<pubDate>Thu, 10 Sep 2009 20:20:19 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=194#comment-31</guid>
+		<description><![CDATA[Jerome, Thanks for the nice blog post here - very complete introduction to the product. We are working away to finish up Tableau Public and are anxious to get it out in general release so we can see the dashboards you&#039;ve been building. Tableau Public is going to let folks like yourself share their interesting public data via interactive experiences. If you have any other thoughts about version 5 or the product - just let us over at Tableau know.
+
+Dan]]></description>
+		<content:encoded><![CDATA[<p>Jerome, Thanks for the nice blog post here &#8211; very complete introduction to the product. We are working away to finish up Tableau Public and are anxious to get it out in general release so we can see the dashboards you&#8217;ve been building. Tableau Public is going to let folks like yourself share their interesting public data via interactive experiences. If you have any other thoughts about version 5 or the product &#8211; just let us over at Tableau know.</p>
+<p>Dan</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

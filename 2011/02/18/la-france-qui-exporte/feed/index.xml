@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: La france qui exporte</title>
+	<atom:link href="http://localhost/2011/02/18/la-france-qui-exporte/feed/" rel="self" type="application/rss+xml" />
+	<link>/2011/02/18/la-france-qui-exporte/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>By: Jérôme Cukier &#187; La carte des cantonales</title>
+		<link>/2011/02/18/la-france-qui-exporte/#comment-118</link>
+		<dc:creator><![CDATA[Jérôme Cukier &#187; La carte des cantonales]]></dc:creator>
+		<pubDate>Wed, 08 Jun 2011 15:56:29 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=661#comment-118</guid>
+		<description><![CDATA[[...] je n&#8217;ai pas l&#8217;habitude de porter des critiques sans proposer autre chose, j&#8217;ai fabriqué des cartogrammes de Dorling pour rendre compte de ce qui s&#8217;est vraiment [...]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] je n&#8217;ai pas l&#8217;habitude de porter des critiques sans proposer autre chose, j&#8217;ai fabriqué des cartogrammes de Dorling pour rendre compte de ce qui s&#8217;est vraiment [&#8230;]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Jerome Cukier &#187; La carte des cantonales</title>
+		<link>/2011/02/18/la-france-qui-exporte/#comment-117</link>
+		<dc:creator><![CDATA[Jerome Cukier &#187; La carte des cantonales]]></dc:creator>
+		<pubDate>Sat, 26 Mar 2011 19:05:40 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=661#comment-117</guid>
+		<description><![CDATA[[...] ces différences qui peuvent être énormes. Comme je n&#039;ai pas l&#039;habitude de porter des critiques sans proposer autre chose, j&#039;ai fabriqué des cartogrammes de Dorling pour rendre compte de ce qui s&#039;est vraiment passé [...]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] ces différences qui peuvent être énormes. Comme je n&#039;ai pas l&#039;habitude de porter des critiques sans proposer autre chose, j&#039;ai fabriqué des cartogrammes de Dorling pour rendre compte de ce qui s&#039;est vraiment passé [&#8230;]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: jerome</title>
+		<link>/2011/02/18/la-france-qui-exporte/#comment-116</link>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+		<pubDate>Fri, 25 Feb 2011 00:43:11 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=661#comment-116</guid>
+		<description><![CDATA[Hi Agnieszka, now that the code is written I could do the same for Russia or any country in less time than writing this reply, so if you want this for your blog just let me know]]></description>
+		<content:encoded><![CDATA[<p>Hi Agnieszka, now that the code is written I could do the same for Russia or any country in less time than writing this reply, so if you want this for your blog just let me know</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Russian Sphinx</title>
+		<link>/2011/02/18/la-france-qui-exporte/#comment-115</link>
+		<dc:creator><![CDATA[Russian Sphinx]]></dc:creator>
+		<pubDate>Thu, 24 Feb 2011 19:47:39 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=661#comment-115</guid>
+		<description><![CDATA[I like TreeMap of export, I am too lazy to do the same for Russia but I like the idea and I will do something similar.]]></description>
+		<content:encoded><![CDATA[<p>I like TreeMap of export, I am too lazy to do the same for Russia but I like the idea and I will do something similar.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Jan Willem Tulp</title>
+		<link>/2011/02/18/la-france-qui-exporte/#comment-114</link>
+		<dc:creator><![CDATA[Jan Willem Tulp]]></dc:creator>
+		<pubDate>Fri, 18 Feb 2011 22:04:37 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=661#comment-114</guid>
+		<description><![CDATA[You&#039;re right about the data structure, that&#039;s also my experience so far. In hindsight my previous Protovis projects were not always very effective. I am going to submit my entry for the Visualizing.org contest, and I am using a similar data structure. The result is much cleaner code. I also picked up some of the things you mentioned in your tutorial series, like the way you access parent data with a function with 2 arguments :)
+
+I see your point with the bar charts, and you&#039;re right that this way it&#039;s easier to see the change per continent. 
+
+The changes you&#039;ve made to the selected item and to the labels works really well!
+
+Looking forward to see your next project! :)]]></description>
+		<content:encoded><![CDATA[<p>You&#8217;re right about the data structure, that&#8217;s also my experience so far. In hindsight my previous Protovis projects were not always very effective. I am going to submit my entry for the Visualizing.org contest, and I am using a similar data structure. The result is much cleaner code. I also picked up some of the things you mentioned in your tutorial series, like the way you access parent data with a function with 2 arguments 🙂</p>
+<p>I see your point with the bar charts, and you&#8217;re right that this way it&#8217;s easier to see the change per continent. </p>
+<p>The changes you&#8217;ve made to the selected item and to the labels works really well!</p>
+<p>Looking forward to see your next project! 🙂</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: jerome</title>
+		<link>/2011/02/18/la-france-qui-exporte/#comment-113</link>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+		<pubDate>Fri, 18 Feb 2011 21:18:31 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=661#comment-113</guid>
+		<description><![CDATA[Hi JanWillem and thanks for your message.
+yes out-commented alert statements are shabby... I removed them ! so no one can see what you&#039;re talking about now :)
+I use chrome console mostly. I think console.log works there too! and - I&#039;m a PC. 
+
+now on the substance, ok visually the solution is far from perfect. actually I wanted to show two things. 
+when you try to do something complex in protovis, you&#039;d better get your data in the shape: 
+
+[{key1:... , key2:...,     , keyn:...},
+{key1:... , key2:...,     , keyn:...},
+{key1:... , key2:...,     , keyn:...}, 
+...
+]
+
+because from this shape you can do anything. from this I can do 2 different treemaps, bar charts with an interesting aggregation, etc.
+when I was starting with protovis I would have prepared different sets of datasets in excel, which is error-prone, time-consuming, and wastes a lot of space.
+
+now bar charts, order them or not?
+I&#039;m a devout follower of Stephen Few, so I usually like them ordered. But the basic idea was to use them as legend to show which color is what. now if I ordered them, well, their order would change from country to country so it would be more difficult to see the evolution of each bar. also, the aggregation formula which comes up with a single array would have to be slightly trickier to keep the color info. Here, I can get away with just having a simple array and use this.index to get the right color because the order of the bar is always the same as the order of the product categories. If I had them re-ordered, I would have to use a 2 dimensional array to keep the category information, which is not too difficult but was getting obfuscated. 
+I agree, though, that the way the text gets in the way of the bars is not ideal, as the choice of colours etc. :(
+
+yes, there should have been a form of visual feedback on the treemap you click in. I&#039;ve added something. I also changed how numbers are displayed, although the solution based on &quot;title&quot; is not ideal... 
+
+there could be a way to lookup countries like in the protovis treemap example using regular expressions etc. maybe for the next project :)]]></description>
+		<content:encoded><![CDATA[<p>Hi JanWillem and thanks for your message.<br />
+yes out-commented alert statements are shabby&#8230; I removed them ! so no one can see what you&#8217;re talking about now 🙂<br />
+I use chrome console mostly. I think console.log works there too! and &#8211; I&#8217;m a PC. </p>
+<p>now on the substance, ok visually the solution is far from perfect. actually I wanted to show two things.<br />
+when you try to do something complex in protovis, you&#8217;d better get your data in the shape: </p>
+<p>[{key1:&#8230; , key2:&#8230;,     , keyn:&#8230;},<br />
+{key1:&#8230; , key2:&#8230;,     , keyn:&#8230;},<br />
+{key1:&#8230; , key2:&#8230;,     , keyn:&#8230;},<br />
+&#8230;<br />
+]</p>
+<p>because from this shape you can do anything. from this I can do 2 different treemaps, bar charts with an interesting aggregation, etc.<br />
+when I was starting with protovis I would have prepared different sets of datasets in excel, which is error-prone, time-consuming, and wastes a lot of space.</p>
+<p>now bar charts, order them or not?<br />
+I&#8217;m a devout follower of Stephen Few, so I usually like them ordered. But the basic idea was to use them as legend to show which color is what. now if I ordered them, well, their order would change from country to country so it would be more difficult to see the evolution of each bar. also, the aggregation formula which comes up with a single array would have to be slightly trickier to keep the color info. Here, I can get away with just having a simple array and use this.index to get the right color because the order of the bar is always the same as the order of the product categories. If I had them re-ordered, I would have to use a 2 dimensional array to keep the category information, which is not too difficult but was getting obfuscated.<br />
+I agree, though, that the way the text gets in the way of the bars is not ideal, as the choice of colours etc. 🙁</p>
+<p>yes, there should have been a form of visual feedback on the treemap you click in. I&#8217;ve added something. I also changed how numbers are displayed, although the solution based on &#8220;title&#8221; is not ideal&#8230; </p>
+<p>there could be a way to lookup countries like in the protovis treemap example using regular expressions etc. maybe for the next project 🙂</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Tweets that mention Jerome Cukier » La france qui exporte -- Topsy.com</title>
+		<link>/2011/02/18/la-france-qui-exporte/#comment-112</link>
+		<dc:creator><![CDATA[Tweets that mention Jerome Cukier » La france qui exporte -- Topsy.com]]></dc:creator>
+		<pubDate>Fri, 18 Feb 2011 20:35:27 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=661#comment-112</guid>
+		<description><![CDATA[[...] This post was mentioned on Twitter by Jérôme Cukier, Jan Willem Tulp. Jan Willem Tulp said: A must read!!! Great job! RT @jcukier: new blog post: http://bit.ly/e0d64L treemaps to explore flows of French trade @_bercy_ @laguirlande [...]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] This post was mentioned on Twitter by Jérôme Cukier, Jan Willem Tulp. Jan Willem Tulp said: A must read!!! Great job! RT @jcukier: new blog post: <a href="http://bit.ly/e0d64L" rel="nofollow">http://bit.ly/e0d64L</a> treemaps to explore flows of French trade @_bercy_ @laguirlande [&#8230;]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Jan Willem Tulp</title>
+		<link>/2011/02/18/la-france-qui-exporte/#comment-111</link>
+		<dc:creator><![CDATA[Jan Willem Tulp]]></dc:creator>
+		<pubDate>Fri, 18 Feb 2011 20:01:27 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=661#comment-111</guid>
+		<description><![CDATA[Hi Jerome, 
+
+again, an excellent tutorial!! I really enjoyed your analysis of the maps, and also your explanation of how you&#039;ve implemented the treemap in Protovis is very clear. I also looked at your source code, and it&#039;s really good to see that most of it is actual Protovis code, and not really much custom code. I also like the idea of 2 connected treemaps very much. I can&#039;t remember seeing this anywhere before! So again, a great tutorial, I really enjoyed it.
+
+I have a few suggestions though, so I hope you don&#039;t mind:
+
+- I saw in your source code that there were some out-commented alert statements. I don&#039;t know which tools you use for creating this, but one thing that may ease the development is using FireFox, and especially use the FireBug plugin. This allows you to write statements like: console.log(&#039;bla bla bla&#039;) which gets written to the console window of FireBug. This will relieve you from alerts where you must always click a button to remove the alert. And, if you have a Mac, I highly recommend TextMate as a tool, because you can open a preview window that gets updated as you type. This is very very useful when creating a Protovis visualization: immediate feedback works great!!
+
+- in your critique on the map you say that it is hard to say &#039;which is the biggest, which the smallest?&#039;. I think in your version these answers are easier to answer with the barcharts for each treemap, but I also think that these questions can be even more easily answered if you sort the barcharts on size, so that the biggest is always on top. 
+
+- I am not totally convinced by the way you use labels and bar charts. First, the readability of the labels is now dependent on the color of the barchart, and darker bar colors make the labels a little more difficult to read. Also, since both the labels and the barchart occupy the same space, the length of the text of a label somehow seems to be mixing with the length of the bars. So visually it is a little confusing to me.
+
+- I wonder if the interaction / visual feedback could be improved if you could somehow see which of the areas in a treemap you have selected. Right now you can click on it, but afterwards you don&#039;t see which one that was
+
+- the number of digits in the labels are often very long (around 10 digits) and I find it a little hard to comprehend such a large number. I think it would be easier to comprehend if the labels showed the numbers in billion or something. I may be wrong, but the level of detail shown right now may not be relevant.
+
+- finally, as someone from the Netherlands I tried to find the Netherlands of course. Although I don&#039;t have a solution just yet, it is pretty hard to find a specific country. But this also depends on the purpose of your visualization of course. 
+
+I hope you find my suggestions useful, and I am looking forward to see your next post, tutorial or creation!! Great work, Jerome!!!]]></description>
+		<content:encoded><![CDATA[<p>Hi Jerome, </p>
+<p>again, an excellent tutorial!! I really enjoyed your analysis of the maps, and also your explanation of how you&#8217;ve implemented the treemap in Protovis is very clear. I also looked at your source code, and it&#8217;s really good to see that most of it is actual Protovis code, and not really much custom code. I also like the idea of 2 connected treemaps very much. I can&#8217;t remember seeing this anywhere before! So again, a great tutorial, I really enjoyed it.</p>
+<p>I have a few suggestions though, so I hope you don&#8217;t mind:</p>
+<p>&#8211; I saw in your source code that there were some out-commented alert statements. I don&#8217;t know which tools you use for creating this, but one thing that may ease the development is using FireFox, and especially use the FireBug plugin. This allows you to write statements like: console.log(&#8216;bla bla bla&#8217;) which gets written to the console window of FireBug. This will relieve you from alerts where you must always click a button to remove the alert. And, if you have a Mac, I highly recommend TextMate as a tool, because you can open a preview window that gets updated as you type. This is very very useful when creating a Protovis visualization: immediate feedback works great!!</p>
+<p>&#8211; in your critique on the map you say that it is hard to say &#8216;which is the biggest, which the smallest?&#8217;. I think in your version these answers are easier to answer with the barcharts for each treemap, but I also think that these questions can be even more easily answered if you sort the barcharts on size, so that the biggest is always on top. </p>
+<p>&#8211; I am not totally convinced by the way you use labels and bar charts. First, the readability of the labels is now dependent on the color of the barchart, and darker bar colors make the labels a little more difficult to read. Also, since both the labels and the barchart occupy the same space, the length of the text of a label somehow seems to be mixing with the length of the bars. So visually it is a little confusing to me.</p>
+<p>&#8211; I wonder if the interaction / visual feedback could be improved if you could somehow see which of the areas in a treemap you have selected. Right now you can click on it, but afterwards you don&#8217;t see which one that was</p>
+<p>&#8211; the number of digits in the labels are often very long (around 10 digits) and I find it a little hard to comprehend such a large number. I think it would be easier to comprehend if the labels showed the numbers in billion or something. I may be wrong, but the level of detail shown right now may not be relevant.</p>
+<p>&#8211; finally, as someone from the Netherlands I tried to find the Netherlands of course. Although I don&#8217;t have a solution just yet, it is pretty hard to find a specific country. But this also depends on the purpose of your visualization of course. </p>
+<p>I hope you find my suggestions useful, and I am looking forward to see your next post, tutorial or creation!! Great work, Jerome!!!</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

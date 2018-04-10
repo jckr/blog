@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>ieee &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/ieee/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>VisWeek 2010: the one-minute edition.</title>
+		<link>/2010/11/04/visweek-2010-the-one-minute-edition/</link>
+		<comments>/2010/11/04/visweek-2010-the-one-minute-edition/#respond</comments>
+		<pubDate>Thu, 04 Nov 2010 15:19:46 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[conference]]></category>
+		<category><![CDATA[ieee]]></category>
+		<category><![CDATA[infovis]]></category>
+		<category><![CDATA[salt lake city]]></category>
+		<category><![CDATA[vast]]></category>
+		<category><![CDATA[vis]]></category>
+		<category><![CDATA[visweek]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=420</guid>
+		<description><![CDATA[Vis week 2010 View more presentations from Jérôme Cukier. Visweek 2010 is just over. With lectures and presentations going on in up to 4  rooms simultaneously for 6 straight and very full days, it&#8217;s impossible to see everything let alone to describe it. And even that would be ignoring all exchanges and social interactions which <a class="read-more" href="/2010/11/04/visweek-2010-the-one-minute-edition/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<div id="__ss_5667704" style="width: 425px;"><strong><a title="Vis week 2010" href="http://www.slideshare.net/vozome/vis-week-2010-5667704">Vis week 2010</a></strong><object id="__sse5667704" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="425" height="355" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="allowFullScreen" value="true" /><param name="allowScriptAccess" value="always" /><param name="src" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=visweek2010-101104100223-phpapp01&amp;stripped_title=vis-week-2010-5667704&amp;userName=vozome" /><param name="name" value="__sse5667704" /><param name="allowfullscreen" value="true" /><embed id="__sse5667704" type="application/x-shockwave-flash" width="425" height="355" src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=visweek2010-101104100223-phpapp01&amp;stripped_title=vis-week-2010-5667704&amp;userName=vozome" name="__sse5667704" allowscriptaccess="always" allowfullscreen="true"></embed></object></p>
+<div style="padding:5px 0 12px">View more <a href="http://www.slideshare.net/">presentations</a> from <a href="http://www.slideshare.net/vozome">Jérôme Cukier</a>.</div>
+</div>
+<p><a href="http://vis.computer.org/VisWeek2010/">Visweek 2010</a> is just over.</p>
+<p>With lectures and presentations going on in up to 4  rooms simultaneously for 6 straight and very full days, it&#8217;s impossible to see everything let alone to describe it. And even that would be ignoring all exchanges and social interactions which are precisely the point of visweek.</p>
+<p>So instead, I&#8217;m showing what I liked best,  one image per day.</p>
+]]></content:encoded>
+			<wfw:commentRss>/2010/11/04/visweek-2010-the-one-minute-edition/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

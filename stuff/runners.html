@@ -1,0 +1,106 @@
+<html>
+<head>
+<script type="text/javascript" src="http://blog.oecdfactblog.org/wp-includes/js/protovis-r3.2.js"></script>
+<script type="text/javascript" src="http://www.jeromecukier.net/wp-content/uploads/2011/03/runners.js"></script>
+<style>
+.protovis {width:600; height:250; background: #fff;}
+body {background: #ccc;}
+</style></head>
+
+<body><div class="protovis">
+
+<script type="text/javascript+protovis">
+
+function pos(time5,time10,time15,timeF,time){
+	if(time5==-1||time10==-1||time15==-1||timeF==-1){return -1000;}
+	if(time<time5){
+		return 5000*time/time5;
+	} else if (time<time10){
+		return 5000+5000*(time-time5)/(time10-time5);
+	} else if (time<time15){
+		return 10000+5000*(time-time10)/(time15-time10);
+	} else if (time<timeF){
+		return 15000+6000*(time-time15)/(timeF-time15);
+	} else {return 21000;}
+}
+
+runners.forEach(function(r) {
+r.jitter=Math.random()*10+Math.random()*10+Math.random()*10+Math.random()*10+Math.random()*10;
+if(r.cat[1]=="F"){
+	r.sex=1
+} else {
+	r.sex=0
+}}
+)
+
+
+var colors=["rgba(30,144,255,0.1)","rgba(255,0,255,0.1)"]
+
+var time=0;
+
+var lorena=[runners[20548].time5,runners[20548].time10,runners[20548].time15,runners[20548].timeF]
+var vincent=[runners[8569].time5,runners[8569].time10,runners[8569].time15,runners[8569].timeF]
+var kate=[runners[10272].time5,runners[10272].time10,runners[10272].time15,runners[10272].timeF]
+var w=600;
+var vis = new pv.Panel()
+    .width(w)
+    .height(250)
+    ;
+
+var dVisible=false;
+var dLine;
+
+vis.add(pv.Rule).data(pv.range(21))
+	.left(function() w*this.index/21).top(50).height(100).strokeStyle(function() this.index%5?"#eee":"#ccc")
+
+vis.add(pv.Rule).left(0).top(100).width(800).strokeStyle("#eee")
+
+vis.add(pv.Dot)
+	.data(runners)
+	.left(function(d) pos(d.time5,d.time10,d.time15,d.timeF,time)*w/21000)
+	.size(5)
+	.top(function(d) 75+d.jitter)
+	.strokeStyle(null)
+	.fillStyle(function(d) colors[d.sex])
+	.title(function() this.index)
+	;
+
+vis.add(pv.Rule)
+	.left(function() pos(lorena[0],lorena[1],lorena[2],lorena[3],time)*w/21000)
+	.top(0)
+	.height(50)
+	.strokeStyle("magenta")
+	.anchor("top")
+	.add(pv.Label).textBaseline("top").textAlign("right").textStyle("magenta").text("Lorena")
+
+vis.add(pv.Rule)
+	.left(function() pos(kate[0],kate[1],kate[2],kate[3],time)*w/21000)
+	.top(0)
+	.height(50)
+	.strokeStyle("darkmagenta")
+	.anchor("top")
+	.add(pv.Label).textBaseline("top").top(20).textAlign("right").textStyle("darkmagenta").text("Kate")
+
+
+vis.add(pv.Rule)
+	.left(function() pos(vincent[0],vincent[1],vincent[2],vincent[3],time)*w/21000)
+	.top(150)
+	.height(50)
+	.strokeStyle("dodgerblue")
+	.anchor("bottom")
+	.add(pv.Label).textBaseline("bottom").textAlign("right").textStyle("dodgerblue").text("Vincent")
+
+
+
+vis.add(pv.Panel)
+	.right(100)
+	.bottom(30)
+	.width(50)
+	.height(20)
+	.strokeStyle("#ccc").fillStyle("#fff")
+	.anchor("center").add(pv.Label)
+		.text(function() (time>3600?Math.floor(time/3600)+"h":"")+(time>60?Math.floor((time-Math.floor(time/3600)*3600)/60)+"m":""))
+setInterval(function() {(time>10200?time=0:time+=100);vis.render();}, 1);
+    </script></div>
+  </body>
+</html>

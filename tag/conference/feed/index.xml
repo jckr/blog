@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>conference &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/conference/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>Impressions from Wiesbaden</title>
+		<link>/2012/05/03/impressions-from-wiesbaden/</link>
+		<comments>/2012/05/03/impressions-from-wiesbaden/#respond</comments>
+		<pubDate>Wed, 02 May 2012 23:59:15 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[conference]]></category>
+		<category><![CDATA[michael madsen]]></category>
+		<category><![CDATA[practice]]></category>
+		<category><![CDATA[see conference]]></category>
+		<category><![CDATA[see+]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1250</guid>
+		<description><![CDATA[I&#8217;m just returning from the 7th See conference on information visualization. I&#8217;ll do a longer, more descriptive post later (a lot happens in just 2 days) but for now I would like to mention one talk which really moved me. After the conference proper which takes place in the impressive Lutherkirche which sit hundreds, the See+ workshop <a class="read-more" href="/2012/05/03/impressions-from-wiesbaden/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>I&#8217;m just returning from the 7th <a href="http://see-conference.com/">See conference</a> on information visualization. I&#8217;ll do a longer, more descriptive post later (a lot happens in just 2 days) but for now I would like to mention one talk which really moved me. After the conference proper which takes place in the impressive <a href="http://www.lutherkirche-wiesbaden.de/">Lutherkirche</a> which sit hundreds, the See+ workshop was held in the offices of the organizing agency, <a href="http://www.s-v.de/">Scholz und Volkmer</a>. Most speakers of the main conference came back for a more laid-back discussion with a much smaller audience.</p>
+<p>The theme of See+ was tools. Speakers were invited to tell us how they work.</p>
+<p>One characteristic of the See conference is that it offers a broader perspective on data visualization. In addition to well-known datavis specialists, such as Manuel Lima this year, other guests include visual artists and designers who also work with data, as well as experts in communication who apply that skill to data.</p>
+<p>Michael Madsen is a Danish film-maker who lives in Berlin. In his see conference talk, he presented <a href="http://www.imdb.com/title/tt1194612/">Into Eternity</a>, a powerful documentary about an incredible facility in <del>Black Mesa</del> Finland which is designed to hold nuclear waste for 100,000 years. While the eerie tone of the narration is fascinating this was perhaps the topic most remote from &#8220;traditional&#8221; datavis (as in data, graphs and stuff).</p>
+<p>Then came his See+ talk which took a turn I didn&#8217;t expect.</p>
+<p><div style="width: 610px" class="wp-caption alignnone"><img class=" " src="http://25.media.tumblr.com/tumblr_m3d58aEkJ51rv82n3o1_1280.jpg" alt="" width="600" height="800" /><p class="wp-caption-text">Pic courtesy of Joshua de Haseth. I&#39;m actually the guy on the right.</p></div></p>
+<p>Filming a documentary takes at least two years by a conservative count. A filmmaker first worry is therefore to find what will drive them for that long. More than a 9 to 5 job, more than a simple theme, what they are looking for is a vision, one unique way to treat one unique subject. Michael elaborated on the difference between executing what you are told to do, and a fulfilling calling that comes from the self. The flipside is that it is very difficult to go through times of no project. One subject powerful enough to give one a reason to work everyday for years does not simply come by; it can take months or even years of doubt before one is found. In Michael&#8217;s words: when I have no project, I have no identity. But when he does, his thrill is to seek and explore as he is doing something that has never been done before.</p>
+<p>(I&#8217;m leaving a lot out which is more directly related to film-making.)</p>
+<p>As he was discussing that I could sense people in the room tune to this, as I did. We datavis practitioners are all makers, tinkerers, inventors. Fortunately, our work cycles are often shorter and it is easier to start a new one. Certainly, there are patterns and recipes and things that need to be done for work. There are also hacks found on stackoverflow (thanks for that) and inspiration from the works of other (and thanks for the debugging console).</p>
+<p>But there is also a &#8220;great unknown&#8221; in visualization &#8211; data that has never been collected let alone represented, techniques that have never been used, combinations that have never been tried &#8211; and things that can not even be put in words. All of this requires curiosity, independence and dedication. And the outcome may not live up to expectations. But it&#8217;s just a reminder that to do what we do we must leave our comfort zones and our ways, set off and explore.</p>
+<p>&nbsp;</p>
+]]></content:encoded>
+			<wfw:commentRss>/2012/05/03/impressions-from-wiesbaden/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>VisWeek 2010: the one-minute edition.</title>
+		<link>/2010/11/04/visweek-2010-the-one-minute-edition/</link>
+		<comments>/2010/11/04/visweek-2010-the-one-minute-edition/#respond</comments>
+		<pubDate>Thu, 04 Nov 2010 15:19:46 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[conference]]></category>
+		<category><![CDATA[ieee]]></category>
+		<category><![CDATA[infovis]]></category>
+		<category><![CDATA[salt lake city]]></category>
+		<category><![CDATA[vast]]></category>
+		<category><![CDATA[vis]]></category>
+		<category><![CDATA[visweek]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=420</guid>
+		<description><![CDATA[Vis week 2010 View more presentations from Jérôme Cukier. Visweek 2010 is just over. With lectures and presentations going on in up to 4  rooms simultaneously for 6 straight and very full days, it&#8217;s impossible to see everything let alone to describe it. And even that would be ignoring all exchanges and social interactions which <a class="read-more" href="/2010/11/04/visweek-2010-the-one-minute-edition/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<div id="__ss_5667704" style="width: 425px;"><strong><a title="Vis week 2010" href="http://www.slideshare.net/vozome/vis-week-2010-5667704">Vis week 2010</a></strong><object id="__sse5667704" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="425" height="355" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="allowFullScreen" value="true" /><param name="allowScriptAccess" value="always" /><param name="src" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=visweek2010-101104100223-phpapp01&amp;stripped_title=vis-week-2010-5667704&amp;userName=vozome" /><param name="name" value="__sse5667704" /><param name="allowfullscreen" value="true" /><embed id="__sse5667704" type="application/x-shockwave-flash" width="425" height="355" src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=visweek2010-101104100223-phpapp01&amp;stripped_title=vis-week-2010-5667704&amp;userName=vozome" name="__sse5667704" allowscriptaccess="always" allowfullscreen="true"></embed></object></p>
+<div style="padding:5px 0 12px">View more <a href="http://www.slideshare.net/">presentations</a> from <a href="http://www.slideshare.net/vozome">Jérôme Cukier</a>.</div>
+</div>
+<p><a href="http://vis.computer.org/VisWeek2010/">Visweek 2010</a> is just over.</p>
+<p>With lectures and presentations going on in up to 4  rooms simultaneously for 6 straight and very full days, it&#8217;s impossible to see everything let alone to describe it. And even that would be ignoring all exchanges and social interactions which are precisely the point of visweek.</p>
+<p>So instead, I&#8217;m showing what I liked best,  one image per day.</p>
+]]></content:encoded>
+			<wfw:commentRss>/2010/11/04/visweek-2010-the-one-minute-edition/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

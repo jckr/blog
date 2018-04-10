@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>react &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/category/react/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>Beyond rendering</title>
+		<link>/2016/08/13/beyond-rendering/</link>
+		<comments>/2016/08/13/beyond-rendering/#respond</comments>
+		<pubDate>Fri, 12 Aug 2016 23:41:36 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[d3]]></category>
+		<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[javascript]]></category>
+		<category><![CDATA[react]]></category>
+		<category><![CDATA[tips]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1758</guid>
+		<description><![CDATA[This is the 5th post in my Visualization with React series. Previous post: React components The lifecycle functions I&#8217;m not going to go into great details on this, but a talk on React without mentioning the lifecycle functions would not be complete. React components come with several functions which are fired when certain events occur, <a class="read-more" href="/2016/08/13/beyond-rendering/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>This is the 5th post in my <a href="http://wp.me/po630-rq">Visualization with React</a> series. Previous post: <a href="http://wp.me/po630-sg">React components</a></p>
+<h1>The lifecycle functions</h1>
+<p>I&#8217;m not going to go into great details on this, but a talk on React without mentioning the <a href="https://facebook.github.io/react/docs/component-specs.html">lifecycle functions</a> would not be complete.<br />
+React components come with several functions which are fired when certain events occur, such as when the component is first created (&#8216;mounts&#8217;), when it&#8217;s updated or when it&#8217;s removed (&#8216;unmounts&#8217;).<br />
+Pure functional components, which we&#8217;ve been mostly using, don&#8217;t have lifecycle functions.<br />
+But components with a state can have them.</p>
+<p>Some examples of usage of those lifecycle functions include: </p>
+<ul>
+<li>Before the component is rendered, you can load data. that&#8217;s a job for &#8216;componentWillMount&#8217;.</li>
+<li>After a component is rendered, you can animate it, or add an event listener. Use &#8216;componentDidMount&#8217;. </li>
+<li>Prevent a component from rendering under certain circumstances, even if it receives new properties or its state changes. Use &#8216;shouldComponentUpdate&#8217;. </li>
+<li>After a component receives new props or new state, you can trigger another function before the component updates (&#8216;componentWillUpdate&#8217;) or right after (&#8216;componentDidUpdate&#8217;). </li>
+<li>When a component is going to be removed, you can do some cleanups, like deleting event listeners. Use &#8216;componentWillUnmount&#8217;. </li>
+</ul>
+<p>Oftentimes, you can simply get by by using the default behavior of React components, which re-render only when they receive different properties or when their state changes. But it can be really convenient to have that extra degree of control.</p>
+<p>Here is an example of using these lifecycle functions in context.</p>
+<p data-height="400" data-theme-id="0" data-slug-hash="Vjxywz" data-default-tab="result" data-user="jckr" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/jckr/pen/Vjxywz/">lifecycle functions example</a> by Jerome Cukier (<a href="http://codepen.io/jckr">@jckr</a>) on <a href="http://codepen.io/">CodePen</a>.</p>
+<p>What is going on there?<br />
+We&#8217;re adapting our earlier <a href="http://codepen.io/jckr/pen/BzKVJq">scatterplot</a> example, only this time, we are not using pure functional components (which don&#8217;t have those lifecycle functions), but creating classes.<br />
+We&#8217;re going to have three classes: Chart, at the highest level; Scatterplot, a child of Chart; and Points.<br />
+Chart passes data to Scatterplot. What it passes depends on whether the button is clicked. That button changes the state of Chart (which causes a rerendering of the Scatterplot and the Point elements).<br />
+Chart also has a private variable that holds a message we can display on top. We can still use callback functions to change this variable, just like we change the state, but the difference between changing the state and changing a private variable is that changing a private variable doesn&#8217;t cause the children to re-render.<br />
+When we first create the scatterplot element, the componentDidMount function is called, and the message is changed to reflect that.<br />
+Then, each time we click the button, a different data property is passed to the Scatterplot element. Also, the componentDidUpdate method is triggered, which changes the message.<br />
+(changing the state of the parent from a componentDidUpdate method can cause an endless re-rendering loop, this is why I used private variables instead of the state, and there are ways to address this but for the sake of brevity this is the easiest way to deal with that problem).<br />
+Now, when a full dataset is passed to the Scatterplot element, many Point elements will be created. I&#8217;ve also added a lifecycle method to these Points: when they are first created, they receive a small animation. To that end, I have also used the componentDidMount method, but this time at the Point level.<br />
+Exit animations are also possible, but &#8211; full disclosure &#8211; they are less easy to implement in React than entry animations, or than in D3. So again in the interest of concision I&#8217;ll skip these for now.</p>
+<h1>React and D3</h1>
+<p>We just saw that with React, we can create a DOM element, then immediately after, call a function to do whatever we want, such as manipulating that element. That function would have access to all the properties and state of that React element.<br />
+So what prevents us from combining React and D3? Nothing!<br />
+We can create components that are, essentially, an SVG element, then use componentDidMount to perform D3 magic on that element.<br />
+Here&#8217;s an example:</p>
+<p data-height="600" data-theme-id="0" data-slug-hash="BzxbPY" data-default-tab="result" data-user="jckr" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/jckr/pen/BzxbPY/">mixing react and d3</a> by Jerome Cukier (<a href="http://codepen.io/jckr">@jckr</a>) on <a href="http://codepen.io/">CodePen</a>.</p>
+<p>In that example, I have used a bona fide bl.ocks (<a href="https://bl.ocks.org/mbostock/7881887">https://bl.ocks.org/mbostock/7881887</a>) and wrapped it inside a React component. So I can create one, or in the case of that example, several such elements by just passing properties. Those components can perfectly function as black boxes: we give them properties, they give us visualizations that correspond to these parameters. And it doesn&#8217;t have to be D3 &#8211; once a React element has been created, we can use componentDidMount to do all kinds of operations on it. </p>
+<p>In the last 2 articles I will present actual data visualization web apps made with React.<br />
+In the next post, we&#8217;ll see how to set up a simple web app and we&#8217;ll create our <a href="http://wp.me/po630-sp">first example app</a>. </p>
+]]></content:encoded>
+			<wfw:commentRss>/2016/08/13/beyond-rendering/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Coding with React</title>
+		<link>/2016/08/10/coding-with-react/</link>
+		<comments>/2016/08/10/coding-with-react/#respond</comments>
+		<pubDate>Wed, 10 Aug 2016 19:16:47 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[d3]]></category>
+		<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[javascript]]></category>
+		<category><![CDATA[react]]></category>
+		<category><![CDATA[tips]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1739</guid>
+		<description><![CDATA[This article is part of my series Visualization with React. Previous article: An ES6 primer Setting things up in Codepen In the last two articles of the series, I&#8217;ll cover how to get a real React coding environment going, but to start dabbling, playgrounds like jsFiddle or codepen are great. I&#8217;m partial to codepen. When <a class="read-more" href="/2016/08/10/coding-with-react/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p><script src="//assets.codepen.io/assets/embed/ei.js" async=""></script>This article is part of my series <a href="http://wp.me/po630-rQ">Visualization with React</a>. Previous article: <a href="http://wp.me/po630-rX">An ES6 primer</a></p>
+<h1>Setting things up in Codepen</h1>
+<p>In the last two articles of the series, I&#8217;ll cover how to get a real React coding environment going, but to start dabbling, playgrounds like <a href="https://jsfiddle.net/reactjs/69z2wepo/">jsFiddle</a> or <a href="http://codepen.io/">codepen</a> are great. I&#8217;m partial to codepen. When you create a new pen, you still have a couple of options to set up before you can start creating React code: <img src="http://jeromecukier.net/assets/visualization-with-react/react-settings-in-codepen.png" alt="" /></p>
+<p>In the Settings / Javascript / quick-add section (the drop-down at the bottom left) please choose React, then React DOM.</p>
+<p>All of the code examples of articles 1, 3, 4, and 5 can be found in this <a href="http://codepen.io/collection/XdEpyp/">codepen collection</a>.</p>
+<h1>Creating elements</h1>
+<p class="codepen" data-height="265" data-theme-id="0" data-slug-hash="pbjpOm" data-default-tab="result" data-user="jckr" data-embed-version="2">See the Pen <a href="http://codepen.io/jckr/pen/pbjpOm/">React simple scatterplot</a> by Jerome Cukier (<a href="http://codepen.io/jckr">@jckr</a>) on <a href="http://codepen.io/">CodePen</a>.</p>
+<p>In this first React example, we&#8217;re going to create a couple of very simple elements and render them. Let&#8217;s start by the end: <code>ReactDOM.render(myDiv, document.querySelector('#root'));</code> We use ReactDOM.render to, well, render something we have created (myDiv) somewhere in our document (on top of what corresponds to the &#8216;#root&#8217; selection. We conveniently have a div with the id &#8220;root&#8221; in the HTML part of the pen). That&#8217;s it! we&#8217;ve output something using React. While the syntax can appear a bit daunting, it really does one simple thing: take what you&#8217;ve made and put it where it should be. But what&#8217;s that myDiv? To find out, let&#8217;s look at the first 2 lines of our code. <code>const mySpan = React.createElement('span', {style: {fontFamily: 'sans-serif'}}, 'hello React world'); const myDiv = React.createElement('div', {className: 'my-div'}, mySpan);</code> Oh, so before there was a myDiv, there was a mySpan. MySpan is a React element, the building brick of the React eco system. To create it, we use React.createElement which is the workhorse of React. React.createElement takes three arguments: the type of React element we are creating, its properties, and its content. The type of element can be any HTML or SVG element, and we&#8217;ll see later that we can also make our own. The second argument is the properties. It&#8217;s an object. In the d3 world, the properties could be what goes in the attr method. So when you create an SVG element like a rect, its properties could include things like x, y, width and height. In d3, style is treated slightly differently. This is also the case in React. When using React.createElement with an HTML or SVG element, that could be styled using CSS, you can use a style property to pass a style object. That style object contains all CSS properties you want to apply to the object, but instead of hyphenating them, they are written in camel case (so font-family, for instance, becomes fontFamily). The third argument is content: it can either be a string, a single React element, or an array of React elements. In the first line (mySpan) we&#8217;ve used a string. So, this first line created a React element which is a span, which contains &#8220;hello React world&#8221;, and which has a simple style applied to it. In the second line, we create a second React element. Again, React.createElement takes three arguments: type of element (now it&#8217;s an HTML div), properties and content. Instead of providing a string, we can pass another React element, such as mySpan that we created above. And that&#8217;s it! we&#8217;ve rendered something using react.</p>
+<h1>Creating elements from data</h1>
+<p>In the example above, we&#8217;ve used React.createElement with two kind of content: a string and another React element. But I mentioned that there was a third possibility: an array of React elements. If you&#8217;re familiar with d3, you might think: in d3, I could do that from an array of data. The idea in React is pretty similar, only, instead of using select / selectAll / data / enter / append, we can just create our array.</p>
+<p class="codepen" data-height="350" data-theme-id="0" data-slug-hash="ezZrOM" data-default-tab="result" data-user="jckr" data-embed-version="2">See the Pen <a href="http://codepen.io/jckr/pen/ezZrOM/">React simple scatterplot</a> by Jerome Cukier (<a href="http://codepen.io/jckr">@jckr</a>) on <a href="http://codepen.io/">CodePen</a>.</p>
+<p>One simple way to do that is to use map: <code>myArray.map(d =&gt; React.createElement(...))</code>. This is exactly what we are doing in the snippet of code above. This uses the birthdeathrates dataset, one of the example files provided with R (number of births and deaths per thousand people per year in various countries.) The interestingness happens here:</p>
+<pre class="brush: jscript; title: ; notranslate">birthdeathrates.map(
+  (d, i) =&gt; React.createElement('div', {
+    'key': i,
+    'style': {
+       background: '#222',
+       borderRadius: 5,
+       height: 10,
+       left: 5 * d.birth,
+       top: 300 - 5 * d.death,
+       position: 'absolute',
+       width: 10,
+       opacity: .2}
+  })
+)</pre>
+<p>In the properties that I pass, some depend on the underlying data. This is a mapping so it&#8217;s going to return something for each item of the array. Each item of the array is represented by d, and has the birth, death and country properties. In left and top, we use a calculation based on these properties. And for each item, we get a React element created with these calculations. This isn&#8217;t unlike what we&#8217;d had in d3 if we had written:</p>
+<pre class="brush: jscript; title: ; notranslate"> ...
+ .selectAll('div')
+ .data(birthdeathrates)
+ .enter()
+ .append('div')
+ .style({ ..., left: d =&gt; 5 * d.birth, top: d =&gt; 300 - 5 * d.death, ...})
+</pre>
+<p>Take note of the key property in the react code. This is necessary when you create many elements using map (well not really necessary but strongly recommended, you&#8217;d get a warning if you don&#8217;t use it). This is used so that if for some reason your parent element has to re-render, each child element will only be re-rendered if needed. If you&#8217;ve followed this far, you are now capable of doing things in React the critical part of what you were doing with d3: creating elements out of data. You might wonder: but does it work for svg? yes, and the logic is exactly the same:</p>
+<p class="codepen" data-height="373" data-theme-id="0" data-slug-hash="MeyVLE" data-default-tab="result" data-user="jckr" data-embed-version="2">See the Pen <a href="http://codepen.io/jckr/pen/MeyVLE/">React simple scatterplot</a> by Jerome Cukier (<a href="http://codepen.io/jckr">@jckr</a>) on <a href="http://codepen.io/">CodePen</a>.</p>
+<h1>Introducing JSX</h1>
+<p data-height="373" data-theme-id="0" data-slug-hash="YWqLwz" data-default-tab="result" data-user="jckr" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/jckr/pen/YWqLwz/">React simple scatterplot JSX</a> by Jerome Cukier (<a href="http://codepen.io/jckr">@jckr</a>) on <a href="http://codepen.io/">CodePen</a>.</p>
+<p>At this point you might think: all of this is great, but typing React.createElement all the time is kind of cumbersome. Many people do too, and there are a number of ways to not do that. The most popular, and the one in use at Facebook, is JSX. I personally use <a title="r-dom" href="http://https://github.com/uber/r-dom">r-dom</a> most of the time, but since JSX is definitely the most common way to write React, now that you have a feel for what React.createElement does, it&#8217;s not unreasonable to continue with JSX.</p>
+<p>The main idea of JSX is that you&#8217;ll write tags in your javascript. Instead of writing:</p>
+<pre class="brush: jscript; title: ; notranslate">
+React.createElement('type', {property1: value1, property2: value2, ...}, content)
+</pre>
+<p>you would write:</p>
+<pre class="brush: plain; title: ; notranslate">
+&lt;type property1={value1} property2={value2} ...&gt;
+content
+&lt;/type&gt;
+</pre>
+<p>So in our previous example, we create an SVG element that has a width and a height property.<br />
+We&#8217;d write:</p>
+<pre class="brush: jscript; title: ; notranslate">
+const svg = &lt;svg height={300} width={300}&gt;
+//... content ...
+&lt;/svg&gt;
+</pre>
+<p>Inside the opening tag, we list all the properties and we give them a value. This isn&#8217;t unlike what you&#8217;d see when you watch the source of an HTML file.<br />
+The value of the properties go inside curly braces, unless they are a string. For length-type values (ie height, width, top, left, font-size&#8230;) if a number is provided, it&#8217;s assumed it&#8217;s in px.<br />
+If the element we create has other elements inside of it, there has to be an opening and a closing tag (ie &lt;element&gt; and &lt;/element&gt;). But if there isn&#8217;t, there can be a single tag (ie &lt;element /&gt;)<br />
+Inside our svg, we have a bunch of circle elements. They are of the form:</p>
+<pre class="brush: plain; title: ; notranslate">
+&lt;circle 
+  cx={5 * d.birth}
+  cy={300 - 5 * d.death}
+  key={i}
+  r={5}
+  style={{
+    fill: '#222',
+    opacity: .2
+  }}
+/&gt;</pre>
+<p>inside our curly braces, we can have calculations. And since there are no elements inside our circles, we don&#8217;t have to have both a &lt;cirlce&gt; and a &lt;/circle&gt; tag, although we could; we can have a single &lt;circle /&gt; tag.</p>
+<p>That&#8217;s it in a nutshell, more details can be found <a title="here" href="https://facebook.github.io/react/docs/jsx-in-depth.html">here.</a><br />
+Now you might think: if I type that in my text editor, I&#8217;m almost certain I&#8217;ll get an error! Indeed, behind the scenes, there has to be some transformation for your browser to understand JSX. This magical operation is called <em>transpilation</em>. Transpilation is just what you&#8217;d hope it is, it turns code written how you like into code that the browser can interpret flawlessly. The flip side is that&#8230; well, you have to transpile your code.<br />
+If you work into environments like codepen or JsFiddle, they can take care of this for you. The most common transpiler is Babel. Babel turns your code into ES2015 compliant javascript (that is, before ES6). So the added bonus is that we can use any ES6 feature without wondering whether the user browser supports it or not. Most ES6 features are supported by the latest versions of many browswers, but there&#8217;s no guarantee that your users will run your favorite browser, let alone its latest version.<br />
+If you want to do this on your own, you&#8217;ll have to set up a build environment, we&#8217;ll cover this in the last two articles.</p>
+<p>&nbsp;</p>
+]]></content:encoded>
+			<wfw:commentRss>/2016/08/10/coding-with-react/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>D3 and React &#8211; similarities and differences</title>
+		<link>/2016/08/09/d3-and-react-similarities-and-differences/</link>
+		<comments>/2016/08/09/d3-and-react-similarities-and-differences/#comments</comments>
+		<pubDate>Tue, 09 Aug 2016 04:13:37 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[d3]]></category>
+		<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[javascript]]></category>
+		<category><![CDATA[react]]></category>
+		<category><![CDATA[tips]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1722</guid>
+		<description><![CDATA[Previous article: Visualization with React d3, meet cousin React Let&#8217;s not sugarcoat it: working with React is more complicated than with plain vanilla javascript. There are a few additional notions which may sound complex. But the good news is that if you come from the d3 world, there are many concepts which are similar. Visualization <a class="read-more" href="/2016/08/09/d3-and-react-similarities-and-differences/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p><script src="//assets.codepen.io/assets/embed/ei.js" async=""></script><br />
+<a href="http://wp.me/po630-rr">Previous article: Visualization with React</a></p>
+<h1>d3, meet cousin React</h1>
+<p>Let&#8217;s not sugarcoat it: working with React is more complicated than with plain vanilla javascript. There are a few additional notions which may sound complex. But the good news is that if you come from the d3 world, there are many concepts which are similar. Visualization on the web is, at its core,<strong> transforming a dataset into a representation</strong>. That dataset is probably going to be an array, and at some point the framework will loop through the array and create something for each element of the array. For instance, if you want to make a bar chart, you probably will have at some point an array with one item that corresponds to each bar, which has a value that corresponds to its length. Looping through the array, each item is turned into a rectangle whose height depends on that value. That logic, which is at the core of d3 with <a href="http://www.jeromecukier.net/blog/2013/03/05/d3-tutorial-at-strata-redux/">selections</a>, is also present in React. In d3, <strong>visualizations are essentially hierarchical.</strong> We start from an SVG element (probably), add to it elements like groups, which can hold other elements. To continue with our bar chart example, our chart will have several data marks attached to it (the bars), and there&#8217;s a hierarchical relation between them: the chart contains those marks. Our chart could be part of a dashboard that has several charts, or part of a web page that has other information. At any rate, in the d3 world, everything we create is added to a root element or to elements we create and arranged in a tree-like hierarchy. This is also the case in React, with a difference: the world of React is mostly structured into components. When that of d3 is mostly made of DOM elements like HTML or SVG elements, that of React is made of components. A React component is a part of your end result. It can be as small as a DOM element, or as big as the whole application. And it can have component children. So, components are logical ways to package your application. Components are created with modularity and reusability in mind. For instance, I can create a bar chart component in React, and the next time I have a bar chart to make, I can just reuse the exact same component. I can also create components to make axes or the individual bars in the chart, which my bar chart component will use. But the next time I need a bar chart, I wouldn&#8217;t have to think about it. In contrast, if I want to create another bar chart in d3, I probably have to recreate it from scratch and decide manually what happens to all the SVG or HTML elements that constitute the bar chart.</p>
+<h1>You say dAYta, I say da-tah</h1>
+<p>One fundamental way in which d3 and React differ is by how they treat data. If you read about React, you may find fancy terms like one-way data binding. In how many ways the data is bound in d3 is not something which is on top of our head when we create visualization so that might sound confusing. In d3, an element can modify the data which is associated to it. I&#8217;ve used it so many times.</p>
+<p class="codepen" data-height="265" data-theme-id="0" data-slug-hash="XKmpYo" data-default-tab="result" data-user="jckr" data-embed-version="2">See the Pen <a href="http://codepen.io/jckr/pen/XKmpYo/">React simple scatterplot</a> by Jerome Cukier (<a href="http://codepen.io/jckr">@jckr</a>) on <a href="http://codepen.io/">CodePen</a>.</p>
+<p>These bars have been made with a very simple dataset shown below them. If you click on the bars, the underlying data will change and the representation will change as well. In the world of React, when properties are passed to a component, they cannot be changed. That&#8217;s what one-way binding means. Data in React flows unidirectionally. Once it&#8217;s defined, it determines the way all components should be displayed. In certain events, a parent component can pass different properties to its children component and they may be re-rendered (we&#8217;ll see this in just a moment). But the important part is that properties passed to a component can never be changed. You may wonder: why is that even a good thing? React makes it impossible to do things! yes, but in the process it also makes things much safer. If properties can&#8217;t be changed, it also means that they can&#8217;t be altered by something we hadn&#8217;t thought of. Also, it makes it much easier to work on components independently: one team mate could make a bar chart component while her colleague makes a line chart. They don&#8217;t really need to know the inner working of the other component, and they know that nothing unexpected will disturb the way their component function.</p>
+<h1>The state of affairs</h1>
+<p>Components of React have a really powerful feature which doesn&#8217;t explicitly exist in d3: the state. The state represents the current status of a component. Here&#8217;s a simple switch component:</p>
+<p class="codepen" data-height="265" data-theme-id="0" data-slug-hash="mEeRvr" data-default-tab="result" data-user="jckr" data-embed-version="2">See the Pen <a href="http://codepen.io/jckr/pen/mEeRvr/">React simple scatterplot</a> by Jerome Cukier (<a href="http://codepen.io/jckr">@jckr</a>) on <a href="http://codepen.io/">CodePen</a>.</p>
+<p>We want to record the fact that the switch can be turned on or off. Here&#8217;s how it should work: First we create our switch component, and it&#8217;s supposed to be off. Then, if the user clicks it, it becomes on if it were off and vice-versa. And it should also be redrawn, to reflect that it&#8217;s been turned on (or off). The state does all that. It records the current status of the component. Technically, it&#8217;s an object with properties, so it can save a lot of information, not just a simple true or false value. The other great thing about the state is that if it changes, then the component is re-rendered. Rendering a component could require rendering children component, and they may be re-rendered as well. So with the state and properties, we have a powerful framework to handle events and whatever may happen to our app. If there&#8217;s an event we care about, it can change the state of a component, then, all of the children components may be re-rendered. And there&#8217;s no other way to redraw them. This is in contrast with plain d3 where anything goes &#8211; anything can change anything, data can be used to render elements, the underlying data can be changed without changing the element, the element can be transformed without changing the underlying data.</p>
+<p>State is an important notion in computer science. In d3, it&#8217;s just doesn&#8217;t have a more formal representation than all the variables in your code.</p>
+<p>In the next article in the series, <a href="http://wp.me/po630-rX">an ES6 Primer</a>, we will look in some useful ES6 features for React. </p>
+]]></content:encoded>
+			<wfw:commentRss>/2016/08/09/d3-and-react-similarities-and-differences/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Visualization with React</title>
+		<link>/2016/08/09/visualization-with-react/</link>
+		<comments>/2016/08/09/visualization-with-react/#comments</comments>
+		<pubDate>Tue, 09 Aug 2016 04:07:56 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[d3]]></category>
+		<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[javascript]]></category>
+		<category><![CDATA[react]]></category>
+		<category><![CDATA[tips]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1726</guid>
+		<description><![CDATA[Some back story&#8230; In what seemed a lifetime ago now, I wrote tutorials to help people get started with Protovis as I learned it myself (it is indeed a lifetime away since Protovis is dead and buried for all intents and purposes). And a few years ago, I did the same for d3 as this <a class="read-more" href="/2016/08/09/visualization-with-react/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<h1>Some back story&#8230;</h1>
+<p>In what seemed a lifetime ago now, I wrote tutorials to help people get started with Protovis as I learned it myself (it is indeed a lifetime away since Protovis is dead and buried for all intents and purposes). And a few years ago, I did the same for d3 as this started to become the most powerful visualization framework and for which documentation was still scarce. I wrote these tutorials to help me learn, but since then I have met many people who found them useful which blew my mind. By documenting my learning, I got noticed by Facebook and travelled 9000 miles to a new life.</p>
+<p>At Facebook, I had some loosely-defined data visualization explorer role. While I joined during the infancy of React, I didn&#8217;t feel super comfortable using it then &#8211; I felt more effective writing one-off d3 applications. Eventually, I moved on and am now working at Uber as a fully-fledged <a href="https://eng.uber.com/data-viz-intel/">data visualization engineer</a>. I work almost exclusively with dashboards, which have a pretty elaborate UI.</p>
+<p>Like in many other companies, at Uber, we use React for our web applications, including our visualizations, dashboards and maps. Increasingly, React is becoming the lingua franca of visualization: more than a tool that allows one to draw data, a mindset that informs how one should think a visualization. React is no longer a young library &#8211; the initial public release dates back from May 2013, and its very first application at Facebook was visualization (my first Facebook project, pages insights). There&#8217;s already many, many learning resources and tutorials for React. What I&#8217;ll try to do here is to show how React can be used for visualization: hopefully, this will be useful both for people who come from d3 and who&#8217;ve never worked with a web framework before, and for people who are familiar with React but who don&#8217;t know visualization well. That won&#8217;t be a complete and exhaustive guide, more a way to get started with references on how to go further.</p>
+<h1>The articles</h1>
+<p>I&#8217;ve structured this guide in 7 parts, and I&#8217;ll publish one per day:</p>
+<ol>
+<li><a href="http://www.jeromecukier.net/blog/2016/08/09/d3-and-react-similarities-and-differences/">React vs D3</a>, where we&#8217;ll explore similarities and differences between these two frameworks.</li>
+<li><a href="http://wp.me/po630-rX">An ES6 primer</a>. I have written all the examples in good, sensible, modern ES6 javascript, because as of 2016 this is probably the most common syntax. Without going too deep into the details, I&#8217;ll explain what parts of the language I used for the examples, and how they differ from ES5.</li>
+<li>Gentle introduction to <a href="http://wp.me/po630-s3">coding with React</a>, where we&#8217;ll explore the high-level concepts of the framework and see how we can create visual elements from data. We&#8217;ll end on a presentation of JSX, a flavor of Javascript used to write React applications, which I&#8217;ll also use for most of the examples for the same reasons as ES6 &#8211; because it&#8217;s the most widespread way of writing React code today.</li>
+<li><a href="http://wp.me/po630-sg">React components</a>, the most important concept in React and the building blocks of React applications.</li>
+<li><a href="http://wp.me/po630-sm">Beyond rendering</a>. We&#8217;ll look at the React concept of lifecycle methods, and also how we can use d3 within React components.</li>
+<li><a href="http://wp.me/po630-st">Creating a React visualization web app</a> &#8211; using what we&#8217;ve seen, and two libraries &#8211; Facebook&#8217;s <a href="https://github.com/facebookincubator/create-react-app">create-react-app</a> and Uber&#8217;s <a href="https://github.com/uber/react-vis/">React-vis</a>, we&#8217;ll create a small standalone React visualization that can be deployed on its own website.</li>
+<li><a href="http://wp.me/po630-st">The big leagues</a> &#8211; in that last part, we&#8217;ll write together a more complex visualization with live data and several components interacting with one another.</li>
+</ol>
+<h1>The code</h1>
+<p>The examples of parts 1-5 can be found on <a href="http://codepen.io/collection/XdEpyp/">codepen</a>. I&#8217;ll add link to examples of part 6 and 7 when they go live.</p>
+]]></content:encoded>
+			<wfw:commentRss>/2016/08/09/visualization-with-react/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+	</channel>
+</rss>

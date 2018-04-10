@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="HandheldFriendly" content="True" />
+<meta name="MobileOptimized" content="320" />
+
+<title>animations and transitions | jeromecukier.net</title>
+
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="/xmlrpc.php">
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Feed" href="/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Comments Feed" href="/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; animations and transitions Comments Feed" href="/2012/07/16/animations-and-transitions/feed/" />
+<!-- This site uses the Google Analytics by MonsterInsights plugin v7.0.5 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+<!-- Note: MonsterInsights is not currently configured on this site. The site owner needs to authenticate with Google Analytics in the MonsterInsights settings panel. -->
+<!-- No UA code set -->
+<!-- / Google Analytics by MonsterInsights -->
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/localhost:8888\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6.10"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='YoutubeShortcodeMargenn-css'  href='/wp-content/plugins/youtube-shortcode/youtube-shortcode.css?ver=4.6.10' type='text/css' media='all' />
+<link rel='stylesheet' id='casper-google-fonts-css'  href='//fonts.googleapis.com/css?family=Noto+Serif%3A400%2C700%2C400italic%7COpen+Sans%3A700%2C400&#038;ver=4.6.10' type='text/css' media='all' />
+<link rel='stylesheet' id='casper-style-css'  href='/wp-content/themes/casper/style.css?ver=4.6.10' type='text/css' media='all' />
+<script type='text/javascript' src='/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Embedding tableau visualizations on the web' href='/2012/07/02/embedding-tableau-visualizations-on-the-web/' />
+<link rel='next' title='Getting to &#8220;Hello world&#8221; with d3' href='/2012/09/04/getting-to-hello-world-with-d3/' />
+<meta name="generator" content="WordPress 4.6.10" />
+<link rel="canonical" href="/2012/07/16/animations-and-transitions/" />
+<link rel='shortlink' href='http://wp.me/p-lN' />
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2Flocalhost%3A8888%2F2012%2F07%2F16%2Fanimations-and-transitions%2F" />
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2Flocalhost%3A8888%2F2012%2F07%2F16%2Fanimations-and-transitions%2F&#038;format=xml" />
+
+   	<style type="text/css">
+					.blog-title a, .blog-description, .social-icons a { color: #ffffff; }
+		
+						                
+		
+							.main-navigation a { color: ; }
+		                                            </style>
+    		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+
+<body class="single single-post postid-1351 single-format-standard group-blog">
+
+<header id="masthead" role="banner" class="site-head site-header" >
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+        <div>
+            <h1 class="menu-toggle">
+                <a class="icon-bars" href="#">
+                    <span class="hidden">Menu</span>
+                </a>
+            </h1>
+            <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+            <div class="menu"><ul><li ><a href="/">Home</a></li><li class="page_item page-item-6"><a href="/about/">About</a></li><li class="page_item page-item-1073"><a href="/data-stories/">Data with stories workshop &#8211; examples</a></li><li class="page_item page-item-437"><a href="/proofs-of-concept/">Private section</a></li><li class="page_item page-item-2"><a href="/sample-page/">Sample Page</a></li></ul></div>
+        </div>
+    </nav><!-- #site-navigation -->
+
+    <div class="vertical-row">
+        <div class="vertical">
+            <div class="site-head-content inner">
+                
+                <div class="social-icons">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                    </div>
+                <h1 class="blog-title"><a class="blog-logo" href='/' rel='home'>jeromecukier.net</a></h1>
+                <h2 class="blog-description">Just another WordPress site</h2>
+            </div>
+        </div>
+    </div>
+</header><!-- #masthead -->
+
+<main id="content" class="content" role="main">
+
+
+		
+			<article id="post-1351" class="post-1351 post type-post status-publish format-standard hentry category-d3 category-tips tag-animations tag-d3 tag-transitions tag-tutorial">
+    <header class="post-header">
+                	<span class="post-meta">
+        	    <span class="posted-on"><a href="/2012/07/16/animations-and-transitions/" rel="bookmark"><time class="entry-date published" datetime="2012-07-16T11:44:09+00:00">July 16, 2012</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> | <a href="/category/d3/" rel="category tag">d3</a>, <a href="/category/tips/" rel="category tag">tips</a> in <a href="/tag/animations/" rel="tag">animations</a>, <a href="/tag/d3/" rel="tag">d3</a>, <a href="/tag/transitions/" rel="tag">transitions</a>, <a href="/tag/tutorial/" rel="tag">tutorial</a>        	</span>
+		        <h1 class="post-title"><a href="/2012/07/16/animations-and-transitions/" rel="bookmark">animations and transitions</a></h1>
+        
+    </header>
+    		<section class="post-content">
+		    <p><strong>That post originally appeared on <a href="/2012/07/16/animations-and-transitions/blog.visual.ly/creating-animations-and-transitions-with-d3-js/">visual.ly</a>, I&#8217;m reproducing it here for clarity and ease of retrieval</strong></p>
+<p>In interactive visualisation, there is the word reactive. Well, maybe not literally, but close enough.<br />
+The fact is that reactivity, or the propension of a visualisation to respond to user actions, can really help engage the user in a visualisation, and help them understand its results. Both of which are usually good things. And how can this reactivity be achieved? Through animations. </p>
+<p>So I&#8217;ll go ahead and state that <strong>animation, if done right, can make any interactive data visualization better.</strong>.<br />
+How is that?</p>
+<ul>
+<li>When coupled with interaction, it&#8217;s a very useful way to give feedback to the user. What has changed since their last command? If what&#8217;s on screen animates from one state to another, it&#8217;s obvious, it stands out and it makes sense. Or, when showing any form of real-time data, animation is pretty much required.</li>
+<li>Animation can bring focus on the important things as a chart loads. Our vision is very sensitive to movement, so using these <em>introduction transitions</em> sensibly helps a lot to ease the effort required to get the right information off a chart.<br />
+Compare these two charts:<br />
+<iframe src="http://www.jeromecukier.net/stuff/transitions.html#15" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+<iframe src="http://www.jeromecukier.net/stuff/transitions.html#16" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+Which is better at getting the viewer&#8217;s attention on the last bar?<br />
+<em>[side note on examples: they all use the same model. Click on the button to start an animation. If there is nothing on the chart, clicking the button will make something appear.]</em>
+</li>
+<li>animation works well with metaphors, like growing, expanding, moving, dwindling, etc. so it can really enhance the expressiveness of a visualization that tries to convey any of these ideas (those and many others)	</li>
+</ul>
+<p>That&#8217;s said, animation can definitely ruin your visualization, too. Here are three general problems. </p>
+<ul>
+<li>Animation is very prominent. That can be good to call attention to a specific, unambiguous part of your chart. But what happens when there is too much animation? without other cues it gets difficult for a viewer to determine where to focus their attention.</li>
+<li> Animation across many states (like a video of animated data) make them difficult to compare to one another, as opposed to showing still images of various states side by side. (see <a href="http://www.cc.gatech.edu/~john.stasko/papers/infovis08-anim.pdf" title="Effectiveness of Animation in Trend Visualization"></a> for more on this.</li>
+<li>If the animation is not continuous, if the chart is somehow wiped out during it, this caused <a href="http://nivea.psycho.univ-paris5.fr/Mudsplash/Nature_Supp_Inf/Movies/Movie_List.html">change blindness</a> which pretty much negates any benefit you may have hoped to reap from animation.<br />
+Look at this example.<br />
+<iframe src="http://www.jeromecukier.net/stuff/transitions.html#17" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+When animated, the line goes through a blank state which makes is close to impossible to track changes between the original and final state. The only way to detect change is to focus on one given point and memorize its original position, but this is very ineffective.
+</li>
+</ul>
+<h3>Now how to do it?</h3>
+<p>So we&#8217;ve seen how animation is helpful in data visualization. Now, let&#8217;s do it!<br />
+For this purpose, let&#8217;s use <a href="http://d3-js.org/">d3</a>. d3 has many, many possibilities when it comes to data animation which are relatively painless to implement.</p>
+<h4>The principle</h4>
+<p>If you know how to draw in d3, you almost know how to animate. (and if you don&#8217;t know yet, <a href="http://alignedleft.com/tutorials/">Alignedleft</a> has a splendid collection of tutorials to get you started, and the <a href="https://github.com/mbostock/d3/wiki/Tutorials">d3 site</a> lists more including some by <a href="http://www.jeromecukier.net/blog/category/d3/">yours truly</a>.)<br />
+Animations are called transitions in d3 for a reason. A technical definition of animation can be that over a certain lapse of time, one or more characteristics of an object would <i>transition</i> from one value to another. </p>
+<p>And what do we mean by characteristics? Well, just about anything that can be expressed numerically. </p>
+<h4>A few examples of transitions</h4>
+<p><iframe src="http://www.jeromecukier.net/stuff/transitions.html#0" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+Unsuprisingly, when you update the position of an item smoothly over time, it moves. In svg, position is determined for most shapes, such as our blue rectangle here, by the x and y attributes, which correspond to the top-left corner of the shape. For circles, you use cx and cy, or the coordinates of the center. For paths, such as our red triangle, you actually specify the position of all of the points in the &#8220;d&#8221; attribute.</p>
+<p><iframe src="http://www.jeromecukier.net/stuff/transitions.html#1" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+Likewise, when you change size, your object grows (or shrinks!). You can use width and height for shapes like rectangles, or r for circles. </p>
+<p><iframe src="http://www.jeromecukier.net/stuff/transitions.html#2" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+Color is really a numerical attribute too, and it&#8217;s indeed possible (and very useful) to transition from one color to another. In svg, color is a style attribute that is defined by fill or stroke.</p>
+<p><iframe src="http://www.jeromecukier.net/stuff/transitions.html#3" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+Not unlike color, it&#8217;s very useful to be able to vary opacity. When opacity is set to 0, the corresponding object is completely transparent. So transitioning on opacity is very useful to make objects fade in or out. </p>
+<h4>How this is done</h4>
+<p>Now that we&#8217;ve seen what transitions can do, let&#8217;s see how to code this in d3.<br />
+Let&#8217;s go back to our first example. In fact, let&#8217;s make it even simpler.</p>
+<p><iframe src="http://www.jeromecukier.net/stuff/transitions.html#4" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+To create a square like this in d3, we would write something like:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+var mySquare=svg.append(&quot;rect&quot;)
+  .attr(&quot;x&quot;,60)
+  .attr(&quot;y&quot;,60)
+  .attr(&quot;width&quot;,60)
+  .attr(&quot;height&quot;,60);
+</pre>
+<p>4 attributes. Simple enough.<br />
+so if we want to make it move to the right, we are going to update the x attribute. That&#8217;s how we do it: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+mySquare
+  .transition()
+  .attr(&quot;x&quot;,320);
+</pre>
+<p>It&#8217;s that simple: use the transition method, then specify all you want to see changed just as if you were creating a new item. And using that one principle, we can easily reproduce any of the above examples.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+mySquare
+  .transition()
+  .attr(&quot;width&quot;,120); // will make it bigger
+
+mySquare
+  .style(&quot;fill&quot;,&quot;white&quot;) // if the fill is originally left blank and comes
+                         //  from a style sheet, it will start as black 
+  .transition()
+  .style(&quot;fill&quot;,&quot;blue&quot;);
+
+mySquare
+  .transition()
+  .style(&quot;opacity&quot;,0);
+</pre>
+<p>Now, in our simple examples, this is not exactly what happens. The transitions occur after an event, namely, when the user clicks on the button. And indeed, transitions are most useful when linked to events and interaction. But this doesn&#8217;t add a whole new layer of complexity.<br />
+We can just write: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+button.on(&quot;click&quot;, function() {
+  mySquare.transition().attr(&quot;x&quot;,320);
+})
+</pre>
+<p>And now, our animation only starts when the button is clicked. Obviously, since the transition is within a function, we could even determine where the square should go programmatically, but let&#8217;s keep it simple for the examples. </p>
+<h4>Animation 102</h4>
+<p>So far, we&#8217;ve seen how we can do simple animations in d3 and even throw in a little interaction. We&#8217;ve seen that it&#8217;s really as simple as creating elements in the same place. But here are some good news. Transitions in d3 are extremely versatile and can be customized with a lot of finesse without getting overly complex to write. It&#8217;s more a matter of knowing what to do.</p>
+<p><iframe src="http://www.jeromecukier.net/stuff/transitions.html#5" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+After using the transition() method, it&#8217;s possible to specify a value for duration and delay. Duration is the number of milliseconds the transition will last, while delay is the number of milliseconds the system will wait before launching it.<br />
+The syntax is: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+mySquare.transition()
+  .attr(&quot;x&quot;,320)
+  .duration(1000) // this is 1s
+  .delay(100)     // this is 0.1s
+</pre>
+<p>The default is a 250ms duration, and no delay.<br />
+I find 250ms to be a bit harsh. In most cases, transitions should be noticeable, so I oftentimes find myself increasing the duration to 500 or 1000. But unless there is a very good reason for that, durations should not be too long. If you use them to support your data, you don&#8217;t want the transition to take center stage by having them take several seconds.<br />
+Consider the following two examples (which you&#8217;ll have to start with the button)<br />
+<iframe src="http://www.jeromecukier.net/stuff/transitions.html#13" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+<iframe src="http://www.jeromecukier.net/stuff/transitions.html#14" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+Isn&#8217;t the second one simply atrocious? You may find hard to believe that it only wasted 25 seconds of your time. </p>
+<p><iframe src="http://www.jeromecukier.net/stuff/transitions.html#6" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+Easing is the technical name of the actual function that turns time into attribute changes. From the previous examples, you may have noticed that the values change slowly first, and then faster, then slowly at the end? Well, it turns out that you can use different functions to get different results. In my practice, I&#8217;ve only seen the use for the 3 displayed here although there are <a href="https://github.com/mbostock/d3/wiki/Transitions#wiki-d3_ease">many others</a>. And yes, you can write your own, although we are not going to cover this here.<br />
+The syntax is similar to the above: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+mysquare.transition()
+  .attr(&quot;x&quot;,320)
+  .ease(&quot;elastic&quot;)
+</pre>
+<p>(and by the way, the order in which you change attributes or specify animation parameters has no effect, so feel free to use .ease first then .attr).</p>
+<p><iframe src="http://www.jeromecukier.net/stuff/transitions.html#7" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+For path objects, through transitions you can update the position of each point. This allows you to effectively turn one shape into another.<br />
+This can be especially interesting for line charts (or any chart which is a path)<br />
+<iframe src="http://www.jeromecukier.net/stuff/transitions.html#8" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+Like this, if the values that you are plotting change, you can spot these changes very efficiently. If, instead, you just erase your chart redraw your data if would be very difficult to spot where the data has changed.<br />
+For both of these examples, the &#8220;d&#8221; attribute of the path is updated (so they are not intrinsically different from the simplest example).</p>
+<p><iframe src="http://www.jeromecukier.net/stuff/transitions.html#9" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+Sometimes (and actually: often), you want to fire a transition right after another transition.<br />
+But in case you were wondering, the following doesn&#8217;t work: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+mysquare.transition()
+  .attr(&quot;x&quot;,320);
+mysquare.transition()
+  .attr(&quot;y&quot;,200);
+</pre>
+<p>You may think that this will move the square right, then down. But no: it will start to move the square right, then fire the second transition which will move it down. Since they have the same duration and no delay, what will happen is that only the second will have a visible effect.<br />
+If the second transition had a delay, smaller than the first transition&#8217;s duration, the first one will be in effect for a while until the delay expires. Then, the second transition will take over. However, chances are you don&#8217;t want to do that, because how much of the first transition will have been accomplished depends on the users machine, browser etc. and is therefore unpredictable.<br />
+So how about giving the second transition a delay which corresponds exactly to the duration of the first one? This will usually work, however, the delays and durations are not extremely accurate. Firing the transition proper takes a certain time (which is roughly 15ms on my machine and which may vary) so it is difficult to chain two transitions very precisely this way.<br />
+In more complex programs than our simplistic examples, sometimes, several events try to trigger transitions on the same object. When this happens, the first transaction is fired, and runs its course unless another transition starts. That second transition would interrupt, then replace the first one. What this means is that the attributes that were in the process of being changed by the first transition will remain as they were when the second transition starts, somewhere between their start and target value.<br />
+If you want to make sure that all your transitions update their attribute up to the value they are supposed to reach, you may want to re-specify the attributes of the first transition in subsequent ones, like so:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+mysquare.transition()
+  .attr(&quot;x&quot;,320);
+mysquare.transition()
+  .delay(250)
+  .attr(&quot;y&quot;,200)
+  .attr(&quot;x&quot;,320); // even if the first transition doesn't complete, 
+                  // this one will and will update x to 320.
+</pre>
+<p>There is a more certain way to chain two transitions. With the following syntax, another event will start exactly at the end of a transition. That other event can be another transition (which is the case in the above example).</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+mysquare
+ .transition() 
+
+ ...
+
+ .each(&quot;end&quot;, function() { ... });
+</pre>
+<p>here, what&#8217;s in the callback function on the last line, introduced by .each(&#8220;end&#8221;, will be fired exactly as the transition ends. </p>
+<p>What can be done then? Here are 3 common scenarios.</p>
+<p><iframe src="http://www.jeromecukier.net/stuff/transitions.html#9" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+(btw, if you&#8217;re wondering what&#8217;s the difference between this and the previous example, there is none &#8211; it&#8217;s just to save you some scrolling).<br />
+One possibility is to launch another transition on the same item. Here, the square moves right, then down.<br />
+Here&#8217;s how it&#8217;s done: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+mysquare
+  .transition()
+  .attr(&quot;x&quot;,320)
+  .each(&quot;end&quot;,function() { // as seen above
+    d3.select(this).       // this is the object 
+      transition()         // a new transition!
+        .attr(&quot;y&quot;,180);    // we could have had another
+                           // .each(&quot;end&quot; construct here.
+   });
+</pre>
+<p>Another possibility is to delete the object after the transition has run its course. This is super useful, especially when you are creating a lot of temporary objects. An interesting combo is when you decrease opacity all the way to 0, making it invisible, then using remove() if you don&#8217;t need it anymore.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+mysquare
+  .transition()
+  .attr(&quot;x&quot;,320)
+  .each(&quot;end&quot;,function() { 
+    d3.select(this).       // so far, as above
+      remove();            // we delete the object instead 
+   });
+</pre>
+<p>Finally, we can create a new object. That can be a nice way to add a special effect. Here&#8217;s an example: </p>
+<p><iframe src="http://www.jeromecukier.net/stuff/transitions.html#10" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+Here, at the end of the transition, a circle is created, a transition is started on that circle, which decreases opacity to 0, then the circle is removed. </p>
+<p><iframe src="http://www.jeromecukier.net/stuff/transitions.html#11" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+And here is a last example with several effects combined.</p>
+<h4>Going further</h4>
+<p>Believe it or not, we barely scratched the surface of what can be achieved with animations in d3.<br />
+There are two other uses of transition that we haven&#8217;t seen because they are slightly more complex, so I&#8217;ll just mention them here.<br />
+Up to now, we have always seen transitions based on the properties of one specific object. We make the x property of that one square vary from what it was to 200.<br />
+Sometimes, though, you want many parts of your visualization to be updated according to the changes in one variable.<br />
+That is possible, too, by using the .tween and .interpolate methods. All of this is explained in the <a href="https://github.com/mbostock/d3/wiki/Transitions#wiki-tween">d3 documentation</a>.<br />
+Another possibility is the use of the <a href="https://github.com/mbostock/d3/wiki/Transitions#wiki-d3_timer">d3 timer</a> method, which allows to call a function repeatedly, which can also be used to create animation.</p>
+<p>The point I was hoping to make was that it&#8217;s possible to do a lot with relatively simple code and technique if you know what you are trying to do. Especially, chaining transitions, particularly when adding and removing objects when appropriate, goes a long way in creating powerful effects.</p>
+		    			<div class="clear">&nbsp;</div>
+		</section>
+	
+	<footer class="post-footer">
+
+	    <section class="author">
+	    	<img alt='' src='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=100&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=200&amp;d=mm&amp;r=g 2x' class='avatar avatar-100 photo' height='100' width='100' />	        <h4>jerome</h4>
+	        <p></p>
+			<div class="clear">&nbsp;</div>
+	    </section>
+	</footer>
+</article><!-- #post-## -->
+
+				<nav class="pagination navigation post-navigation" role="navigation">
+		<div class="nav-links">
+			<div class="older-posts"><a href="/2012/07/02/embedding-tableau-visualizations-on-the-web/" rel="prev">Embedding tableau visualizations on the web <span class="meta-nav">&rarr;</span></a></div>				<div class="page-number">&bull;</div>
+				<div class="newer-posts"><a href="/2012/09/04/getting-to-hello-world-with-d3/" rel="next"><span class="meta-nav">&larr;</span> Getting to &#8220;Hello world&#8221; with d3</a></div>		</div><!-- .nav-links -->
+	</nav><!-- .navigation -->
+	
+			
+<div id="comments" class="comments-area">
+
+	
+			<h2 class="comments-title">
+			6 thoughts on &ldquo;<span>animations and transitions</span>&rdquo;		</h2>
+
+		
+		<ol class="comment-list">
+					<li id="comment-330" class="comment even thread-even depth-1 parent">
+			<article id="div-comment-330" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://1.gravatar.com/avatar/1a320a353f7872e6a792df35d5177e0c?s=32&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/1a320a353f7872e6a792df35d5177e0c?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">harry moreno</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2012/07/16/animations-and-transitions/#comment-330">
+							<time datetime="2012-07-20T09:52:54+00:00">
+								July 20, 2012 at 9:52 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>could you elaborate on how to get a button to respond to clicking? <a href="http://bl.ocks.org/3149367" rel="nofollow">http://bl.ocks.org/3149367</a> I looked at your sourcecode to get some hints and already went through scott&#8217;s tutorials.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2012/07/16/animations-and-transitions/?replytocom=330#respond' onclick='return addComment.moveForm( "div-comment-330", "330", "respond", "1351" )' aria-label='Reply to harry moreno'>Reply</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-331" class="comment byuser comment-author-jerome bypostauthor odd alt depth-2">
+			<article id="div-comment-331" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://www.jeromecukier.net/' rel='external nofollow' class='url'>jerome</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2012/07/16/animations-and-transitions/#comment-331">
+							<time datetime="2012-07-20T12:30:31+00:00">
+								July 20, 2012 at 12:30 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Hi you got the clicking part right in your code, and the transition does fire up. The reason why it doesn&#8217;t appear to do anything is because you have written .attr(&#8220;fill&#8221;,&#8221;white&#8221;) as opposed to <strong>.style</strong>(&#8220;fill&#8221;,&#8221;white&#8221;). Technically, you can add just any attribute to an element, to look up that value later for instance, but it won&#8217;t do anything visible. But to change the color, it has to go through style instead.<br />
+for a nice (and free) resource on svg: <a href="http://commons.oreilly.com/wiki/index.php/SVG_Essentials" rel="nofollow">http://commons.oreilly.com/wiki/index.php/SVG_Essentials</a></p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2012/07/16/animations-and-transitions/?replytocom=331#respond' onclick='return addComment.moveForm( "div-comment-331", "331", "respond", "1351" )' aria-label='Reply to jerome'>Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-332" class="pingback even thread-odd thread-alt depth-1">
+			<div class="comment-body">
+				Pingback: <a href='http://healthyalgorithms.com/2013/08/09/animations-and-transitions-in-d3js/' rel='external nofollow' class='url'>Animations and transitions in D3js | Healthy Algorithms</a> 			</div>
+</li><!-- #comment-## -->
+		<li id="comment-333" class="comment odd alt thread-even depth-1">
+			<article id="div-comment-333" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://2.gravatar.com/avatar/b1eb8c270d7656167fa128f3aa177f44?s=32&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b1eb8c270d7656167fa128f3aa177f44?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://www.Instructables.com/member/marylouckzwweya/' rel='external nofollow' class='url'>instructables.com</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2012/07/16/animations-and-transitions/#comment-333">
+							<time datetime="2013-11-19T16:07:37+00:00">
+								November 19, 2013 at 4:07 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Awesome post.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2012/07/16/animations-and-transitions/?replytocom=333#respond' onclick='return addComment.moveForm( "div-comment-333", "333", "respond", "1351" )' aria-label='Reply to instructables.com'>Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-336" class="pingback even thread-odd thread-alt depth-1">
+			<div class="comment-body">
+				Pingback: <a href='http://www.jeromecukier.net/blog/2015/05/19/you-may-not-need-d3/' rel='external nofollow' class='url'>You may not need d3 | Jerome Cukier</a> 			</div>
+</li><!-- #comment-## -->
+		<li id="comment-337" class="pingback odd alt thread-even depth-1">
+			<div class="comment-body">
+				Pingback: <a href='http://www.puzzlr.org/?p=60' rel='external nofollow' class='url'>Simple examples with transition chaining &#8211; puzzlr</a> 			</div>
+</li><!-- #comment-## -->
+		</ol><!-- .comment-list -->
+
+		
+	
+	
+					<div id="respond" class="comment-respond">
+			<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/2012/07/16/animations-and-transitions/#respond" style="display:none;">Cancel reply</a></small></h3>				<form action="/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+					<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" aria-required='true' required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" aria-required='true' required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='1351' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="239e2441d5" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="236"/></p>				</form>
+					</div><!-- #respond -->
+		
+</div><!-- #comments -->
+
+		
+
+	<div id="secondary" class="widget-area" role="complementary">
+		<aside id="search-2" class="widget widget_search"><form role="search" method="get" class="search-form" action="/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit" value="Search" />
+			</form></aside>		<aside id="recent-posts-2" class="widget widget_recent_entries">		<h1 class="widget-title">Recent Posts</h1>		<ul>
+					<li>
+				<a href="/2018/04/09/hello-world/">Hello world!</a>
+						</li>
+					<li>
+				<a href="/2016/08/17/the-big-leagues/">The big leagues</a>
+						</li>
+					<li>
+				<a href="/2016/08/17/creating-a-react-visualization-web-app/">Creating a React visualization web app</a>
+						</li>
+					<li>
+				<a href="/2016/08/13/beyond-rendering/">Beyond rendering</a>
+						</li>
+					<li>
+				<a href="/2016/08/11/react-components/">React components</a>
+						</li>
+				</ul>
+		</aside>		<aside id="recent-comments-2" class="widget widget_recent_comments"><h1 class="widget-title">Recent Comments</h1><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link"><a href='https://wordpress.org/' rel='external nofollow' class='url'>A WordPress Commenter</a></span> on <a href="/2018/04/09/hello-world/#comment-1">Hello world!</a></li><li class="recentcomments"><span class="comment-author-link"><a href='http://omeraz.wordpress.com/' rel='external nofollow' class='url'>עומר עזריאל</a></span> on <a href="/2016/08/17/the-big-leagues/#comment-567">The big leagues</a></li><li class="recentcomments"><span class="comment-author-link">Carlos Ayres</span> on <a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-312">Manipulating data like a boss with d3</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://migrate.powertripanalytics.com/game-of-thrones-interactions-among-the-top-30-characters/' rel='external nofollow' class='url'>Game of ThronesInteractions Among the Top 30 Characters &#8211; PowerTrip Analytics</a></span> on <a href="/2013/05/13/making-the-game-of-thrones-visualization/#comment-466">Making the game of thrones visualization</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://abgoswam.wordpress.com/2016/10/08/d3-getting-started/' rel='external nofollow' class='url'>D3 &#8211; Getting Started | abgoswam&#039;s tech blog</a></span> on <a href="/2012/09/04/getting-to-hello-world-with-d3/#comment-419">Getting to &#8220;Hello world&#8221; with d3</a></li></ul></aside><aside id="archives-2" class="widget widget_archive"><h1 class="widget-title">Archives</h1>		<ul>
+			<li><a href='/2018/04/'>April 2018</a></li>
+	<li><a href='/2016/08/'>August 2016</a></li>
+	<li><a href='/2015/05/'>May 2015</a></li>
+	<li><a href='/2015/02/'>February 2015</a></li>
+	<li><a href='/2014/10/'>October 2014</a></li>
+	<li><a href='/2013/11/'>November 2013</a></li>
+	<li><a href='/2013/05/'>May 2013</a></li>
+	<li><a href='/2013/03/'>March 2013</a></li>
+	<li><a href='/2013/01/'>January 2013</a></li>
+	<li><a href='/2012/12/'>December 2012</a></li>
+	<li><a href='/2012/11/'>November 2012</a></li>
+	<li><a href='/2012/10/'>October 2012</a></li>
+	<li><a href='/2012/09/'>September 2012</a></li>
+	<li><a href='/2012/07/'>July 2012</a></li>
+	<li><a href='/2012/06/'>June 2012</a></li>
+	<li><a href='/2012/05/'>May 2012</a></li>
+	<li><a href='/2012/04/'>April 2012</a></li>
+	<li><a href='/2012/01/'>January 2012</a></li>
+	<li><a href='/2011/11/'>November 2011</a></li>
+	<li><a href='/2011/10/'>October 2011</a></li>
+	<li><a href='/2011/09/'>September 2011</a></li>
+	<li><a href='/2011/08/'>August 2011</a></li>
+	<li><a href='/2011/07/'>July 2011</a></li>
+	<li><a href='/2011/06/'>June 2011</a></li>
+	<li><a href='/2011/05/'>May 2011</a></li>
+	<li><a href='/2011/04/'>April 2011</a></li>
+	<li><a href='/2011/03/'>March 2011</a></li>
+	<li><a href='/2011/02/'>February 2011</a></li>
+	<li><a href='/2011/01/'>January 2011</a></li>
+	<li><a href='/2010/11/'>November 2010</a></li>
+	<li><a href='/2010/04/'>April 2010</a></li>
+	<li><a href='/2010/03/'>March 2010</a></li>
+	<li><a href='/2010/02/'>February 2010</a></li>
+	<li><a href='/2010/01/'>January 2010</a></li>
+	<li><a href='/2009/12/'>December 2009</a></li>
+	<li><a href='/2009/10/'>October 2009</a></li>
+	<li><a href='/2009/09/'>September 2009</a></li>
+	<li><a href='/2009/08/'>August 2009</a></li>
+	<li><a href='/2009/07/'>July 2009</a></li>
+	<li><a href='/2009/06/'>June 2009</a></li>
+	<li><a href='/2009/05/'>May 2009</a></li>
+	<li><a href='/2008/12/'>December 2008</a></li>
+	<li><a href='/2008/11/'>November 2008</a></li>
+	<li><a href='/2008/10/'>October 2008</a></li>
+		</ul>
+		</aside><aside id="categories-2" class="widget widget_categories"><h1 class="widget-title">Categories</h1>		<ul>
+	<li class="cat-item cat-item-2"><a href="/category/book-review/" >book review</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="/category/charts/" >charts</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="/category/conferences/" >conferences</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="/category/d3/" >d3</a>
+</li>
+	<li class="cat-item cat-item-6"><a href="/category/dashboards/" >dashboards</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="/category/data-publishing/" >data publishing</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="/category/data-visualization/" >data visualization</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="/category/francais/" >français</a>
+</li>
+	<li class="cat-item cat-item-10"><a href="/category/javascript/" >javascript</a>
+</li>
+	<li class="cat-item cat-item-11"><a href="/category/presentation/" >presentation</a>
+</li>
+	<li class="cat-item cat-item-12"><a href="/category/protovis/" >protovis</a>
+</li>
+	<li class="cat-item cat-item-13"><a href="/category/react/" >react</a>
+</li>
+	<li class="cat-item cat-item-14"><a href="/category/tips/" >tips</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="/category/uncategorized/" >Uncategorized</a>
+</li>
+	<li class="cat-item cat-item-15"><a href="/category/web-sites/" >web sites</a>
+</li>
+		</ul>
+</aside><aside id="meta-2" class="widget widget_meta"><h1 class="widget-title">Meta</h1>			<ul>
+						<li><a href="/wp-login.php">Log in</a></li>
+			<li><a href="/feed/">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="/comments/feed/">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>			</ul>
+			</aside>		<div class="clear">&nbsp;</div>
+	</div><!-- #secondary -->
+	<footer id="colophon" class="site-footer" role="contentinfo">
+	    <a class="subscribe icon-feed" href="/feed/"><span class="tooltip">Subscribe!</span></a>
+		<div class="site-info inner">
+		    <section class="copyright">
+		    			    		<a href="https://github.com/lacymorrow/casper" rel="home">Casper WP</a> by Lacy Morrow		    			    </section>
+		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+</main><!-- /#content -->
+
+<script type='text/javascript' src='/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js?ver=3.0.9b'></script>
+<script type='text/javascript' src='/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushJScript.js?ver=3.0.9b'></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "http://localhost:8888/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "http://localhost:8888/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+<script type='text/javascript' src='/wp-content/themes/casper/js/main.js?ver=1.0.0'></script>
+<script type='text/javascript' src='/wp-includes/js/comment-reply.min.js?ver=4.6.10'></script>
+<script type='text/javascript' src='/wp-includes/js/wp-embed.min.js?ver=4.6.10'></script>
+<script async="async" type='text/javascript' src='/wp-content/plugins/akismet/_inc/form.js?ver=4.0.3'></script>
+<!--stats_footer_test--></body>
+</html>

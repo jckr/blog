@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="HandheldFriendly" content="True" />
+<meta name="MobileOptimized" content="320" />
+
+<title>easyphp | jeromecukier.net</title>
+
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="/xmlrpc.php">
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Feed" href="/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Comments Feed" href="/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; easyphp Tag Feed" href="/tag/easyphp/feed/" />
+<!-- This site uses the Google Analytics by MonsterInsights plugin v7.0.5 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+<!-- Note: MonsterInsights is not currently configured on this site. The site owner needs to authenticate with Google Analytics in the MonsterInsights settings panel. -->
+<!-- No UA code set -->
+<!-- / Google Analytics by MonsterInsights -->
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/localhost:8888\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6.10"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='YoutubeShortcodeMargenn-css'  href='/wp-content/plugins/youtube-shortcode/youtube-shortcode.css?ver=4.6.10' type='text/css' media='all' />
+<link rel='stylesheet' id='casper-google-fonts-css'  href='//fonts.googleapis.com/css?family=Noto+Serif%3A400%2C700%2C400italic%7COpen+Sans%3A700%2C400&#038;ver=4.6.10' type='text/css' media='all' />
+<link rel='stylesheet' id='casper-style-css'  href='/wp-content/themes/casper/style.css?ver=4.6.10' type='text/css' media='all' />
+<script type='text/javascript' src='/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.6.10" />
+
+   	<style type="text/css">
+					.blog-title a, .blog-description, .social-icons a { color: #ffffff; }
+		
+						                
+		
+							.main-navigation a { color: ; }
+		                                            </style>
+    		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+
+<body class="archive tag tag-easyphp tag-129 group-blog">
+
+<header id="masthead" role="banner" class="site-head site-header" >
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+        <div>
+            <h1 class="menu-toggle">
+                <a class="icon-bars" href="#">
+                    <span class="hidden">Menu</span>
+                </a>
+            </h1>
+            <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+            <div class="menu"><ul><li ><a href="/">Home</a></li><li class="page_item page-item-6"><a href="/about/">About</a></li><li class="page_item page-item-1073"><a href="/data-stories/">Data with stories workshop &#8211; examples</a></li><li class="page_item page-item-437"><a href="/proofs-of-concept/">Private section</a></li><li class="page_item page-item-2"><a href="/sample-page/">Sample Page</a></li></ul></div>
+        </div>
+    </nav><!-- #site-navigation -->
+
+    <div class="vertical-row">
+        <div class="vertical">
+            <div class="site-head-content inner">
+                
+                <div class="social-icons">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                    </div>
+                <h1 class="blog-title"><a class="blog-logo" href='/' rel='home'>jeromecukier.net</a></h1>
+                <h2 class="blog-description">Just another WordPress site</h2>
+            </div>
+        </div>
+    </div>
+</header><!-- #masthead -->
+
+<main id="content" class="content" role="main">
+
+	<section id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		
+			<header class="page-header">
+				<h1 class="page-title">
+					easyphp				</h1>
+							</header><!-- .page-header -->
+
+						
+				
+<article id="post-1419" class="post-1419 post type-post status-publish format-standard hentry category-d3 category-tips tag-beginner tag-browser tag-css tag-d3 tag-data tag-easyphp tag-first-steps tag-html tag-introduction tag-javascript tag-sublimetext2 tag-text-editor tag-tutorial tag-web-server">
+		    <header class="post-header">
+        			<span class="post-meta">
+				<span class="posted-on"><a href="/2012/09/04/getting-to-hello-world-with-d3/" rel="bookmark"><time class="entry-date published" datetime="2012-09-04T17:20:53+00:00">September 4, 2012</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/d3/" rel="category tag">d3</a>, <a href="/category/tips/" rel="category tag">tips</a>			</span>
+		        <h1 class="post-title"><a href="/2012/09/04/getting-to-hello-world-with-d3/" rel="bookmark">Getting to &#8220;Hello world&#8221; with d3</a></h1>
+         
+    </header>
+	<section class="post-content">
+
+		<p>Back when I started learning programming, it was always fairly simple to achieve the canonical first step of accomplishments, that is, to get the system to announce that you are ready to do more by displaying &#8220;hello world&#8221; on the screen.</p>
+<p>In most systems then, there was a command prompt somewhere that would usually do that when you would type, say:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">PRINT &quot;hello world&quot;</pre>
+<p>.</p>
+<p>Things have changed a lot since the early 80s. In some fields like fashion, I would argue it&#8217;s a good thing, but we&#8217;re definitely not going in the way of less complexity.</p>
+<p>Now if you&#8217;re interested in web-oriented visualization and want to do it with d3.js, it&#8217;s still fairly simple, but it is built upon a number of technologies that you&#8217;re supposed to know a little. Front-end developers live and breathe the web and have been exposed to all things javascript, HTML, CSS, you name it, in enormous doses. Many developers probably have, at some point, tried to interface with the web and know enough of that to get started. So for this crowd, the amount of things you need to know to crack d3 code seems negligible, because they know all that and they are very familiar with it, just as well as people knew the first names of Friends characters by the end of the tenth season.</p>
+<p>But what about those who didn&#8217;t? and the people who don&#8217;t see themselves as developers ? do they have to reimmerse themselves in 10 -odd years of web development history to get started? It turns out that this sum of knowledge, while not insurmountable, is certainly not trivial.</p>
+<p>So without further ado, let&#8217;s get started</p>
+<h1>We&#8217;re cooking an omelette</h1>
+<p>And when we do, we need a few things: a pan, a recipe, eggs and stuff, a stove and then plates, knives and forks, etc.</p>
+<h2>The pan: a text editor</h2>
+<p>The first thing is really the pan. If you don&#8217;t have one when cooking eggs, you borrow one or go buy one. In our analogy the pan is the text editor. This is the tool with which you are going to make the files that will constitute your visualization.</p>
+<p>There was a time when it was ok to use notepad (textedit if you are of the apple persuasion). And it&#8217;s still possible, but you are not making your life easier. What I recommend instead is that you get a hold of a copy of SublimeText2. (<a href="http://www.sublimetext.com/2">http://www.sublimetext.com/2</a>). There are windows versions. And Mac versions. And linux versions. For windows users, there is a mobile version so you don&#8217;t need administrator access to install it. There is a free, unlimited evaluation version,  but unless you can&#8217;t spend $69, I strongly recommend that you buy it. Sublime Text 2 has a nearly infinite amount of niceties built in. And unlike some other powerful text editors, where the best features are only understandable by the tech masters, what&#8217;s really nice about Sublime Text 2 is that it would make you gain time even if you are an absolute beginner. One such nice things that it does is detect what language you are working with, automatically color and format the words as you type them depending on the category they fall in, and when possible, suggesting the word you are trying to type, automatically format and indent your code, all in a very unobtrusive and pleasant way. This will really help you troubleshoot problems like strings not closed properly or loose closing bracket which typically consume a lot of time.</p>
+<p><div id="attachment_1434" style="width: 423px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2012/09/ST0.png"><img class="size-full wp-image-1434" title="ST0" src="http://www.jeromecukier.net/wp-content/uploads/2012/09/ST0.png" alt="" width="413" height="253" /></a><p class="wp-caption-text">Let&#8217;s type a fairly common d3 statement to see how SublimeText2 can help. First, it recognized the var keyword as such and writes it in italics and cyan. Second, when I type my opening parenthesis, it adds a closing one, and as long as my cursor touches either it underlines them both.</p></div></p>
+<p><div id="attachment_1435" style="width: 423px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2012/09/ST1.png"><img class="size-full wp-image-1435" title="ST1" src="http://www.jeromecukier.net/wp-content/uploads/2012/09/ST1.png" alt="" width="413" height="253" /></a><p class="wp-caption-text">Let&#8217;s carry on. The function keyword is highlighted in italics cyan too &#8211; useful. The opening/closing thing works for curly braces too.</p></div></p>
+<p><div id="attachment_1426" style="width: 564px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2012/09/ST2.png"><img class="size-full wp-image-1426" title="ST2" src="http://www.jeromecukier.net/wp-content/uploads/2012/09/ST2.png" alt="" width="554" height="253" /></a><p class="wp-caption-text">The return statement is highlighted in red. With the cursor on the closing parenthesis, we are starting to get a feel that the underlining function is a useful safety net</p></div></p>
+<p><div id="attachment_1427" style="width: 564px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2012/09/ST3.png"><img class="size-full wp-image-1427" title="ST3" src="http://www.jeromecukier.net/wp-content/uploads/2012/09/ST3.png" alt="" width="554" height="253" /></a><p class="wp-caption-text">New line. Joy! the indentation is aligned with the line above.</p></div></p>
+<p><div id="attachment_1428" style="width: 564px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2012/09/ST4.png"><img class="size-full wp-image-1428" title="ST4" src="http://www.jeromecukier.net/wp-content/uploads/2012/09/ST4.png" alt="" width="554" height="253" /></a><p class="wp-caption-text">We now have four consecutive opening or closing curly braces and parentheses. Typically, this is where errors sneak in, and where sublime text 2 really shines.</p></div></p>
+<p><div id="attachment_1429" style="width: 564px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2012/09/ST5.png"><img class="size-full wp-image-1429" title="ST5" src="http://www.jeromecukier.net/wp-content/uploads/2012/09/ST5.png" alt="" width="554" height="253" /></a><p class="wp-caption-text">And we now have 5 consecutive closing curly braces and parentheses. This is fairly common in d3 code. Is the order correct? Thank you Sublime Text 2!</p></div></p>
+<p><div id="attachment_1430" style="width: 564px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2012/09/ST6.png"><img class="size-full wp-image-1430" title="ST6" src="http://www.jeromecukier.net/wp-content/uploads/2012/09/ST6.png" alt="" width="554" height="253" /></a><p class="wp-caption-text">we finish up writing the statement.</p></div></p>
+<p><div id="attachment_1431" style="width: 564px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2012/09/ST7.png"><img class="size-full wp-image-1431" title="ST7" src="http://www.jeromecukier.net/wp-content/uploads/2012/09/ST7.png" alt="" width="554" height="253" /></a><p class="wp-caption-text">When moving the cursor to the left side, where the line numbers are, we notice down-pointing arrows. We know our code is correct, and we don&#8217;t want to see it again, so&#8230;</p></div></p>
+<p><div id="attachment_1432" style="width: 564px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2012/09/ST8.png"><img class="size-full wp-image-1432" title="ST8" src="http://www.jeromecukier.net/wp-content/uploads/2012/09/ST8.png" alt="" width="554" height="253" /></a><p class="wp-caption-text">we just click on the top one to collapse this section. If we need to edit it again we can expand it.</p></div></p>
+<p><div id="attachment_1433" style="width: 564px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2012/09/ST9.png"><img class="size-full wp-image-1433" title="ST9" src="http://www.jeromecukier.net/wp-content/uploads/2012/09/ST9.png" alt="" width="554" height="253" /></a><p class="wp-caption-text">Finally, we add a comment above. Notice the syntax highlighting, comments are colored with an unobtrusive dark grey.</p></div></p>
+<h2>The recipe: a basic file structure</h2>
+<p>In d3, you can&#8217;t really type a &#8220;print&#8221; command from a prompt. You need to write some files, which are loaded by a browser (that&#8217;s your &#8220;plate&#8221; in the metaphor, but let&#8217;s not get ahead of ourselves).</p>
+<p>You are going to need up to 5 types of files.</p>
+<p>First, <strong>an html file</strong>. This will be the file that your browser will read, either locally, or uploaded on a website. We&#8217;ll get to cover this in detail in a minute.</p>
+<p>Second, believe it or not, you are going to need the <strong>d3 library</strong>, which is also a file. You may link to the version on the <a href="http://d3js.org/d3.vs.min.js">d3js.org</a> site, and so not worry about having the actual file handy. That has advantages (like the one we just said, also, you&#8217;re pretty sure to always have the latest version on hand), and two problems. First, you always need to have a live internet connection, so there&#8217;s no working in the park outside of free wifi space (for example), and also, it will probably be slower than having the file locally or on your own web space. And if having your own web server seems kind of scary, I&#8217;ll show you in a short while that it&#8217;s not.</p>
+<p>The three next kind of files are optional, but hey.</p>
+<p>The third file is a <strong>javascript .js file </strong>which would be where you put your code. Some people would rather put all their code in the html file, which is an option, especially for short programs. Personally, I prefer having a separate file. So to make d3 work, you <em>need</em> some script, but it doesn&#8217;t have to be in a separate file.</p>
+<p>The fourth file is a <strong>style sheet</strong>, or <strong>css</strong> file. This can be used to define some formatting options, for instance to make all your circles blue by default, or some circles that meet some pre-defined criterion. Like the javascript file, any style information can be contained within the html file, but unlike the script, it is completely optional. I also like to keep it separate from the html.</p>
+<p>Finally, you may want a <strong>data file</strong>, you know, with data (csv, txt, json, xml&#8230;). If you have lots of data to visualize, it&#8217;s easier to keep it in separate files than in variables within the script. But it doesn&#8217;t have to be that way. And you could also use d3 without data.</p>
+<h2>The ingredients: contents of the files</h2>
+<h3>The HTML file</h3>
+<p>So let&#8217;s see how this articulates by looking at a typical d3 html file. I am using templates which I try to change as little as possible from project to project.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+ &lt;head&gt;
+   &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html;charset=utf-8&quot;&gt;
+   &lt;title&gt;My project&lt;/title&gt;
+   &lt;script type=&quot;text/javascript&quot; src=&quot;../d3.v2.js&quot;&gt;&lt;/script&gt;
+   &lt;link href=&quot;style.css&quot; rel=&quot;stylesheet&quot;&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+   &lt;div id=&quot;chart&quot;&gt;
+   &lt;/div&gt;
+   &lt;script type=&quot;text/javascript&quot; src=&quot;script.js&quot;&gt;&lt;/script&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<p>Well. That is certainly longer than the BASIC one-liner (and we haven&#8217;t <em>even</em> printed &#8220;hello world&#8221; yet).</p>
+<p>Let&#8217;s take this piece by piece.</p>
+<p>The first line is a doctype declaration. What this does is that it tells your browser that what follows should be interpreted as standard, HTML5-compliant HTML (standards mode). If you omit the doctype documentation, your browser will read the html in &#8220;<a href="https://developer.mozilla.org/en/Mozilla%2527s_Quirks_Mode">quirks mode</a>&#8220;, i.e. by replicating the non-standard behavior of Nescape 4 or IE5. You can still try to run d3 under quirks mode, but don&#8217;t be surprised if your HTML doesn&#8217;t behave as expected.</p>
+<p>The doctype declaration doesn&#8217;t have to be more complicated than &lt;!DOCTYPE html&gt;.</p>
+<p>The second line opens the html document proper. Technically, it&#8217;s ok to omit &lt;html&gt;, &lt;head&gt; and &lt;body&gt; tags in HTML5. The document will still be considered valid by tools like the <a href="http://validator.w3.org/">W3C validator</a>. But it seems that some browsers, in some complex cases, don&#8217;t like that so much, and I as a person find it more convenient to find those tags when reading code.</p>
+<p>The next line opens the header section of the document. Again, it&#8217;s not absolutely necessary, but I consider it helpful to explicitly differentiate the header from the rest of the document.</p>
+<p>The next line, which goes</p>
+<pre class="brush: jscript; title: ; notranslate" title="">&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html;charset=utf-8&quot;&gt;</pre>
+<p>is not absolutely required either. It specifies the encoding of the page, that is, what kind of characters will be seen in the page. Since I use non-ascii characters often, being French and all, I make sure to use it all the time. After all, this is a template, not something I type from beginning to end each time.</p>
+<p>Next, we specify a title. This is what will appear in the title area of your browser, or, more likely, as the name of your tab.</p>
+<p>In the next line, we load the d3 library. This is my preferred syntax. This is how my files are set up:</p>
+<p>I have a directory where all my d3 projects are, and in this directory, I am also keeping (and maintaining reasonably up-to-date) a version of the d3 library, a file called d3.v2.min.js. (min stands for minified, which means that it&#8217;s not meant to be read by persons, but it&#8217;s faster to load). All my projects proper are in folders within that directory. So my html files are one level down from where the d3.v2.min.js file is kept. This is why the src attribute reads &#8220;../d3.v2.min.js&#8221;: the ../ part means, look one level up. If the d3.v2.min.js file were on the same directory where I keep my html, I would write src=&#8221;d3.v2.min.js&#8221;, if I kept it within a specific directory like &#8220;d3&#8243;, I could write src=&#8221;../d3/d3.v2.min.js&#8221;, and finally, there is always the option of getting it from the website, src=&#8221;http://d3js.org/d3.v2.min.js&#8221;.</p>
+<p>I don&#8217;t have to load the d3 library then. I could have done it at the end of the page. The only requirement is that it should be before the script that will use it. But honestly, the file is so small that it doesn&#8217;t make much of a difference (9ms on my machine).</p>
+<p>Next, I link to a style sheet. With this syntax, I am assuming that my style is specified in a file called style.css which will be in the same directory as this html page. And if there is no such file, it&#8217;s not a problem. It doesn&#8217;t prevent the page to load.</p>
+<p>Instead of using this syntax, I could have written:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+
+&lt;style&gt;
+
+... // my style definitions
+
+&lt;/style&gt;
+
+</pre>
+<p>in the html file. And frankly, it is sometimes more convenient. But again, for the general case, it&#8217;s just as well to leave it like this.</p>
+<p>Note that style information should always be in the header part of the file.</p>
+<p>And that concludes the header, as noted by the closing tag &lt;/head&gt;. Even if we use the &lt;head&gt; tag to mark the beginning of the header section, we may omit the closing tag &lt;/head&gt;, and still get away with a valid (and slightly shorter) document, but I keep it for clarity&#8217;s sake.</p>
+<p>The next part starts with &lt;body&gt;, and is where the content proper, which will get displayed on the screen, is described. &lt;body&gt; and &lt;/body&gt;, just like &lt;html&gt; and &lt;head&gt;, are not mandatory, but do help, somewhat, to make the document easier to read.</p>
+<p>So what do we find in the body section? Here, I&#8217;ve kept it very simple but also close to the conventions I use.</p>
+<p>There is one &lt;div&gt; element, which is the basic building block of HTML, and with an id attribute &#8211; a document-wide, unique identifier &#8211; called &#8220;chart&#8221;.</p>
+<p>Then, there is the &lt;script&gt; element, which is calling the javascript code we are going to use to create our visualization. It&#8217;s at the very bottom of the page, actually just before the closing tags (which, again, could be omitted, but let&#8217;s not).</p>
+<p>Like for the style element, it is possible to leave the script inside the html document. Instead of using a src attribute &#8211; which, incidentally, assumes that the script is within the same directory as the html document with this syntax -, we can write:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">&lt;script&gt;
+
+// all our javascript instructions
+
+&lt;/script&gt;</pre>
+<p>And that&#8217;s it for the html document! A final word about the contents of the &lt;body&gt; element. In most of my projects, there is an interface such as buttons or controls which is also done in HTML. In that case, the contents of the &lt;body&gt; element get more complex. I would add a button to tweet the page, copyright notices, and other stuff. But I almost always have a &lt;div&gt; element with an identifier named &#8220;chart&#8221;.</p>
+<p>ok, so now that you&#8217;re finished with writing your html file, you must save it under any name and use the &#8220;.html&#8221; extension (or .htm, but why no love for the l? why?)</p>
+<h3>The javascript file</h3>
+<p>In this section I will walk you through a very, very basic file, which includes things I do for every project.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+var w=960,h=500,
+svg=d3.select(&quot;#chart&quot;)
+.append(&quot;svg&quot;)
+.attr(&quot;width&quot;,w)
+.attr(&quot;height&quot;,h);
+
+var text=svg
+.append(&quot;text&quot;)
+.text(&quot;hello world&quot;)
+.attr(&quot;y&quot;,50);
+
+</pre>
+<p>I like to define variables that describe the width and length of the visualization that I am creating. By putting these in variables, at the beginning of the file, I can easily modify them in case I need to. 960 and 500 work well for visualizations that should appear on their own page, by the way. No scrolling should be necessary.</p>
+<p>The next statement use the d3.select construct. Here, it indicates that we are going to build something <em>on top </em> of the element that meets the criterion that is described between the parentheses. The syntax used by that is that of <a href="https://developer.mozilla.org/en/CSS/Getting_Started/Selectors">css selectors</a>, but long story short, #chart refers to whatever has an &#8220;id&#8221; attribute of &#8220;chart&#8221;. This is our lone &lt;div&gt; element in the html file. Then, we are going to add an svg element, which is what will hold the visualization proper in svg form, and give it a width of w and a height of h.</p>
+<p>I always use that syntax, an &#8220;svg&#8221; variable that holds the top-level svg container, which resides in a &lt;div&gt; element which has an id of &#8220;chart&#8221;.</p>
+<p>The final part of the file writes, finally, hello world proper. Note that I specify a y attribute (vertical position) else the text have its lower-left corner in the top-left corner of the browser window and will be effectively invisible.</p>
+<p>Now, the HTML file we just created expect this file to be called &#8220;script.js&#8221;, so let&#8217;s save it under this name.</p>
+<p>In this most simple example, we will not need a css file nor a data file. But, for the sake of discussion, let&#8217;s create a css file nonetheless.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+
+text:{font-size:36px;}
+
+</pre>
+<p>and let&#8217;s save this under style.css (the name that, again, our HTML file expects). What this does is that it changes the size of the font to whatever the default was to a more massive 36 pixels.</p>
+<h2>The stove: a web server</h2>
+<p>As far as writing hello world, we&#8217;re done. You can load the html file you created in a browser, you should see the encouraging inscription. Congratulations!</p>
+<p>Many visualizations can be seen in a browser directly, just by opening a local file. However, this won&#8217;t be the case for some, for instance, those who require external data. In that case, you need a web server. If you have web hosting, you may upload the files to your (remote) server, via FTP for instance, and see your visualization by typing the address of your site in the browser url bar. That said, it is a good idea to have a local web server, that is, one that runs on your computer, so you can view your files as if they were served by a web server, but with the added bonus that you can edit them and see the modifications directly without having to upload them each time you change them.</p>
+<p>On Macs, you&#8217;re pretty much all set. All you have to do is <a href="http://pagekite.net/wiki/Howto/Mac/PersonalWebServer/">enable web-sharing</a> in your system preferences. Then, http://localhost/~YOURNAME will point to /Users/YOURNAME/Sites where YOURNAME is your user name. Just put your files there and go at it.</p>
+<p>For windows, there are a bunch of solutions. The &#8220;Professional&#8221; versions of windows include the IIS web server, so, there. But beyond that, there is a lot of web server software available. I personally use <a href="http://www.easyphp.org/">EasyPHP</a>. EasyPHP comes up with a web server (Apache), a mySql database, a PHP preprocessor and other niceties. And, as an aside, it doesn&#8217;t require administrator rights, for you corporate users.</p>
+<p>EasyPHP installation is a breeze. When it&#8217;s on, by default, http://localhost/ points to the www/ directory in the install directory of EasyPHP, so you may want to install it in a place that suits you. Alternatively, you can create aliases in the admin panel of EasyPHP (<a href="http://localhost/home/index.php">http://localhost/home/index.php</a>), in other words to give a name to any part of your hard drive. This is what I do, I put all my projects there and have a shortcut to that name in my browser, so whenever I want to see a project I use that shortcut and I can see the visualization as if it were on the web.</p>
+<p><div id="attachment_1436" style="width: 787px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2012/09/easyPHPalias.png"><img class="size-full wp-image-1436" title="easyPHPalias" src="http://www.jeromecukier.net/wp-content/uploads/2012/09/easyPHPalias.png" alt="" width="777" height="526" /></a><p class="wp-caption-text">This is how you create aliases in EasyPHP.</p></div></p>
+<h2>The plate: a browser</h2>
+<p>We&#8217;ve talked browsers before, and chances are you have one (or several) on your computer.</p>
+<p>Now I wish that by browsers, we could just skip it and mean &#8220;the latest version of chrome&#8221;, but it turns out that there are slight differences in the way that browsers handle d3 code so you should really test your work in at least chrome and firefox. As of this writing, Chrome + Firefox (version 5 and up) represent just under 50% of the browser market share. If you add all browsers that are d3-capable (Safari, earlier versions of Firefox, Opera, IE9) you reach about 75% of the market. Sadly, IE8 and IE7 which account for slightly over 20% of the market are not d3-compatible, though they can use the Google <a href="http://www.google.com/chromeframe?hl=en&amp;quickenable=true">ChromeFrame</a> free plug-in and do pretty much all that chrome does.</p>
+<h2>Knives and forks: the console</h2>
+<p>At the beginning of my dad&#8217;s engineering career, code came on a punch card. People then, allegedly, thought it through. You didn&#8217;t want to be the kid who didn&#8217;t follow your algorithm carefully enough to forecast an avoidable bug and waste a perfectly good card and oh-so precious computing time.</p>
+<p>But now? no code is perfect by the time it hits the browser. You may want to launch incomplete code to get a feel for where you&#8217;re going. You may not be too sure of whether that should be a plus or a minus in that equation and just try either because it would be quicker to correct an unexpected outcome than to troubleshoot the formula on paper. You may want to iterate, to bring newer, more complex ideas to your visualization with each change to the code. Or just try out different aesthetic options.</p>
+<p>Not too long ago, debugging javascript was really a pain. You&#8217;d have to fire those annoying alert boxes to understand what was the value of the variables, and dispatch them manually. Fortunately, that time is gone and now is the age of the Console.</p>
+<p>There are console functionalities for Chrome, Firefox and Safari, and while the interface slightly varies, the idea is the same. The console allows you to do three main things:</p>
+<p>&#8211; first, to see if your code executed without errors or warning. Some of those messages can be generated by javascript, and some can be added by you if certain unfortunate conditions are met. You get the position of the error in your code, which helps you to understand what went wrong and fix it.</p>
+<p><div id="attachment_1437" style="width: 661px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2012/09/consoleError.png"><img class="wp-image-1437" title="consoleError" src="http://www.jeromecukier.net/wp-content/uploads/2012/09/consoleError.png" alt="" width="651" height="469" /></a><p class="wp-caption-text">I have planted an error at the end of the code and it&#8217;s been picked up by the console which explains what&#8217;s wrong and when. Notice the red cross in the lower-right corner which counts errors. If there were warning, they would be indicated by a yellow triangle.</p></div></p>
+<p>&#8211; second, to inspect elements, that is to find out all the information about the elements displayed on screen, even if (especially if) they have been generated at runtime. So you can see if those elements you really wanted to create have been indeed added, and if the right attributes have been passed.  third, to interact with the code after it&#8217;s run (or while it runs, if you manage to pause if with breakpoints). The most common use of this is, IMO, is to check the value of variables, which you can do simply by typing their name at the console command prompt. But you can also type in one-liner javascript statements, even if they are quite complicated. So it&#8217;s a way to test your code before you write it in your script file.</p>
+<p><div id="attachment_1439" style="width: 661px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2012/09/consoleInspect.png"><img class="wp-image-1439" title="consoleInspect" src="http://www.jeromecukier.net/wp-content/uploads/2012/09/consoleInspect.png" alt="" width="651" height="469" /></a><p class="wp-caption-text">What a relief! all those paths elements that were supposed to be created in the code have been added as expected.</p></div></p>
+<p>&#8211; third, it can be used to interact with the code after it&#8217;s run (or even during run-time, because you can pause the code with breakpoints using the console, but we won&#8217;t go into that). The most common use for that IMO is to check the value of variables, which can be changed during the code execution, but it can also be used to enter one-liner statements, which can be quite complicated. Such a use allows you to test and preview code hypothesis before you write it down in your script file, or to troubleshoot a problem that you could have difficulties seeing outside of the context.</p>
+<p><div id="attachment_1438" style="width: 661px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2012/09/consoleInteract.png"><img class="wp-image-1438" title="consoleInteract" src="http://www.jeromecukier.net/wp-content/uploads/2012/09/consoleInteract.png" alt="" width="651" height="469" /></a><p class="wp-caption-text">Here, I am using the console to check the value of one variable, and to enter a statement that turns all the shapes orange.</p></div></p>
+<p>Voilà! the last thing you need when you cook food is people to share it with, same goes for visualizations!</p>
+	    		<div class="clear">&nbsp;</div>
+	</section>
+</article><!-- #post-## -->
+			
+			
+		
+		</main><!-- #main -->
+	</section><!-- #primary -->
+
+	<div id="secondary" class="widget-area" role="complementary">
+		<aside id="search-2" class="widget widget_search"><form role="search" method="get" class="search-form" action="/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit" value="Search" />
+			</form></aside>		<aside id="recent-posts-2" class="widget widget_recent_entries">		<h1 class="widget-title">Recent Posts</h1>		<ul>
+					<li>
+				<a href="/2018/04/09/hello-world/">Hello world!</a>
+						</li>
+					<li>
+				<a href="/2016/08/17/the-big-leagues/">The big leagues</a>
+						</li>
+					<li>
+				<a href="/2016/08/17/creating-a-react-visualization-web-app/">Creating a React visualization web app</a>
+						</li>
+					<li>
+				<a href="/2016/08/13/beyond-rendering/">Beyond rendering</a>
+						</li>
+					<li>
+				<a href="/2016/08/11/react-components/">React components</a>
+						</li>
+				</ul>
+		</aside>		<aside id="recent-comments-2" class="widget widget_recent_comments"><h1 class="widget-title">Recent Comments</h1><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link"><a href='https://wordpress.org/' rel='external nofollow' class='url'>A WordPress Commenter</a></span> on <a href="/2018/04/09/hello-world/#comment-1">Hello world!</a></li><li class="recentcomments"><span class="comment-author-link"><a href='http://omeraz.wordpress.com/' rel='external nofollow' class='url'>עומר עזריאל</a></span> on <a href="/2016/08/17/the-big-leagues/#comment-567">The big leagues</a></li><li class="recentcomments"><span class="comment-author-link">Carlos Ayres</span> on <a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-312">Manipulating data like a boss with d3</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://migrate.powertripanalytics.com/game-of-thrones-interactions-among-the-top-30-characters/' rel='external nofollow' class='url'>Game of ThronesInteractions Among the Top 30 Characters &#8211; PowerTrip Analytics</a></span> on <a href="/2013/05/13/making-the-game-of-thrones-visualization/#comment-466">Making the game of thrones visualization</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://abgoswam.wordpress.com/2016/10/08/d3-getting-started/' rel='external nofollow' class='url'>D3 &#8211; Getting Started | abgoswam&#039;s tech blog</a></span> on <a href="/2012/09/04/getting-to-hello-world-with-d3/#comment-419">Getting to &#8220;Hello world&#8221; with d3</a></li></ul></aside><aside id="archives-2" class="widget widget_archive"><h1 class="widget-title">Archives</h1>		<ul>
+			<li><a href='/2018/04/'>April 2018</a></li>
+	<li><a href='/2016/08/'>August 2016</a></li>
+	<li><a href='/2015/05/'>May 2015</a></li>
+	<li><a href='/2015/02/'>February 2015</a></li>
+	<li><a href='/2014/10/'>October 2014</a></li>
+	<li><a href='/2013/11/'>November 2013</a></li>
+	<li><a href='/2013/05/'>May 2013</a></li>
+	<li><a href='/2013/03/'>March 2013</a></li>
+	<li><a href='/2013/01/'>January 2013</a></li>
+	<li><a href='/2012/12/'>December 2012</a></li>
+	<li><a href='/2012/11/'>November 2012</a></li>
+	<li><a href='/2012/10/'>October 2012</a></li>
+	<li><a href='/2012/09/'>September 2012</a></li>
+	<li><a href='/2012/07/'>July 2012</a></li>
+	<li><a href='/2012/06/'>June 2012</a></li>
+	<li><a href='/2012/05/'>May 2012</a></li>
+	<li><a href='/2012/04/'>April 2012</a></li>
+	<li><a href='/2012/01/'>January 2012</a></li>
+	<li><a href='/2011/11/'>November 2011</a></li>
+	<li><a href='/2011/10/'>October 2011</a></li>
+	<li><a href='/2011/09/'>September 2011</a></li>
+	<li><a href='/2011/08/'>August 2011</a></li>
+	<li><a href='/2011/07/'>July 2011</a></li>
+	<li><a href='/2011/06/'>June 2011</a></li>
+	<li><a href='/2011/05/'>May 2011</a></li>
+	<li><a href='/2011/04/'>April 2011</a></li>
+	<li><a href='/2011/03/'>March 2011</a></li>
+	<li><a href='/2011/02/'>February 2011</a></li>
+	<li><a href='/2011/01/'>January 2011</a></li>
+	<li><a href='/2010/11/'>November 2010</a></li>
+	<li><a href='/2010/04/'>April 2010</a></li>
+	<li><a href='/2010/03/'>March 2010</a></li>
+	<li><a href='/2010/02/'>February 2010</a></li>
+	<li><a href='/2010/01/'>January 2010</a></li>
+	<li><a href='/2009/12/'>December 2009</a></li>
+	<li><a href='/2009/10/'>October 2009</a></li>
+	<li><a href='/2009/09/'>September 2009</a></li>
+	<li><a href='/2009/08/'>August 2009</a></li>
+	<li><a href='/2009/07/'>July 2009</a></li>
+	<li><a href='/2009/06/'>June 2009</a></li>
+	<li><a href='/2009/05/'>May 2009</a></li>
+	<li><a href='/2008/12/'>December 2008</a></li>
+	<li><a href='/2008/11/'>November 2008</a></li>
+	<li><a href='/2008/10/'>October 2008</a></li>
+		</ul>
+		</aside><aside id="categories-2" class="widget widget_categories"><h1 class="widget-title">Categories</h1>		<ul>
+	<li class="cat-item cat-item-2"><a href="/category/book-review/" >book review</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="/category/charts/" >charts</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="/category/conferences/" >conferences</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="/category/d3/" >d3</a>
+</li>
+	<li class="cat-item cat-item-6"><a href="/category/dashboards/" >dashboards</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="/category/data-publishing/" >data publishing</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="/category/data-visualization/" >data visualization</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="/category/francais/" >français</a>
+</li>
+	<li class="cat-item cat-item-10"><a href="/category/javascript/" >javascript</a>
+</li>
+	<li class="cat-item cat-item-11"><a href="/category/presentation/" >presentation</a>
+</li>
+	<li class="cat-item cat-item-12"><a href="/category/protovis/" >protovis</a>
+</li>
+	<li class="cat-item cat-item-13"><a href="/category/react/" >react</a>
+</li>
+	<li class="cat-item cat-item-14"><a href="/category/tips/" >tips</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="/category/uncategorized/" >Uncategorized</a>
+</li>
+	<li class="cat-item cat-item-15"><a href="/category/web-sites/" >web sites</a>
+</li>
+		</ul>
+</aside><aside id="meta-2" class="widget widget_meta"><h1 class="widget-title">Meta</h1>			<ul>
+						<li><a href="/wp-login.php">Log in</a></li>
+			<li><a href="/feed/">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="/comments/feed/">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>			</ul>
+			</aside>		<div class="clear">&nbsp;</div>
+	</div><!-- #secondary -->
+	<footer id="colophon" class="site-footer" role="contentinfo">
+	    <a class="subscribe icon-feed" href="/feed/"><span class="tooltip">Subscribe!</span></a>
+		<div class="site-info inner">
+		    <section class="copyright">
+		    			    		<a href="https://github.com/lacymorrow/casper" rel="home">Casper WP</a> by Lacy Morrow		    			    </section>
+		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+</main><!-- /#content -->
+
+<script type='text/javascript' src='/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js?ver=3.0.9b'></script>
+<script type='text/javascript' src='/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushJScript.js?ver=3.0.9b'></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "http://localhost:8888/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "http://localhost:8888/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+<script type='text/javascript' src='/wp-content/themes/casper/js/main.js?ver=1.0.0'></script>
+<script type='text/javascript' src='/wp-includes/js/wp-embed.min.js?ver=4.6.10'></script>
+<!--stats_footer_test--></body>
+</html>

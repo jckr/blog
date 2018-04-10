@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Getting beyond hello world with d3</title>
+	<atom:link href="http://localhost/2013/11/20/getting-beyond-hello-world-with-d3/feed/" rel="self" type="application/rss+xml" />
+	<link>/2013/11/20/getting-beyond-hello-world-with-d3/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>By: jerome</title>
+		<link>/2013/11/20/getting-beyond-hello-world-with-d3/#comment-517</link>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+		<pubDate>Fri, 06 Feb 2015 18:46:28 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1572#comment-517</guid>
+		<description><![CDATA[Hi, hmm this template doesn&#039;t really do anything on its own, so adding a data file won&#039;t make much of a difference. However, most of the visualization code I wrote in the last couple of years follows the same logic. So if you go to one of my published projects like http://www.jeromecukier.net/projects/slopes/slopes.html you can see how the data is first loaded, then rendered.]]></description>
+		<content:encoded><![CDATA[<p>Hi, hmm this template doesn&#8217;t really do anything on its own, so adding a data file won&#8217;t make much of a difference. However, most of the visualization code I wrote in the last couple of years follows the same logic. So if you go to one of my published projects like <a href="http://www.jeromecukier.net/projects/slopes/slopes.html" rel="nofollow">http://www.jeromecukier.net/projects/slopes/slopes.html</a> you can see how the data is first loaded, then rendered.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: JD Lewis</title>
+		<link>/2013/11/20/getting-beyond-hello-world-with-d3/#comment-516</link>
+		<dc:creator><![CDATA[JD Lewis]]></dc:creator>
+		<pubDate>Fri, 19 Dec 2014 06:27:58 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1572#comment-516</guid>
+		<description><![CDATA[So I copied your code from the two files above. I put the html code in a file called vis.html and I put the javascript code into a file called template.js. I tried running the code and that didn&#039;t work. Then I realized I needed to use a .txt file with data. I don&#039;t know the setup of the data you used, so I just attempted to use a 7 numbers separated with commas. That didn&#039;t work either.
+
+Could you please provide the data you used for this project, and also could you provide the final names for the files. That would help immensely. 
+
+If you have any other suggestions to why the program may not be working, that would be great.]]></description>
+		<content:encoded><![CDATA[<p>So I copied your code from the two files above. I put the html code in a file called vis.html and I put the javascript code into a file called template.js. I tried running the code and that didn&#8217;t work. Then I realized I needed to use a .txt file with data. I don&#8217;t know the setup of the data you used, so I just attempted to use a 7 numbers separated with commas. That didn&#8217;t work either.</p>
+<p>Could you please provide the data you used for this project, and also could you provide the final names for the files. That would help immensely. </p>
+<p>If you have any other suggestions to why the program may not be working, that would be great.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: jerome</title>
+		<link>/2013/11/20/getting-beyond-hello-world-with-d3/#comment-515</link>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+		<pubDate>Fri, 28 Nov 2014 04:25:48 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1572#comment-515</guid>
+		<description><![CDATA[difficult to tell from this. what exactly is not working?]]></description>
+		<content:encoded><![CDATA[<p>difficult to tell from this. what exactly is not working?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Rohitz -zust stay here</title>
+		<link>/2013/11/20/getting-beyond-hello-world-with-d3/#comment-514</link>
+		<dc:creator><![CDATA[Rohitz -zust stay here]]></dc:creator>
+		<pubDate>Fri, 21 Nov 2014 19:30:40 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1572#comment-514</guid>
+		<description><![CDATA[Your source code is not working in m computer. I made both html and javascript file and linked .js file to html file. but its not working. can you tell me where i am doing wrong?]]></description>
+		<content:encoded><![CDATA[<p>Your source code is not working in m computer. I made both html and javascript file and linked .js file to html file. but its not working. can you tell me where i am doing wrong?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: jerome</title>
+		<link>/2013/11/20/getting-beyond-hello-world-with-d3/#comment-511</link>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+		<pubDate>Wed, 22 Jan 2014 16:47:02 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1572#comment-511</guid>
+		<description><![CDATA[For sure, I am quite familiar with the tributary kid :)]]></description>
+		<content:encoded><![CDATA[<p>For sure, I am quite familiar with the tributary kid 🙂</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Jonny</title>
+		<link>/2013/11/20/getting-beyond-hello-world-with-d3/#comment-510</link>
+		<dc:creator><![CDATA[Jonny]]></dc:creator>
+		<pubDate>Sat, 18 Jan 2014 23:50:57 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1572#comment-510</guid>
+		<description><![CDATA[Hi Jerome,
+
+I&#039;m new to D3JS, and I&#039;m trying to get my head around this post.   Do you have a data.csv with dummy data that could be used just to get these template up and running.  I&#039;ve tried creating my own data.csv but it&#039;s not displaying anything.  Do I need to amend the code first, or should it work straight off the bat?
+
+Thanks,
+Jonathan]]></description>
+		<content:encoded><![CDATA[<p>Hi Jerome,</p>
+<p>I&#8217;m new to D3JS, and I&#8217;m trying to get my head around this post.   Do you have a data.csv with dummy data that could be used just to get these template up and running.  I&#8217;ve tried creating my own data.csv but it&#8217;s not displaying anything.  Do I need to amend the code first, or should it work straight off the bat?</p>
+<p>Thanks,<br />
+Jonathan</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: ric diesel</title>
+		<link>/2013/11/20/getting-beyond-hello-world-with-d3/#comment-509</link>
+		<dc:creator><![CDATA[ric diesel]]></dc:creator>
+		<pubDate>Sat, 18 Jan 2014 18:46:49 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1572#comment-509</guid>
+		<description><![CDATA[have you looked at/or used what the http://tributary.io/ kids are doing.]]></description>
+		<content:encoded><![CDATA[<p>have you looked at/or used what the <a href="http://tributary.io/" rel="nofollow">http://tributary.io/</a> kids are doing.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Data Viz News [34] &#124; Visual Loop</title>
+		<link>/2013/11/20/getting-beyond-hello-world-with-d3/#comment-508</link>
+		<dc:creator><![CDATA[Data Viz News [34] &#124; Visual Loop]]></dc:creator>
+		<pubDate>Sat, 23 Nov 2013 09:38:15 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1572#comment-508</guid>
+		<description><![CDATA[[&#8230;] Getting beyond hello world with d3 &#124; Jerome Cukier [&#8230;]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] Getting beyond hello world with d3 | Jerome Cukier [&#8230;]</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

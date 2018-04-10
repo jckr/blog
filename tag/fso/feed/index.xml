@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>fso &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/fso/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>Create HTML files from Excel tables</title>
+		<link>/2009/08/20/create-html-files-from-excel-tables/</link>
+		<comments>/2009/08/20/create-html-files-from-excel-tables/#respond</comments>
+		<pubDate>Thu, 20 Aug 2009 16:14:33 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[tips]]></category>
+		<category><![CDATA[Excel]]></category>
+		<category><![CDATA[file]]></category>
+		<category><![CDATA[file system object]]></category>
+		<category><![CDATA[fso]]></category>
+		<category><![CDATA[html]]></category>
+		<category><![CDATA[script]]></category>
+		<category><![CDATA[vba]]></category>
+		<category><![CDATA[write]]></category>
+		<category><![CDATA[xhtml]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=172</guid>
+		<description><![CDATA[Imagine a situation where you have data neatly stored in Excel, in a form you&#8217;re comfortable with (or stuck with) and you want to combine it to create a beautiful HTML document (or XML, TXT, you name it). For the sake of argument, let&#8217;s assume you have this spreadsheet here: and you want to create <a class="read-more" href="/2009/08/20/create-html-files-from-excel-tables/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>Imagine a situation where you have data neatly stored in Excel, in a form you&#8217;re comfortable with (or stuck with) and you want to combine it to create a beautiful HTML document (or XML,  TXT, you name it).<br />
+For the sake of argument, let&#8217;s assume you have this spreadsheet here:</p>
+<p style="text-align: center;"><img class="aligncenter" style="margin-right: 149px; margin-left: 148px;" title="spreadsheet" src="http://www.jeromecukier.net/wp-content/uploads/2009/08/spreadsheet.png" alt="spreadsheet" width="373" height="185" /></p>
+<p>and you want to create a list of links with the name of the site in column A, and the url in column B. That, and you want to be able to control every minute aspect of the file you would be creating.</p>
+<p>The solution to that problem is the <a href="http://msdn.microsoft.com/en-us/library/6kxy1a51(VS.85).aspx">file system object</a> in VBA. You create an object for file operations, like this:</p>
+<p><code>Dim fs as Object<br />
+Set fs = CreateObject("Scripting.FileSystemObject")</code></p>
+<p>You then create an object per file you want to use:</p>
+<p><code>Dim f as Object<br />
+Set f = fs.opentextfile("myFile.html", 2, True)</code></p>
+<p>What these parameters mean: 2 means the file is open for writing and True that it can be created if it doesn&#8217;t exist</p>
+<p>You can then add stuff to your heart&#8217;s content by using the writeline method.</p>
+<p><code>f.writeline "&lt;ul&gt;"<br />
+f.writeline "  &lt;li&gt;&lt;a href=""" &amp; cells(1,2) &amp; """&gt;" &amp; cells(1,1) &amp; "&lt;/a&gt;&lt;/li&gt;"<br />
+f.writeline "  &lt;li&gt;&lt;a href=""" &amp; cells(1,2) &amp; """&gt;" &amp; cells(1,1) &amp; "&lt;/a&gt;&lt;/li&gt;"<br />
+f.writeline "&lt;/ul&gt;"<br />
+</code></p>
+<p>And when you&#8217;re done, just close your objects.</p>
+<p><code>f.close<br />
+</code></p>
+<p>Voilà.</p>
+<p style="text-align: center;"><img class="size-full wp-image-174 aligncenter" style="margin-right: 125px; margin-left: 125px;" title="result" src="http://www.jeromecukier.net/wp-content/uploads/2009/08/result.png" alt="result" width="421" height="152" /></p>
+<p>When I use this technique, I like to have procedures that create the files, create a standard header and footer and write to the file using arguments, rather than using the fileSystemObject methods directly. I do that so I can have really clean, indented files with all the structure under control.<br />
+Here is a simple example file:</p>
+<p><a href="http://www.jeromecukier.net/wp-content/uploads/2009/08/fso.xlsm">fso.xlsm</a></p>
+<p>And here&#8217;s a more complex project I&#8217;ve done using this technique : <a href="http://www.sourceoecd.org/rpsv/figures2008/en/index.htm">http://www.sourceoecd.org/rpsv/figures2008/en/index.htm</a> where all 240 html pages  (and 52 images) have been generated from content found in Excel documents. If the content and the output is more complex than the above example, the idea is pretty much identical.</p>
+]]></content:encoded>
+			<wfw:commentRss>/2009/08/20/create-html-files-from-excel-tables/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,396 @@
+message	correspondent	direction	tweet	word1	word2	word3	time	subject	thread	length
+
+9930	YMF	to		cookbook	passive	editors	1337786540	Maybe we SHOULD do a group d3 book?	1075	170
+
+9931	YMF	from		exciting	absolute	advanced	1337805623	Re: Maybe we SHOULD do a group d3 book?	1075	97
+
+9917	YMF	to		hadn	setup	explanation	1337808768	Re: Maybe we SHOULD do a group d3 book?	1075	59
+
+9929	YMF	from		publisher	reilly	beginners	1337959825	Re: Maybe we SHOULD do a group d3 book?	1075	81
+
+9921	YMF	to		ways	amazing	fit	1337960092	Re: Maybe we SHOULD do a group d3 book?	1075	29
+
+9932	YMF	from		coding	conferences	materials	1337981749	Re: Maybe we SHOULD do a group d3 book?	1075	42
+
+9918	YMF	to		noah	anna	category	1340657213	Re: Maybe we SHOULD do a group d3 book?	1075	71
+
+9925	YMF	to		gather	yau	contacted	1340657786	Re: Maybe we SHOULD do a group d3 book?	1075	75
+
+9920	YMF	from		otherwise	behind	beautiful	1340742289	Re: Maybe we SHOULD do a group d3 book?	1075	51
+
+9915	YMF	to		scott	agree	completely	1340742441	Re: Maybe we SHOULD do a group d3 book?	1075	22
+
+9934	YMF	to		smith	aand	saved	1340742593	Re: Maybe we SHOULD do a group d3 book?	1075	179
+
+10725	YMF	to		helper	selections	jheer	1340438385	Fwd: Re: D3 Tutorial at VisWeek	1171	263
+
+10722	YMF	from		deadline	join	mine	1340492106	Re: D3 Tutorial at VisWeek	1171	38
+
+10723	YMF	to		wondering	schedule	focused	1340492382	Re: D3 Tutorial at VisWeek	1171	53
+
+10729	YMF	from		proposal	frank	wishes	1340641130	Re: D3 Tutorial at VisWeek	1171	53
+
+11475	YMF	from		session	proposal	absolute	1339615188	D3 at VisWeek	1249	45
+
+11470	YMF	to		official	talked	javascript	1339632658	Re: D3 at VisWeek	1249	91
+
+11476	YMF	from		array	jun	elsewhere	1339634456	Re: D3 at VisWeek	1249	127
+
+11472	YMF	from		organizers	overlap	existing	1340057166	Re: D3 at VisWeek	1249	101
+
+11474	YMF	to		helper	notion	basics	1340058635	Re: D3 at VisWeek	1249	205
+
+11473	YMF	from		basics	hadley	ggplot	1340059010	Re: D3 at VisWeek	1249	266
+
+11471	YMF	to		former	semi	convince	1340060155	Re: D3 at VisWeek	1249	85
+
+13106	YMF	to		scope	submitted	correspondance	1341476441	visweek workshop	1413	77
+
+13105	YMF	from		scaled	formally	fresh	1341503337	Re: visweek workshop	1413	216
+
+13268	YMF	from		wanted	tutorial	transitions	1341588259	Transitions on Visually	1434	27
+
+13272	YMF	to		error	visually	submitted	1341588668	Re: Transitions on Visually	1434	58
+
+13265	YMF	from		officially	citation	register	1341588857	Re: Transitions on Visually	1434	95
+
+13266	YMF	to		members	reasons	committee	1341589064	Re: Transitions on Visually	1434	45
+
+13267	YMF	from		rate	jul	registration	1341589826	Re: Transitions on Visually	1434	61
+
+13264	YMF	to		bootstrap	registrations	properly	1341590946	Re: Transitions on Visually	1434	55
+
+13270	YMF	from		counts	pixel	styled	1341593572	Re: Transitions on Visually	1434	98
+
+15877	YMF	from		collaborating	purposes	meantime	1345053588	VisWeek tutorial is a go	1769	82
+
+15878	YMF	to		the	some	time	1345064762	Re: VisWeek tutorial is a go	1769	10
+
+15879	YMF	from		prefer	ensure	split	1345053825	Fwd: Tutorial Details	1770	82
+
+15887	YMF	to		makes	cost	buy	1345064662	Re: Tutorial Details	1770	33
+
+15884	YMF	from		august	covered	registration	1345129315	Re: Tutorial Details	1770	73
+
+15882	YMF	to		committee	program	within	1345129675	Re: Tutorial Details	1770	44
+
+15885	YMF	from		within	saw	organisation	1345165300	Re: Tutorial Details	1770	57
+
+15886	YMF	from		registration	aug	registrations	1346094831	Re: Tutorial Details	1770	103
+
+15880	YMF	to		bird	taught	limiting	1346102950	Re: Tutorial Details	1770	125
+
+15888	YMF	from		distributed	ties	sep	1346103562	Re: Tutorial Details	1770	251
+
+15883	YMF	to		sake	sept	tags	1346105623	Re: Tutorial Details	1770	217
+
+15881	YMF	from		sept	refined	tags	1346107152	Re: Tutorial Details	1770	259
+
+15977	YMF	from		petra	abstract	indicating	1345165557	Re: Tutorial Details III	1781	286
+
+15978	YMF	to		registration	committee	earlier	1345194724	Re: Tutorial Details III	1781	47
+
+16472	YMF	from		way	please	visweek	1346095469	Bio	1814	18
+
+16471	YMF	to		ran	austin	governmental	1346102526	Re: Bio	1814	89
+
+16470	YMF	from		ran	austin	governmental	1346103296	Re: Bio	1814	102
+
+16473	YMF	from		petra	registering	whichever	1346095867	D3 Tutorial Details	1815	231
+
+16476	YMF	to		just	get	thanks	1346141493	Re: D3 Tutorial Details	1815	14
+
+16474	YMF	from		jerome	been	thanks	1346165105	Re: D3 Tutorial Details	1815	11
+
+16475	YMF	to		additional	proceed	petra	1346237849	Re: D3 Tutorial Details	1815	54
+
+16909	YMF	to		constructs	durations	excessive	1346677458	d3 tutorial	1850	554
+
+17073	YMF	from		wedding	jheer	reduced	1346865797	VisWeek registration	1874	151
+
+17075	YMF	to		named	jheer	berkeley	1346868956	Re: VisWeek registration	1874	100
+
+17074	YMF	from		you	will	again	1346869884	Re: VisWeek registration	1874	8
+
+17623	YMF	from		package	reminder	respond	1347549971	VisWeek tutorial outline	1916	84
+
+17620	YMF	to		steps	layouts	deep	1347550762	Re: VisWeek tutorial outline	1916	87
+
+17626	YMF	from		stuff	show	scott	1347563293	Re: VisWeek tutorial outline	1916	18
+
+17625	YMF	to		especially	force	layout	1347575307	Re: VisWeek tutorial outline	1916	23
+
+17617	YMF	from		likely	outline	demo	1347580033	Re: VisWeek tutorial outline	1916	45
+
+17627	YMF	from		set	thinking	either	1347916038	Re: VisWeek tutorial outline	1916	26
+
+17628	YMF	to		sheet	cheat	playing	1347916374	Re: VisWeek tutorial outline	1916	31
+
+17622	YMF	to		anonymous	explicit	[adding	1347917710	Re: VisWeek tutorial outline	1916	86
+
+17618	YMF	from		and	you	will	1347917911	Re: VisWeek tutorial outline	1916	9
+
+17619	YMF	from		whole	times	total	1347927646	Re: VisWeek tutorial outline	1916	38
+
+17621	YMF	to		problem	scott	slides	1347958937	Re: VisWeek tutorial outline	1916	34
+
+17624	YMF	from		deadline	outline	usb	1347982337	Re: VisWeek tutorial outline	1916	37
+
+17629	YMF	to		the	you	well	1347983524	Re: VisWeek tutorial outline	1916	10
+
+17978	YMF	from		this	jerome	hey	1347926449	Korea conference	1977	15
+
+17980	YMF	to		cheers	oecd	days	1347945031	Re: Korea conference	1977	15
+
+17981	YMF	from		circle	wow	numbers	1347980828	Re: Korea conference	1977	39
+
+17982	YMF	to		skill	tips	rid	1347983676	Re: Korea conference	1977	128
+
+17979	YMF	from		get	thanks	had	1348154989	Re: Korea conference	1977	16
+
+16900	YMF	from		participation	cheat	missed	1348714768	Re: d3 tutorial	2050	68
+
+16902	YMF	from		contains	copies	referenced	1349624856	Re: d3 tutorial	2102	291
+
+16904	YMF	to		switch	presenting	usb	1349625171	Re: d3 tutorial	2102	56
+
+16905	YMF	from		cheat	recall	pacific	1349826770	Re: d3 tutorial	2102	147
+
+16898	YMF	to		you	message	jeff	1349828961	Re: d3 tutorial	2102	10
+
+16901	YMF	from		jeff	talk	skype	1349883381	Re: d3 tutorial	2102	27
+
+16908	YMF	to		helps	url	examples	1349910754	Re: d3 tutorial	2102	42
+
+19396	YMF	from		presenters	scott	laptops	1349826931	Tutorial setup questions	2115	66
+
+19397	YMF	to		everybody	happens	robert	1349830764	Re: Tutorial setup questions	2115	65
+
+19395	YMF	from		tableausoftware	robert	kosara	1349883676	Re: Tutorial setup questions	2115	112
+
+19399	YMF	to		theater	presenters	tables	1349909685	RE: Tutorial setup questions	2115	108
+
+19398	YMF	from		presenters	rkosara	tables	1349912986	Re: Tutorial setup questions	2115	133
+
+19394	YMF	to		wasn	link	guess	1349999195	RE: Tutorial setup questions	2115	31
+
+19400	YMF	from		oct	okay	speaker	1350000421	Re: Tutorial setup questions	2115	47
+
+19509	YMF	from		update	touch	changed	1349913200	Updated tutorial outline	2126	39
+
+19505	YMF	to		svg	added	found	1349964667	Re: Updated tutorial outline	2126	29
+
+19507	YMF	from		fits	switching	presentations	1350060390	Re: Updated tutorial outline	2126	127
+
+19506	YMF	to		degree	underlying	tricks	1350072047	Re: Updated tutorial outline	2126	100
+
+19508	YMF	from		underlying	distribute	tricks	1350076989	Re: Updated tutorial outline	2126	134
+
+19510	YMF	to		like	let	into	1350077401	Re: Updated tutorial outline	2126	13
+
+19504	YMF	from		scott	share	monday	1350077490	Re: Updated tutorial outline	2126	36
+
+19666	YMF	from		dom	consistent	ensure	1350070409	D3 code samples	2135	92
+
+19660	YMF	from		hover	exit	ing	1350181002	Re: D3 code samples	2135	238
+
+19663	YMF	to		before	version	read	1350241615	Re: D3 code samples	2135	24
+
+19665	YMF	from		including	complete	rest	1350252652	Re: D3 code samples	2135	45
+
+19667	YMF	from		updated	oct	pdf	1350253350	Re: D3 code samples	2135	48
+
+19664	YMF	to		tomorrow	files	file	1350281755	Re: Re: D3 code samples	2168	41
+
+19662	YMF	from		download	stanford	usb	1350281962	Re: D3 code samples	2168	83
+
+19661	YMF	to		files	updated	links	1350287045	Re: D3 code samples	2168	25
+
+19904	YMF	from		decided	sign	split	1350341845	Honoraria	2191	59
+
+20586	YMF	from		talking	interview	connection	1351099580	Maps + Handy	2298	44
+
+20587	YMF	to		handy	attribute	artist	1351107855	Re: Maps + Handy	2298	78
+
+20583	YMF	from		editing	proposes	rigorous	1351109006	Re: Maps + Handy	2298	111
+
+20588	YMF	to		handy	attribute	artist	1351109006	Re: Maps + Handy	2298	78
+
+20585	YMF	to		another	instead	shape	1351115893	Re: Maps + Handy	2298	18
+
+20584	YMF	from		shape	fill	complicated	1351116083	Re: Maps + Handy	2298	35
+
+21368	YMF	to		who	message	cheers	1352156042	Fwd: Strata CA 2013 tutorial	2356	11
+
+21371	YMF	from		sign	clean	listed	1352157146	Re: Strata CA 2013 tutorial	2356	63
+
+23052	YMF	from		schedule	expected	semester	1354294917	Strata	2506	41
+
+23051	YMF	to		expenses	bragging	ikeda	1354299203	Re: Strata	2506	130
+
+23050	YMF	from		loud	warned	frequency	1354301709	Re: Strata	2506	183
+
+t53	YMF	to	mention	scott	alignedleft	congratulations	1336438439		t780	19
+
+t51	YMF	to	mention	not	what	moritz	1336698363		t798	15
+
+t82	YMF	to	mention	happy	kind	arnicas	1337734679		t873	16
+
+t45	YMF	to	mention	the	just	when	1337735156		t880	17
+
+t679	YMF	to	mention	book	arnicas	alignedleft	1337731436		t882	22
+
+t61	YMF	to	mention	who	guys	interested	1337821624		t889	9
+
+t197	YMF	to	mention	part	each	arnicas	1337822208		t892	15
+
+t196	YMF	to	mention	arnicas	material	currently	1337822171		t893	17
+
+t52	YMF	to	mention	awesome	alignedleft		1338509105		t968	8
+
+t62	YMF	to	mention	there	was	one	1339288518		t1033	3
+
+t298	YMF	to	mention	because	same	name	1339720338		t1059	0
+
+t1358	YMF	to	mention	http	projects	three	1340323473		t1155	13
+
+t1356	YMF	to	mention	source	alignedleft	continue	1340673082		t1200	10
+
+t1203	YMF	to	mention	and	for	have	1341448705		t1286	20
+
+t44	YMF	to	mention	for	come	alignedleft	1341448863		t1294	9
+
+t678	YMF	to	mention	that	not	alignedleft	1341449407		t1295	5
+
+t571	YMF	to	mention	could	hope	view	1342137975		t1402	12
+
+t595	YMF	to	mention	too	hope	moebio	1342228102		t1420	14
+
+t1357	YMF	from	mention	http	interactive	excellent	1342311937		t1427	15
+
+t1172	YMF	from	mention	http	visweek	jeff	1346462785		t1627	13
+
+t1009	YMF	from	mention	visweek	doing	jeff	1346463521		t1628	12
+
+t1643	YMF	from	mention	http	visweek	jeff	1346457806		t1629	16
+
+t205	YMF	from	mention	that	time	jcukier	1346457899		t1629	8
+
+t1646	YMF	from	mention	visweek	jeff	alignedleft	1346463036		t1631	21
+
+t1062	YMF	from	mention	with	jcukier	http	1346893739		t1657	2
+
+t587	YMF	from	mention	will	great	here	1348963469		t1775	15
+
+t48	YMF	from	mention	interesting	scott	forward	1348966844		t1775	11
+
+t1161	YMF	from	mention	jcukier	before	start	1349224323		t1788	8
+
+t47	YMF	from	mention	workshop	alignedleft	strata	1349655359		t1815	6
+
+t55	YMF	to	mention	you	would	interested	1349655974		t1815	3
+
+t366	YMF	from	mention	that	would	great	1349657175		t1815	4
+
+t371	YMF	from	mention	well	should	jcukier	1349659998		t1815	15
+
+t376	YMF	from	mention	our	already	arnicas	1349660245		t1815	10
+
+t86	YMF	from	mention	the	and	for	1349660208		t1815	4
+
+t919	YMF	from	mention	about	jcukier	way	1350348119		t1838	18
+
+t885	YMF	from	mention	about	jcukier	http	1350348424		t1839	5
+
+t1586	YMF	from	mention	tutorial	alignedleft	heer	1350348712		t1840	1
+
+t1682	YMF	from	mention	visweek	alignedleft	heer	1350348836		t1841	12
+
+t564	YMF	from	mention	the	will	thanks	1350349754		t1843	13
+
+t798	YMF	from	mention	think	jcukier	yes	1350350433		t1843	17
+
+t1572	YMF	from	mention	too	visweek	jcukier	1350349695		t1844	16
+
+t948	YMF	from	mention	put	used	tutorial	1350347901		t1845	19
+
+t1323	YMF	to	mention	http	our	visweek	1350348033		t1846	14
+
+t367	YMF	from	mention	experience	pretty	forward	1350348202		t1846	12
+
+t323	YMF	from	mention	jcukier	experience	janwillemtulp	1350348555		t1846	7
+
+t905	YMF	from	mention	tutorial	via	alignedleft	1350348315		t1847	18
+
+t208	YMF	from	mention	datatelling	alignedleft	heer	1350348453		t1848	10
+
+t1011	YMF	from	mention	their	visweek	tutorial	1350349116		t1850	19
+
+t1222	YMF	from	mention	from	don	then	1350349155		t1851	17
+
+t50	YMF	from	mention	those	jcukier	made	1350347696		t1859	8
+
+t49	YMF	from	mention	thought	html	svg	1350432876		t1860	14
+
+t308	YMF	from	mention	jcukier	yes	even	1350433904		t1860	6
+
+t395	YMF	from	mention	open	visweek	btw	1350518883		t1884	9
+
+t46	YMF	to	mention	and	like	visweek	1350518969		t1884	3
+
+t503	YMF	from	mention	jcukier	lucky		1350694162		t1963	16
+
+t886	YMF	from	mention	visweek	tutorial	material	1351042053		t1999	8
+
+t1071	YMF	from	mention	http	got	visweek	1352073899		t2035	17
+
+t990	YMF	to	mention	with	tutorial	strata	1352251739		t2039	16
+
+t370	YMF	from	mention	well	jcukier	done	1352247696		t2039	4
+
+t368	YMF	from	mention	one	jcukier	nice	1352248199		t2039	11
+
+t369	YMF	from	mention	just	was	jcukier	1352249943		t2039	5
+
+t63	YMF	to	mention	bit	jeff	his	1352250776		t2039	12
+
+t1072	YMF	from	mention	great	jcukier	news	1352252298		t2040	11
+
+t1043	YMF	from	mention	jcukier	tutorial	congrats	1352247044		t2042	4
+
+t1273	YMF	from	mention	nice	job	tutorial	1352247374		t2044	16
+
+t577	YMF	from	mention	guys	looking	another	1352334719		t2044	7
+
+t1273	YMF	from	mention	nice	job	tutorial	1352247374		t2045	16
+
+t555	YMF	from	mention	jcukier	back	while	1353115476		t2118	5
+
+t57	YMF	to	mention	based	alignedleft	bad	1353115444		t2118	9
+
+t1559	YMF	to	mention	visualisingdata	his	alignedleft	1353461264		t2146	14
+
+t54	YMF	from	mention	the	that	one	1353456153		t2148	14
+
+t572	YMF	from	mention	are	jcukier	those	1353542944		t2148	11
+
+t54	YMF	from	mention	the	that	one	1353456153		t2149	14
+
+t1409	YMF	to	mention	order	alignedleft	driven	1353545433		t2150	16
+
+t1345	YMF	to	mention	scott	alignedleft	learning	1353545534		t2151	8
+
+t1716	YMF	from	mention	thanks	jcukier	kind	1353547781		t2153	17
+
+t537	YMF	from	mention	not	had	jcukier	1353543329		t2155	6
+
+t56	YMF	to	mention	since	years	alignedleft	1353542669		t2155	10
+
+t1714	YMF	from	mention	good	jcukier	http	1353543261		t2156	14
+
+t1355	YMF	to	mention	out	alignedleft	d3js	1356139248		t2357	12
+
+t947	YMF	from	dm	for	would	out	1349657436		dm112	11
+
+t1137	YMF	to	dm	very	see	etc	1349660429		dm112	19
+

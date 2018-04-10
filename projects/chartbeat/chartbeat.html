@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+	<title></title>
+	
+<link href="//fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet" type="text/css">
+
+	<style>
+	body {
+		font-family: Raleway;
+		font-size: 14px;
+		color: #4A4A4A;
+		line-height: 19px;
+	}
+	h1 {
+		font-family: Raleway;
+		font-weight: 800;
+		font-size: 36px;
+		color: #4A4A4A;
+		line-height: 49px;
+	}
+	h2 {
+		font-family: "Palatino"; 
+		font-style: italic;
+		font-size: 22px;
+		color: #4A4A4A;
+		line-height: 34px;
+	}
+	.bold {
+		font-family: Raleway;
+		font-weight: bold;
+		font-size: 14px;
+		color: #4A4A4A;
+		line-height: 19px;
+	}
+
+	.twitter-share-button {position: absolute; left: 70px; top: 30px;}
+	
+
+	
+	#chart {}
+	</style>
+</head>
+<body>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.13/d3.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/queue-async/1.0.7/queue.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.3/moment.min.js"></script>
+
+
+<!--<a href="https://twitter.com/share" class="twitter-share-button" 
+data-url="http://jeromecukier.net" 
+data-via="jcukier">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+-->
+
+
+<div id="chart"></div>
+
+<script src="chartbeat.js"></script>
+<script>
+var params = {data:"gizmodo.csv"};
+var query = window.location.search.substring(1);
+
+var vars = query.split("&");
+vars.forEach(function(v) {
+	p=v.split("=");
+	params[p[0]]=p[1]
+})
+
+vis.init(params);
+</script>
+</body>
+</html>

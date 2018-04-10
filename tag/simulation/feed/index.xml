@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>simulation &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/simulation/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>La nuit blanche</title>
+		<link>/2012/11/21/la-nuit-blanche/</link>
+		<comments>/2012/11/21/la-nuit-blanche/#respond</comments>
+		<pubDate>Wed, 21 Nov 2012 16:57:10 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[d3]]></category>
+		<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[lyapunov]]></category>
+		<category><![CDATA[model]]></category>
+		<category><![CDATA[nuit blanche]]></category>
+		<category><![CDATA[queue]]></category>
+		<category><![CDATA[simulation]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1501</guid>
+		<description><![CDATA[TL;DR: go check the model here So I live in Paris and try to go to the museums there as much as I can, which is often. About ten years ago (2002, I think) the city came up with what I thought was a fantastic idea: &#8220;nuit blanche&#8221;, an art event during one night in <a class="read-more" href="/2012/11/21/la-nuit-blanche/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>TL;DR: go check the model <a href="http://www.jeromecukier.net/projects/models/nuitblanche.html">here</a> </p>
+<p>So I live in Paris and try to go to the museums there as much as I can, which is often.<br />
+About ten years ago (2002, I think) the city came up with what I thought was a fantastic idea: &#8220;nuit blanche&#8221;, an art event during one night in October. There were a dozen or so exhibits planned, all of which were fairly ambitious. For instance <a href="http://fr.wikipedia.org/wiki/Sophie_Calle">Sophie Calle</a> would welcome visitors on a secret bedroom on the very top of the Eiffel tower.</p>
+<p>When I saw the programme it was almost to good to be true: all those world class artists would do something extraordinary in Paris! I thought I could just casually walk all night from one installation to another along with a few other like-minded night wanderers. so it would look a bit like this: </p>
+<p><iframe src="http://www.jeromecukier.net/projects/models/smallnb.html#night=300&#038;duration=50&#038;nbPeople=100&#038;step=15&#038;stepStd=1&#038;timePerVisit=10&#038;timePerVisitO=1&#038;nbAttractions=10&#038;o=0&#038;minCap=100&#038;maxCap=100&#038;mode=true&#038;lyak=true" width="520" height="650" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><br />
+(how to read this: circles are installations. The large black circle represents their capacity, the inner green circle the occupancy. If too many people try to enter an installation, the green circle will grow larger than the black one and will turn red, this is when queuing appears. Dots represent visitors).</p>
+<p>Little did I know that the city expected 100000 visitors. Actually, 1 million showed up. </p>
+<p><iframe src="http://www.jeromecukier.net/projects/models/smallnb.html#night=300&#038;duration=50&#038;nbPeople=1000&#038;step=15&#038;stepStd=1&#038;timePerVisit=20&#038;timePerVisitO=2&#038;nbAttractions=10&#038;o=0&#038;minCap=10&#038;maxCap=30&#038;mode=true&#038;lyak=true" width="520" height="650" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></p>
+<p>If the total number of visitors that were in the streets at one given moment in time is an indication of success, Nuit Blanche has been fantastic. But to anybody who&#8217;s experienced it it was really a night of waiting and walking. There just wasn&#8217;t enough capacity in the various places that would host the event, and no way for a visitor to expect the size of the queue that they would be facing (more on that later).</p>
+<p>Every year, it&#8217;s a struggle. I&#8217;m like, the programme is so exciting, but then I know I will spend my time queuing or walking (in later editions, public transportation got better, so let&#8217;s say queuing and moving). </p>
+<p>And each year I end up going, and I end up thinking: never again. (but <a href="http://www.micheldebroin.org/projects/nuitblanche/4.html">hey</a>, <a href="http://www.ryojiikeda.com/project/spectra/#spectra_paris">hey</a>, and <a href="http://www.leandroerlich.com.ar/works.php?id=27">hey</a>). </p>
+<p>In the last edition there&#8217;s been something like 2.5 million visitors. There are about 100 places to visit in Paris. Many of which are indoors with a limited capacity and so enforce queues. Some are outside, so people can just walk past it and enjoy the art (sometimes, even from a great distance). </p>
+<p>What I found annoying though it that there was no way to tell in advance which installations were going to be crowded, and which were going to be empty.<br />
+This is what led me to build this model. </p>
+<p><iframe src="http://www.jeromecukier.net/projects/models/smallnb.html#night=500&#038;duration=100&#038;nbPeople=2500&#038;step=10&#038;stepStd=1&#038;timePerVisit=20&#038;timePerVisitO=2&#038;nbAttractions=100&#038;o=0.2&#038;minCap=5&#038;maxCap=20&#038;mode=true&#038;lyak=false" width="520" height="650" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></p>
+<p>Here&#8217;s how it works.<br />
+A certain number of people and attractions are randomly distributed in the city.<br />
+People will go to the nearest attraction. If it&#8217;s possible, they will go in, else they will queue until there is room.<br />
+While inside, they will enjoy it for a certain time, then they will move out and go to the nearest one they haven&#8217;t visited. </p>
+<p>This model, which is fairly close to how things work currently, will always end up creating large queues in some places while others will run under capacity.<br />
+<iframe src="http://www.jeromecukier.net/projects/models/smallnb.html#night=500&#038;duration=100&#038;nbPeople=2500&#038;step=10&#038;stepStd=1&#038;timePerVisit=20&#038;timePerVisitO=2&#038;nbAttractions=100&#038;o=0.2&#038;minCap=5&#038;maxCap=20&#038;mode=true&#038;lyak=true" width="520" height="650" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><br />
+Now imagine a simple change: people get an idea of how long the queues are everywhere. Instead of going to the nearest exhibit, they will go to the place where they would be able to get in the quickest, taking into account the time to get there and the time to queue if applicable. Since nobody likes to wait, people will shy away from the places with long queues, evening the load, and by the same token reducing the waiting time for other visitors. Technically the waiting time at all the installations become <a href="http://en.wikipedia.org/wiki/Lyapunov_function">Lyapunov functions</a>, and provided they have enough information agents will make it optimal.</p>
+<p>If you run this model in <a href="http://www.jeromecukier.net/projects/models/nuitblanche.html#night=500&#038;duration=100&#038;nbPeople=2500&#038;step=5&#038;stepStd=1&#038;timePerVisit=20&#038;timePerVisitO=2&#038;nbAttractions=50&#038;o=0.2&#038;minCap=5&#038;maxCap=20&#038;mode=true&#038;lyak=true">its full screen incarnation</a> with dashboards, bells and whistles, you will see that this doesn&#8217;t really help increasing the number of installations that people get to visit. What happens is that the time spent waiting in queue shifts to time spent moving between places. (the overall time spent inside installations should increase, though).</p>
+<p>In order to reduce the time spent moving, one can improve the public transportation (represented by the average speed, in the model), or putting installations close together, which has been done to some extent since the start. But do that with a limit, because that moving time is an interesting buffer, it&#8217;s not as annoying as queuing and Paris is beautiful at night, and when you&#8217;re among 2.5 million art enthousiasts it&#8217;s as safe a city can get. </p>
+<p>To further improve the time spent visiting exhibits, one has to improve capacity or reduce attendance (two options which I trust the city of Paris will be wary about). One other option would be to improve the percentage of art installations that can be enjoyed from the outside, another parameter in the simulation.</p>
+<p>Lastly, here are a few things the model doesn&#8217;t include, which IMO don&#8217;t make a lot of difference in the results, but to be honest:<br />
+&#8211; the installations are presented as being equally attractive. In fact, some are always more interesting than others and get even more queue. (that would make the model where queues are ignored even more unbalanced).<br />
+&#8211; the capacities of the installations are determined by random, but uniformly distributed. That isn&#8217;t the case, the largest museums are open that night and they can welcome thousands of visitors, while some other places would be full at 100.<br />
+&#8211; opening times of installations haven&#8217;t been taken into account; most will close at some point during the night. </p>
+<p>and on that note, <a href="http://www.jeromecukier.net/projects/models/nuitblanche.html">enjoy the model</a> </p>
+]]></content:encoded>
+			<wfw:commentRss>/2012/11/21/la-nuit-blanche/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

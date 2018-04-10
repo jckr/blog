@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+<link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
+<link href='http://fonts.googleapis.com/css?family=Bilbo' rel='stylesheet' type='text/css'>
+
+<style>
+body {padding-top: 60px;font-family:"bilbo"}
+circle.node {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+#slider {width:940px;}
+line.link {
+  stroke: #999;
+  stroke-opacity: .6;
+}
+img {display:block;position:absolute}
+
+</style>
+<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Le fav and touch icons -->
+	<link rel="shortcut icon" href="../bootstrap/ico/favicon.ico">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../bootstrap/ico/apple-touch-icon-114-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../bootstrap/ico/apple-touch-icon-72-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" href="../bootstrap/ico/apple-touch-icon-57-precomposed.png">
+</head>
+<body>
+<script src="http://d3js.org/d3.v2.min.js">
+</script>
+
+
+<div class="container" style="position:absolute;top:70px;left:10px">
+
+<h1 style="font-size:40px">Places in the Game of Thrones</h1>
+<p style="font-size:20px">These are all the places mentioned in the Song of Ice and Fire books. Two places are linked if characters travel from one to the other in a chapter. </p>
+<div class="row">
+	<div style="position:absolute;top:50px;left:0px">
+		<div >
+			<img height="156" width="240" src="map/standard-map-tiles_01.jpeg" style="left:0px;top:100px"/>
+			<img height="156" width="240" src="map/standard-map-tiles_02.jpeg" style="left:240px;top:100px"/>
+			<img height="156" width="240" src="map/standard-map-tiles_03.jpeg" style="left:480px;top:100px"/>
+			<img height="156" width="240" src="map/standard-map-tiles_04.jpeg" style="left:720px;top:100px"/>
+		</div>
+		<div >
+			<img height="156" width="240" src="map/standard-map-tiles_05.jpeg" style="left:0px;top:256px"/>
+			<img height="156" width="240" src="map/standard-map-tiles_06.jpeg" style="left:240px;top:256px"/>
+			<img height="156" width="240" src="map/standard-map-tiles_07.jpeg" style="left:480px;top:256px"/>
+			<img height="156" width="240" src="map/standard-map-tiles_08.jpeg" style="left:720px;top:256px"/>
+		</div>
+		<div >
+			<img height="156" width="240" src="map/standard-map-tiles_09.jpeg" style="left:0px;top:412px"/>
+			<img height="156" width="240" src="map/standard-map-tiles_10.jpeg" style="left:240px;top:412px"/>
+			<img height="156" width="240" src="map/standard-map-tiles_11.jpeg" style="left:480px;top:412px"/>
+			<img height="156" width="240" src="map/standard-map-tiles_12.jpeg" style="left:720px;top:412px"/>
+		</div>
+		<div >
+			<img height="156" width="240" src="map/standard-map-tiles_13.jpeg" style="left:0px;top:558px"/>
+			<img height="156" width="240" src="map/standard-map-tiles_14.jpeg" style="left:240px;top:558px"/>
+			<img height="156" width="240" src="map/standard-map-tiles_15.jpeg" style="left:480px;top:558px"/>
+			<img height="156" width="240" src="map/standard-map-tiles_16.jpeg" style="left:720px;top:558px"/>
+		</div>
+	</div>
+	<div id="chart" style="position:absolute;top:150px;left:0px">
+	</div>
+</div>
+<input type="range" style="position:absolute;left:20px;top:765px" value="0" min="0" max="343" step="1" id="slider">
+<div class="span12" id="legend" style="position:absolute;top:785px;left:0px"></div>
+<footer class="span12">
+<div class="row">
+</footer>
+</div> <!-- /container -->
+
+
+
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="../bootstrap/js/jquery.js"></script>
+
+<script src="fisheye.js">
+</script>
+<script src="data-graph.js">
+</script>
+<script src="routine-graph-wmap.js">
+</script>
+
+
+
+<script src="../bootstrap/js/bootstrap-transition.js"></script>
+<script src="../bootstrap/js/bootstrap-alert.js"></script>
+<script src="../bootstrap/js/bootstrap-modal.js"></script>
+<script src="../bootstrap/js/bootstrap-dropdown.js"></script>
+<script src="../bootstrap/js/bootstrap-scrollspy.js"></script>
+<script src="../bootstrap/js/bootstrap-tab.js"></script>
+<script src="../bootstrap/js/bootstrap-tooltip.js"></script>
+<script src="../bootstrap/js/bootstrap-popover.js"></script>
+<script src="../bootstrap/js/bootstrap-button.js"></script>
+<script src="../bootstrap/js/bootstrap-collapse.js"></script>
+<script src="../bootstrap/js/bootstrap-carousel.js"></script>
+<script src="../bootstrap/js/bootstrap-typeahead.js"></script>
+
+</body>
+</html>

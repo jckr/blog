@@ -1,0 +1,251 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8">
+		<script type="text/javascript" src="http://mbostock.github.com/d3/d3.js?2.0.0"></script>
+		<!--<script type="text/javascript" src="http://blog.oecdfactblog.org/wp-includes/js/protovis-r3.2.js"></script>-->
+		<style>
+			@import url("http://mbostock.github.com/d3/style.css?1.10.0");
+			@import url("http://mbostock.github.com/d3/syntax.css?1.10.0");
+		</style>
+		<style>
+		.cell {
+			position:absolute;
+			overflow:hidden;
+			height:20;
+			width:20;
+			border:1px solid white;
+			text-align:center;
+			vertical-align:middle;
+			}
+		.cellSVG {height:20;width:20;}
+		</style>
+	</head>
+	<body>
+		<div id="mode">
+		mode:0
+		</div>
+		<div id="info">
+		</div>
+		<div id="chart">
+		</div>
+
+		<script type="text/javascript">
+
+		/* version changes
+
+
+		8.000: key codes change various modes.
+		8.001: attribute set to faces now a variable, no longer magic number
+		8.002: cubes now delayed by attribute value and at once, no longer each dimension at a time.
+ 		8.003: some renaming, adding hidden faces
+
+		*/
+		var k=0.707106781;
+		var depth=k/2;
+		var u=10;
+		var a=u*depth;
+
+		var s=u+2*a;
+		var nb=1000;
+
+		var maxDim=Math.ceil(Math.sqrt(nb));
+		var cubeEdge=Math.ceil(Math.pow(nb,1/3));
+
+		var attrProba=[[15,15,10,7,6,4,2,2,2],
+					   [1,1,1,1,1,1,1,1,1],
+					   [3,5,2,4,6,4,2,1,5],
+					   [20,20,20,20,5,5,5,5,5],
+					   [1,2,3,4,5,6,7,8,9],
+					   [60,50,40,20,10,30,70,80,90]];
+
+		//var attrProba=[[1,1],[0,0,1,1],[0,0,0,0,1,1],[20,20,20,20,5,5,5,5,5],
+		//			   [1,2,3,4,5,6,7,8,9],
+		//				   [60,50,40,20,10,30,70,80,90]];
+
+		attrProba=attrProba.map(function(v) {return v.map(function(d) {return d/d3.sum(v);});});
+
+		var frontFace=0, topFace=1, rightFace=2, backFace=5, bottomFace=4, leftFace=3;
+
+		function detAttr(arg,attr) {var i=0;p=attrProba[attr][0];while(i<attrProba[attr].length){if(arg<p){return i;}else{p+=attrProba[attr][++i];}}}
+		function showData() {data.forEach(function(d) {console.log(d.id+" "+d.attr[0]+" "+d.attr[1]+" "+d.attr[2]+" "+d.attr[3]+" "+d.attr[4]+" "+d.attr[5]);})}
+		function showMatrix() {data.forEach(function(i,d) {console.log(matrix[0][d]+" "+matrix[1][d]+" "+matrix[2][d]+" "+matrix[3][d]+" "+matrix[4][d]+" "+matrix[5][d]+" "+matrix[6][d]);})}
+
+		var data=d3.range(nb).map(function(d) {return {'attr':d3.range(6).map(function(d) {return detAttr(Math.random(),d);}), 'id':d};})
+		//data=[{id:0,attr:[0,2,5,1,7,6]},{id:1,attr:[0,3,4,0,3,0]},{id:2,attr:[0,3,4,8,7,4]},{id:3,attr:[0,2,4,0,6,8]},{id:4,attr:[1,3,4,8,3,2]},{id:5,attr:[0,2,5,3,5,8]},{id:6,attr:[0,2,4,3,5,3]},{id:7,attr:[0,2,4,3,2,8]}];
+
+		var matrix=d3.range(7).map(function(c) {return d3.range(nb).map(function(r) {return r;});})
+		var pos=data.map(function(d) {return {id:d.id,x:0,y:0,z:0,order:-1};});
+
+		function rePos() {
+			if (mode==0) {
+				pos.forEach(function(d,i) {
+					var x,y,z;
+					y=~~(i/(cubeEdge*cubeEdge));
+					x=(~~((i-(cubeEdge*cubeEdge)*y)/cubeEdge));
+					z=(i%cubeEdge);
+					ox=d.x;
+					oy=d.y;
+					oz=d.z;
+					pos[i]={id:d.id,x:x,y:y,z:z,ox:ox,oy:oy,oz:oz,order:i,delay:d.id};
+				})
+			} else if (mode==1) {
+				pos.sort(function(a,b) {return data[a.id].attr[frontFace]-data[b.id].attr[frontFace];})
+				.forEach(function(d,i) {
+				    var x,y,z;
+					z=0;
+					y=~~(i/maxDim);
+					x=i%maxDim;
+					ox=d.x;
+					oy=d.y;
+					oz=d.z;
+					pos[i]={id:d.id,x:x,y:y,z:z,ox:ox,oy:oy,oz:oz,order:-1,delay:100*data[d.id].attr[frontFace]};
+				})
+			} else if (mode==2) {
+				pos.sort(function(a,b) {return data[a.id].attr[topFace]-data[b.id].attr[topFace];})
+				.forEach(function(d,i) {
+				    var x,y,z;
+					y=0;//maxDim;
+					z=~~(i/maxDim);
+					x=i%maxDim;
+					ox=d.x;
+					oy=d.y;
+					oz=d.z;
+					pos[i]={id:d.id,x:x,y:y,z:z,ox:ox,oy:oy,oz:oz,order:-1,delay:100*data[d.id].attr[topFace]};
+				})
+			} else if (mode==3) {
+				pos.sort(function(a,b) {return data[a.id].attr[rightFace]-data[b.id].attr[rightFace];})
+				.forEach(function(d,i) {
+				    var x,y,z;
+					x=0;//maxDim;
+					y=~~(i/maxDim);
+					z=i%maxDim;
+					ox=d.x;
+					oy=d.y;
+					oz=d.z;
+					pos[i]={id:d.id,x:x,y:y,z:z,ox:ox,oy:oy,oz:oz,order:-1,delay:100*data[d.id].attr[rightFace]};
+				})
+			}
+			pos.sort(function(a,b) {return maxDim*maxDim*(a.y-b.y)+maxDim*(a.z-b.z)+a.x-b.x;});
+			pos.forEach(function(d,i) {pos[i]['order']=i;})
+			pos.sort(function(a,b) {return a.id-b.id;})
+		}
+
+		d3.range(6).forEach(function(i) {
+		  data.sort(function(a,b) {
+		    return a.attr[i]-b.attr[i]
+		  ;});
+		  matrix[i+1]=data.map(function(d) {return d.id;});
+		  data.sort(function(a,b) {return a.id-b.id;});
+  		})
+
+
+		var xScaleX=d3.scale.linear().domain([0,maxDim]).range([0,maxDim*u]),
+			xScaleZ=d3.scale.linear().domain([0,maxDim]).range([maxDim*a,0]),
+			yScaleY=d3.scale.linear().domain([0,maxDim]).range([50+maxDim*u,50]),
+			yScaleZ=d3.scale.linear().domain([0,maxDim]).range([50,50+maxDim*a]);
+
+
+
+
+		//      +----+
+		//    / 1   /|
+		//   +-----+ |
+		//   |     |2|
+		//   |  0  | +
+		//   |     |/
+		//   +-----+
+		//
+		//
+		//  0 - z=0
+ 		//  1 - y=0
+		//  2 - x=0
+
+
+
+
+		var mode=0;
+
+		cols=["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf"];
+		var vis=d3.select("body").append("svg:svg").attr("width",1500).attr("height",900)
+
+
+
+//var box=[[0,0,0],[1,0,0],[0,0,10],[5,0,10],[0,1,0],[5,1,0],[0,1,10],[5,1,10]];
+var box=[[0,0,0],[10,0,0],[0,0,10],[10,0,10],[0,10,0],[10,10,0],[0,10,10],[10,10,10]];
+var flipped=false;
+
+var k=0.707106781;
+	var depth=k/2;
+	var u=10;
+	var a=u*depth;
+var maxDim=10;
+
+var xScaleX=d3.scale.linear().domain([0,maxDim]).range([0,maxDim*u]),
+	xScaleZ=d3.scale.linear().domain([0,maxDim]).range([maxDim*a,0]),
+	yScaleY=d3.scale.linear().domain([0,maxDim]).range([50+maxDim*u,50]),
+	yScaleZ=d3.scale.linear().domain([0,maxDim]).range([50,50+maxDim*a]);
+
+function renderX(vector) {return xScaleX(vector[0])+xScaleZ(vector[2]);}
+function renderY(vector) {return yScaleY(vector[1])+yScaleZ(vector[2]);}
+
+
+
+
+
+
+
+function updateBox(angle){
+var cos=Math.cos(angle),sin=Math.sin(angle);
+box=box.map(function(d) {return [d[0],cos*d[1]-sin*d[2],sin*d[1]+cos*d[2]];});
+}
+
+function drawBrick() {
+var ax=renderX(box[0]),ay=renderY(box[0]),
+    bx=renderX(box[1]),by=renderY(box[1]),
+    cx=renderX(box[2]),cy=renderY(box[2]),
+    dx=renderX(box[3]),dy=renderY(box[3]),
+    ex=renderX(box[4]),ey=renderY(box[4]),
+    fx=renderX(box[5]),fy=renderY(box[5]),
+    gx=renderX(box[6]),gy=renderY(box[6]),
+    hx=renderX(box[7]),hy=renderY(box[7]);
+
+//    function pathTop(angle)=
+
+    if (flipped^(gy<cy)) {
+    	if (gy>cy) {
+
+    		backFace.attr("d","M "+ax+" "+ay+", L "+bx+" "+by+", L "+fx+" "+fy+", L "+ex+" "+ey+" Z");
+    	} else 	   {
+
+    		frontFace.attr("d","M "+cx+" "+cy+", L "+dx+" "+dy+", L "+hx+" "+hy+", L "+gx+" "+gy+" Z");
+    	}
+    }
+
+    flipped=gy<cy;
+
+    topFace.transition().attr("d","M "+ex+" "+ey+", L "+fx+" "+fy+", L "+hx+" "+hy+", L "+gx+" "+gy+" Z");
+    rightFace.transition().attr("d","M "+bx+" "+by+", L "+fx+" "+fy+", L "+hx+" "+hy+", L "+dx+" "+dy+" Z");
+    frontFace.transition().attr("d","M "+cx+" "+cy+", L "+dx+" "+dy+", L "+hx+" "+hy+", L "+gx+" "+gy+" Z");
+    backFace.transition().attr("d","M "+ax+" "+ay+", L "+bx+" "+by+", L "+fx+" "+fy+", L "+ex+" "+ey+" Z");
+    if (flipped) {backFace.style("visibility","hidden");frontFace.style("visibility","visible");} else
+    		 {backFace.style("visibility","visible");frontFace.style("visibility","hidden");}
+}
+
+
+
+function poorManRotation(steps) {
+var increment=Math.PI/(2*steps);
+d3.range(steps).forEach(function() {setTimeOut(function() {updateBox(increment);drawBrick();}, 250/steps);});
+}
+var brick=vis.append("svg:g").attr("transform","translate(3.5355339050000225, 529.6015510550001)").style("stroke","black");
+var topFace=brick.append("svg:path").style("fill","#fff");
+var frontFace=brick.append("svg:path").style("fill","#eee");
+var rightFace=brick.append("svg:path").style("fill","#aaa");
+var backFace=brick.append("svg:path").style("fill","#fff");
+var bottomFace=brick.append("svg:path").style("fill","#eee");
+var leftFace=brick.append("svg:path").style("fill","#aaa");
+
+		</script>
+	</body>
+</html>
+

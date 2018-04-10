@@ -1,0 +1,180 @@
+
+<html>
+  <head>
+    <title>E pluribus unum</title>
+	<script type="text/javascript" src="http://blog.oecdfactblog.org/wp-includes/js/protovis-r3.2.js"></script>
+
+    <script type="text/javascript" src="ff.js"></script>
+	<style>
+		form, select{display:inline;}
+		#friends {position:absolute;top:0px;left:500px;}
+	    #chart {position:absolute;top:150px;}
+	</style>
+  </head>
+  <body>
+  	<div id="followers"><h3>Followers</h3>
+	<em>How many accounts in the Cartel are followed?</em><form><select id="def" onfocus="update(value);vis.render();" onchange="update(value);vis.render();">
+        <option value=0>2</option>
+        <option value=1>3</option>
+        <option value=2>4</option>
+        <option value=3>5</option>
+        <option value=4>6</option>
+        <option value=5>7</option>
+        <option value=6 selected>All 8</option>
+      </select></form></br>
+    <em>Who follows only </em><form><select onchange="update(value);vis.render();">
+        <option value=7>@datavis</option>
+        <option value=8>@FILWD</option>
+        <option value=9>@infosthetics</option>
+        <option value=10>@janwillemtulp</option>
+        <option value=11>@jcukier</option>
+        <option value=12>@moritz_stefaner</option>
+        <option value=13>@visualisingdata</option>
+        <option value=14>@wiederkehr</option>
+      </select></form><em>?</em></br>
+      <em>Who follows at least 4 of us but not </em><form><select onfocus="update(value);vis.render();" onchange="update(value);vis.render();">
+	          <option value=15>@datavis</option>
+	          <option value=16>@FILWD</option>
+	          <option value=17>@infosthetics</option>
+	          <option value=18>@janwillemtulp</option>
+	          <option value=19>@jcukier</option>
+	          <option value=20>@moritz_stefaner</option>
+	          <option value=21>@visualisingdata</option>
+	          <option value=22>@wiederkehr</option>
+      </select></form><em>?</em></br>
+    </div>
+
+    <div id="friends"><h3>Friends</h3>
+    <em>How many accounts are followed by</em><form><select onfocus="update(value);vis.render();" onchange="update(value);vis.render();">
+        <option value=23>2</option>
+        <option value=24>3</option>
+        <option value=25>4</option>
+        <option value=26>5</option>
+        <option value=27>6</option>
+        <option value=28>7</option>
+        <option value=29 selected>All 8</option></select></form><em> of us?</em></br>
+    <em>Which account is </em>only<em> followed by </em><form><select onfocus="update(value);vis.render();" onchange="update(value);vis.render();">
+	        <option value=30>@datavis</option>
+	        <option value=31>@FILWD</option>
+	        <option value=32>@infosthetics</option>
+	        <option value=33>@janwillemtulp</option>
+	        <option value=34>@jcukier</option>
+	        <option value=35>@moritz_stefaner</option>
+	        <option value=36>@visualisingdata</option>
+	        <option value=37>@wiederkehr</option>
+      </select></form><em>?</em></br>
+      <em>Which account is followed by 4 of us but not by </em><form><select onfocus="update(value);vis.render();" onchange="update(value);vis.render();">
+	  	        <option value=38>@datavis</option>
+	  	        <option value=39>@FILWD</option>
+	  	        <option value=40>@infosthetics</option>
+	  	        <option value=41>@janwillemtulp</option>
+	  	        <option value=42>@jcukier</option>
+	  	        <option value=43>@moritz_stefaner</option>
+	  	        <option value=44>@visualisingdata</option>
+	  	        <option value=45>@wiederkehr</option>
+      </select></form><em>?</em></br>
+    </div>
+    <div id="chart"></div>
+    <script type="text/javascript+protovis">
+    String.prototype.visualLength = function(fontFamily)
+		{
+		    var ruler = document.getElementById("ruler");
+		    ruler.style.font = fontFamily;
+		    ruler.innerHTML = this;
+		    return ruler.offsetWidth;
+		}
+	var fof="followers";
+	var pos=[[.5,.1],[.9,.1],[.9,.5],[.9,.9],[.5,.9],[.1,.9],[.1,.5],[.1,.1]];
+	var cartel=['datavis','filwd','infosthetics','janwillemtulp','jcukier','moritz_stefaner','visualisingdata','wiederkehr'];
+	document.getElementById("def").focus();
+
+	var circleId=6;
+	var stdFont="Frutiger, Arial, Sans-Serif";
+	vis=new pv.Panel()
+		.height(750)
+		.width(1500).canvas("chart");
+
+
+var pack = vis.add(pv.Layout.Treemap)
+    .nodes(pv.dom(circles[circleId]).root(fof).nodes())
+    .round(true)
+
+;
+
+myLeaf=pack.leaf.add(pv.Panel)
+    .fillStyle(function(d) {
+    	return (d.firstChild ?
+    		"#fff"
+    	:
+    		"#"+(fof=="followers" ?
+    			followerInfo[d.nodeName].color
+    		:
+    			friendInfo[d.nodeName].color
+    			)
+    	);
+    })
+    .strokeStyle(function() {return this.fillStyle().darker();})
+    .lineWidth(1)
+    .antialias(false)
+    .title(function(d) {if(fof=="followers") {return followerInfo[d.nodeName].name+", "+followerInfo[d.nodeName].followers+" followers";}
+    					else {return friendInfo[d.nodeName].name+", "+friendInfo[d.nodeName].followers+" followers";}}
+    )
+    ;
+
+myLeaf.add(pv.Dot)
+	.data(pos)
+	.visible(function(dot,node) {return node.dx>20&&node.dy>20;})
+	.left(function(dot,node) {return dot[0]*node.dx;})
+	.top(function(dot,node) {return dot[1]*node.dy;})
+	.radius(function(dot,node) {
+		var amihere;
+		if(fof=="followers") {
+			amihere=followerInfo[node.nodeName][cartel[this.index]];
+		} else {
+			amihere=friendInfo[node.nodeName][cartel[this.index]];
+		};
+		if(amihere) {return Math.sqrt(node.dx*node.dy)/50;} else {return 0;}})
+	.fillStyle("rgba(128,128,128,.5)")
+	.strokeStyle(null)
+	.title(function() {return ((fof=="followers"?"follows ":"is followed by ")+cartel[this.index]);})
+;
+
+mylabels=pack.label.add(pv.Label)
+
+	.text(function(d) {return (fof=="followers"?followerInfo[d.nodeName].name:friendInfo[d.nodeName].name);})
+	.textStyle("white")
+	.textShadow("-0.1em 0.1em 0.2em #000")
+	.font(function(d) {return (Math.max(10,.1*Math.sqrt(d.dx*d.dy))).toFixed(0)+"px "+stdFont;})
+	.visible(function(d) {
+		var text;
+		if (fof=="followers") {text=followerInfo[d.nodeName];} else {text=friendInfo[d.nodeName];};
+		if (typeof(text)==='undefined') {return false;} else
+		{return (!d.firstChild)
+			   &&(Math.max(d.dx,d.dy)>text.name.visualLength(this.font()))
+			   &&(Math.min(d.dx,d.dy)>10)&&(d.nodeValue>1)
+	;}})
+
+
+
+
+;
+
+vis.render();
+
+
+
+	function update(value) {
+		circleId=value;
+		(value>22)?fof="friends":fof="followers";
+		pack.reset();
+		pack.nodes(pv.dom(circles[circleId]).root(fof).nodes());
+
+		vis.render();
+
+	}
+
+    </script>
+<span id="ruler" style="visibility: hidden; white-space: nowrap;"></span>
+
+</body>
+</html>

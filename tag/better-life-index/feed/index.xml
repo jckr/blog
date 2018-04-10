@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>better life index &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/better-life-index/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>Better life index &#8211; a post mortem</title>
+		<link>/2011/05/25/better-life-index-a-post-mortem/</link>
+		<comments>/2011/05/25/better-life-index-a-post-mortem/#comments</comments>
+		<pubDate>Tue, 24 May 2011 23:48:54 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[web sites]]></category>
+		<category><![CDATA[better life index]]></category>
+		<category><![CDATA[development]]></category>
+		<category><![CDATA[infovis]]></category>
+		<category><![CDATA[moritz stefaner]]></category>
+		<category><![CDATA[oecd]]></category>
+		<category><![CDATA[outsourcing]]></category>
+		<category><![CDATA[post mortem]]></category>
+		<category><![CDATA[project management]]></category>
+		<category><![CDATA[raureif]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=872</guid>
+		<description><![CDATA[Today, OECD launched the Your better Life Index, a project on which I had been involved for months. The short I&#8217;m happy with the launch, the traffic has been really good, and there was some great coverage. The three main lessons are: Just because data is presented in an interactive way doesn&#8217;t make it interesting. <a class="read-more" href="/2011/05/25/better-life-index-a-post-mortem/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>Today, OECD launched the <a href="http://oe.cd/bli">Your better Life Index</a>, a project on which I had been involved for months.</p>
+<h2><a href="http://www.jeromecukier.net/wp-content/uploads/2011/05/bli.png"><img class="aligncenter size-full wp-image-880" title="bli" src="http://www.jeromecukier.net/wp-content/uploads/2011/05/bli.png" alt="" /></a></h2>
+<h2>The short</h2>
+<p>I&#8217;m happy with the launch, the traffic has been really good, and there was <a href="http://flowingdata.com/2011/05/24/better-life-index-measures-well-being-across-countries/">some</a> <a href="http://infosthetics.com/archives/2011/05/oecd_better_life_index_comparing_the_national_well-being_by_flowers.html">great</a> <a href="http://www.economist.com/blogs/dailychart/2011/05/well-being_and_wealth?fsrc=scn/tw/te/dc/thepursuitofhappiness">coverage.</a></p>
+<p>The three main lessons are:</p>
+<ul>
+<li><strong>Just because data is presented in an interactive way doesn&#8217;t make it interesting</strong>. The project is interesting because the design was well-suited to the project. That design may not have worked in other contexts, and other tools may not have worked in this one.</li>
+<li><strong>The critical skill here was design</strong>. There are many able developers, but the added value of this project was the ability of the team to invent a form which is unique, excellent and well-suited for the project.</li>
+<li><strong>Getting a external specialists to develop the visualization was the critical decision. </strong>Not only did we save time and money, but the quality of the outcome is incomparable. What we ended up with was far beyond the reach of what we could have done ourselves.</li>
+</ul>
+<h2>The less short</h2>
+<p>Before going any further, I remind my kind readers that while OECD pays my bills, views are my own.</p>
+<h3>Early history of the project</h3>
+<p>OECD had been working on measuring progress for years and researching alternative ways to measure economy. In 2008-2009 it got involved in the <a href="http://www.stiglitz-sen-fitoussi.fr/en/index.htm">Stiglitz-Fitoussi-Sen commission</a> which came up with concrete recommendations on new indicators to develop. It was then that our communication managers started lobbying for a marketable OECD indicator, like the UN&#8217;s Human Development Index or the Corruption Perception Index from Transparency International.</p>
+<p>The idea was to come up with some kind of Progress Index, which we could communicate once a year or something. Problem &#8211; this was exactly against the recommendations of the commission, which warned against an absolute, top-down ranking of countries.</p>
+<p>Eventually, we came up with an idea. A ranking, yes, but not one definitive list established by experts. Rather, it would be a user&#8217;s index, where said user would get their own index, tailored to their preferences.</p>
+<p>Still, the idea of publishing such an index encountered some resistance, some countries did not like the idea of being ranked&#8230; But at some point in 2010 those reserves were overcome and the idea was generally accepted.</p>
+<h3>Our initial mission</h3>
+<p>It was then that my bosses asked  a colleague and I to start working on what such a tool could look like, and we started working based on the data we had at hand. I&#8217;ll skip on the details of that but we first came up with something in Excel which was a big aggregation of many indicators. It was far from perfect (and further still from the final result) but it got the internal conversation going.</p>
+<p>Meanwhile, our statistician colleagues were working on new models to represent inequality, and started collecting data  for a book on a similar project, which will come out later this year (&#8220;How is Life?&#8221;). It made sense to join forces, we would use their data and their models, but will develop an interactive tool while they write their book, each project supporting the other one.</p>
+<h3>From prototypes to outsourcing</h3>
+<p>It wasn&#8217;t clear then how the tool would be designed. Part of our job was to look at many similar attempts online. We also cobbled some interactive prototypes, I made one in processing, my colleague in flash. Those models were quite close to what we had seen, really. My model was very textbook stuff, one single screen, linked bar charts. Quite basic too.</p>
+<p>I was convinced that in order to be marketable, our tool needed to be visually innovative. Different, yes, but not against the basic rules of infovis! No 3D glossy pie or that kind of stuff. Unique, but in a good way. There was also some pressure to use the existing infovis tools used by OECD. We have one, for instance, which we had introduced for <a href="http://stats.oecd.org/OECDregionalstatistics/">subnational statistics</a> and which was really good for that, and which we have used since then in other contexts, with mixed success. My opinion was that using that tool as is on this project would bury it.</p>
+<p>That&#8217;s my <strong>1st lesson here</strong>. I&#8217;ll take a few steps back here.</p>
+<p>In 2005, the world of public statistics was shaken by the introduction of <a href="http://www.gapminder.org/">gapminder</a>. The way that tool presented statistics, and the huge success of the original <a href="http://www.gapminder.org/videos/ted-talks/hans-rosling-ted-2006-debunking-myths-about-the-third-world/">TED talk</a> &#8211; which attracted tens of millions of viewers &#8211; prompted all statistical offices to consider using data visualization, or rather in our words to produce &#8220;dynamic charts&#8221;, as if the mere fact that gapminder was interactive was the essence of its success. The bulk of such initiatives was neither interesting nor successful. While interactivity opens new possibilities, it is a means and certainly not than an end in itself. Parenthese closed.</p>
+<p>At this stage, the logical conclusion was that <strong>we needed to have a new tool developed from scratch</strong>, specifically suited for the project. Nothing less would give it the resonance that we intended. My colleague lobbied our bosses, who took it to their bosses, and all the way to the Secretary-General of OECD. This went surprisingly well, and soon enough we were granted with a generous envelope and tasked with finding the right talent to build the tool.</p>
+<h3>Selecting talent</h3>
+<p>So our job shifted from creating a tool and campaigning for the project to writing specifications that could be understood by external developers. We had to &#8220;unwrite&#8221; our internal notes describing our prototypes and rewrite them in a more abstract way, trying to describe functionality rather than how we thought we could implement it (i.e. &#8220;the user can select a country&#8221; rather than &#8220;and when they <em>click</em> on a country, the <em>middle pane</em> changes to bla bla bla&#8221;.)</p>
+<p>Being a governmental organization we also had to go through a formal call for tenders process, where we&#8217;d have a minimum number of bidders and an explicit decision process that could justify our choices.</p>
+<p>This process was both very difficult and very interesting. Difficult because we had many very qualified applicants and not only could we only choose one, but that choice had to be justified, vetted by our bosses, which would take time. And it was rewarding because all took a different approach to the project and to the selection process. What heavily influenced the decision process was (nod to the<strong> 2nd lesson I outlined</strong>) whether the developers showed potential to create something visually unique. We found that many people were able to answer functionally to what we had asked. But the outcome probably wouldn&#8217;t match the unspoken part of our specifications. We needed people who could take the project beyond technical considerations, and imbue it with the creative spirit that would make it appealing to the widest audience.</p>
+<h3>Working with a developer</h3>
+<p>When we officially started to work with the selected developer &#8211; a joint effort by <a href="http://moritz.stefaner.eu/">Moritz Stefaner</a> and <a href="http://www.raureif.net/">RauReif</a>, some time had passed since we had introduced the project to them. When Moritz started presenting some visual research (which by the way has very little to do with the final site) I was really surprised by how much this was different what we had been working on. And that&#8217;s my <strong>3rd lesson here</strong>.</p>
+<p>We had become unable to start again from a blank sheet of paper and to re-imagine the project from scratch. We were too conditioned by the other projects we had seen and our past prototypes that we lacked that mental agility. Now that&#8217;s a predicament that just can&#8217;t affect an external team. Besides, even if we had the degree of mastery of our developers in flash or visual design (and we don&#8217;t), we still had our normal jobs to do, meetings to attend and all kind of office contingencies, and we just couldn&#8217;t be that productive. Even if we had equivalent talent inhouse, it would still had been more effective to outsource it.</p>
+<p>What I found most interesting in our developers approach is that it underplayed the accuracy of the data. The scores of each country were not shown, nor the components of that score. That level of detail was initially hidden, which produced a nice, simple initial view. But added complexity could be revealed by selecting information, following links etc. At any time, the information load would remain manageable.</p>
+<p>Two things happened in a second phase. On one hand, Moritz had that brilliant idea of a flower. I instantly loved it, so did the colleagues who worked with me since the start of the project. But it was a very hard sale to our management who would have liked something more traditional. Yet that flower form was exactly what we were after: visually unique, a nice match with the theme of the project, aesthetically pleasing, an interesting construction, many possibilities of variation&#8230; Looking back, it&#8217;s still not clear how we managed to impose that idea that almost every manager hated. The most surprising is that one month after everybody had accepted that as an evidence.</p>
+<p>On the other, the written part of the web site, which was initially an afterthought of the project, really gained in momentum and importance, both in terms of contents and design. Eventually the web site would become half of the project. What&#8217;s interesting is that the project can cater to all kinds of depths of attention: it takes 10 seconds to create an index, 1 minute to play with various hypotheses and share the results on social networks, but one could spend 10 more minute reading the page of a country or of a topic, and several hours by checking the reference texts linked from these pages&#8230;</p>
+<h3>Closing thoughts</h3>
+<p>Fast forward to the launch. I just saw a note from Moritz that says that we got 60k unique visitors and 150k views. That&#8217;s about 12 hours after the site was launched (and, to be honest, it has been down during a couple of these 12 hours, but things are fine now)!! those numbers are very promising.</p>
+<p>When we started on that project we had an ambition for OECD. But beyond that, I hoped to convince our organization and others of the interest of developing high-quality dataviz projects to support their messages. So I am really looking forward to see similar projects that this one might inspire.</p>
+]]></content:encoded>
+			<wfw:commentRss>/2011/05/25/better-life-index-a-post-mortem/feed/</wfw:commentRss>
+		<slash:comments>9</slash:comments>
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>chart redrawing &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/chart-redrawing/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>Flowing Data&#8217;s chart contest</title>
+		<link>/2008/12/03/flowing-datas-chart-contest/</link>
+		<comments>/2008/12/03/flowing-datas-chart-contest/#comments</comments>
+		<pubDate>Wed, 03 Dec 2008 17:03:03 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[charts]]></category>
+		<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[chart]]></category>
+		<category><![CDATA[chart redrawing]]></category>
+		<category><![CDATA[contest]]></category>
+		<category><![CDATA[flowing data]]></category>
+		<category><![CDATA[graph]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=27</guid>
+		<description><![CDATA[This week, FlowingData has organized the contest. A chart was submitted, and contestants were asked to improve it.  A lot of my job revolves around reviewing and correcting graphs, so I was more than happy to compete.  Here is the original graph, hosted &#38; designed by Swivel: The rules of the contest stated that the new <a class="read-more" href="/2008/12/03/flowing-datas-chart-contest/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>This week, <a href="http://www.glowingdata.com/">FlowingData</a> has organized the <a href="http://flowingdata.com/2008/12/01/contest-win-two-edward-tufte-books-enter-now/">contest</a>. A chart was submitted, and contestants were asked to improve it. </p>
+<p>A lot of my job revolves around reviewing and correcting graphs, so I was more than happy to compete. </p>
+<p>Here is the original graph, hosted &amp; designed by <a href="http://www.swivel.com/">Swivel</a>:</p>
+<p><a href="http://www.swivel.com/graphs/show/30426945"><img style="border: solid 1px #rgb(0.6,0.6,0.6);" title="Click to play with this data at Swivel" src="http://www.swivel.com/graphs/image/30906316" alt="Immigration to the U.S. by decade" /></a></p>
+<p>The rules of the contest stated that the new graph should use the same data. But instead of re-using the <a href="http://www.swivel.com/data_sets/show/1016759">dataset hosted on Swivel</a>, I checked the <a href="http://www.fairus.org/site/PageServer?pagename=research_research9c29">source</a> to answer some questions I had.</p>
+<p>Here goes: </p>
+<p style="text-align: center;"> </p>
+<table border="0" cellspacing="0" cellpadding="0" align="center">
+<tbody>
+<tr>
+<td width="90%">
+<p align="center"><strong>Period </strong></p>
+</td>
+<td width="90%">
+<p align="center"><strong>Total</strong></p>
+</td>
+<td width="90%">
+<p align="center"><strong>Europe</strong></p>
+</td>
+<td width="90%">
+<p align="center"><strong>Asia</strong></p>
+</td>
+<td width="90%">
+<p align="center"><strong>Americas</strong></p>
+</td>
+<td width="90%">
+<p align="center"><strong>Africa</strong></p>
+</td>
+<td width="90%">
+<p align="center"><strong>Oceania*</strong></p>
+</td>
+</tr>
+<tr align="middle">
+<td width="90%"><span style="font-size: x-small;">1820-30</span></td>
+<td width="90%"><span style="font-size: x-small;">151,824</span></td>
+<td width="90%"><span style="font-size: x-small;">106,487</span></td>
+<td width="90%"><span style="font-size: x-small;">36</span></td>
+<td width="90%"><span style="font-size: x-small;">11,951</span></td>
+<td width="90%"><span style="font-size: x-small;">17</span></td>
+<td width="90%"><span style="font-size: x-small;">33,333</span></td>
+</tr>
+<tr align="middle">
+<td width="90%"><span style="font-size: x-small;">1831 40</span></td>
+<td width="90%"><span style="font-size: x-small;">599,125</span></td>
+<td width="90%"><span style="font-size: x-small;">495,681</span></td>
+<td width="90%"><span style="font-size: x-small;">53</span></td>
+<td width="90%"><span style="font-size: x-small;">33,424</span></td>
+<td width="90%"><span style="font-size: x-small;">54</span></td>
+<td width="90%"><span style="font-size: x-small;">69,911</span></td>
+</tr>
+<tr align="middle">
+<td width="90%"><span style="font-size: x-small;">1841-50</span></td>
+<td width="90%"><span style="font-size: x-small;">1,713,251</span></td>
+<td width="90%"><span style="font-size: x-small;">1,597,442</span></td>
+<td width="90%"><span style="font-size: x-small;">141</span></td>
+<td width="90%"><span style="font-size: x-small;">62,469</span></td>
+<td width="90%"><span style="font-size: x-small;">55</span></td>
+<td width="90%"><span style="font-size: x-small;">53,144</span></td>
+</tr>
+<tr align="middle">
+<td width="90%"><span style="font-size: x-small;">1851-60</span></td>
+<td width="90%"><span style="font-size: x-small;">2,598,214</span></td>
+<td width="90%"><span style="font-size: x-small;">2,452,577</span></td>
+<td width="90%"><span style="font-size: x-small;">41,538</span></td>
+<td width="90%"><span style="font-size: x-small;">74,720</span></td>
+<td width="90%"><span style="font-size: x-small;">210</span></td>
+<td width="90%"><span style="font-size: x-small;">29,169</span></td>
+</tr>
+<tr align="middle">
+<td width="90%"><span style="font-size: x-small;">1861-70</span></td>
+<td width="90%"><span style="font-size: x-small;">2,314,824</span></td>
+<td width="90%"><span style="font-size: x-small;">2,065,141</span></td>
+<td width="90%"><span style="font-size: x-small;">64,759</span></td>
+<td width="90%"><span style="font-size: x-small;">166,607</span></td>
+<td width="90%"><span style="font-size: x-small;">312</span></td>
+<td width="90%"><span style="font-size: x-small;">18,005</span></td>
+</tr>
+<tr align="middle">
+<td width="90%"><span style="font-size: x-small;">1871-80</span></td>
+<td width="90%"><span style="font-size: x-small;">2,812,191</span></td>
+<td width="90%"><span style="font-size: x-small;">2,271,925</span></td>
+<td width="90%"><span style="font-size: x-small;">124,160</span></td>
+<td width="90%"><span style="font-size: x-small;">404,044</span></td>
+<td width="90%"><span style="font-size: x-small;">358</span></td>
+<td width="90%"><span style="font-size: x-small;">11,704</span></td>
+</tr>
+<tr align="middle">
+<td width="90%"><span style="font-size: x-small;">1881-90</span></td>
+<td width="90%"><span style="font-size: x-small;">5,246,613</span></td>
+<td width="90%"><span style="font-size: x-small;">4,735,484</span></td>
+<td width="90%"><span style="font-size: x-small;">69,942</span></td>
+<td width="90%"><span style="font-size: x-small;">426,967</span></td>
+<td width="90%"><span style="font-size: x-small;">857</span></td>
+<td width="90%"><span style="font-size: x-small;">13,363</span></td>
+</tr>
+<tr align="middle">
+<td width="90%"><span style="font-size: x-small;">1891-00</span></td>
+<td width="90%"><span style="font-size: x-small;">3,687,564</span></td>
+<td width="90%"><span style="font-size: x-small;">3,555,352</span></td>
+<td width="90%"><span style="font-size: x-small;">74,862</span></td>
+<td width="90%"><span style="font-size: x-small;">38,972</span></td>
+<td width="90%"><span style="font-size: x-small;">350</span></td>
+<td width="90%"><span style="font-size: x-small;">18,028</span></td>
+</tr>
+<tr align="middle">
+<td width="90%"><span style="font-size: x-small;">1901-10</span></td>
+<td width="90%"><span style="font-size: x-small;">8,795,386</span></td>
+<td width="90%"><span style="font-size: x-small;">8,056,040</span></td>
+<td width="90%"><span style="font-size: x-small;">323,543</span></td>
+<td width="90%"><span style="font-size: x-small;">361,888</span></td>
+<td width="90%"><span style="font-size: x-small;">7,368</span></td>
+<td width="90%"><span style="font-size: x-small;">46,547</span></td>
+</tr>
+<tr align="middle">
+<td width="90%"><span style="font-size: x-small;">1911-20</span></td>
+<td width="90%"><span style="font-size: x-small;">5,735,811</span></td>
+<td width="90%"><span style="font-size: x-small;">4,321,887</span></td>
+<td width="90%"><span style="font-size: x-small;">247,236</span></td>
+<td width="90%"><span style="font-size: x-small;">1,143,671</span></td>
+<td width="90%"><span style="font-size: x-small;">8,443</span></td>
+<td width="90%"><span style="font-size: x-small;">14,574</span></td>
+</tr>
+<tr align="middle">
+<td width="90%"><span style="font-size: x-small;">1921-30</span></td>
+<td width="90%"><span style="font-size: x-small;">4,107,209</span></td>
+<td width="90%"><span style="font-size: x-small;">2,463,194</span></td>
+<td width="90%"><span style="font-size: x-small;">112,059</span></td>
+<td width="90%"><span style="font-size: x-small;">1,516,716</span></td>
+<td width="90%"><span style="font-size: x-small;">6,286</span></td>
+<td width="90%"><span style="font-size: x-small;">8,954</span></td>
+</tr>
+<tr align="middle">
+<td width="90%"><span style="font-size: x-small;">1931-40</span></td>
+<td width="90%"><span style="font-size: x-small;">528,431</span></td>
+<td width="90%"><span style="font-size: x-small;">347,566</span></td>
+<td width="90%"><span style="font-size: x-small;">16,595</span></td>
+<td width="90%"><span style="font-size: x-small;">160,037</span></td>
+<td width="90%"><span style="font-size: x-small;">1,750</span></td>
+<td width="90%"><span style="font-size: x-small;">2,483</span></td>
+</tr>
+<tr align="middle">
+<td width="90%"><span style="font-size: x-small;">1941-50</span></td>
+<td width="90%"><span style="font-size: x-small;">1,035,039</span></td>
+<td width="90%"><span style="font-size: x-small;">621,147</span></td>
+<td width="90%"><span style="font-size: x-small;">37,028</span></td>
+<td width="90%"><span style="font-size: x-small;">354,804</span></td>
+<td width="90%"><span style="font-size: x-small;">7,367</span></td>
+<td width="90%"><span style="font-size: x-small;">14,693</span></td>
+</tr>
+<tr align="middle">
+<td width="90%"><span style="font-size: x-small;">1951-60</span></td>
+<td width="90%"><span style="font-size: x-small;">2,515,479</span></td>
+<td width="90%"><span style="font-size: x-small;">1,325,727</span></td>
+<td width="90%"><span style="font-size: x-small;">153,249</span></td>
+<td width="90%"><span style="font-size: x-small;">996,944</span></td>
+<td width="90%"><span style="font-size: x-small;">14,092</span></td>
+<td width="90%"><span style="font-size: x-small;">25,467</span></td>
+</tr>
+<tr align="middle">
+<td width="90%"><span style="font-size: x-small;">1961-70</span></td>
+<td width="90%"><span style="font-size: x-small;">3,321,677</span></td>
+<td width="90%"><span style="font-size: x-small;">1,123,492</span></td>
+<td width="90%"><span style="font-size: x-small;">427,642</span></td>
+<td width="90%"><span style="font-size: x-small;">1,716,374</span></td>
+<td width="90%"><span style="font-size: x-small;">28,954</span></td>
+<td width="90%"><span style="font-size: x-small;">25,215</span></td>
+</tr>
+<tr align="middle">
+<td width="90%"><span style="font-size: x-small;">1971-80</span></td>
+<td width="90%"><span style="font-size: x-small;">4,493,314</span></td>
+<td width="90%"><span style="font-size: x-small;">800,368</span></td>
+<td width="90%"><span style="font-size: x-small;">1,588,178</span></td>
+<td width="90%"><span style="font-size: x-small;">1,982,735</span></td>
+<td width="90%"><span style="font-size: x-small;">80,779</span></td>
+<td width="90%"><span style="font-size: x-small;">41,254</span></td>
+</tr>
+<tr align="middle">
+<td width="90%"><span style="font-size: x-small;">1981-90</span></td>
+<td width="90%"><span style="font-size: x-small;">7,338,062</span></td>
+<td width="90%"><span style="font-size: x-small;">761,550</span></td>
+<td width="90%"><span style="font-size: x-small;">2,738,157</span></td>
+<td width="90%"><span style="font-size: x-small;">3,615,225</span></td>
+<td width="90%"><span style="font-size: x-small;">176,893</span></td>
+<td width="90%"><span style="font-size: x-small;">46,237</span></td>
+</tr>
+<tr align="middle">
+<td width="90%"><span style="font-size: x-small;">1991-00</span></td>
+<td width="90%"><span style="font-size: x-small;">9,095,417</span></td>
+<td width="90%"><span style="font-size: x-small;">1,359,737</span></td>
+<td width="90%"><span style="font-size: x-small;">2,795,672</span></td>
+<td width="90%"><span style="font-size: x-small;">4,486,806</span></td>
+<td width="90%"><span style="font-size: x-small;">354,939</span></td>
+<td width="90%"><span style="font-size: x-small;">98,263</span></td>
+</tr>
+<tr align="middle">
+<td width="90%"><span style="font-size: x-small;">2001-06</span></td>
+<td width="90%"><span style="font-size: x-small;"><span style="font-family: Arial; font-size: x-small;"><span> <span style="font-family: Arial; font-size: x-small;"><span>7,009,322</span></span></span></span></span></td>
+<td width="90%"><span style="font-size: x-small;"><span style="font-size: x-small;"><span style="font-family: Arial; font-size: x-small;"><span>1,073,726</span></span></span></span></td>
+<td width="90%"><span style="font-size: x-small;"> <span style="font-family: Arial; font-size: x-small;"><span>2,265,696</span></span></span></td>
+<td width="90%"><span style="font-size: x-small;"><span style="font-family: Arial; font-size: x-small;"><span>3,037,122</span></span></span></td>
+<td width="90%"><span style="font-size: x-small;">446,792</span></td>
+<td width="90%"><span style="font-size: x-small;"><span style="font-family: Arial; font-size: x-small;"><span>185,986</span></span></span></td>
+</tr>
+<tr align="middle">
+<td width="90%">
+<p align="center">187 Years        </p>
+</td>
+<td width="90%">
+<p align="center"><span style="font-family: Arial; font-size: x-small;"><span>72,066,614</span></span> </p>
+</td>
+<td width="90%">
+<p align="center"><span style="font-family: Arial; font-size: x-small;"><span>39,346,127</span></span> </p>
+</td>
+<td width="90%">
+<p align="center"> <span style="font-family: Arial; font-size: x-small;"><span>10,525,281</span></span></p>
+</td>
+<td width="90%">
+<p align="center">  <span style="font-family: Arial; font-size: x-small;"><span>20,082,410</span></span></p>
+</td>
+<td width="90%">1,075,980</td>
+<td width="90%">
+<p align="center"> 1,036,816</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>* includes others unidentified by nationality</p>
+<p> </p>
+<p style="text-align: left;">The FAIR (Federation for American Immigration Reform), who&#8217;ve published this on their website, also made a chart out of this data: </p>
+<p style="text-align: left;"><img class="alignnone" title="FAIR immigration chart" src="http://www.fairus.org/images/content/pagebuilder/63563.gif" alt="" width="350" height="207" /></p>
+<p style="text-align: left;"> </p>
+<p style="text-align: left;">So let&#8217;s take a look at the data. </p>
+<p style="text-align: left;">At first glance, it is very aggregated: data are not available per country or per year, but per continent and per decade. However, the last &#8220;decade&#8221; is only 6 years long. Also, Oceania includes all the unidentified immigrants. Immigrants from Africa and &#8220;Oceania&#8221; are a tiny fraction of the total flow so it would be difficult to draw a conclusion from their data.</p>
+<p style="text-align: left;">So if I want to tell a story about this dataset, I would choose the following. </p>
+<p style="text-align: left;">The <strong>total </strong><strong>flow </strong>of immigrants to the USA has gone through major changes. </p>
+<p style="text-align: left;">Looking at the <strong>composition</strong> of this flow: over 90% of the immigrants were Europeans at some point, but now that ratio is down to around 15%. </p>
+<p style="text-align: left;">Now, for a critique of these two graphs. </p>
+<p style="text-align: left;">Swivel&#8217;s: </p>
+<p style="text-align: left;"> </p>
+<ol>
+<li>It&#8217;s not very telling to keep presenting those numbers aggregated by decade. </li>
+<li>Especially if the last decade is not corrected. All curves seem to dip, although the underlying variables are actually growing.</li>
+<li>You can clearly see the point where American immigrants take over Europeans (and later, when Asians do the same). But again, those absolute figures are not very interesting. You cannot see the share of the various continents to the total. </li>
+<li>The Africa and Oceania curve clutter the graph and bring little information. </li>
+<li>The fact that Oceania includes other countries is not disclosed (not that it would change the graph tremendously). </li>
+</ol>
+<div>FAIR&#8217;s</div>
+<div>
+<ol>
+<li>To do this graph, they&#8217;ve annualised the data, which is a more sensible option. </li>
+<li>The year labels are difficult to read. </li>
+<li>The last column (2001-2006) is exactly similar to the others, which comprise 10 years. </li>
+<li>Again, Oceania and Africa don&#8217;t bring much to the graph. </li>
+<li>It&#8217;s very difficult to see the evolution of one given continent, except Europe. </li>
+</ol>
+<div>An idea that I had and discarded was to show cumulated values (stocks). </div>
+<div>
+<table>
+<tr>
+<td><a href="http://www.jeromecukier.net/wp-content/uploads/2008/12/graphcontest-excel1.png"><img class="alignnone size-full wp-image-33" title="graphcontest-excel1" src="http://www.jeromecukier.net/wp-content/uploads/2008/12/graphcontest-excel1.png" alt="" width="197" height="166" /></a></td>
+<td><a href="http://www.jeromecukier.net/wp-content/uploads/2008/12/graphcontest-excel2.png"><img class="alignnone size-full wp-image-34" title="graphcontest-excel2" src="http://www.jeromecukier.net/wp-content/uploads/2008/12/graphcontest-excel2.png" alt="" width="197" height="166" /></a></td>
+</tr>
+</table>
+</div>
+<div>The left graph shows the cumulated values as part of the total. The second shows the cumulated values in absolute figures.</div>
+<div>On both graphs, one can see the decline of the share of European immigrants. It&#8217;s more striking on the second, when the blue curve suddenly flattens around the turn of the century, while the green one (America) then the red one (Asia) start to thicken. </div>
+<div>So we have a story there. But then, what are these numbers? what would the sum of all those migrants mean, over nearly 200 years? That&#8217;s a very different number from the stock of all migrants currently living in the USA, because over so much time, most of them are dead. And it is also a very different number from the sum of all immigrants that ever came to the USA. Starting at 1820 is quite arbitrary &#8211; and does in fact exclude most African arrivals. So based on that dataset alone, which is the rule of the contest, it&#8217;s just not possible to work with cumulated values and get meaningful results.  </div>
+<div>Then, I thought of doing a matrix chart instead of the stacked column chart done by FAIR. </div>
+</div>
+<p> </p>
+<p style="text-align: left;"><a href="http://www.jeromecukier.net/wp-content/uploads/2008/12/image_matrix1.png"><img class="alignnone size-full wp-image-29" title="image_matrix1" src="http://www.jeromecukier.net/wp-content/uploads/2008/12/image_matrix1.png" alt="" width="450" height="300" /></a></p>
+<p style="text-align: left;">Doing a matrix chart like this (several charts one top of the other, using the SAME SCALE, wich can be added vertically &#8211; and visually) is the textbook way of showing variables in such a way that one can see their evolution over time and their proportion in the total. </p>
+<p style="text-align: left;">This kind of chart is not natively supported in Excel, so I&#8217;ve done it with <a href="http://processing.org/">processing</a>. </p>
+<p style="text-align: left;">(I wrote a program to make them in Excel, but will talk about that in a later post.)</p>
+<p style="text-align: left;">It&#8217;s an interesting graph: it shows Europe immigration peak, then America taking off, followed by Asia. In the early 20th century, the Mexican revolutions caused much emigration to the US, this is the ripple in the graph. </p>
+<p style="text-align: left;">But then, I thought it was too complex. Frankly, by glancing at it, you don&#8217;t get anything. You might learn information by examining it. </p>
+<p style="text-align: left;">So I have done this one which I am going to submit. </p>
+<p style="text-align: left;"><a href="http://www.jeromecukier.net/wp-content/uploads/2008/12/image.png"><img class="alignnone size-full wp-image-30" title="image" src="http://www.jeromecukier.net/wp-content/uploads/2008/12/image.png" alt="" width="450" height="300" /></a></p>
+<p style="text-align: left;">And here I have my 2 stories in a much lighter graph. </p>
+<p style="text-align: left;">The blue rectangles are the total immigrants. Various laws and events have shaped that curve, I first wanted to annotate it but I&#8217;ve decided against it. I just kept the Immigration Act which was in force between 1924 and 1965 and which largely explains the drastic drop in immigration in that time. </p>
+<p style="text-align: left;">Without any other variable to compete with it, you can clearly follow its story. </p>
+<p style="text-align: left;">Then, I&#8217;ve added the share of Europeans in all the immigrants. That&#8217;s another clear story: in the early 19th century, they made the bulk of the immigrants, but then, their share dropped sharply to around 15%. My guess, though, is that the shape of the first leg of this curve (from about 70% to over 90%) is due to the fact that many unidentified immigrants were really Europeans. </p>
+<p style="text-align: left;">For the title of the left axis, I&#8217;ve chosen naturalization over number of immigrants or another denomination because most of the &#8220;immigrants&#8221; of the last few decades are really people already residing in the USA which get naturalized.</p>
+<p style="text-align: left;">But that&#8217;s another contradiction in the dataset. In 1868, when the 14th amendment to the Constitution came into force, about 4 million former slaves became American citizens. They are not shown in the data. In 1924, the Native Americans who were not yet citizens were also granted citizenship. They too are not included int he dataset. However, since 1965, most &#8220;immigrants&#8221; are change of status migrants who were already in the USA. But then, we are to play with this dataset so that&#8217;s the best I could come up with.</p>
+<p style="text-align: left;">Lastly, a few words about the design. I took some of the colours from a <a href="http://chartjunk.karmanaut.com/taxplans/">chart I really liked</a>, by Viveka Weiley. In her chart she uses the MyriadPro font (guess she&#8217;s a Mac, but I&#8217;m a PC). I am using Frutiger which is quite similar. </p>
+<p style="text-align: left;"> </p>
+<p style="text-align: left;"> </p>
+]]></content:encoded>
+			<wfw:commentRss>/2008/12/03/flowing-datas-chart-contest/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+	</channel>
+</rss>

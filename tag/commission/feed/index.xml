@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>commission &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/commission/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>The Stiglitz-Sen-Fitoussi commission</title>
+		<link>/2009/09/15/the-stiglitz-sen-fitoussi-commission/</link>
+		<comments>/2009/09/15/the-stiglitz-sen-fitoussi-commission/#respond</comments>
+		<pubDate>Mon, 14 Sep 2009 23:05:38 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[commission]]></category>
+		<category><![CDATA[fitoussi]]></category>
+		<category><![CDATA[GDP]]></category>
+		<category><![CDATA[indicators]]></category>
+		<category><![CDATA[official statistics]]></category>
+		<category><![CDATA[performance]]></category>
+		<category><![CDATA[progress]]></category>
+		<category><![CDATA[sarkozy]]></category>
+		<category><![CDATA[sen]]></category>
+		<category><![CDATA[stiglitz]]></category>
+		<category><![CDATA[well-being]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=225</guid>
+		<description><![CDATA[Photo credit: Le point. That&#8217;s Stiglitz on the right with files, Sen is the one with the mischevious smile and blue shirt, and Fitoussi is the smoker. Yesterday, I attended the presentation of the report of the Stiglitz-Sen-Fitoussi commission on the measurement of economic performance and social progress. In a nutshell, since there is a <a class="read-more" href="/2009/09/15/the-stiglitz-sen-fitoussi-commission/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p><img class="alignnone" src="http://www.lepoint.fr/content/system/media/6/20090914/photo_1252944052117-1-0.jpg" alt="" width="512" height="376" /></p>
+<p>Photo credit: <a href="www.lepoint.fr/.../photo_1252944052117-1-0.jpg">Le point</a>. That&#8217;s Stiglitz on the right with files, Sen is the one with the mischevious smile and blue shirt, and Fitoussi is the smoker.</p>
+<p>Yesterday, I attended the presentation of the report of the <a href="www.lepoint.fr/.../photo_1252944052117-1-0.jpg">Stiglitz-Sen-Fitoussi commission</a> on the measurement of economic performance and social progress.</p>
+<p>In a nutshell, since there is a consensus around the <strong>limitations of GDP</strong> as the main indicator of performance, the commission aims to find other ways to measure the efficiency of an economic policy.</p>
+<p>The idea is to build indicators that would be closer to the experience of the citizen, rather than an abstract, expert top-view of a system. The report argues for a system of indicators of well-being, measures of leisure and culture, better environmental indicators and also better ways to understand inequalities, rather than a constant focus on averages and aggregates.</p>
+<p>OECD, my employer, was quite involved in the report, as several members of the commission were OECD (or recent ex-OECD) and because there are <a href="http://www.oecd.org/progress">several programmes at OECD</a> with similar goals.</p>
+<p>So the ideas in the report are not very new. But the real breakthrough is the degree of political support the commission is getting.</p>
+<p>You&#8217;d probably think that governments would take heed of the musings of 5 Nobel prizes and 17 top-notch academics on their own merits. But the reason why GDP is such a popular indicator is not because it&#8217;s perfect, but because it&#8217;s relatively easy to compute. With a stress of &#8220;relatively&#8221;: it&#8217;s an incredibly complex endeavor on which hundreds of people work full time in every country. But at least, it obeys to <a href="http://unstats.un.org/unsd/sna1993/toctop.asp">very explicit rules</a> and as such it is comparable across nations. Any new indicators would be difficult (read expensive) to set up, and to be effective, they&#8217;d require a similar framework, which means a good number of countries following the same methodology to compile data.</p>
+<p>That has been the stumbling block. But Sarkozy, who sponsored the report, stated very clearly that he&#8217;d put it on the agenda of every international meeting he&#8217;ll attend, and that he&#8217;ll demand that all international organizations put it into practice. Because of the crisis, and the global inability of statistical offices to prevent it, the timing may well be right to make that claim.</p>
+]]></content:encoded>
+			<wfw:commentRss>/2009/09/15/the-stiglitz-sen-fitoussi-commission/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

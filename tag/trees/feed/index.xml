@@ -1,0 +1,735 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>trees &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/trees/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>Working with data in protovis: part 5 of 5</title>
+		<link>/2011/02/11/working-with-data-in-protovis-part-5-of-5/</link>
+		<comments>/2011/02/11/working-with-data-in-protovis-part-5-of-5/#comments</comments>
+		<pubDate>Fri, 11 Feb 2011 18:11:22 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[charts]]></category>
+		<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[protovis]]></category>
+		<category><![CDATA[tips]]></category>
+		<category><![CDATA[arc diagrams]]></category>
+		<category><![CDATA[force-directed graphs]]></category>
+		<category><![CDATA[graphs]]></category>
+		<category><![CDATA[layouts]]></category>
+		<category><![CDATA[matrix diagrams]]></category>
+		<category><![CDATA[network]]></category>
+		<category><![CDATA[stacked areas]]></category>
+		<category><![CDATA[stacked bars]]></category>
+		<category><![CDATA[stacked columns]]></category>
+		<category><![CDATA[treemaps]]></category>
+		<category><![CDATA[trees]]></category>
+		<category><![CDATA[tutorial]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=623</guid>
+		<description><![CDATA[previous: reshaping complex arrays (4/5) Working with layouts In this final part, we&#8217;re going to look at how we can shape our data to use the protovis built-in layouts such as stacked areas, treemaps or force-directed graphs. This is not a tutorial on how to use layouts stricto sensu, and I advise anyone interested to <a class="read-more" href="/2011/02/11/working-with-data-in-protovis-part-5-of-5/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>previous: <a href="http://www.jeromecukier.net/?p=502">reshaping complex arrays (4/5)</a></p>
+<h2>Working with layouts</h2>
+<p>In this final part, we&#8217;re going to look at how we can shape our data to use the protovis built-in layouts such as stacked areas, treemaps or force-directed graphs.<br />
+This is not a tutorial on how to use layouts stricto sensu, and I advise anyone interested to first look at the <a href="http://vis.stanford.edu/protovis/docs/layout.html">protovis documentation</a> to see what can be done with this and to understand the underlying concepts. </p>
+<p>But if there is one thing to know about layouts, it&#8217;s that they allow you to <strong>create non-trivial visualizations in even less code than regular protovis</strong>, provided that you <strong>pass them data in a form they can use</strong>, and this is precisely where we come in.</p>
+<h3>Three great categories of layouts</h3>
+<p>Currently, there are no fewer than 13 types of layouts in Protovis. Fortunately, there are examples for all of them in the gallery.<br />
+There are layouts for: </p>
+<ul>
+<li>Arrays of data</li>
+<ul>
+<li>
+Grids or heatmaps <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Grid.html">doc</a> <a href="http://vis.stanford.edu/protovis/ex/heatmap.html">example</a>
+</li>
+<li>
+Stacked areas or streamgraphs <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Stack.html">doc</a> <a href="http://vis.stanford.edu/protovis/ex/stack.html">stacked areas</a> <a href="http://vis.stanford.edu/protovis/ex/stream.html">streamgraphs</a>
+</li>
+</ul>
+<li>Networks (nodes and links)</td>
+<td>Hierarchized data (trees)</li>
+<ul>
+<li>
+Arc diagrams <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Arc.html">doc</a> <a href="http://vis.stanford.edu/protovis/ex/arc.html">example</a></li>
+<li>
+Force-directed graphs <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Force.html">doc</a> <a href="http://vis.stanford.edu/protovis/ex/force.html">example </a>
+</li>
+<li>
+Relationship matrices <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Matrix.html">doc</a> <a href="http://vis.stanford.edu/protovis/ex/matrix.html">example</a>
+</li>
+<li>Rollup network<a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Rollup.html">doc</a> (no example in Protovis 3.2, but there is one in 3.3)</li>
+</ul>
+<li>Trees and hierarchized data</li>
+<ul>
+<li>
+Dendograms <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Cluster.html">doc </a><a href="http://vis.stanford.edu/protovis/ex/dendrogram.html">example</a>
+</li>
+<li>
+Indented trees <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Indent.html">doc</a> <a href="http://vis.stanford.edu/protovis/ex/indent.html">example</a>
+</li>
+<li>
+Packed circles <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Pack.html">doc</a> <a href="http://vis.stanford.edu/protovis/ex/pack.html">example</a>
+</li>
+<li>
+Sunbursts and icicles <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Partition.html">doc</a> <a href="http://vis.stanford.edu/protovis/ex/sunburst.html">sunbursts</a> <a href="http://vis.stanford.edu/protovis/ex/icicle.html">icicles</a>
+</li>
+<li>
+Node-link trees <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Tree.html">doc</a> <a href="http://vis.stanford.edu/protovis/ex/tree.html">example</a></li>
+<li>Treemaps <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Treemap.html">doc</a> <a href="http://vis.stanford.edu/protovis/ex/treemap.html">example</a></li>
+</ul>
+</ul>
+<p>In addition, there are layouts like <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Bullet.html">pv.Layout.Bullet</a> which require data to have a certain specific shape but the <a href="http://vis.stanford.edu/protovis/ex/bullet.html">example from the gallery</a> is very explicit. (et tu, <a href="http://vis.stanford.edu/protovis/ex/horizon.html">Horizon</a> layout).</p>
+<h3>Arrays of data</h3>
+<p>In order to work with this kind of layout, the simplest thing is to put your data in a 2-dimensional array: </p>
+<pre class="brush: jscript; title: ; notranslate">var data=[
+   [8,3,7,2,5],
+   [9,6,1,7,4],
+    ...
+   [7,4,3,6,8]
+];</pre>
+<p>For the grid layout, this gives you an array of cells divided in columns (number of elements in each line) and rows (number of lines).<br />
+The idea of the grid layout is that your cells are automatically positioned and sized, so afaik the only thing you can do is add a mark such as a pv.Bar which would fill them completely, but which you could still style with fillStyle or strokeStyle. You can&#8217;t really access the underlying data with functions but you can use methods that rely on default values, like adding labels.</p>
+<p>For instance, you can use it to generate a QR code: </p>
+<table>
+<tr>
+<td>
+<pre class="brush: jscript; title: ; notranslate">var qr=[
+&quot;000000000000000000000000000&quot;,
+&quot;011111110001010100011111110&quot;,
+&quot;010000010101001110010000010&quot;,
+&quot;010111010000010100010111010&quot;,
+&quot;010111010111011110010111010&quot;,
+&quot;010111010010000001010111010&quot;,
+&quot;010000010110110010010000010&quot;,
+&quot;011111110101010101011111110&quot;,
+&quot;000000000011100100000000000&quot;,
+&quot;011111011110101110101010100&quot;,
+&quot;000010101001010111101000100&quot;,
+&quot;010101111001001011111010110&quot;,
+&quot;001011000100010101010100010&quot;,
+&quot;001100010111011010010101110&quot;,
+&quot;010101100110001101001010100&quot;,
+&quot;010011010011111111100110110&quot;,
+&quot;010111101010100101000010010&quot;,
+&quot;010100110010111101111101000&quot;,
+&quot;000000000101010111000111000&quot;,
+&quot;011111110100011001010111110&quot;,
+&quot;010000010000110011000110110&quot;,
+&quot;010111010110001011111111000&quot;,
+&quot;010111010101101100110101110&quot;,
+&quot;010111010100000111001001010&quot;,
+&quot;010000010111010101101110010&quot;,
+&quot;011111110101001100011111110&quot;,
+&quot;000000000000000000000000000&quot;,
+].map(function(i) i.split(&quot;&quot;));
+
+var vis = new pv.Panel()
+    .width(216)
+    .height(216);
+vis.add(pv.Layout.Grid)
+    .rows(qr)
+ 	.cell.add(pv.Bar)
+ 	    .fillStyle(pv.colors(&quot;#fff&quot;, &quot;#000&quot;))
+     ;
+vis.render();</pre>
+</td>
+<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/QR-grid-big.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/QR-grid-big.png" alt="" title="QR-grid-big" width="216" height="216" class="aligncenter size-full wp-image-628" /></a>(BTW, this is the QR code to this page)</td>
+</tr>
+</table>
+<p>On line 29, I&#8217;m using a <a href="http://www.jeromecukier.net/?p=494">map function</a> to turn this array of strings, which is easier and shorter to type, into a <em>bona fide</em> 2-dimensional array. </p>
+<p>That&#8217;s all there is to grids, of all the layouts they are among the easiest to reproduce with regular protovis.</p>
+<p>Now, stacks.<br />
+The easiest way to use them is to pass them 2-dimensional arrays. Now it doesn&#8217;t have to be arrays of numbers, it can be arrays of associative arrays in case you need to do something exotic. But for the following examples let&#8217;s just assume you don&#8217;t. Here is how you&#8217;d do a stacked area, stacked columns and stacked bars respectively:</p>
+<table>
+<tr>
+<td>
+<pre class="brush: jscript; title: ; notranslate">var data=[
+[[1000,1200,1500,1700]]
+[[100,500,300,200]]
+]
+var vis=new pv.Panel().width(200).height(200);
+vis.add(pv.Layout.Stack)
+    .layers(data)
+    .x(function() 50*this.index)
+    .y(function(d) d/20)
+    .layer.add(pv.Area)</pre>
+</td>
+<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/stackedAreas.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/stackedAreas.png" alt="" title="stackedAreas" width="200" height="200" class="aligncenter size-full wp-image-636" /></a></td>
+</tr>
+</table>
+<p>all you need is to feed the layers, x, y properties of your stack, then say what you want to add to your layers.<br />
+Now, columns: </p>
+<table>
+<tr>
+<td>
+<pre class="brush: jscript; first-line: 6; title: ; notranslate">vis.add(pv.Layout.Stack)
+    .layers(data)
+    .x(function() 50*this.index)
+    .y(function(d) d/20)
+    .layer.add(pv.Bar).width(40)</pre>
+</td>
+<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/stackedColumns.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/stackedColumns.png" alt="" title="stackedColumns" width="200" height="200" class="aligncenter size-full wp-image-637" /></a></td>
+</tr>
+</table>
+<p>and finally, bars: </p>
+<table>
+<tr>
+<td>
+<pre class="brush: jscript; first-line: 6; highlight: [8,11]; title: ; notranslate">vis.add(pv.Layout.Stack)
+    .layers(data)
+    .orient(&quot;left&quot;)
+    .x(function() 50*this.index)
+    .y(function(d) d/20)
+    .layer.add(pv.Bar).height(40)</pre>
+</td>
+<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/stackedBars.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/stackedBars.png" alt="" title="stackedBars" width="200" height="200" class="aligncenter size-full wp-image-638" /></a></td>
+</tr>
+</table>
+<p>For bars, there is a little trick here. I specify that the layer orientation is horizontal (&#8220;left&#8221;) and I change the height instead of the width of the added pv.Bar.<br />
+And that all there is. You can create various streamgraphs by <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Stack.html#offset">playing with the order and offset properties</a> of the stack but this doesn&#8217;t change anything to the data structure, so we&#8217;re done here.</p>
+<h3>Representing networks</h3>
+<p>Protovis provides 3 cool layouts to easily exhibit relationships between nodes: arc diagrams, matrix diagrams and force-directed layouts.<br />
+The good news is that the shape of the data required by those three layouts is identical. </p>
+<p>They require an array that correponds to the nodes. This can be as simple as a pv.range(), or as sophisticated as an array of associative arrays if you want to style your network graph according to several potential attributes of the node. </p>
+<p>And they also require an array for the links. This array has a more rigid form, it must be an array of associative arrays of the shape: {source: #, target: #, value: #} where the values for source and target correspond to the position of a node in the node array, and value indicates the strength of the link. </p>
+<p>So let&#8217;s do a simple one. </p>
+<table>
+<tr>
+<td>
+<pre class="brush: jscript; title: ; notranslate">var nodes=pv.range(6); // why more complex, right?
+var links=[
+{source:0, target:1, value:2},
+{source:1, target:2, value:1},
+{source:1, target:3, value:1},
+{source:2, target:4, value:4},
+{source:3, target:5, value:1},
+{source:4, target:5, value:1},
+{source:1, target:5, value:3}
+]
+var vis = new pv.Panel()
+    .width(200)
+    .height(200)
+    ;
+var arc = vis.add(pv.Layout.Arc)
+    .nodes(nodes)
+    .links(links)
+	.bottom(100)
+arc.link.add(pv.Line);
+arc.node.add(pv.Dot)
+    .size(50)
+vis.render();</pre>
+</td>
+<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleNetwork1.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleNetwork1.png" alt="" title="simpleNetwork" width="200" height="200" class="aligncenter size-full wp-image-644" /></a></td>
+</tr>
+</table>
+<p>Here, by varying the strength of the link, the thickness of the arcs changes accordingly. The nodes are left unstyled, had we passed a more complicated dataset to the nodes array, we could have changed their properties (fillStyle, size, strokeStyle, labels etc.) with appropriate accessor functions. </p>
+<p>With little modifications we can create a force-directed layout and a matrix diagram.</p>
+<table>
+<tr>
+<td>
+<pre class="brush: jscript; first-line: 14; title: ; notranslate">
+var force = vis.add(pv.Layout.Force)
+    .nodes(nodes)
+    .links(links);
+
+force.link.add(pv.Line);
+
+force.node.add(pv.Dot)
+	.size(50)
+	.anchor(&quot;center&quot;).add(pv.Label)
+		.text(function() this.index);
+
+vis.render();
+</pre>
+</td>
+<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleForce.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleForce.png" alt="" title="simpleForce" width="200" height="200" class="aligncenter size-full wp-image-645" /></a></td>
+</tr>
+</table>
+<p>Here I labelled the nodes so one can tell which is which. This is done by adding a pv.Label to the pv.Dot that&#8217;s attached to the node, just like with any other mark.</p>
+<table>
+<tr>
+<td>
+<pre class="brush: jscript; first-line: 14; title: ; notranslate">
+var Matrix = vis.add(pv.Layout.Matrix)
+	.nodes(nodes)
+	.directed(true)
+	.links(links)
+	.top(20).left(20)
+
+Matrix.link.add(pv.Bar)
+    .fillStyle(function(d) pv.Scale.linear(0, 2, 4)
+      .range('#eee', 'yellow', 'green')(d.linkValue))
+
+Matrix.label.add(pv.Label).text(function() Math.floor(this.index/2))
+
+vis.render();</pre>
+</td>
+<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleMatrix1.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleMatrix1.png" alt="" title="simpleMatrix" width="200" height="200" class="aligncenter size-full wp-image-647" /></a></td>
+</tr>
+</table>
+<p>For the matrix things are slightly more complex than for the previous 2. Here I opted for a directed matrix, as opposed to a bidirectional one: this means that each link is shown once, to its source from its target, and not twice (ie from its target back to its source) which is the default.<br />
+I chose to color the bar attached to my links (which are cells of the matrix) according to the strength of my links. Again, if my nodes field was more qualified, I could have used these properties. </p>
+<p>Finally, we&#8217;ve added labels to the custom property Matrix.label. Only, the labels are numbered from 0 to 11 so to get numbers from 0 to 5 for both rows and columns I used Math.floor(this.index/2) (integer part of half of this number).</p>
+<h3>Hierarchized data</h3>
+<p>Like for networks, the shape of the data we can feed to treemaps, icicles and other hierarchical representation doesn&#8217;t change. So once you have your data in order, you can easily switch representations. </p>
+<p>Essentially, you will be passing a tree of the form: </p>
+<pre class="brush: jscript; title: ; notranslate">var myTree={
+   rootnode: {
+      node: {
+      ...  
+         node: {
+            leaf: value,
+            leaf: value,
+            ...
+            leaf: value
+         },
+      ...  
+}</pre>
+<p>The protovis examples use the hierarchy of <a href="http://vis.stanford.edu/protovis/ex/flare.js">flare source code</a> as an example, which really shows what can be done with a treemap and other tree represenations. </p>
+<p>For our purpose we are going for a simpler tree, inspired by the work of Periscopic on <a href="http://www.congressspeaks.com/">congressspeaks.com</a> which Kim Rees showed at <a href="http://now.periscopic.com/2011/02/lessons-in-visual-economy-at-strata/">Strata</a>.<br />
+Kim presentation featured tiny treemaps that showed the voting record for a congressperson, and whether they had voted for or against their party.</p>
+<p>So let&#8217;s play with the voting record of an hypothetic congressperson:</p>
+<pre class="brush: jscript; title: ; notranslate">var hasVoted={
+	didnt: 100,
+	voted: {
+	    yes: {
+	        yesWithParty: 241,
+	        yesAgainstParty: 23
+	    },
+	    no: {
+	        noWithParty: 73,
+	        noAgainstParty: 5
+	    }
+	}
+};</pre>
+<p>Once you have your tree, you will need to pass it to your layout using pv.dom, like this: </p>
+<pre class="brush: jscript; light: true; title: ; notranslate">pv.dom(hasVoted).root(&quot;hasVoted&quot;).nodes()</pre>
+<p>Based on that let&#8217;s do two hierarchical representations.<br />
+Let&#8217;s start with a tree: </p>
+<pre class="brush: jscript; first-line: 14; title: ; notranslate">var vis = new pv.Panel()
+    .width(500)
+    .height(200)
+    ;
+var tree = vis.add(pv.Layout.Tree)
+    .nodes(pv.dom(hasVoted).root(&quot;hasVoted&quot;).nodes())
+    .depth(40)
+    .breadth(100)
+    .top(30)
+    .right(100)
+    ;
+tree.link.add(pv.Line);
+tree.node.add(pv.Dot)
+    .size(function(n) n.nodeValue)
+	.anchor(&quot;center&quot;).add(pv.Label).textAlign(&quot;center&quot;).text(function(n) n.nodeName)
+vis.render();</pre>
+<p>And here is the result:<br />
+<a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleTree.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleTree.png" alt="" title="simpleTree" width="500" height="200" class="aligncenter size-full wp-image-652" /></a></p>
+<p>There are many styling possibilities obviously left unexplored in this simple example (you can control properties of the tree.link, tree.node, tree.labels which we didn&#8217;t use here, etc.), but this won&#8217;t change much as far as data are concerned. </p>
+<p>Now let&#8217;s try a treemap with the same dataset.</p>
+<pre class="brush: jscript; first-line: 14; title: ; notranslate">var vis = new pv.Panel()
+    .width(400)
+    .height(200)
+    ;
+
+var tree = vis.add(pv.Layout.Treemap)
+	.width(200).height(200)
+    .nodes(pv.dom(hasVoted).root(&quot;hasVoted&quot;).nodes())
+    ;
+
+tree.leaf.add(pv.Panel)
+	.fillStyle(function(d) d.nodeName==&quot;didnt&quot;?&quot;darkgrey&quot;:d.nodeName.slice(0,3)==&quot;yes&quot;?
+	d.nodeName.slice(-9)==&quot;WithParty&quot;?&quot;powderblue&quot;:&quot;steelblue&quot;:
+	d.nodeName.slice(-9)==&quot;WithParty&quot;?&quot;lightsalmon&quot;:&quot;salmon&quot;)
+
+vis.add(pv.Panel)
+	.data([
+		   {label:&quot;yes with party&quot;, 	color: &quot;powderblue&quot;},
+		   {label:&quot;yes against party&quot;, 	color: &quot;steelblue&quot;},
+		   {label:&quot;no with party&quot;, 		color: &quot;lightsalmon&quot;},
+		   {label:&quot;no against party&quot;, 	color: &quot;salmon&quot;},
+		   {label:&quot;didn't vote&quot;, 		color: &quot;darkgrey&quot;}
+		   ])
+	.left(220)
+	.top(function() 50+20*this.index)
+	.height(15)
+	.width(20)
+	.fillStyle(function(d) d.color)
+	.anchor(&quot;right&quot;).add(pv.Label).textAlign(&quot;left&quot;).text(function(d) d.label)
+
+vis.render();
+</pre>
+<p>and what took the longest part of the code was making the legend.</p>
+<p>Here is the outcome:<br />
+<a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleTreemap.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleTreemap.png" alt="" title="simpleTreemap" width="400" height="200" class="aligncenter size-full wp-image-653" /></a></p>
+]]></content:encoded>
+			<wfw:commentRss>/2011/02/11/working-with-data-in-protovis-part-5-of-5/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+		<item>
+		<title>Working with data in protovis &#8211; part 4 of 5</title>
+		<link>/2011/02/11/working-with-data-in-protovis-part-4-of-5/</link>
+		<comments>/2011/02/11/working-with-data-in-protovis-part-4-of-5/#comments</comments>
+		<pubDate>Fri, 11 Feb 2011 00:51:39 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[charts]]></category>
+		<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[protovis]]></category>
+		<category><![CDATA[tips]]></category>
+		<category><![CDATA[aggregation]]></category>
+		<category><![CDATA[hierarchy]]></category>
+		<category><![CDATA[maps]]></category>
+		<category><![CDATA[nesting]]></category>
+		<category><![CDATA[rollup]]></category>
+		<category><![CDATA[trees]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=502</guid>
+		<description><![CDATA[Previous: array functions in javascript and protovis Reshaping complex arrays This really is what protovis data processing is all about. In today&#8217;s tutorial, I am going to refer extensively to protovis&#8217;s Becker&#8217;s Barley example. One reason for that is that it&#8217;s also used in the API documentation of the methods we are going to cover, <a class="read-more" href="/2011/02/11/working-with-data-in-protovis-part-4-of-5/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p><a href="http://www.jeromecukier.net/?p=494">Previous: array functions in javascript and protovis</a></p>
+<h2>Reshaping complex arrays</h2>
+<p>This really is what protovis data processing is all about.<br />
+In today&#8217;s tutorial, I am going to refer extensively to protovis&#8217;s <a href="http://vis.stanford.edu/protovis/ex/barley.html">Becker&#8217;s Barley</a> example. One reason for that is that it&#8217;s also used in the <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Nest.html">API documentation of the methods</a> we are going to cover, and also because I am posting <a href="http://www.jeromecukier.net/?p=534">a line-by-line explanation of this example</a> that you can refer to.</p>
+<p>So far we’ve seen that :</p>
+<ul>
+<li>Associative arrays are great as data elements, as their various values can be used for various attributes.<br />
+For instance, if the current data element is an associative array of this shape: </p>
+<pre class="brush: jscript; title: ; notranslate">{ yield: 27.00000, variety: &quot;Manchuria&quot;, year: 1931, site: &quot;University Farm&quot; }</pre>
+<p>one could imagine a bar chart where the length of the  bar would come from the yield, their fillStyle color from the variety, the label from the site, etc.</li>
+<li>arrays of associative arrays are very practical to manipulate thanks to accessor functions.<br />
+An array of the shape:</p>
+<pre class="brush: jscript; title: ; notranslate">var barley = [
+  { yield: 27.00000, variety: &quot;Manchuria&quot;, year: 1931, site: &quot;University Farm&quot; },
+  { yield: 48.86667, variety: &quot;Manchuria&quot;, year: 1931, site: &quot;Waseca&quot; },
+  { yield: 27.43334, variety: &quot;Manchuria&quot;, year: 1931, site: &quot;Morris&quot; },
+  { yield: 39.93333, variety: &quot;Manchuria&quot;, year: 1931, site: &quot;Crookston&quot; },
+  { yield: 32.96667, variety: &quot;Manchuria&quot;, year: 1931, site: &quot;Grand Rapids&quot; },
+  { yield: 28.96667, variety: &quot;Manchuria&quot;, year: 1931, site: &quot;Duluth&quot; },
+  { yield: 43.06666, variety: &quot;Glabron&quot;, year: 1931, site: &quot;University Farm&quot; },
+  { yield: 55.20000, variety: &quot;Glabron&quot;, year: 1931, site: &quot;Waseca&quot; },
+  { yield: 28.76667, variety: &quot;Glabron&quot;, year: 1931, site: &quot;Morris&quot; },
+  { yield: 38.13333, variety: &quot;Glabron&quot;, year: 1931, site: &quot;Crookston&quot; },
+  { yield: 29.13333, variety: &quot;Glabron&quot;, year: 1931, site: &quot;Grand Rapids&quot; },
+  { yield: 29.66667, variety: &quot;Glabron&quot;, year: 1931, site: &quot;Duluth&quot; },
+  { yield: 35.13333, variety: &quot;Svansota&quot;, year: 1931, site: &quot;University Farm&quot; },
+…
+  { yield: 29.33333, variety: &quot;Wisconsin No. 38&quot;, year: 1932, site: &quot;Duluth&quot; }
+]</pre>
+<p>could be easily sorted according to any of the keys – yield, variety, year, site, etc.</li>
+<li>it is easy to access the data of an element’s parent, and in some cases it can greatly simplify the code.</li>
+</ul>
+<h3>Nesting</h3>
+<p>For this last reason, you may want to turn one flat array of associative arrays into an array of arrays of associative arrays. This process is called <strong>nesting</strong>.</p>
+<p><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/nesting.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/nesting.png" alt="" title="nesting" width="700" height="250" class="aligncenter size-full wp-image-528" /></a></p>
+<h4>Simple nesting</h4>
+<p>If you turn a <strong>single array</strong> like the one on the left-hand side to <strong>an array of arrays</strong> like on the right-hand side, you could easily do 3 smaller charts, one next to the other, by creating them inside of panels. You could have some information at this panel level (for instance the variety) and the rest at a lower level. </p>
+<p>Fortunately, there are protovis methods that can turn your flat list into a more complex array of arrays. And since protovis methods are meant to be chained, you can even go on and create arrays of arrays of arrays of arrays if needs be.<br />
+Even better – combined with the other data processing functions, you don’t only change the structure of your array, but you can also filter and control the order of the elements to show everything that you want and only what you want.</p>
+<p>And how complicated can this be?<br />
+To do the above, all you have to type is </p>
+<pre class="brush: jscript; title: ; notranslate">barley=pv.nest(barley).key(function(d) d.variety).entries();</pre>
+<p>What this does is that it nests your <em>barley</em> array, according to the <em>variety</em> key. entries() at the end is required to obtain the array of arrays needed.</p>
+<p>Here is an example of what can be done with both kinds of data structures in just a few lines of code (which won&#8217;t include the data proper. The long, flat array is stored in the variable barley, as above).<br />
+Without nesting:<br />
+<a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/BarleyWithoutNesting.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/BarleyWithoutNesting.png" alt="" title="BarleyWithoutNesting" width="606" height="198" class="aligncenter size-full wp-image-594" /></a></p>
+<pre class="brush: jscript; title: ; notranslate">var vis = new pv.Panel()
+    .width(600)
+    .height(200)
+;
+vis.add(pv.Bar)
+	.data(barley)
+	.left(function() this.index*5)
+	.width(4)
+	.bottom(0)
+	.height(function(d) d.yield*2)
+	.fillStyle(function(d) d.year==1931?&quot;steelBlue&quot;:&quot;Orange&quot;)
+;
+vis.render();</pre>
+<p>As the pv.Bar goes through the array, there is not much it can do to structure it. We can just size the bars according to the value of yield, and color them according to another key (here the year).</p>
+<p>Now using nesting:<br />
+<a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/BarleyWithNesting2.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/BarleyWithNesting2.png" alt="" title="BarleyWithNesting2" width="711" height="160" class="aligncenter size-full wp-image-598" /></a></p>
+<pre class="brush: jscript; highlight: [1,8,15]; title: ; notranslate">barley2=pv.nest(barley).key(function(d) d.variety).entries();
+barley2=pv.nest(barley).key(function(d) d.variety).entries();
+var vis = new pv.Panel()
+    .width(710)
+    .height(150)
+;
+var cell=vis.add(pv.Panel)
+	.data(barley2)
+	.left(function() this.index*70)
+	.width(70)
+	.top(0)
+	.height(150);
+cell.anchor(&quot;top&quot;).add(pv.Label).textAlign(&quot;center&quot;).font(&quot;9px sans-serif&quot;).text(function(d) d.key)
+cell.add(pv.Bar)
+		.data(function(d) d.values)
+		.left(function() 5+this.index%6*10)
+		.width(8)
+		.bottom(0)
+		.height(function(d) d.yield*2)
+		.fillStyle(function(d) d.year==1931?&quot;steelBlue&quot;:&quot;Orange&quot;)
+		.add(pv.Label).text(function(d) d.site).textAngle(-Math.PI/2)
+			.textAlign(&quot;left&quot;).left(function() 15+this.index%6*10).textStyle(&quot;#222&quot;)
+	;
+vis.render();
+</pre>
+<p>Here we used the same simple nesting command as above (the original example uses a more complicated one which allows for more refinement in the display). This structure allows us to create first panels, which we can style by displaying the name of the sites for instance, then, within these panels, the corresponding bars.</p>
+<p>Doing this with the data in its original form would have been possible, but would have required writing a much longer program. So the whole idea of nesting is to <strong>take some time to plan the data structure once, so that the code is as short and useful as possible</strong>.</p>
+<h4>Going further with nesting</h4>
+<p>However, it is possible to go beyond that: </p>
+<ul>
+<li>by nesting further, which can be done by adding other .key() methods:</p>
+<pre class="brush: jscript; title: ; notranslate">barley=pv.nest(barley)
+  .key(function(d) d.variety)
+  .key(function(d) d.year)
+  .entries();</pre>
+</li>
+</ul>
+<p>And/or</p>
+<ul>
+<li>by sorting keys or values using the sortKeys() and sortValues() methods, respectively. </p>
+<p>For instance, we can change the order in which the variety blocks are displayed with sortKeys():</p>
+<table>
+<tr>
+<td>
+<pre class="brush: jscript; title: ; notranslate">barley=pv.nest(barley)
+  .key(function(d) d.variety)
+  .entries();</pre>
+</td>
+<td>
+<pre class="brush: jscript; highlight: [3]; title: ; notranslate">barley=pv.nest(barley)
+  .key(function(d) d.variety)
+  .sortKeys()
+  .entries();</pre>
+</td>
+</tr>
+<tr>
+<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/sort-unsorted.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/sort-unsorted.png" alt="" title="sort-unsorted" width="300" height="250" class="aligncenter size-full wp-image-524" /></a></td>
+<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/sort-sorted.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/sort-sorted.png" alt="" title="sort-sorted" width="300" height="250" class="aligncenter size-full wp-image-525" /></a></td>
+</tr>
+</table>
+</li>
+</ul>
+<p>By using sortKeys without argument, the natural order is used (alphabetical, since our key is a string). But we could provide a comparison function if we wanted a more sophisticated arrangement.</p>
+<h4>Nesting and hierarchy</h4>
+<p>If you run the double nesting command we discussed above, </p>
+<pre class="brush: jscript; title: ; notranslate">barley=pv.nest(barley)
+  .key(function(d) d.variety)
+  .key(function(d) d.year)
+  .entries();</pre>
+<p>you&#8217;ll get as a result something of the form: </p>
+<pre class="brush: jscript; title: ; notranslate">var barley=[
+  {key:&quot;Manchuria&quot;, values: [
+    {key:&quot;1931&quot;, values: [
+      {site:&quot;University farm&quot;, variety: &quot;Manchuria&quot;, year: 1931, yield: 27},
+      {site:&quot;Waseca&quot;, variety: &quot;Manchuria&quot;, year: 1931, yield: 48.86667},
+      {site:&quot;Morris&quot;, variety: &quot;Manchuria&quot;, year: 1931, yield: 27.43334},
+      {site:&quot;Crookston&quot;, variety: &quot;Manchuria&quot;, year: 1931, yield: 39.93333},
+      {site:&quot;Grand Rapids&quot;, variety: &quot;Manchuria&quot;, year: 1931, yield: 32.96667},
+      {site:&quot;Duluth&quot;, variety: &quot;Manchuria&quot;, year: 1931, yield: 28.96667}
+    ]},
+    {key:&quot;1932&quot;, values: [  
+      {site:&quot;University farm&quot;, variety: &quot;Manchuria&quot;, year: 1932, yield: 26.9},
+      {site:&quot;Waseca&quot;, variety: &quot;Manchuria&quot;, year: 1932, yield: 33.46667},
+      {site:&quot;Morris&quot;, variety: &quot;Manchuria&quot;, year: 1932, yield: 34.36666},
+      {site:&quot;Crookston&quot;, variety: &quot;Manchuria&quot;, year: 1932, yield: 32.96667},
+      {site:&quot;Grand Rapids&quot;, variety: &quot;Manchuria&quot;, year: 1932, yield: 22.13333},
+      {site:&quot;Duluth&quot;, variety: &quot;Manchuria&quot;, year: 1932, yield: 22.56667}
+    ]}
+  ]},
+  {key: &quot;Glabron&quot;, ...
+]
+</pre>
+<p>and so on and so forth for all the varieties of barley. Now how can we use this structure in a protovis script? why not use multi-dimensional arrays instead, and if so, how would the code change?</p>
+<p>Well. You&#8217;d start using this structure by creating a first panel and and passing it the nested structure as data.<br />
+Assuming your root panel is called vis, you&#8217;d start likewise:</p>
+<pre class="brush: jscript; highlight: [2]; title: ; notranslate">
+vis.add(pv.Panel)
+    .data(barley)</pre>
+<p>now, since barley has been nested first by variety, it is now an array of 10 elements. You are going to create 10 individual panels. At some point you should worry about dimensioning and positioning them. But here we are only focusing on passing data to subsequent elements.</p>
+<p>Next, you are going to create another set of panels (or any mark, really, this doesn&#8217;t change anything for the data)</p>
+<pre class="brush: jscript; first-line: 3; highlight: [4]; title: ; notranslate">.add(pv.Panel)
+    .data(function(d) d.values)</pre>
+<p>This is how you drill down to the next level of data, by using an accessor function with the key &#8220;values&#8221;.<br />
+Congratulations! you have created 2 panels in each of our 10 individual panels, one per year. </p>
+<p>Finally, you are going to create a final mark (let&#8217;s say, a pv.Bar)</p>
+<pre class="brush: jscript; first-line: 5; highlight: [6]; title: ; notranslate">.add(pv.Bar)
+    .data(function(d) d.values)</pre>
+<p>Again, you use an accessor function of the same form. This will create a bar chart with 6 bars.<br />
+The data element corresponding to each bar is of the form:
+<pre class="brush: jscript; light: true; title: ; notranslate">{site:&quot;University farm&quot;, variety: &quot;Manchuria&quot;, year: 1932, yield: 26.9}</pre>
+<p>So, when you style the chart, you can access these properties with accessor functions, and write for instance:</p>
+<pre class="brush: jscript; first-line: 7; title: ; notranslate">    .height(function(d) d.yield)
+    .add(pv.Label).text(function(d) d.variety)</pre>
+<p>etc.</p>
+<p>To sum it up: you can create a hierarchical structure in protovis that corresponds to the shape of your nested array by adding elements and passing data using an accessor function with the key &#8220;values&#8221;.<br />
+At the lowest level of your structure you can access all the properties of the original array using accessor functions.</p>
+<p>Now, what if instead we used a multi-dimensional, normal array without keys and values? don&#8217;t they have structure and hierarchy, too?<br />
+This is not only possible, but also advised when your dataset is getting really big, as you would plague your users with annoying loading times. This changes the structure of the code though. </p>
+<p>An equivalent multi-dimensional array would be something like: </p>
+<pre class="brush: jscript; title: ; notranslate">
+var yields =
+[ // this is the level of the variety
+  [ // this is the level of the year
+    [ 27, 48.86667, 27.43334, 39.93333, 32.96667, 28.96667], 
+    [ 26.9, 33.46667, 34.36666, 32.96667, 22.13333, 22.56667]
+  ],
+  [ 
+    [ 43.06666, 55.2, 28.76667, 38.13333, 29.13333, 29.66667],
+    [ 36.8, 37.73333, 35.13333, 26.16667, 14.43333, 25.86667]
+  ],
+  [
+    [ 35.13333, 47.33333, 25.76667, 40.46667, 29.66667, 25.7],
+    [ 27.43334, 38.5, 35.03333, 20.63333, 16.63333, 22.23333]
+  ],
+  [
+    [ 39.9, 50.23333, 26.13333, 41.33333, 23.03333, 26.3],
+    [ 26.8, 37.4, 38.83333, 32.06666, 32.23333, 22.46667]
+  ],
+  [
+    [ 36.56666, 63.8333, 43.76667, 46.93333, 29.76667, 33.93333],
+    [ 29.06667, 49.2333, 46.63333, 41.83333, 20.63333, 30.6]
+  ],
+  [
+    [ 43.26667, 58.1, 28.7, 45.66667, 32.16667, 33.6],
+    [ 26.43334, 42.2, 43.53334, 34.33333, 19.46667, 22.7]
+  ],
+  [
+    [ 36.6, 65.7667, 30.36667, 48.56666, 24.93334, 28.1],
+    [ 25.56667, 44.7, 47, 30.53333, 19.9, 22.5]
+  ],
+  [
+    [ 32.76667, 48.56666, 29.86667, 41.6, 34.7, 32],
+    [ 28.06667, 36.03333, 43.2, 25.23333, 26.76667, 31.36667]
+  ],
+  [
+    [ 24.66667, 46.76667, 22.6, 44.1, 19.7, 33.06666],
+    [ 30, 41.26667, 44.23333, 32.13333, 15.23333, 27.36667]
+  ],
+  [
+    [ 39.3, 58.8, 29.46667, 49.86667, 34.46667, 31.6],
+    [ 38, 58.16667, 47.16667, 35.9, 20.66667, 29.33333]
+  ]
+]</pre>
+<p>and that&#8217;s the whole lot. It is indeed shorter. now this array is only the yields, you may want to create an array of the possible values of varieties, sites and years for good measure.</p>
+<pre class="brush: jscript; title: ; notranslate">var varieties=[&quot;Manchuria&quot;, &quot;Glabron&quot;, &quot;Svansota&quot;, &quot;Velvet&quot;, &quot;Trebi&quot;,
+     &quot;No. 457&quot;, &quot;No. 462&quot;, &quot;Peatland&quot;, &quot;No. 475&quot;, &quot;Wisconsin No. 38&quot;], 
+    sites=[&quot;University Farm&quot;, &quot;Waseca&quot;, &quot;Morris&quot;, &quot;Crookston&quot;, &quot;Grand Rapids&quot;, &quot;Duluth&quot;],
+    years=[1931,1932];</pre>
+<p>And by the way, it is very possible to create these arrays out of the original array using the map() method or equivalent.</p>
+<p>how can we create an equivalent structure?<br />
+we start like the above:</p>
+<pre class="brush: jscript; title: ; notranslate">vis.add(pv.Panel)
+     .data(yields)</pre>
+<p>Likewise, our 3-dimensional array is really an array of 10 arrays of 2 arrays of 6 elements. So we are also creating 10 panels. Let&#8217;s continue and create panels for the years:</p>
+<pre class="brush: jscript; first-line: 3; highlight: [4]; title: ; notranslate">.add(pv.Panel)
+    .data(function(d) d)</pre>
+<p>To drill down one level in an array, you have to use this form. you say that you are giving the children of your object what&#8217;s inside the data property of their parent. </p>
+<p>So naturally, you follow by</p>
+<pre class="brush: jscript; first-line: 5; highlight: [6]; title: ; notranslate">.add(pv.Bar)
+    .data(function(d) d)</pre>
+<p>now how you style your bars will be slightly different than before. What you passed your first panel was an array of yields. So that&#8217;s what you get now from your data. If you want something else, you&#8217;ll have to get it with this.index for instance.</p>
+<pre class="brush: jscript; first-line: 7; title: ; notranslate">    .height(function(d) d) // that's the yield
+    .add(pv.Label).text(function() varieties[this.index])</pre>
+<p>All in all it&#8217;s trickier to work with arrays. The code is less explicit, and if you change one array even by accident, you&#8217;ll have to check that others are still synchronized. But it could make your vis much faster.</p>
+<h3>Aggregating</h3>
+<p>Sometimes, what you want out of an array is not a more complex array, but a simpler list of numbers. For instance, what if you could obtain the sum of all the values in the array for such or such property? This is also possible in protovis, and in fact, it looks a lot like what we&#8217;ve done. The difference is that instead of using the method entries(), we will use the method rollup().</p>
+<p>Let&#8217;s suppose we have a flat array that looks like this: these are scores of students on 3 exams. </p>
+<pre class="brush: jscript; light: true; title: ; notranslate">var scores=[
+{student:&quot;Adam&quot;, exam:1, score: 77},
+{student:&quot;Adam&quot;, exam:2, score: 34},
+{student:&quot;Adam&quot;, exam:3, score: 85},
+{student:&quot;Barbara&quot;, exam:1, score: 92},
+{student:&quot;Barbara&quot;, exam:2, score: 68},
+{student:&quot;Barbara&quot;, exam:3, score: 97},
+{student:&quot;Connor&quot;, exam:1, score: 84},
+{student:&quot;Connor&quot;, exam:2, score: 54},
+{student:&quot;Connor&quot;, exam:3, score: 37},
+{student:&quot;Daniela&quot;, exam:1, score: 61},
+{student:&quot;Daniela&quot;, exam:2, score: 58},
+{student:&quot;Daniela&quot;, exam:3, score: 64}
+]</pre>
+<p>Now, we would like to get, in one simple object, the average for each student.<br />
+We know we could reshape the array if we wanted by using pv.Nest and entries(): </p>
+<pre class="brush: jscript; title: ; notranslate">pv.nest(scores).key(function(d) d.student).entries()</pre>
+<p>This would be something of the shape: </p>
+<pre class="brush: jscript; light: true; title: ; notranslate">
+[{key:&quot;Adam&quot;, values:[
+    {exam:1, score: 77, student: &quot;Adam&quot;},
+    {exam:2, score: 34, student: &quot;Adam&quot;},
+    {exam:3, score: 85, student: &quot;Adam&quot;}
+    ]
+  },
+  {key:&quot;Barbara&quot;, values:[
+    {exam:1, score: 92, student: &quot;Barbara&quot;},
+    {exam:2, score: 68, student: &quot;Barbara&quot;},
+    {exam:3, score: 97, student: &quot;Barbara&quot;}
+   ]
+  },
+etc.
+</pre>
+<p>Useful, for instance, if we&#8217;d want to chart the progress of each student separately. </p>
+<p>Now if instead of using entries() at the end, we use rollup(), we could get this: </p>
+<pre class="brush: jscript; light: true; title: ; notranslate">{
+Adam: 65.33333333333333
+Barbara: 85.66666666666667
+Connor: 58.333333333333336
+Daniela: 61}
+</pre>
+<p>The exact statement is </p>
+<pre class="brush: jscript; title: ; notranslate">pv.nest(scores)
+  .key(function(d) d.student)
+  .rollup(function(data) pv.mean(data, function(d) d.score))</pre>
+<p>To understand how this works, it helps to visualize what the pv.nest would have returned if we had asked for entries.<br />
+What rollup does is that it would go through each of the values that correspond to the keys, and return one aggregate value, depending on the function. </p>
+<p>For the first student, &#8220;Adam&#8221;, the corresponding values array is like this: </p>
+<pre class="brush: jscript; light: true; title: ; notranslate">[
+    {exam:1, score: 77, student: &quot;Adam&quot;},
+    {exam:2, score: 34, student: &quot;Adam&quot;},
+    {exam:3, score: 85, student: &quot;Adam&quot;}
+    ]</pre>
+<p>so rollup will just look at each element of this array and apply the function.<br />
+This is what (data) in &#8220;function(data)&#8221; corresponds to.<br />
+Next, we tell protovis what to do with these elements. Here, we are interested in the average, so we take pv.mean (not pv.average, <a href="http://www.jeromecukier.net/?p=494">remember</a>?)<br />
+However, we can&#8217;t directly compute the average of an array of associative arrays &#8211; we must tell protovis exactly what to average. This is why we use an accessor function, function(d) d.score.</p>
+<p>Of course, pv.mean used in this example can be replaced by just about any function.</p>
+<p>In the name of clarity, especially if there is only one property that can be aggregated, you can declare a function outside of the rollup() method. This is useful if you are going to aggregate your array by different dimensions:</p>
+<pre class="brush: jscript; title: ; notranslate">function meanScore(data) pv.mean(data, function(d) d.score);
+var avgStudent=pv.nest(scores)
+  .key(function(d) d.student)
+  .rollup(meanScore);
+var avgExam=pv.nest(scores)
+  .key(function(d) d.exam)
+  .rollup(meanScore);</pre>
+<h3>Flattening</h3>
+<p>Protovis also provides methods that turn a &#8220;nested&#8221; array back into a flat array. And methods that turn a normal array into a tree.<br />
+The main advantage of having a flat array is that you can nest it in a different way. This is useful, for instance, if you got your data in a nested form that doesn&#8217;t work for you. Likewise, a tree is easier to reshape in protovis than an array.</p>
+<p>To create a flat array out of a nested one, you have to use pv.flatten and specify all the keys of the array and conclude by array().</p>
+<pre class="brush: jscript; light: true; title: ; notranslate">barley=pv.flatten(barley).key(&quot;variety&quot;).key(&quot;site&quot;).key(&quot;year&quot;).key(&quot;yield&quot;).array()</pre>
+<p>It&#8217;s important to note that you need to specify all the keys, not just the keys that correspond to actual nesting. So again, if you start from a flat array, and you do</p>
+<pre class="brush: jscript; light: true; title: ; notranslate">barley=pv.nest(barley).key(&quot;variety&quot;).entries()</pre>
+<p>to reverse this, you&#8217;ll have to enter the full formula, using key four times:</p>
+<pre class="brush: jscript; light: true; title: ; notranslate">barley=pv.flatten(barley).key(&quot;variety&quot;).key(&quot;site&quot;).key(&quot;year&quot;).key(&quot;yield&quot;).array()</pre>
+<p>Finally, pv.tree &#8211; well, I haven&#8217;t seen this method used outside the <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Tree.html">documentation</a>. It&#8217;s not used in any live example, not covered by any question in the forum, and I haven&#8217;t found any trace of it in the internet. So I&#8217;d rather leave you with the explanation in the documentation which is fairly clear than come up with my own. If you find yourself in a situation like in the documentation, where you have a flat array of associative arrays, which have a property that could be interpreted as a hierarchy, then you could use this method to turn your array in something more useful to protovis.</p>
+<h3>Putting it all together</h3>
+<p>Instead of coming up with a specific new example for this section I refer you to my explanation of the <a href="http://www.jeromecukier.net/?p=534">Becker&#8217;s Barley example</a>.<br />
+On the same subject, see a comparison of how to <a href="http://www.jeromecukier.net/?p=550">re-create Becker&#8217;s Barley with protovis and Tableau</a></p>
+<p>next: <a href="http://www.jeromecukier.net/?p=623">working with layouts</a></p>
+]]></content:encoded>
+			<wfw:commentRss>/2011/02/11/working-with-data-in-protovis-part-4-of-5/feed/</wfw:commentRss>
+		<slash:comments>5</slash:comments>
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,90 @@
+var myCat=categories[cat3];
+
+var avgScores=criteres.map(function(d,i) {return d3.mean(categories, function(c) {return c.timeLineAgg[i];});
+var scores=myCat.timeLineAgg.map(function(d,i) {return d/avgScores[i];})
+
+//var rScale=d3.scale.linear().range([0,180]).domain([0,d3.max(categories[cat3].timeLineAgg)]);
+var rScale=d3.scale.linear().range([0,180]).domain([0,d3.max(scores)]);
+
+d3.selectAll(".page").classed("invisible",1);
+d3.select("#page3").classed("invisible",0);
+var page3=d3.select("#page3");
+d3.select("#page3").selectAll("svg").remove();
+var svg=d3.select("#page3").append("svg:svg");
+page3.select(".backButton").select("a").on("click",initPage1);
+
+var myCat=categories[cat3];
+
+var avgScores=criteres.map(function(d,i) {return d3.mean(categories, function(c) {return c.timeLineAgg[i];});})
+var scores=myCat.timeLineAgg.map(function(d,i) {return d/avgScores[i];})
+
+var rScale=d3.scale.linear().range([0,300]).domain([0,d3.max(categories[cat3].timeLineAgg)]);
+//var rScale=d3.scale.linear().range([0,180]).domain([0,d3.max(scores)]);
+
+var chart=svg.append("svg:g").classed("chart",1).attr("transform", "translate(530,250)");
+var bars=chart.selectAll(".bars").data(criteres).enter().append("svg:rect").classed(".bars")
+	.attr("transform", function(d,i) {return "translate(0,"+30*i+")";})
+	.style("fill",function(d) {return d.color;})
+	.style("stroke",function(d) {return d3.hsl(d.color).darker();})
+	.attr("height","20px").attr("width","0px")
+	
+var bars2=chart.selectAll(".bars2").data(criteres).enter().append("svg:rect").classed(".bars2")
+	.attr("transform", function(d,i) {return "translate(0,"+(16+30*i)+")";})
+	.style("fill","#ccc").style("opacity",.5)
+	.style("stroke","#000").style("stroke-opacity",.5)
+	.attr("height","4px").attr("width","0px")
+	
+	
+
+
+/*var radarChart=svg.append("svg:g").attr("transform","translate(570,500)").classed("radar",1);
+var axes=radarChart.selectAll("line").data(criteres).enter().append("svg:line")
+	.attr("x1",0).attr("y1",0)
+	.attr("x2",function(d,i){return 200*Math.cos(Math.PI*(2*i/(criteres.length)));})
+	.attr("y2",function(d,i){return 200*Math.sin(Math.PI*(2*i/(criteres.length)));})
+	.style("stroke","black");*/
+
+var labels=page3.selectAll(".labels").data(criteres).enter().append("div").classed("labels",1)
+	.style("position","absolute")
+		.style("top",function(d,i)  {return 500+220*Math.sin(Math.PI*(2*i/(criteres.length)));})
+		.style("left",function(d,i) {var c=Math.cos(Math.PI*(2*i/(criteres.length)));
+				 	     return 570-(c<0?160:0)+220*c;})
+	.style("width", "160px")
+	.append("a")
+		.style("float",function(d,i) {return Math.cos(Math.PI*(2*i/(criteres.length)))>0?"left":"right";})
+		.attr("href","#")
+		.on("mouseover",function(d) {d3.select(this).style("text-decoration","underline")
+			.style("color",function(d) {return d.color;})
+		;})
+		.on("mouseout",function() {d3.select(this).style("text-decoration","none")
+			.style("color","steelblue");
+		})
+		.on("click",function(d,i) {cat3=i;initPage3();})
+		.html(function(d) {return d.long;})
+		var radarPlot=radarChart.append("svg:path").attr("d","M0,0 Z").style("stroke-width",2).style("stroke","darkorange").style("stroke-opacity",0).style("fill","darkorange").style("opacity",0);/*
+
+updateC();	
+
+function updateC() {
+	page3.select(".imgCat").attr("src",function() {return categories[cat3].img;})
+	page3.select(".nomCat").html(function() {return categories[cat3].long;})
+	page3.select(".abstractCat").html(function() {return categories[cat3].abstract;})
+
+	/*radarPoints=criteres.map(function(d,i) {
+		var point=i?"L":"M";
+//		point+=(rScale(categories[cat3].timeLineAgg[i])*Math.cos(Math.PI*(2*i/(criteres.length))))
+		point+=(rScale(scores[i])*Math.cos(Math.PI*(2*i/(criteres.length))))
+		point+=","
+//		point+=(rScale(categories[cat3].timeLineAgg[i])*Math.cos(Math.PI*(2*i/(criteres.length))))
+		point+=(rScale(scores[i])*Math.cos(Math.PI*(2*i/(criteres.length))))
+		return point;
+	})
+	var p=radarPoints.join(" ")+"Z";
+	radarPlot.attr("d",p);
+	radarPlot.transition().style("opacity",.2).style("stroke-opacity",1).duration(2000);*/
+	
+	bars.transition().attr("width",function(i) {return rScale(myCat.timeLineAgg[i]);}).duration(2000);
+	bars2.transition().attr("width",function(i) {return rScale(avgScores[i]);}).duration(2000);
+	
+}
+

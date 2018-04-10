@@ -1,0 +1,253 @@
+<html><head>
+<script type="text/javascript" src="http://blog.oecdfactblog.org/wp-includes/js/protovis-r3.2.js"></script>
+    <script type="text/javascript" src="RS2010_02.js"></script>
+    <style type="text/css">
+
+
+#fig {
+  width: 100%;
+}
+
+#footer {
+  font: 24pt helvetica neue;
+  color: #666;
+}
+
+input {
+  font: 24pt helvetica neue;
+  background: none;
+  border: none;
+  outline: 0;
+}
+
+#title1 {
+  font: 24pt Verdana, Tahoma, sans serif;
+  float: right;
+  text-align: right;
+  margin-right:10px;
+}
+
+#t1,#t2 {width: 500px;height:75px;position:absolute;top:0;}
+#t1 {left:0;}
+#t2 {left:520px}
+#bottom {width: 1000px;height:300px;position:absolute;top:500px;left:0px;}
+form{margin-top:8px;}
+
+body {font: 10pt Verdana, Tahoma, sans serif;}
+    </style>
+  <script type="text/javascript+protovis">
+  var selCountry=0,selItem=0;
+
+  var tmSize=500,
+  	  tmhPadding =10,
+  	  tmvPadding =50,
+	  wLegend = 179,
+	  hLegend = 200;
+
+
+
+  </script>
+  </head>
+
+  <body><div id="center"><div id="fig">
+  	<div id="tl"><h3>Structure fiscale de la France - comparaison avec : </h3></div>
+  	<div id="t2"><form id="sc"><select id="country" onchange="selCountry=this.value;update();">
+			<option value=0>Allemagne</option>
+			<option value=1>Autriche</option>
+			<option value=2>Belgique</option>
+			<option value=3>Canada</option>
+			<option value=4>Chili</option>
+			<option value=5>Corée</option>
+			<option value=6>Danemark</option>
+			<option value=7>Espagne</option>
+			<option value=8>États-Unis</option>
+			<option value=9>Finlande</option>
+			<option value=11>Grèce</option>
+			<option value=12>Hongrie</option>
+			<option value=13>Irlande</option>
+			<option value=14>Islande</option>
+			<option value=15>Israël</option>
+			<option value=16>Italie</option>
+			<option value=17>Japon</option>
+			<option value=18>Luxembourg</option>
+			<option value=19>Mexique</option>
+			<option value=20>Norvège</option>
+			<option value=21>Nouvelle-Zélande</option>
+			<option value=22>République slovaque</option>
+			<option value=23>République tchèque</option>
+			<option value=24>Royaume-Uni</option>
+			<option value=25>Slovénie</option>
+			<option value=26>Suède</option>
+			<option value=27>Suisse</option>
+			<option value=28>Turquie</option>
+		</select>
+	</form>
+	</div>
+	<script type="text/javascript+protovis">
+var color = pv.Colors.category10().by(function(d) colorIndex[d.nodeName]);
+
+	// main panel
+
+	var vis = new pv.Panel()
+	    .width(1200)
+	    .height(1000)
+    	.margin(.5)
+    	;
+
+	var myFont="10pt Verdana, tahoma, sans serif";
+	var myFont1="12pt Verdana, Tahoma, sans serif";
+
+	// Treemaps
+
+	var tms = vis.add(pv.Panel).width(tmSize*2+tmhPadding).height(tmSize+tmvPadding);
+
+	// la France...
+
+	var treemap1 = tms.add(pv.Panel).width(tmSize).height(tmSize).add(pv.Layout.Treemap) // France
+	    .nodes(function() pv.dom(tm[10]).root("tm").nodes())
+	    .round(true);
+
+	treemap1.leaf.add(pv.Panel)
+	     .fillStyle(function(d) (d.nodeName>-1)?(d.nodeName==selItem?"lime":(color(d))):undefined)
+	    .strokeStyle("#fff")
+	    .lineWidth(1)
+	    .antialias(false)
+	    .title(function(d) (d.nodeName>-1)?items[d.nodeName]/*+" ("+pv.Format.number().format((details[10][d.nodeName].TAXUSD).toFixed(1))+" mE)"*/:"")
+	    .event("click", function(d) {(selItem==d.nodeName)?(selItem=0):(selItem=d.nodeName);update();});
+	treemap1.node.add(pv.Panel)
+		.fillStyle(function(d) (d.nodeName>0)?(d.nodeName==selItem?"lime":null):null)
+		.strokeStyle(function() this.fillStyle()?"#fff":null)
+		.lineWidth(function() this.fillStyle()?1:0)
+;
+	// l'autre pays
+
+	var treemap2 = tms.add(pv.Panel).width(tmSize).height(tmSize).left(tmSize+tmhPadding).add(pv.Layout.Treemap)
+	    .nodes(function() pv.dom(tm[selCountry]).root("tm").nodes())
+	    .round(true);
+
+	treemap2.leaf.add(pv.Panel)
+	    .fillStyle(function(d) (d.nodeName>-1)?(d.nodeName==selItem?"lime":(color(d))):undefined)
+	    .strokeStyle("#fff")
+	    .lineWidth(1)
+	    .antialias(false)
+	    .title(function(d) (d.nodeName>-1)?items[d.nodeName]/*+" ("+pv.Format.number().format((details[selCountry][d.nodeName].TAXUSD).toFixed(1))+" mE)"*/:"")
+	    .event("click", function(d) {(selItem==d.nodeName)?(selItem=0):(selItem=d.nodeName);update();});
+	treemap2.node.add(pv.Panel)
+		.fillStyle(function(d) (d.nodeName>0)?(d.nodeName==selItem?"lime":null):null)
+		.strokeStyle(function() this.fillStyle()?"#fff":null)
+		.lineWidth(function() this.fillStyle()?1:0)
+;
+
+
+// graphique comparatif, panneau du bas
+
+	var p2 = vis.add(pv.Panel).width(tmSize*2+tmhPadding).top(tmSize+tmvPadding);
+	p2.anchor("top").add(pv.Label).left(0).top(-35).text(function() "Comparaison par pays pour l'impôt - "+items[selItem]).textAlign("left").font("14pt bold Verdana, Tahoma, sans serif");
+	p2.anchor("top").add(pv.Label).textAlign("left").left(0).top(-18).text("% du PIB").font(myFont);
+	p2.add(pv.Bar)
+		.data(function() tbi[selItem])
+		.left(function() 50+(this.index)*30)
+		.width(25)
+		.bottom(300)
+		.height(function(d) pv.Scale.linear(0,pv.max(tbi[selItem], function(d) d.value)).range(0,100)(d.value))
+		.fillStyle(function(d) ((d.country==10)||(d.country==selCountry))?"lime":pv.Colors.category10().range()[(colorIndex[selItem]-1)<0?0:(colorIndex[selItem]-1)].color)
+		.title(function(d) countries[d.country]+"- "+d.value+" % du PIB")
+		.event("click", function(d) {document.forms["sc"].elements["country"].value=d.country;selCountry=d.country;update();})
+		.anchor("bottom").add(pv.Label).textMargin(5).textBaseline("middle").textAlign("right").font(myFont).text(function(d) countries[d.country]).textAngle(function() -Math.PI/2)
+	;
+	p2.add(pv.Rule)
+		.data(function() pv.Scale.linear(0,pv.max(tbi[selItem], function(d) d.value)).range(0,100).ticks(5))
+		.bottom(function(d) 300+Math.round(pv.Scale.linear(0,pv.max(tbi[selItem], function(d) d.value)).range(0,100)(d)) - .5)
+		.left(50).width(function() tbi[selItem].length*30)
+		.strokeStyle(function(d) d ? "rgba(255,255,255,.3)" : "#000")
+		.add(pv.Rule)
+			.left(50)
+			.width(5)
+			.strokeStyle("#000")
+			.anchor("left").add(pv.Label)
+			.text(function(d) d.toFixed(1))
+	;
+
+// colonne de droite - 1ère partie, légende couleur
+var legend = vis.add(pv.Panel)
+	.left(tmSize*2+tmhPadding*2)
+	.top(0)
+	.width(wLegend)
+	.height(hLegend)
+	.strokeStyle("#000")
+	.lineWidth(1)
+	.add(pv.Panel)
+	.left(10)
+	.data([{t:"Revenu et bénéfices",i:1}, {t:"Sécurité sociale",i:9}, {t:"Salaires",i:22}, {t:"Patrimoine",i:23}, {t:"Biens et services",i:38}, {t:"Autres",i:61}])
+	.top(function() 10+this.index*30)
+	.height(28)
+	.width(28)
+	.fillStyle(function() pv.Colors.category10().range()[this.index])
+	.event("click", function(d) {(selItem==d.i)?selItem=0:selItem=d.i;update();})
+	.anchor("right").add(pv.Label).text(function(d) d.t).textAlign("left")
+	;
+
+
+// colonne de droite - 2ème partie, comparaison chiffrée
+
+var info= vis.add(pv.Panel)
+	.left(tmSize*2+tmhPadding*2)
+	.top(hLegend+tmhPadding)
+	.width(wLegend)
+	.height(120)
+	.strokeStyle("#000")
+	.lineWidth(1)
+	.add(pv.Panel).left(5).anchor("left").add(pv.Label).top(5).textBaseline("top").text(function() items[selItem])
+	.add(pv.Rule).top(20).left(-5).width(179)
+
+info.add(pv.Panel).left(0).anchor("left").add(pv.Label).top(5).textBaseline("top").text("France : ").font(myFont1)
+info.add(pv.Panel).left(0).anchor("left").add(pv.Label).top(25).textBaseline("top").text(function() pv.Format.number().format(details[10][selItem].TAXUSD.toFixed(1))+" millions d'euros")
+info.add(pv.Panel).left(0).anchor("left").add(pv.Label).top(35).textBaseline("top").text(function() (details[10][selItem].TAXGDP.toFixed(1))+"% du PIB")
+
+info.add(pv.Panel).left(0).anchor("left").add(pv.Label).top(50).textBaseline("top").text(function() countries[selCountry]+" : ").font(myFont1)
+info.add(pv.Panel).left(0).anchor("left").add(pv.Label).top(70).textBaseline("top").text(function() pv.Format.number().format(details[selCountry][selItem].TAXUSD.toFixed(1))+" millions d'euros")
+info.add(pv.Panel).left(0).anchor("left").add(pv.Label).top(80).textBaseline("top").text(function() (details[selCountry][selItem].TAXGDP.toFixed(1))+"% du PIB")
+
+
+vis.render();
+function selectUp(d) {
+	if (!selItem) {selItem=d.parentNode.nodeName;}
+	else if (d.nodeName==selItem) {selItem=d.parentNode.nodeName;}
+	else if(d.parentNode.nodeName==selItem){selItem=d.parentNode.parentNode.nodeName;}
+	else if(d.parentNode.parentNode.nodeName==selItem){selItem=d.parentNode.parentNode.parentNode.nodeName;}
+	else if(d.parentNode.parentNode.parentNode.nodeName==selItem){selItem=0;}
+	else {selItem=d.parentNode.nodeName;}
+return selItem;
+}
+
+function selected(d) {
+	if (!selItem) {return 0;}
+	else if (d.nodeName==selItem) {return 1;}
+	else if (d.parentNode.nodeName==selItem) {return 1;}
+	else if (d.parentNode.parentNode.nodeName==selItem) {return 1;}
+	else if (d.parentNode.parentNode.parentNode.nodeName==selItem) {return 1;}
+	else {return 0;}
+}
+
+function update() {treemap1.reset();treemap2.reset();vis.render();}
+
+String.prototype.visualLength = function(fontFamily)
+	{
+	    var ruler = document.getElementById("ruler");
+	    ruler.style.font = fontFamily;
+	    ruler.innerHTML = this;
+	    return ruler.offsetWidth;
+	}
+function toggle(n) {
+  n.toggle(pv.event.altKey);
+  return layout.reset().root;
+}
+
+    </script>
+</div>  </div></div>
+  <span id="ruler"></span>
+  </body>
+
+</html>
+
+

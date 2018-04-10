@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="HandheldFriendly" content="True" />
+<meta name="MobileOptimized" content="320" />
+
+<title>Treemaps in Tableau? can be done. | jeromecukier.net</title>
+
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="/xmlrpc.php">
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Feed" href="/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Comments Feed" href="/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Treemaps in Tableau? can be done. Comments Feed" href="/2012/04/19/treemaps-in-tableau-can-be-done/feed/" />
+<!-- This site uses the Google Analytics by MonsterInsights plugin v7.0.5 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+<!-- Note: MonsterInsights is not currently configured on this site. The site owner needs to authenticate with Google Analytics in the MonsterInsights settings panel. -->
+<!-- No UA code set -->
+<!-- / Google Analytics by MonsterInsights -->
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/localhost:8888\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6.10"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='YoutubeShortcodeMargenn-css'  href='/wp-content/plugins/youtube-shortcode/youtube-shortcode.css?ver=4.6.10' type='text/css' media='all' />
+<link rel='stylesheet' id='casper-google-fonts-css'  href='//fonts.googleapis.com/css?family=Noto+Serif%3A400%2C700%2C400italic%7COpen+Sans%3A700%2C400&#038;ver=4.6.10' type='text/css' media='all' />
+<link rel='stylesheet' id='casper-style-css'  href='/wp-content/themes/casper/style.css?ver=4.6.10' type='text/css' media='all' />
+<script type='text/javascript' src='/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Hollywood + data II: the sequel' href='/2012/01/28/hollywood-data-ii-the-sequel/' />
+<link rel='next' title='Hollywood + data III: our info+beauty awards entry. Bonus: making of.' href='/2012/04/22/hollywood-data-iii-our-infobeauty-awards-entry-bonus-making-of/' />
+<meta name="generator" content="WordPress 4.6.10" />
+<link rel="canonical" href="/2012/04/19/treemaps-in-tableau-can-be-done/" />
+<link rel='shortlink' href='http://wp.me/p-jx' />
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2Flocalhost%3A8888%2F2012%2F04%2F19%2Ftreemaps-in-tableau-can-be-done%2F" />
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2Flocalhost%3A8888%2F2012%2F04%2F19%2Ftreemaps-in-tableau-can-be-done%2F&#038;format=xml" />
+
+   	<style type="text/css">
+					.blog-title a, .blog-description, .social-icons a { color: #ffffff; }
+		
+						                
+		
+							.main-navigation a { color: ; }
+		                                            </style>
+    		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+
+<body class="single single-post postid-1211 single-format-standard group-blog">
+
+<header id="masthead" role="banner" class="site-head site-header" >
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+        <div>
+            <h1 class="menu-toggle">
+                <a class="icon-bars" href="#">
+                    <span class="hidden">Menu</span>
+                </a>
+            </h1>
+            <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+            <div class="menu"><ul><li ><a href="/">Home</a></li><li class="page_item page-item-6"><a href="/about/">About</a></li><li class="page_item page-item-1073"><a href="/data-stories/">Data with stories workshop &#8211; examples</a></li><li class="page_item page-item-437"><a href="/proofs-of-concept/">Private section</a></li><li class="page_item page-item-2"><a href="/sample-page/">Sample Page</a></li></ul></div>
+        </div>
+    </nav><!-- #site-navigation -->
+
+    <div class="vertical-row">
+        <div class="vertical">
+            <div class="site-head-content inner">
+                
+                <div class="social-icons">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                    </div>
+                <h1 class="blog-title"><a class="blog-logo" href='/' rel='home'>jeromecukier.net</a></h1>
+                <h2 class="blog-description">Just another WordPress site</h2>
+            </div>
+        </div>
+    </div>
+</header><!-- #masthead -->
+
+<main id="content" class="content" role="main">
+
+
+		
+			<article id="post-1211" class="post-1211 post type-post status-publish format-standard hentry category-d3 category-tips tag-d3 tag-tableau tag-treemaps tag-tutorial">
+    <header class="post-header">
+                	<span class="post-meta">
+        	    <span class="posted-on"><a href="/2012/04/19/treemaps-in-tableau-can-be-done/" rel="bookmark"><time class="entry-date published" datetime="2012-04-19T13:16:13+00:00">April 19, 2012</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> | <a href="/category/d3/" rel="category tag">d3</a>, <a href="/category/tips/" rel="category tag">tips</a> in <a href="/tag/d3/" rel="tag">d3</a>, <a href="/tag/tableau/" rel="tag">Tableau</a>, <a href="/tag/treemaps/" rel="tag">treemaps</a>, <a href="/tag/tutorial/" rel="tag">tutorial</a>        	</span>
+		        <h1 class="post-title"><a href="/2012/04/19/treemaps-in-tableau-can-be-done/" rel="bookmark">Treemaps in Tableau? can be done.</a></h1>
+        
+    </header>
+    		<section class="post-content">
+		    Tableau can do many things natively but there are a couple of basic primitives that are not built in because they behave somewhat differently from the overall logic. And <a href="http://www.tableausoftware.com/about/blog/2011/05/alternative-tree-maps-0">treemaps is one of them</a>. Then again treemaps are arguably one of the best way to express complex hierarchical information, i.e. to show the proportions in a large dataset.</p>
+
+Fortunately, thanks to Tableau flexibility there are ways to do that. In the tutorial I'm going to cover 2 cases. First, we'll create a somewhat complex treemap off data which will not change in runtime. Then, we'll create mini-treemaps which can change dynamically.</p>
+<h2>A complex treemap</h2>
+<script type="text/javascript" src="http://public.tableausoftware.com/javascripts/api/viz_v1.js"></script>
+<noscript><a href="#"><img alt="ComplexTM " src="http:&#47;&#47;public.tableausoftware.com&#47;static&#47;images&#47;tr&#47;treemaps&#47;ComplexTM&#47;1_rss.png" style="border: none" /></a></noscript><object class="tableauViz" width="604" height="369" style="display:none;"><param name="host_url" value="http%3A%2F%2Fpublic.tableausoftware.com%2F" /><param name="site_root" value="" /><param name="name" value="treemaps&#47;ComplexTM" /><param name="tabs" value="no" /><param name="toolbar" value="yes" /><param name="static_image" value="http:&#47;&#47;public.tableausoftware.com&#47;static&#47;images&#47;tr&#47;treemaps&#47;ComplexTM&#47;1.png" /><param name="animate_transition" value="yes" /><param name="display_static_image" value="yes" /><param name="display_spinner" value="yes" /><param name="display_overlay" value="yes" /><param name="display_count" value="yes" /></object>
+<div style="width:604px;height:22px;padding:0px 10px 0px 0px;color:black;font:normal 8pt verdana,helvetica,arial,sans-serif;"><div style="float:right; padding-right:8px;"><a href="http://www.tableausoftware.com/public?ref=http://public.tableausoftware.com/views/treemaps/ComplexTM" target="_blank">Powered by Tableau</a></div></div>
+Before we go in the details the main ideas are deceptively simple.</p>
+<ul>
+	<li>we use the polygon mark,</li>
+	<li>we generate the treemap layout outside of tableau.</li>
+</ul>
+What we want (and what we'll get) is a dataset that can be directly imported in Tableau and -boom- makes a treemap in a few clicks.</p>
+
+To make this dataset we can use d3. The treemap I am making is directly inspired from the <a href="/2012/04/19/treemaps-in-tableau-can-be-done/mbostock.github.com/d3/ex/treemap.html">d3 treemap example</a>. d3 is already computing all of the node positions so what we'll do is modify the program slightly so that it outputs them in a way that can be directly used in Tableau.</p>
+
+Here is the <a href="http://www.jeromecukier.net/wp-content/uploads/2012/04/treemap.html">modified file</a> which you can download and run on your computer. To work it needs to be in the same folder as a <a href="http://www.jeromecukier.net/wp-content/uploads/2012/04/data.js">data file</a> called data.js which will hold your hiearchical data and which has the same structure as the one linked here.</p>
+
+You can just copy/paste the table that's displayed below the treemap and put it in Tableau or save it in a file for good measure. Here is <a href="http://www.jeromecukier.net/wp-content/uploads/2012/04/data.csv">the output</a> of the data file linked above.</p>
+
+Let's take a look at a few rows :</p>
+<table>
+<tbody>
+<tr>
+<td>Id</td>
+<td>Path</td>
+<td>Top-level category</td>
+<td>Name</td>
+<td>Value</td>
+<td>Corner</td>
+<td>x</td>
+<td>y</td>
+</tr>
+<tr>
+<td>0</td>
+<td>flare&gt;analytics&gt;cluster</td>
+<td>flare</td>
+<td>AgglomerativeCluster</td>
+<td>3938</td>
+<td>0</td>
+<td>89</td>
+<td>167</td>
+</tr>
+<tr>
+<td>0</td>
+<td>flare&gt;analytics&gt;cluster</td>
+<td>flare</td>
+<td>AgglomerativeCluster</td>
+<td>3938</td>
+<td>1</td>
+<td>167</td>
+<td>167</td>
+</tr>
+<tr>
+<td>0</td>
+<td>flare&gt;analytics&gt;cluster</td>
+<td>flare</td>
+<td>AgglomerativeCluster</td>
+<td>3938</td>
+<td>2</td>
+<td>167</td>
+<td>192</td>
+</tr>
+<tr>
+<td>0</td>
+<td>flare&gt;analytics&gt;cluster</td>
+<td>flare</td>
+<td>AgglomerativeCluster</td>
+<td>3938</td>
+<td>3</td>
+<td>89</td>
+<td>192</td>
+</tr>
+<tr>
+<td>1</td>
+<td>flare&gt;analytics&gt;cluster</td>
+<td>flare</td>
+<td>CommunityStructure</td>
+<td>3812</td>
+<td>0</td>
+<td>102</td>
+<td>138</td>
+</tr>
+<tr>
+<td>1</td>
+<td>flare&gt;analytics&gt;cluster</td>
+<td>flare</td>
+<td>CommunityStructure</td>
+<td>3812</td>
+<td>1</td>
+<td>167</td>
+<td>138</td>
+</tr>
+<tr>
+<td>1</td>
+<td>flare&gt;analytics&gt;cluster</td>
+<td>flare</td>
+<td>CommunityStructure</td>
+<td>3812</td>
+<td>2</td>
+<td>167</td>
+<td>167</td>
+</tr>
+<tr>
+<td>1</td>
+<td>flare&gt;analytics&gt;cluster</td>
+<td>flare</td>
+<td>CommunityStructure</td>
+<td>3812</td>
+<td>3</td>
+<td>102</td>
+<td>167</td>
+</tr>
+<tr>
+<td>2</td>
+<td>flare&gt;analytics&gt;cluster</td>
+<td>flare</td>
+<td>HierarchicalCluster</td>
+<td>6714</td>
+<td>0</td>
+<td>89</td>
+<td>192</td>
+</tr>
+<tr>
+<td>2</td>
+<td>flare&gt;analytics&gt;cluster</td>
+<td>flare</td>
+<td>HierarchicalCluster</td>
+<td>6714</td>
+<td>1</td>
+<td>167</td>
+<td>192</td>
+</tr>
+<tr>
+<td>2</td>
+<td>flare&gt;analytics&gt;cluster</td>
+<td>flare</td>
+<td>HierarchicalCluster</td>
+<td>6714</td>
+<td>2</td>
+<td>167</td>
+<td>236</td>
+</tr>
+<tr>
+<td>2</td>
+<td>flare&gt;analytics&gt;cluster</td>
+<td>flare</td>
+<td>HierarchicalCluster</td>
+<td>6714</td>
+<td>3</td>
+<td>89</td>
+<td>236</td>
+</tr>
+</tbody>
+</table>
+I'm creating 4 lines per "leaf" node. So in this example which has 220 nodes, that amounts to 880 lines. Why 4? Because to draw a rectangle in Tableau you really need to define 4 corners. This is why there is a column "Corner" which is worth 0,1,2 and 3. This, we will use to tell Tableau to read our corners in bottom left, bottom right, top right, top left order which produces a nice convex rectangle and not a concave hourglass shape.</p>
+
+Now off to Tableau with this data. <a href="http://www.jeromecukier.net/wp-content/uploads/2012/04/complex.png"><img class="aligncenter size-full wp-image-1212" title="complex" src="http://www.jeromecukier.net/wp-content/uploads/2012/04/complex.png" alt="" width="558" height="477" /></a></p>
+
+Now it's just a matter of doing like this screen. Unsurprisingly the columns and rows are going to be determined by x and y. You want a polygon mark, and you absolutely must use your corner measure in the path. For color, you'll have a choice, you can use the top-level category column (as I have) or the full path which will divide your treemap in finer parts. Finally, level of detail: you must use the Id and not the name in case several of your nodes have the same name. It's quite important at this point to uncheck aggregate measures in Analysis. You do NOT want aggregate measures (though it's quite pretty). To be able to use the name, you must first make a measure out of it. And finally, you'll want to update your infotip slightly.</p>
+
+All of this you can see if you download the tableau file.</p>
+
+And voilà! Treemaps for your Tableau workbooks.</p>
+
+<em>Caveat:</em> the polygon mark doesn't support labels so you can't write on top of the small rectangles what they are but that's not the point of the treemap, which is instead to give an immediate first impression of the relative size of large groups of your data, then allow you to explore them, to that end the infotip function works just fine.</p>
+<h2>Simpler but dynamic treemaps</h2>
+This is fine and dandy if your data doesn't change but it won't scale if you need to make many treemaps based on selections. What to do? You could use pie charts, but let's not.</p>
+
+To that end I've tried to emulate the <a href="http://www.congressspeaks.com/">Congress speaks</a> visualization by <a href="http://periscopic.com/">Periscopic</a>. I really like it. When you've selected representatives at the end of the process you are taken to a screen which shows the following mini-treemap:</p>
+
+<a href="http://www.jeromecukier.net/wp-content/uploads/2012/04/votingrecord.png"><img class="aligncenter size-full wp-image-1213" title="votingrecord" src="http://www.jeromecukier.net/wp-content/uploads/2012/04/votingrecord.png" alt="" width="246" height="166" /></a></p>
+
+There are just 5 rectangles. But they will change for any representative that we choose. Can this be done with Tableau? Obviously.</p>
+
+Now the Tableau part of this is slightly trickier than above. The idea is that we are going to use formulas to generate the coordinates of all 20 corners of the rectangles, in other words we are going to let Tableau calculate the layout. We can do it because the way that rectangles are going to be arranged is quite predictible. There is one on the left, then 4 stacked on the right one on top of the other. Again, we could compute all of these coordinates outside of Tableau but that would be a hassle and so for a large number of cases it becomes easier and more reliable to do this inside of Tableau.</p>
+<h3>Data</h3>
+For this I have used completely random data. I have <a href="http://www.kleimo.com/random/name.cfm">generated 20 names</a>, and for each I have generated 5 values in a likely range, number of possible votes, number of votes the representative actually voted, number of times they voted yes, number of times they voted yes with their party, and the same for no. (or nay, technically).</p>
+
+At the end of the day I need 20 records per representative (5 rectangles of 4 corners each), so I can either replicate the line 20 times, or use linked tables. The idea is to get something like this for all of the representatives that can somehow get into Tableau.</p>
+<table width="640" border="0" cellspacing="0" cellpadding="0"><colgroup> <col span="10" width="64" /> </colgroup>
+<tbody>
+<tr>
+<td width="64" height="17">Id</td>
+<td width="64">representative</td>
+<td width="64">corner</td>
+<td width="64">rectangle</td>
+<td width="64">possible votes</td>
+<td width="64">total votes</td>
+<td width="64">voted yes</td>
+<td width="64">yes with party</td>
+<td width="64">voted no</td>
+<td width="64">no with party</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">0</td>
+<td>no against party</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">1</td>
+<td>no against party</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">2</td>
+<td>no against party</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">3</td>
+<td>no against party</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">0</td>
+<td>no vote</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">1</td>
+<td>no vote</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">2</td>
+<td>no vote</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">3</td>
+<td>no vote</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">0</td>
+<td>no with party</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">1</td>
+<td>no with party</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">2</td>
+<td>no with party</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">3</td>
+<td>no with party</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">0</td>
+<td>yes against party</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">1</td>
+<td>yes against party</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">2</td>
+<td>yes against party</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">3</td>
+<td>yes against party</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">0</td>
+<td>yes with party</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">1</td>
+<td>yes with party</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">2</td>
+<td>yes with party</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+<tr>
+<td align="right" height="17">16</td>
+<td>Nelson Thiede</td>
+<td align="right">3</td>
+<td>yes with party</td>
+<td align="right">888</td>
+<td align="right">784</td>
+<td align="right">320</td>
+<td align="right">274</td>
+<td align="right">464</td>
+<td align="right">373</td>
+</tr>
+</tbody>
+</table>
+<h3>In Tableau</h3>
+In Tableau we are going to use the same idea as above: polygon mark, disable aggregate measures, and use x and y for columns and rows.</p>
+
+Only, x and y are going to be much more complex. Sorry about that. Well, not that complex but definitely longer.</p>
+
+Here's x:</p>
+
+<pre class="brush: plain; title: ; notranslate" title="">
+
+case [rectangle]
+when &quot;no vote&quot; then
+     case [corner]
+       when 0 then 0
+       when 1 then (([possible votes]-[total votes])/[possible votes])
+       when 2 then (([possible votes]-[total votes])/[possible votes])
+       when 3 then 0
+     end
+else
+     case [corner]
+       when 0 then (([possible votes]-[total votes])/[possible votes])
+       when 1 then 1
+       when 2 then 1
+       when 3 then (([possible votes]-[total votes])/[possible votes])
+   end
+end
+
+</pre>
+
+Depending on the rectangle we are trying to draw we can find ourselves in one of two cases (hence the use of case).</p>
+
+If we draw "no vote" then we are on the left of our vis. The left corners are on the leftmost side of the vis (hence value: 0) and the right corners correspond to the proportion of possible votes which where not cast by this representative, which we can compute as ([possible votes]-[total votes])/[possible votes].</p>
+
+In the other case, we are drawing one of the 4 stacked rectangles, so the right corners are on the rightmost side of the vis (hence value: 1) and the left corners correspond to the value we just computed.</p>
+
+And now, y:</p>
+
+<pre class="brush: plain; title: ; notranslate" title="">
+case [rectangle]
+when &quot;no vote&quot; then
+case [corner]
+when 0 then 0
+when 1 then 0
+when 2 then 1
+when 3 then 1
+end
+when &quot;yes against party&quot; then
+case [corner]
+when 0 then 0
+when 1 then 0
+when 2 then (([voted yes]-[yes with party])/[total votes])
+when 3 then (([voted yes]-[yes with party])/[total votes])
+end
+when &quot;yes with party&quot; then
+case [corner]
+when 0 then (([voted yes]-[yes with party])/[total votes])
+when 1 then (([voted yes]-[yes with party])/[total votes])
+when 2 then ((2*[voted yes]-[yes with party])/[total votes])
+when 3 then ((2*[voted yes]-[yes with party])/[total votes])
+end
+when &quot;no with party&quot; then
+case [corner]
+when 0 then ((2*[voted yes]-[yes with party])/[total votes])
+when 1 then ((2*[voted yes]-[yes with party])/[total votes])
+when 2 then ((2*[voted yes]+[no with party]-[yes with party])/[total votes])
+when 3 then ((2*[voted yes]+[no with party]-[yes with party])/[total votes])
+end
+when &quot;no against party&quot; then
+case [corner]
+when 0 then ((2*[voted yes]+[no with party]-[yes with party])/[total votes])
+when 1 then ((2*[voted yes]+[no with party]-[yes with party])/[total votes])
+when 2 then 1
+when 3 then 1
+end
+end
+</pre>
+
+y is longer but this is the same general idea. For the "no vote" rectangle, the corners are either to the top or bottom of the vis. But for the other, we can predict where the rectangle will start and when it will end, as a proportion of the [possible votes] field. The values we want are going to be correspond to these proportions, plus that of all the rectangles below so we can achieve that stacked effect (as opposed to have all rectangles superimposed at the bottom of the vis). This is why I am entering the rectangles in stacking order. Each time, the bottom corners get the value of the top corners of the previous rectangle.</p>
+
+Here is the final result:</p>
+
+&nbsp;
+<script type="text/javascript" src="http://public.tableausoftware.com/javascripts/api/viz_v1.js"></script>
+<noscript><a href="#"><img alt="mini TM " src="http:&#47;&#47;public.tableausoftware.com&#47;static&#47;images&#47;B5&#47;B5PW2XJWX&#47;1_rss.png" style="border: none" /></a></noscript>
+<object class="tableauViz" width="404" height="269" style="display:none;">
+<param name="host_url" value="http%3A%2F%2Fpublic.tableausoftware.com%2F" />
+<param name="path" value="shared&#47;B5PW2XJWX" />
+<param name="toolbar" value="yes" />
+<param name="static_image" value="http:&#47;&#47;public.tableausoftware.com&#47;static&#47;images&#47;B5&#47;B5PW2XJWX&#47;1.png" />
+<param name="animate_transition" value="yes" />
+<param name="display_static_image" value="yes" />
+<param name="display_spinner" value="yes" />
+<param name="display_overlay" value="yes" />
+<param name="display_count" value="yes" />
+</object>
+<div style="width:404px;height:22px;padding:0px 10px 0px 0px;color:black;font:normal 8pt verdana,helvetica,arial,sans-serif;"><div style="float:right; padding-right:8px;"><a href="http://www.tableausoftware.com/public?ref=http://public.tableausoftware.com/shared/B5PW2XJWX" target="_blank">Powered by Tableau</a></div></div>		    			<div class="clear">&nbsp;</div>
+		</section>
+	
+	<footer class="post-footer">
+
+	    <section class="author">
+	    	<img alt='' src='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=100&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=200&amp;d=mm&amp;r=g 2x' class='avatar avatar-100 photo' height='100' width='100' />	        <h4>jerome</h4>
+	        <p></p>
+			<div class="clear">&nbsp;</div>
+	    </section>
+	</footer>
+</article><!-- #post-## -->
+
+				<nav class="pagination navigation post-navigation" role="navigation">
+		<div class="nav-links">
+			<div class="older-posts"><a href="/2012/01/28/hollywood-data-ii-the-sequel/" rel="prev">Hollywood + data II: the sequel <span class="meta-nav">&rarr;</span></a></div>				<div class="page-number">&bull;</div>
+				<div class="newer-posts"><a href="/2012/04/22/hollywood-data-iii-our-infobeauty-awards-entry-bonus-making-of/" rel="next"><span class="meta-nav">&larr;</span> Hollywood + data III: our info+beauty awards entry. Bonus: making of.</a></div>		</div><!-- .nav-links -->
+	</nav><!-- .navigation -->
+	
+			
+<div id="comments" class="comments-area">
+
+	
+			<h2 class="comments-title">
+			3 thoughts on &ldquo;<span>Treemaps in Tableau? can be done.</span>&rdquo;		</h2>
+
+		
+		<ol class="comment-list">
+					<li id="comment-265" class="comment even thread-even depth-1">
+			<article id="div-comment-265" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://1.gravatar.com/avatar/49e3f417e04fcede8296d727c741597f?s=32&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/49e3f417e04fcede8296d727c741597f?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://ryrobes.com/' rel='external nofollow' class='url'>Ryan Robitaille</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2012/04/19/treemaps-in-tableau-can-be-done/#comment-265">
+							<time datetime="2012-04-19T17:15:09+00:00">
+								April 19, 2012 at 5:15 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Very nice work, Jerome. I love it. I&#8217;m going to have to try this out myself. Cheers!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2012/04/19/treemaps-in-tableau-can-be-done/?replytocom=265#respond' onclick='return addComment.moveForm( "div-comment-265", "265", "respond", "1211" )' aria-label='Reply to Ryan Robitaille'>Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-266" class="comment odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-266" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://2.gravatar.com/avatar/8a5ef16a36c794232b7031faec4f1730?s=32&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/8a5ef16a36c794232b7031faec4f1730?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">Courtney Smith</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2012/04/19/treemaps-in-tableau-can-be-done/#comment-266">
+							<time datetime="2012-05-16T07:08:48+00:00">
+								May 16, 2012 at 7:08 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>I have been trying to figure this out. I would like to see if this can be applied to a more complex set of shapes. Thank you!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2012/04/19/treemaps-in-tableau-can-be-done/?replytocom=266#respond' onclick='return addComment.moveForm( "div-comment-266", "266", "respond", "1211" )' aria-label='Reply to Courtney Smith'>Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-267" class="comment even thread-even depth-1">
+			<article id="div-comment-267" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://0.gravatar.com/avatar/014a5cf5146e5b9dd30f35d6c47b0838?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/014a5cf5146e5b9dd30f35d6c47b0838?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">victor blær</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/2012/04/19/treemaps-in-tableau-can-be-done/#comment-267">
+							<time datetime="2012-06-06T13:38:55+00:00">
+								June 6, 2012 at 1:38 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>dude, that´s just ridiculous&#8230; d3 and tableau&#8230;stay frosty!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/2012/04/19/treemaps-in-tableau-can-be-done/?replytocom=267#respond' onclick='return addComment.moveForm( "div-comment-267", "267", "respond", "1211" )' aria-label='Reply to victor blær'>Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		</ol><!-- .comment-list -->
+
+		
+	
+	
+					<div id="respond" class="comment-respond">
+			<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/2012/04/19/treemaps-in-tableau-can-be-done/#respond" style="display:none;">Cancel reply</a></small></h3>				<form action="/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+					<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" aria-required='true' required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" aria-required='true' required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='1211' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="22ad915e61" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="59"/></p>				</form>
+					</div><!-- #respond -->
+		
+</div><!-- #comments -->
+
+		
+
+	<div id="secondary" class="widget-area" role="complementary">
+		<aside id="search-2" class="widget widget_search"><form role="search" method="get" class="search-form" action="/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit" value="Search" />
+			</form></aside>		<aside id="recent-posts-2" class="widget widget_recent_entries">		<h1 class="widget-title">Recent Posts</h1>		<ul>
+					<li>
+				<a href="/2018/04/09/hello-world/">Hello world!</a>
+						</li>
+					<li>
+				<a href="/2016/08/17/the-big-leagues/">The big leagues</a>
+						</li>
+					<li>
+				<a href="/2016/08/17/creating-a-react-visualization-web-app/">Creating a React visualization web app</a>
+						</li>
+					<li>
+				<a href="/2016/08/13/beyond-rendering/">Beyond rendering</a>
+						</li>
+					<li>
+				<a href="/2016/08/11/react-components/">React components</a>
+						</li>
+				</ul>
+		</aside>		<aside id="recent-comments-2" class="widget widget_recent_comments"><h1 class="widget-title">Recent Comments</h1><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link"><a href='https://wordpress.org/' rel='external nofollow' class='url'>A WordPress Commenter</a></span> on <a href="/2018/04/09/hello-world/#comment-1">Hello world!</a></li><li class="recentcomments"><span class="comment-author-link"><a href='http://omeraz.wordpress.com/' rel='external nofollow' class='url'>עומר עזריאל</a></span> on <a href="/2016/08/17/the-big-leagues/#comment-567">The big leagues</a></li><li class="recentcomments"><span class="comment-author-link">Carlos Ayres</span> on <a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-312">Manipulating data like a boss with d3</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://migrate.powertripanalytics.com/game-of-thrones-interactions-among-the-top-30-characters/' rel='external nofollow' class='url'>Game of ThronesInteractions Among the Top 30 Characters &#8211; PowerTrip Analytics</a></span> on <a href="/2013/05/13/making-the-game-of-thrones-visualization/#comment-466">Making the game of thrones visualization</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://abgoswam.wordpress.com/2016/10/08/d3-getting-started/' rel='external nofollow' class='url'>D3 &#8211; Getting Started | abgoswam&#039;s tech blog</a></span> on <a href="/2012/09/04/getting-to-hello-world-with-d3/#comment-419">Getting to &#8220;Hello world&#8221; with d3</a></li></ul></aside><aside id="archives-2" class="widget widget_archive"><h1 class="widget-title">Archives</h1>		<ul>
+			<li><a href='/2018/04/'>April 2018</a></li>
+	<li><a href='/2016/08/'>August 2016</a></li>
+	<li><a href='/2015/05/'>May 2015</a></li>
+	<li><a href='/2015/02/'>February 2015</a></li>
+	<li><a href='/2014/10/'>October 2014</a></li>
+	<li><a href='/2013/11/'>November 2013</a></li>
+	<li><a href='/2013/05/'>May 2013</a></li>
+	<li><a href='/2013/03/'>March 2013</a></li>
+	<li><a href='/2013/01/'>January 2013</a></li>
+	<li><a href='/2012/12/'>December 2012</a></li>
+	<li><a href='/2012/11/'>November 2012</a></li>
+	<li><a href='/2012/10/'>October 2012</a></li>
+	<li><a href='/2012/09/'>September 2012</a></li>
+	<li><a href='/2012/07/'>July 2012</a></li>
+	<li><a href='/2012/06/'>June 2012</a></li>
+	<li><a href='/2012/05/'>May 2012</a></li>
+	<li><a href='/2012/04/'>April 2012</a></li>
+	<li><a href='/2012/01/'>January 2012</a></li>
+	<li><a href='/2011/11/'>November 2011</a></li>
+	<li><a href='/2011/10/'>October 2011</a></li>
+	<li><a href='/2011/09/'>September 2011</a></li>
+	<li><a href='/2011/08/'>August 2011</a></li>
+	<li><a href='/2011/07/'>July 2011</a></li>
+	<li><a href='/2011/06/'>June 2011</a></li>
+	<li><a href='/2011/05/'>May 2011</a></li>
+	<li><a href='/2011/04/'>April 2011</a></li>
+	<li><a href='/2011/03/'>March 2011</a></li>
+	<li><a href='/2011/02/'>February 2011</a></li>
+	<li><a href='/2011/01/'>January 2011</a></li>
+	<li><a href='/2010/11/'>November 2010</a></li>
+	<li><a href='/2010/04/'>April 2010</a></li>
+	<li><a href='/2010/03/'>March 2010</a></li>
+	<li><a href='/2010/02/'>February 2010</a></li>
+	<li><a href='/2010/01/'>January 2010</a></li>
+	<li><a href='/2009/12/'>December 2009</a></li>
+	<li><a href='/2009/10/'>October 2009</a></li>
+	<li><a href='/2009/09/'>September 2009</a></li>
+	<li><a href='/2009/08/'>August 2009</a></li>
+	<li><a href='/2009/07/'>July 2009</a></li>
+	<li><a href='/2009/06/'>June 2009</a></li>
+	<li><a href='/2009/05/'>May 2009</a></li>
+	<li><a href='/2008/12/'>December 2008</a></li>
+	<li><a href='/2008/11/'>November 2008</a></li>
+	<li><a href='/2008/10/'>October 2008</a></li>
+		</ul>
+		</aside><aside id="categories-2" class="widget widget_categories"><h1 class="widget-title">Categories</h1>		<ul>
+	<li class="cat-item cat-item-2"><a href="/category/book-review/" >book review</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="/category/charts/" >charts</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="/category/conferences/" >conferences</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="/category/d3/" >d3</a>
+</li>
+	<li class="cat-item cat-item-6"><a href="/category/dashboards/" >dashboards</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="/category/data-publishing/" >data publishing</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="/category/data-visualization/" >data visualization</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="/category/francais/" >français</a>
+</li>
+	<li class="cat-item cat-item-10"><a href="/category/javascript/" >javascript</a>
+</li>
+	<li class="cat-item cat-item-11"><a href="/category/presentation/" >presentation</a>
+</li>
+	<li class="cat-item cat-item-12"><a href="/category/protovis/" >protovis</a>
+</li>
+	<li class="cat-item cat-item-13"><a href="/category/react/" >react</a>
+</li>
+	<li class="cat-item cat-item-14"><a href="/category/tips/" >tips</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="/category/uncategorized/" >Uncategorized</a>
+</li>
+	<li class="cat-item cat-item-15"><a href="/category/web-sites/" >web sites</a>
+</li>
+		</ul>
+</aside><aside id="meta-2" class="widget widget_meta"><h1 class="widget-title">Meta</h1>			<ul>
+						<li><a href="/wp-login.php">Log in</a></li>
+			<li><a href="/feed/">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="/comments/feed/">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>			</ul>
+			</aside>		<div class="clear">&nbsp;</div>
+	</div><!-- #secondary -->
+	<footer id="colophon" class="site-footer" role="contentinfo">
+	    <a class="subscribe icon-feed" href="/feed/"><span class="tooltip">Subscribe!</span></a>
+		<div class="site-info inner">
+		    <section class="copyright">
+		    			    		<a href="https://github.com/lacymorrow/casper" rel="home">Casper WP</a> by Lacy Morrow		    			    </section>
+		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+</main><!-- /#content -->
+
+<script type='text/javascript' src='/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js?ver=3.0.9b'></script>
+<script type='text/javascript' src='/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPlain.js?ver=3.0.9b'></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "http://localhost:8888/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "http://localhost:8888/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+<script type='text/javascript' src='/wp-content/themes/casper/js/main.js?ver=1.0.0'></script>
+<script type='text/javascript' src='/wp-includes/js/comment-reply.min.js?ver=4.6.10'></script>
+<script type='text/javascript' src='/wp-includes/js/wp-embed.min.js?ver=4.6.10'></script>
+<script async="async" type='text/javascript' src='/wp-content/plugins/akismet/_inc/form.js?ver=4.0.3'></script>
+<!--stats_footer_test--></body>
+</html>

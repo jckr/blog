@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>critique &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/critique/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>Promising difficulties</title>
+		<link>/2011/11/13/promising-difficulties/</link>
+		<comments>/2011/11/13/promising-difficulties/#comments</comments>
+		<pubDate>Sun, 13 Nov 2011 20:18:28 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[cognitive cost]]></category>
+		<category><![CDATA[critique]]></category>
+		<category><![CDATA[desirable difficulty]]></category>
+		<category><![CDATA[infovis]]></category>
+		<category><![CDATA[storytelling]]></category>
+		<category><![CDATA[theory]]></category>
+		<category><![CDATA[visweek]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1111</guid>
+		<description><![CDATA[At the recent VisWeek conference, Jessica Hullman and her coauthors presented &#8220;Benefitting Infovis with Visual Difficulties (pdf)&#8221;, a paper that suggests that the charts which are read almost effortlessly are not necessarily the ones that readers understand or remember best. To answer that claim, Stephen Few wrote a rather harsh critique of this paper (pdf). As I read this <a class="read-more" href="/2011/11/13/promising-difficulties/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>At the recent VisWeek conference, Jessica Hullman and her coauthors presented &#8220;<a href="http://www.cond.org/difficulties.pdf">Benefitting Infovis with Visual Difficulties</a> (pdf)&#8221;, a paper that suggests that the charts which are read almost effortlessly are not necessarily the ones that readers understand or remember best. To answer that claim, Stephen Few wrote <a href="http://www.perceptualedge.com/articles/visual_business_intelligence/visual_difficulties.pdf">a rather harsh critique of this paper</a> (pdf). As I read this I felt the original paper was not always fairly represented, but more importantly, that the views develop by both parties are not at all inreconcilable. Let me explain.</p>
+<h2>What is cognitive efficiency, or &#8220;say it with bar charts&#8221;</h2>
+<p>For quite some time, we were told that to better communicate with data, we had to make visuals as clear as possible.</p>
+<p>The more complicated way of saying that is talking of &#8220;cognitive efficiency&#8221;. By reducing the number of tasks needed to understand a chart and simplifying them, which is sometimes called reducing the &#8220;cognitive cost&#8221; or &#8220;cognitive load&#8221;, we improve all virtues of the chart.</p>
+<p><div id="attachment_1115" style="width: 683px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2011/11/frompietobar.png"><img class="size-full wp-image-1115" title="frompietobar" src="http://www.jeromecukier.net/wp-content/uploads/2011/11/frompietobar.png" alt="Various charts based on the same data points, shown in order of cognitive cost" width="673" height="142" /></a><p class="wp-caption-text">Various charts based on the same data points. From left to right, they make the task of comparing individuals value increasingly easier</p></div></p>
+<p>For instance: bar charts are easier to process than pie charts, because it&#8217;s easier for the human eye to compare lengths than angles. So, with equivalent data, bar charts have a lower cognitive cost than pie charts. Likewise, bar charts which are ordered by value (smallest bars to largest bars) are easier to read than unordered ones. Ordered bar charts have an even lower cognitive cost than unordered ones.</p>
+<p>Conversely, adding non-data elements add extra tasks for the reader and increase cognitive cost. These non-data elements have been reviled by Edward Tufte as &#8220;chartjunk&#8221;. His data-ink theory says that out of all the ink used for the chart, as much as possible should be devoted to data elements. Again, this goes in the direction of data efficiency.</p>
+<h2>Engagement rather than immediacy?</h2>
+<p>Again for quite some times those rules were held to be universal. Yet, several tried to challenge them, the latest being Jessica Hullman in her paper &#8220;<a href="http://www.cond.org/difficulties.pdf">Benefitting Infovis with Visual Difficulties</a>&#8220;. This paper was so thought-provoking that it received an honorable mention at the recent IEEE Information Visualization Conference 2011 (as a note to the non-academic reader, this is quite a competitive achievement).</p>
+<p>New information visualisation techniques are often <strong>evaluated</strong>.  This paper argues that such evaluations typically consider response time or accuracy, and not how well users are able to interpret and remember visuals. When only the former criteria are taken into account then cognitive efficiency is the superior framework. But this is not the case of data storytelling (which is, arguably, a small subset of  all data visualizations).</p>
+<p>When visualizations attempt to transmit a message, then how well users can receive this message, as well their capacity to remember this for a long time are of utmost importance, much more than the ease with which a visualization is read.</p>
+<p>In that case, Jessica Hullman proposes a trade-off between cognitive efficiency and &#8220;obstructions&#8221;. The idea is that such obstructions, or <strong>visual difficulties, can trigger active learning processes</strong>. In other words, if when trying to read a chart, a user doesn&#8217;t understand it effortlessly, but is somehow willing to get to the bottom of it, she will apply all her active brainpower to it. This effort surge will lead her to not only better interpret it but also to better remember it. To sum up, these obstructions can have positive effects, this is why when this effect works, they are called <em>desirable difficulties</em>.</p>
+<p>Desirable difficulties are tricky, because if the &#8220;obstruction&#8221; is too large, if a small additional effort is not enough to understand the chart, then it will not work. So, this is definitely not about maximizing the difficulty to understand the visualizations.</p>
+<p>In the recommendations parts of the paper the authors say:</p>
+<blockquote><p>Instead of minimizing the steps required to process visualization, induce <strong>constructive</strong>, self-directed, cognitive activity on the part of the user.</p></blockquote>
+<p>This doesn&#8217;t mean that anything goes. This paper does not argue to add as many difficulties as possible, to use every gratuitous effect in the book. Instead, the paper goes on to give actionable design suggestions to enhance reader stimulation and active information processing.</p>
+<p><a href="http://www.jeromecukier.net/wp-content/uploads/2011/05/bli.png"><img class="aligncenter size-full wp-image-880" title="bli" src="http://www.jeromecukier.net/wp-content/uploads/2011/05/bli.png" alt="" /></a></p>
+<p><a href="http://www.jeromecukier.net/blog/2011/05/25/better-life-index-a-post-mortem/">In my practice,</a> for instance with the <a href="http://oe.cd/bli">Better Life Index</a>, I verify the analyses of the Hullman paper: the novelty of the form and the aesthetic appeal of the representation drive the users to overcome the difficulty posed by the unusual shape of the flower/glyph. Would bar charts have conveyed the data more efficiently and more accurately? Definitely! would the user engagement have been comparable? Definitely not.</p>
+<h1>A critique by Stephen Few</h1>
+<p>Stephen Few, whose work I have praised at multiple occasions in this blog, has published a <a href="http://www.perceptualedge.com/articles/visual_business_intelligence/visual_difficulties.pdf">critique of this paper</a> (pdf). Reading his article, then the paper again, I had the feeling that they didn&#8217;t talk about the same things. In certain contexts, difficulties are not desirable at all and must be eradicated. Yet, in other contexts, cognitive efficiency does not provide the  optimal solution.</p>
+<p>For instance, Stephen writes:</p>
+<blockquote><p>Long-term recall is rarely the purpose of information visualization.</p></blockquote>
+<p>Fair enough! so let&#8217;s agree that when it is not the case, we should not trouble ourselves with seeking to add obstructions to the display. For instance: business intelligence systems, dashboards (for monitoring), visual analytics (and more on this shortly). Spreadsheets, mostly. All usages of data that support decision, and most usages in the corporate world. The Hullman paper only applies in the other cases anyway.</p>
+<p>He would also write (emphasis by me):</p>
+<blockquote><p><strong>Skilled data analysts</strong> learn to view data from many perspectives to prevent knee-jerk conclusions based on inappropriate heuristics.</p></blockquote>
+<p>Agreed! and by all means, let them analyse and let them view data from as many perspectives as they see fit, and don&#8217;t get in the way of their job.</p>
+<p><div id="attachment_1116" style="width: 815px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2011/11/palantir-fraud.png"><img class="size-full wp-image-1116" title="palantir-fraud" src="http://www.jeromecukier.net/wp-content/uploads/2011/11/palantir-fraud.png" alt="" width="805" height="605" /></a><p class="wp-caption-text">For context, check out www.palantirtech.com/government/analysis-blog/mortgage-fraud</p></div></p>
+<p>This here is taken from a demo from Palantir government. Here analysts are tracking mortgage fraud. Each yellow dot on the top display is a transaction where a house has been sold for over 200% of its purchase value, and the ones which are connected are about the same house. We can immediately see 2 suspicious clusters where a property has been resold 4 times in these conditions. And if at the end of their work day the analysts don&#8217;t remember the address of the fraudulent transaction, it&#8217;s no big deal as long as they have identified a wrong practice.</p>
+<p>Conversely, at the risk of repetition, the paper authors write of a trade-off between efficiency and obstructions &#8211; cognitive efficiency being generally positive. They say that obstructions become desirable difficulties only if they are <em>constructive, </em>that is if they are able to trigger active information processing. They are <strong>not </strong>championning 3D pie charts or atrocious dashboards as the one at the end of Stephen&#8217;s article.  Jessica signals that novelty enhance active information processing. I don&#8217;t know how to characterize speed dials in dashboards, for instance, but novel would not be the word I&#8217;d use, and again they wouldn&#8217;t be favoured by the authors of the paper. So, I think it&#8217;s a bit unfair to associate the paper with the terrible, terrible visuals presented in Stephen&#8217;s article, the ones in the original paper being a little bit more defendable.</p>
+<p><div id="attachment_1119" style="width: 610px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2011/11/mortgage-delinquency.png"><img class="size-full wp-image-1119" title="mortgage-delinquency" src="http://www.jeromecukier.net/wp-content/uploads/2011/11/mortgage-delinquency.png" alt="" width="600" height="283" /></a><p class="wp-caption-text">To see this chart in context see http://www.oecd.org/dataoecd/41/50/47984536.pdf</p></div></p>
+<p>Consider this other chart (and let&#8217;s assume for the sake of discussion that its cognitive cost is low, while it could be much lower by showing fewer time series for instance). This was published in an OECD publication almost 2 years before the 2008 crisis. I would say this chart is easy to read (we see mortgage delinquency rates dropping in most countries) but difficult to interpret and to recall. Like other charts of the document, this one is an oracle of financial apocalypse, as the proportion of delinquent mortgage in the US, the only one without a downward trend, will have the consequences that we know. So if a different way of showing the same data could have made that more obvious at the cost of legibility, I think it would have been worth a shot.</p>
+<h2>Are we on common ground yet?</h2>
+<p>If not, let&#8217;s assume now that there exists visualizations where long-term recall is, indeed, the main purpose. Examples would include use in journalism, politics, advocacy, marketing&#8230; Jessica has been involved in the series of workshop <a href="http://data-stories.com/">Telling stories with data</a> at VisWeek. This suggests an interesting distinction.</p>
+<ul>
+<li>visualizations which are tools with which a user accesses or manipulates data.</li>
+<li>visualizations where an author, with a specific intent, tries to frame data in a certain way to an audience. In that case, the author wants to make sure the audience receives the message as intended, and remembers it.</li>
+</ul>
+<div>See where I&#8217;m going?</div>
+<div>In the <strong>first</strong> case, we want <strong>cognitive efficiency</strong> all the way.</div>
+<div>In the <strong>second</strong>, we are mostly concerned with <strong>getting our message across</strong> and <strong>making it stick</strong>.</div>
+<div>So, <strong>there is no contradiction</strong> between having a set of rules for one category of visuals, and a different one for the other, especially since the criteria of success are so different. To illustrate this I note that both the article and the paper refer to Tableau, a &#8220;cognitive efficiency&#8221; company. Yet, it turns out that Tableau is also very interested in doing as well as possible in the story telling front, and that questions asked at the paper&#8217;s presentation by Tableau representatives show their interest in this research.</div>
+<h2>Where to from there?</h2>
+<div>We have proven methods to reduce the cognitive cost of a visual, and we can thank Stephen Few for making them more accessible. It&#8217;s much more difficult, though, to optimize the characteristics of a successful &#8220;data narrative&#8221;, that is interpretation and memorability. It&#8217;s an infographics jungle out there. Those of us who haven&#8217;t seen their share of undefendable visuals just haven&#8217;t searched enough, but absolutely anything goes.</div>
+<div>We still do not have an equivalent framework for visualizations that tell stories. InfoVis started to study them (such as in the remarkable <a href="http://vis.stanford.edu/papers/narrative">Narrative Visualization: Telling Stories With Data</a>) and characterize them, but we don&#8217;t have a systematic, reproducible way to make sure that data narrative will work well, just as we can do the perfect dashboard.  We do know that the best examples at large do not comply with the rules of cognitive efficiency though. Fortunately, practitioners have not waited for convincing resarch and are leading the way, even though many get lost in the process. This is why we need more research on that front! I for one is looking forward new developments in this area of InfoVis.</div>
+<pre></pre>
+]]></content:encoded>
+			<wfw:commentRss>/2011/11/13/promising-difficulties/feed/</wfw:commentRss>
+		<slash:comments>14</slash:comments>
+		</item>
+	</channel>
+</rss>

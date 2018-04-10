@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="HandheldFriendly" content="True" />
+<meta name="MobileOptimized" content="320" />
+
+<title>React components | jeromecukier.net</title>
+
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="/xmlrpc.php">
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Feed" href="/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Comments Feed" href="/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; React components Comments Feed" href="/2016/08/11/react-components/feed/" />
+<!-- This site uses the Google Analytics by MonsterInsights plugin v7.0.5 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+<!-- Note: MonsterInsights is not currently configured on this site. The site owner needs to authenticate with Google Analytics in the MonsterInsights settings panel. -->
+<!-- No UA code set -->
+<!-- / Google Analytics by MonsterInsights -->
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/localhost:8888\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6.10"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='YoutubeShortcodeMargenn-css'  href='/wp-content/plugins/youtube-shortcode/youtube-shortcode.css?ver=4.6.10' type='text/css' media='all' />
+<link rel='stylesheet' id='casper-google-fonts-css'  href='//fonts.googleapis.com/css?family=Noto+Serif%3A400%2C700%2C400italic%7COpen+Sans%3A700%2C400&#038;ver=4.6.10' type='text/css' media='all' />
+<link rel='stylesheet' id='casper-style-css'  href='/wp-content/themes/casper/style.css?ver=4.6.10' type='text/css' media='all' />
+<script type='text/javascript' src='/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Coding with React' href='/2016/08/10/coding-with-react/' />
+<link rel='next' title='Beyond rendering' href='/2016/08/13/beyond-rendering/' />
+<meta name="generator" content="WordPress 4.6.10" />
+<link rel="canonical" href="/2016/08/11/react-components/" />
+<link rel='shortlink' href='http://wp.me/p-sg' />
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2Flocalhost%3A8888%2F2016%2F08%2F11%2Freact-components%2F" />
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2Flocalhost%3A8888%2F2016%2F08%2F11%2Freact-components%2F&#038;format=xml" />
+
+   	<style type="text/css">
+					.blog-title a, .blog-description, .social-icons a { color: #ffffff; }
+		
+						                
+		
+							.main-navigation a { color: ; }
+		                                            </style>
+    		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+
+<body class="single single-post postid-1752 single-format-standard group-blog">
+
+<header id="masthead" role="banner" class="site-head site-header" >
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+        <div>
+            <h1 class="menu-toggle">
+                <a class="icon-bars" href="#">
+                    <span class="hidden">Menu</span>
+                </a>
+            </h1>
+            <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+            <div class="menu"><ul><li ><a href="/">Home</a></li><li class="page_item page-item-6"><a href="/about/">About</a></li><li class="page_item page-item-1073"><a href="/data-stories/">Data with stories workshop &#8211; examples</a></li><li class="page_item page-item-437"><a href="/proofs-of-concept/">Private section</a></li><li class="page_item page-item-2"><a href="/sample-page/">Sample Page</a></li></ul></div>
+        </div>
+    </nav><!-- #site-navigation -->
+
+    <div class="vertical-row">
+        <div class="vertical">
+            <div class="site-head-content inner">
+                
+                <div class="social-icons">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                    </div>
+                <h1 class="blog-title"><a class="blog-logo" href='/' rel='home'>jeromecukier.net</a></h1>
+                <h2 class="blog-description">Just another WordPress site</h2>
+            </div>
+        </div>
+    </div>
+</header><!-- #masthead -->
+
+<main id="content" class="content" role="main">
+
+
+		
+			<article id="post-1752" class="post-1752 post type-post status-publish format-standard hentry category-uncategorized">
+    <header class="post-header">
+                	<span class="post-meta">
+        	    <span class="posted-on"><a href="/2016/08/11/react-components/" rel="bookmark"><time class="entry-date published" datetime="2016-08-11T23:53:04+00:00">August 11, 2016</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> | <a href="/category/uncategorized/" rel="category tag">Uncategorized</a>        	</span>
+		        <h1 class="post-title"><a href="/2016/08/11/react-components/" rel="bookmark">React components</a></h1>
+        
+    </header>
+    		<section class="post-content">
+		    <p><script src="//assets.codepen.io/assets/embed/ei.js" async=""></script>This article is part of my series <a href="http://wp.me/po630-rQ">Visualization with React</a>. Previous article: <a href="http://wp.me/po630-s3">Coding with React</a></p>
+<p>Using React to create elements out of data is nice, using JSX is hip but until you use your own components, you won&#8217;t use React to the fullest.<br />
+So let&#8217;s do that. Fair warning: <strong>that&#8217;s the speed bump</strong>, especially if you&#8217;re not familiar with javascript concepts like &#8216;this&#8217;, which you&#8217;re not really required to master with d3.</p>
+<p>In the previous examples, we created an element that held a bunch of elements. We are now going to create a custom Point component, to replace our circles. We&#8217;re going to do more than just replace it: our new component will be able to do more stuff. Each Point element should remember whether it&#8217;s highlighted or not. If it&#8217;s highlighted, it will be displayed in red. Else, it will stay in gray. Clicking on a Point will switch its highlighted status.</p>
+<p>The way we are going to maintain that highlighted status is by using the state of the component (remember <a href="http://codepen.io/jckr/pen/mEeRvr">that switch example</a>?).</p>
+<p>There are two syntaxes to create components: one uses React.createClass method, and the other uses ES6 classes. I&#8217;m providing this next step using both syntaxes. I don&#8217;t know which one is more common for the time being, but I feel that the ES6 class one will be in the future, so this is the one I personally use.</p>
+<p class="codepen" data-height="387" data-theme-id="0" data-slug-hash="BzKxmR" data-default-tab="result" data-user="jckr" data-embed-version="2">See the Pen <a href="http://codepen.io/jckr/pen/BzKxmR/">React scatterplot with custom component &#8211; using es6 class</a> by Jerome Cukier (<a href="http://codepen.io/jckr">@jckr</a>) on <a href="http://codepen.io/">CodePen</a>.</p>
+<p>Our custom component is an ES6 class (gasp!) and it&#8217;s based on the existing class, React.Component.<br />
+So we declare our custom component like this:</p>
+<pre class="brush: plain; title: ; notranslate" title="">
+class Point extends React.Component {
+... a bunch of stuff which is different from React.Component ...
+}
+</pre>
+<p>Specifically we are going to specify two properties of our new class: constructor and render. Constructor describes what happens when an element of this component is first created, and render is what should be displayed on screen for that element.<br />
+Don&#8217;t confuse the component and the elements: the component is the type of things that we are going to create, you can think of it as the mold. The elements are what are created with this component, think of it as casts. Creating the component describes how the elements should be created. Later in the code, we are going to create, or instantiate, the individual elements using the component. In Javascript, as in many other languages, by convention, classes like our component have a name that starts with an upper case.</p>
+<p>So let&#8217;s look at the first property.</p>
+<pre class="brush: plain; title: ; notranslate" title="">
+constructor(props) {
+super(props);
+this.state = {highlighted: false};
+}
+</pre>
+<p>what&#8217;s the argument of constructor, props? In React world, props is short for properties. Until now, we never really had to manipulate properties inside the component.<br />
+In this specific example, we don&#8217;t really do anything with props, so we could write just constructor() {&#8230;}. But it&#8217;s a convention, and if at some point we want to do something with these properties right when the component is first created, we might.<br />
+The second line is super(props). What this does is that it passes whatever arguments the constructor had to the constructor of the original React.Component class. You don&#8217;t have to know what happens then, just that it&#8217;s a mandatory step.<br />
+The third line introduces us to the state. we assign an object to &#8220;this.state&#8221;.<br />
+But what is <a title="Understand Javascript's this with clarity and master it" href="http://javascriptissexy.com/understand-javascripts-this-with-clarity-and-master-it/">this</a>? the 10000 ft view is that it refers to a specific context or scope (the article under the link above is fantastic if you want to know more).<br />
+We&#8217;re going to have many Point elements. Each of them can be highlighted or not. Each of them also corresponds to a different data point. Each of them can access and manipulate data that no other can. This is where <em>this</em> comes from. Properties of this (that is, whatever comes after &#8220;this.&#8221;) are going to be private to that element, in other words, not accessible from the outside.<br />
+And there are going to be two very important properties: props and state.</p>
+<p><strong>this.props</strong> are the properties of the element, which the element cannot change. They come from its parent element.<br />
+<strong>this.state</strong> is the state of the element, which the element can change: and when it does, the element will be re-rendered.</p>
+<p>Speaking of rendering, let&#8217;s look at the next property of our class: the render method.<br />
+That method must render a React element or null.</p>
+<p>So:</p>
+<pre class="brush: plain; title: ; notranslate" title="">
+render() {
+  return &lt;circle
+  onClick = {
+    this.setState({
+      highlighted: !this.state.highlighted
+    });
+  }}
+  r = {
+    5
+  }
+  style = {
+    {
+      fill: this.state.highlighted ? 'red' : '#222',
+      opacity: 0.2,
+      transition: 'fill .5s'
+    }
+  }
+  /&gt;;
+}
+</pre>
+<p>Our component will create a element. But it could also be another custom component! Let&#8217;s just keep it simple for now.<br />
+cx, this time, will be expressed as a calculation based on this.props.birth. (and likewise cy will be computed from this.props.death).<br />
+birth and death are the properties that will have to be passed to the component to create an element (which we&#8217;ll see in the end).</p>
+<p>we have a new property: onClick. onClick, unsurprisingly, handles click events. So when a user clicks, that will trigger a function which will do the following:</p>
+<pre class="brush: plain; title: ; notranslate" title="">
+this.setState({
+highlighted: !this.state.highlighted
+});
+</pre>
+<p>The intention here is to assign to the highlighted property of the state the value which is opposite to that it currently holds. That value is stored at this.state.highlighted. Remember that originally, we stored {highlighted: false} in this.state, so this.state.highlighted is where it&#8217;s at. And so, !this.state.highlighted is the opposite of the current highlighted status.<br />
+this.setState adds the relevant property to the state. So, this construct effectively reverses the value of this.state.highlighted.<br />
+Whenever the state changes, the component is automatically re-rendered without any other action required (we can prevent that if needed, but we&#8217;ll see that later).</p>
+<p>Finally, let&#8217;s look at what&#8217;s happening towards the end, with our style.<br />
+As we&#8217;ve seen several times before, we pass an object to style. Because of the JSX notation, that&#8217;s <em>two</em> sets of curly braces.<br />
+The fill property of the style depends on the state. So, if highlighted is true, it&#8217;s going to be red, else it&#8217;s going to be gray. Just as we said.<br />
+I&#8217;m also adding to the style a transition property, so that instead of just blinking from red to gray, our component smoothly fades from one color into the other.</p>
+<p>So that&#8217;s our class.<br />
+The second part of the code is the same with both syntaxes, so let&#8217;s see how we create a component using React.createClass.</p>
+<p class="codepen" data-height="387" data-theme-id="0" data-slug-hash="EyKLEz" data-default-tab="js,result" data-user="jckr" data-embed-version="2">See the Pen <a href="http://codepen.io/jckr/pen/EyKLEz/">React scatterplot with custom component &#8211; using createClass</a> by Jerome Cukier (<a href="http://codepen.io/jckr">@jckr</a>) on <a href="http://codepen.io/">CodePen</a>.</p>
+<p>So instead of creating a class, we create a variable:</p>
+<pre class="brush: plain; title: ; notranslate" title="">
+const Point = React.createClass({
+... object with properties ...
+});
+</pre>
+<p>So this time, we pass to React.createClass an object that describes the component that we&#8217;re going to create.<br />
+As above, we care about two things: that the elements it creates have a state, which starts as not highlighted, and how they should be rendered.<br />
+When we use React.createClass, the way to initialize a state is to use a property called getInitialState.<br />
+You have to assign to that property a function that returns an object: that object is the initial state.</p>
+<pre class="brush: plain; title: ; notranslate" title="">
+...
+getInitialState: function getInitialState() {
+return {highlighted: false};
+},
+...
+</pre>
+<p>A word of caution: React.createClass takes an object as an argument, so its properties are separated by commas. There are no commas between the properties of a class, with the first syntax.</p>
+<p>The second property of our object is render. Render gets a function that will output a React element or null. The syntax is very close to the above.<br />
+getInitialState, like render, are called lifecycle methods. This is because they are called at specific moments of the life of our component. There are more than 2, and they are one of the most interesting parts of React. We&#8217;ll cover them in our next article.</p>
+<p>Now let&#8217;s look at the second part of our code. Now that we&#8217;ve got a custom component, what of it?<br />
+well, let&#8217;s use it to create elements!</p>
+<pre class="brush: plain; title: ; notranslate" title="">
+const svg = &lt;svg height={300} width={300}&gt;{
+ birthdeathrates.map(d =&gt; &lt;Point birth={d.birth} death={d.death} /&gt;)
+}&lt;/svg&gt;;
+</pre>
+<p>What&#8217;s different here is that line with the element.<br />
+Remember that before, we created a element and we specified its cx and cy properties. This time, we don&#8217;t pass cx or cy, instead we just pass a value for birth and a value for death. The component can do the rest!</p>
+<h1>Pure functional components</h1>
+<p>Our Point component is somewhat complicated because we maintain its state. Because we care about its state, we need to initialize it, we need to capture events that could affect it, and have our output depend on it.<br />
+By contrast, if all we had were properties (which, again, do not change), what the component does could be much simpler: it takes an input, and produces an output. The same input produces the same output. Just like each time when you add two numbers, the result is the same if the numbers you add are the same.<br />
+In javascript terms, if you had a function that didn&#8217;t use global variables, randomness or external APIs, when you pass the same argument to that function, you get the same result. This is what&#8217;s called a <a title="pure functions in javascript" href="http://www.nicoespeon.com/en/2015/01/pure-functions-javascript/">pure function</a>. Pure functions have a lot of good things going for them, not least their stability and predictability and simplicity.<br />
+So let&#8217;s suppose we didn&#8217;t care about the state of our Point component.<br />
+React let us write it as a pure functional component.<br />
+Here&#8217;s how:</p>
+<p class="codepen" data-height="387" data-theme-id="0" data-slug-hash="BzKVJq" data-default-tab="html,result" data-user="jckr" data-embed-version="2">See the Pen <a href="http://codepen.io/jckr/pen/BzKVJq/">React scatterplot with pure functional component</a> by Jerome Cukier (<a href="http://codepen.io/jckr">@jckr</a>) on <a href="http://codepen.io/">CodePen</a>.</p>
+<pre class="brush: plain; title: ; notranslate" title="">
+function Point({
+  birth,
+  death
+}) {
+  return &lt;circle
+  cx = {
+    birth * 10
+  }
+  cy = {
+    300 - death * 10
+  }
+  r = {
+    5
+  }
+  style = {
+    {
+      fill: '#222',
+      opacity: 0.2
+    }
+  }
+  /&gt;;
+}
+</pre>
+<p>Our component is now just a function! we pass it an object with properties {birth, death} and you can use them directly in the body of the function. No need for this.props.birth or whatever.<br />
+The second part of the code doesn&#8217;t change, the elements are still created exactly the same way.</p>
+<h1>Combining components: I&#8217;ll call you back</h1>
+<p>In a real world situation, you&#8217;ll probably have many custom components being parts of one another and passing data back and forth.<br />
+So, let&#8217;s step up in complexity.<br />
+Let&#8217;s use the same dataset, but this time we&#8217;ll make a bar chart.<br />
+Initially, we&#8217;ll show birth rates. But we&#8217;ll also add a switch! and if the user touches the switch, we&#8217;ll show death rates instead.<br />
+So. Let&#8217;s think this through a little bit.</p>
+<p>We&#8217;ll have a Chart component that is going to be at the top level.<br />
+That component will have a Switch component as a child.<br />
+It will also have several Bar components that will correspond to the actual data. We can make the Bar components out of our birthdeathrates dataset as before.</p>
+<pre class="brush: xml; title: ; notranslate" title="">
+&lt;Chart&gt;
+  &lt;Switch /&gt;
+  &lt;Bar /&gt;
+  &lt;Bar /&gt;
+  &lt;Bar /&gt;
+  ...
+&lt;/Chart&gt;
+</pre>
+<p>There will be an event attached to the switch, so that when it&#8217;s clicked, the Bars can change.<br />
+Now the real question is: which component&#8217;s state should be changed by the switch?</p>
+<p>We&#8217;ve seen how the switch could change its own state. But the Bar components wouldn&#8217;t be able to read it.<br />
+Ideally, the switch will trigger some kind of change in the Bar component, but likewise, it cannot reach the state of those.</p>
+<p>So: we&#8217;ll have to find a way to get our switch to update the state of the Chart component. When the state of Chart updates, it re-renders. That means that it can pass new properties to its children. It can tell its Bars to use the death property instead of the birth one.<br />
+But how to access the state of the parent from one of its children? That&#8217;s possible using callback functions.</p>
+<p>If we are within the parent element, we can access its state.<br />
+So, we could create a function that would do:</p>
+<pre class="brush: plain; title: ; notranslate" title="">
+updateMetric(metric) {
+  this.setState({metric}); // this.setState({metric: metric}) in short hand notation, possible with babel
+}
+</pre>
+<p>That function would work within our future Chart component. Now what if&#8230; we passed that function to Switch as a property? then, when executed, it would change the state <em>within Chart.</em> That would trigger a re-render, and Chart could pass different props to all of its children.</p>
+<p>Let&#8217;s make it work.</p>
+<p class="codepen" data-height="387" data-theme-id="0" data-slug-hash="JKXZmN" data-default-tab="js,result" data-user="jckr" data-embed-version="2">See the Pen <a href="http://codepen.io/jckr/pen/JKXZmN/">React bar chart with callback</a> by Jerome Cukier (<a href="http://codepen.io/jckr">@jckr</a>) on <a href="http://codepen.io/">CodePen</a>.</p>
+<p>Lots of stuff going on here!</p>
+<pre class="brush: plain; title: ; notranslate" title="">
+class Chart extends React.Component {
+   constructor(props) {
+     super(props);
+        
+     this.state = {
+       metric: 'birth',
+     };
+   }
+// ...
+</pre>
+<p>This is the constructor of our class. We&#8217;ve seen it before, the only special thing is that we give it an initial start here by giving a value to this.state.</p>
+<pre class="brush: plain; title: ; notranslate" title="">
+render() {
+    const metric = this.state.metric;
+    const data = this.props.data.sort((a,b) =&gt; b[metric] - a[metric])
+      .map((d, i) =&gt; ({...d, rank: i}))
+      .sort((a, b) =&gt; b.country &gt; a.country);
+</pre>
+<p>Here, metric gets the value of whatever we put in the state.<br />
+And data is: whatever is passed to the props as data, first sorted by the value of the corresponding metric, then given a rank property which is just its order in that sorted list, and finally sorted alphabetically. So whatever the metric, the same country will always be at the same position in this array, only its rank property, which was computed while the list was sorted, would be different. </p>
+<pre class="brush: plain; title: ; notranslate" title="">
+    return &lt;div className='chart'&gt;
+      {[
+       &lt;span className='label'&gt;Birth rate&lt;/span&gt;,
+       &lt;Switch metric={metric} updateMetric={(d) =&gt;
+            this.setState({metric: d})
+       }/&gt;,
+       &lt;span className='label'&gt;Death rate&lt;/span&gt;,
+       &lt;div&gt;
+         {data.map(d =&gt; 
+          &lt;Bar country={d.country} value={d[metric]} rank={d.rank}/&gt;
+         )}
+      &lt;/div&gt;
+      ]}
+    &lt;/div&gt;; 
+</pre>
+<p>Nothing that we&#8217;ve never seen before in that render function &#8211; we&#8217;re just creating divs or instances of components that remain to be described, and we pass them props. The only new thing is that updateMetric property of Switch. Instead of passing a value or an array, we pass a function. And in that function, we call this.setState.<br />
+Because we are still within the Chart component, this.setState will change the state of a Chart component. But wait: we are actually passing that function to another component, Switch! This component, a child of Chart, receives a function that lets it change the state of its parent.<br />
+That&#8217;s the callback function. </p>
+<p>Here&#8217;s that Switch component: </p>
+<pre class="brush: plain; title: ; notranslate" title="">
+function Switch({metric, updateMetric}) {
+  return &lt;div className = 'switch__track'
+     onClick = {() =&gt; updateMetric(metric === 'birth' ? 'death' : 'birth')}
+    &gt;
+      &lt;div className = {'switch__thumb ' + metric} /&gt;
+    &lt;/div&gt;
+};
+</pre>
+<p>Switch doesn&#8217;t have a state of its own, so we can just use a functional component. Switch receives updateMetric as a property. Switch doesn&#8217;t know anything about this function &#8211; it doesn&#8217;t have to. It doesn&#8217;t need to know that this function will affect its parent. All it does is launch this function when it&#8217;s being clicked &#8211; that&#8217;s what the line with onClick does. </p>
+<p>Here&#8217;s another example presented without comments with similar data, with a slightly different ways to order the components.<br />
+This time, the top level component is Dashboard, which has 2 Chart components, which each have several Bar components as children. Mousing over Bar components updates the state of the Dashboard components, which re-renders its Charts children and their Bar children.</p>
+<p data-height="265" data-theme-id="0" data-slug-hash="RRLWQz" data-default-tab="js,result" data-user="jckr" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/jckr/pen/RRLWQz/">react dual bar chart</a> by Jerome Cukier (<a href="http://codepen.io/jckr">@jckr</a>) on <a href="http://codepen.io/">CodePen</a>.</p>
+		    			<div class="clear">&nbsp;</div>
+		</section>
+	
+	<footer class="post-footer">
+
+	    <section class="author">
+	    	<img alt='' src='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=100&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=200&amp;d=mm&amp;r=g 2x' class='avatar avatar-100 photo' height='100' width='100' />	        <h4>jerome</h4>
+	        <p></p>
+			<div class="clear">&nbsp;</div>
+	    </section>
+	</footer>
+</article><!-- #post-## -->
+
+				<nav class="pagination navigation post-navigation" role="navigation">
+		<div class="nav-links">
+			<div class="older-posts"><a href="/2016/08/10/coding-with-react/" rel="prev">Coding with React <span class="meta-nav">&rarr;</span></a></div>				<div class="page-number">&bull;</div>
+				<div class="newer-posts"><a href="/2016/08/13/beyond-rendering/" rel="next"><span class="meta-nav">&larr;</span> Beyond rendering</a></div>		</div><!-- .nav-links -->
+	</nav><!-- .navigation -->
+	
+			
+<div id="comments" class="comments-area">
+
+	
+	
+	
+					<div id="respond" class="comment-respond">
+			<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/2016/08/11/react-components/#respond" style="display:none;">Cancel reply</a></small></h3>				<form action="/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+					<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" aria-required='true' required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" aria-required='true' required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='1752' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="774b3e9a03" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="40"/></p>				</form>
+					</div><!-- #respond -->
+		
+</div><!-- #comments -->
+
+		
+
+	<div id="secondary" class="widget-area" role="complementary">
+		<aside id="search-2" class="widget widget_search"><form role="search" method="get" class="search-form" action="/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit" value="Search" />
+			</form></aside>		<aside id="recent-posts-2" class="widget widget_recent_entries">		<h1 class="widget-title">Recent Posts</h1>		<ul>
+					<li>
+				<a href="/2018/04/09/hello-world/">Hello world!</a>
+						</li>
+					<li>
+				<a href="/2016/08/17/the-big-leagues/">The big leagues</a>
+						</li>
+					<li>
+				<a href="/2016/08/17/creating-a-react-visualization-web-app/">Creating a React visualization web app</a>
+						</li>
+					<li>
+				<a href="/2016/08/13/beyond-rendering/">Beyond rendering</a>
+						</li>
+					<li>
+				<a href="/2016/08/11/react-components/">React components</a>
+						</li>
+				</ul>
+		</aside>		<aside id="recent-comments-2" class="widget widget_recent_comments"><h1 class="widget-title">Recent Comments</h1><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link"><a href='https://wordpress.org/' rel='external nofollow' class='url'>A WordPress Commenter</a></span> on <a href="/2018/04/09/hello-world/#comment-1">Hello world!</a></li><li class="recentcomments"><span class="comment-author-link"><a href='http://omeraz.wordpress.com/' rel='external nofollow' class='url'>עומר עזריאל</a></span> on <a href="/2016/08/17/the-big-leagues/#comment-567">The big leagues</a></li><li class="recentcomments"><span class="comment-author-link">Carlos Ayres</span> on <a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-312">Manipulating data like a boss with d3</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://migrate.powertripanalytics.com/game-of-thrones-interactions-among-the-top-30-characters/' rel='external nofollow' class='url'>Game of ThronesInteractions Among the Top 30 Characters &#8211; PowerTrip Analytics</a></span> on <a href="/2013/05/13/making-the-game-of-thrones-visualization/#comment-466">Making the game of thrones visualization</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://abgoswam.wordpress.com/2016/10/08/d3-getting-started/' rel='external nofollow' class='url'>D3 &#8211; Getting Started | abgoswam&#039;s tech blog</a></span> on <a href="/2012/09/04/getting-to-hello-world-with-d3/#comment-419">Getting to &#8220;Hello world&#8221; with d3</a></li></ul></aside><aside id="archives-2" class="widget widget_archive"><h1 class="widget-title">Archives</h1>		<ul>
+			<li><a href='/2018/04/'>April 2018</a></li>
+	<li><a href='/2016/08/'>August 2016</a></li>
+	<li><a href='/2015/05/'>May 2015</a></li>
+	<li><a href='/2015/02/'>February 2015</a></li>
+	<li><a href='/2014/10/'>October 2014</a></li>
+	<li><a href='/2013/11/'>November 2013</a></li>
+	<li><a href='/2013/05/'>May 2013</a></li>
+	<li><a href='/2013/03/'>March 2013</a></li>
+	<li><a href='/2013/01/'>January 2013</a></li>
+	<li><a href='/2012/12/'>December 2012</a></li>
+	<li><a href='/2012/11/'>November 2012</a></li>
+	<li><a href='/2012/10/'>October 2012</a></li>
+	<li><a href='/2012/09/'>September 2012</a></li>
+	<li><a href='/2012/07/'>July 2012</a></li>
+	<li><a href='/2012/06/'>June 2012</a></li>
+	<li><a href='/2012/05/'>May 2012</a></li>
+	<li><a href='/2012/04/'>April 2012</a></li>
+	<li><a href='/2012/01/'>January 2012</a></li>
+	<li><a href='/2011/11/'>November 2011</a></li>
+	<li><a href='/2011/10/'>October 2011</a></li>
+	<li><a href='/2011/09/'>September 2011</a></li>
+	<li><a href='/2011/08/'>August 2011</a></li>
+	<li><a href='/2011/07/'>July 2011</a></li>
+	<li><a href='/2011/06/'>June 2011</a></li>
+	<li><a href='/2011/05/'>May 2011</a></li>
+	<li><a href='/2011/04/'>April 2011</a></li>
+	<li><a href='/2011/03/'>March 2011</a></li>
+	<li><a href='/2011/02/'>February 2011</a></li>
+	<li><a href='/2011/01/'>January 2011</a></li>
+	<li><a href='/2010/11/'>November 2010</a></li>
+	<li><a href='/2010/04/'>April 2010</a></li>
+	<li><a href='/2010/03/'>March 2010</a></li>
+	<li><a href='/2010/02/'>February 2010</a></li>
+	<li><a href='/2010/01/'>January 2010</a></li>
+	<li><a href='/2009/12/'>December 2009</a></li>
+	<li><a href='/2009/10/'>October 2009</a></li>
+	<li><a href='/2009/09/'>September 2009</a></li>
+	<li><a href='/2009/08/'>August 2009</a></li>
+	<li><a href='/2009/07/'>July 2009</a></li>
+	<li><a href='/2009/06/'>June 2009</a></li>
+	<li><a href='/2009/05/'>May 2009</a></li>
+	<li><a href='/2008/12/'>December 2008</a></li>
+	<li><a href='/2008/11/'>November 2008</a></li>
+	<li><a href='/2008/10/'>October 2008</a></li>
+		</ul>
+		</aside><aside id="categories-2" class="widget widget_categories"><h1 class="widget-title">Categories</h1>		<ul>
+	<li class="cat-item cat-item-2"><a href="/category/book-review/" >book review</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="/category/charts/" >charts</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="/category/conferences/" >conferences</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="/category/d3/" >d3</a>
+</li>
+	<li class="cat-item cat-item-6"><a href="/category/dashboards/" >dashboards</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="/category/data-publishing/" >data publishing</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="/category/data-visualization/" >data visualization</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="/category/francais/" >français</a>
+</li>
+	<li class="cat-item cat-item-10"><a href="/category/javascript/" >javascript</a>
+</li>
+	<li class="cat-item cat-item-11"><a href="/category/presentation/" >presentation</a>
+</li>
+	<li class="cat-item cat-item-12"><a href="/category/protovis/" >protovis</a>
+</li>
+	<li class="cat-item cat-item-13"><a href="/category/react/" >react</a>
+</li>
+	<li class="cat-item cat-item-14"><a href="/category/tips/" >tips</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="/category/uncategorized/" >Uncategorized</a>
+</li>
+	<li class="cat-item cat-item-15"><a href="/category/web-sites/" >web sites</a>
+</li>
+		</ul>
+</aside><aside id="meta-2" class="widget widget_meta"><h1 class="widget-title">Meta</h1>			<ul>
+						<li><a href="/wp-login.php">Log in</a></li>
+			<li><a href="/feed/">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="/comments/feed/">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>			</ul>
+			</aside>		<div class="clear">&nbsp;</div>
+	</div><!-- #secondary -->
+	<footer id="colophon" class="site-footer" role="contentinfo">
+	    <a class="subscribe icon-feed" href="/feed/"><span class="tooltip">Subscribe!</span></a>
+		<div class="site-info inner">
+		    <section class="copyright">
+		    			    		<a href="https://github.com/lacymorrow/casper" rel="home">Casper WP</a> by Lacy Morrow		    			    </section>
+		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+</main><!-- /#content -->
+
+<script type='text/javascript' src='/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js?ver=3.0.9b'></script>
+<script type='text/javascript' src='/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPlain.js?ver=3.0.9b'></script>
+<script type='text/javascript' src='/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushXml.js?ver=3.0.9b'></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "http://localhost:8888/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "http://localhost:8888/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+<script type='text/javascript' src='/wp-content/themes/casper/js/main.js?ver=1.0.0'></script>
+<script type='text/javascript' src='/wp-includes/js/comment-reply.min.js?ver=4.6.10'></script>
+<script type='text/javascript' src='/wp-includes/js/wp-embed.min.js?ver=4.6.10'></script>
+<script async="async" type='text/javascript' src='/wp-content/plugins/akismet/_inc/form.js?ver=4.0.3'></script>
+<!--stats_footer_test--></body>
+</html>

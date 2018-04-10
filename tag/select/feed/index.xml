@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>select &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/select/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>Selections in d3 &#8211; the long story</title>
+		<link>/2013/03/05/d3-tutorial-at-strata-redux/</link>
+		<comments>/2013/03/05/d3-tutorial-at-strata-redux/#comments</comments>
+		<pubDate>Tue, 05 Mar 2013 10:20:55 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[d3]]></category>
+		<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[tips]]></category>
+		<category><![CDATA[append]]></category>
+		<category><![CDATA[enter]]></category>
+		<category><![CDATA[exit]]></category>
+		<category><![CDATA[insert]]></category>
+		<category><![CDATA[remove]]></category>
+		<category><![CDATA[select]]></category>
+		<category><![CDATA[selectAll]]></category>
+		<category><![CDATA[selections]]></category>
+		<category><![CDATA[tutorial]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1548</guid>
+		<description><![CDATA[This past week, Scott Murray and I presented a tutorial at Strata on d3 (of all things!) First things first, you probably want to get Scott&#8217;s book on the subject when it&#8217;s out. I should be translating it into French eventually. You&#8217;re also welcome to the slides and examples of the tutorial which can be <a class="read-more" href="/2013/03/05/d3-tutorial-at-strata-redux/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>This past week, Scott Murray and I presented a tutorial at Strata on d3 (of all things!)<br />
+First things first, you probably want to get <a href="http://amzn.com/1449339735">Scott&#8217;s book on the subject</a> when it&#8217;s out. I should be translating it into French eventually.<br />
+You&#8217;re also welcome to the slides and examples of the tutorial which can be found on <a href="https://github.com/alignedleft/strata-d3-tutorial">https://github.com/alignedleft/strata-d3-tutorial</a>. That include my <a href="https://github.com/alignedleft/strata-d3-tutorial/blob/master/d3%20Cheat%20Sheet.pdf">d3 cheat sheet</a>.</p>
+<p>We had done a d3 workshop a few months back at Visweek with Jeff Heer. This time around, we changed our approach: we covered less ground, went at a slower pace, but targeted what is in our opinion the most troublesome aspects of learning d3: selecting, creating and removing elements. </p>
+<p>I have learned d3 from deciphering script examples and in the earliest ones one ubiquitous construct was this sequence : select / selectAll / data / enter / append.<br />
+It does the work, so like everyone else I&#8217;ve copied it and reused very often. It happens to be the most proper way of adding new elements in most cases, but the point is, while learning d3, I (and many people before and after me) have copy/pasted it without understanding it deeply. Though, copy pasting something you don&#8217;t understand thoroughly is the best way to get errors you don&#8217;t understand any better, and it would prevent you from accessing the rest of the potential of the library. Conversely, once this is cleared, you can be &#8220;thinking in d3&#8221; and easily do many things you might have thought impossible before.</p>
+<p>We did the tutorial hands-on, live coding most of the time. To follow through, I invite you to create or open an empty page with d3 loaded (such as <a href="http://www.jeromecukier.net/projects/template.html" title="d3 template" target="_blank">this one</a> &#8211; the link opens a new tab) and then open the &#8220;console&#8221; or &#8220;web developer tools&#8221; which allow you to type javascript statements directly, without having to write and load scripts. Here are the shortcuts to the console: </p>
+<ul>
+<li>Chrome: Ctrl-J (windows), ⌥ ⌘+j (Mac)</li>
+<li>Firefox: Ctrl+Shift+k (windows), ⌥ ⌘+k (Mac)</li>
+<li>Safari: Ctrl+Alt+c (windows), ⌥ ⌘+c (Mac)</li>
+<li>IE9+: F12</li>
+</ul>
+<p>To make the best of this tutorial, please type the examples. Some tutorials show you impressive stuff and show you step by step how to do it. That&#8217;s not one of them. I&#8217;ve sticked to very, very basic and mundane things. We&#8217;ll be only manipulating HTML elements such as paragraphs, which I assume you have seen earlier (plot twist: you are reading one at this very moment)<br />
+Some of the code snippets don&#8217;t work. That&#8217;s the idea! I think you can&#8217;t progress by merely copying code that works. It&#8217;s important that you try out code that looks reasonable but that doesn&#8217;t produce the expected result or that causes an error, but then understand why. </p>
+<h2>Adding simple stuff</h2>
+<h3>Creating elements</h3>
+<p>Our empty page is, well, empty, so we are going to add stuff.<br />
+to create elements, we need the <strong>append</strong> method in d3, which takes as an argument the type of element that needs to be created, while the <strong>html</strong> method at the end allow us to specify a text.</p>
+<p>so let&#8217;s go ahead and type: </p>
+<pre class="brush: jscript; title: ; notranslate">d3.append(&quot;h1&quot;).html(&quot;My beautiful text&quot;)</pre>
+<p> and see what happens.</p>
+<p>what do we get? and why is that?<br />
+In d3, every element which is created cannot appear out of thin air, and must be <strong>added to a container</strong>. If we don&#8217;t specify a container element, we just can&#8217;t create anything.<br />
+In HTML, most elements can be containers, that is, it&#8217;s usually possible to add elements to almost everything. Then again, our template is fairly empty, so we can select the <body> tag and take it from there.</p>
+<pre class="brush: jscript; title: ; notranslate">d3.select(&quot;body&quot;).append(&quot;h1&quot;).html(&quot;My beautiful text&quot;)</pre>
+<p>we&#8217;re in business! as long as there is a sensible place to put them, you can create as much stuff as you like. Since we&#8217;re on a roll, why won&#8217;t we throw in a few paragraphs (<strong>p</strong> element in HTML):</p>
+<pre class="brush: jscript; title: ; notranslate">d3.select(&quot;body&quot;).append(&quot;p&quot;).html(&quot;Look at me, I'm a paragraph.&quot;)
+d3.select(&quot;body&quot;).append(&quot;p&quot;).html(&quot;And I'm another paragraph!&quot;)
+d3.select(&quot;body&quot;).append(&quot;p&quot;).html(&quot;Woohoo! number 3 baby&quot;)</pre>
+<p>and lo and behold, all our paragraphs appear in sequence. Simply beautiful.<br />
+But wait! paragraphs are containers, too. Why don&#8217;t we try to add a <strong>span</strong> element to one paragraph? For those of you with no HTML knowledge, span elements are like paragraphs, except there is no line break by default at the end. </p>
+<p>So let&#8217;s try this:</p>
+<pre class="brush: jscript; title: ; notranslate">d3.select(&quot;p&quot;).append(&quot;span&quot;).html(&quot;and I'm a span!&quot;)</pre>
+<p>Before typing it, take a minute to think where you expect it to go.<br />
+Then go ahead and type it.</p>
+<p>Surprised?<br />
+you may have guessed that our new bit of text could go on a line of its own at the end of the document, or at the end of the last paragraph. But instead, it goes at the end of the first paragraph.<br />
+Why is that? well, our select method stops the first instance of whatever it tries to find. In our case, since we asked it to find paragraphs &#8211; p, it stopped at the first p element it found, and added the span at the end of it (app<em>end</em>).</p>
+<h3>Beyond creating new things</h3>
+<p>adding new elements to a page programmatically is kind of useful, but if d3 stopped at that you probably wouldn&#8217;t be so interested in this tutorial to begin with. You can also modify and manipulate elements. We&#8217;ve done that to some extent with the html method. But we can also modify the <em>style</em> of the elements, their <em>attributes</em> and their <em>properties</em>. For the time being, don&#8217;t bother too much about the difference between these three things. Style refers to the appearance of elements, attributes, to their structure, and properties, to what can be changed in realtime, like values in a form. But again, let&#8217;s not worry about that for now and let&#8217;s just follow along. Look at this code snippet:</p>
+<pre class="brush: jscript; title: ; notranslate">d3.select(&quot;p&quot;).style(&quot;color&quot;,&quot;red&quot;)</pre>
+<p>this will select the first paragraph and change its style, so that the text color is changed to red.<br />
+But wait! our first paragraph, isn&#8217;t that the one with a span at the end of it? What will happen to that bit of text? Well, type the statement to find out.<br />
+All the paragraph, including its children (that is, everything added to it, in our case the span) is turned to red.</p>
+<pre class="brush: jscript; title: ; notranslate">d3.select(&quot;span&quot;).style(&quot;color&quot;,&quot;blue&quot;)</pre>
+<p>That singles out our span and writes it in blue. Can this be overturned?</p>
+<pre class="brush: jscript; title: ; notranslate">d3.select(&quot;p&quot;).style(&quot;color&quot;,&quot;red&quot;)</pre>
+<p>That won&#8217;t change a thing. Our first paragraph is, in fact, already red. But its child, the span, has a style which overrides that of its parent. To have it behave like the rest, we can remove its style like so: </p>
+<pre class="brush: jscript; title: ; notranslate">d3.select(&quot;span&quot;).style(&quot;color&quot;,null)</pre>
+<p>then </p>
+<pre class="brush: jscript; title: ; notranslate">d3.select(&quot;p&quot;).style(&quot;color&quot;,&quot;green&quot;)</pre>
+<p>it will behave like its parent, the paragraph.<br />
+But let&#8217;s try something else: </p>
+<pre class="brush: jscript; title: ; notranslate">d3.select(&quot;span&quot;).style(&quot;color&quot;,&quot;blue&quot;)</pre>
+<p>we write our span in blue, </p>
+<pre class="brush: jscript; title: ; notranslate">d3.select(&quot;span&quot;).style(&quot;color&quot;,&quot;green&quot;)</pre>
+<p>and now back in green, like its parent.</p>
+<pre class="brush: jscript; title: ; notranslate">d3.select(&quot;p&quot;).style(&quot;color&quot;,&quot;red&quot;)</pre>
+<p>What will happen?<br />
+well, the paragraph turns red, but the span doesn&#8217;t. It&#8217;s still following its specific instruction to be written in green.</p>
+<p>That goes to illustrate that children behave like their parents, unless they are given specific instructions. </p>
+<p>For HTML elements, we can play with styles, not so much with attributes or properties. One thing worth noting though is that an element can be given a class or an id.</p>
+<p>Classes and ids can be used to style elements using a cascading style sheet (CSS). Knowing how CSS works is entirely facultative in learning d3, since d3 by itself can take care of all styling needs. Though, knowing basic CSS is not the most useless of endeavors, and some sensible CSS statements can save a lot of tedious manipulation in d3.<br />
+The other use of classes and ids is that they can be used to select elements.</p>
+<p>Let&#8217;s reload our page so we start from scratch.</p>
+<pre class="brush: jscript; title: ; notranslate">d3.select(&quot;body&quot;).append(&quot;p&quot;).html(&quot;First paragraph&quot;);
+d3.select(&quot;body&quot;).append(&quot;p&quot;).html(&quot;Second paragraph&quot;).attr(&quot;class&quot;,&quot;p2&quot;);
+d3.select(&quot;body&quot;).append(&quot;p&quot;).html(&quot;Third paragraph&quot;).attr(&quot;id&quot;,&quot;p3&quot;);
+</pre>
+<p>without the use of classes and ids, it&#8217;s still possible to select and manipulate the 2nd or 3rd instance of an element, but it&#8217;s a chore. You have to use <em>pseudo-classes</em> like d3.select(&#8220;p:nth-of-type(2)&#8221;) to select the 2nd instance of a paragraph, for instance.<br />
+Personally, I&#8217;d rather avoid this and prefer using simpler statements. With classes and IDs set, we can write instead: </p>
+<pre class="brush: jscript; title: ; notranslate">d3.select(&quot;.p2&quot;).html(&quot;I'm classy&quot;);
+d3.select(&quot;#p3&quot;).html(&quot;I've got ideas&quot;);</pre>
+<p>To select things of a given class, you must use a period before the name of the class. To select things of a certain id, you must use the hash sign.<br />
+Here, we are looking for the first element of the p2 class. This happens to be our 2nd paragraph. When you know you will have to manipulate elements which are not easily accessible, you may as well give them classes which will make this easier down the road.</p>
+<p>In theory, there should only be one element of a given ID in one page, so I recommend not using them dynamically unless you can be 100% sure that there will not be duplicates. And, in case you were wandering, one element can have several (even many) classes. </p>
+<h2>Two birds, one stone</h2>
+<h3>Introducing selectAll</h3>
+<p>So far, we&#8217;ve changed properties of one element at a time. The exception was when we changed the colors of both a paragraph and a span, but even then, we were still technically only changing the characteristics of one paragraph, which its child, the span, just happened to inherit. </p>
+<p>For a complex document, that can be super tedious, especially since we&#8217;ve seen that it&#8217;s not easy to retrieve an element which is not the first of its kind.</p>
+<p>so let&#8217;s go ahead and type:</p>
+<pre class="brush: jscript; title: ; notranslate">d3.selectAll(&quot;p&quot;).style(&quot;font-weight&quot;,&quot;bold&quot;);</pre>
+<p>(for a little variety. I mean, changing text color is so 1994.)<br />
+What was that? Everything turned to bold!</p>
+<p>Indeed: while the select method returns the first element that matches the clause, selectAll matches them all.<br />
+Let&#8217;s do more.<br />
+We&#8217;re going to add a span to our first paragraph. </p>
+<pre class="brush: jscript; title: ; notranslate">d3.select(&quot;p&quot;).append(&quot;span&quot;)
+.html(&quot;I'm a rebel child.&quot;)
+.style(&quot;background-color&quot;,&quot;firebrick&quot;)</pre>
+<p>we&#8217;re adding a gratuitous styling command.<br />
+Now, let&#8217;s change the background color of all the paragraphs.</p>
+<pre class="brush: jscript; title: ; notranslate">d3.selectAll(&quot;p&quot;).style(&quot;background-color&quot;,&quot;aliceblue&quot;)</pre>
+<p>As could be expected, the span doesn&#8217;t change its background color, and so it appears differently from its parent (which could be a desired effect &#8211; this gives us flexibility).<br />
+but what if we wanted to change the background color of everything? can we do better?</p>
+<pre class="brush: jscript; title: ; notranslate">d3.selectAll(&quot;*&quot;).style(&quot;background-color&quot;,&quot;whitesmoke&quot;)</pre>
+<p> (quite fitting in these times of papal conclave)</p>
+<p>Well &#8211; everything gets a background color of &#8220;white smoke&#8221; (which is a fine background color btw.). Including the &#8220;body&#8221; element &#8211; that is, everything on the page!<br />
+selectAll(&#8220;*&#8221;) matches everything. With it, you can grab all the children, their children etc. (&#8220;descendants&#8221;. I know&#8230;) of a selection, or, if used directly like so: d3.selectAll(&#8220;*&#8221;), everything on the page.<br />
+So we&#8217;ve seen we can select moaar. But can we be finer? Can we select the paragraphs and the spans only, without touching the rest?</p>
+<p>we sure can!</p>
+<pre class="brush: jscript; title: ; notranslate">d3.selectAll(&quot;p, span&quot;).style(&quot;background-color&quot;,&quot;lawngreen&quot;)</pre>
+<p>The outcome of that one statement probably won&#8217;t make it to our web design portfolio, but it does the trick: you can select as much as you like, or as little as you like. </p>
+<h3>Nested selections</h3>
+<p>To illustrate the next situation, let&#8217;s add a span to our document.</p>
+<pre class="brush: jscript; title: ; notranslate">d3.select(&quot;body&quot;).append(&quot;span&quot;).html(&quot;select me if you can&quot;)</pre>
+<p>Well, just like there is a way to select directly the 2nd paragraph using pseudo classes, there&#8217;s also a (complicated) way to select directly that last span (namely: selectAll(&#8220;span:not(p)&#8221;) )<br />
+there&#8217;s also a simpler way which is what we&#8217;re interested in.<br />
+let&#8217;s suppose we want to turn it to bold:<br />
+we can just do</p>
+<pre class="brush: jscript; title: ; notranslate">d3.selectAll(&quot;span&quot;).style(&quot;font-weight&quot;,&quot;bold&quot;);</pre>
+<p>then change the first one: </p>
+<pre class="brush: jscript; title: ; notranslate">d3.select(&quot;p&quot;).select(&quot;span&quot;).style(&quot;font-weight&quot;,null);</pre>
+<p>Admittedly, the complicated way is more compact. But conceptually, the &#8220;simple&#8221; way is easier to follow: we can do a selection, and within that selection perform a newer selection, and so on and so forth. That way, we can get away with just using super simple selectors, as opposed to master the intricacies of CSS3 syntax. Do it for the people who will read your source code <img src="https://s.w.org/images/core/emoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p><strong>At this point: </strong></p>
+<ul>
+<li>You know how to dynamically create content. Pretty cool!</li>
+<li>More! you can dynamically change every property of every element of the page. woot!</li>
+<li>Bonus! you&#8217;re equipped with tactics to easily reach any element you want to change.</li>
+</ul>
+<p>You should also have a good grasp of d3.select, d3.selectAll and the difference between the two.<br />
+what more could you possibly want? Well, since this is about data visualization, how about a way to tie our elements to data? This is what d3 is really about.</p>
+<h2>Putting the data in data visualization</h2>
+<h3>Introducing data: passing values to many elements at once</h3>
+<p>So far, we&#8217;ve entered &#8220;hard coded&#8221; values for all of our variables. That&#8217;s fine, but we can&#8217;t really set our elements one by one. I mean, we could, but it&#8217;s no way to &#8220;industrialize&#8221; the way elements are created.<br />
+Fortunately, d3 provides. Its more interesting characteristic is the ability to &#8220;bind&#8221; elements with data.</p>
+<p>If you&#8217;ve followed the instructions step by step, you should have 3 paragraphs in the page. Plus a span afterwards, but whatever.<br />
+Let&#8217;s introduce the data method. This will match an array of values to a selection of elements in the page. Let&#8217;s go: </p>
+<pre class="brush: jscript; title: ; notranslate">var fs=[&quot;10px&quot;,&quot;20px&quot;,&quot;30px&quot;];
+d3.selectAll(&quot;p&quot;).data(fs).style(&quot;font-size&quot;,function(d) {return d;})
+</pre>
+<p>wow wow wow what just happened?<br />
+First, we create an array of values which we intelligently call fs (for font size).<br />
+Then, right after the selectAll(&#8220;p&#8221;) which gathers a selection of elements (3 &#8220;p&#8221; elements to be exact), we specify a dataset using the data method.<br />
+It just happens that our dataset has just the same number of items as our selection of elements!</p>
+<p>finally, we use style, like we used to, with a twist: instead of providing one fixed value, which would affect our 3 p elements in the same way, we specify a function.<br />
+This function will parse the dataset, and for each element, it will return the result of an operation in the corresponding data point: the result of the function on the first item for the first p element, the result on the 2nd item for our 2nd paragraph, and lastly the result on the last item for our last paragraph.<br />
+We write the function with an argument: d. What is d? it&#8217;s nothing but a convention. We can call it anything. d is standard fare in d3 code because that&#8217;s the writing style of Mike Bostock, the author of the framework and of many of its examples.<br />
+This function is nothing special, it returns the element itself, so we are passing &#8220;10px&#8221; for the font-size of our first paragraph, and so on and so forth (20px, 30px).<br />
+As an aside, we can use the String function, which converts any element into a string, instead of writing function(d) {return d;}. So: </p>
+<pre class="brush: jscript; title: ; notranslate">d3.selectAll(&quot;p&quot;).data(fs).style(&quot;font-size&quot;,String)</pre>
+<p> would also work and is shorter to write.</p>
+<p>Let&#8217;s recap what just happened here, because this is important.<br />
+We want to apply a dynamic transformation to a bunch of existing elements, as opposed to finding a way to select each individual element, and passing it a hard-coded value.<br />
+What&#8217;s more, we want to apply a transformation of the same nature, but of a different magnitude, on each of these items. </p>
+<p>How to proceed?<br />
+well, first we create an array of values. That&#8217;s our fs boy over there.</p>
+<pre class="brush: jscript; title: ; notranslate">var fs=[&quot;10px&quot;,&quot;20px&quot;,&quot;30px&quot;];</pre>
+<p>Then, we will first select all of the elements we want to modify, then we&#8217;ll tie our dataset to that selection. This is what selectAll, then data does.</p>
+<pre class="brush: jscript; title: ; notranslate">var selection=d3.selectAll(&quot;p&quot;).data(fs);</pre>
+<p>By the way, I&#8217;ve stored the result of the selectAll then data in a variable. In the original example, I just &#8220;chained&#8221; the methods, that is, I followed each method by a period and another one. The two syntaxes are equivalent. Chaining works, because each of these methods returns a value which is itself a selection on which further operations can be done. This syntax works well through most of d3 with some exceptions which will be duly noted.</p>
+<p>Then, we are going to change the style of the selection, using a function on our data.</p>
+<pre class="brush: jscript; title: ; notranslate">selection.style(&quot;font-size&quot;,function(d) {return d;})</pre>
+<p> (or
+<pre class="brush: jscript; title: ; notranslate">selection.style(&quot;font-size&quot;,String)</pre>
+<p>That function will run on each value of our dataset, and return one result per value, which will be passed to all elements in sequence.</p>
+<p>At this stage you may have two questions:</p>
+<ul>
+<li>Can we use more sophisticated functions, because this one is kind of meh?</li>
+<li>What happens if there is not the same number of items in the dataset and of elements?</li>
+</ul>
+<p>The second question is actually more complicated than the first, but we&#8217;ll answer it in painstaking detail.<br />
+So let&#8217;s take care of the question on functions first.<br />
+Yes, obviously, we can use the function not just to return the element, but to do any kind of calculation that a language such as javascript is capable of, which is nearly everything.<br />
+To illustrate that, here are some variations of our initial code which will return the same result, but with a different form.</p>
+<pre class="brush: jscript; title: ; notranslate">
+var fs=[10,20,30]; // no more px
+d3.selectAll(&quot;p&quot;).data(fs).style(&quot;font-size&quot;,function(d) {return d+&quot;px&quot;;})
+</pre>
+<p>Here, instead of returning just the element, we append &#8220;px&#8221; at its end. Sadly, style(&#8220;font-size&#8221;,10) doesn&#8217;t work, but style(&#8220;font-size&#8221;,10+&#8221;px&#8221;) &#8211; which is the same as style(&#8220;font-size&#8221;,&#8221;10px&#8221;) is valid. </p>
+<p>Here is yet another way.</p>
+<pre class="brush: jscript; title: ; notranslate">d3.selectAll(&quot;p&quot;).style(&quot;font-size&quot;,function(d,i) {return 10*(i+1)+&quot;px&quot;;})</pre>
+<p>function(d,i) ? what is this devilry?<br />
+Here, i (or anything we want to call it, as long as it&#8217;s the 2nd argument of this function) represents the order of the element in the selection, so the first gets a 0, the second a 1, etc. (well, in our example it goes to 3 elements, so the last one gets a 2).<br />
+This may be a bit abstract to say here, but even if we haven&#8217;t passed data, this would still work &#8211; i represent the order of the element, not the data item. so, if no data had been passed, within this function call, d would be undefined, but i would still be equal to 0,1,2, &#8230; </p>
+<p>The answer to the second question is the last great mystery of d3. Once you get this, you&#8217;re golden.</p>
+<h3>Creating or removing the right number of elements depending on data</h3>
+<p>Before we get further, let&#8217;s quickly introduce append&#8217;s reckless cousin, remove(). Writing remove at the end of a selection deletes all the corresponding elements from the document object model.<br />
+so,
+<pre class="brush: jscript; title: ; notranslate">d3.selectAll(&quot;p&quot;).remove()</pre>
+<p> would remove our 3 paragraphs. Let&#8217;s do it and get rid of our paragraphs.<br />
+Actually, let&#8217;s do
+<pre class="brush: jscript; title: ; notranslate">d3.select(&quot;body&quot;).selectAll(&quot;*&quot;).remove()</pre>
+<p> and remove everything below the body.</p>
+<p>Now, earlier, we were alluding to what could happen if we didn&#8217;t have the same number of elements as of items in our dataset.</p>
+<p>That means that we should be able to do the following: </p>
+<ul>
+<li>If there are fewer elements than items in a dataset, create the missing elements</li>
+<li>If there are fewer elements than items in a dataset, disregard the extra data items</li>
+<li>If there are more elements than items in a dataset, remove the extra elements</li>
+<li>If there are more elements than items in a dataset, don&#8217;t change the extra elements/li>
+<li>As data are updated, keep some elements, remove some, add some</li>
+</ul>
+<p>Why would we want to do all of this?<br />
+The first case is the most common. When we start a data visualization script, chances are that there are no elements yet but there is data, so you&#8217;ll want to add elements based on the data.<br />
+Then, if you have interaction or animation, your dataset may be updated, and depending on what you intend to do you may just want to update the existing elements, create new ones, remove old ones, etc. That&#8217;s when you may want to do 2, 3 or 4.<br />
+The last (5th case) is more complicated, but don&#8217;t worry, we&#8217;ve got you covered.</p>
+<p>Right now, we should have 0 p elements on our page (and if for some reason this is not the case, feel free to reload it).</p>
+<p>let&#8217;s create a variable like so: </p>
+<pre class="brush: jscript; title: ; notranslate">var text=[&quot;first paragraph&quot;,&quot;second paragraph&quot;,&quot;third paragraph&quot;];</pre>
+<p>somewhat uninspired, I know, but let&#8217;s keep typing to a minimum, if you want to go all lyrical please go ahead.</p>
+<p>We are smack in case 1: we&#8217;d like to create 3 paragraphs, we have 3 items in our dataset, but 0 elements yet.<br />
+Here&#8217;s what we&#8217;ll type: </p>
+<pre class="brush: jscript; title: ; notranslate">d3.select(&quot;body&quot;).selectAll(&quot;p&quot;).data(text).enter().append(&quot;p&quot;).html(String)</pre>
+<p>A-ha! we meet again, select selectAll data enter append.<br />
+After all we&#8217;ve done, select selectAll should make some sense, even though, at this stage, this selection returns 0 p elements. There are none yet.<br />
+Then we pass data as we&#8217;ve done before. Note that there are 3 items in our dataset.</p>
+<p>Then, we use the enter() statement. What it does is that it prepares one new element for every unmatched data item. We&#8217;ll expand a bit later on the true meaning of unmatched, but for the time being, let&#8217;s focus on the difference. We have 0 elements, but 3 data items. 3 &#8211; 0 = 3, so the enter() selection will prepare 3 new elements.<br />
+What does prepare means? the elements are not created yet at this stage, but they will with the next command. Right after enter(), think of what&#8217;s created as placeholders for future element (Scott&#8217;s vocabulary), or buds that will eventually blossom into full-fledge elements (mine).<br />
+After enter(), we specify an append(&#8220;p&#8221;) command. Previously, when we had used the append method, we created one element at a time. But in this case, we are going to create as many as there are placeholders returned by enter(). So, in our case, 3.<br />
+You may legitimately wonder why we needed a select statement to begin with &#8211; after all, enter() works on the difference between selectAll and data. But when we are going to append elements, we will need to create them somewhere, to build them upon a container. This is what the first select does. Omit it, and you&#8217;ll have an error, because the system will be asked to create something without knowing where.<br />
+The final method, html, will populate our paragraphs with text. The String function, which we have already seen, simply returns the content of each item in our dataset. </p>
+<p>We&#8217;re using select > selectAll > data > enter > append, but hopefully you will see why (and if you don&#8217;t, hang on to the end of the article, and feel free to ask questions).</p>
+<p>But let&#8217;s recap once more. Actually, let&#8217;s see the many ways to get this wrong (or, surprisingly, right)</p>
+<pre class="brush: jscript; title: ; notranslate">d3.selectAll(&quot;p&quot;).data(text).enter().append(&quot;p&quot;).html(String)</pre>
+<p>We&#8217;ve alluded to that: without a container to put them in, p elements can&#8217;t be created. This will result in a DOM error.</p>
+<pre class="brush: jscript; title: ; notranslate">d3.select(&quot;body&quot;).selectAll(&quot;p&quot;).data(text).append(&quot;p&quot;).html(String)</pre>
+<p>No enter statement. After the selectAll, the selection has 0 items. This doesn&#8217;t change after the data method. As such, append creates 0 new elements, and nothing changes in the document. (but no error though)</p>
+<pre class="brush: jscript; title: ; notranslate">d3.select(&quot;body&quot;).data(text).selectAll(&quot;p&quot;).enter().append(&quot;p&quot;).html(String)</pre>
+<p>In many cases in d3, it&#8217;s ok to switch the order of chained methods, but that&#8217;s not true here. selectAll must come before data. We bind data to elements. The other way round would have made sense, but that&#8217;s the way it is. First selectAll, then data. Here, we get an error, because enter() can&#8217;t be fired directly from selectAll. </p>
+<pre class="brush: jscript; title: ; notranslate">d3.select(&quot;body&quot;).selectAll(&quot;wootwoot&quot;)
+.data(text).enter().append(&quot;p&quot;).html(String)</pre>
+<p>This actually works. Why?<br />
+There are actually 0 elements of type &#8220;wootwoot&#8221; in our document, which may or may not surprise you. There are still 3 items in the dataset, so enter() returns space for 3 new elements. the next append subsequently creates 3 p elements, which are populated by the html method.<br />
+It usually makes more sense to use the same selector in the selectAll and the append methods, but that&#8217;s not always the case. Sometimes, you will be selecting elements of a specific class, but in an append method, you have to specify the name of an element, not any selector. So you&#8217;d go </p>
+<pre class="brush: jscript; title: ; notranslate">d3.select(&quot;body&quot;).selectAll(&quot;.myClass&quot;)
+.data(text).enter().append(&quot;p&quot;).html(String).attr(&quot;class&quot;,&quot;myClass&quot;)</pre>
+<p>Now that we&#8217;ve seen a few variations on the subject, here is a really cool use of enter. Check this out: </p>
+<pre class="brush: jscript; title: ; notranslate">d3.select(&quot;body&quot;).selectAll(&quot;h1&quot;).data([{}]).enter().insert(&quot;h1&quot;).html(&quot;My title&quot;)</pre>
+<p>ok there are 3 things here worth mentioning. 2 are just for show, though it doesn&#8217;t hurt to know them, but the 3rd one is really neat and useful.<br />
+In data, we&#8217;ve passed: [{}]. This is an array of one object which is empty. There are two interesting things with that construct, one is that there&#8217;s only one element, the other one is that it&#8217;s an object. When you pass objects, the functions you run on them (like in the attr or style methods) can be used to add properties to them or change them. If that doesn&#8217;t make sense yet, just accept for now that it gives you more flexibility than using, say, [0].<br />
+We&#8217;ve used insert instead of append. What this means is that we&#8217;re adding things before the first child of our container, not at the end (ie after the last child). In other words, our h1 (a title) will go at the top of the body element &#8211; fitting.</p>
+<p>But what&#8217;s really interesting is what would happen if you were to run that statement again &#8211; nothing. try it. See?<br />
+Why is that? Well, on your first go, at a point where there are no h1 elements yet, it works the standard way &#8211; you do a selectAll that returns nothing, you bind a dataset with more elements, then enter prepares space for the unmatched elements &#8211; 1 in our case &#8211; and then append creates that element. You may notice that the html part doesn&#8217;t use the data.<br />
+When you run it again, the selectAll finds one h1 element, there&#8217;s still one item in the dataset, so enter won&#8217;t find any unmatched element, so the subsequent append is ignored. </p>
+<p>So, you can run this kind of thing in a loop safely, it will only do what it&#8217;s supposed to do on the first go, it will be ignored afterwards. Don&#8217;t be afraid to use this construct for all the unique parts of your visualization, so you won&#8217;t have to worry about creating them multiple times.</p>
+<h3>Other cases of mismatch between data items and elements</h3>
+<p>All right, so now we have 3 p elements and 3 items in our dataset.<br />
+What happens if we do this: </p>
+<pre class="brush: jscript; title: ; notranslate">text2=[&quot;hello world&quot;]
+d3.selectAll(&quot;p&quot;).data(text2).html(String)</pre>
+<p> ?</p>
+<p>There is now one item in the data set, versus 3 p elements. Try to make a guess before you type this in. At the tutorial, the audience made a few reasonable guesses, namely: the last 2 paragraphs will be removed, only &#8220;hello world&#8221; will remain. Or: all paragraphs will be changed to &#8220;hello world&#8221;.<br />
+Either could happen if d3 was trying to be smart and guess your intent. Fortunately, d3 is no excel here and behaves consistently even if that means extra work for you. When you do that (and please try this now) what happens is that the first paragraph of text is changed and the other two are untouched.</p>
+<p>We are in the case, change the matched elements, ignore the others. </p>
+<p>By the way, by now you should be able to guess what would have happened if there had been an enter() right after the data. Do I hear&#8230; nothing? almost! There would be no unmatched data element, so enter() would not return anything. Besides, enter() would require an append afterwards to make anything. This is why you&#8217;ll get an error: html can&#8217;t work directly after enter(). you would need an append. </p>
+<p>Now what if we want to remove the extra 2 elements? This is where the exit() method comes into play.<br />
+exit() is pretty much to enter() what remove() is to append(). Kind of.</p>
+<p>let&#8217;s see how this work by example.</p>
+<p>let&#8217;s recreate our 3 p paragraphs just in case: </p>
+<pre class="brush: jscript; title: ; notranslate">d3.selectAll(&quot;p&quot;).remove();
+d3.select(&quot;body&quot;).selectAll(&quot;p&quot;).data(text).enter().append(&quot;p&quot;).html(String);</pre>
+<p>Now we pass the new dataset:</p>
+<pre class="brush: jscript; title: ; notranslate">d3.selectAll(&quot;p&quot;).data(text2).html(String)</pre>
+<p> &#8211; remember that only the first paragraph has changed, the other two are untouched.<br />
+Now, while all the items in the dataset are matched with elements, there are elements which are not matched with an item in the dataset: the last two. This is where exit() comes into play. exit() will select those two paragraphs, so they can be manipulated. Typically, what happens then is a remove(), but you could think of other options.</p>
+<pre class="brush: jscript; title: ; notranslate">d3.selectAll(&quot;p&quot;).data(text2).exit().style(&quot;color&quot;,&quot;red&quot;);</pre>
+<p>That will flag them instead of removing them.<br />
+But typically, you do: </p>
+<pre class="brush: jscript; title: ; notranslate">d3.selectAll(&quot;p&quot;).data(text2).exit().remove();</pre>
+<p>. </p>
+<p>note that even though you have already matched a one item dataset to that selection, to use exit(), you will need to use data before. selectAll(&#8220;p&#8221;).exit() won&#8217;t work. You&#8217;ll have to re-specify the data match. </p>
+<p>So that takes care of the case when you want to remove extraneous data items.<br />
+This leaves us with only one simple case: where you have more items in your dataset than you have elements and you don&#8217;t want to create elements for the extra data items.<br />
+That&#8217;s the simplest syntax, really.</p>
+<p>Here, for instance, we have only one paragraph left, but there are 3 items in the text variable.<br />
+so let&#8217;s do: </p>
+<pre class="brush: jscript; title: ; notranslate">d3.selectAll(&quot;p&quot;).data(text).html(String)</pre>
+<p> (no enter, no exit, no append).<br />
+The paragraph text will now come from the new dataset (from its first item to be precise), no extra paragraphs will be created, none will be deleted.</p>
+<h3>Data joins</h3>
+<p>the last case (pass a new dataset, create new elements as needed, make some elements stay and make some elements go) requires more complexity and actually I won&#8217;t cover it in detail here, instead I will explain the principle and refer you to this tutorial on <a href="http://bost.ocks.org/mike/constancy/">object constancy</a> by Mike Bostock.<br />
+In the general case, when you try to match your dataset to your elements, you count them and deal with the difference. So you have 5 data items and 3 elements: you can make 2 extra elements appear by using enter. With the concept of data joins, you can assign precisely each data item to one given element, so the first data item doesn&#8217;t have to be that of the first element, etc. Well, the first time it will be, and each element will receive a key, a unique identifier from the dataset. If the dataset is subsequently updated, the element will only be matched if there is an item in the dataset with the same key. Else, it will be found by an exit() method. </p>
+<p>And that&#8217;s the general gist of it.<br />
+At Strata, we went further &#8211; we discussed interaction and transition, but that is downward trivial once you have understood &#8211; and by that, really understood, with all the implications and nuances &#8211; the selections.</p>
+]]></content:encoded>
+			<wfw:commentRss>/2013/03/05/d3-tutorial-at-strata-redux/feed/</wfw:commentRss>
+		<slash:comments>16</slash:comments>
+		</item>
+	</channel>
+</rss>

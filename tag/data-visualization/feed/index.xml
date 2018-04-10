@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>data visualization &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/data-visualization/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>Better life index &#8211; a post mortem</title>
+		<link>/2011/05/25/better-life-index-a-post-mortem/</link>
+		<comments>/2011/05/25/better-life-index-a-post-mortem/#comments</comments>
+		<pubDate>Tue, 24 May 2011 23:48:54 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[web sites]]></category>
+		<category><![CDATA[better life index]]></category>
+		<category><![CDATA[development]]></category>
+		<category><![CDATA[infovis]]></category>
+		<category><![CDATA[moritz stefaner]]></category>
+		<category><![CDATA[oecd]]></category>
+		<category><![CDATA[outsourcing]]></category>
+		<category><![CDATA[post mortem]]></category>
+		<category><![CDATA[project management]]></category>
+		<category><![CDATA[raureif]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=872</guid>
+		<description><![CDATA[Today, OECD launched the Your better Life Index, a project on which I had been involved for months. The short I&#8217;m happy with the launch, the traffic has been really good, and there was some great coverage. The three main lessons are: Just because data is presented in an interactive way doesn&#8217;t make it interesting. <a class="read-more" href="/2011/05/25/better-life-index-a-post-mortem/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>Today, OECD launched the <a href="http://oe.cd/bli">Your better Life Index</a>, a project on which I had been involved for months.</p>
+<h2><a href="http://www.jeromecukier.net/wp-content/uploads/2011/05/bli.png"><img class="aligncenter size-full wp-image-880" title="bli" src="http://www.jeromecukier.net/wp-content/uploads/2011/05/bli.png" alt="" /></a></h2>
+<h2>The short</h2>
+<p>I&#8217;m happy with the launch, the traffic has been really good, and there was <a href="http://flowingdata.com/2011/05/24/better-life-index-measures-well-being-across-countries/">some</a> <a href="http://infosthetics.com/archives/2011/05/oecd_better_life_index_comparing_the_national_well-being_by_flowers.html">great</a> <a href="http://www.economist.com/blogs/dailychart/2011/05/well-being_and_wealth?fsrc=scn/tw/te/dc/thepursuitofhappiness">coverage.</a></p>
+<p>The three main lessons are:</p>
+<ul>
+<li><strong>Just because data is presented in an interactive way doesn&#8217;t make it interesting</strong>. The project is interesting because the design was well-suited to the project. That design may not have worked in other contexts, and other tools may not have worked in this one.</li>
+<li><strong>The critical skill here was design</strong>. There are many able developers, but the added value of this project was the ability of the team to invent a form which is unique, excellent and well-suited for the project.</li>
+<li><strong>Getting a external specialists to develop the visualization was the critical decision. </strong>Not only did we save time and money, but the quality of the outcome is incomparable. What we ended up with was far beyond the reach of what we could have done ourselves.</li>
+</ul>
+<h2>The less short</h2>
+<p>Before going any further, I remind my kind readers that while OECD pays my bills, views are my own.</p>
+<h3>Early history of the project</h3>
+<p>OECD had been working on measuring progress for years and researching alternative ways to measure economy. In 2008-2009 it got involved in the <a href="http://www.stiglitz-sen-fitoussi.fr/en/index.htm">Stiglitz-Fitoussi-Sen commission</a> which came up with concrete recommendations on new indicators to develop. It was then that our communication managers started lobbying for a marketable OECD indicator, like the UN&#8217;s Human Development Index or the Corruption Perception Index from Transparency International.</p>
+<p>The idea was to come up with some kind of Progress Index, which we could communicate once a year or something. Problem &#8211; this was exactly against the recommendations of the commission, which warned against an absolute, top-down ranking of countries.</p>
+<p>Eventually, we came up with an idea. A ranking, yes, but not one definitive list established by experts. Rather, it would be a user&#8217;s index, where said user would get their own index, tailored to their preferences.</p>
+<p>Still, the idea of publishing such an index encountered some resistance, some countries did not like the idea of being ranked&#8230; But at some point in 2010 those reserves were overcome and the idea was generally accepted.</p>
+<h3>Our initial mission</h3>
+<p>It was then that my bosses asked  a colleague and I to start working on what such a tool could look like, and we started working based on the data we had at hand. I&#8217;ll skip on the details of that but we first came up with something in Excel which was a big aggregation of many indicators. It was far from perfect (and further still from the final result) but it got the internal conversation going.</p>
+<p>Meanwhile, our statistician colleagues were working on new models to represent inequality, and started collecting data  for a book on a similar project, which will come out later this year (&#8220;How is Life?&#8221;). It made sense to join forces, we would use their data and their models, but will develop an interactive tool while they write their book, each project supporting the other one.</p>
+<h3>From prototypes to outsourcing</h3>
+<p>It wasn&#8217;t clear then how the tool would be designed. Part of our job was to look at many similar attempts online. We also cobbled some interactive prototypes, I made one in processing, my colleague in flash. Those models were quite close to what we had seen, really. My model was very textbook stuff, one single screen, linked bar charts. Quite basic too.</p>
+<p>I was convinced that in order to be marketable, our tool needed to be visually innovative. Different, yes, but not against the basic rules of infovis! No 3D glossy pie or that kind of stuff. Unique, but in a good way. There was also some pressure to use the existing infovis tools used by OECD. We have one, for instance, which we had introduced for <a href="http://stats.oecd.org/OECDregionalstatistics/">subnational statistics</a> and which was really good for that, and which we have used since then in other contexts, with mixed success. My opinion was that using that tool as is on this project would bury it.</p>
+<p>That&#8217;s my <strong>1st lesson here</strong>. I&#8217;ll take a few steps back here.</p>
+<p>In 2005, the world of public statistics was shaken by the introduction of <a href="http://www.gapminder.org/">gapminder</a>. The way that tool presented statistics, and the huge success of the original <a href="http://www.gapminder.org/videos/ted-talks/hans-rosling-ted-2006-debunking-myths-about-the-third-world/">TED talk</a> &#8211; which attracted tens of millions of viewers &#8211; prompted all statistical offices to consider using data visualization, or rather in our words to produce &#8220;dynamic charts&#8221;, as if the mere fact that gapminder was interactive was the essence of its success. The bulk of such initiatives was neither interesting nor successful. While interactivity opens new possibilities, it is a means and certainly not than an end in itself. Parenthese closed.</p>
+<p>At this stage, the logical conclusion was that <strong>we needed to have a new tool developed from scratch</strong>, specifically suited for the project. Nothing less would give it the resonance that we intended. My colleague lobbied our bosses, who took it to their bosses, and all the way to the Secretary-General of OECD. This went surprisingly well, and soon enough we were granted with a generous envelope and tasked with finding the right talent to build the tool.</p>
+<h3>Selecting talent</h3>
+<p>So our job shifted from creating a tool and campaigning for the project to writing specifications that could be understood by external developers. We had to &#8220;unwrite&#8221; our internal notes describing our prototypes and rewrite them in a more abstract way, trying to describe functionality rather than how we thought we could implement it (i.e. &#8220;the user can select a country&#8221; rather than &#8220;and when they <em>click</em> on a country, the <em>middle pane</em> changes to bla bla bla&#8221;.)</p>
+<p>Being a governmental organization we also had to go through a formal call for tenders process, where we&#8217;d have a minimum number of bidders and an explicit decision process that could justify our choices.</p>
+<p>This process was both very difficult and very interesting. Difficult because we had many very qualified applicants and not only could we only choose one, but that choice had to be justified, vetted by our bosses, which would take time. And it was rewarding because all took a different approach to the project and to the selection process. What heavily influenced the decision process was (nod to the<strong> 2nd lesson I outlined</strong>) whether the developers showed potential to create something visually unique. We found that many people were able to answer functionally to what we had asked. But the outcome probably wouldn&#8217;t match the unspoken part of our specifications. We needed people who could take the project beyond technical considerations, and imbue it with the creative spirit that would make it appealing to the widest audience.</p>
+<h3>Working with a developer</h3>
+<p>When we officially started to work with the selected developer &#8211; a joint effort by <a href="http://moritz.stefaner.eu/">Moritz Stefaner</a> and <a href="http://www.raureif.net/">RauReif</a>, some time had passed since we had introduced the project to them. When Moritz started presenting some visual research (which by the way has very little to do with the final site) I was really surprised by how much this was different what we had been working on. And that&#8217;s my <strong>3rd lesson here</strong>.</p>
+<p>We had become unable to start again from a blank sheet of paper and to re-imagine the project from scratch. We were too conditioned by the other projects we had seen and our past prototypes that we lacked that mental agility. Now that&#8217;s a predicament that just can&#8217;t affect an external team. Besides, even if we had the degree of mastery of our developers in flash or visual design (and we don&#8217;t), we still had our normal jobs to do, meetings to attend and all kind of office contingencies, and we just couldn&#8217;t be that productive. Even if we had equivalent talent inhouse, it would still had been more effective to outsource it.</p>
+<p>What I found most interesting in our developers approach is that it underplayed the accuracy of the data. The scores of each country were not shown, nor the components of that score. That level of detail was initially hidden, which produced a nice, simple initial view. But added complexity could be revealed by selecting information, following links etc. At any time, the information load would remain manageable.</p>
+<p>Two things happened in a second phase. On one hand, Moritz had that brilliant idea of a flower. I instantly loved it, so did the colleagues who worked with me since the start of the project. But it was a very hard sale to our management who would have liked something more traditional. Yet that flower form was exactly what we were after: visually unique, a nice match with the theme of the project, aesthetically pleasing, an interesting construction, many possibilities of variation&#8230; Looking back, it&#8217;s still not clear how we managed to impose that idea that almost every manager hated. The most surprising is that one month after everybody had accepted that as an evidence.</p>
+<p>On the other, the written part of the web site, which was initially an afterthought of the project, really gained in momentum and importance, both in terms of contents and design. Eventually the web site would become half of the project. What&#8217;s interesting is that the project can cater to all kinds of depths of attention: it takes 10 seconds to create an index, 1 minute to play with various hypotheses and share the results on social networks, but one could spend 10 more minute reading the page of a country or of a topic, and several hours by checking the reference texts linked from these pages&#8230;</p>
+<h3>Closing thoughts</h3>
+<p>Fast forward to the launch. I just saw a note from Moritz that says that we got 60k unique visitors and 150k views. That&#8217;s about 12 hours after the site was launched (and, to be honest, it has been down during a couple of these 12 hours, but things are fine now)!! those numbers are very promising.</p>
+<p>When we started on that project we had an ambition for OECD. But beyond that, I hoped to convince our organization and others of the interest of developing high-quality dataviz projects to support their messages. So I am really looking forward to see similar projects that this one might inspire.</p>
+]]></content:encoded>
+			<wfw:commentRss>/2011/05/25/better-life-index-a-post-mortem/feed/</wfw:commentRss>
+		<slash:comments>9</slash:comments>
+		</item>
+		<item>
+		<title>My tableau contest entry</title>
+		<link>/2010/03/26/my-tableau-contest-entry/</link>
+		<comments>/2010/03/26/my-tableau-contest-entry/#comments</comments>
+		<pubDate>Fri, 26 Mar 2010 18:35:59 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[contest]]></category>
+		<category><![CDATA[Tableau]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=355</guid>
+		<description><![CDATA[myDashboard Powered by Tableau so here it is. I chose to compete on the Activity Rates and Healthy Living data set, because after downloading it I really enjoyed exploring it. If the viz doesn&#8217;t show well in the blog, here&#8217;s a link to its page My main reason for entering the contest is to be <a class="read-more" href="/2010/03/26/my-tableau-contest-entry/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p><script type="text/javascript" src="http://public.tableausoftware.com/javascripts/api/viz_v1.js"></script><object class="tableauViz" width="704" height="839" style="display:none;"><param name="name" value="contest/myDashboard" /><param name="toolbar" value="yes" /></object><noscript>myDashboard <br /><a href="#"><img alt="myDashboard " src="http://public.tableausoftware.com/static/images/contest-myDashboard_rss.png" height="100%" /></a></noscript>
+<div style="width:704px;height:22px;padding:0px 10px 0px 0px; margin-top: -6px; color:black;font:normal 8pt verdana,helvetica,arial,sans-serif;">
+<div style="padding-left: 588px;"><a href="http://www.tableausoftware.com/public?ref=http://public.tableausoftware.com/views/contest/myDashboard" target="_blank">Powered by Tableau</a></div>
+</div>
+<p>so here it is. I chose to compete on the <a href="http://www.tableausoftware.com/public/sites/default/files/Activity_Rates_and_Healthy_Living.xls">Activity Rates and Healthy Living</a> data set, because after downloading it I really enjoyed exploring it.</p>
+<p>If the viz doesn&#8217;t show well in the blog, here&#8217;s a <a href="http://public.tableausoftware.com/views/contest/myDashboard">link to its page</a></p>
+<p>My main reason for entering the <a href="http://www.tableausoftware.com/public/viz-contest">contest</a> is to be able to see what others have done. There are obviously many, many ways to tackle this and I am very much looking forward to see everyone&#8217;s work! my interactions with the Tableau community, especially through the forum, have always been very rewarding and what better way to learn than from example!</p>
+<p>So for the fellow contestants that will see my work, here is my train of thoughts for the dashboard.</p>
+<h3>The dataset</h3>
+<p>I&#8217;m aware of USDA&#8217;s <a href="http://maps.ers.usda.gov/FoodAtlas/">food environment atlas</a>. It&#8217;s an application where people can see various food-related indicators on a map. The dataset we were handled is actually the background data of this. So, there is already a place where people can <em>consult </em>food indicators.</p>
+<p>Now this beeing Tableau and all, I wanted to create an <em>analytical</em> dashboard where people could understand if and how the <em>input </em>variables affected the <em>output </em>variables.</p>
+<p>The dataset consists mostly of <em>input </em>variables: various indicators that influence how healthy a local population is. That status (<em>output</em>) is expressed through a few variables, such as adult and child obesity rates and adult diabetes rates. Those variables are highly correlated with each other, so in my work I chose to focus on adult obesity rates which is the simplest one.</p>
+<p>Now, inputs. The rest of the variables fall in several categories:</p>
+<ul>
+<li>income (median household income, poverty rates);</li>
+<li>diet (consumption of various food items per capita);</li>
+<li>shopping habits (for various types of stores or restaurants, the dataset would give their number and the money spent in each county, both in absolute numbers and per capita);</li>
+<li>lifestyle information (data on households without cars and far from stores, on the physical activity level of the population, and the facilities offered by the state);</li>
+<li>pricing variables (price ratios between some &#8220;healthy&#8221; food items and some less healthy, equivalent food items, for instance fruits vs. snacks; tax information on unhealthy food);</li>
+<li>policy variables (measuring participation to various programmes such as SNAP or WIC); </li>
+<li>socio-demographic variables (ethnic groups in population, &#8220;metro&#8221; status of county, whether the county was growing and shrinking, and voting preferences).</li>
+</ul>
+<p>Yes, that&#8217;s a lot of variables (about 90, plus the county and state dimensions).</p>
+<p>Oddly enough, there wasn&#8217;t a population measure in the dataset, and many indicators were available in absolute value only, so I constructed a proxy by dividing two variables on the same subject (something like &#8220;number of convenience stores&#8221; and &#8220;number of convenience stores / capita&#8221;).</p>
+<p>That enabled me to build indicators per capita for all subjects, so I could see if they were correlated with my obesity rates.</p>
+<h3>Findings &#8211; using Tableau desktop to make sense of the dataset</h3>
+<p>The indicators which were most correlated with obesity were the income ones, which came as no surprise. All income indicators were also very correlated to each other. In the USA, <a href="http://www.census.gov/hhes/www/poverty/povdef.html#2">poverty</a> means having an income below a certain threshold which is defined at the <em>federal level</em>. But in other contexts, poverty is most often defined in relation to the median income (typically, a household is in poverty if its income is below half of the median income), so it can be used to measure inequality of a community, and <em>dispersion </em>of incomes.</p>
+<p>As a result, many indicators appear to be correlated with obesity because they are not independent of income. This is the case for instance for most of the policy indicators: if a programme has many recipients in a county, it is because poverty is widespread, so residents are more likely to be affected by obesity. This makes it difficult to measure the impact of the programmes with this dataset. This is also the case, unfortunately, for racial indicators, as most of the counties with a very high black population have a low income.</p>
+<p>Diet indicators also appear to be uncorrelated with obesity. This is counter-intuitive &#8211; isn&#8217;t eating vegetables or fresh farm produce the most certain way to prevent obesity? But one has to remember that this dataset is aggregated at the county level. Just because a county has a high level of, say, fruits consumption per capita doesn&#8217;t mean that every household is eating that much. Realistically, consumption will be very dispersed: the households where people cook, which are <a href="http://www.ted.com/talks/jamie_oliver.html">less likely to be affected by obesity</a>, will buy all the fruits, and those where people don&#8217;t cook will simply buy none. Also, just because one buys more vegetable than average doesn&#8217;t mean they don&#8217;t also buy other, less recommended foodstuff.</p>
+<p>The only diet indicator that appear to be somewhat correlated to obesity is the consumption of soft drinks.</p>
+<p>When it comes to lifestyle habits, surprisingly, the proportion of households without car and living far from a store &#8211; people likely to walk more, so to be healthier &#8211; is positively correlated with obesity. This is because counties where this indicator is high are also poorer than average &#8211; again, income explains most of this. However, physical activity in general plays a positive role. States where people are most active, such as Colorado, enjoy the lowest obesity figures. In fact, all the counties with less than 15% of obesity are in Colorado.</p>
+<p>Finally, pricing didn&#8217;t seem to have much impact on neither obesity, nor consumption. Why is that? Economists would call this &#8220;low price elasticity&#8221;, meaning that price changes do not encourage people to switch products and habits. But there is another explanation. Again, people who can&#8217;t cook are not going to buy green vegetables because they are cheaper. Also, consider the tax amount that are applied: no more than 7% in the most aggressive states. Compare that figure to the 400%+ levy that is applied to cigarettes in many countries of the world! Clearly, 4-7% is not strong enough to change habits. However, this money can be used to sponsor programmes that can help people adopt safer behaviors.</p>
+<h3>What to show? making the visualization</h3>
+<p>First, I wanted to show all of those findings. If 2 variables that you expect to be correlated (say, consumption of vegetables and obesity) are in fact not correlated, a point is made! But visually, nothing is less interesting than a scatterplot that doesn&#8217;t exhibit correlation. It&#8217;s just a stupid cloud of dots.</p>
+<p>So instead I chose to focus on the correlations I could establish, namely: obesity and income, and obesity and activity. Those are the 2 lower scatterplot of my dashboard. I chose the poverty rate measure, because I&#8217;d rather have a trend line going up, than going down.</p>
+<p>I duplicated that finding with a bar chart made with median income bins. For each bin (which represent all the counties where the median income fall in that range), I would plot the average obesity rate, and, miracle! this comes up as a markedly decreasing bar chart. Now, this figure doesn&#8217;t <em>establish </em>correlation, let alone causality, but it certainly <em>suggests </em>it more efficiently than a scatterplot. Also, it can be doubled as a navigation aide: clicking on a bar would highlight or select the relevant counties.</p>
+<p>Finally, I decided to do a map. Well, actually, it was the first thing I had done, but  had second thoughts about it, and eventually I put it in. Why? first, to allow people to look up their county. Technically, my county is Travis county (Austin, TX) and I can find it easily on a map. Less so if I have to look for county names listed in order of any of their indicators. I added a quick filter on county name, for those who&#8217;d rather type than look up.</p>
+<p>I also wanted to see whether there was a link between geography and obesity. So try the following.</p>
+<ul>
+<li>Where are the counties with obesity rates less than 15% ? Colorado only. </li>
+<li>If we raise the threshold a little, we get San Francisco and New York. But until 20%, these counties remain very localized.</li>
+<li>Likewise, virtually all counties above 35% are in the South &#8211; Alabama, Louisianne, Mississipi.</li>
+</ul>
+<p>Population also has an importance. The counties with a population above 1m people tend to have lower rates &#8211; their citizens also usually have higher incomes.</p>
+<p>I decided to zoom the map on the lower 48 by default. It is possible to zoom out to see Alaska and Hawaii, but I don&#8217;t think that the advantage of seeing them all the time is greater than the inconvenient of having a smaller view point even if they are not necessary.</p>
+<p>Regarding the marks. Originally, I didn&#8217;t assign any variable to their size, but then thought that the larger counties (i.e. LA, Harris (Houston), Cook (Chicago) &#8230;) were underrepresented. So I assigned my population proxy to size. But then, the density of the marks competed with the intensity of the color, which was attributed to the obesity rate. So I removed that and chose a size so that marks wouldn&#8217;t overlap each other too much. Regarding color, I wasn&#8217;t happy with the default scale. If I let it as is, it would consider that 12.5%, the minimum value of the dataset, is an extremely low number. But in absolute terms, it&#8217;s not. Most developed countries have obesity rates lower than that value at the national level. Japan or Korea are <a href="http://dx.doi.org/10.1787/538537864717">below 4%</a>. So I made the scale start at 0. But I didn&#8217;t like the output: the counties with the highest values didn&#8217;t stand out. Eventually, I chose a diverging scale, which helped counties with high and low values to be more visible.</p>
+<p>I edited an tooltip card for the view. In another version of the dashboard, I had a sheet with numbers written out that would change depending on which country was last brushed. I like the idea that this information can stay on. But I got confused in the configuration of the actions, and couldn&#8217;t completely prevent the filter that applied to this sheet to be disabled, sometimes, which caused number for all counties to overlap, and an annoying downtime as that happens. So I made an tooltipinstead. Anyway, it&#8217;s easier to format text like this. But the problem is that it can hide a good portion of the dashboard. So I exercised constraint and only chose what I found the 15 or so most relevant variables.</p>
+<p>Voilà! that&#8217; s it. I hope you like my dashboard, and I look forward to see the work of others! If you are a contestant, please leave a link to your entry in the comments. Good luck to all!!</p>
+]]></content:encoded>
+			<wfw:commentRss>/2010/03/26/my-tableau-contest-entry/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Using Tableau Public: first thoughts</title>
+		<link>/2010/01/21/using-tableau-public-first-thoughts/</link>
+		<comments>/2010/01/21/using-tableau-public-first-thoughts/#comments</comments>
+		<pubDate>Thu, 21 Jan 2010 13:44:18 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[data publishing]]></category>
+		<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[chart]]></category>
+		<category><![CDATA[data tools]]></category>
+		<category><![CDATA[review]]></category>
+		<category><![CDATA[Tableau]]></category>
+		<category><![CDATA[Tableau Public]]></category>
+		<category><![CDATA[tool]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=313</guid>
+		<description><![CDATA[I am currently beta testing Tableau Public. Essentially Tableau Public let you bring the power of Tableau analysis online. With Tableau public, your audience doesn&#8217;t need to download a workbook file that they can see in an offline, software client &#8211; they can see and interact with your work directly on a web page. There <a class="read-more" href="/2010/01/21/using-tableau-public-first-thoughts/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>I am currently beta testing <a href="http://www.tableausoftware.com/">Tableau</a> Public. Essentially <a href="http://public.tableausoftware.com/">Tableau Public</a> let you bring the power of <a href="http://www.jeromecukier.net/?p=194">Tableau</a> analysis online. With Tableau public, your audience doesn&#8217;t need to download a workbook file that they can see in an offline, software client &#8211; they can see and interact with your work directly on a web page.</p>
+<p>There are quite a few examples of the things you can do with Tableau public. These are the examples you are given when you start the product:</p>
+<p><a href="http://www.freakalytics.com/2009/06/30/historic-stock-market-returns-exploring-insightful-metrics-with-tableau-online/"><img class="size-full wp-image-317" title="Tracking Economic Indicators by Freakalytics" src="http://www.jeromecukier.net/wp-content/uploads/2010/01/Freakalytics1.png" alt="Tracking Economic Indicators by Freakalytics" width="127" height="92" /></a><a href="http://blogs.wsj.com/venturecapital/2009/08/25/how-long-does-it-take-to-build-a-technology-empire/"><img class="size-full wp-image-315" style="margin-left: 10px; margin-right: 10px;" title="A Tale of 100 Entrepreneurs by Christian Chabot" src="http://www.jeromecukier.net/wp-content/uploads/2010/01/Chabot1.png" alt="A Tale of 100 Entrepreneurs by Christian Chabot" width="127" height="92" /></a><a href="http://www.jeromecukier.net/wp-content/uploads/2010/01/Snarge1.png"><img class="size-full wp-image-314" style="margin-left: 10px; margin-right: 10px;" title="Bird strikes by airport by Crankyflier" src="http://www.jeromecukier.net/wp-content/uploads/2010/01/Snarge1.png" alt="Bird strikes by airport by Crankyflier" width="127" height="92" /></a><a href="http://fantasynews.cbssports.com/fantasyfootball/story/12157942"><img class="size-full wp-image-316" style="margin-left: 10px; margin-right: 10px; " title="Interactive Running Back Selector by CBS sports" src="http://www.jeromecukier.net/wp-content/uploads/2010/01/Eisenberg1.png" alt="Interactive Running Back Selector by CBS sports" width="127" height="92" /></a></p>
+<p style="clear:left;">And there are always more on <a href="http://www.tableausoftware.com/community/blog">Tableau&#8217;s own blog</a>. I&#8217;ve done <a href="http://www.jeromecukier.net/?p=295">quite a few</a> which I&#8217;ll share progressively on this blog and on my OECD blog, <a href="http://www.oecd.blog/statistics/factblog">http://www.oecd.blog/statistics/factblog</a>.</p>
+<p>So that&#8217;s the context. What&#8217;s the verdict?</p>
+<h2><strong>1. There is no comparable data visualization platform out there.</strong></h2>
+<p>There are many ways to communicate data visually. Count them: <a href="http://www.datavisualization.ch/tools/13-javascript-libraries-for-visualizations">13</a>, <a href="http://sixrevisions.com/javascript/20-fresh-javascript-data-visualization-libraries/">20</a>, <a href="http://theresaneil.wordpress.com/2009/12/06/28_rich_charting_tools/">28</a>, <a href="http://www.tripwiremagazine.com/2009/12/70-tools-for-visualizing-your-data-css-flash-jquery-php.html">75</a>&#8230; and many more.</p>
+<p>However these tools have a narrower focus than Tableau, or require the user some programming ability. For instance, <a href="http://www.many-eyes.com/">Many Eyes</a> uses a certain number of types of data visualization which can be set up in seconds, but which cannot be customized. Conversely, <a href="http://vis.stanford.edu/protovis/">Protovis</a> is very flexible but requires some knowledge of Javascript. And even for a skilled developer, coding an interactive data visualization from scratch takes time.</p>
+<p>By contrast, <strong>Tableau is a fully-featured solution which doesn&#8217;t require programming</strong>. It has many representation types which can be deeply customized: every visual characteristic of a chart (colour, size, position, etc.) can depend on your data. Several charts can also be combined as one dashboard. On top of that, data visualization done in Tableau comes with many built-in controls, with an interface to highlight and filter data, or to get more details on demand. For dashboards, it is also possible to link charts, so that actions done on one chart (highlighting records, for instance) affect other charts.</p>
+<h2><strong>2. The solution is not limitless. </strong></h2>
+<p>Tableau enables you to do things which are not possible using other packages. But it doesn&#8217;t allow you to do anything. That&#8217;s for your own good &#8211; it won&#8217;t allow you to do things that don&#8217;t make sense.</p>
+<p><strong>There are many safety nets in Tableau</strong>, which you may or may not run into. For instance, you can&#8217;t make a line chart for data which don&#8217;t have a temporal dimension &#8211; so much for parallel coordinates. However, the system is not fool-proof. Manipulating aggregates, for instance, can lead to errors that you wouldn&#8217;t have to worry about in plain old Excel, where the various steps through which data are computed to create a graph are more transparent (and more manual). Compared to Excel, you have to worry less about formatting &#8211; the default options for colours, fonts and positions are sterling &#8211; and be more vigilant about calculations.</p>
+<h2><strong>3. Strength is in numbers.</strong></h2>
+<p>Over the years, many of us grew frustrated with Excel visual capacities. <a href="http://peltiertech.com/">Others </a><a href="http://www.ozgrid.com/">firmly </a><a href="http://chandoo.org/wp/">believed </a>that anything could be done with the venerable spreadsheet and have shown the world that nothing is impossible.</p>
+<p>The same applies to Tableau. <strong>The vibrant </strong><a href="http://www.tableausoftware.com/community/forums"><strong>Tableau community</strong></a><strong> provides excellent advice</strong>. &#8220;Historic&#8221; Tableau users are not only proficient with the tool, but also have a better knowledge of data visualization practices than the average Excel user. Like any fully-featured product, there is a learning curve to Tableau, which means that there are experts (the proper in-house term is <a href="http://www.tableausoftware.com/learning/training/ondemand">Jedis</a>) which find hacks to make Tableau even more versatile. So of course, it is possible to do <a href="http://www.tableausoftware.com/forum/parallel-coordinates-plot">parallel coordinates with Tableau</a>.</p>
+<p>The forum, like the abundant training, available as videos, manuals, list of tips,or online sessions with an instructor, doesn&#8217;t only help the user to solve their problems, but it also a fantastic source of inspiration.</p>
+<p>With the introduction of Tableau Public, the forum will become even more helpful, as there will be more questions, more problems and more examples.</p>
+<p> </p>
+]]></content:encoded>
+			<wfw:commentRss>/2010/01/21/using-tableau-public-first-thoughts/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Plotter: a tool to create bitmap charts for the web</title>
+		<link>/2009/12/21/plotter-a-tool-to-create-bitmap-charts-for-the-web/</link>
+		<comments>/2009/12/21/plotter-a-tool-to-create-bitmap-charts-for-the-web/#comments</comments>
+		<pubDate>Mon, 21 Dec 2009 17:29:13 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[data publishing]]></category>
+		<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[tips]]></category>
+		<category><![CDATA[web sites]]></category>
+		<category><![CDATA[area charts]]></category>
+		<category><![CDATA[bar charts]]></category>
+		<category><![CDATA[bitmap]]></category>
+		<category><![CDATA[blog]]></category>
+		<category><![CDATA[blogging charts]]></category>
+		<category><![CDATA[charts]]></category>
+		<category><![CDATA[Excel]]></category>
+		<category><![CDATA[line charts]]></category>
+		<category><![CDATA[processing]]></category>
+		<category><![CDATA[tool]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=279</guid>
+		<description><![CDATA[In the past couple of months, I have been busy maintaining a blog for OECD: Factblog. The idea is to illustrate topics on which we work by a chart which we&#8217;ll change regularly. So in order to do that, I&#8217;d have to be able to create charts of publishable quality. Excel screenshots: not a good <a class="read-more" href="/2009/12/21/plotter-a-tool-to-create-bitmap-charts-for-the-web/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>In the past couple of months, I have been busy maintaining a <a href="http://www.oecd.org/statistics/factblog">blog for OECD: Factblog</a>.</p>
+<p>The idea is to illustrate topics on which we work by a chart which we&#8217;ll change regularly. So in order to do that, I&#8217;d have to be able to create charts of publishable quality.</p>
+<h2>Excel screenshots: not a good option</h2>
+<p>There are quite a few tools to create charts on the net. Despite this, the <em>de facto</em> standard is still a screenshot of Excel, a solution which is even used <a href="http://theappleblog.com/2009/12/18/iphone-and-ipod-touch-see-international-surge/">by the most reputable blogs.</a></p>
+<p><div id="attachment_289" style="width: 605px" class="wp-caption aligncenter"><a href="http://theappleblog.com/2009/12/18/iphone-and-ipod-touch-see-international-surge/"><img class="size-full wp-image-289" title="excelinblog" src="http://www.jeromecukier.net/wp-content/uploads/2009/12/excelinblog.png" alt="excelinblog" width="595" height="555" /></a><p class="wp-caption-text">This is taken from http://theappleblog.com/2009/12/18/iphone-and-ipod-touch-see-international-surge/</p></div></p>
+<p><a href="http://theappleblog.com/2009/12/18/iphone-and-ipod-touch-see-international-surge/"></a>But alas, Excel is not fit for web publishing. First, you have to rely on Excel&#8217;s choice of colours and fonts, which won&#8217;t necessarily agree to those of your website. Second, you can&#8217;t control key characteristics of your output, such as its dimensions. And if your chart has to be resized, it will get pixelated. Clearly, there is a better way to do this.</p>
+<p><div id="attachment_280" style="width: 671px" class="wp-caption aligncenter"><a href="http://theappleblog.com/2009/12/18/iphone-and-ipod-touch-see-international-surge/"><img class="size-full wp-image-280" title="pixellated" src="http://www.jeromecukier.net/wp-content/uploads/2009/12/pixellated.png" alt="That's a detail of the chart on the link I showed above. The letters and the data bars are not as crisp as they could have been." width="661" height="387" /></a><p class="wp-caption-text">That&#39;s a detail of the chart on the link I showed above. The letters and the data bars are not as crisp as they could have been.</p></div></p>
+<h2>How about interactive charts?</h2>
+<p>Then again, the most sensible way to present a chart on the web is by making it interactive. And there is no shortage of tools for that. But there are just as many issues.<br />
+Some come from the content management system or blogging environment. Many CMS don&#8217;t allow you to use javascript and/or java and/or flash. So you&#8217;ll have to use a technology which is tolerated by your system.</p>
+<p>Most javascript charting solutions rely on the &lt;CANVAS&gt; element.  Canvas is supported by most major browsers, with the exception of the Internet Explorer family. IE users still represent roughly 40% of the internet, but much more in the case of my OECD blog, so I can&#8217;t afford to use a non-IE friendly solution. There is at least one library which works well with IE, <a href="http://raphaeljs.com/">RaphaelJS</a>.<br />
+Using java cause two problems. First, the hiccup caused by the plug-in loading is enough to discourage some users. Second, it may not be understood well by readers:</p>
+<p><div id="attachment_281" style="width: 574px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2009/12/java-reader.png"><img class="size-full wp-image-281" title="java reader" src="http://www.jeromecukier.net/wp-content/uploads/2009/12/java-reader.png" alt="This is how one of my post reads in google reader. " width="564" height="323" /></a><p class="wp-caption-text">This is how one of my posts reads in google reader. </p></div></p>
+<p>And it&#8217;s futile to believe that readers will read blogs from their home pages. So if all readers can&#8217;t show it well it&#8217;s a show-stopper.</p>
+<h2>A tool to create good bitmap charts</h2>
+<p>So, in a variety of situations the good old bitmap image is still the most appropriate thing to post. That&#8217;s why I created <a href="http://www.openprocessing.org/visuals/?visualID=6595">my own tools</a> with <a href="http://www.processing.org/">Processing</a>.</p>
+<p><a href="http://www.jeromecukier.net/wp-content/uploads/2009/12/plotter-windows.zip">plotter windows</a></p>
+<p><a href="http://www.jeromecukier.net/wp-content/uploads/2009/12/plotter-mac-OS-X.zip">plotter mac OS X</a></p>
+<p><a href="http://www.jeromecukier.net/wp-content/uploads/2009/12/plotter-linux.zip">plotter linux</a></p>
+<p>Here&#8217;s how it works.</p>
+<p>when you unzip the files, you have a file called &#8220;mychart.txt&#8221; which is a set of parameters. Edit the file according to the instructions in &#8220;instructions.txt&#8221; to your liking, then launch the tool (plotter application). It will generate an image, called &#8220;mychart.png&#8221;.</p>
+<p>The zip files contain the source code, which is also found here on <a href="http://www.openprocessing.org/visuals/?visualID=6595">my openprocessing account</a>.</p>
+<p>With my tools, I wanted to address two things. First, I wanted to be able to create a chart and to have a precise control of all of its components, especially the size. In Excel, by contrast, it&#8217;s difficult to control the size of the plotting area, or the placement of the title &#8211; all of this things are done automatically and are difficult to correct (when it&#8217;s possible). Second, I wanted to be able to create functional thumbnails.</p>
+<p>If you have to create smaller versions of a chart from a bigger image, the easiest solution is to resize the chart using an image editing software. But that&#8217;s what you&#8217;d get:</p>
+<p><div id="attachment_282" style="width: 420px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2009/12/GDP-original.png"><img class="size-full wp-image-282 " title="GDP original" src="http://www.jeromecukier.net/wp-content/uploads/2009/12/GDP-original.png" alt="That's the original chart." width="410" height="320" /></a><p class="wp-caption-text">That&#39;s the original chart.</p></div></p>
+<p><div id="attachment_283" style="width: 260px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2009/12/GDP-resized.png"><img class="size-full wp-image-283 " title="GDP resized" src="http://www.jeromecukier.net/wp-content/uploads/2009/12/GDP-resized.png" alt="And that's the resized version. Legible? nah." width="250" height="180" /></a><p class="wp-caption-text">And that&#39;s the resized version. Legible? nah.</p></div></p>
+<p>But what if it were just as easy to re-render the chart in a smaller size, than to resize it with an external program? My tool can do that, too.</p>
+<p><div id="attachment_285" style="width: 580px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2009/12/GDP-small1.png"><img class="size-full wp-image-285" title="GDP small" src="http://www.jeromecukier.net/wp-content/uploads/2009/12/GDP-small1.png" alt="Left: resized, right: re-rendered." width="570" height="200" /></a><p class="wp-caption-text">Left: resized, right: re-rendered.</p></div></p>
+<p>Here&#8217;s a gallery of various charts done with the tool. The tool supports: line charts, bar charts (both stacked and clustered), dots charts and area charts. No pie charts included. It&#8217;s best suited for simple charts with few series and relatively few data points.</p>
+<p><div id="attachment_286" style="width: 420px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2009/12/example-1.png"><img class="size-full wp-image-286" title="example 1" src="http://www.jeromecukier.net/wp-content/uploads/2009/12/example-1.png" alt="Impact of energy subsidies on CO2 emissions" width="410" height="320" /></a><p class="wp-caption-text">Impact of energy subsidies on CO2 emissions</p></div></p>
+<p><div id="attachment_287" style="width: 420px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2009/12/example-2.png"><img class="size-full wp-image-287" title="example 2" src="http://www.jeromecukier.net/wp-content/uploads/2009/12/example-2.png" alt="Temperature and emission forecasts" width="410" height="320" /></a><p class="wp-caption-text">Temperature and emission forecasts</p></div></p>
+<p><div id="attachment_288" style="width: 420px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2009/12/example-3.png"><img class="size-full wp-image-288" title="example 3" src="http://www.jeromecukier.net/wp-content/uploads/2009/12/example-3.png" alt="Greenhouse gas emission projections" width="410" height="320" /></a><p class="wp-caption-text">Greenhouse gas emission projections</p></div></p>
+<p>I hope you find it useful, tell me if you do and let me know if you find bugs.</p>
+]]></content:encoded>
+			<wfw:commentRss>/2009/12/21/plotter-a-tool-to-create-bitmap-charts-for-the-web/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>Review of Tableau 5.0</title>
+		<link>/2009/09/01/review-of-tableau-50/</link>
+		<comments>/2009/09/01/review-of-tableau-50/#comments</comments>
+		<pubDate>Tue, 01 Sep 2009 16:02:35 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[charts]]></category>
+		<category><![CDATA[data publishing]]></category>
+		<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[best practices]]></category>
+		<category><![CDATA[business intelligence]]></category>
+		<category><![CDATA[dashboards]]></category>
+		<category><![CDATA[datavis]]></category>
+		<category><![CDATA[information visualization]]></category>
+		<category><![CDATA[infovis]]></category>
+		<category><![CDATA[sharing data]]></category>
+		<category><![CDATA[Tableau]]></category>
+		<category><![CDATA[Tableau Desktop]]></category>
+		<category><![CDATA[Tableau Public]]></category>
+		<category><![CDATA[Tableau Server]]></category>
+		<category><![CDATA[Tableau software]]></category>
+		<category><![CDATA[visualization]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=194</guid>
+		<description><![CDATA[Those last 2 weeks, I finally found time to give Tableau 5.0. Tableau enjoys a stellar reputation among the data visualization community. About a year ago, I saw a live demo of Tableau by CEO and salesman extraordinaire Christian Chabot. Like most of the audience, I was very impressed, not so much by the capacities <a class="read-more" href="/2009/09/01/review-of-tableau-50/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>Those last 2 weeks, I finally found time to give Tableau 5.0. Tableau enjoys a stellar reputation among the data visualization community. About a year ago, I saw a live demo of Tableau by CEO and salesman extraordinaire Christian Chabot. Like most of the audience, I was very impressed, not so much by the capacities of the software but by the ease and speed with which insightful analysis seemed to appear out of bland data. But what does it feel on from the user perspective?</p>
+<h2>Chartz: ur doing it wrong</h2>
+<p><span style="font-weight: normal; font-size: 13px; ">Everyone who wrote about charts would pretty much agree that the very first step in making one is to decide what to show. The <strong>form</strong> of the display <strong>is a consequence</strong> of this choice.</span></p>
+<p>Most software got this wrong. They will ask you how you want your display to look like, <span style="text-decoration: underline;">then </span>ask you for your data. Take this screenshot from Excel:</p>
+<p><a href="http://www.jeromecukier.net/wp-content/uploads/2009/08/excel.png"><img class="aligncenter size-medium wp-image-195" title="excel" src="http://www.jeromecukier.net/wp-content/uploads/2009/08/excel-300x152.png" alt="excel" width="300" height="152" /></a></p>
+<p>When you want to insert a chart, you must first choose what kind of chart (bar, line, column, pie, area, scatter, other charts) and one of its sub-types. You are not asked, what data does this apply to, and what that data really is. You are not asked, what you are trying to show through your chart &#8211; this is something you have to manage outside of the software. You just choose a chart.</p>
+<p>I&#8217;m picking Excel because with 200m users, everyone will know what I&#8217;m talking about, but virtually all software packages ask the user to choose a rather rigid chart type as a prerequisite to seeing anything, despite overwhelming theoretic evidence that this approach is flawed. In Excel, like in many other packages, there is a world of difference between a bar chart and a column chart. They are not of the same nature.</p>
+<h2>A reverted perspective</h2>
+<p>Fortunately, Tableau does it the other way round. When you first connect with your data in Tableau, it distinguishes two types of variables you can play with: <strong>dimensions</strong> and <strong>measures</strong>. And measures can be continuous or discrete.</p>
+<p><a href="http://www.jeromecukier.net/wp-content/uploads/2009/08/tableau-dimensions.png"><img class="aligncenter size-full wp-image-196" title="tableau-dimensions" src="http://www.jeromecukier.net/wp-content/uploads/2009/08/tableau-dimensions.png" alt="tableau-dimensions" width="649" height="576" /></a>(This is from an example file).</p>
+<p>Then, all you have to do is to drag your dimensions and your measures to the center space to see stuff happening. Let&#8217;s drag &#8220;close&#8221; to the rows&#8230;</p>
+<p><a href="http://www.jeromecukier.net/wp-content/uploads/2009/08/tableau-dragging-1.png"><img class="aligncenter size-full wp-image-197" title="tableau-dragging-1" src="http://www.jeromecukier.net/wp-content/uploads/2009/08/tableau-dragging-1.png" alt="tableau-dragging-1" width="649" height="576" /></a>We already see something, which is not terribly useful but still. Now if we drag Date into the columns&#8230;</p>
+<p><a href="http://www.jeromecukier.net/wp-content/uploads/2009/08/tableau-dragging-2.png"><img class="aligncenter size-full wp-image-198" title="tableau-dragging-2" src="http://www.jeromecukier.net/wp-content/uploads/2009/08/tableau-dragging-2.png" alt="tableau-dragging-2" width="649" height="576" /></a></p>
+<p>Instant line chart! the software found out that this is the type of representation that made the most sense in this context. You&#8217;re trying to plot continuous variables over time, so it&#8217;s pretty much a textbook answer. Let&#8217;s suppose we want another display: we can click on the aptly name &#8220;show me!&#8221; button, and:</p>
+<p><a href="http://www.jeromecukier.net/wp-content/uploads/2009/08/tableau-show-me.png"><img class="aligncenter size-full wp-image-199" title="tableau-show-me" src="http://www.jeromecukier.net/wp-content/uploads/2009/08/tableau-show-me.png" alt="tableau-show-me" width="649" height="576" /></a></p>
+<p>These are all the possible representations we have. Some are greyed out, because they don&#8217;t make sense in this context. For instance, you need to have dimensions with geographic attributes to plot things on a map (bottom left). But if you mouse over one of those greyed out icons, you&#8217;ll be told why you can&#8217;t use them. So we could choose anything: a table, a bar chart, etc.</p>
+<p>A simple thing to do would be to switch rows and columns. What if we wanted to see date vertically and the close horizontally? Just drag and drop, and:</p>
+<p><a href="http://www.jeromecukier.net/wp-content/uploads/2009/08/tableau-flip.png"><img class="aligncenter size-full wp-image-200" title="tableau-flip" src="http://www.jeromecukier.net/wp-content/uploads/2009/08/tableau-flip.png" alt="tableau-flip" width="649" height="576" /></a></p>
+<h2>Crafting displays</h2>
+<p>Gone are the frontiers between artificial &#8220;chart types&#8221;. We&#8217;re no longer forcing data into preset representations, rather, we assign variables (or their automatic aggregation, more on that shortly) to possible attributes of the graph. Rows and columns are two, which shouldn&#8217;t be taken too literally &#8211; in most displays, those would be better described as abcissa and ordinate &#8211; but all the areas in light grey (called &#8220;shelves&#8221;) can welcome variables : pages, filters,path, text, color, size, level of detail, etc.</p>
+<p><a href="http://www.jeromecukier.net/wp-content/uploads/2009/08/more-dimensions.png"><img class="aligncenter size-full wp-image-203" title="more-dimensions" src="http://www.jeromecukier.net/wp-content/uploads/2009/08/more-dimensions.png" alt="more-dimensions" width="649" height="576" /></a></p>
+<p>Here&#8217;s an example with a more complex dataset. Here, we&#8217;re looking at sales figures. We&#8217;re plotting profit against sales. The size of the marks correspond to the volume of the order, and the colour, to their category. Results are presented year by year. It is possible to loop through the years. So this display replicates the specs of the popular <a href="http://www.google.com/ig/directory?url=www.google.com/ig/modules/motionchart.xml">Trendalyzer / Motion chart</a> tool, only simpler to set up.</p>
+<p>Note that as I drag variables to shelves, Tableau often uses an aggregation that it thinks makes more sense. For instance, as I dragged Order Date to the page shelf, Tableau picked the year part of the date. I could ask the program to use every value of the date, the display will be almost empty but there would be a screen for each day. Likewise, when I dragged Order Quantity to the Size shelf, Tableau chose to use the sum of Order Quantity instead. Not that it makes much of a difference here, as each bubble represents only one order. But the idea is that Tableau will automatically aggregate data in a way that makes sense to display, and that this can always be overridden.</p>
+<p>But if I keep the data for all the years in the display, I can quickly see the transactions where profit was negative.</p>
+<p><a href="http://www.jeromecukier.net/wp-content/uploads/2009/08/sets1.png"><img class="aligncenter size-full wp-image-205" title="sets1" src="http://www.jeromecukier.net/wp-content/uploads/2009/08/sets1.png" alt="sets1" width="649" height="576" /></a>And I can further investigate on this set of values.</p>
+<p>So that&#8217;s the whole idea. Because you can assign any variable to any attribute of the visualization, in the <a href="http://www.tableausoftware.com/learning/examples">Tableau example gallery</a> you can see some very unusual examples of displays.</p>
+<h2>Using my own data</h2>
+<p>When I saw the demos, I was a little skeptical of the data being used. I mean, things were going so smoothly, evidence seemed to be jumping at the analyst, begging to be noticed. Tableau&#8217;s not bad at connecting with data of all forms and shapes, so I gave it a whirl with my own data.</p>
+<p>Like a lot of other official data providers, OECD&#8217;s format of choice for exporting data is <a href="http://www.sdmx.org/">SDMX</a>, a flavor of XML. Unfortunately, Tableau can&#8217;t read that. So the next easiest thing for me was Excel.</p>
+<p>I&#8217;m not going to get too much into details, but to come up with a worksheet that Tableau liked with more than a few tidbits of data required some tweaking and some guessing. The best way seems to be: a column for each variable, dimensions and dates included, and don&#8217;t include missing data (which we usually represent by &#8220;..&#8221; or by another similar symbol).</p>
+<p>Some variables weren&#8217;t automatically reckognized for what they were: some were detected as dimensions when they were measures, date data wasn&#8217;t processed that well (I found that using 01/01/2009 instead of 2009 or 1/2009 worked much better). But again, that was nothing that a little bit of tweaking couldn&#8217;t overcome.</p>
+<p>On a few occasions, I have been scratching my head quite hard as I was trying to understand why I could get Y-o-Y growth rates for some variables, but not for some others, or to make custom calculated fields. Note that there are plenty of online training videos on the website. I found myself climbing the learning curve very fast (and have heard similar statements of recent users who quickly felt empowered) but am aware that practice is needed to become a Tableau Jedi. What I found recomforting is that without prior knowledge of the product, but with exposure to data design best practices, almost everything in Tableau seems logical and simple.</p>
+<p>But anyway &#8211; I was in. Here&#8217;s my first Tableau dashboard:</p>
+<p><a href="http://www.jeromecukier.net/wp-content/uploads/2009/08/my-dashboard.png"><img class="aligncenter size-full wp-image-206" title="my-dashboard" src="http://www.jeromecukier.net/wp-content/uploads/2009/08/my-dashboard.png" alt="my-dashboard" width="647" height="836" /></a>A Dashboard is a combination of several displays (sheets) on one space. And believe me, it can become really sophisticated, but here let&#8217;s keep it simple. The top half is a map of the world with bubbles sized after the 2007 population of OECD countries. The bottom half is the same information as a bar chart, with a twist: the colour corresponds to the population change in the last 10 years. So USA (green) have been gaining population while Hungary has seen its numbers decrease.</p>
+<p>I&#8217;ve created an action called &#8220;highlighting on country&#8221; to link both displays. The best feature of these actions is that they are completely optional, so if you don&#8217;t want to have linked displays, it is entirely up to you and each part of the dashboard can behave independantly. You can also bring controls to filter or animate data which I left out for the sake of simplicity. However, you can still select data points directly to highlihght them in both displays, like this:</p>
+<p><a href="http://www.jeromecukier.net/wp-content/uploads/2009/08/my-dashboard-highlight-bottom.png"><img class="aligncenter size-full wp-image-207" title="my-dashboard-highlight-bottom" src="http://www.jeromecukier.net/wp-content/uploads/2009/08/my-dashboard-highlight-bottom.png" alt="my-dashboard-highlight-bottom" width="647" height="836" /></a>Here I&#8217;ve highlighted the top 5 countries. The other ones are muted in both displays. Here my colour choice is unfortunate because Japan and Germany, which are selected, don&#8217;t look too different from the other countries. Now I can select the values for the countries of Europe:</p>
+<p><a href="http://www.jeromecukier.net/wp-content/uploads/2009/08/my-dashboard-highlight-europe.png"><img class="aligncenter size-full wp-image-208" title="my-dashboard-highlight-europe" src="http://www.jeromecukier.net/wp-content/uploads/2009/08/my-dashboard-highlight-europe.png" alt="my-dashboard-highlight-europe" width="647" height="836" /></a></p>
+<p>And you&#8217;ll see them highlighted in the bottom pane.</p>
+<h2>Display and style</h2>
+<p>Representing data in Tableau feels like flipping the pages of a <a href="http://www.perceptualedge.com/">Stephen Few</a> book, which is more than coincidiential as he is an advisor to Tableau. From my discussion with the Tableau consultant that called me, I take that Tableau takes pride in their sober look and feel, which fervently follows the recommendation of Tufte, and Few. I remember <a href="http://www.perceptualedge.com/blog/?p=410">a</a> <a href="http://www.perceptualedge.com/blog/?p=281">few</a> <a href="http://www.perceptualedge.com/blog/?p=266">posts</a> from Stephen&#8217;s blog where he lashed as business intelligence vendors for their vacuous pursuit of glossiness over clarity and usefulness. Speaking of Few, I&#8217;ve upgraded my Tableau trial by re-reading his previous book, <a href="http://www.amazon.com/gp/product/0596100167?ie=UTF8&amp;tag=perceedge-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0596100167">Information Dashboard Design</a>, and I could really see where his philosophy and that of Tableau clicked.</p>
+<p>So there isn&#8217;t anything glossy about Tableau. Yet the interface is state-of-the-art (no more, no less). Anyone who&#8217;ve used a PC in the past 10 years can use it without much guessing. Colours of the various screen elements are carefully chosen and command placement makes sense. Most commands are accessible in contextual menus, so you really feel that you are directly manipulating data the whole time.</p>
+<p>When attempting to create sophisticated dashboards, I found that it was difficult to make many elements fit on one page, as the white space surrounding all elements becomes incompressible. I tried to replicate displays that I had made or that I had seen around, I was often successful (see motion chart reproduction above) but sometimes I couldn&#8217;t achieve the level of customization that I had with visualizations which are coded from scratch in Tableau. Then again even Tableau&#8217;s simplest representations have many features and would be difficult to re-code.</p>
+<h2>Sharing data</h2>
+<p>According to <a href="http://www.tableausoftware.com/blog/sharing-your-data-online">Dan Jewett</a>, VP of product development at Tableau,</p>
+<blockquote><p>“Today it is easier to put videos on the Web than to put data online.”</p></blockquote>
+<p>But my job is precisely to communicate data, so I&#8217;m quite looking forward this state of affairs to change. Tableau&#8217;s answer is twofold.</p>
+<p>The first half is <strong>Tableau Server</strong>. Tableau Server is a software that organizes Tableau workbooks for a community so they can access it online, from a browser. My feeling is that Tableau Server is designed to distribute dashboards within an organization, less so with the anyone on the internet.</p>
+<p>That&#8217;s where the second part of the answer, <strong>Tableau Public, </strong>comes into play. Tableau Public is still in closed beta, but the principle is that users would have a free desktop applications which can do everything that Tableau Desktop does, except saving files locally. Instead, workbooks would have to be published on Tableau servers for the world to see.</p>
+<p>There are already quite a few dashboards made by Tableau Public first users around. See for instance <a href="http://www.google.com/url?sa=X&amp;q=http://blogs.wsj.com/venturecapital/2009/08/25/how-long-does-it-take-to-build-a-technology-empire/&amp;ct=ga&amp;cd=-VD0bP-UL5I&amp;usg=AFQjCNFKCJfk02UZUVWU_JPPMM79DuAynA">How Long Does It Take To Build A Technology Empire?</a> on one of the WSJ blogs.</p>
+<p>Today, there is no shortage of tools that let users embed data online without technical manipulations. But as of today, there is no product that could come close to this embedded dashboard. <a href="http://www.freakalytics.com/2009/07/06/tableau-online-available-from-my-iphone-with-interactivity-amazing/">Stephen McDaniel</a> from Freakalytics notes that due to Tableau&#8217;s technical choices (javascript instead of flash), dashboards from Tableau Public can be seen in a variety of devices, including the iPhone.</p>
+<p>I&#8217;ve made a few dashboards that I&#8217;d be happy to share with the world through Tableau Public.</p>
+<p>This wraps up my Tableau review. I can see why the product has such an enthusiastic fan base. People such as  <a href="http://charts.jorgecamoes.com/ads-chartjunk-and-the-fart-machine/">Jorge Camoes</a>,  <a href="http://www.perceptualedge.com/blog/?p=191">Stephen Few</a>, <a href="http://eagereyes.org/blog/2009/where-are-the-visualization-tools.html">Robert Kosara</a>, <a href="http://garr.posterous.com/had-a-fantastic-time-with-the-smart-guys-from">Garr Reynolds</a>, <a href="http://www.flowingdata.com/">Nathan Yau</a>,  and even the Federal CIO <a href="http://odeo.com/episodes/24259770-Vivek-Kundra-the-Nation’s-New-CIO-Is-Supporter-of-Seattle-Startup-Tableau-Software">Vivek Kundra</a> have all professed their loved for the product. The Tableau Customer Conference, which I&#8217;ve only been able to follow online so far, seems to be more interesting each year. Beyond testimonies, the gallery of examples (again at <a href="http://www.tableausoftware.com/learning/examples">http://www.tableausoftware.com/learning/examples</a>, but do explore from there to see videos and white papers), still in the making, shows the incredible potential of the software.</p>
+]]></content:encoded>
+			<wfw:commentRss>/2009/09/01/review-of-tableau-50/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>New data services 1: Google&#8217;s public data</title>
+		<link>/2009/06/05/new-data-services-1-googles-public-data/</link>
+		<comments>/2009/06/05/new-data-services-1-googles-public-data/#respond</comments>
+		<pubDate>Fri, 05 Jun 2009 13:31:10 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[data publishing]]></category>
+		<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[web sites]]></category>
+		<category><![CDATA[google]]></category>
+		<category><![CDATA[public data]]></category>
+		<category><![CDATA[statistics]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=140</guid>
+		<description><![CDATA[Google&#8217;s public data has been launched somewhat unexpectedly at the end of April 2009. The principle is as follows. When someone enters a search query that could be interpreted as a time series, Google displays a line graph of this time series before other results. Click on it, and you can do some more things <a class="read-more" href="/2009/06/05/new-data-services-1-googles-public-data/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>Google&#8217;s public data has been launched somewhat unexpectedly at the end of April 2009.</p>
+<p>The principle is as follows. When someone enters a search query that could be interpreted as a time series, Google displays a line graph of this time series before other results. Click on it, and you can do some more things with the chart.</p>
+<p><img class="aligncenter size-medium wp-image-142" title="googlepublicdata1" src="http://www.jeromecukier.net/wp-content/uploads/2009/05/googlepublicdata1-300x210.png" alt="googlepublicdata1" width="450" height="315" /></p>
+<p>The name public data can seem ambiguous.</p>
+<p>Public, in one sense, refers to official, government-produced statistics. But, for content, public is also the opposite of copyrighted. And here, a little bit of digging reveals that it&#8217;s clearly the latter sense. If you want this service to point to your data, it must be copyright-free.</p>
+<p>I&#8217;ve seen Hans Rosling (of Gapminder fame, now Google&#8217;s data guru) deliver a few speeches to national statisticians to which he expressed all the difficulties he had to access their data, and battle with formatting or copyright issues. So I can understand where this is coming from. However. Imagine the outcry if google.com decided to stop indexing websites which were not in the public domain!</p>
+<p>Remember my <strong>find </strong>&gt; <strong>access </strong>&gt; <strong>process </strong>&gt; <strong>present </strong>&gt; <strong>share</strong> <a href="http://www.jeromecukier.net/?p=124">diagram</a>?</p>
+<p>I&#8217;d expect that google will solve the <strong>find</strong> problem. After all, they&#8217;re search people. But they don&#8217;t! You&#8217;d find a time series if you enter its exact name in google. There is no such thing (yet, as I imagine it would be easy to fix) as a list of their datasets.</p>
+<p>They don&#8217;t tackle the <strong>access</strong> problem either. Once you see the visualizations, you&#8217;re not any step closer to actually getting the  data. You can see them, point by point, by mousing over the chart. I was also disappointed by the inaccuracy of the citation of their datasets. I&#8217;d have imagined that they&#8217;d provide a direct link to their sources, but they only state which agency produced the dataset. And finding a dataset from an agency is not a trivial matter.</p>
+<p>They don&#8217;t deal with process, but who will hold that against them? Now what they offer is a very nice, very crisp representation of data (<strong>presenting data</strong>). I was impressed how legible the interface remained with many data series on the screen, while respecting Google&#8217;s look and feel and colour code.</p>
+<p>Finally, it is also possible to <strong>share </strong>charts. Or rather, you can have a link to an image generated by google&#8217;s chart API, which is more than decent. A link to this static image, and a link to the chart on google&#8217;s public data service, and that&#8217;s all you should need (except, obviously, a link to the data proper!)</p>
+<p>Another issue comes from the selection of the data sets proper.</p>
+<p>One of the datasets is the unemployment rates, which are available monthly and by USA county. Now I can understand the rationale to match a google query of &#8220;unemployment rates&#8221; to that specific dataset. But there are really many unemployment rates, depending on what you divide by what. <span style="color: #000000;"><span style="font-family: mceinline;">(are we counting unemployed people? unemployed jobseekers? which definition of unemployment are we using &#8211; ILO&#8217;s, or the BLS&#8217;s? and against what is the rate calculated &#8211; total population? population of working age? total labour force?) But how could that work if you expand the system to another country? To obtain the same level of granularity (to a very narrow geographic location, to a period of a month) would require some serious cooking of the data, so you can&#8217;t have granularity, comparability and accuracy. </span></span></p>
+<p><span style="color: #000000;"><span style="font-family: mceinline;">I don&#8217;t think the system is sustainable. I don&#8217;t like the idea that it gives the impression to people that economic statistics can be measured in real time at any level, just like web usage statistics for instance. They can&#8217;t be just observed, they&#8217;re calculated by people. </span></span></p>
+<p><span style="color: #000000;"><span style="font-family: mceinline;">Google public data is still in its infancy. To have a usable list of the datasets, for instance, would alleviate much of my negarive comments on the system. But for the time being, I&#8217;m not happy with the orientation they&#8217;ve chosen.</span></span></p>
+]]></content:encoded>
+			<wfw:commentRss>/2009/06/05/new-data-services-1-googles-public-data/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Processing 1.0 released.</title>
+		<link>/2008/11/27/processing-10-released/</link>
+		<comments>/2008/11/27/processing-10-released/#respond</comments>
+		<pubDate>Thu, 27 Nov 2008 11:08:47 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[Ben Fry]]></category>
+		<category><![CDATA[books]]></category>
+		<category><![CDATA[Casey Reas]]></category>
+		<category><![CDATA[download]]></category>
+		<category><![CDATA[Ira Greenberg]]></category>
+		<category><![CDATA[processing]]></category>
+		<category><![CDATA[visualizing data]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=25</guid>
+		<description><![CDATA[Tuesday, Ben Fry announced on his blog that Processing 1.0 was released! I had a vague idea of was processing was about for a while, and thought it was not for me. I bought Ben Fry&#8217;s book by accident, because of its title and because I was generally interested on different opinions on how to <a class="read-more" href="/2008/11/27/processing-10-released/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>Tuesday, <a href="http://benfry.com/">Ben Fry</a> <a href="http://benfry.com/writing/archives/204">announced on his blog</a> that <a href="http://processing.org/">Processing </a>1.0 was released!</p>
+<p><a href="http://www.amazon.com/gp/product/0596514557?ie=UTF8&amp;tag=jeromecukiern-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0596514557"><img class="alignleft" style="margin: 10px;" src="https://images-na.ssl-images-amazon.com/images/I/51ZSwW3DtML._SL160_.jpg" border="0" alt="" width="122" height="160" /></a><img style="border:none !important; margin:0px !important;" src="http://www.assoc-amazon.com/e/ir?t=jeromecukiern-20&amp;l=as2&amp;o=1&amp;a=0596514557" border="0" alt="" width="1" height="1" /><br />
+I had a vague idea of was processing was about for a while, and thought it was not for me. I bought Ben Fry&#8217;s book by accident, because of its title and because I was generally interested on different opinions on how to make charts. When I first read it, I thought it was a fraud! that book was not about &#8220;visualizing data&#8221; as the name implies, but about practical uses of Processing to display data. Luckily for me, I read on and I am very happy to have learned Processing, or rather, to be continuously learning it.</p>
+<p>What I have found most interesting in this book is the focus that Fry put on the collection of data. Techniques and methods to represent data assume that you already have the data you want, neatly prepared. But in the real world, that just doesn&#8217;t happen. If you want to show something, you&#8217;ll have to find a way to obtain the raw data and process it first, before you can use it.</p>
+<p>Anyway. Today, I would want to congratulate Ben Fry, Casey Reas and all others who&#8217;ve contributed to processing. </p>
+<p><a href="http://processing.org/download">Download processing</a>:</p>
+<p>Other books on processing I can recommand are: </p>
+<p><a href="http://www.amazon.com/gp/product/159059617X?ie=UTF8&amp;tag=jeromecukiern-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=159059617X"><img style="margin: 10px;" src="https://images-na.ssl-images-amazon.com/images/I/41oELmX9vjL._SL160_.jpg" border="0" alt="" width="131" height="160" /></a><img style="border:none !important; margin:0px !important;" src="http://www.assoc-amazon.com/e/ir?t=jeromecukiern-20&amp;l=as2&amp;o=1&amp;a=159059617X" border="0" alt="" width="1" height="1" /></p>
+<p><a href="http://www.amazon.com/gp/product/0262182629?ie=UTF8&amp;tag=jeromecukiern-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0262182629"><img style="margin-top: 10px; margin-bottom: 10px;" src="https://images-na.ssl-images-amazon.com/images/I/51UPLtYbwkL._SL160_.jpg" border="0" alt="" width="125" height="160" /></a><img style="border:none !important; margin:0px !important;" src="http://www.assoc-amazon.com/e/ir?t=jeromecukiern-20&amp;l=as2&amp;o=1&amp;a=0262182629" border="0" alt="" width="1" height="1" /></p>
+<p><script src="http://www.assoc-amazon.com/s/link-enhancer?tag=jeromecukiern-20&amp;o=1" type="text/javascript"></script></p>
+<p><noscript><br />
+<img src="http://www.assoc-amazon.com/s/noscript?tag=jeromecukiern-20" alt="" /><br />
+</noscript></p>
+]]></content:encoded>
+			<wfw:commentRss>/2008/11/27/processing-10-released/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

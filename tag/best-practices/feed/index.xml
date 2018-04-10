@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>best practices &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/best-practices/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>Review of Tableau 5.0</title>
+		<link>/2009/09/01/review-of-tableau-50/</link>
+		<comments>/2009/09/01/review-of-tableau-50/#comments</comments>
+		<pubDate>Tue, 01 Sep 2009 16:02:35 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[charts]]></category>
+		<category><![CDATA[data publishing]]></category>
+		<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[best practices]]></category>
+		<category><![CDATA[business intelligence]]></category>
+		<category><![CDATA[dashboards]]></category>
+		<category><![CDATA[datavis]]></category>
+		<category><![CDATA[information visualization]]></category>
+		<category><![CDATA[infovis]]></category>
+		<category><![CDATA[sharing data]]></category>
+		<category><![CDATA[Tableau]]></category>
+		<category><![CDATA[Tableau Desktop]]></category>
+		<category><![CDATA[Tableau Public]]></category>
+		<category><![CDATA[Tableau Server]]></category>
+		<category><![CDATA[Tableau software]]></category>
+		<category><![CDATA[visualization]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=194</guid>
+		<description><![CDATA[Those last 2 weeks, I finally found time to give Tableau 5.0. Tableau enjoys a stellar reputation among the data visualization community. About a year ago, I saw a live demo of Tableau by CEO and salesman extraordinaire Christian Chabot. Like most of the audience, I was very impressed, not so much by the capacities <a class="read-more" href="/2009/09/01/review-of-tableau-50/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>Those last 2 weeks, I finally found time to give Tableau 5.0. Tableau enjoys a stellar reputation among the data visualization community. About a year ago, I saw a live demo of Tableau by CEO and salesman extraordinaire Christian Chabot. Like most of the audience, I was very impressed, not so much by the capacities of the software but by the ease and speed with which insightful analysis seemed to appear out of bland data. But what does it feel on from the user perspective?</p>
+<h2>Chartz: ur doing it wrong</h2>
+<p><span style="font-weight: normal; font-size: 13px; ">Everyone who wrote about charts would pretty much agree that the very first step in making one is to decide what to show. The <strong>form</strong> of the display <strong>is a consequence</strong> of this choice.</span></p>
+<p>Most software got this wrong. They will ask you how you want your display to look like, <span style="text-decoration: underline;">then </span>ask you for your data. Take this screenshot from Excel:</p>
+<p><a href="http://www.jeromecukier.net/wp-content/uploads/2009/08/excel.png"><img class="aligncenter size-medium wp-image-195" title="excel" src="http://www.jeromecukier.net/wp-content/uploads/2009/08/excel-300x152.png" alt="excel" width="300" height="152" /></a></p>
+<p>When you want to insert a chart, you must first choose what kind of chart (bar, line, column, pie, area, scatter, other charts) and one of its sub-types. You are not asked, what data does this apply to, and what that data really is. You are not asked, what you are trying to show through your chart &#8211; this is something you have to manage outside of the software. You just choose a chart.</p>
+<p>I&#8217;m picking Excel because with 200m users, everyone will know what I&#8217;m talking about, but virtually all software packages ask the user to choose a rather rigid chart type as a prerequisite to seeing anything, despite overwhelming theoretic evidence that this approach is flawed. In Excel, like in many other packages, there is a world of difference between a bar chart and a column chart. They are not of the same nature.</p>
+<h2>A reverted perspective</h2>
+<p>Fortunately, Tableau does it the other way round. When you first connect with your data in Tableau, it distinguishes two types of variables you can play with: <strong>dimensions</strong> and <strong>measures</strong>. And measures can be continuous or discrete.</p>
+<p><a href="http://www.jeromecukier.net/wp-content/uploads/2009/08/tableau-dimensions.png"><img class="aligncenter size-full wp-image-196" title="tableau-dimensions" src="http://www.jeromecukier.net/wp-content/uploads/2009/08/tableau-dimensions.png" alt="tableau-dimensions" width="649" height="576" /></a>(This is from an example file).</p>
+<p>Then, all you have to do is to drag your dimensions and your measures to the center space to see stuff happening. Let&#8217;s drag &#8220;close&#8221; to the rows&#8230;</p>
+<p><a href="http://www.jeromecukier.net/wp-content/uploads/2009/08/tableau-dragging-1.png"><img class="aligncenter size-full wp-image-197" title="tableau-dragging-1" src="http://www.jeromecukier.net/wp-content/uploads/2009/08/tableau-dragging-1.png" alt="tableau-dragging-1" width="649" height="576" /></a>We already see something, which is not terribly useful but still. Now if we drag Date into the columns&#8230;</p>
+<p><a href="http://www.jeromecukier.net/wp-content/uploads/2009/08/tableau-dragging-2.png"><img class="aligncenter size-full wp-image-198" title="tableau-dragging-2" src="http://www.jeromecukier.net/wp-content/uploads/2009/08/tableau-dragging-2.png" alt="tableau-dragging-2" width="649" height="576" /></a></p>
+<p>Instant line chart! the software found out that this is the type of representation that made the most sense in this context. You&#8217;re trying to plot continuous variables over time, so it&#8217;s pretty much a textbook answer. Let&#8217;s suppose we want another display: we can click on the aptly name &#8220;show me!&#8221; button, and:</p>
+<p><a href="http://www.jeromecukier.net/wp-content/uploads/2009/08/tableau-show-me.png"><img class="aligncenter size-full wp-image-199" title="tableau-show-me" src="http://www.jeromecukier.net/wp-content/uploads/2009/08/tableau-show-me.png" alt="tableau-show-me" width="649" height="576" /></a></p>
+<p>These are all the possible representations we have. Some are greyed out, because they don&#8217;t make sense in this context. For instance, you need to have dimensions with geographic attributes to plot things on a map (bottom left). But if you mouse over one of those greyed out icons, you&#8217;ll be told why you can&#8217;t use them. So we could choose anything: a table, a bar chart, etc.</p>
+<p>A simple thing to do would be to switch rows and columns. What if we wanted to see date vertically and the close horizontally? Just drag and drop, and:</p>
+<p><a href="http://www.jeromecukier.net/wp-content/uploads/2009/08/tableau-flip.png"><img class="aligncenter size-full wp-image-200" title="tableau-flip" src="http://www.jeromecukier.net/wp-content/uploads/2009/08/tableau-flip.png" alt="tableau-flip" width="649" height="576" /></a></p>
+<h2>Crafting displays</h2>
+<p>Gone are the frontiers between artificial &#8220;chart types&#8221;. We&#8217;re no longer forcing data into preset representations, rather, we assign variables (or their automatic aggregation, more on that shortly) to possible attributes of the graph. Rows and columns are two, which shouldn&#8217;t be taken too literally &#8211; in most displays, those would be better described as abcissa and ordinate &#8211; but all the areas in light grey (called &#8220;shelves&#8221;) can welcome variables : pages, filters,path, text, color, size, level of detail, etc.</p>
+<p><a href="http://www.jeromecukier.net/wp-content/uploads/2009/08/more-dimensions.png"><img class="aligncenter size-full wp-image-203" title="more-dimensions" src="http://www.jeromecukier.net/wp-content/uploads/2009/08/more-dimensions.png" alt="more-dimensions" width="649" height="576" /></a></p>
+<p>Here&#8217;s an example with a more complex dataset. Here, we&#8217;re looking at sales figures. We&#8217;re plotting profit against sales. The size of the marks correspond to the volume of the order, and the colour, to their category. Results are presented year by year. It is possible to loop through the years. So this display replicates the specs of the popular <a href="http://www.google.com/ig/directory?url=www.google.com/ig/modules/motionchart.xml">Trendalyzer / Motion chart</a> tool, only simpler to set up.</p>
+<p>Note that as I drag variables to shelves, Tableau often uses an aggregation that it thinks makes more sense. For instance, as I dragged Order Date to the page shelf, Tableau picked the year part of the date. I could ask the program to use every value of the date, the display will be almost empty but there would be a screen for each day. Likewise, when I dragged Order Quantity to the Size shelf, Tableau chose to use the sum of Order Quantity instead. Not that it makes much of a difference here, as each bubble represents only one order. But the idea is that Tableau will automatically aggregate data in a way that makes sense to display, and that this can always be overridden.</p>
+<p>But if I keep the data for all the years in the display, I can quickly see the transactions where profit was negative.</p>
+<p><a href="http://www.jeromecukier.net/wp-content/uploads/2009/08/sets1.png"><img class="aligncenter size-full wp-image-205" title="sets1" src="http://www.jeromecukier.net/wp-content/uploads/2009/08/sets1.png" alt="sets1" width="649" height="576" /></a>And I can further investigate on this set of values.</p>
+<p>So that&#8217;s the whole idea. Because you can assign any variable to any attribute of the visualization, in the <a href="http://www.tableausoftware.com/learning/examples">Tableau example gallery</a> you can see some very unusual examples of displays.</p>
+<h2>Using my own data</h2>
+<p>When I saw the demos, I was a little skeptical of the data being used. I mean, things were going so smoothly, evidence seemed to be jumping at the analyst, begging to be noticed. Tableau&#8217;s not bad at connecting with data of all forms and shapes, so I gave it a whirl with my own data.</p>
+<p>Like a lot of other official data providers, OECD&#8217;s format of choice for exporting data is <a href="http://www.sdmx.org/">SDMX</a>, a flavor of XML. Unfortunately, Tableau can&#8217;t read that. So the next easiest thing for me was Excel.</p>
+<p>I&#8217;m not going to get too much into details, but to come up with a worksheet that Tableau liked with more than a few tidbits of data required some tweaking and some guessing. The best way seems to be: a column for each variable, dimensions and dates included, and don&#8217;t include missing data (which we usually represent by &#8220;..&#8221; or by another similar symbol).</p>
+<p>Some variables weren&#8217;t automatically reckognized for what they were: some were detected as dimensions when they were measures, date data wasn&#8217;t processed that well (I found that using 01/01/2009 instead of 2009 or 1/2009 worked much better). But again, that was nothing that a little bit of tweaking couldn&#8217;t overcome.</p>
+<p>On a few occasions, I have been scratching my head quite hard as I was trying to understand why I could get Y-o-Y growth rates for some variables, but not for some others, or to make custom calculated fields. Note that there are plenty of online training videos on the website. I found myself climbing the learning curve very fast (and have heard similar statements of recent users who quickly felt empowered) but am aware that practice is needed to become a Tableau Jedi. What I found recomforting is that without prior knowledge of the product, but with exposure to data design best practices, almost everything in Tableau seems logical and simple.</p>
+<p>But anyway &#8211; I was in. Here&#8217;s my first Tableau dashboard:</p>
+<p><a href="http://www.jeromecukier.net/wp-content/uploads/2009/08/my-dashboard.png"><img class="aligncenter size-full wp-image-206" title="my-dashboard" src="http://www.jeromecukier.net/wp-content/uploads/2009/08/my-dashboard.png" alt="my-dashboard" width="647" height="836" /></a>A Dashboard is a combination of several displays (sheets) on one space. And believe me, it can become really sophisticated, but here let&#8217;s keep it simple. The top half is a map of the world with bubbles sized after the 2007 population of OECD countries. The bottom half is the same information as a bar chart, with a twist: the colour corresponds to the population change in the last 10 years. So USA (green) have been gaining population while Hungary has seen its numbers decrease.</p>
+<p>I&#8217;ve created an action called &#8220;highlighting on country&#8221; to link both displays. The best feature of these actions is that they are completely optional, so if you don&#8217;t want to have linked displays, it is entirely up to you and each part of the dashboard can behave independantly. You can also bring controls to filter or animate data which I left out for the sake of simplicity. However, you can still select data points directly to highlihght them in both displays, like this:</p>
+<p><a href="http://www.jeromecukier.net/wp-content/uploads/2009/08/my-dashboard-highlight-bottom.png"><img class="aligncenter size-full wp-image-207" title="my-dashboard-highlight-bottom" src="http://www.jeromecukier.net/wp-content/uploads/2009/08/my-dashboard-highlight-bottom.png" alt="my-dashboard-highlight-bottom" width="647" height="836" /></a>Here I&#8217;ve highlighted the top 5 countries. The other ones are muted in both displays. Here my colour choice is unfortunate because Japan and Germany, which are selected, don&#8217;t look too different from the other countries. Now I can select the values for the countries of Europe:</p>
+<p><a href="http://www.jeromecukier.net/wp-content/uploads/2009/08/my-dashboard-highlight-europe.png"><img class="aligncenter size-full wp-image-208" title="my-dashboard-highlight-europe" src="http://www.jeromecukier.net/wp-content/uploads/2009/08/my-dashboard-highlight-europe.png" alt="my-dashboard-highlight-europe" width="647" height="836" /></a></p>
+<p>And you&#8217;ll see them highlighted in the bottom pane.</p>
+<h2>Display and style</h2>
+<p>Representing data in Tableau feels like flipping the pages of a <a href="http://www.perceptualedge.com/">Stephen Few</a> book, which is more than coincidiential as he is an advisor to Tableau. From my discussion with the Tableau consultant that called me, I take that Tableau takes pride in their sober look and feel, which fervently follows the recommendation of Tufte, and Few. I remember <a href="http://www.perceptualedge.com/blog/?p=410">a</a> <a href="http://www.perceptualedge.com/blog/?p=281">few</a> <a href="http://www.perceptualedge.com/blog/?p=266">posts</a> from Stephen&#8217;s blog where he lashed as business intelligence vendors for their vacuous pursuit of glossiness over clarity and usefulness. Speaking of Few, I&#8217;ve upgraded my Tableau trial by re-reading his previous book, <a href="http://www.amazon.com/gp/product/0596100167?ie=UTF8&amp;tag=perceedge-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0596100167">Information Dashboard Design</a>, and I could really see where his philosophy and that of Tableau clicked.</p>
+<p>So there isn&#8217;t anything glossy about Tableau. Yet the interface is state-of-the-art (no more, no less). Anyone who&#8217;ve used a PC in the past 10 years can use it without much guessing. Colours of the various screen elements are carefully chosen and command placement makes sense. Most commands are accessible in contextual menus, so you really feel that you are directly manipulating data the whole time.</p>
+<p>When attempting to create sophisticated dashboards, I found that it was difficult to make many elements fit on one page, as the white space surrounding all elements becomes incompressible. I tried to replicate displays that I had made or that I had seen around, I was often successful (see motion chart reproduction above) but sometimes I couldn&#8217;t achieve the level of customization that I had with visualizations which are coded from scratch in Tableau. Then again even Tableau&#8217;s simplest representations have many features and would be difficult to re-code.</p>
+<h2>Sharing data</h2>
+<p>According to <a href="http://www.tableausoftware.com/blog/sharing-your-data-online">Dan Jewett</a>, VP of product development at Tableau,</p>
+<blockquote><p>“Today it is easier to put videos on the Web than to put data online.”</p></blockquote>
+<p>But my job is precisely to communicate data, so I&#8217;m quite looking forward this state of affairs to change. Tableau&#8217;s answer is twofold.</p>
+<p>The first half is <strong>Tableau Server</strong>. Tableau Server is a software that organizes Tableau workbooks for a community so they can access it online, from a browser. My feeling is that Tableau Server is designed to distribute dashboards within an organization, less so with the anyone on the internet.</p>
+<p>That&#8217;s where the second part of the answer, <strong>Tableau Public, </strong>comes into play. Tableau Public is still in closed beta, but the principle is that users would have a free desktop applications which can do everything that Tableau Desktop does, except saving files locally. Instead, workbooks would have to be published on Tableau servers for the world to see.</p>
+<p>There are already quite a few dashboards made by Tableau Public first users around. See for instance <a href="http://www.google.com/url?sa=X&amp;q=http://blogs.wsj.com/venturecapital/2009/08/25/how-long-does-it-take-to-build-a-technology-empire/&amp;ct=ga&amp;cd=-VD0bP-UL5I&amp;usg=AFQjCNFKCJfk02UZUVWU_JPPMM79DuAynA">How Long Does It Take To Build A Technology Empire?</a> on one of the WSJ blogs.</p>
+<p>Today, there is no shortage of tools that let users embed data online without technical manipulations. But as of today, there is no product that could come close to this embedded dashboard. <a href="http://www.freakalytics.com/2009/07/06/tableau-online-available-from-my-iphone-with-interactivity-amazing/">Stephen McDaniel</a> from Freakalytics notes that due to Tableau&#8217;s technical choices (javascript instead of flash), dashboards from Tableau Public can be seen in a variety of devices, including the iPhone.</p>
+<p>I&#8217;ve made a few dashboards that I&#8217;d be happy to share with the world through Tableau Public.</p>
+<p>This wraps up my Tableau review. I can see why the product has such an enthusiastic fan base. People such as  <a href="http://charts.jorgecamoes.com/ads-chartjunk-and-the-fart-machine/">Jorge Camoes</a>,  <a href="http://www.perceptualedge.com/blog/?p=191">Stephen Few</a>, <a href="http://eagereyes.org/blog/2009/where-are-the-visualization-tools.html">Robert Kosara</a>, <a href="http://garr.posterous.com/had-a-fantastic-time-with-the-smart-guys-from">Garr Reynolds</a>, <a href="http://www.flowingdata.com/">Nathan Yau</a>,  and even the Federal CIO <a href="http://odeo.com/episodes/24259770-Vivek-Kundra-the-Nation’s-New-CIO-Is-Supporter-of-Seattle-Startup-Tableau-Software">Vivek Kundra</a> have all professed their loved for the product. The Tableau Customer Conference, which I&#8217;ve only been able to follow online so far, seems to be more interesting each year. Beyond testimonies, the gallery of examples (again at <a href="http://www.tableausoftware.com/learning/examples">http://www.tableausoftware.com/learning/examples</a>, but do explore from there to see videos and white papers), still in the making, shows the incredible potential of the software.</p>
+]]></content:encoded>
+			<wfw:commentRss>/2009/09/01/review-of-tableau-50/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+	</channel>
+</rss>

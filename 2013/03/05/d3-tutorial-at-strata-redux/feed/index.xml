@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Selections in d3 &#8211; the long story</title>
+	<atom:link href="http://localhost/2013/03/05/d3-tutorial-at-strata-redux/feed/" rel="self" type="application/rss+xml" />
+	<link>/2013/03/05/d3-tutorial-at-strata-redux/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>By: D3 and React &#8211; similarities and differences &#124; Jerome Cukier</title>
+		<link>/2013/03/05/d3-tutorial-at-strata-redux/#comment-503</link>
+		<dc:creator><![CDATA[D3 and React &#8211; similarities and differences &#124; Jerome Cukier]]></dc:creator>
+		<pubDate>Tue, 09 Aug 2016 04:16:02 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1548#comment-503</guid>
+		<description><![CDATA[[&#8230;] into a rectangle whose height depends on that value. That logic, which is at the core of d3 with selections, is also present in React. In d3, visualizations are essentially hierarchical. We start from an SVG [&#8230;]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] into a rectangle whose height depends on that value. That logic, which is at the core of d3 with selections, is also present in React. In d3, visualizations are essentially hierarchical. We start from an SVG [&#8230;]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Yang</title>
+		<link>/2013/03/05/d3-tutorial-at-strata-redux/#comment-496</link>
+		<dc:creator><![CDATA[Yang]]></dc:creator>
+		<pubDate>Sat, 16 May 2015 15:56:06 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1548#comment-496</guid>
+		<description><![CDATA[Really like it!]]></description>
+		<content:encoded><![CDATA[<p>Really like it!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Julien B</title>
+		<link>/2013/03/05/d3-tutorial-at-strata-redux/#comment-495</link>
+		<dc:creator><![CDATA[Julien B]]></dc:creator>
+		<pubDate>Mon, 11 May 2015 17:52:30 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1548#comment-495</guid>
+		<description><![CDATA[Hey Jerome,
+
+I can&#039;t stress enough how much your article was useful to me today! I have been struggling a entire afternoon around selections/creation for a multi dimensional dataset and I really thinks this is something a newcomer to D3 will overlook and get doomed.
+
+Thanks a lot for writing this up
+
+Julien]]></description>
+		<content:encoded><![CDATA[<p>Hey Jerome,</p>
+<p>I can&#8217;t stress enough how much your article was useful to me today! I have been struggling a entire afternoon around selections/creation for a multi dimensional dataset and I really thinks this is something a newcomer to D3 will overlook and get doomed.</p>
+<p>Thanks a lot for writing this up</p>
+<p>Julien</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: BibSonomy :: url :: Selections in d3 – the long story &#124; Jerome Cukier</title>
+		<link>/2013/03/05/d3-tutorial-at-strata-redux/#comment-494</link>
+		<dc:creator><![CDATA[BibSonomy :: url :: Selections in d3 – the long story &#124; Jerome Cukier]]></dc:creator>
+		<pubDate>Wed, 29 Apr 2015 18:20:52 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1548#comment-494</guid>
+		<description><![CDATA[[&#8230;]  1Selections in d3 – the long story &#124; Jerome Cukier  [&#8230;]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;]  1Selections in d3 – the long story | Jerome Cukier  [&#8230;]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: nashvileric</title>
+		<link>/2013/03/05/d3-tutorial-at-strata-redux/#comment-493</link>
+		<dc:creator><![CDATA[nashvileric]]></dc:creator>
+		<pubDate>Tue, 21 Apr 2015 06:58:25 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1548#comment-493</guid>
+		<description><![CDATA[@Linda (and post author): insert(&quot;h1&quot;) will insert the h1 at the beginning of the set of matching elements in the container, not at the beginning of the container. This means if you had multiple existing h1s it would be the first one, but not the first thing overall in that container. Docs: https://github.com/mbostock/d3/wiki/Selections#insert
+
+&#062; Inserts a new element with the specified name before the element matching the specified before selector
+
+Not super intuitive given how `append` and `prepend` work in certain popular libraries, but apparently as designed.]]></description>
+		<content:encoded><![CDATA[<p>@Linda (and post author): insert(&#8220;h1&#8221;) will insert the h1 at the beginning of the set of matching elements in the container, not at the beginning of the container. This means if you had multiple existing h1s it would be the first one, but not the first thing overall in that container. Docs: <a href="https://github.com/mbostock/d3/wiki/Selections#insert" rel="nofollow">https://github.com/mbostock/d3/wiki/Selections#insert</a></p>
+<p>&gt; Inserts a new element with the specified name before the element matching the specified before selector</p>
+<p>Not super intuitive given how `append` and `prepend` work in certain popular libraries, but apparently as designed.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: jerome</title>
+		<link>/2013/03/05/d3-tutorial-at-strata-redux/#comment-492</link>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+		<pubDate>Mon, 30 Mar 2015 17:57:17 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1548#comment-492</guid>
+		<description><![CDATA[hi. For the first syntax (d3.selectAll(&quot;p&quot;) etc) it might work now, it certainly didn&#039;t work when I wrote the tutorial but regardless I wouldn&#039;t recommend it. You want to have the finest control about where your elements will appear. And if this syntax makes them appear after everything else in the document, that wouldn&#039;t work well for svg elements which would have to be children/descendents of an svg container anyway. 
+yes it is true that when you write:
+container.selectAll(selector1).data(data).enter().append(selector2), selector1 and selector2 don&#039;t have to match. you may even write something like:
+svg.selectAll(&quot;*&quot;).data(data).enter().append(&quot;g&quot;) or something like this. 
+I personally like to give classes to all my elements, and ensure that the two selectors match. 
+so write something like:
+svg.selectAll(&quot;g.box&quot;).data(data).enter().append(&quot;g&quot;).classed(&quot;box&quot;, 1);
+I try to write my code so that if it is ran again on something existing, it would create and change what&#039;s needed. In the above, if my data doesn&#039;t change, if I ran this twice, the second time, no new &quot;g&quot; elements would be added. 
+I can&#039;t really advise on the insert(&quot;h1&quot;) not showing up without more code. 
+I typically use only &quot;append&quot;. The reason I do that is that when I generate something I try as much as possible to create the whole hierarchy in one go. Again if everything is given classes it&#039;s much easier to get at the right spot.]]></description>
+		<content:encoded><![CDATA[<p>hi. For the first syntax (d3.selectAll(&#8220;p&#8221;) etc) it might work now, it certainly didn&#8217;t work when I wrote the tutorial but regardless I wouldn&#8217;t recommend it. You want to have the finest control about where your elements will appear. And if this syntax makes them appear after everything else in the document, that wouldn&#8217;t work well for svg elements which would have to be children/descendents of an svg container anyway.<br />
+yes it is true that when you write:<br />
+container.selectAll(selector1).data(data).enter().append(selector2), selector1 and selector2 don&#8217;t have to match. you may even write something like:<br />
+svg.selectAll(&#8220;*&#8221;).data(data).enter().append(&#8220;g&#8221;) or something like this.<br />
+I personally like to give classes to all my elements, and ensure that the two selectors match.<br />
+so write something like:<br />
+svg.selectAll(&#8220;g.box&#8221;).data(data).enter().append(&#8220;g&#8221;).classed(&#8220;box&#8221;, 1);<br />
+I try to write my code so that if it is ran again on something existing, it would create and change what&#8217;s needed. In the above, if my data doesn&#8217;t change, if I ran this twice, the second time, no new &#8220;g&#8221; elements would be added.<br />
+I can&#8217;t really advise on the insert(&#8220;h1&#8221;) not showing up without more code.<br />
+I typically use only &#8220;append&#8221;. The reason I do that is that when I generate something I try as much as possible to create the whole hierarchy in one go. Again if everything is given classes it&#8217;s much easier to get at the right spot.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Linda</title>
+		<link>/2013/03/05/d3-tutorial-at-strata-redux/#comment-491</link>
+		<dc:creator><![CDATA[Linda]]></dc:creator>
+		<pubDate>Mon, 30 Mar 2015 17:36:37 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1548#comment-491</guid>
+		<description><![CDATA[Hi, great tutorial! 
+
+When I tried d3.selectAll(&quot;p&quot;).data(text).enter().append(&quot;p&quot;).html(String), which was supposed to generate a DOM error because it lacked select(&quot;body&quot;), it worked fine in Chrome, except on inspection I see the p tags were created after the body tag, before the html close tag. Is that browser specific?
+
+I still find selectAll(&#039;wootwoot&quot;) confusing. It created an empty selection to which the data was bound, but even after enter() and append(&#039;p&#039;), nothing &quot;wootwoot&quot; was created. It&#039;s as if you must selectAll something but it doesn&#039;t matter what it is. In fact in the next example, with selectAll(&quot;.myClass&quot;), I accidentally typed .attr(&quot;class&quot;, &quot;myClas&quot;) and the only difference between that result and the result from typing it properly was that the html for the latter was on three lines instead of one. It seems you can selectAll anything as long as it doesn&#039;t already exist, and it will create the new elements.
+
+Despite using insert(&quot;h1&quot;), my title went *after* the p tags. ???
+
+I&#039;m currently working on a pie chart and having trouble making the wedges clickable to open to a related page. Can you point me in the right direction so I can figure what&#039;s going wrong?]]></description>
+		<content:encoded><![CDATA[<p>Hi, great tutorial! </p>
+<p>When I tried d3.selectAll(&#8220;p&#8221;).data(text).enter().append(&#8220;p&#8221;).html(String), which was supposed to generate a DOM error because it lacked select(&#8220;body&#8221;), it worked fine in Chrome, except on inspection I see the p tags were created after the body tag, before the html close tag. Is that browser specific?</p>
+<p>I still find selectAll(&#8216;wootwoot&#8221;) confusing. It created an empty selection to which the data was bound, but even after enter() and append(&#8216;p&#8217;), nothing &#8220;wootwoot&#8221; was created. It&#8217;s as if you must selectAll something but it doesn&#8217;t matter what it is. In fact in the next example, with selectAll(&#8220;.myClass&#8221;), I accidentally typed .attr(&#8220;class&#8221;, &#8220;myClas&#8221;) and the only difference between that result and the result from typing it properly was that the html for the latter was on three lines instead of one. It seems you can selectAll anything as long as it doesn&#8217;t already exist, and it will create the new elements.</p>
+<p>Despite using insert(&#8220;h1&#8221;), my title went *after* the p tags. ???</p>
+<p>I&#8217;m currently working on a pie chart and having trouble making the wedges clickable to open to a related page. Can you point me in the right direction so I can figure what&#8217;s going wrong?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: jerome</title>
+		<link>/2013/03/05/d3-tutorial-at-strata-redux/#comment-484</link>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+		<pubDate>Tue, 03 Dec 2013 02:22:46 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1548#comment-484</guid>
+		<description><![CDATA[hi, it&#039;s not super easy to mix click events and brush events. this is because when you click, you are first creating a brush element at the svg level. 
+when you select multiple events - that&#039;s the easy part, you can just add &quot;.data()&quot; at the end of your console.log statement to display only the data of the selected nodes. 
+to mix those 2 types of events I suggest you look at this bl.ocks.org: 
+http://bl.ocks.org/mbostock/4566102]]></description>
+		<content:encoded><![CDATA[<p>hi, it&#8217;s not super easy to mix click events and brush events. this is because when you click, you are first creating a brush element at the svg level.<br />
+when you select multiple events &#8211; that&#8217;s the easy part, you can just add &#8220;.data()&#8221; at the end of your console.log statement to display only the data of the selected nodes.<br />
+to mix those 2 types of events I suggest you look at this bl.ocks.org:<br />
+<a href="http://bl.ocks.org/mbostock/4566102" rel="nofollow">http://bl.ocks.org/mbostock/4566102</a></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Jeet Chatterjee</title>
+		<link>/2013/03/05/d3-tutorial-at-strata-redux/#comment-483</link>
+		<dc:creator><![CDATA[Jeet Chatterjee]]></dc:creator>
+		<pubDate>Thu, 28 Nov 2013 03:38:07 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1548#comment-483</guid>
+		<description><![CDATA[hii my name is Jeet i am new to D3.I have  a problem can you help???.. i am able to select multiple nodes in my application using brush but i can not do a little bit of some more requirements.
+this is the fiddle i am giving you suits my purpose very nicely but i need some more functionality see this first
+http://jsfiddle.net/yr9Zp/
+
+this fiddle i am able to select multiple nodes at a time but i also want their values to the console i.e when i will select the nodes the nodes value will go to the console and also i need that when i will click on a specific node that nodes value will also go to the console.Can you help from here now.please i have tried a lot to do that.it is very urgent work for my company please help]]></description>
+		<content:encoded><![CDATA[<p>hii my name is Jeet i am new to D3.I have  a problem can you help???.. i am able to select multiple nodes in my application using brush but i can not do a little bit of some more requirements.<br />
+this is the fiddle i am giving you suits my purpose very nicely but i need some more functionality see this first<br />
+<a href="http://jsfiddle.net/yr9Zp/" rel="nofollow">http://jsfiddle.net/yr9Zp/</a></p>
+<p>this fiddle i am able to select multiple nodes at a time but i also want their values to the console i.e when i will select the nodes the nodes value will go to the console and also i need that when i will click on a specific node that nodes value will also go to the console.Can you help from here now.please i have tried a lot to do that.it is very urgent work for my company please help</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Jeet Chatterjee</title>
+		<link>/2013/03/05/d3-tutorial-at-strata-redux/#comment-482</link>
+		<dc:creator><![CDATA[Jeet Chatterjee]]></dc:creator>
+		<pubDate>Tue, 26 Nov 2013 12:47:39 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1548#comment-482</guid>
+		<description><![CDATA[Can you help me with this issue please i need it very urgently in my company..i have to do this..]]></description>
+		<content:encoded><![CDATA[<p>Can you help me with this issue please i need it very urgently in my company..i have to do this..</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

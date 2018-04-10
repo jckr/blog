@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: d3: scales, and color.</title>
+	<atom:link href="http://localhost/2011/08/11/d3-scales-and-color/feed/" rel="self" type="application/rss+xml" />
+	<link>/2011/08/11/d3-scales-and-color/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>By: Step4- Adding Axes and text &#8211; Qlik and Dirty</title>
+		<link>/2011/08/11/d3-scales-and-color/#comment-209</link>
+		<dc:creator><![CDATA[Step4- Adding Axes and text &#8211; Qlik and Dirty]]></dc:creator>
+		<pubDate>Tue, 13 Sep 2016 09:16:53 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1026#comment-209</guid>
+		<description><![CDATA[[&#8230;] d3: scales, and color. [&#8230;]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] d3: scales, and color. [&#8230;]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Step1 &#8211; Creating a basic D3 chart &#8211; Qlik and Dirty</title>
+		<link>/2011/08/11/d3-scales-and-color/#comment-208</link>
+		<dc:creator><![CDATA[Step1 &#8211; Creating a basic D3 chart &#8211; Qlik and Dirty]]></dc:creator>
+		<pubDate>Thu, 25 Aug 2016 14:01:09 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1026#comment-208</guid>
+		<description><![CDATA[[&#8230;] D3 Formatting http://www.jeromecukier.net/blog/2011/08/11/d3-scales-and-color/ [&#8230;]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] D3 Formatting http://www.jeromecukier.net/blog/2011/08/11/d3-scales-and-color/ [&#8230;]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Qlikview Extension in a few easy steps and with an improved template &#8211; Qlik and Dirty</title>
+		<link>/2011/08/11/d3-scales-and-color/#comment-207</link>
+		<dc:creator><![CDATA[Qlikview Extension in a few easy steps and with an improved template &#8211; Qlik and Dirty]]></dc:creator>
+		<pubDate>Thu, 25 Aug 2016 07:40:34 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1026#comment-207</guid>
+		<description><![CDATA[[&#8230;] D3 Formatting http://www.jeromecukier.net/blog/2011/08/11/d3-scales-and-color/ [&#8230;]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] D3 Formatting http://www.jeromecukier.net/blog/2011/08/11/d3-scales-and-color/ [&#8230;]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Pierre Dechery</title>
+		<link>/2011/08/11/d3-scales-and-color/#comment-205</link>
+		<dc:creator><![CDATA[Pierre Dechery]]></dc:creator>
+		<pubDate>Fri, 03 Jun 2016 16:01:20 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1026#comment-205</guid>
+		<description><![CDATA[Indeed this is very helpful and a strong add-on to the official documentation. Thank you!]]></description>
+		<content:encoded><![CDATA[<p>Indeed this is very helpful and a strong add-on to the official documentation. Thank you!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: kevinR</title>
+		<link>/2011/08/11/d3-scales-and-color/#comment-199</link>
+		<dc:creator><![CDATA[kevinR]]></dc:creator>
+		<pubDate>Thu, 12 Feb 2015 20:27:06 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1026#comment-199</guid>
+		<description><![CDATA[Never one to miss a parade: I too found this article very helpful; certainly in my top 5 of most useful d3 posts.]]></description>
+		<content:encoded><![CDATA[<p>Never one to miss a parade: I too found this article very helpful; certainly in my top 5 of most useful d3 posts.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Khalid Jebbari (@Dj3bbZ)</title>
+		<link>/2011/08/11/d3-scales-and-color/#comment-198</link>
+		<dc:creator><![CDATA[Khalid Jebbari (@Dj3bbZ)]]></dc:creator>
+		<pubDate>Mon, 01 Dec 2014 14:36:52 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1026#comment-198</guid>
+		<description><![CDATA[It&#039;s almost 2015, and your article is still very useful. Thanks !]]></description>
+		<content:encoded><![CDATA[<p>It&#8217;s almost 2015, and your article is still very useful. Thanks !</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Fabio</title>
+		<link>/2011/08/11/d3-scales-and-color/#comment-197</link>
+		<dc:creator><![CDATA[Fabio]]></dc:creator>
+		<pubDate>Fri, 18 Jul 2014 17:05:44 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1026#comment-197</guid>
+		<description><![CDATA[Great article. Very well explained]]></description>
+		<content:encoded><![CDATA[<p>Great article. Very well explained</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: D3 &#8211; formation &#8211; cours 1 &#124; KenstoK D3</title>
+		<link>/2011/08/11/d3-scales-and-color/#comment-191</link>
+		<dc:creator><![CDATA[D3 &#8211; formation &#8211; cours 1 &#124; KenstoK D3]]></dc:creator>
+		<pubDate>Tue, 15 Oct 2013 13:39:40 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1026#comment-191</guid>
+		<description><![CDATA[[&#8230;] (concernant la mise à l&#8217;échelle, voir : http://www.jeromecukier.net/blog/2011/08/11/d3-scales-and-color/) [&#8230;]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] (concernant la mise à l&rsquo;échelle, voir : http://www.jeromecukier.net/blog/2011/08/11/d3-scales-and-color/) [&#8230;]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Thomas</title>
+		<link>/2011/08/11/d3-scales-and-color/#comment-190</link>
+		<dc:creator><![CDATA[Thomas]]></dc:creator>
+		<pubDate>Wed, 27 Mar 2013 20:20:50 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1026#comment-190</guid>
+		<description><![CDATA[Wow! After reading  a few d3 articles and the d3 api docs and not quite understanding domain and scales, this succinct article made it click.
+
+Thank you so much!]]></description>
+		<content:encoded><![CDATA[<p>Wow! After reading  a few d3 articles and the d3 api docs and not quite understanding domain and scales, this succinct article made it click.</p>
+<p>Thank you so much!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: mg1075</title>
+		<link>/2011/08/11/d3-scales-and-color/#comment-189</link>
+		<dc:creator><![CDATA[mg1075]]></dc:creator>
+		<pubDate>Mon, 28 Jan 2013 12:54:16 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1026#comment-189</guid>
+		<description><![CDATA[Thank you for all the work on these d3 blog posts!]]></description>
+		<content:encoded><![CDATA[<p>Thank you for all the work on these d3 blog posts!</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

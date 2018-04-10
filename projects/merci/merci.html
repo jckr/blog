@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+  <title></title>
+  <style> body {background-color: #000}</style>
+ </head>
+<body>
+<script src="../../lib/d3.v3.min.js"></script>
+
+<div id="chart"></div>
+
+<script>
+var svg = d3.select("#chart").append("svg").attr({width: 2000, height: 1000});
+svg.append("rect").style({fill: "#000"}).attr({width: 2000, height: 1000});
+var trails = svg.append("g");
+var bubbles = svg.append("g");
+var mode = 1;
+
+function change() {
+    mode = (mode + 1) % 4;
+
+    if (mode === 0) {
+      d3.selectAll("circle")
+        .transition()
+        .duration(5000).ease("elastic")
+        .attr({
+        //  cx: function(d) {return d.blankx},
+        //  cy: function(d) {return d.blanky}
+
+         transform: function(d) {return "translate(" + [d.blankx, d.blanky] +")"}
+        })
+
+      d3.selectAll("line")
+        .transition()
+        .duration(5000).ease("elastic")
+        .each(function(d) {d3.select(this).attr({x2: d.blankx, y2: d.blanky})})
+
+
+
+    }
+    if (mode === 1) {
+      d3.selectAll("circle")
+        .transition()
+        .duration(5000).ease("elastic")
+        .attr({
+        //  cx: function(d) {return d.mercix},
+        //  cy: function(d) {return d.merciy}
+
+              transform: function(d) {return "translate(" + [d.mercix, d.merciy] +")"}
+        })
+
+        d3.selectAll("line")
+          .transition()
+          .duration(5000).ease("elastic")
+          .each(function(d) {d3.select(this).attr({x1: d.mercix, y1: d.merciy})})
+
+
+    }
+    if (mode === 2) {
+      d3.selectAll("circle")
+        .transition()
+        .duration(5000).ease("elastic")
+        .attr({
+          //cx: function(d) {return d.heartx},
+          //cy: function(d) {return d.hearty}
+
+         transform: function(d) {return "translate(" + [d.heartx, d.hearty] +")"}
+        })
+
+        d3.selectAll("line")
+          .transition()
+          .duration(5000).ease("elastic")
+          .each(function(d) {d3.select(this).attr({x2: d.heartx, y2: d.hearty})})
+
+
+    }
+    if (mode === 3) {
+      d3.selectAll("circle")
+        .transition()
+        .duration(5000).ease("elastic")
+        .attr({
+        //  cx: function(d) {return d.symbolx},
+      //    cy: function(d) {return d.symboly}
+
+          transform: function(d) {return "translate(" + [d.symbolx, d.symboly] +")"}
+        })
+
+        d3.selectAll("line")
+          .transition()
+          .duration(5000).ease("elastic")
+          .each(function(d) {d3.select(this).attr({x1: d.symbolx, y1: d.symboly})})
+
+    }
+}
+
+d3.csv("merci.csv", function(error, csv) {
+  var xm = d3.scale.linear().domain(d3.extent(
+    csv, function(d) {return +d.mercix})
+  ).range([.3, .8]);
+
+  var xs = d3.scale.linear().domain(d3.extent(
+    csv, function(d) {return +d.symbolx})
+  ).range([.3, .8]);
+
+  var yh = d3.scale.linear().domain(d3.extent(
+    csv, function(d) {return +d.hearty})
+  ).range([360,300]);
+
+  var ss = d3.scale.linear().domain([3,64]).range([.5, .2]);
+
+  bubbles.selectAll("circle").data(csv).enter().append("circle")
+    .attr({
+      transform: function(d) {return "translate(" + [d.blankx, d.blanky] +")"},
+    //  cx: function(d) {return d.blankx},
+    //  cy: function(d) {return d.blanky},
+      r: function(d) {return d.size * .5;}
+    })
+    .style("fill", function(d) {
+      return d.color || (d.color = d3.hsl(yh(d.hearty), xs(d.symbolx), xm(+d.mercix)));
+    });
+
+/*  trails.selectAll("line").data(csv).enter().append("line")
+    .style("stroke", function(d) {
+      return d.color || (d.color = d3.hsl(yh(d.hearty), xs(d.symbolx), xm(+d.mercix)));
+    })
+    .each(function(d) {d3.select(this).attr({x1: d.blankx, y1: d.blanky, x2: d.blankx, y2: d.blanky})})
+*/
+    setInterval(change, 4000);
+
+
+})
+</script>
+</body>
+</html>

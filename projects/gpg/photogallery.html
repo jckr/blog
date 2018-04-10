@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+	<title></title>
+	
+<link href="//fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet" type="text/css">
+
+	<style>
+
+
+	html {
+ 		font-size: 16px;
+	}
+	body {
+		font-family: "Helvetica Neue";
+		font-size: 250%;
+	}
+	.container {max-width: 640px; max-height: 920px; height: 100%; width: 100%; position: fixed;}
+	.svg {
+		position: absolute;overflow-y: scroll;
+		height: 100%; width: 100%;
+	}
+	.detail {
+		display: none;
+		
+		height: 100%; width: 100%;
+		color: #ebebeb;
+		background-color: #000;
+	}
+	.header {
+		height: 13.04347826%; /* 120 / 920 */
+		position: absolute;top: 0px;left: 0px;
+		
+		width: 100%;
+	}
+	.header .text {position: absolute;height: 1em;top:50%;margin-top:-.5em;text-align: center;width: 100%;}
+	.footer {
+		height: 9.782608695%; /* 90 / 920 */
+		position: absolute; bottom: 0px;
+		width: 100%;
+		z-index: 10;
+	}
+
+	.detail .header, .detail .footer {background-color: #333;opacity: 0;}
+
+	.grid {
+	/*	display: none;	*/
+		height: 100%; width: 100%;		
+		color: #4a4a4a;
+		background-color: #fff;
+	}
+	.grid .header {
+		background-color: #f5f5f5;
+		border-bottom: 1px solid #e3e3e3;
+	}
+	.photoarea {
+		padding-top: 0.35em;
+		padding-left: 2.1875%;
+		padding-right: 2.1875%;
+		width: 95.625%; 
+		margin-top: 3em;
+		overflow: scroll;
+	}
+	img.thumbnail {
+		float: left;
+		width: 282px;
+		height: 206px;
+		padding-left: 1.92%;
+		padding-right: 1.92%;
+		padding-top: .2em;
+		padding-bottom: .2em;
+	}
+	.detail .footer img {position: absolute;}
+	.detail .footer .plus1 {top: 0.35em; left: 5.3125%;}
+	.detail .footer .comment {top: 0.35em; left: 33.28125%;}
+	.detail .footer .add {top: 0.375em; left: 60.46875%;}
+	.detail .footer .share {top: 0.3875em; left: 88.125%;}
+
+	.image img.horizontal {
+		position: absolute;
+		top: 6.175em;
+		height: 10.671875em;
+		width: 100%;
+	}
+	.image img.vertical {
+		position: absolute;
+		top: 3em;
+		height: 17.75em;
+		width: 73.886108398%;
+		left: 13.0569458%;
+	}
+
+	</style>
+</head>
+<body>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.13/d3.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/queue-async/1.0.7/queue.min.js"></script>
+<script src="https://hammerjs.github.io/dist/hammer.js"></script>
+<script type="text/javascript" src="photogallery.js"></script>
+<div class="container" id="container">
+
+	<div class="svg">
+	</div>
+
+	<div class="detail">
+		<div class="footer">
+			<img src="./icons/plus1.png" class="plus1" />
+			<img src="./icons/comment.png" class="comment" /> 
+			<img src="./icons/add.png" class="add" /> 
+			<img src="./icons/share.png" class="share" /> 
+		</div>
+	</div>
+	<div class="grid">
+		<div class="header">
+			<div class="text">Image Gallery</div>
+		</div>
+		<div class="photoarea">
+		
+			
+		</div>
+	</div>
+
+</div>
+
+<script>
+var params = {};
+var query = window.location.search.substring(1);
+
+var vars = query.split("&");
+vars.forEach(function(v) {
+	p=v.split("=");
+	params[p[0]]=p[1]
+})
+
+app.init(params);
+</script>
+</body>
+</html>

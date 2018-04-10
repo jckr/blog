@@ -1,0 +1,146 @@
+message	correspondent	direction	tweet	word1	word2	word3	time	subject	thread	length
+
+9443	EHz	from		python	spam	vallandingham	1337092057	[Jerome Cukier] Comment: "Making-of: cutting Paris in voting districts"	1020	44
+
+9930	EHz	to		cookbook	passive	editors	1337786540	Maybe we SHOULD do a group d3 book?	1075	170
+
+9923	EHz	from		intermediate	posts	collaborating	1337788431	Re: Maybe we SHOULD do a group d3 book?	1075	78
+
+9935	EHz	from		until	perhaps	become	1337953531	Re: Maybe we SHOULD do a group d3 book?	1075	33
+
+9922	EHz	to		smith	annotatable	django	1337959447	Re: Maybe we SHOULD do a group d3 book?	1075	1045
+
+9921	EHz	from		ways	amazing	fit	1337960092	Re: Maybe we SHOULD do a group d3 book?	1075	29
+
+9926	EHz	to		the	great	look	1337960322	Re: Maybe we SHOULD do a group d3 book?	1075	7
+
+9920	EHz	to		otherwise	behind	beautiful	1340742289	Re: Maybe we SHOULD do a group d3 book?	1075	51
+
+9915	EHz	from		scott	agree	completely	1340742441	Re: Maybe we SHOULD do a group d3 book?	1075	22
+
+9934	EHz	to		smith	aand	saved	1340742593	Re: Maybe we SHOULD do a group d3 book?	1075	179
+
+12885	EHz	from		github	spam	vallandingham	1341255200	[Jerome Cukier] Comment: "Embedding tableau visualizations on the web"	1389	61
+
+18553	EHz	from		url	jim	spam	1348666059	[Jerome Cukier] Comment: "Goodbye OECD!"	2040	37
+
+19001	EHz	from		collect	manually	vallandingham	1349273217	[Jerome Cukier] Comment: "A game of data"	2077	61
+
+t864	EHz	to	mention	really	done	job	1328573879		t158	16
+
+t863	EHz	to	mention	were	twitter	list	1328575095		t159	12
+
+t1181	EHz	to	mention	with	http	still	1328578192		t160	20
+
+t872	EHz	to	mention	was	thought	bad	1330044135		t237	5
+
+t317	EHz	to	mention	but	which	now	1330563525		t277	5
+
+t873	EHz	to	mention	not	been	has	1331597044		t352	14
+
+t937	EHz	to	mention	http	another	janwillemtulp	1331600021		t356	7
+
+t866	EHz	to	mention	understand	janwillemtulp	charts	1331600489		t357	4
+
+t865	EHz	to	mention	but	not	was	1331598509		t360	18
+
+t870	EHz	to	mention	now	paris	doing	1333761141		t544	5
+
+t861	EHz	to	mention	the	mean	vlandham	1333761675		t545	16
+
+t876	EHz	to	mention	have	some	again	1333762068		t547	17
+
+t1621	EHz	to	mention	that	http	super	1334883843		t624	13
+
+t869	EHz	to	mention	the	would	like	1334885954		t626	4
+
+t887	EHz	to	mention	vlandham	fisherdanyel	moreauchevrolet	1334972276		t640	8
+
+t871	EHz	to	mention	post	blog	write	1335139739		t663	8
+
+t862	EHz	to	mention	made	arnicas	easy	1335140478		t666	13
+
+t980	EHz	to	mention	http	visualisingdata	making	1335574818		t694	2
+
+t1560	EHz	to	mention	made	without	tutorial	1336697298		t800	8
+
+t874	EHz	to	mention	this	was	post	1336697298		t801	11
+
+t82	EHz	to	mention	happy	kind	arnicas	1337734679		t873	16
+
+t45	EHz	to	mention	the	just	when	1337735156		t880	17
+
+t679	EHz	to	mention	book	arnicas	alignedleft	1337731436		t882	22
+
+t61	EHz	to	mention	who	guys	interested	1337821624		t889	9
+
+t197	EHz	to	mention	part	each	arnicas	1337822208		t892	15
+
+t196	EHz	to	mention	arnicas	material	currently	1337822171		t893	17
+
+t868	EHz	to	mention	http	vlandham	fyi	1339459465		t1040	10
+
+t1547	EHz	to	mention	job	post	visualisingdata	1343953492		t1543	18
+
+t877	EHz	to	mention	circle	links	vlandham	1343955442		t1545	4
+
+t471	EHz	from	mention	would	good	great	1343955397		t1545	14
+
+t875	EHz	to	mention	much	http	though	1343955619		t1545	16
+
+t544	EHz	from	mention	jcukier	http	cool	1343955015		t1545	8
+
+t1465	EHz	from	mention	jcukier	http	while	1346805704		t1646	10
+
+t1507	EHz	to	mention	own	tutorial	word	1347410782		t1690	15
+
+t433	EHz	from	mention	new	jcukier	might	1348708436		t1749	5
+
+t1111	EHz	to	mention	http	moebio	network	1349226671		t1778	7
+
+t432	EHz	from	mention	jcukier	love	vlandham	1349226975		t1778	2
+
+t714	EHz	to	mention	again	show	between	1349227038		t1778	14
+
+t713	EHz	to	mention	story	moebio	network	1349227024		t1778	17
+
+t715	EHz	to	mention	link	direction	vlandham	1349227035		t1778	6
+
+t431	EHz	from	mention	different	doesn	places	1349227503		t1778	18
+
+t414	EHz	from	mention	great	jcukier	too	1349228309		t1778	20
+
+t1598	EHz	from	mention	book	please	vis	1349227356		t1779	10
+
+t1462	EHz	from	mention	jcukier	http	moebio	1349222579		t1783	11
+
+t1057	EHz	from	mention	visualization	http	interactive	1349227709		t1790	10
+
+t1603	EHz	from	mention	probably	talk	others	1351385966		t2007	3
+
+t506	EHz	from	mention	would	just	work	1352337164		t2057	3
+
+t1455	EHz	from	mention	jcukier	interactive	http	1352337216		t2057	16
+
+t867	EHz	to	mention	new	stuff	projects	1352337187		t2057	10
+
+t454	EHz	from	mention	but	not	great	1352337685		t2057	3
+
+t545	EHz	from	mention	very	jcukier	nice	1354925264		t2190	16
+
+t1718	EHz	to	dm	were	never	least	1330041836		dm58	10
+
+t1723	EHz	from	dm	pretty	looks	tweets	1330044314		dm58	13
+
+t1265	EHz	to	dm	pretty	reason	friends	1330044592		dm58	6
+
+t1720	EHz	from	dm	say	guess	hear	1330044696		dm58	7
+
+t938	EHz	to	dm	let	right	back	1330045327		dm58	8
+
+t991	EHz	from	dm	back	straight	awesomeness	1330045383		dm58	18
+
+t1116	EHz	from	dm	even	lot	list	1330387915		dm58	5
+
+t1176	EHz	to	dm	feel	feedback	entry	1330391719		dm58	14
+

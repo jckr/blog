@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>book &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/book/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>Designing data visualizations</title>
+		<link>/2012/04/22/designing-data-visualizations/</link>
+		<comments>/2012/04/22/designing-data-visualizations/#respond</comments>
+		<pubDate>Sun, 22 Apr 2012 15:32:58 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[book review]]></category>
+		<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[book]]></category>
+		<category><![CDATA[designing data visualizations]]></category>
+		<category><![CDATA[Noah Iliinsky]]></category>
+		<category><![CDATA[review]]></category>
+		<category><![CDATA[visualization]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1155</guid>
+		<description><![CDATA[Noah Iliinsky and O&#8217;Reilly were kind enough to send me one review copy of Noah&#8217;s book and who says review copy says review, so here goes. We need more introductory books to data visualization. I&#8217;ve had several discussions with data visualization colleagues who feel that there are too many books already. I strongly believe otherwise. <a class="read-more" href="/2012/04/22/designing-data-visualizations/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p><a href="http://www.amazon.com/Designing-Data-Visualizations-Noah-Iliinsky/dp/1449312284/ref=tag_stp_s2f_edpp_data_v18on"><img class="alignnone" title="Designing data visualization book cover" src="http://covers.oreilly.com/images/0636920022060/cat.gif" alt="Designing data visualization book cover" width="180" height="236" /></a></p>
+<p>Noah Iliinsky and O&#8217;Reilly were kind enough to send me one review copy of Noah&#8217;s book and who says review copy says review, so here goes.</p>
+<h2>We need more introductory books to data visualization.</h2>
+<p>I&#8217;ve had several discussions with data visualization colleagues who feel that there are too many books already. I strongly believe otherwise.</p>
+<p>As of this writing, there are <a href="http://www.amazon.com/gp/tagging/items-tagged-with?ie=UTF8&amp;flatten=1&amp;tag=data%20visualization&amp;search=1">59 books tagged data visualization</a> on Amazon, versus well over a thousand for Java (for example). And on those 59, I would say about a dozen qualify as introductory. Here are 3 reasons why introductory books are important.</p>
+<ul>
+<li><strong>You only need to know a little to start making effective visualizations. </strong>A small book won&#8217;t teach you all there is to know about visualization, but you don&#8217;t need that to get off to a good start. A lot of this has to do with asking yourself the right questions. But this is a very unnatural thing to do, especially when you feel you can do stuff. Fortunately, even a short book can help you to pause and think.</li>
+<li><strong>An effective visualization is not harder to make than a poor one</strong>. Well, actually it is, really good visualizations are built after many iterations on one promising concept. But the point is, a lot of efforts and ressources can go into abyssmal visualizations. If you are in a position to buy visualization, having even basic knowledge of how data visualization works can prevent you from wasting your money.</li>
+<li><strong>There are many approaches to visualization.</strong> The right introductory book will be the one that resonates with you. Some people who are interested in this love to code, some are afraid of programming. Some are accomplished visual artists, some don&#8217;t know to draw. Some have specific needs (business dashboards, presentations, interactive web applications, etc.).</li>
+</ul>
+<h2><span class="Apple-style-span" style="font-size: 26px;"><strong>Where does designing data visualizations fit?</strong></span></h2>
+<p>Designing Data Visualizations is a very short book &#8211; the advantage is that you can read this in a couple of hours. It&#8217;s perfect for a train or plane trip for instance. The format of the book (23 x 17.5 cm, flexible paperback) makes it easy to carry and read anywhere. And it&#8217;s an easy read &#8211; you won&#8217;t need to put down the book every few pages to make sure you understood.</p>
+<p>The flipside of this is that you won&#8217;t learn any actionable skills from the book. The book is <strong>never trying to teach you to make things</strong> : this is explicitly outside of its scope. What is does is <strong>make you think on how to do stuff</strong>. It makes you consider the choices you make.</p>
+<p>So you&#8217;re making a visualization. Does your choice of representation makes sense? how about your colors? placement? If you&#8217;re not confident that you know the answer to this kind of questions <strong>you must read the book right now</strong>; else, you won&#8217;t be able to improve your work. And again that is what successful designers do &#8211; iterate and improve, again and again and again.</p>
+<p>As a non-native speaker of English one reason why I enjoy reading introductory books is for their excellent formulation of things. You know, there are those things you have a vague idea of, and the writer puts the exact words on it. So I&#8217;ll go ahead and quote my favorite paragraph :</p>
+<blockquote><p>Consult [your goal] when you are about to be seduced by the siren song of circular layouts, the allure of extra data, the false prophet of &#8220;because I can&#8221;. These are distractions on your journey. As Bruce Lee would say, &#8220;It is like a finger pointing a way to the moon. Don&#8217;t concentrate on the finger or you will miss all that heavenly glory&#8221;.</p></blockquote>
+<h3>Who is this book for?</h3>
+<p>I think the people who would benefit the most from the books fall in two categories:</p>
+<ol>
+<li>Those who know absolutely nothing about visualization but have some interest in the subject. And the subset of those who don&#8217;t really have time to find out all about it (think: your client, your n+2 boss). They will appreciate that there is a real take-out value in such a short book.</li>
+<li>Those who can create visualization because for instance they are coders, designers, excel users etc. and who see data visualization as a byproduct of their activity, so they never really asked themselves those questions. And among those, I&#8217;m thinking mostly of coders. Noah and I met at last year&#8217;s Strata conference which is also attended by the cream of the crop of the data scientists. I was surprised to see that some of them, despite being able to harness huge quantity of data, were severely limited in their visualization options because they never had an opportunity to learn. These people who are already at ease with the tool will see their activity supercharged thanks to the book.</li>
+</ol>
+<div>For a data practitioner who has already an interest in theory I won&#8217;t lie to you &#8211; reading the book will feel like patting yourself on the back and there will be little you will learn. But consider, for instance, giving copies to your customers and think of all the fruitless discussions that will  this will save you in the course of a project.</div>
+]]></content:encoded>
+			<wfw:commentRss>/2012/04/22/designing-data-visualizations/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Book review: Presentation Zen by Garr Reynolds</title>
+		<link>/2008/11/26/book-review-presentation-zen-by-garr-reynolds/</link>
+		<comments>/2008/11/26/book-review-presentation-zen-by-garr-reynolds/#comments</comments>
+		<pubDate>Wed, 26 Nov 2008 12:29:13 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[book review]]></category>
+		<category><![CDATA[presentation]]></category>
+		<category><![CDATA[advice]]></category>
+		<category><![CDATA[book]]></category>
+		<category><![CDATA[garr]]></category>
+		<category><![CDATA[garr reynolds]]></category>
+		<category><![CDATA[guidelines]]></category>
+		<category><![CDATA[image]]></category>
+		<category><![CDATA[powerpoint]]></category>
+		<category><![CDATA[presentation zen]]></category>
+		<category><![CDATA[slides]]></category>
+		<category><![CDATA[story]]></category>
+		<category><![CDATA[visual]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=15</guid>
+		<description><![CDATA[Presentation Zen, by Garr Reynolds, has been my favorite business book in 2008. Whatever your field, if you are a professional, chances are that you are going to make a presentation at least once a year. If you are looking for guidance, you could do worse than checking Garr&#8217;s website, aptly named presentation zen, or <a class="read-more" href="/2008/11/26/book-review-presentation-zen-by-garr-reynolds/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p><a href="http://www.amazon.com/dp/0321525655?tag=jeromecukiern-20&amp;camp=14573&amp;creative=327641&amp;linkCode=as1&amp;creativeASIN=0321525655&amp;adid=1SMVEYMJTKAVERYAM6YM&amp;"><img class="alignleft" style="padding:10px;" title="Presentation Zen cover" src="http://sixminutes.dlugan.com/wp-content/uploads/2008/01/presentation-zen-book.jpg" alt="" width="200" height="245" /></a>Presentation Zen, by Garr Reynolds, has been my favorite business book in 2008.</p>
+<p>Whatever your field, if you are a professional, chances are that you are going to make a presentation at least once a year. If you are looking for guidance, you could do worse than checking Garr&#8217;s website, aptly named <a href="http://www.presentationzen.com/">presentation zen</a>, or buying the book.</p>
+<p>Garr&#8217;s book will not teach you everything you need to know about presentations, but is a great starting point.</p>
+<p>If I were to summarize the book in one sentence, that would be:</p>
+<p><strong>Focus on your delivering your message.</strong></p>
+<p>Anything in your presentation that doesn&#8217;t help you deliver your key message must be removed. Conversely, there are ways to present your content that can enhance your message. Consider them.</p>
+<p>I could sum up his practical advice in 3 points.</p>
+<ul>
+<li>start to think offline.</li>
+<li>in your favorite presentation software, start from a blank slide.</li>
+<li>use visuals. And give your visuals all the space they need.</li>
+</ul>
+<div>Let&#8217;s ellaborate a bit.</div>
+<div><strong>Start to think offline</strong></div>
+<div>The first thing most business professionals would do when asked to design a presentation would be to fire up Powerpoint and create slides. Then, they will edit slides. Insert slides&#8230; remove slides. Edit them some more. Tweak the design&#8230; Insert that extra idea. Ah, but the slide is no longer aligned. So we&#8217;re back to more editing and more tweaking. The end result is often busy, neither consistent nor convincing. Sounds familiar?</div>
+<p style="text-align: center;"><a title="27062008661 by Nevon, on Flickr" href="http://www.flickr.com/photos/nevon/2621789613/"><img class="aligncenter" src="http://farm4.static.flickr.com/3162/2621789613_8153c4b7c5.jpg" alt="27062008661" width="400" height="300" /></a></p>
+<div>The solution to that problem is to start working on your presentation offline &#8211; determine the outline, how to structure your talk, what to say on each slide&#8230; A nice way to do this is with post-its.</div>
+<p style="text-align: center;"><a title="Outlining my dConstruct talk by adactio, on Flickr" href="http://www.flickr.com/photos/adactio/2735966814/"><img class="aligncenter" src="http://farm4.static.flickr.com/3136/2735966814_cce38ccc94.jpg" alt="Outlining my dConstruct talk" width="375" height="500" /></a></p>
+<div>Post-its are easy to group and reposition, and if text doesn&#8217;t fit on a post it, it&#8217;s probably too wordy to put on a slide, anyway.</div>
+<div><strong>Start from a blank template</strong></div>
+<div>Powerpoint and others have trained us to think in terms of bulleted lists. But what an awful way of presenting information! When you&#8217;re showing a bulleted list, you&#8217;re reading out loud your slide, to an audience who has alreay read it by the time you get to point 2. Garr, in this <a href="http://www.presentationzen.com/presentationzen/2006/01/contrasts_in_pr.html">star wars-themed slide show,</a> shows how bulleted lists are the &#8220;dark side of the force&#8221; type of presentations.</div>
+<div><strong>Use visuals</strong></div>
+<div><a href="http://presentationzen.blogs.com/presentationzen/2005/10/the_lessig_meth.html">Famous presenters</a> each have their signature style, and Garr&#8217;s is the use of full-bleed image with minimal legends (and Gill Sans, but what&#8217;s wrong with that? I love Gill Sans). Full-bleed means that instead of integrating a smaller image in a template, you make it occupy all the space in the slide.</div>
+<div><iframe src="https://www.slideshare.net/slideshow/embed_code/295996" width="425" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe><br/></div>
+<div>I won&#8217;t claim this is the single best way of presenting information, and by the way, neither does he. But it is fool-proof and easy to emulate. Finding the right image, which has never been that easy, and using it appropriately, will always have great impact.</div>
+<div></div>
+<div>In the book, Garr covers much more ground. It&#8217;s not only interesting, but it&#8217;s a nice read, and laced with examples you can actually use. I was quite surprised to see him redo charts I had done! (although, for my defense, they were never intended to be shown as is in a powerpoint).</div>
+<div>If you need to buy one book on presentations, buy this book. If you think you don&#8217;t need a book on presentation, buy this book as well.</div>
+<div></div>
+<div>PS. Since the book has been released, I can see lots of presentations, on <a href="http://www.slideshare.net/">slideshare</a> or elsewhere, that apply the visual style of Garr&#8217;s (nice, appropriately-chosen images, caption kept to an essential) but forget the other part of the story, which is the structure of the overall presentation. Both aspects are vital and complementary.</div>
+]]></content:encoded>
+			<wfw:commentRss>/2008/11/26/book-review-presentation-zen-by-garr-reynolds/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+	</channel>
+</rss>

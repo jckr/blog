@@ -1,0 +1,1839 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="HandheldFriendly" content="True" />
+<meta name="MobileOptimized" content="320" />
+
+<title>charts | jeromecukier.net</title>
+
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="/xmlrpc.php">
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Feed" href="/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Comments Feed" href="/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; charts Category Feed" href="/category/charts/feed/" />
+<!-- This site uses the Google Analytics by MonsterInsights plugin v7.0.5 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+<!-- Note: MonsterInsights is not currently configured on this site. The site owner needs to authenticate with Google Analytics in the MonsterInsights settings panel. -->
+<!-- No UA code set -->
+<!-- / Google Analytics by MonsterInsights -->
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/localhost:8888\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6.10"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='YoutubeShortcodeMargenn-css'  href='/wp-content/plugins/youtube-shortcode/youtube-shortcode.css?ver=4.6.10' type='text/css' media='all' />
+<link rel='stylesheet' id='casper-google-fonts-css'  href='//fonts.googleapis.com/css?family=Noto+Serif%3A400%2C700%2C400italic%7COpen+Sans%3A700%2C400&#038;ver=4.6.10' type='text/css' media='all' />
+<link rel='stylesheet' id='casper-style-css'  href='/wp-content/themes/casper/style.css?ver=4.6.10' type='text/css' media='all' />
+<script type='text/javascript' src='/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.6.10" />
+
+   	<style type="text/css">
+					.blog-title a, .blog-description, .social-icons a { color: #ffffff; }
+		
+						                
+		
+							.main-navigation a { color: ; }
+		                                            </style>
+    		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+
+<body class="archive category category-charts category-3 group-blog">
+
+<header id="masthead" role="banner" class="site-head site-header" >
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+        <div>
+            <h1 class="menu-toggle">
+                <a class="icon-bars" href="#">
+                    <span class="hidden">Menu</span>
+                </a>
+            </h1>
+            <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+            <div class="menu"><ul><li ><a href="/">Home</a></li><li class="page_item page-item-6"><a href="/about/">About</a></li><li class="page_item page-item-1073"><a href="/data-stories/">Data with stories workshop &#8211; examples</a></li><li class="page_item page-item-437"><a href="/proofs-of-concept/">Private section</a></li><li class="page_item page-item-2"><a href="/sample-page/">Sample Page</a></li></ul></div>
+        </div>
+    </nav><!-- #site-navigation -->
+
+    <div class="vertical-row">
+        <div class="vertical">
+            <div class="site-head-content inner">
+                
+                <div class="social-icons">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                    </div>
+                <h1 class="blog-title"><a class="blog-logo" href='/' rel='home'>jeromecukier.net</a></h1>
+                <h2 class="blog-description">Just another WordPress site</h2>
+            </div>
+        </div>
+    </div>
+</header><!-- #masthead -->
+
+<main id="content" class="content" role="main">
+
+	<section id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		
+			<header class="page-header">
+				<h1 class="page-title">
+					charts				</h1>
+							</header><!-- .page-header -->
+
+						
+				
+<article id="post-1664" class="post-1664 post type-post status-publish format-standard hentry category-charts category-d3 category-javascript category-tips tag-canvas tag-d3js tag-dom tag-javascript tag-library tag-svg">
+		    <header class="post-header">
+        			<span class="post-meta">
+				<span class="posted-on"><a href="/2015/05/19/you-may-not-need-d3/" rel="bookmark"><time class="entry-date published" datetime="2015-05-19T23:15:56+00:00">May 19, 2015</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/charts/" rel="category tag">charts</a>, <a href="/category/d3/" rel="category tag">d3</a>, <a href="/category/javascript/" rel="category tag">javascript</a>, <a href="/category/tips/" rel="category tag">tips</a>			</span>
+		        <h1 class="post-title"><a href="/2015/05/19/you-may-not-need-d3/" rel="bookmark">You may not need d3</a></h1>
+         
+    </header>
+	<section class="post-content">
+
+		<p>If you&#8217;re working on visualization on the web, the go-to choice is to use <a href="http://d3js.org/">d3js</a> (or a higher-level library). d3js is powerful and versatile. The best proof of that is the lead author of d3, Mike Bostock, worked until recently at the New York Times which many, including myself, consider the ultimate reference in terms of information graphics. At the NYT and elsewhere, d3js has powered breathtaking projects.</p>
+<p>d3js was built as a successor to protovis. Protovis was a slightly higher-level library than d3js, more specialized in data graphics, and designed with the assumption that it could be used with little or no programming experience. And indeed this was true. When I started using protovis in 2009, my javascript skills were limited, and so I learned by deconstructing and recombining the examples. I kept on doing that when d3 came along &#8211; learning through examples. And the d3 examples, like those in protovis before, were short and standalone, demonstrating how easy it was to create something with a few lines of code.</p>
+<p>d3js requires more technical knowledge than protovis did to get started, but not much. However, it is much more versatile &#8211; no longer constrained to charts and maps, it can handle a lot of the front-end functionalities of a web site. And so, it is possible to make visualizations by:</p>
+<ul>
+<li>learning how to do stuff in d3js,</li>
+<li>learning the essential javascript that you need to run d3js, as needed (i.e. variables, if-then statements, array methods&#8230;)</li>
+<li>then, learning through doing, and obtain a feeling for how SVG, HTML and the Document Object Model works.</li>
+</ul>
+<p>This approach is actually very limiting.</p>
+<p>You would create much more robust code by:</p>
+<ul>
+<li>learning javascript,</li>
+<li>learning SVG/HTML/DOM,</li>
+<li>then learning and appreciate d3 logic.</li>
+</ul>
+<p>That would give you the choice when to use a d3js method, when to use another library (past, present or future), or when to use native javascript.</p>
+<p>The point of this article is to go through the main functions of d3js and see how they can be replicated without using a library. As of this writing, I am convinced that using d3js is the most sensible way to handle certain tasks (though this may change in the future). In almost any case I can think of, even when it&#8217;s not the most efficient way to do so, using the d3js approach is the most convenient and the easiest from the developer&#8217;s perspective.  But I also believe it&#8217;s really important to know how to do all these things without d3js.</p>
+<p>This will be a very long post. I&#8217;m trying to keep it as structured as possible so you can jump to the right section and keep it as a reference. This also assumes you have a certain familiarity with d3js and javascript &#8211; this is not an introductory post.</p>
+<p>I&#8217;ve divided it in 4 parts:</p>
+<ul>
+<li>Tasks that you really don&#8217;t need d3js for. And ok, you may want to use it regardless. But here&#8217;s how to do those things without it. (manipulating DOM elements)</li>
+<li>interlude: a reflexion on d3js data binding. Do you really need that?</li>
+<li>Tasks which are significantly easier with d3js (working with external data, animation)</li>
+<li>Tasks where as of now, d3js is clearly superior to anything else (scales, array refactoring, map projections, layouts).</li>
+</ul>
+<h2>Selecting and manipulating elements</h2>
+<p>At the core of d3js is the notion of selection. In d3js, you select one or several elements which become a selection object. You can then do a variety of things:</p>
+<ul>
+<li>join them with data, which is also an essential tenet of the d3 philosophy,</li>
+<li>create or delete elements, especially in relation to the data you may have joined with their parent,</li>
+<li>manipulate these elements by changing their attributes and their style, including in function of the data joined with each of them,</li>
+<li>attach events listeners to those elements, so that when events happen (ie somebody clicks on a rectangle, or change the value of a form) a function might be triggered,</li>
+<li>animate and transform those elements.</li>
+</ul>
+<h3>Selecting elements and parsing the DOM</h3>
+<h4>d3 selection objects vs Nodes, HTML NodeList vs HTML LiveCollections</h4>
+<p>When you select something with d3js, using methods such as d3.select() or d3.selectAll(), this returns a d3 selection object. The selection object is a subclass of the javascript object Array &#8211; <a href="http://bost.ocks.org/mike/selection/">check here for all the nitty-gritty</a>. The gist of it is that d3 selection objects can then be manipulated by d3 methods, such as .attr() or .style() to assign attributes or styles.</p>
+<p>By contrast, the DOM is made of Node objects. The root of the DOM, the Document Object Model, is a special Node called Document. Nodes are organized in a tree-like structure: Document has children, which may have children etc. and encompass everything in the page. The Node objects are really the building blocks of a web page. When an element is added, be it an HTML element like a &lt;div&gt; or an SVG element like a &lt;rect&gt;, a new Node is created as well. So d3js has to interact with Node objects as well. d3 selection objects are tightly connected to their corresponding Node objects.</p>
+<p>However, with &#8220;vanilla&#8221; javascript, you can <em>directly</em> access and manipulate the Node objects.</p>
+<h4>d3.select / d3.selectAll vs document.querySelector / document.querySelectorAll</h4>
+<p>In d3js, you parse the document using d3.select (to select one object) or d3.selectAll. The argument of this method is a <a href="https://github.com/mbostock/d3/wiki/Selections">CSS3 selector</a>, that is, a string which is very similar to what could be found in a CSS style sheet to assign specific styles to certain situations. For instance, &#8220;g.series rect.mark&#8221; will match with all the rectangles of the class &#8220;mark&#8221; which are descendants of the SVG g groups of the class series.</p>
+<p>When d3js was introduced in 2011, javascript didn&#8217;t have an equivalent syntax &#8211; instead you could select elements by class, or by id, or by tag name (more on that in a minute). Things have changed however and it is now possible to use CSS3 selectors using document.querySelector (which will return just one node) or document.querySelectorAll (which will return an HTML NodeList).</p>
+<p>An HTML NodeList is a special object which is kind of like an array of Node objects, only it has almost no array methods or properties. You can still access its members using brackets, and get its length, but that&#8217;s it.</p>
+<p>I wrote document.querySelectorAll, because you can use this method from the document, but you can use it from any Node. Those two snippets of code are parallel:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+var svg = d3.select(&quot;svg&quot;); // svg is a d3 selection object
+var g = svg.selectAll(&quot;g&quot;); // g is a d3 selection object
+</pre>
+<pre class="brush: jscript; title: ; notranslate" title="">
+var svg = document.querySelector(&quot;svg&quot;); // svg is a Node
+var g = svg.querySelectorAll(&quot;g&quot;); // g is a NodeList
+</pre>
+<h4> Getting elements by class name, ID, tag name, name attribute</h4>
+<p>d3js doesn&#8217;t have a special way to get all descendants of a selection of a certain class, of a certain ID, etc. The CSS3 selector syntax can indeed handle all those cases, so why have a separate way?</p>
+<p>By contrast, javascript pre-2011 didn&#8217;t have a querySelectorAll method, and so the only way to parse the document was to use more specific method, like document.getElementsByClassName().</p>
+<p>document.getElementsByClassName() retrieves all descendants of a certain class. document.getElementsByName() retrieves elements with a certain &#8220;name&#8221; attribute (think forms). documents.getElementsByTagName() gets all descendants of a certain type (ie all &lt;div&gt;s, all &lt;rect&gt;s, etc.).</p>
+<p>What&#8217;s interesting about that is that what is returned is not an HTML NodeList like above with querySelectorAll, but another object called HTML <strong>Live Collection</strong>. The difference is that matching elements are created after, they would still be included in the Live Collection.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+var svg = d3.select(&quot;svg&quot;);
+svg.selectAll(&quot;rect&quot;).data([1,2,3]).enter().append(&quot;rect&quot;);
+var mySelection = svg.selectAll(&quot;rect&quot;); // 3 elements
+mySelection[0].length // 3
+svg.append(&quot;rect&quot;);
+mySelection[0].length // 3
+mySelection = svg.selectAll(&quot;rect&quot;); // re-selecting to update it
+mySelection[0].length // 4
+</pre>
+<pre class="brush: jscript; title: ; notranslate" title="">
+var svg = document.querySelector(&quot;svg&quot;);
+var ns = &quot;http://www.w3.org/2000/svg&quot;;
+var i;
+for (i = 0; i &lt; 3; i++) {
+  var rect = document.createElementNS(ns, &quot;rect&quot;); // we'll explain creating elements later
+  svg.appendChild(rect);
+}
+var mySelection = svg.getElementsByTagName(&quot;rect&quot;); // 3 elements
+var rect = document.createElementNS(ns, &quot;rect&quot;);
+svg.appendChild(rect);
+mySelection.length // 4 - no need to reselect to update
+</pre>
+<p>How about IDs? there is also the getElementById (no s at elements!) which only retrieve one element. After all, IDs are supposed to be unique! if no elements match, getElementById returns null.</p>
+<h4>Children, parents, siblings&#8230;</h4>
+<p>Truth be told, if you can use selectors from the root, you can access everything. But sometimes, it&#8217;s nice to be able to go from one node to its parents or its children or its siblings, and d3js doesn&#8217;t provide that. By contrast, the Node object has an interface that does just that &#8211; node.childNodes gets a nodeList of child nodes, node.parentNode gets the parent node, node.nextSibling and node.previousSibling get the next and previous siblings. Nice.</p>
+<p>However, most often you will really be manipulating elements (more on that in a second) and not nodes. What&#8217;s the difference? all Elements are Nodes, but the reverse is not true. One common example of Node which is not an Element is text content.</p>
+<p>To get an Element&#8217;s children, you can use the (wait for it) children property. The added benefit is that what you get through children is a LiveCollection (dynamic), while what you get through childNodes is a NodeList (static).</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+var svg = document.querySelector(&quot;svg&quot;);
+var ns = &quot;http://www.w3.org/2000/svg&quot;;
+var i;
+for (i = 0; i &lt; 3; i++) {
+  var myRect = document.createElementNS(ns, &quot;rect&quot;); // we'll explain creating elements later
+  svg.appendChild(rect);
+}
+// the variable myRect holds the last of the 3 &lt;rect&gt; elements that have been added
+svg.childNodes; // a NodeList
+myRect.parentNode; // the svg element
+myRect.nextSibling; // null - myRect holds the last child of svg.
+myRect.previousSibling; // the 2nd &lt;rect&gt; element
+svg.firstChild; // the 1st &lt;rect&gt;. Really useful shorthand
+svg.querySelector(&quot;rect&quot;); // also the 1st &lt;rect&gt;.
+svg.children; // a LiveCollection
+</pre>
+<h2>Adding/reading attributes, styles, properties and events</h2>
+<h4>Node, Element, EventTarget and other objects</h4>
+<p>In d3 101, right after you&#8217;ve created elements (to which we&#8217;ll come in a moment), you can start moving them around or giving them cool colors like &#8220;steelblue&#8221; by using the .attr and .style methods.</p>
+<p>Wouldn&#8217;t that be cool if we could do the same to Node objects in vanilla javascript!</p>
+<p>Well, we can. Technically, you can&#8217;t add style or attributes to Node objects proper, but to Element objects. The Element object inherits from the Node objects and is used to store these properties. There is also an HTMLElement and SVGElement which inherit from the Element object.</p>
+<p>If you look at the Chrome console at an SVG element like a rect, you can see, in the properties tab, all the objects it inherits from: Object, EventTarget, Node, Element, SVGElement, SVGGraphicsElement, SVGGeometryElement, SVGRectElement, rect.</p>
+<p>All have different roles. To simplify: Node relates to their relative place in the document hierarchy, EventTarget, to events, and Element and its children, to attributes, style and the like. The various SVG-prefixed objects all implement specific methods and properties. When we select a Node object as we&#8217;ve done above with svg.querySelector(&#8220;rect&#8221;) and the like, note that there&#8217;s not a Node object on one side, then an Element object somewhere else, a distinct SVGGeometryElement, and so on and so forth. What is retrieved is <em>one single object</em> that inherits all methods and properties of Nodes, Elements, EventTargets, and so on and so forth, and, as such, that behaves like a Node, like an Element, etc.</p>
+<h4>Setting and getting attributes</h4>
+<p>You can set attributes with the Element.setAttribute method.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+var rect = document.querySelector(&quot;rect&quot;);
+rect.setAttribute(&quot;x&quot;, 100);
+rect.setAttribute(&quot;y&quot;, 100);
+rect.setAttribute(&quot;width&quot;, 100);
+rect.setAttribute(&quot;height&quot;, 100);
+</pre>
+<p>To be honest, I&#8217;m a big fan of the shorthand method in d3js,</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+var rect = d3.select(&quot;rect&quot;);
+rect.attr({x: 100, y: 100, width: 100, height: 100});
+</pre>
+<p>Also, the Element.setAttribute method doesn&#8217;t return anything, which means it can&#8217;t be chained (which may or may not be a bad thing, though it&#8217;s definitely a change for d3js users). It&#8217;s not possible to set several attributes in one go either, although one could create a custom function, or, for the daring, extend the Element object for that.</p>
+<p>Likewise, the Element object has a getAttribute method :</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+rect.getAttribute(&quot;x&quot;); // 100
+</pre>
+<h4>Classes, IDs and tag names</h4>
+<p>Classes, IDs and tag names are special properties of the Element objects. It&#8217;s extremely common to add or remove classes to elements in visualization: my favorite way to do that is to use the classed method in d3js.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+d3.select(&quot;rect&quot;).classed(&quot;myRect&quot;, 1)
+</pre>
+<p>In vanilla javascript, you have the concept of classList.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+document.querySelector(&quot;rect&quot;).classList; // [&quot;myRect&quot;]
+</pre>
+<p>ClassList has a number of cool methods. contains checks if this Element is of a certain class, add adds a class, remove removes a class, and toggles, well, toggles a class.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+document.querySelector(&quot;rect&quot;).classList.contains([&quot;myRect&quot;]); // true
+document.querySelector(&quot;rect&quot;).classList.remove(&quot;myRect&quot;);
+document.querySelector(&quot;rect&quot;).classList.add(&quot;myRect&quot;);
+document.querySelector(&quot;rect&quot;).classList.toggle(&quot;myRect&quot;);
+</pre>
+<p>How about IDs ? with d3js, you&#8217;d have to treat them as any other property (rect.attr(&#8220;id&#8221;)). In vanilla javascript, however, you can access it directly via the id property of Element. You can also do that with the name property.<br />
+Finally, you can use the tagName to get the type of element you are looking at (though you cannot change it &#8211; you can try, it just won&#8217;t do anything).</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+document.querySelector(&quot;rect&quot;).id = &quot;myRect&quot;; // true
+document.querySelector(&quot;rect&quot;).name; // undefined;
+document.querySelector(&quot;rect&quot;).tagName; // &quot;rect&quot;
+document.querySelector(&quot;rect&quot;).tagName = &quot;circle&quot;;
+document.querySelector(&quot;rect&quot;).tagName; // &quot;rect&quot;
+</pre>
+<h4>Text</h4>
+<p>Text is a pretty useful aspect of visualization! it is different from attributes or styles, which are set in the opening tag of an element. The text or content is what is happening in between the opening and closing tags of that element. This is why, in d3js, text isn&#8217;t set using attr or style, but either by the html method for HTML elements like DIVs or Ps, or by the text method for SVG elements like &lt;text&gt; and &lt;tspan&gt;.</p>
+<p>Those have equivalent in the DOM + javascript world.</p>
+<p>HTMLelements have the .innerHTML and outerHTML properties. The difference between the two is that outerHTML includes the opening and closing tags. innerHTML and outerHTML both return HTML, complete with tags and syntax.</p>
+<p>SVG elements, however, don&#8217;t have access to this property, so they have to rely on the Node property textContent. HTML elements also have access to it, by the way. textContent returns just the plain text content of what&#8217;s in the element. All three properties can be used to either get or set text.</p>
+<h4>Style</h4>
+<p>In d3js, setting styles to elements is very similar to setting attributes, only we use the .style method instead of the .attr one. It&#8217;s so much similar that it&#8217;s a rather common mistake to pass as attribute what should be a style and vice-versa! Like with attributes, it is possible to pass an object with keys and values to set several style properties at once.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+d3.selectAll(&quot;rect&quot;).style(&quot;fill&quot;, &quot;red&quot;);
+d3.selectAll(&quot;rect&quot;).style({stroke: &quot;#222&quot;, opacity: .5});
+</pre>
+<p>In the world of DOM and vanilla javascript, style is a property of the HTMLElement / SVGElement objects. You can set style properties one at a time:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+rect = document.querySelector(&quot;rect&quot;);
+rect.style.fill = &quot;red&quot;;
+rect.style.stroke = &quot;#222&quot;;
+rect.style.opacity = .5;
+</pre>
+<p>Technically, .style returns a CSSStyleDeclaration object. This object maintains a &#8220;live&#8221; link to what it describes. So:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+myStyle = rect.style;
+rect.style.fill = &quot;yellow&quot;;
+myStyle.fill; // &quot;yellow&quot;
+</pre>
+<p>Finally, the window object has a getComputedStyle method that can get the computed styles of an element, ie how the element is actually going to get drawn. By contrast, the style property and the d3js style method only affect the inline styles of an element and are &#8220;blind&#8221; to styles of its parents.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+myStyle = window.getComputedStyle(rect, null);
+myStyle.fill; // &quot;yellow&quot;
+</pre>
+<h4>Adding and removing events</h4>
+<p>In d3js, we have the very practical method &#8220;on&#8221; which let users interact with elements and can trigger behavior, such as transformations, filtering, or, really, any arbitrary function. This is where creating visualizations with SVG really shines because any minute interaction with any part of a scene can be elegantly intercepted and dealt with. Since in d3js, elements can be tied with data, the &#8220;on&#8221; methods takes that into account and passes the data element to the listener function. One of my favorite tricks when I&#8217;m developing with d3js and SVG is to add somewhere towards the end the line:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+d3.selectAll(&quot;*&quot;).on(&quot;click&quot;, function(d) {console.log(d);})
+</pre>
+<p>Which, as you may have guessed, displays the data item tied to any SVG element the user could click on.</p>
+<p>In the world of the DOM, the object to which events methods are attached in the EventTarget. Every Element is also an EventTarget (and EventTarget could be other things that handle events too, like xhr requests).</p>
+<p>To add an event listener to an element, use the addEventListener method like so.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+document
+  .querySelector(&quot;rect&quot;)
+  .addEventListener(&quot;click&quot;, function() {
+     console.log(&quot;you clicked the rectangle!&quot;
+   }, false);
+</pre>
+<p>The first parameter is the type of event to listen to (just as in &#8220;on&#8221;), the second is the listener function proper. The third one, &#8220;use capture&#8221;, a Boolean, is optional. If set to true, it stops the event from propagating up and being intercepted by event listeners of the parents of this element.</p>
+<p>There is also a &#8220;removeEventListener&#8221; method that does the opposite, and needs the same elements: in other words, yes, you need to pass the same listener function to be able to stop listening to the element. There is no native way to remove all event listeners from an element, although there are <a href="http://stackoverflow.com/questions/9251837/how-to-remove-all-listeners-in-an-element">workarounds</a>.</p>
+<h2>Creating and removing elements</h2>
+<p>Selecting and modifying elements is great, but if you are creating a visualization, chances are that you want to create elements from scratch.</p>
+<p>Let&#8217;s first talk about how this is done in the DOM/javascript, then we&#8217;ll better understand the data joins and d3 angle.</p>
+<p>Node objects can exist outside of the hierarchy of the DOM. Actually, they must first be created, <em>then</em> be assigned to a place in the DOM.</p>
+<p>Until a Node object is positioned in the DOM, it is not visible. However, it can receive attributes, styles, etc. Likewise, a Node object can be taken from the DOM, and still manipulated.</p>
+<p>To create an HTML element, we can use the document.createElement() method:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+var myDiv = document.createElement(&quot;div&quot;);
+</pre>
+<p>However, that won&#8217;t work for SVG elements &#8211; remember in an earlier example, we used the createElementNS method. This is because SVG elements have to be created in the SVG namespace. d3js old-timers may remember that in the first versions, we had to deal with namespaces when creating elements in d3js as well, but now this all happens under the hood.</p>
+<p>Anyway, in vanilla javascript, this is  how it&#8217;s done:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+var svgns = &quot;http://www.w3.org/2000/svg&quot;;
+var myRect = document.createElementNS(svgns, &quot;rect&quot;);
+</pre>
+<p>Warning, because document.createElement(&#8220;rect&#8221;) will not produce anything useful as of this writing.</p>
+<p>Once the new Node objects are created, in order to be visible, they should be present in the DOM. Because the DOM is a tree, this means that they have to have a parent.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+svg.appendChild(myRect);
+</pre>
+<p>Likewise, to remove a Node from the DOM means to sever that relationship with its parent, which is done through the removeChild method:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+svg.removeChild(myRect);
+</pre>
+<p>Again, even after a Node has been removed, it can still be manipulated, and possibly re inserted at a later time.</p>
+<p>Nodes don&#8217;t remove themselves, but you can write:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+myRect.parentNode.removeChild(myRect);
+</pre>
+<p>In contrast, here is how things are done in d3js.</p>
+<p>The append method will add one element to a parent.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+d3.select(&quot;svg&quot;).append(&quot;rect&quot;);
+</pre>
+<p>The remove method will remove one entire selection object from the DOM.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+d3.select(&quot;svg&quot;).selectAll(&quot;rect&quot;).remove(); // removes all rect elements which are children of the SVG element
+</pre>
+<p>But the most intriguing and the most characteristic way to <a href="http://www.jeromecukier.net/blog/2011/08/09/d3-adding-stuff-and-oh-understanding-selections/">create new elements</a> in d3js is to use a data join.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+d3.select(&quot;svg&quot;)
+  .selectAll(&quot;rect&quot;)
+  .data(d3.range(5))
+  .enter()
+  .append(&quot;rect&quot;);
+</pre>
+<p>The above snippet of code counts all the rect children of the svg element, and, if there are fewer than 5 &#8211; the number of items in d3.range(5), which is the [0,1,2,3,4] array &#8211; creates as many as needed to get to 5, and binds values to those elements &#8211; the contents of d3.range(5) in order. If there are already 5 rect elements, no new elements will be created, but the data assignment to the existing elements will still occur.</p>
+<h2>Data joins, or the lack thereof</h2>
+<p>The select / selectAll / data / enter / append sequence can sound exotic to people who learn d3js, but to its practitioners, <a href="http://www.jeromecukier.net/blog/2011/08/09/d3-adding-stuff-and-oh-understanding-selections/">it is its angular stone</a>. Not only is it a quick way to create many elements (which, in vanilla javascript, takes at least 2 steps. Creating them, and assigning them to the right parent), but it also associates them with a data element. That data element can then be accessed each time the element is being manipulated, notably when setting attributes or styles and handling events.</p>
+<p>For instance,</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+d3.selectAll(&quot;rect&quot;)
+  .attr(&quot;x&quot;, function(d) {return 20 * d;});
+</pre>
+<p>the above code utilizes the fact that each of the rectangle have a different number associated with them to dynamically set an attribute, here position rectangles horizontally.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+d3.selectAll(&quot;rect&quot;)
+  .on(&quot;click&quot;, function(d) {console.log(d);})
+</pre>
+<p>A trick I had mentioned above, but which illustrates this point: here by clicking on each rectangle, we use the data join to show the associated data element.</p>
+<p>Having data readily available when manipulating elements in d3js is extremely convenient. After all, data visualization is but the encoding of data through visual attributes. How to perform this operation without the comfort of data joins?</p>
+<p>Simply by going back to the dataset itself.</p>
+<p>Consider this:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+var data = [];
+var i;
+for (i = 0; i &lt; 100; i++) {
+  data.push({x: Math.random() * 300, y: Math.random() * 300}); // random data points
+}
+
+// d3 way
+var d3svg = d3.select(&quot;body&quot;).append(&quot;svg&quot;);
+d3svg.selectAll(&quot;circle&quot;).data(data).enter().append(&quot;circle&quot;)
+  .attr({cx: function(d) {return d.x;}, cy: function(d) {return d.y}, r: 2})
+  .style({fill: &quot;#222&quot;, opacity: .5});
+
+// vanilla js way
+var svgns = &quot;http://www.w3.org/2000/svg&quot;;
+var svg = document.createElementNS(svgns, &quot;svg&quot;);
+document.querySelector(&quot;body&quot;).appendChild(svg);
+for (i = 0; i &lt; 100; i++) {
+  var myCircle = document.createElementNS(svgns, &quot;circle&quot;);
+  myCircle.setAttribute(&quot;cx&quot;, data[i].x);
+  myCircle.setAttribute(&quot;cy&quot;, data[i].y);
+  myCircle.setAttribute(&quot;r&quot;, 2);
+  myCircle.style.fill = &quot;#222&quot;;
+  myCircle.style.opacity = .5;
+  svg.appendChild(myCircle);
+}</pre>
+<p class="codepen" data-height="268" data-theme-id="0" data-slug-hash="eNzaYg" data-default-tab="result" data-user="jckr">See the Pen <a href="http://codepen.io/jckr/pen/eNzaYg/">eNzaYg</a> by Jerome Cukier (<a href="http://codepen.io/jckr">@jckr</a>) on <a href="http://codepen.io/">CodePen</a>.</p>
+<p><script src="//assets.codepen.io/assets/embed/ei.js" async=""></script>Both codes are equivalent. Vanilla JS is also marginally faster, but d3 code is much more compact. In d3js, the process from dataset to visual is:</p>
+<ul>
+<li>Joining dataset to container,</li>
+<li>Creating as may children to container as needed, [repeat operation for as many levels of hierarchy as needed],</li>
+<li>Use d3 selection objects to update the attributes and styles of underlying Node objects from the data items which have been joined to them.</li>
+</ul>
+<p>    In contrast, in vanilla Javascript, the process is:</p>
+<ul>
+<li>Loop over the dataset,</li>
+<li>create, position and style elements as they are read from the dataset.</li>
+</ul>
+<p>For visuals with a hierarchy of elements, the dataset may also have a hierarchy and could be nested. In this case, there may be several nested loops. While the d3js code is much more compact, the vanilla approach is actually more simple conceptually. Interestingly, this is the same logic that is at play when creating visualization with Canvas or with frameworks like React.js. To simply loop over an existing, invariant dataset enables you to implement a stateless design and take advantage of immutability. You don&#8217;t have to worry about things such as what happens if your dataset changes or the status that your nodes are in before creating or updating them. By contrast most operations in d3js assume that you are constantly updating a scene on which you are keeping tabs. In order to create elements, you would first need to me mindful on existing elements, what data is currently associated with them, etc. So while the d3js approach is much more convenient and puts the data that you need at your fingertips, the vanilla JS approach is not without merits.</p>
+<h2>Loading files</h2>
+<p>The first word in data visualization is data, and data comes in files, or database queries. If you&#8217;re plotting anything with more than a few datapoints, chances are you are not storing them as a local variable in your javascript. d3js has a number of nifty functions for that purpose, such as d3.csv or d3.json, which allow to load the files asynchronously. The trick in working with files is that it can take some time, so some operations can take place while we wait for the files to load, but some others really have to wait for the event that the file is loaded to start. I personally almost always use queue.js, also from Mike Bostock, as I typically have to load data from several files and a pure d3 approach would require nesting all those asynchronous file functions. But, for loading a simple csv file, d3js has a really simple syntax:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+d3.csv(&quot;myfile.csv&quot;, function(error, csv) {
+  // voila, the contents of the file is now store in the csv variable as an array
+})
+</pre>
+<p>For reference, using queue js, this would look like</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+queue()
+ .defer(d3.csv, &quot;myFirstFile.csv&quot;)
+ .defer(d3.csv, &quot;mySecondFile.csv&quot;)
+ .await(ready);
+
+function ready(error, first, second) {
+  // the contents of myFirstFile is stored as an array in the variable &quot;first&quot;,
+  // and the contents of mySecondFile are in the variable &quot;second&quot;.
+}
+</pre>
+<p>The way to do the equivalent in vanilla Javascript is to use XMLHttpRequest.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+function readFile() {
+  var fileLines = this.responseText.split(&quot;\n&quot;);
+  var fields = fileLines[0].split(&quot;,&quot;);
+  var data = fileLines.slice(1).map(function(d) {
+    var item = {};
+    d.split(&quot;,&quot;).forEach(function(v, i) {item[fields[i]] = v;})
+    return item;
+  })
+
+  var request = new XMLHttpRequest();
+  request.onload = readFile;
+  request.open(&quot;get&quot;, &quot;myFile.csv&quot;, true);
+  request.send();
+</pre>
+<p>The syntax of loading the file isn&#8217;t that cumbersome, and there are tons of nice things that can be done through XMLHttpRequest(), but let&#8217;s admit that d3js/queue.js functions make it much more comfortable to work with csv files.</p>
+<h2>Animations</h2>
+<p>d3js transitions is one of my favorite part of the library. I understand it&#8217;s also one the things which couldn&#8217;t be done well in protovis and which caused that framework to break. It feels so natural: you define what you want to animate, all that needs to change, the time frame and the easing functions, and you&#8217;re good to go (<a href="http://www.jeromecukier.net/blog/2012/07/16/animations-and-transitions/">see my previous post on animations and transitions</a>). In native javascript, while you can have deep control of animations, it&#8217;s also, unsurprisingly, much more cumbersome. However, CSS3 provides an animation interface which is comparable in flexibility, expressiveness and ease of use to what d3js does. First let&#8217;s get a high-level view of how to do this entirely within JS. Then let&#8217;s get a sense of what CSS can do.</p>
+<h4>requestAnimationFrame and animation in JavaScript</h4>
+<p>JavaScript has timer functions, window.setTimeout and window.setTimeinterval, which let you run some code after a certain delay or every so often, respectively. But this isn&#8217;t great for animation. Your computer draws to screen a fixed number of times per second. So if you try to redraw the same element several times before in between those times, it&#8217;s a waste of resources! What requestAnimationFrame does is tell your system to wait for the next occasion to draw to execute a given function. Here&#8217;s how it will look in general.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+function animate(duration) {
+  var start = Date.now();
+  var id = requestAnimationFrame(tick);
+  function tick() {
+    var time = Date.now();
+    if (time - start &lt; duration) {
+       id = requestAnimationFrame(tick);
+       draw(time - start / duration);
+    } else {
+      cancelAnimationFrame(id);
+    }
+  }
+  function draw(frame) {
+    // do your thing, update attributes, etc.
+  }
+}
+</pre>
+<p>&nbsp;</p>
+<p>See the Pen <a href="http://codepen.io/jckr/pen/PqzgLV/">PqzgLV</a> by Jerome Cukier (<a href="http://codepen.io/jckr">@jckr</a>) on <a href="http://codepen.io/">CodePen</a>.</p>
+<p><script src="//assets.codepen.io/assets/embed/ei.js" async=""></script></p>
+<p>OK so in the part I commented out, you will do the drawing proper. Are you out of the woods yet? well, one great thing about d3js transitions is that they use easing functions, which transform a value between 0 and 1 into another value between 0 and 1 so that the speed of the animation isn&#8217;t necessarily uniform. In my example, you have (time &#8211; start) / duration represents the proportion of animation time that has already elapsed, so that proportion can be further transformed.</p>
+<p>So yay we can do everything in plain javascript, but that&#8217;s a lot of things to rewrite from scratch.</p>
+<h4>CSS3, animations and transitions</h4>
+<p>(This is not intended to be an exhaustive description of animations and transitions, a subject on which whole books have been written. Just to give those who are not familiar with it a small taste).</p>
+<p>In CSS3, anything you can do with CSS, you can time and animate. But there are some caveats.</p>
+<p>There are two similar concepts to handle appearance change in CSS: <em>animations</em> and <em>transitions</em>. What is the difference?</p>
+<ul>
+<li>with <em>animations</em>, you describe a @keyframes rule, which is a sequence of states that happen at different points in time in your transition. In each of these events, any style property can be changed. The animation will transform smoothly your elements to go from one state to the next.</li>
+<li>in <em>transitions, </em>you specify how changes to certain properties will be timed. For instance, you can say that whenever opacity changes, that change will be staged over a 1s period, as opposed to happen immediately.</li>
+</ul>
+<p>Both approaches have their uses. CSS3 animations are great to create complex sequences. In d3js, that requires to &#8220;chain transitions&#8221;, which is the more complex aspect of managing them. By contrast, going from one segment of the animation to another is fairly easy to handle in CSS3. Animations, though, require the @keyframes rule to be specified ahead of time in a CSS declaration file. And yes, that can be done programmatically, but it&#8217;s cumbersome and not the intent. The point is: animations work better for complex, pre-designed sequence of events.</p>
+<p>Transitions, in contrast, can be set as inline styles, and work fine when one style property is changed dynamically, a scenario which is more likely to happen in interactive visualizations.</p>
+<p>Here&#8217;s how they work. Let&#8217;s start with animations.</p>
+<p class="codepen" data-height="268" data-theme-id="0" data-slug-hash="vOKKYN" data-default-tab="result" data-user="jckr">See the Pen <a href="http://codepen.io/jckr/pen/vOKKYN/">vOKKYN</a> by Jerome Cukier (<a href="http://codepen.io/jckr">@jckr</a>) on <a href="http://codepen.io/">CodePen</a>.</p>
+<p><script src="//assets.codepen.io/assets/embed/ei.js" async=""></script>Note: as of this writing, animation-related CSS properties have to be vendor prefixed, i.e. you have to repeat writing these rules for the different browsers. Here&#8217;s a transition in action.</p>
+<p class="codepen" data-height="268" data-theme-id="0" data-slug-hash="xGOqOR" data-default-tab="result" data-user="jckr">See the Pen <a href="http://codepen.io/jckr/pen/xGOqOR/">xGOqOR</a> by Jerome Cukier (<a href="http://codepen.io/jckr">@jckr</a>) on <a href="http://codepen.io/">CodePen</a>.</p>
+<p>For transition, you specify one style property to &#8220;listen&#8221; to, and say how changes to that property will be timed, using the transition: name of property + settings. (in the above example: transition: transform ease 2s means that whenever the &#8220;transform&#8221; style of that element changes, this will happen over a 2s period with an easing function). <script src="//assets.codepen.io/assets/embed/ei.js" async=""></script></p>
+<p>One big caveat for both CSS animations and transitions is that they are limited to <em>style properties</em>. In HTML elements this is fine because everything that is related to their appearance is effectively handled by style: position, size, colors, etc. For SVG, however, color or opacity are styles, like in HTML, but positions, sizes and shapes are <em>attributes</em>, and can&#8217;t be directly controlled by CSS. There is a workaround for positions and sizes, which is to use the transform style property.</p>
+<p>But wait: isn&#8217;t transform an SVG attribute as well? that&#8217;s right. And that&#8217;s where it can get <em>really </em>confusing. Many SVG elements are positioned through x and y properties (attributes). They can also have a transform property which is additive to that. For instance, if I have a &lt;rect&gt; which has an x property of 100 and a transform set at &#8220;translate(100)&#8221;, it will be positioned 200px right of its point of origin. But on top of that, SVG elements can have a transform <em>style </em>which affects pretty much the same things (position, scales, rotation&#8230;) but which has a slightly different syntax (&#8220;translate(100)&#8221;, for instance, wouldn&#8217;t work, you&#8217;d have to write &#8220;translateX(100px)&#8221;). What&#8217;s more, the transform set in the style doesn&#8217;t add to the one set in the properties, but it overrides it. If we add a &#8220;transform: translateX(50px)&#8221; to our &lt;rect&gt;, it will be positioned at 150px, not 200px or 250px. Another potential headache is that some SVG elements cannot support transform styles.<br />
+While any of these properties can be accessed programmatically, managing their potential conflicts and overlaps can be difficult. In the transition example above, I have used the transform/translateX syntax.</p>
+<p>That said, a lot of awesome stuff can be done in CSS only. For scripted animations, the animation in pure CSS is definitely more powerful and flexible than the d3js equivalent, however, when dealing with dynamically changing data, while you can definitely handle most things through CSS transitions, you&#8217;ll appreciate the comfort of d3js style transitions.</p>
+<p class="codepen" data-height="268" data-theme-id="0" data-slug-hash="GJqrLO" data-default-tab="result" data-user="jckr">See the Pen <a href="http://codepen.io/jckr/pen/GJqrLO/">GJqrLO</a> by Jerome Cukier (<a href="http://codepen.io/jckr">@jckr</a>) on <a href="http://codepen.io/">CodePen</a>.</p>
+<p><script src="//assets.codepen.io/assets/embed/ei.js" async=""></script></p>
+<p>Now a common transformation handled by d3js transitions is to transform the shape of path shapes. This is impossible through CSS animations/transitions, because the shape of the path &#8211; the &#8220;d&#8221; &#8211; is definitely not a style property. And sure, we can use a purely programmatic approach with requestAnimationFrame but is there a more high level way?<br />
+It turns out there actually is &#8211; the animation element of SVG, or SMIL. Through SMIL, everything SVG can be animated with an interface, this includes moving an object along a path, which I wouldn&#8217;t know how to do on top of my head in d3js. Here is an extensive <a href="https://css-tricks.com/guide-svg-animations-smil/">explanation of how this works and what can be done</a>.</p>
+<h2>Data processing, scales, maps and layouts</h2>
+<p>For the end of the article let&#8217;s talk about all of which could technically be done without d3js, but in a much, much less convenient way. Therefore, I won&#8217;t be discussing alternatives with vanilla Javascript, which would be very work intensive and not necessarily inventive.</p>
+<h4>Array functions and data processing</h4>
+<p>d3js comes with a number of array functions. Some are here for convenience, such as d3.min or d3.max which can easily be replaced by using the native reduce method of arrays. When comparing only two variables, d3.max([a, b]) is not much more convenient than Math.max(a,b) or a &gt; b ? a : b.</p>
+<p>Likewise, d3js has many statistical functions, which saves you the trouble to implement them yourself if you need them, such as d3.quantile. There are other libraries who do that, but they&#8217;re here and it&#8217;s really not useful to recode that from scratch.</p>
+<p>d3js comes with shims for maps and sets, which will be supported by ES6. By now, there are transpilers which can let you use ES6 data structures. But it&#8217;s nice to have them.</p>
+<p>In my experience, d3js most useful tool in terms of data processing is the d3.nest function, which can transform an array of objects into a nested object. (I wrote <a href="http://www.jeromecukier.net/blog/2012/05/28/manipulating-data-like-a-boss-with-d3/">this article</a> about them).  Underscore has something similar. While you can definitely getting a dataset of any shape and size by parsing an array and performing any grouping or operations manually, this is not only very tedious but <strong>also extremely error prone.</strong></p>
+<h4>Scales</h4>
+<p>Scales are one superb feature of d3js. They are simple to understand, yet very versatile and convenient. Oftentimes, d3 scales, especially the linear ones, are a replacement for linear algebra.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+d3.scale.linear().range([100, 500]).domain([0, 24])(14);
+((14 - 0) / (24 - 0)) * (500 - 100) + 100; // those two are equivalent (333.33...)
+</pre>
+<p>but changing the domain or the range of a scale is much safer using the scale than adhoc formulas. Add to this scale goodness such as the ticks() method or nice() to round the domain, and you get something really powerful.</p>
+<p>So, of course it is possible (and straightforward, even) to replace the scales but that would be missing out one of the best features of d3js.</p>
+<h4>Maps</h4>
+<p>d3js comes with a full arsenal of functions and methods to handle geographic projections, ie: the transformation of longitude/latitude coordinates into x,y positions on screen. Those come in two main groups, projections proper that turn an array of two values (longitude, latitude) into an array of two values (x, y). There are also paths functions that are used to trace polygons, such as countries, from specially formatted geographic files (geoJSON, topoJSON).</p>
+<p>The mercator projection may be straightforward to implement, But others are much less so. The degree of comfort that d3js provides when visualizing geographical data is really impressive.</p>
+<h4>Layouts</h4>
+<p>d3js layouts, that is special visual arrangements of data, were in my opinion one of the key drivers of protovis (where they originated) then d3js adoption. Through layouts, it became simple to create, with a few line of codes, complex constructions like treemaps or force-directed networks. Some layouts, like the pie chart or the dendogram, are here for convenience and could be emulated. Others, and most of all the force layout, are remarkably implemented, efficient and versatile. While they are called different names in d3js, geometry functions such as voronoi tessellation or convex hulls are similar functionally and there is little incentive in reproducing what they do in plain javascript.</p>
+<h1>Should I stop using d3?</h1>
+<p>d3js is definitely the most advanced javascript visualization library. The point of this article is not to get you to stop using it, but rather, to have a critical thinking in your code. Even with the best hammer, not everything is a nail.</p>
+<p>To parse the DOM, manipulate classes and listen to events, you probably don&#8217;t need a library. The context of your code may make it more convenient to use d3 or jQuery or something else, but it&#8217;s useful to consider alternatives.<br />
+The concept of the data join unlocks a lot of possibilities in d3js. A good understanding of data join would lead you to implement your visualization much faster, using more concise code and replicable logic. It also makes trouble shooting easier. Data joins are especially useful if you have a dataset which is structured like your visualization should be, or if you plan to have interaction with your visualization that requires quick access with the underlying data. However, data joins are not necessary in d3js, or in visualization in general. In many cases, it&#8217;s actually perfectly sensible to parse a dataset and create a visual representation in one fell swoop, without attaching the data to its representation or overly worrying about updating.</p>
+<p>Assuming you have d3js loaded, nothing prevents you from creating elements using d3js append methods instead of vanilla javascript. Or to listen to events using addEventListener rather than with d3js on method. It&#8217;s totally ok to mix and match.</p>
+<p>Like data joins, transitions are a very powerful component of d3js, and, once you&#8217;re comfortable with them, they are very expressive. There are other animation frameworks available though, which can be better adapted to the task at hand.<br />
+Scale, maps, layouts and geometries are extremely helpful features however and I can think of no good reason to reimplement them.</p>
+<h2>Credit where it&#8217;s due</h2>
+<p>To write this I drew inspiration from many articles and I will try to list them all here.<br />
+The spark that led me to write was Lea Verou&#8217;s article <a href="http://lea.verou.me/2015/04/jquery-considered-harmful/">jQuery considered harmful</a>, as well as articles she cites (<a href="http://youmightnotneedjquery.com/">you might not need jQuery</a>, <a href="http://blog.garstasio.com/you-dont-need-jquery/">you don&#8217;t need jQuery</a>, <a href="http://www.sitepoint.com/do-you-really-need-jquery/">Do you really need jQuery?</a>, <a href="http://tutorialzine.com/2014/06/10-tips-for-writing-javascript-without-jquery/">10 tips for writing JavaScript without jQuery</a>).</p>
+<p>Most of the information I used especially in the beginning of the article comes more or less directly from <a href="https://developer.mozilla.org/en-US/">MDN documentation</a>, and direct experimentation. For CSS and animation, I found the articles of Chris Coyier (such as <a href="https://css-tricks.com/animating-svg-css/">this one</a> or <a href="https://css-tricks.com/animate-to-an-inline-style/">this one</a>) and Sara Soueidan (<a href="https://css-tricks.com/guide-svg-animations-smil/">here</a>) on <a href="https://css-tricks.com/">CSS Tricks</a> to be extremely helpful. Those are definitely among the first resources to check out to go deeper on the subject. Sara was also <a href="http://blogs.adobe.com/dreamweaver/2015/04/an-introduction-to-graphical-effects-in-css.html">the inspiration</a> behind <a href="http://www.jeromecukier.net/blog/2015/05/05/blending-mode-and-svg/">my previous post</a>, so thanks to her again!</p>
+<p>Finally, I&#8217;ve read <a href="http://blog.webkid.io/replacing-jquery-with-d3/">Replacing jQuery with d3</a> with great interest (like <a href="http://snips.net/blog/posts/2014/01-10-fast-interactive_prototyping_with_d3_js.html">Fast interactive prototyping with d3js and sketch</a> about a year ago). It may seem that what I write goes in the opposite direction, but we&#8217;re really talking about the same thing -that there are many ways to power front ends and that it&#8217;s important to maintain awareness of alternative methods.</p>
+	    		<div class="clear">&nbsp;</div>
+	</section>
+</article><!-- #post-## -->
+			
+				
+<article id="post-1628" class="post-1628 post type-post status-publish format-standard hentry category-charts category-dashboards category-data-visualization category-tips">
+		    <header class="post-header">
+        			<span class="post-meta">
+				<span class="posted-on"><a href="/2015/02/07/charts-assemble/" rel="bookmark"><time class="entry-date published" datetime="2015-02-07T03:00:57+00:00">February 7, 2015</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/charts/" rel="category tag">charts</a>, <a href="/category/dashboards/" rel="category tag">dashboards</a>, <a href="/category/data-visualization/" rel="category tag">data visualization</a>, <a href="/category/tips/" rel="category tag">tips</a>			</span>
+		        <h1 class="post-title"><a href="/2015/02/07/charts-assemble/" rel="bookmark">Charts, assemble!</a></h1>
+         
+    </header>
+	<section class="post-content">
+
+		<p><a href="http://wp.me/po630-qe">From the past posts</a>, you would have gathered that dashboards are tools to solve specific problems. They are also formed from individual charts and data elements.</p>
+<h2>Selecting information</h2>
+<p>That dashboards are so specific is great, because the problem that they are designed to solve will help choosing the information that we need and also prioritizing it &#8211; two essential tasks in dashboard creation. Again, we don&#8217;t want to shove every data point we have.</p>
+<p>Another great tool to help us do those two tasks is user research. As a designer, we may think we chose the right metrics, but they have to make sense to real users and resonate with them. The bias that we may have is that we would favor data which is easy to obtain or that makes sense to us, compared to data which can be more elaborate, more sophisticated or more expensive to collect or compute, even if that makes more sense to the user.</p>
+<p>Here&#8217;s an illustration of that.</p>
+<p>When I was working at Facebook on this product, Audience Insights, we designed <a href="https://www.facebook.com/ads/audience_insights/activity?age=18-&amp;country=US&amp;interests=6003349754405">this page</a> to help marketers understand how a group of users they could be interested in used Facebook. (The link / screenshot showcases fans of the Golden State Warriors). One of the main ways we classified users at Facebook, for internal purposes, is by counting how many days of the last four weeks they have been on Facebook. It&#8217;s a metric called L28 and one of the high-level things Facebook knows about everyone. So, we integrated it in the first version of this page. But, even though it&#8217;s not a concept unique to Facebook, it wasn&#8217;t that useful to our users, and it was taking space from a more relevant indicator.</p>
+<p><img class="alignnone" src="http://jeromecukier.net/projects/dashboards/AI activity.png" alt="" width="800" height="625" /></p>
+<p>Instead, we have included indicators which are more relevant to the task at hand (ie getting a sense of who those users are through the prism of their activity). For instance we can see that very few Warriors fans only use Facebook on their computer, compared to the general population of US Facebook users. They tend to skew more towards Android and mobile web (going to www.facebook.com from their phone, versus using an app.) They tend to be more active in terms of likes, comments and shares.</p>
+<h2>Information hierarchy</h2>
+<p>Once information is chosen and you get a sense of what is more important than the rest, it&#8217;s time to represent that visually.</p>
+<p>Here are some of the choices you can make.</p>
+<p><em>Show some metrics <strong>on top </strong>or <strong>bigger than others</strong>. </em></p>
+<p>That&#8217;s probably the first thing that comes to mind when thinking hierarchy and prioritization. And it needs to be done! Typically, you should get one to three variables that really represent the most important thing you want your users to read or remember. If you come up with more than 3, you should refine your question/task and possibly split it in two.</p>
+<p>The rest of the variables will support these very high level metrics. Again, in a typical situation, you could come up with up to three levels of data (with more than three being a good indication to rethink your scope). Some metrics can support the high-level metrics (i.e. show them with a different angle, or explain them) and some metrics could in turn support them.</p>
+<p><em>Present some metrics <strong>together</strong>. </em></p>
+<p>Stephen Few argues that dashboards should fit on one page or one screen because their virtue is to present information together. With the flexibility offered by the modern web, and the size constraints of mobile, this is a requirement that shouldn&#8217;t be absolute. But it&#8217;s relevant to remember that some variables add value when seen along other variables. With that in mind, you can have part of your dashboard as a fixed element (always visible on screen) while the rest can scroll away, for instance.</p>
+<p><em>Push some metrics to <strong>secondary cards </strong>(such mouseovers, pop-ups or drill-down views)</em></p>
+<p>Hierarchizing information is not just about promoting important information. It&#8217;s also about demoting information which, while is useful in its own right, doesn&#8217;t deserve to steal the show from the higher level metric. The great thing about interactive dashboards is that there are many mechanisms for that. Some information can be kept as &#8220;details on demand&#8221; and only shown when needed.</p>
+<p><em>Figure out what <strong>form</strong> to give to the data</em></p>
+<p>So you have data. It probably changes over time, too (and you have that history as well!). And a sense of how important it is.</p>
+<p>You can represent it as a static number (and, further, to adjust the precision of that number) or as a time series (i.e. line graph, area graph, bar graph etc.), or both.</p>
+<p>The key question to answer is whether the history and how the metric moved over time is relevant and important, versus the latest figures.  If you think that the history is always important or that it doesn&#8217;t hurt to have it for context anyway, consider that it&#8217;s yet another visual element to digest, another thing that can be misinterpreted, and that unless its importance is clearly demonstrated, you&#8217;d rather not include it. Yes &#8211; even as a tiny sparkline.</p>
+<p><img class="alignnone" src="http://www.jeromecukier.net/projects/dashboards/jl-facebook-insights-overview.png" alt="" width="482" height="492" /></p>
+<p>Here is another example from my work at Facebook of a page where proper hierarchy has been applied.</p>
+<p>Page Insights, to use a parallel with a better known product, is like google analytics, only for Facebook Pages instead of web sites. Unsurprisingly, the metric we put to the top left is the Page Likes, which is the number of people who like a page. The whole point of the system is to let people understand what affects that number and how to grow it. Two other high-level metrics are shown on the same row in the two cards on the right: the Post Reach for the week (number of people who have seen content from this page this week, whether they like the Page or not) and Engagement (number of people who acted on the content &#8211; actions could be liking, commenting, sharing, clicking, etc.)</p>
+<p>The number of new Page Likes of the past week, which is represented as a both a line chart and a number in the left card, is an example of a level two metric. It supports the top metric &#8211; total likes. The number of Page Likes of the past week, which is represented as a line chart only, is a level three metric. It&#8217;s here just as a comparison to the number of the current week &#8211; here, it helps us figuring out that last week has been a better week.</p>
+<h2>Connecting the dots</h2>
+<p>Ultimately, a dashboard is more than a collection of charts. It&#8217;s an ensemble: charts and data are meant to be consumed as a whole, with an order and a structure. Charts that belong together should be seen together. The information gained like so will be much more useful than from looking at them in sequence.</p>
+<p><a href="http://www.infovis-wiki.net/index.php?title=Linking_and_Brushing">Linking</a>, for instance, is the concept of highlighting an element in a given chart with repercussions on other charts, depending on the element highlighted. A common use case is to look at a data for one given time point, and see the value for that time point highlighted in related charts. Here is an example:</p>
+<p><img class="alignnone" src="http://www.jeromecukier.net/projects/dashboards/linking.png" alt="" width="784" height="212" /></p>
+<p>In this specific case, the fact that both charts share the same x-axis makes comparing the shape of both charts easier even without linking.</p>
+<p>Each variable doesn&#8217;t have to be on its own chart. Your variables can have an implicit relation between one another. Bringing them together might make that relation explicit. Here are some interesting relationship between variables or properties of variables that can be made apparent through the right chart choice.</p>
+<ul>
+<li><strong>One variable could be always greater than another one</strong>, because the second is a subset of the first. Here are some examples:</li>
+</ul>
+<ol>
+<li>The number of visits on a website last week will <em>always </em>be greater or equal than the number of unique visitors that week, which will <em>always </em>be greater than the number of visitors last day.</li>
+<li>The number of visitors will <em>always</em> be greater to the number of first-time visitors.</li>
+<li>The cumulative number of orders over a period of time will <em>always</em> be greater than the number of daily orders over that same period.</li>
+<li>The time that users spend with a website in an active window of their browser will <em>always </em>be greater than the time they spend actively interacting with the site.</li>
+</ol>
+<p style="padding-left: 30px;">What&#8217;s interesting here is that these relations are not just true because of experience, they are true by definition. It&#8217;s also metrics that are expressed in the same units, and, in most cases, with the same order of magnitude, so they can be displayed on the same chart. When applicable, showing them together can show how they, indeed, move together or not.</p>
+<ul>
+<li><strong>One variable could be the sum of two other</strong>, less important <strong>variables</strong>.</li>
+</ul>
+<p style="padding-left: 30px;">In the example below we go even one step further and we show that one variable is the sum of two variables minus a fourth one.<br />
+Here, we look at the net likes of a Facebook Page, that is, the difference between the number of people who like a page on a given day and the day before.<br />
+Two factors can make more people like a page: paid likes (a user sees an ad, is interested, and from it, likes the page) or organic likes (a user visits a page, or somehow see content from that page, and likes it, without advertisement involved). Finally, people may also decide to stop liking the page (&#8220;unlikes&#8221;).<br />
+Here, net likes = organic likes + paid likes &#8211; unlikes. The reason why we have decomposed Likes between organic and paid is because we wanted to show that ads can amplify the effect of good content. So, visually, we chose to represent that as a layer on top of the rest. (important remark: your dashboard doesn&#8217;t have to be neutral. If it can show that your product, company, team etc. is delivering, and you have an occasion to demonstrate it, don&#8217;t hesitate a moment). By showing the unlikes as a negative number, as opposed to a positive variable, going up, possibly above the likes (which would be unpredictable) we can keep the visual legible and uncluttered. A user can do the visual combination of all these variables. This chart, by the way, shows the typical dynamic of a Page : new content will generate peaks of new users, but also will cause some users to stop liking the page.</p>
+<p><img class="alignnone" src="http://www.jeromecukier.net/projects/dashboards/net-likes-1024x454.png" alt="" width="832" height="453" /></p>
+<ul>
+<li>One variable could be <strong>always growing.</strong> Or <strong>always positive.</strong></li>
+</ul>
+<p style="padding-left: 30px;">When that is the case this can be used to make choices to represent the chart. If a variable is always growing by nature (i.e. cumulative revenue) you may want to consider representing a growth rate rather than the raw numbers. A reason to consider that is that your axis scale will have to change over time (i.e. if you plot a product that sells for around $1m per day, having an axis that goes from 0 to $10m would be enough for a week, but not for a month let alone for a year, whereas with a growth rate you can represent a long period of time consistently). And if a variable is always positive (ie stock price), your y axis can start at 0, or even at an arbitrary positive value, as opposed to allocate space for negative values.</p>
+<p style="padding-left: 30px;">Conversely, if a variable doesn&#8217;t change over time, it doesn&#8217;t mean that it&#8217;s not interesting to plot. That absence of change could be a sign of health of the system (which is the kind of task that dashboards can be useful for). So the absence of change doesn&#8217;t mean that there&#8217;s an absence of message.</p>
+<p style="padding-left: 30px;">
+	    		<div class="clear">&nbsp;</div>
+	</section>
+</article><!-- #post-## -->
+			
+				
+<article id="post-1626" class="post-1626 post type-post status-publish format-standard hentry category-charts category-dashboards category-data-visualization category-tips">
+		    <header class="post-header">
+        			<span class="post-meta">
+				<span class="posted-on"><a href="/2015/02/07/dashboards-as-products/" rel="bookmark"><time class="entry-date published" datetime="2015-02-07T03:00:19+00:00">February 7, 2015</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/charts/" rel="category tag">charts</a>, <a href="/category/dashboards/" rel="category tag">dashboards</a>, <a href="/category/data-visualization/" rel="category tag">data visualization</a>, <a href="/category/tips/" rel="category tag">tips</a>			</span>
+		        <h1 class="post-title"><a href="/2015/02/07/dashboards-as-products/" rel="bookmark">Dashboards as products</a></h1>
+         
+    </header>
+	<section class="post-content">
+
+		<p>In the <a href="http://wp.me/po630-q7">past few articles</a> I&#8217;ve exposed what dashboards are not:</p>
+<ul>
+<li>an exercise in <em>visual design</em>,</li>
+<li>an exercise in <em>data visualization</em> technique.</li>
+</ul>
+<p>Another way to put this is that &#8220;let&#8217;s do this just because we can&#8221; is a poor mantra when it comes to designing dashboards, or visualizations in the broader sense by the way.</p>
+<h3>Do it for the users</h3>
+<p>Now saying that dashboards should be products is a bit tautological. Products, in <a href="https://medium.com/@ericeriksson/what-is-product-design-9709572cb3ff">product design</a>, refer to the result of a holistic process that solves problems of users &#8211; a process that includes research, conception, exploration, implementation and testing.</p>
+<p>Most importantly, it&#8217;s about putting the needs of your users first. And your users first. Interestingly, treating your dashboard as a product means that the dashboard &#8211; your product &#8211; doesn&#8217;t come first.</p>
+<p>Creating an awesome dashboard is a paradox. Googling for that phrase yields results such as: <a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=6&amp;cad=rja&amp;uact=8&amp;ved=0CDwQFjAF&amp;url=http%3A%2F%2Fdesignrfix.com%2Fdesign%2Fdashboard-design&amp;ei=ZxLVVLHBDMinyATrrYKIDg&amp;usg=AFQjCNEYq1L0bANEmTwSHUGW_ik0BK7GYw&amp;sig2=YKmhFLbmFb0DyHzLAStdvw&amp;bvm=bv.85464276,d.aWw" data-href="http://designrfix.com/design/dashboard-design">20+ Awesome Dashboard Designs That Will Inspire You</a>, <a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=7&amp;cad=rja&amp;uact=8&amp;ved=0CEMQFjAG&amp;url=http%3A%2F%2Fthedesigninspiration.com%2Farticles%2F25-innovative-dashboard-concepts-and-designs%2F&amp;ei=ZxLVVLHBDMinyATrrYKIDg&amp;usg=AFQjCNFyv8w3cGH5EbU8B0Gz27itiPqOag&amp;sig2=r65foADN-OBimw71AsI7Yg&amp;bvm=bv.85464276,d.aWw" data-href="http://thedesigninspiration.com/articles/25-innovative-dashboard-concepts-and-designs/">25 Innovative Dashboard Concepts and Designs</a>, <a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=10&amp;cad=rja&amp;uact=8&amp;ved=0CFMQFjAJ&amp;url=https%3A%2F%2Feconsultancy.com%2Fblog%2F62844-24-beautifully-designed-web-dashboards-that-data-geeks-will-love%2F&amp;ei=ZxLVVLHBDMinyATrrYKIDg&amp;usg=AFQjCNFPyaQZJ_EUP-GRZJRdRRa8Ho5Cqw&amp;sig2=ypVCYsOtIemTJnX1R4Amuw&amp;bvm=bv.85464276,d.aWw" data-href="https://econsultancy.com/blog/62844-24-beautifully-designed-web-dashboards-that-data-geeks-will-love/">24 beautifully-designed web dashboards that data geeks</a> or <a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=13&amp;cad=rja&amp;uact=8&amp;ved=0CGUQFjAM&amp;url=http%3A%2F%2Fline25.com%2Farticles%2F25-visually-stunning-app-dashboard-design-concepts&amp;ei=ZxLVVLHBDMinyATrrYKIDg&amp;usg=AFQjCNHrWPNZt1Vn__39P4DkysUI1XStUA&amp;sig2=E9t5cHkELGbb_G8zGZSROA&amp;bvm=bv.85464276,d.aWw" data-href="http://line25.com/articles/25-visually-stunning-app-dashboard-design-concepts">25 Visually Stunning App Dashboard Design Concepts</a>. This is NOT dashboard product design (though it&#8217;s a good source of inspiration for visual design of individual charts).</p>
+<p>Eventually, <strong>no one cares for your dashboard</strong>. When designing a dashboard, it&#8217;s nice to think that somebody out there will now spend one hour everyday looking at all this information nicely collected and beautifully arranged, but who would want to do that? Who would want to add to their already busy day an extra task, just to look at information the way you decided to organize it? This point of view is a delusion. We must not work accordingly.</p>
+<p>Instead, let&#8217;s focus on the task at hand. What is something that your users would try to accomplish that could be supported by data and insights?</p>
+<h3>What is the task at hand?</h3>
+<p>If you start to think &#8220;show something at the weekly meeting&#8221; or &#8220;make a high-level dashboard&#8221; I invite you to go deeper. Show what? a dashboard for what? not for its own sake.</p>
+<p>Trickier &#8211; how about: &#8220;to showcase the data that we have&#8221;? That is still not good enough. <strong>You shouldn&#8217;t start from your data</strong> to create your dashboard, and for several reasons. Doing so would limit yourself to the data that you have or which is readily available for you. But maybe that this data, in its raw form, is not going to be relevant or useful to your users. Conversely, you would be tempted to include all the data that you have, but each additional information that you bring to your dashboard would make it harder to digest and eventually detrimental to the process. Most importantly, if you don&#8217;t have an idea of what the user would want to accomplish with your data, you cannot prioritize and organize it, which is the whole point of dashboard design.</p>
+<p>Finally &#8211; &#8220;to discover insights&#8221; is not a task either. Dashboards are a curated way to present data for a certain purpose. They are not unspecified, multi-purpose analytical exploration tools. In other words: dashboards will answer a specific, already formulated question. And they will answer in the best possible way, if they are designed as such. For exploration, ad-hoc analysis is more efficient, and is probably best left to analysts or data scientists than end users.</p>
+<p>Here are some example of tasks:</p>
+<ul>
+<li><strong>check</strong> that things are going ok &#8211; that there is no preventable disaster going on somewhere. For instance: website is up &#8211; visits follow a predictable pattern.</li>
+<li>Specifically, check that a <strong>process had completed</strong> in an expected way. For instance: all payments have been cleared.</li>
+<li>If something goes wrong, <strong>troubleshoot</strong> it &#8211; find the likely cause. For instance: sales were down for this shop&#8230; because we ran out of an important product. Order more to fix the problem, make sure to stock accordingly next time.</li>
+<li>Support a <strong>tactical decision</strong>. For instance: here are the sales of the new product, here are the costs. Should we keep on selling it or stop?</li>
+<li>Decide where to <strong>allocate resources</strong>. For instance: we launched three variations of a product, one is greatly outperforming the other two, let&#8217;s run an ad campaign to promote the winner.</li>
+<li>Try to <strong>better understand</strong> a complex system. For instance: user flow between pages can show where users are dropping out or where efficiency gains lie.</li>
+</ul>
+<p>This list is by no means limitative. But it&#8217;s really useful to start from the problem at hand than just try to create a visual repository for data.</p>
+<p>Next, we&#8217;ll see how to implement these in the last article: <a href="http://www.jeromecukier.net/blog/2015/02/07/charts-assemble/">charts assemble!</a></p>
+	    		<div class="clear">&nbsp;</div>
+	</section>
+</article><!-- #post-## -->
+			
+				
+<article id="post-1619" class="post-1619 post type-post status-publish format-standard hentry category-charts category-dashboards category-data-visualization category-tips">
+		    <header class="post-header">
+        			<span class="post-meta">
+				<span class="posted-on"><a href="/2015/02/07/dashboards-versus-data-visualization/" rel="bookmark"><time class="entry-date published" datetime="2015-02-07T02:58:57+00:00">February 7, 2015</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/charts/" rel="category tag">charts</a>, <a href="/category/dashboards/" rel="category tag">dashboards</a>, <a href="/category/data-visualization/" rel="category tag">data visualization</a>, <a href="/category/tips/" rel="category tag">tips</a>			</span>
+		        <h1 class="post-title"><a href="/2015/02/07/dashboards-versus-data-visualization/" rel="bookmark">Dashboards versus data visualization</a></h1>
+         
+    </header>
+	<section class="post-content">
+
+		<h2>Dashboards are extreme data visualizations</h2>
+<p>In the recent <a href="http://www.informationisbeautifulawards.com/showcase?award=2014&amp;page=1&amp;pcategory=winner&amp;type=awards">Information is Beautiful 2014 awards</a>,  I found interesting that there is an infographics and a data visualization categories. My interpretation is that the entries in the infographics section are static and illustrated, while those in the data visualization are generated and data-driven. However, all the featured data visualization projects are about a one-off dataset. So aesthetical choices of the visualization depend on the characteristics of this particular dataset. By contrast, the dashboards I have worked with are about a live, real-time datastream. They have to look good (or at least &#8211; to function) whatever the shape and size of the data that they show. The google quote and news chart that we saw earlier must work for super volatile shares, for more stable ones, for indices, currencies, etc. So, if the distinction between infographics and data visualization makes sense to you, imagine that dashboards sit further in that continuum than data visualization. Not only are dashboards generated from data, like data visualizations, but they are also real-time and should function with datasets of many shapes and sizes.</p>
+<h2>But dashboards problems are not data visualization problems</h2>
+<p>Data visualization provides superior tools and techniques to present or analyze data. With libraries and languages dedicated to making visualizations, there is little that can&#8217;t be done. In many successful visualizations, the author will create an entirely new form, or at least control the form very finely to match their data and their angle. Even without inventing a new form, there are many which have been created for a specific use, and which are relatively easy to make on the web (as opposed to say, in Excel): <a href="https://www.google.fr/search?q=tree+maps&amp;safe=off&amp;espv=2&amp;biw=2025&amp;bih=1140&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ei=UCR4VNmKAufCiALyo4FY&amp;ved=0CAYQ_AUoAQ#safe=off&amp;tbm=isch&amp;q=treemaps">treemaps</a>, <a href="https://www.google.fr/search?q=tree+maps&amp;safe=off&amp;espv=2&amp;biw=2025&amp;bih=1140&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ei=UCR4VNmKAufCiALyo4FY&amp;ved=0CAYQ_AUoAQ#safe=off&amp;tbm=isch&amp;q=force-directed+graphs">force-directed graphs</a> and other <a href="https://www.google.fr/search?q=tree+maps&amp;safe=off&amp;espv=2&amp;biw=2025&amp;bih=1140&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ei=UCR4VNmKAufCiALyo4FY&amp;ved=0CAYQ_AUoAQ#safe=off&amp;tbm=isch&amp;q=node-link+diagrams">node-link diagrams</a>, <a href="https://www.google.fr/search?q=tree+maps&amp;safe=off&amp;espv=2&amp;biw=2025&amp;bih=1140&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ei=UCR4VNmKAufCiALyo4FY&amp;ved=0CAYQ_AUoAQ#safe=off&amp;tbm=isch&amp;q=chord+diagrams">chord diagrams</a>, <a href="https://www.google.fr/search?q=tree+maps&amp;safe=off&amp;espv=2&amp;biw=2025&amp;bih=1140&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ei=UCR4VNmKAufCiALyo4FY&amp;ved=0CAYQ_AUoAQ#safe=off&amp;tbm=isch&amp;q=dendrograms">trees</a>, <a href="https://www.google.fr/search?q=tree+maps&amp;safe=off&amp;espv=2&amp;biw=2025&amp;bih=1140&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ei=UCR4VNmKAufCiALyo4FY&amp;ved=0CAYQ_AUoAQ#safe=off&amp;tbm=isch&amp;q=bubble+charts">bubble charts</a> and the like. And even good old geographic maps.</p>
+<p>In most cases, it is not a good idea to be too clever and have a more advanced form.</p>
+<p>Up until mid November 2014, Google Analytics allowed users to view their data using <a href="https://www.youtube.com/watch?v=UKsBTqqhVTs">motion charts</a>.</p>
+<p><img class="alignnone" src="http://jeromecukier.net/projects/dashboards/motion charts" alt="" width="1280" height="784" /></p>
+<p>This was really an example of having a hammer and considering all problems as nails. Fortunately, this function disappeared from the latest redesign.</p>
+<p><img class="alignnone" src="http://media-cache-ec0.pinimg.com/736x/1c/69/b7/1c69b7ea8e23d5d8fd800a67e727d0db.jpg" alt="" width="736" height="432" /></p>
+<p>Likewise, on twitter followers dashboard, the treemap might be a bit over the top:</p>
+<p><img class="alignnone" src="http://media-cache-ec0.pinimg.com/736x/5c/27/85/5c278591a95c319bacdf974b62b991e2.jpg" alt="" width="736" height="775" /></p>
+<p>and possibly confusing and not immediately legible to some users. On the other hand, it is economical in terms of space and would probably work in almost every case which are two things that dashboards should be good at. So while I wouldn&#8217;t have used it myself I can understand why this decision has been made.</p>
+<h2>Dashboards are not an exercise in visual design either</h2>
+<p>A dashboard such as this:</p>
+<p><img class="alignnone" src="http://media-cache-ec0.pinimg.com/736x/b0/e1/8c/b0e18c6936bde1ce92c42a0b0c7e6f84.jpg" alt="" width="736" height="1128" /></p>
+<p>(for which I can&#8217;t find the source. I found it on pinterest and was able to trace it to <a href="https://econsultancy.com/blog/62844-24-beautifully-designed-web-dashboards-that-data-geeks-will-love">this post</a> but not prior) is well designed visually, it makes proper use of space, colors and type, its charts are simple.</p>
+<p>But what good is it? what do I learn, what can I take away from it, what actions can I perform?</p>
+<p>Most of the dashboards examples I find on sites like dribbble or beyance (see <a href="http://www.pinterest.com/jcukier/data-vis-dashboard-ui-elements/">my Pinterest board</a>) fall into that category: inspiring visual design, probably not real data, no flow, no obvious use.</p>
+<h2>Dashboards are problems of their own</h2>
+<p>What makes a dashboard, or any other information-based design successful, is neither the design execution nor the clever infovis technique. Dashboards, eventually, are meant to be useful and to solve a specific problem.</p>
+<p>How so? We&#8217;ll see in the next article: <a href="http://www.jeromecukier.net/blog/2015/02/07/dashboards-as-products/">dashboards as products. </a></p>
+<p>&nbsp;</p>
+	    		<div class="clear">&nbsp;</div>
+	</section>
+</article><!-- #post-## -->
+			
+				
+<article id="post-1610" class="post-1610 post type-post status-publish format-standard hentry category-charts category-dashboards category-data-visualization category-tips">
+		    <header class="post-header">
+        			<span class="post-meta">
+				<span class="posted-on"><a href="/2015/02/07/charts-in-the-age-of-the-web/" rel="bookmark"><time class="entry-date published" datetime="2015-02-07T02:57:41+00:00">February 7, 2015</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/charts/" rel="category tag">charts</a>, <a href="/category/dashboards/" rel="category tag">dashboards</a>, <a href="/category/data-visualization/" rel="category tag">data visualization</a>, <a href="/category/tips/" rel="category tag">tips</a>			</span>
+		        <h1 class="post-title"><a href="/2015/02/07/charts-in-the-age-of-the-web/" rel="bookmark">Charts in the age of the web</a></h1>
+         
+    </header>
+	<section class="post-content">
+
+		<p>In 2008, when I was working at <a href="http://www.oecd.org/">OECD</a>, my job description was that of an editor. That implied I was mostly working on books. I was designing charts, but they were seen as components of books. And this was typical of the era.</p>
+<p>So we would create charts like this one:</p>
+<p><img class="alignnone" src="http://jeromecukier.net/projects/dashboards/02-01-01-g2" alt="" width="685" height="288" /></p>
+<p>And it was awesome! (kind of). I mean, we respected all the rules. Look at that nicely labelled y-axis! and all the categories are on the x-axis! the bars are ordered in size, it&#8217;s easy to see which has the biggest or smallest value! And with those awesome gridlines, we can lookup values &#8211; at least get an order of magnitude.</p>
+<p>What we really did though was apply styling to an excel chart (literally).</p>
+<h2>Print charts vs interactive charts</h2>
+<h3>Origin of rules for print charts</h3>
+<p>Rules that govern traditional charts (which are many: ask Tufte, Few) make a certain number of assumptions which are interesting to question today.</p>
+<p>One is that charts should be designed so that values can be easily looked up (even approximately) from the chart. This is why having labeled axes and gridlines is so useful. This is also why ordering bar charts in value order is nice. With that in mind, it also makes sense that charts like bar charts or area charts, which compare surfaces, be drawn on axes that start at 0.</p>
+<p>The other assumption is that a chart will represent the entirety of a dataset that can be shown at a time. We have to come up with ways to make sure that every data point can be represented and remains legible. The chart author has to decide, once and for all, which is the dataset that will be represented, knowing that there will be &#8220;no backsies&#8221;.</p>
+<p>In the same order of thought, the author must decide the form of his chart. If she wants to compare categories, she may go for a bar chart. If she wants to show an evolution over time, for a line chart. And if she wants the user to have exact values, she will choose a table.</p>
+<p>And so, when everything else than a table is chosen, we typically don&#8217;t show values with all the data points, because adding data labels would burden the chart and make its overall shape harder to make out.</p>
+<p>In this framework, it makes sense to think in term of <strong>data-ink </strong>(the cornerstone of Tuftean concepts): make sure that out of all the ink needed to print the chart (you can tell it&#8217;s a print concept already&#8230;), as much should go to encode the data as possible, versus anything else.</p>
+<h3>How about now</h3>
+<p><img class="alignnone" src="http://jeromecukier.net/projects/dashboards/chart trad vs online 2" alt="" width="680" height="847" /></p>
+<p>However, there is not a single of these reasons which is valid today in the world of web or mobile charts. Data-ink only made sense on paper. </p>
+<p>Web charts have many mechanisms to let the user get extra information on a given data point. That can be information that updates on mouseover, callouts and tooltips&#8230; This might be less true of mobile in general where the distinction between hovering and clicking is less distinct. But it is definitely possible to obtain more than what is originally displayed. If I want to have an exact value, I shouldn&#8217;t have to simply deduce that from the shape of the chart. There can be mechanisms that can deliver that to me on demand.</p>
+<h3>An example: Google Finance Quote &amp; News</h3>
+<p>The <a href="https://www.google.com/finance?q=NASDAQ%3AGOOG">Google Finance Quote and News chart</a> is a very representative example of a web-native chart. Around since 2006, they provide the price of a given security, along with news for context. While its visual design has probably been topped by other dashboards, what makes it a great example is that it&#8217;s publicly available, which is uncommon for business data.</p>
+<p><img class="alignnone" src="http://jeromecukier.net/projects/dashboards/online chart" alt="" width="984" height="543" /></p>
+<p>While this chart has gridlines and labelled axes, that is not enough to lookup precise values. However, moving the <strong>mouse over</strong> the chart allows the user to read a precise value at a given point in time. A blue point appears and the precise value can be read in the top left corner.</p>
+<p><img class="alignnone" src="http://jeromecukier.net/projects/dashboards/mouseover" alt="" width="996" height="524" /></p>
+<p>One very common <strong>data filter </strong>in chart is controls that affect the time range: date pickers. By selecting a different time range, we make the chart represent a different slice of the dataset &#8211; we effectively filter the dataset so that only the relevant dates are shown. This is in contrast with the traditional printed charts, again, where all of the dataset is shown at once. For instance, we can click on &#8220;6m&#8221; and we&#8217;ll be treated with data from the last 6 months:</p>
+<p><img class="alignnone" src="http://jeromecukier.net/projects/dashboards/data filters" alt="" width="985" height="424" /></p>
+<p>Comparing the selected security with others will make the chart show the data in a <strong>different mode</strong>. This is the same data (plus added series), in the same screen and the same context, but the chart is visually very different:</p>
+<p><img class="alignnone" src="http://jeromecukier.net/projects/dashboards/different modes" alt="" width="986" height="526" /></p>
+<p>As to the other two characteristics of web charts I mentioned, <strong>data exports</strong> and <strong>drill downs, </strong>they are also featured (but less graphical to show, so I haven&#8217;t captured a screenshot for those). There is a link on a left-side column to get the equivalent data (so it is always possible to go beyond what is shown on screen). The little flags with letters in the 3 first screenshots are clickable, and represent relevant news. Clicking them will highlight that article in a right-side column. So it is always possible to get more information.</p>
+<h3>What does that change?</h3>
+<p>Everything.</p>
+<p>Rules or best practices based on the assumption that data is hard to lookup or to compare are less important. The chart itself has to be legible though. So, for instance, it&#8217;s ok to have pie charts or donut charts, as long as the number of categories doesn&#8217;t go totally overboard.</p>
+<p>Web charts, and dashboards even more so, should focus on<strong> only showing relevant data</strong> first, then showing it in the most useful and legible way. Again, a noted difference with the print philosophy where as much data as possible should be shown.</p>
+<p>How this play out is what we&#8217;ll cover in the <a href="http://www.jeromecukier.net/blog/2015/02/07/dashboards-versus-data-visualization/">next articles of the series: Dashboards versus data visualizations.</a></p>
+<p>&nbsp;</p>
+	    		<div class="clear">&nbsp;</div>
+	</section>
+</article><!-- #post-## -->
+			
+				
+<article id="post-1530" class="post-1530 post type-post status-publish format-standard hentry category-charts category-d3 category-data-visualization tag-criminality tag-fbi tag-gun tag-homicide tag-map tag-mortality tag-murders tag-usa tag-violence">
+		    <header class="post-header">
+        			<span class="post-meta">
+				<span class="posted-on"><a href="/2012/12/29/gun-murders-in-america/" rel="bookmark"><time class="entry-date published" datetime="2012-12-29T10:40:45+00:00">December 29, 2012</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/charts/" rel="category tag">charts</a>, <a href="/category/d3/" rel="category tag">d3</a>, <a href="/category/data-visualization/" rel="category tag">data visualization</a>			</span>
+		        <h1 class="post-title"><a href="/2012/12/29/gun-murders-in-america/" rel="bookmark">Gun murders in America</a></h1>
+         
+    </header>
+	<section class="post-content">
+
+		<p><a href="http://bit.ly/gunviolence"><img src="http://jeromecukier.net/projects/crime/murders.png" width="800" height="513" class="aligncenter" /></a><br />
+<a href="http://bit.ly/gunviolence"><strong>Click for interactive visualization</strong></a></p>
+<p>I have created this map of every homicide in the USA using firearms for the latest year where detailed information was available. Every, that is from all the agencies that report homicides to the FBI, which is not an obligation &#8211; this is why the map lacks Florida data.<br />
+In the interactive version you can see how murders happen through the year and explore them according to several criteria that were available in the database. While large shooting sprees receive media attention, unfortunately there are thousands of cases each year in just about every community.<br />
+Technically this is my first foray with <a href="http://d3js.org/">d3.v3</a> and it uses two of its major new features, topoJSON for easy, lightweight maps, and hex binning to represent many individual events in one hexagon. Thanks to Mike Bostock for tutoring on that.</p>
+	    		<div class="clear">&nbsp;</div>
+	</section>
+</article><!-- #post-## -->
+			
+				
+<article id="post-737" class="post-737 post type-post status-publish format-standard hentry category-charts category-data-visualization tag-tableau tag-tableau-public">
+		    <header class="post-header">
+        			<span class="post-meta">
+				<span class="posted-on"><a href="/2011/03/14/stuff-i-do-with-tableau/" rel="bookmark"><time class="entry-date published" datetime="2011-03-14T19:01:31+00:00">March 14, 2011</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/charts/" rel="category tag">charts</a>, <a href="/category/data-visualization/" rel="category tag">data visualization</a>			</span>
+		        <h1 class="post-title"><a href="/2011/03/14/stuff-i-do-with-tableau/" rel="bookmark">Stuff I do with Tableau</a></h1>
+         
+    </header>
+	<section class="post-content">
+
+		<p>I put together a list of some of the things I&#8217;ve done with Tableau public <a href="http://bit.ly/f9bfS3">there</a>. I had put the link on twitter last Friday, and I just saw the number of connections through bit.ly &#8211; never thought something posted just before the week-end could get so much attention! so thanks, twitter followers. I&#8217;m putting another link here on the blog for convenience.</p>
+<p>I&#8217;ve been using Tableau public ever since its release (well actually a tad before).  Over time I&#8217;ve been trying to use it less as a visually pleasing and convenient way to shove a lot of data in a limited space (like <a href="http://public.tableausoftware.com/views/LabourForceStats/empag">here</a>), and more as a way to promote a certain angle when looking at a dataset (like <a href="http://public.tableausoftware.com/views/Africa_1/converging">here</a>), that is, as an invitation to the viewers to reach the same conclusions than us, but by giving them access to the data so they can see for themselves.</p>
+<p><div style="width: 394px" class="wp-caption alignnone"><a href="http://public.tableausoftware.com/views/LabourForceStats/empag"><img title="Employment and age" src="http://public.tableausoftware.com/static/images/La/LabourForceStats/empag/1_rss.png" alt="" width="384" height="620" /></a><p class="wp-caption-text">One of my first vizzes - just a layer on top of the dataset</p></div></p>
+<p><div style="width: 644px" class="wp-caption alignnone"><a href="http://public.tableausoftware.com/views/Africa_1/converging"><img title="Is Africa converging?" src="http://public.tableausoftware.com/static/images/Af/Africa_1/converging/1_rss.png" alt="" width="634" height="420" /></a><p class="wp-caption-text">This one is less neutral. I would like readers to embrace the opinion in the associated article, so I use Tableau to present the data in a way that supports this opinion.</p></div></p>
+<p>That long list is still a subset of what I&#8217;ve done with Tableau, mostly because like many people in datavis I use Tableau at two stages.</p>
+<p>I use it to communicate a finished visualization such as these, although I may use a static image or another interactive tool.</p>
+<p>But I also almost systematically use it in the early stages, when I receive a dataset and I need to make sense of it before I can represent it. By manipulating a dataset in Tableau and testing various basic dimension combinations one can quickly see the points of interest in the data and come up with relevant questions to ask the data, to which a visualization is the answer. So while I can&#8217;t share these &#8220;drafts&#8221; they are very very helpful.</p>
+<p>Also over time I got better (hopefully) at controlling dashboards so they look exactly the way I want them to and not how I manage to put them together. What helps is setting the size of the dashboard as exact dimensions (ie 600 by 400), not as a range, and, unsurprisingly, to draw the dashboard on paper first. Anyway, all the dashboards which are on that page are freely downloadable if you want to see how they are done</p>
+	    		<div class="clear">&nbsp;</div>
+	</section>
+</article><!-- #post-## -->
+			
+				
+<article id="post-681" class="post-681 post type-post status-publish format-standard hentry category-charts category-protovis tag-flowing-data-challenge tag-protovis tag-scatterplot tag-tv-earners">
+		    <header class="post-header">
+        			<span class="post-meta">
+				<span class="posted-on"><a href="/2011/02/22/the-top-tv-earners-are-not-found-on-tabloids/" rel="bookmark"><time class="entry-date published" datetime="2011-02-22T19:23:48+00:00">February 22, 2011</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/charts/" rel="category tag">charts</a>, <a href="/category/protovis/" rel="category tag">protovis</a>			</span>
+		        <h1 class="post-title"><a href="/2011/02/22/the-top-tv-earners-are-not-found-on-tabloids/" rel="bookmark">The top TV earners are not found on tabloids.</a></h1>
+         
+    </header>
+	<section class="post-content">
+
+		This is my contribution to Flowing Data challenge: <a href="http://flowingdata.com/2011/02/15/visualize-this-tvs-top-earners/">visualize this / top tv earners</a>.</p>
+<div>
+<script type="text/javascript" src="http://blog.oecdfactblog.org/wp-includes/js/protovis-r3.2.js"></script>
+<script type="text/javascript+protovis">
+var TRUE=true;
+var FALSE=false;
+
+var data=[
+{actor: "William Shatner", show: "$#*! My Dad Says", ppe: 150000, type:"Comedy", viewers:5.2, channel:"cbs",mins:21, ey:18, ppm:7142.85714285714, ppy:2700000, star:TRUE},
+{actor: "Tina Fey", show: "30 Rock", ppe: 350000, type:"Comedy", viewers:2.3, channel:"nbc",mins:21, ey:18.8, ppm:16666.6666666667, ppy:6580000, star:TRUE},
+{actor: "Tom Selleck", show: "Blue Bloods", ppe: 125000, type:"Drama", viewers:11.1, channel:"cbs",mins:45, ey:15, ppm:2777.77777777778, ppy:1875000, star:TRUE},
+{actor: "Dana Delany", show: "Body of Proof", ppe: 150000, type:"Drama", viewers:4, channel:"abc",mins:42, ey:13, ppm:3571.42857142857, ppy:1950000, star:TRUE},
+{actor: "David Boreanaz", show: "Bones", ppe: 200000, type:"Drama", viewers:10.1, channel:"fox",mins:43, ey:20, ppm:4651.16279069767, ppy:4000000, star:TRUE},
+{actor: "Jeffrey Donovan", show: "Burn Notice", ppe: 200000, type:"Drama", viewers:4.8, channel:"usa",mins:42, ey:15.5, ppm:4761.90476190476, ppy:3100000, star:TRUE},
+{actor: "David Duchovny", show: "Californication", ppe: 200000, type:"Comedy", viewers:0.5, channel:"showtime",mins:26, ey:10.75, ppm:7692.30769230769, ppy:2150000, star:TRUE},
+{actor: "Nathan Fillion", show: "Castle", ppe: 100000, type:"Drama", viewers:8.75, channel:"abc",mins:43, ey:16.6666666666667, ppm:2325.58139534884, ppy:1666666.66666667, star:TRUE},
+{actor: "Cole Hauser", show: "Chase", ppe: 100000, type:"Drama", viewers:4.3, channel:"nbc",mins:42, ey:13, ppm:2380.95238095238, ppy:1300000, star:TRUE},
+{actor: "Zachary Levi", show: "Chuck", ppe: 60000, type:"Drama", viewers:5.5, channel:"abc",mins:43, ey:17.5, ppm:1395.3488372093, ppy:1050000, star:TRUE},
+{actor: "Joe Mantegna", show: "Criminal Minds", ppe: 125000, type:"Drama", viewers:12.8, channel:"cbs",mins:45, ey:21.5, ppm:2777.77777777778, ppy:2687500, star:TRUE},
+{actor: "Thomas Gibson", show: "Criminal Minds", ppe: 100000, type:"Drama", viewers:12.8, channel:"cbs",mins:45, ey:21.5, ppm:2222.22222222222, ppy:2150000, star:FALSE},
+{actor: "Marg Helgenberger", show: "CSI", ppe: 375000, type:"Drama", viewers:12.65, channel:"cbs",mins:42, ey:22.1818181818182, ppm:8928.57142857143, ppy:8318181.81818182, star:TRUE},
+{actor: "Laurence Fishburne", show: "CSI", ppe: 350000, type:"Drama", viewers:12.65, channel:"cbs",mins:42, ey:22.1818181818182, ppm:8333.33333333333, ppy:7763636.36363636, star:FALSE},
+{actor: "David Caruso", show: "CSI: Miami", ppe: 375000, type:"Drama", viewers:10.4, channel:"cbs",mins:44, ey:22.6666666666667, ppm:8522.72727272727, ppy:8500000, star:TRUE},
+{actor: "Gary Sinise", show: "CSI: NY", ppe: 275000, type:"Drama", viewers:10.6, channel:"cbs",mins:43, ey:22.1428571428571, ppm:6395.3488372093, ppy:6089285.71428571, star:TRUE},
+{actor: "Marcia Cross", show: "Desperate Housewives", ppe: 400000, type:"Comedy", viewers:10.4, channel:"abc",mins:41, ey:21.2857142857143, ppm:9756.09756097561, ppy:8514285.71428571, star:FALSE},
+{actor: "Felicity Huffman", show: "Desperate Housewives", ppe: 400000, type:"Comedy", viewers:10.4, channel:"abc",mins:41, ey:21.2857142857143, ppm:9756.09756097561, ppy:8514285.71428571, star:FALSE},
+{actor: "Eva Longoria", show: "Desperate Housewives", ppe: 400000, type:"Comedy", viewers:10.4, channel:"abc",mins:41, ey:21.2857142857143, ppm:9756.09756097561, ppy:8514285.71428571, star:FALSE},
+{actor: "Teri Hatcher", show: "Desperate Housewives", ppe: 400000, type:"Comedy", viewers:10.4, channel:"abc",mins:41, ey:21.2857142857143, ppm:9756.09756097561, ppy:8514285.71428571, star:TRUE},
+{actor: "Jeremy Piven", show: "Entourage", ppe: 350000, type:"Comedy", viewers:1.85, channel:"hbo",mins:26, ey:12.5714285714286, ppm:13461.5384615385, ppy:4400000, star:TRUE},
+{actor: "Kevin Dillon", show: "Entourage", ppe: 200000, type:"Comedy", viewers:1.85, channel:"hbo",mins:26, ey:12.5714285714286, ppm:7692.30769230769, ppy:2514285.71428571, star:FALSE},
+{actor: "Adrian Grenier", show: "Entourage", ppe: 200000, type:"Comedy", viewers:1.85, channel:"hbo",mins:26, ey:12.5714285714286, ppm:7692.30769230769, ppy:2514285.71428571, star:FALSE},
+{actor: "Jane Lynch", show: "Glee", ppe: 50000, type:"Comedy", viewers:10.5, channel:"fox",mins:45, ey:17.5, ppm:1111.11111111111, ppy:875000, star:TRUE},
+{actor: "Matthew Morrison", show: "Glee", ppe: 30000, type:"Comedy", viewers:10.5, channel:"fox",mins:45, ey:17.5, ppm:666.666666666667, ppy:525000, star:FALSE},
+{actor: "Patrick Dempsey", show: "Grey's Anatomy", ppe: 250000, type:"Drama", viewers:10.4, channel:"abc",mins:43, ey:20, ppm:5813.95348837209, ppy:5000000, star:TRUE},
+{actor: "Alex O'Loughlin", show: "Hawaii Five-O", ppe: 100000, type:"Drama", viewers:10.6, channel:"cbs",mins:42, ey:18, ppm:2380.95238095238, ppy:1800000, star:TRUE},
+{actor: "Scott Caan", show: "Hawaii Five-O", ppe: 80000, type:"Drama", viewers:10.6, channel:"cbs",mins:42, ey:18, ppm:1904.7619047619, ppy:1440000, star:FALSE},
+{actor: "Jada Pinkett Smith", show: "HawthoRNe", ppe: 150000, type:"Drama", viewers:3.6, channel:"tnt",mins:42, ey:10, ppm:3571.42857142857, ppy:1500000, star:TRUE},
+{actor: "Ashley Tisdale", show: "Hellcats", ppe: 30000, type:"Drama", viewers:1.6, channel:"cw",mins:41, ey:15, ppm:731.707317073171, ppy:450000, star:TRUE},
+{actor: "Ed O'Neil", show: "Hot in Cleveland", ppe: 100000, type:"Comedy", viewers:0.95, channel:"tvl",mins:23, ey:7, ppm:4347.82608695652, ppy:700000, star:TRUE},
+{actor: "Betty White", show: "Hot in Cleveland", ppe: 75000, type:"Comedy", viewers:0.95, channel:"tvl",mins:23, ey:7, ppm:3260.86956521739, ppy:525000, star:FALSE},
+{actor: "Hugh Laurie", show: "House", ppe: 400000, type:"Drama", viewers:9.9, channel:"fox",mins:42, ey:20.7142857142857, ppm:9523.80952380952, ppy:8285714.28571429, star:TRUE},
+{actor: "Miranada Cosgrove", show: "iCarly", ppe: 180000, type:"Comedy", viewers:4.9, channel:"nick",mins:23, ey:19.5, ppm:7826.08695652174, ppy:3510000, star:TRUE},
+{actor: "Timothy Olyphant", show: "Justified", ppe: 100000, type:"Drama", viewers:2.4, channel:"fx",mins:42, ey:7.5, ppm:2380.95238095238, ppy:750000, star:TRUE},
+{actor: "Christopher Meloni", show: "Law & Order: SVU", ppe: 395000, type:"Drama", viewers:17.6, channel:"nbc",mins:42, ey:22.0833333333333, ppm:9404.7619047619, ppy:8722916.66666667, star:TRUE},
+{actor: "Mariska Hargitay", show: "Law & Order: SVU", ppe: 395000, type:"Drama", viewers:17.6, channel:"nbc",mins:42, ey:22.0833333333333, ppm:9404.7619047619, ppy:8722916.66666667, star:FALSE},
+{actor: "Jon Hamm", show: "Mad Men", ppe: 100000, type:"Drama", viewers:2, channel:"amc",mins:47, ey:13, ppm:2127.65957446808, ppy:1300000, star:TRUE},
+{actor: "Jason Lee", show: "Memphis Beat", ppe: 125000, type:"Drama", viewers:3.6, channel:"tnt",mins:43, ey:10, ppm:2906.97674418605, ppy:1250000, star:TRUE},
+{actor: "Ty Burrell", show: "Modern Family", ppe: 50000, type:"Comedy", viewers:6.55, channel:"abc",mins:22, ey:12, ppm:2272.72727272727, ppy:600000, star:TRUE},
+{actor: "Rico Rodriguez", show: "Modern Family", ppe: 15000, type:"Comedy", viewers:6.55, channel:"abc",mins:22, ey:12, ppm:681.818181818182, ppy:180000, star:FALSE},
+{actor: "Mark Harmon", show: "NCIS", ppe: 375000, type:"Drama", viewers:19.5, channel:"cbs",mins:43, ey:22.125, ppm:8720.93023255814, ppy:8296875, star:TRUE},
+{actor: "Michael Weatherly", show: "NCIS", ppe: 125000, type:"Drama", viewers:19.5, channel:"cbs",mins:43, ey:22.125, ppm:2906.97674418605, ppy:2765625, star:FALSE},
+{actor: "LL Cool J", show: "NCIS: Los Angeles", ppe: 125000, type:"Drama", viewers:16.8, channel:"cbs",mins:43, ey:20, ppm:2906.97674418605, ppy:2500000, star:TRUE},
+{actor: "Chris O'Donnell", show: "NCIS: Los Angeles", ppe: 125000, type:"Drama", viewers:16.8, channel:"cbs",mins:43, ey:20, ppm:2906.97674418605, ppy:2500000, star:FALSE},
+{actor: "Edie Falco", show: "Nurse Jackie", ppe: 175000, type:"Comedy", viewers:0.45, channel:"showtime",mins:27, ey:12, ppm:6481.48148148148, ppy:2100000, star:TRUE},
+{actor: "Jimmy Smits", show: "Outlaw", ppe: 150000, type:"Drama", viewers:3.4, channel:"nbc",mins:43, ey:8, ppm:3488.37209302326, ppy:1200000, star:TRUE},
+{actor: "Lauren Graham", show: "Parenthood", ppe: 150000, type:"Drama", viewers:1.9, channel:"nbc",mins:43, ey:14.5, ppm:3488.37209302326, ppy:2175000, star:TRUE},
+{actor: "Denis Leary", show: "Rescue Me", ppe: 350000, type:"Drama", viewers:1.2, channel:"fx",mins:43, ey:14, ppm:8139.53488372093, ppy:4900000, star:TRUE},
+{actor: "Angie Harmon", show: "Rizzoli & Isles", ppe: 75000, type:"Drama", viewers:9, channel:"tnt",mins:45, ey:10, ppm:1666.66666666667, ppy:750000, star:TRUE},
+{actor: "Mark Feuerstein", show: "Royal Pains", ppe: 125000, type:"Drama", viewers:3.9, channel:"usa",mins:42, ey:14.5, ppm:2976.19047619048, ppy:1812500, star:TRUE},
+{actor: "David Spade", show: "Rules of Engagement", ppe: 150000, type:"Comedy", viewers:4.3, channel:"cbs",mins:30, ey:12.6, ppm:5000, ppy:1890000, star:TRUE},
+{actor: "Patrick Warburton", show: "Rules of Engagement", ppe: 85000, type:"Comedy", viewers:4.3, channel:"cbs",mins:30, ey:12.6, ppm:2833.33333333333, ppy:1071000, star:FALSE},
+{actor: "Kaley Cuoco", show: "The Big Bang Theory", ppe: 60000, type:"Comedy", viewers:6.4, channel:"cbs",mins:21, ey:19.75, ppm:2857.14285714286, ppy:1185000, star:TRUE},
+{actor: "Jaonny Galecki", show: "The Big Bang Theory", ppe: 60000, type:"Comedy", viewers:6.4, channel:"cbs",mins:21, ey:19.75, ppm:2857.14285714286, ppy:1185000, star:FALSE},
+{actor: "Jim Parsons", show: "The Big Bang Theory", ppe: 40000, type:"Comedy", viewers:6.4, channel:"cbs",mins:21, ey:19.75, ppm:1904.7619047619, ppy:790000, star:FALSE},
+{actor: "Kyra Sedwick", show: "The Closer", ppe: 350000, type:"Drama", viewers:7.2, channel:"tnt",mins:51, ey:14.6666666666667, ppm:6862.74509803922, ppy:5133333.33333333, star:TRUE},
+{actor: "Blair Underwood", show: "The Event", ppe: 75000, type:"Drama", viewers:5.6, channel:"nbc",mins:43, ey:10, ppm:1744.18604651163, ppy:750000, star:TRUE},
+{actor: "Julianna Margulies", show: "The Good Wife", ppe: 175000, type:"Drama", viewers:11.4, channel:"cbs",mins:43, ey:17, ppm:4069.76744186047, ppy:2975000, star:TRUE},
+{actor: "Simon Baker", show: "the mentalist", ppe: 450000, type:"Drama", viewers:14.75, channel:"cbs",mins:43, ey:20.3333333333333, ppm:10465.1162790698, ppy:9150000, star:TRUE},
+{actor: "Steve Carell", show: "The Office", ppe: 297000, type:"Comedy", viewers:3.45, channel:"nbc",mins:21, ey:20.4285714285714, ppm:14142.8571428571, ppy:6067285.71428571, star:TRUE},
+{actor: "Shailene Woodley", show: "The Secret Life of the American Teenager", ppe: 40000, type:"Drama", viewers:3.2, channel:"abc",mins:45, ey:20.3333333333333, ppm:888.888888888889, ppy:813333.333333333, star:TRUE},
+{actor: "Dan Castellaneta", show: "The Simpsons", ppe: 400000, type:"Comedy", viewers:5, channel:"fox",mins:23, ey:21.7272727272727, ppm:17391.3043478261, ppy:8690909.09090909, star:TRUE},
+{actor: "Julie Kavner", show: "The Simpsons", ppe: 400000, type:"Comedy", viewers:5, channel:"fox",mins:23, ey:21.7272727272727, ppm:17391.3043478261, ppy:8690909.09090909, star:FALSE},
+{actor: "Dylan Sprouse", show: "The Suite Life of Zack and Cody", ppe: 20000, type:"Comedy", viewers:2.5, channel:"disn",mins:22, ey:29, ppm:909.090909090909, ppy:580000, star:TRUE},
+{actor: "Cole Sprouse", show: "The Suite Life of Zack and Cody", ppe: 20000, type:"Comedy", viewers:2.5, channel:"disn",mins:22, ey:29, ppm:909.090909090909, ppy:580000, star:FALSE},
+{actor: "Ian Somerhalder", show: "The Vampire Diaries", ppe: 40000, type:"Drama", viewers:2.75, channel:"cw",mins:41, ey:18.5, ppm:975.609756097561, ppy:740000, star:TRUE},
+{actor: "Anna Paquin", show: "True Blood", ppe: 75000, type:"Drama", viewers:5.1, channel:"hbo",mins:55, ey:12, ppm:1363.63636363636, ppy:900000, star:TRUE},
+{actor: "Charlie Sheen", show: "Two and a Half Men", ppe: 1250000, type:"Comedy", viewers:7.25, channel:"cbs",mins:20, ey:22.125, ppm:62500, ppy:27656250, star:TRUE},
+{actor: "Jon Cryer", show: "Two and a Half Men", ppe: 550000, type:"Comedy", viewers:7.25, channel:"cbs",mins:20, ey:22.125, ppm:27500, ppy:12168750, star:FALSE},
+{actor: "Angus T. Jones", show: "Two and a Half Men", ppe: 250000, type:"Comedy", viewers:7.25, channel:"cbs",mins:20, ey:22.125, ppm:12500, ppy:5531250, star:FALSE},
+{actor: "Matt Bomer", show: "White Collar", ppe: 100000, type:"Drama", viewers:5.6, channel:"usa",mins:42, ey:13.5, ppm:2380.95238095238, ppy:1350000, star:TRUE},
+{actor: "Selena Gomez", show: "Wizards of Waverly Place", ppe: 30000, type:"Comedy", viewers:1.7, channel:"disn",mins:22, ey:22.25, ppm:1363.63636363636, ppy:667500, star:TRUE}];
+
+
+var c={
+abc: "#1f77b4",
+amc: "#aec7e8",
+cbs: "#ff7f0e",
+cw: "#ffbb78",
+disn: "#2ca02c",
+fox: "#98df8a",
+fx: "#d62728",
+hbo: "#ff9896",
+nbc: "#9467bd",
+nick: "#c5b0d5",
+showtime: "#8c564b",
+tnt: "#c49c94",
+tvl: "#e377c2",
+usa: "#f7b6d2"};
+
+
+
+function nformatter(number) {
+	if (number>1000000){
+		var x=Math.floor(number/1000000);
+		return (x+"."+nformatter(number-x*1000000));
+		}
+	else if(number>1000){
+		var x=Math.floor(number/1000);
+		return (x+"."+nformatter(number-x*1000));
+		} else {return ((number<100)?'0':'')+((number<10)?'0':'')+number;}
+		}
+
+
+
+//var myData=data.filter(function(d) {return d.star;});
+var myData=data; myData.forEach(function(d) {d.jitterX=6*Math.random(); d.jitterY=6*Math.random();});
+
+var maxPay=pv.max(myData, function(d) {return d.ppe;});
+var maxView=pv.max(myData, function(d) {return d.viewers;});
+var maxPpm=pv.max(myData, function(d) {return d.ppm;});
+
+maxView=20;
+maxPay=1300000;
+
+var selBubble=0;
+var th=620,w=500
+var h=500,w=500;
+
+vis=new pv.Panel()
+	.width(w)
+	.height(th)
+	;
+
+vis.add(pv.Label).top(35).left(w/2).textAlign("center").font("20px Georgia bold").text("Pay of TV series actors")
+
+vis.add(pv.Rule).bottom(145).top(75).data(pv.range(14)).left(function(d) 45+430*d*100000/maxPay).strokeStyle(function(d) d?"#eee":"#000")
+	.anchor("bottom").add(pv.Label).textAlign("center").textBaseline("top").visible(function(d) d).text(function(d) (d<10)?d*100+"k":(d/10)+"m")
+
+vis.add(pv.Label).top(75).left(13).textAngle(-Math.PI/2).text("Audience").textAlign("right")
+
+vis.add(pv.Rule).left(function(d) d?46:45).right(25).data(pv.range(11)).bottom(function(d) 145+400*d*2/maxView).strokeStyle(function(d) d?"#eee":"#000")
+	.anchor("left").add(pv.Label).textAlign("right").textBaseline("middle").visible(function(d) d).text(function(d) d*2+"m")
+
+vis.add(pv.Label).top(505).left(410).text("Pay per episode")
+
+vis.add(pv.Panel).bottom(120)
+	.add(pv.Dot)
+	.data(myData)
+	.bottom(function(d) 22+400*d.viewers/maxView+d.jitterX)
+	.left(function(d) 42+430*d.ppe/maxPay+d.jitterY)
+	.size(function(d) Math.sqrt(d.ppm)/2)
+	.event("mouseover", function() {selBubble=this.index;vis.render();})
+	//.event("unpoint", function() {selBubble=-1;})
+	.title(function(d) d.actor)
+	.fillStyle(function(d) pv.color(c[d.channel]).alpha(.8))
+	.strokeStyle(function(d) this.index==selBubble?"#000":null);
+
+
+vis.add(pv.Panel).top(520).height(120)//.add(pv.Rule).top(0).width(w).left(0).strokeStyle("dimgrey").parent
+	.add(pv.Label).top(35).left(20).text(function() myData[selBubble].actor).font("20px Georgia bold").parent
+	.add(pv.Label).top(55).left(20).text(function() myData[selBubble].show + " - "+(myData[selBubble].channel).toUpperCase()).font("12px Georgia").parent
+	.add(pv.Label).top(70).left(20).text("Pay per episode: ").font("12px Georgia").parent
+	.add(pv.Label).top(70).right(200).textAlign("right").text(function() '$'+nformatter(myData[selBubble].ppe)).font("12px Georgia").parent
+	.add(pv.Label).top(84).left(20).text("Pay per minute: ").font("12px Georgia").parent
+	.add(pv.Label).top(84).right(200).textAlign("right").text(function() '$'+nformatter(Math.floor(myData[selBubble].ppm))).font("12px Georgia").parent
+	.add(pv.Label).top(98).left(20).text("Hourly viewers per week (millions): ").font("12px Georgia").parent
+	.add(pv.Label).top(98).right(200).textAlign("right").text(function() +nformatter(myData[selBubble].viewers)).font("12px Georgia").parent
+
+	.add(pv.Label).top(55).left(350).text("The color of the bubble is").font("12px Georgia italic").parent
+	.add(pv.Label).top(70).left(350).text("the channel of the show, ").font("12px Georgia italic").parent
+	.add(pv.Label).top(84).left(350).text("the size of the bubble is").font("12px Georgia italic").parent
+	.add(pv.Label).top(98).left(350).text("the pay per minute.").font("12px Georgia italic").parent
+vis.render();
+
+
+
+    </script>
+</div><p>
+When I looked at the dataset <a href="http://datasets.flowingdata.com/tv-earners/top-tv-earners.csv">provided by Nathan</a> I first wondered what was missing. 
+Quite a few stars were missing in the list. I added Simon Baker whose Mentalist gets a huge audience and who is said to be getting $450k per show. Others who probably should be there include Forest Whittaker for the Criminal Minds spinoff, Jim Belushi in the Defenders, Kate Walsh in Private Practice or Elizabeth Michell in V. I don't think any of them is settling for less than $15k per episode. </p>
+
+<p>Another thing were the audiences. There are a few good sources for that (and some less good) so I tried to approximate how much viewers a show would generate for their channel. I came up with hourly viewers because a show that brings 10 million people to one channel for half an hour should be equivalent to one that gets 5 million viewers for an hour, right? </br>
+In fact, I wanted to come up with a proxy of how much value a TV show was generating and how much of that went into the pockets of the cast. It's probably possible to come up with a precise answer with better data than could be assembled by an amateur over a lunch break, audience is probably a part of the equation, but the short story doesn't require much calculation: actors only get the crumbs of a very fat pie. </br>
+A show like Grey's Anatomy got <a href="http://sbnikita.blogspot.com/2010/05/top-10-prime-network-programs-on-ad.html">$329.1m dollars of ad revenue in 2009</a>, which I assume is an US-only figure, the show being syndicated in many countries, unfortunately including France. And that excludes sales of DVD, paid donwloads and other streams of revenue. Out of that, Patrick Dempsey only got $6m. Now $6m is a lot of money, but actors of successful, established shows don't get a very good deal here. In the last seasons of "Friends", the 6 main actors all got <a href="http://www.nytimes.com/2002/02/12/business/friends-deal-will-pay-each-of-its-6-stars-22-million.html">$1m per episode</a>, which seemed fair in retrospect. Sarah Jessica Parker's salary even reached <a href="http://www.telegraph.co.uk/culture/film/starsandstories/3673404/Sarah-Jessica-Parker-Am-I-really-the-worlds-unsexiest-woman.html">$3.2m per Sex and the City episode</a>, but she was co-producer. And this was then. </p>
+
+<p>The chart can be divided in quadrants. On the lower-right corner, Charlie Sheen, who is the only one there with an old-school deal. </br>
+On the higher-left corner, the work horses - stars of the crime shows with stellar ratings, who could ask for more. </br>
+On the very bottom-left, those who are happy to be there. Etc.</p>
+
+<p>Now some stars of shows that get well over 10m viewers get "only" around $100k per episode. So obviously the revenue stream must go somewhere else! my money is on the writers 🙂</p>
+
+<p>Also for fun, I computed the ratio of their salary to the length of each episode. I once calculated that I earned about 83 cents a minute, which sounds pretty ridiculous compared to Charlie Sheen's $62500!</p>
+
+
+
+	    		<div class="clear">&nbsp;</div>
+	</section>
+</article><!-- #post-## -->
+			
+				
+<article id="post-623" class="post-623 post type-post status-publish format-standard hentry category-charts category-data-visualization category-protovis category-tips tag-arc-diagrams tag-force-directed-graphs tag-graphs tag-layouts tag-matrix-diagrams tag-network tag-protovis tag-stacked-areas tag-stacked-bars tag-stacked-columns tag-treemaps tag-trees tag-tutorial">
+		    <header class="post-header">
+        			<span class="post-meta">
+				<span class="posted-on"><a href="/2011/02/11/working-with-data-in-protovis-part-5-of-5/" rel="bookmark"><time class="entry-date published" datetime="2011-02-11T20:11:22+00:00">February 11, 2011</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/charts/" rel="category tag">charts</a>, <a href="/category/data-visualization/" rel="category tag">data visualization</a>, <a href="/category/protovis/" rel="category tag">protovis</a>, <a href="/category/tips/" rel="category tag">tips</a>			</span>
+		        <h1 class="post-title"><a href="/2011/02/11/working-with-data-in-protovis-part-5-of-5/" rel="bookmark">Working with data in protovis: part 5 of 5</a></h1>
+         
+    </header>
+	<section class="post-content">
+
+		<p>previous: <a href="http://www.jeromecukier.net/?p=502">reshaping complex arrays (4/5)</a></p>
+<h2>Working with layouts</h2>
+<p>In this final part, we&#8217;re going to look at how we can shape our data to use the protovis built-in layouts such as stacked areas, treemaps or force-directed graphs.<br />
+This is not a tutorial on how to use layouts stricto sensu, and I advise anyone interested to first look at the <a href="http://vis.stanford.edu/protovis/docs/layout.html">protovis documentation</a> to see what can be done with this and to understand the underlying concepts. </p>
+<p>But if there is one thing to know about layouts, it&#8217;s that they allow you to <strong>create non-trivial visualizations in even less code than regular protovis</strong>, provided that you <strong>pass them data in a form they can use</strong>, and this is precisely where we come in.</p>
+<h3>Three great categories of layouts</h3>
+<p>Currently, there are no fewer than 13 types of layouts in Protovis. Fortunately, there are examples for all of them in the gallery.<br />
+There are layouts for: </p>
+<ul>
+<li>Arrays of data</li>
+<ul>
+<li>
+Grids or heatmaps <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Grid.html">doc</a> <a href="http://vis.stanford.edu/protovis/ex/heatmap.html">example</a>
+</li>
+<li>
+Stacked areas or streamgraphs <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Stack.html">doc</a> <a href="http://vis.stanford.edu/protovis/ex/stack.html">stacked areas</a> <a href="http://vis.stanford.edu/protovis/ex/stream.html">streamgraphs</a>
+</li>
+</ul>
+<li>Networks (nodes and links)</td>
+<td>Hierarchized data (trees)</li>
+<ul>
+<li>
+Arc diagrams <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Arc.html">doc</a> <a href="http://vis.stanford.edu/protovis/ex/arc.html">example</a></li>
+<li>
+Force-directed graphs <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Force.html">doc</a> <a href="http://vis.stanford.edu/protovis/ex/force.html">example </a>
+</li>
+<li>
+Relationship matrices <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Matrix.html">doc</a> <a href="http://vis.stanford.edu/protovis/ex/matrix.html">example</a>
+</li>
+<li>Rollup network<a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Rollup.html">doc</a> (no example in Protovis 3.2, but there is one in 3.3)</li>
+</ul>
+<li>Trees and hierarchized data</li>
+<ul>
+<li>
+Dendograms <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Cluster.html">doc </a><a href="http://vis.stanford.edu/protovis/ex/dendrogram.html">example</a>
+</li>
+<li>
+Indented trees <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Indent.html">doc</a> <a href="http://vis.stanford.edu/protovis/ex/indent.html">example</a>
+</li>
+<li>
+Packed circles <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Pack.html">doc</a> <a href="http://vis.stanford.edu/protovis/ex/pack.html">example</a>
+</li>
+<li>
+Sunbursts and icicles <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Partition.html">doc</a> <a href="http://vis.stanford.edu/protovis/ex/sunburst.html">sunbursts</a> <a href="http://vis.stanford.edu/protovis/ex/icicle.html">icicles</a>
+</li>
+<li>
+Node-link trees <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Tree.html">doc</a> <a href="http://vis.stanford.edu/protovis/ex/tree.html">example</a></li>
+<li>Treemaps <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Treemap.html">doc</a> <a href="http://vis.stanford.edu/protovis/ex/treemap.html">example</a></li>
+</ul>
+</ul>
+<p>In addition, there are layouts like <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Bullet.html">pv.Layout.Bullet</a> which require data to have a certain specific shape but the <a href="http://vis.stanford.edu/protovis/ex/bullet.html">example from the gallery</a> is very explicit. (et tu, <a href="http://vis.stanford.edu/protovis/ex/horizon.html">Horizon</a> layout).</p>
+<h3>Arrays of data</h3>
+<p>In order to work with this kind of layout, the simplest thing is to put your data in a 2-dimensional array: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">var data=[
+   [8,3,7,2,5],
+   [9,6,1,7,4],
+    ...
+   [7,4,3,6,8]
+];</pre>
+<p>For the grid layout, this gives you an array of cells divided in columns (number of elements in each line) and rows (number of lines).<br />
+The idea of the grid layout is that your cells are automatically positioned and sized, so afaik the only thing you can do is add a mark such as a pv.Bar which would fill them completely, but which you could still style with fillStyle or strokeStyle. You can&#8217;t really access the underlying data with functions but you can use methods that rely on default values, like adding labels.</p>
+<p>For instance, you can use it to generate a QR code: </p>
+<table>
+<tr>
+<td>
+<pre class="brush: jscript; title: ; notranslate" title="">var qr=[
+&quot;000000000000000000000000000&quot;,
+&quot;011111110001010100011111110&quot;,
+&quot;010000010101001110010000010&quot;,
+&quot;010111010000010100010111010&quot;,
+&quot;010111010111011110010111010&quot;,
+&quot;010111010010000001010111010&quot;,
+&quot;010000010110110010010000010&quot;,
+&quot;011111110101010101011111110&quot;,
+&quot;000000000011100100000000000&quot;,
+&quot;011111011110101110101010100&quot;,
+&quot;000010101001010111101000100&quot;,
+&quot;010101111001001011111010110&quot;,
+&quot;001011000100010101010100010&quot;,
+&quot;001100010111011010010101110&quot;,
+&quot;010101100110001101001010100&quot;,
+&quot;010011010011111111100110110&quot;,
+&quot;010111101010100101000010010&quot;,
+&quot;010100110010111101111101000&quot;,
+&quot;000000000101010111000111000&quot;,
+&quot;011111110100011001010111110&quot;,
+&quot;010000010000110011000110110&quot;,
+&quot;010111010110001011111111000&quot;,
+&quot;010111010101101100110101110&quot;,
+&quot;010111010100000111001001010&quot;,
+&quot;010000010111010101101110010&quot;,
+&quot;011111110101001100011111110&quot;,
+&quot;000000000000000000000000000&quot;,
+].map(function(i) i.split(&quot;&quot;));
+
+var vis = new pv.Panel()
+    .width(216)
+    .height(216);
+vis.add(pv.Layout.Grid)
+    .rows(qr)
+ 	.cell.add(pv.Bar)
+ 	    .fillStyle(pv.colors(&quot;#fff&quot;, &quot;#000&quot;))
+     ;
+vis.render();</pre>
+</td>
+<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/QR-grid-big.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/QR-grid-big.png" alt="" title="QR-grid-big" width="216" height="216" class="aligncenter size-full wp-image-628" /></a>(BTW, this is the QR code to this page)</td>
+</tr>
+</table>
+<p>On line 29, I&#8217;m using a <a href="http://www.jeromecukier.net/?p=494">map function</a> to turn this array of strings, which is easier and shorter to type, into a <em>bona fide</em> 2-dimensional array. </p>
+<p>That&#8217;s all there is to grids, of all the layouts they are among the easiest to reproduce with regular protovis.</p>
+<p>Now, stacks.<br />
+The easiest way to use them is to pass them 2-dimensional arrays. Now it doesn&#8217;t have to be arrays of numbers, it can be arrays of associative arrays in case you need to do something exotic. But for the following examples let&#8217;s just assume you don&#8217;t. Here is how you&#8217;d do a stacked area, stacked columns and stacked bars respectively:</p>
+<table>
+<tr>
+<td>
+<pre class="brush: jscript; title: ; notranslate" title="">var data=[
+[[1000,1200,1500,1700]]
+[[100,500,300,200]]
+]
+var vis=new pv.Panel().width(200).height(200);
+vis.add(pv.Layout.Stack)
+    .layers(data)
+    .x(function() 50*this.index)
+    .y(function(d) d/20)
+    .layer.add(pv.Area)</pre>
+</td>
+<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/stackedAreas.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/stackedAreas.png" alt="" title="stackedAreas" width="200" height="200" class="aligncenter size-full wp-image-636" /></a></td>
+</tr>
+</table>
+<p>all you need is to feed the layers, x, y properties of your stack, then say what you want to add to your layers.<br />
+Now, columns: </p>
+<table>
+<tr>
+<td>
+<pre class="brush: jscript; first-line: 6; title: ; notranslate" title="">vis.add(pv.Layout.Stack)
+    .layers(data)
+    .x(function() 50*this.index)
+    .y(function(d) d/20)
+    .layer.add(pv.Bar).width(40)</pre>
+</td>
+<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/stackedColumns.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/stackedColumns.png" alt="" title="stackedColumns" width="200" height="200" class="aligncenter size-full wp-image-637" /></a></td>
+</tr>
+</table>
+<p>and finally, bars: </p>
+<table>
+<tr>
+<td>
+<pre class="brush: jscript; first-line: 6; highlight: [8,11]; title: ; notranslate" title="">vis.add(pv.Layout.Stack)
+    .layers(data)
+    .orient(&quot;left&quot;)
+    .x(function() 50*this.index)
+    .y(function(d) d/20)
+    .layer.add(pv.Bar).height(40)</pre>
+</td>
+<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/stackedBars.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/stackedBars.png" alt="" title="stackedBars" width="200" height="200" class="aligncenter size-full wp-image-638" /></a></td>
+</tr>
+</table>
+<p>For bars, there is a little trick here. I specify that the layer orientation is horizontal (&#8220;left&#8221;) and I change the height instead of the width of the added pv.Bar.<br />
+And that all there is. You can create various streamgraphs by <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Layout.Stack.html#offset">playing with the order and offset properties</a> of the stack but this doesn&#8217;t change anything to the data structure, so we&#8217;re done here.</p>
+<h3>Representing networks</h3>
+<p>Protovis provides 3 cool layouts to easily exhibit relationships between nodes: arc diagrams, matrix diagrams and force-directed layouts.<br />
+The good news is that the shape of the data required by those three layouts is identical. </p>
+<p>They require an array that correponds to the nodes. This can be as simple as a pv.range(), or as sophisticated as an array of associative arrays if you want to style your network graph according to several potential attributes of the node. </p>
+<p>And they also require an array for the links. This array has a more rigid form, it must be an array of associative arrays of the shape: {source: #, target: #, value: #} where the values for source and target correspond to the position of a node in the node array, and value indicates the strength of the link. </p>
+<p>So let&#8217;s do a simple one. </p>
+<table>
+<tr>
+<td>
+<pre class="brush: jscript; title: ; notranslate" title="">var nodes=pv.range(6); // why more complex, right?
+var links=[
+{source:0, target:1, value:2},
+{source:1, target:2, value:1},
+{source:1, target:3, value:1},
+{source:2, target:4, value:4},
+{source:3, target:5, value:1},
+{source:4, target:5, value:1},
+{source:1, target:5, value:3}
+]
+var vis = new pv.Panel()
+    .width(200)
+    .height(200)
+    ;
+var arc = vis.add(pv.Layout.Arc)
+    .nodes(nodes)
+    .links(links)
+	.bottom(100)
+arc.link.add(pv.Line);
+arc.node.add(pv.Dot)
+    .size(50)
+vis.render();</pre>
+</td>
+<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleNetwork1.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleNetwork1.png" alt="" title="simpleNetwork" width="200" height="200" class="aligncenter size-full wp-image-644" /></a></td>
+</tr>
+</table>
+<p>Here, by varying the strength of the link, the thickness of the arcs changes accordingly. The nodes are left unstyled, had we passed a more complicated dataset to the nodes array, we could have changed their properties (fillStyle, size, strokeStyle, labels etc.) with appropriate accessor functions. </p>
+<p>With little modifications we can create a force-directed layout and a matrix diagram.</p>
+<table>
+<tr>
+<td>
+<pre class="brush: jscript; first-line: 14; title: ; notranslate" title="">
+var force = vis.add(pv.Layout.Force)
+    .nodes(nodes)
+    .links(links);
+
+force.link.add(pv.Line);
+
+force.node.add(pv.Dot)
+	.size(50)
+	.anchor(&quot;center&quot;).add(pv.Label)
+		.text(function() this.index);
+
+vis.render();
+</pre>
+</td>
+<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleForce.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleForce.png" alt="" title="simpleForce" width="200" height="200" class="aligncenter size-full wp-image-645" /></a></td>
+</tr>
+</table>
+<p>Here I labelled the nodes so one can tell which is which. This is done by adding a pv.Label to the pv.Dot that&#8217;s attached to the node, just like with any other mark.</p>
+<table>
+<tr>
+<td>
+<pre class="brush: jscript; first-line: 14; title: ; notranslate" title="">
+var Matrix = vis.add(pv.Layout.Matrix)
+	.nodes(nodes)
+	.directed(true)
+	.links(links)
+	.top(20).left(20)
+
+Matrix.link.add(pv.Bar)
+    .fillStyle(function(d) pv.Scale.linear(0, 2, 4)
+      .range('#eee', 'yellow', 'green')(d.linkValue))
+
+Matrix.label.add(pv.Label).text(function() Math.floor(this.index/2))
+
+vis.render();</pre>
+</td>
+<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleMatrix1.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleMatrix1.png" alt="" title="simpleMatrix" width="200" height="200" class="aligncenter size-full wp-image-647" /></a></td>
+</tr>
+</table>
+<p>For the matrix things are slightly more complex than for the previous 2. Here I opted for a directed matrix, as opposed to a bidirectional one: this means that each link is shown once, to its source from its target, and not twice (ie from its target back to its source) which is the default.<br />
+I chose to color the bar attached to my links (which are cells of the matrix) according to the strength of my links. Again, if my nodes field was more qualified, I could have used these properties. </p>
+<p>Finally, we&#8217;ve added labels to the custom property Matrix.label. Only, the labels are numbered from 0 to 11 so to get numbers from 0 to 5 for both rows and columns I used Math.floor(this.index/2) (integer part of half of this number).</p>
+<h3>Hierarchized data</h3>
+<p>Like for networks, the shape of the data we can feed to treemaps, icicles and other hierarchical representation doesn&#8217;t change. So once you have your data in order, you can easily switch representations. </p>
+<p>Essentially, you will be passing a tree of the form: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">var myTree={
+   rootnode: {
+      node: {
+      ...  
+         node: {
+            leaf: value,
+            leaf: value,
+            ...
+            leaf: value
+         },
+      ...  
+}</pre>
+<p>The protovis examples use the hierarchy of <a href="http://vis.stanford.edu/protovis/ex/flare.js">flare source code</a> as an example, which really shows what can be done with a treemap and other tree represenations. </p>
+<p>For our purpose we are going for a simpler tree, inspired by the work of Periscopic on <a href="http://www.congressspeaks.com/">congressspeaks.com</a> which Kim Rees showed at <a href="http://now.periscopic.com/2011/02/lessons-in-visual-economy-at-strata/">Strata</a>.<br />
+Kim presentation featured tiny treemaps that showed the voting record for a congressperson, and whether they had voted for or against their party.</p>
+<p>So let&#8217;s play with the voting record of an hypothetic congressperson:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">var hasVoted={
+	didnt: 100,
+	voted: {
+	    yes: {
+	        yesWithParty: 241,
+	        yesAgainstParty: 23
+	    },
+	    no: {
+	        noWithParty: 73,
+	        noAgainstParty: 5
+	    }
+	}
+};</pre>
+<p>Once you have your tree, you will need to pass it to your layout using pv.dom, like this: </p>
+<pre class="brush: jscript; light: true; title: ; notranslate" title="">pv.dom(hasVoted).root(&quot;hasVoted&quot;).nodes()</pre>
+<p>Based on that let&#8217;s do two hierarchical representations.<br />
+Let&#8217;s start with a tree: </p>
+<pre class="brush: jscript; first-line: 14; title: ; notranslate" title="">var vis = new pv.Panel()
+    .width(500)
+    .height(200)
+    ;
+var tree = vis.add(pv.Layout.Tree)
+    .nodes(pv.dom(hasVoted).root(&quot;hasVoted&quot;).nodes())
+    .depth(40)
+    .breadth(100)
+    .top(30)
+    .right(100)
+    ;
+tree.link.add(pv.Line);
+tree.node.add(pv.Dot)
+    .size(function(n) n.nodeValue)
+	.anchor(&quot;center&quot;).add(pv.Label).textAlign(&quot;center&quot;).text(function(n) n.nodeName)
+vis.render();</pre>
+<p>And here is the result:<br />
+<a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleTree.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleTree.png" alt="" title="simpleTree" width="500" height="200" class="aligncenter size-full wp-image-652" /></a></p>
+<p>There are many styling possibilities obviously left unexplored in this simple example (you can control properties of the tree.link, tree.node, tree.labels which we didn&#8217;t use here, etc.), but this won&#8217;t change much as far as data are concerned. </p>
+<p>Now let&#8217;s try a treemap with the same dataset.</p>
+<pre class="brush: jscript; first-line: 14; title: ; notranslate" title="">var vis = new pv.Panel()
+    .width(400)
+    .height(200)
+    ;
+
+var tree = vis.add(pv.Layout.Treemap)
+	.width(200).height(200)
+    .nodes(pv.dom(hasVoted).root(&quot;hasVoted&quot;).nodes())
+    ;
+
+tree.leaf.add(pv.Panel)
+	.fillStyle(function(d) d.nodeName==&quot;didnt&quot;?&quot;darkgrey&quot;:d.nodeName.slice(0,3)==&quot;yes&quot;?
+	d.nodeName.slice(-9)==&quot;WithParty&quot;?&quot;powderblue&quot;:&quot;steelblue&quot;:
+	d.nodeName.slice(-9)==&quot;WithParty&quot;?&quot;lightsalmon&quot;:&quot;salmon&quot;)
+
+vis.add(pv.Panel)
+	.data([
+		   {label:&quot;yes with party&quot;, 	color: &quot;powderblue&quot;},
+		   {label:&quot;yes against party&quot;, 	color: &quot;steelblue&quot;},
+		   {label:&quot;no with party&quot;, 		color: &quot;lightsalmon&quot;},
+		   {label:&quot;no against party&quot;, 	color: &quot;salmon&quot;},
+		   {label:&quot;didn't vote&quot;, 		color: &quot;darkgrey&quot;}
+		   ])
+	.left(220)
+	.top(function() 50+20*this.index)
+	.height(15)
+	.width(20)
+	.fillStyle(function(d) d.color)
+	.anchor(&quot;right&quot;).add(pv.Label).textAlign(&quot;left&quot;).text(function(d) d.label)
+
+vis.render();
+</pre>
+<p>and what took the longest part of the code was making the legend.</p>
+<p>Here is the outcome:<br />
+<a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleTreemap.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleTreemap.png" alt="" title="simpleTreemap" width="400" height="200" class="aligncenter size-full wp-image-653" /></a></p>
+	    		<div class="clear">&nbsp;</div>
+	</section>
+</article><!-- #post-## -->
+			
+				
+<article id="post-502" class="post-502 post type-post status-publish format-standard hentry category-charts category-data-visualization category-protovis category-tips tag-aggregation tag-hierarchy tag-maps tag-nesting tag-protovis tag-rollup tag-trees">
+		    <header class="post-header">
+        			<span class="post-meta">
+				<span class="posted-on"><a href="/2011/02/11/working-with-data-in-protovis-part-4-of-5/" rel="bookmark"><time class="entry-date published" datetime="2011-02-11T02:51:39+00:00">February 11, 2011</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/charts/" rel="category tag">charts</a>, <a href="/category/data-visualization/" rel="category tag">data visualization</a>, <a href="/category/protovis/" rel="category tag">protovis</a>, <a href="/category/tips/" rel="category tag">tips</a>			</span>
+		        <h1 class="post-title"><a href="/2011/02/11/working-with-data-in-protovis-part-4-of-5/" rel="bookmark">Working with data in protovis &#8211; part 4 of 5</a></h1>
+         
+    </header>
+	<section class="post-content">
+
+		<p><a href="http://www.jeromecukier.net/?p=494">Previous: array functions in javascript and protovis</a></p>
+<h2>Reshaping complex arrays</h2>
+<p>This really is what protovis data processing is all about.<br />
+In today&#8217;s tutorial, I am going to refer extensively to protovis&#8217;s <a href="http://vis.stanford.edu/protovis/ex/barley.html">Becker&#8217;s Barley</a> example. One reason for that is that it&#8217;s also used in the <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Nest.html">API documentation of the methods</a> we are going to cover, and also because I am posting <a href="http://www.jeromecukier.net/?p=534">a line-by-line explanation of this example</a> that you can refer to.</p>
+<p>So far we’ve seen that :</p>
+<ul>
+<li>Associative arrays are great as data elements, as their various values can be used for various attributes.<br />
+For instance, if the current data element is an associative array of this shape: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">{ yield: 27.00000, variety: &quot;Manchuria&quot;, year: 1931, site: &quot;University Farm&quot; }</pre>
+<p>one could imagine a bar chart where the length of the  bar would come from the yield, their fillStyle color from the variety, the label from the site, etc.</li>
+<li>arrays of associative arrays are very practical to manipulate thanks to accessor functions.<br />
+An array of the shape:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">var barley = [
+  { yield: 27.00000, variety: &quot;Manchuria&quot;, year: 1931, site: &quot;University Farm&quot; },
+  { yield: 48.86667, variety: &quot;Manchuria&quot;, year: 1931, site: &quot;Waseca&quot; },
+  { yield: 27.43334, variety: &quot;Manchuria&quot;, year: 1931, site: &quot;Morris&quot; },
+  { yield: 39.93333, variety: &quot;Manchuria&quot;, year: 1931, site: &quot;Crookston&quot; },
+  { yield: 32.96667, variety: &quot;Manchuria&quot;, year: 1931, site: &quot;Grand Rapids&quot; },
+  { yield: 28.96667, variety: &quot;Manchuria&quot;, year: 1931, site: &quot;Duluth&quot; },
+  { yield: 43.06666, variety: &quot;Glabron&quot;, year: 1931, site: &quot;University Farm&quot; },
+  { yield: 55.20000, variety: &quot;Glabron&quot;, year: 1931, site: &quot;Waseca&quot; },
+  { yield: 28.76667, variety: &quot;Glabron&quot;, year: 1931, site: &quot;Morris&quot; },
+  { yield: 38.13333, variety: &quot;Glabron&quot;, year: 1931, site: &quot;Crookston&quot; },
+  { yield: 29.13333, variety: &quot;Glabron&quot;, year: 1931, site: &quot;Grand Rapids&quot; },
+  { yield: 29.66667, variety: &quot;Glabron&quot;, year: 1931, site: &quot;Duluth&quot; },
+  { yield: 35.13333, variety: &quot;Svansota&quot;, year: 1931, site: &quot;University Farm&quot; },
+…
+  { yield: 29.33333, variety: &quot;Wisconsin No. 38&quot;, year: 1932, site: &quot;Duluth&quot; }
+]</pre>
+<p>could be easily sorted according to any of the keys – yield, variety, year, site, etc.</li>
+<li>it is easy to access the data of an element’s parent, and in some cases it can greatly simplify the code.</li>
+</ul>
+<h3>Nesting</h3>
+<p>For this last reason, you may want to turn one flat array of associative arrays into an array of arrays of associative arrays. This process is called <strong>nesting</strong>.</p>
+<p><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/nesting.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/nesting.png" alt="" title="nesting" width="700" height="250" class="aligncenter size-full wp-image-528" /></a></p>
+<h4>Simple nesting</h4>
+<p>If you turn a <strong>single array</strong> like the one on the left-hand side to <strong>an array of arrays</strong> like on the right-hand side, you could easily do 3 smaller charts, one next to the other, by creating them inside of panels. You could have some information at this panel level (for instance the variety) and the rest at a lower level. </p>
+<p>Fortunately, there are protovis methods that can turn your flat list into a more complex array of arrays. And since protovis methods are meant to be chained, you can even go on and create arrays of arrays of arrays of arrays if needs be.<br />
+Even better – combined with the other data processing functions, you don’t only change the structure of your array, but you can also filter and control the order of the elements to show everything that you want and only what you want.</p>
+<p>And how complicated can this be?<br />
+To do the above, all you have to type is </p>
+<pre class="brush: jscript; title: ; notranslate" title="">barley=pv.nest(barley).key(function(d) d.variety).entries();</pre>
+<p>What this does is that it nests your <em>barley</em> array, according to the <em>variety</em> key. entries() at the end is required to obtain the array of arrays needed.</p>
+<p>Here is an example of what can be done with both kinds of data structures in just a few lines of code (which won&#8217;t include the data proper. The long, flat array is stored in the variable barley, as above).<br />
+Without nesting:<br />
+<a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/BarleyWithoutNesting.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/BarleyWithoutNesting.png" alt="" title="BarleyWithoutNesting" width="606" height="198" class="aligncenter size-full wp-image-594" /></a></p>
+<pre class="brush: jscript; title: ; notranslate" title="">var vis = new pv.Panel()
+    .width(600)
+    .height(200)
+;
+vis.add(pv.Bar)
+	.data(barley)
+	.left(function() this.index*5)
+	.width(4)
+	.bottom(0)
+	.height(function(d) d.yield*2)
+	.fillStyle(function(d) d.year==1931?&quot;steelBlue&quot;:&quot;Orange&quot;)
+;
+vis.render();</pre>
+<p>As the pv.Bar goes through the array, there is not much it can do to structure it. We can just size the bars according to the value of yield, and color them according to another key (here the year).</p>
+<p>Now using nesting:<br />
+<a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/BarleyWithNesting2.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/BarleyWithNesting2.png" alt="" title="BarleyWithNesting2" width="711" height="160" class="aligncenter size-full wp-image-598" /></a></p>
+<pre class="brush: jscript; highlight: [1,8,15]; title: ; notranslate" title="">barley2=pv.nest(barley).key(function(d) d.variety).entries();
+barley2=pv.nest(barley).key(function(d) d.variety).entries();
+var vis = new pv.Panel()
+    .width(710)
+    .height(150)
+;
+var cell=vis.add(pv.Panel)
+	.data(barley2)
+	.left(function() this.index*70)
+	.width(70)
+	.top(0)
+	.height(150);
+cell.anchor(&quot;top&quot;).add(pv.Label).textAlign(&quot;center&quot;).font(&quot;9px sans-serif&quot;).text(function(d) d.key)
+cell.add(pv.Bar)
+		.data(function(d) d.values)
+		.left(function() 5+this.index%6*10)
+		.width(8)
+		.bottom(0)
+		.height(function(d) d.yield*2)
+		.fillStyle(function(d) d.year==1931?&quot;steelBlue&quot;:&quot;Orange&quot;)
+		.add(pv.Label).text(function(d) d.site).textAngle(-Math.PI/2)
+			.textAlign(&quot;left&quot;).left(function() 15+this.index%6*10).textStyle(&quot;#222&quot;)
+	;
+vis.render();
+</pre>
+<p>Here we used the same simple nesting command as above (the original example uses a more complicated one which allows for more refinement in the display). This structure allows us to create first panels, which we can style by displaying the name of the sites for instance, then, within these panels, the corresponding bars.</p>
+<p>Doing this with the data in its original form would have been possible, but would have required writing a much longer program. So the whole idea of nesting is to <strong>take some time to plan the data structure once, so that the code is as short and useful as possible</strong>.</p>
+<h4>Going further with nesting</h4>
+<p>However, it is possible to go beyond that: </p>
+<ul>
+<li>by nesting further, which can be done by adding other .key() methods:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">barley=pv.nest(barley)
+  .key(function(d) d.variety)
+  .key(function(d) d.year)
+  .entries();</pre>
+</li>
+</ul>
+<p>And/or</p>
+<ul>
+<li>by sorting keys or values using the sortKeys() and sortValues() methods, respectively. </p>
+<p>For instance, we can change the order in which the variety blocks are displayed with sortKeys():</p>
+<table>
+<tr>
+<td>
+<pre class="brush: jscript; title: ; notranslate" title="">barley=pv.nest(barley)
+  .key(function(d) d.variety)
+  .entries();</pre>
+</td>
+<td>
+<pre class="brush: jscript; highlight: [3]; title: ; notranslate" title="">barley=pv.nest(barley)
+  .key(function(d) d.variety)
+  .sortKeys()
+  .entries();</pre>
+</td>
+</tr>
+<tr>
+<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/sort-unsorted.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/sort-unsorted.png" alt="" title="sort-unsorted" width="300" height="250" class="aligncenter size-full wp-image-524" /></a></td>
+<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/sort-sorted.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/sort-sorted.png" alt="" title="sort-sorted" width="300" height="250" class="aligncenter size-full wp-image-525" /></a></td>
+</tr>
+</table>
+</li>
+</ul>
+<p>By using sortKeys without argument, the natural order is used (alphabetical, since our key is a string). But we could provide a comparison function if we wanted a more sophisticated arrangement.</p>
+<h4>Nesting and hierarchy</h4>
+<p>If you run the double nesting command we discussed above, </p>
+<pre class="brush: jscript; title: ; notranslate" title="">barley=pv.nest(barley)
+  .key(function(d) d.variety)
+  .key(function(d) d.year)
+  .entries();</pre>
+<p>you&#8217;ll get as a result something of the form: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">var barley=[
+  {key:&quot;Manchuria&quot;, values: [
+    {key:&quot;1931&quot;, values: [
+      {site:&quot;University farm&quot;, variety: &quot;Manchuria&quot;, year: 1931, yield: 27},
+      {site:&quot;Waseca&quot;, variety: &quot;Manchuria&quot;, year: 1931, yield: 48.86667},
+      {site:&quot;Morris&quot;, variety: &quot;Manchuria&quot;, year: 1931, yield: 27.43334},
+      {site:&quot;Crookston&quot;, variety: &quot;Manchuria&quot;, year: 1931, yield: 39.93333},
+      {site:&quot;Grand Rapids&quot;, variety: &quot;Manchuria&quot;, year: 1931, yield: 32.96667},
+      {site:&quot;Duluth&quot;, variety: &quot;Manchuria&quot;, year: 1931, yield: 28.96667}
+    ]},
+    {key:&quot;1932&quot;, values: [  
+      {site:&quot;University farm&quot;, variety: &quot;Manchuria&quot;, year: 1932, yield: 26.9},
+      {site:&quot;Waseca&quot;, variety: &quot;Manchuria&quot;, year: 1932, yield: 33.46667},
+      {site:&quot;Morris&quot;, variety: &quot;Manchuria&quot;, year: 1932, yield: 34.36666},
+      {site:&quot;Crookston&quot;, variety: &quot;Manchuria&quot;, year: 1932, yield: 32.96667},
+      {site:&quot;Grand Rapids&quot;, variety: &quot;Manchuria&quot;, year: 1932, yield: 22.13333},
+      {site:&quot;Duluth&quot;, variety: &quot;Manchuria&quot;, year: 1932, yield: 22.56667}
+    ]}
+  ]},
+  {key: &quot;Glabron&quot;, ...
+]
+</pre>
+<p>and so on and so forth for all the varieties of barley. Now how can we use this structure in a protovis script? why not use multi-dimensional arrays instead, and if so, how would the code change?</p>
+<p>Well. You&#8217;d start using this structure by creating a first panel and and passing it the nested structure as data.<br />
+Assuming your root panel is called vis, you&#8217;d start likewise:</p>
+<pre class="brush: jscript; highlight: [2]; title: ; notranslate" title="">
+vis.add(pv.Panel)
+    .data(barley)</pre>
+<p>now, since barley has been nested first by variety, it is now an array of 10 elements. You are going to create 10 individual panels. At some point you should worry about dimensioning and positioning them. But here we are only focusing on passing data to subsequent elements.</p>
+<p>Next, you are going to create another set of panels (or any mark, really, this doesn&#8217;t change anything for the data)</p>
+<pre class="brush: jscript; first-line: 3; highlight: [4]; title: ; notranslate" title="">.add(pv.Panel)
+    .data(function(d) d.values)</pre>
+<p>This is how you drill down to the next level of data, by using an accessor function with the key &#8220;values&#8221;.<br />
+Congratulations! you have created 2 panels in each of our 10 individual panels, one per year. </p>
+<p>Finally, you are going to create a final mark (let&#8217;s say, a pv.Bar)</p>
+<pre class="brush: jscript; first-line: 5; highlight: [6]; title: ; notranslate" title="">.add(pv.Bar)
+    .data(function(d) d.values)</pre>
+<p>Again, you use an accessor function of the same form. This will create a bar chart with 6 bars.<br />
+The data element corresponding to each bar is of the form:
+<pre class="brush: jscript; light: true; title: ; notranslate" title="">{site:&quot;University farm&quot;, variety: &quot;Manchuria&quot;, year: 1932, yield: 26.9}</pre>
+<p>So, when you style the chart, you can access these properties with accessor functions, and write for instance:</p>
+<pre class="brush: jscript; first-line: 7; title: ; notranslate" title="">    .height(function(d) d.yield)
+    .add(pv.Label).text(function(d) d.variety)</pre>
+<p>etc.</p>
+<p>To sum it up: you can create a hierarchical structure in protovis that corresponds to the shape of your nested array by adding elements and passing data using an accessor function with the key &#8220;values&#8221;.<br />
+At the lowest level of your structure you can access all the properties of the original array using accessor functions.</p>
+<p>Now, what if instead we used a multi-dimensional, normal array without keys and values? don&#8217;t they have structure and hierarchy, too?<br />
+This is not only possible, but also advised when your dataset is getting really big, as you would plague your users with annoying loading times. This changes the structure of the code though. </p>
+<p>An equivalent multi-dimensional array would be something like: </p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+var yields =
+[ // this is the level of the variety
+  [ // this is the level of the year
+    [ 27, 48.86667, 27.43334, 39.93333, 32.96667, 28.96667], 
+    [ 26.9, 33.46667, 34.36666, 32.96667, 22.13333, 22.56667]
+  ],
+  [ 
+    [ 43.06666, 55.2, 28.76667, 38.13333, 29.13333, 29.66667],
+    [ 36.8, 37.73333, 35.13333, 26.16667, 14.43333, 25.86667]
+  ],
+  [
+    [ 35.13333, 47.33333, 25.76667, 40.46667, 29.66667, 25.7],
+    [ 27.43334, 38.5, 35.03333, 20.63333, 16.63333, 22.23333]
+  ],
+  [
+    [ 39.9, 50.23333, 26.13333, 41.33333, 23.03333, 26.3],
+    [ 26.8, 37.4, 38.83333, 32.06666, 32.23333, 22.46667]
+  ],
+  [
+    [ 36.56666, 63.8333, 43.76667, 46.93333, 29.76667, 33.93333],
+    [ 29.06667, 49.2333, 46.63333, 41.83333, 20.63333, 30.6]
+  ],
+  [
+    [ 43.26667, 58.1, 28.7, 45.66667, 32.16667, 33.6],
+    [ 26.43334, 42.2, 43.53334, 34.33333, 19.46667, 22.7]
+  ],
+  [
+    [ 36.6, 65.7667, 30.36667, 48.56666, 24.93334, 28.1],
+    [ 25.56667, 44.7, 47, 30.53333, 19.9, 22.5]
+  ],
+  [
+    [ 32.76667, 48.56666, 29.86667, 41.6, 34.7, 32],
+    [ 28.06667, 36.03333, 43.2, 25.23333, 26.76667, 31.36667]
+  ],
+  [
+    [ 24.66667, 46.76667, 22.6, 44.1, 19.7, 33.06666],
+    [ 30, 41.26667, 44.23333, 32.13333, 15.23333, 27.36667]
+  ],
+  [
+    [ 39.3, 58.8, 29.46667, 49.86667, 34.46667, 31.6],
+    [ 38, 58.16667, 47.16667, 35.9, 20.66667, 29.33333]
+  ]
+]</pre>
+<p>and that&#8217;s the whole lot. It is indeed shorter. now this array is only the yields, you may want to create an array of the possible values of varieties, sites and years for good measure.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">var varieties=[&quot;Manchuria&quot;, &quot;Glabron&quot;, &quot;Svansota&quot;, &quot;Velvet&quot;, &quot;Trebi&quot;,
+     &quot;No. 457&quot;, &quot;No. 462&quot;, &quot;Peatland&quot;, &quot;No. 475&quot;, &quot;Wisconsin No. 38&quot;], 
+    sites=[&quot;University Farm&quot;, &quot;Waseca&quot;, &quot;Morris&quot;, &quot;Crookston&quot;, &quot;Grand Rapids&quot;, &quot;Duluth&quot;],
+    years=[1931,1932];</pre>
+<p>And by the way, it is very possible to create these arrays out of the original array using the map() method or equivalent.</p>
+<p>how can we create an equivalent structure?<br />
+we start like the above:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">vis.add(pv.Panel)
+     .data(yields)</pre>
+<p>Likewise, our 3-dimensional array is really an array of 10 arrays of 2 arrays of 6 elements. So we are also creating 10 panels. Let&#8217;s continue and create panels for the years:</p>
+<pre class="brush: jscript; first-line: 3; highlight: [4]; title: ; notranslate" title="">.add(pv.Panel)
+    .data(function(d) d)</pre>
+<p>To drill down one level in an array, you have to use this form. you say that you are giving the children of your object what&#8217;s inside the data property of their parent. </p>
+<p>So naturally, you follow by</p>
+<pre class="brush: jscript; first-line: 5; highlight: [6]; title: ; notranslate" title="">.add(pv.Bar)
+    .data(function(d) d)</pre>
+<p>now how you style your bars will be slightly different than before. What you passed your first panel was an array of yields. So that&#8217;s what you get now from your data. If you want something else, you&#8217;ll have to get it with this.index for instance.</p>
+<pre class="brush: jscript; first-line: 7; title: ; notranslate" title="">    .height(function(d) d) // that's the yield
+    .add(pv.Label).text(function() varieties[this.index])</pre>
+<p>All in all it&#8217;s trickier to work with arrays. The code is less explicit, and if you change one array even by accident, you&#8217;ll have to check that others are still synchronized. But it could make your vis much faster.</p>
+<h3>Aggregating</h3>
+<p>Sometimes, what you want out of an array is not a more complex array, but a simpler list of numbers. For instance, what if you could obtain the sum of all the values in the array for such or such property? This is also possible in protovis, and in fact, it looks a lot like what we&#8217;ve done. The difference is that instead of using the method entries(), we will use the method rollup().</p>
+<p>Let&#8217;s suppose we have a flat array that looks like this: these are scores of students on 3 exams. </p>
+<pre class="brush: jscript; light: true; title: ; notranslate" title="">var scores=[
+{student:&quot;Adam&quot;, exam:1, score: 77},
+{student:&quot;Adam&quot;, exam:2, score: 34},
+{student:&quot;Adam&quot;, exam:3, score: 85},
+{student:&quot;Barbara&quot;, exam:1, score: 92},
+{student:&quot;Barbara&quot;, exam:2, score: 68},
+{student:&quot;Barbara&quot;, exam:3, score: 97},
+{student:&quot;Connor&quot;, exam:1, score: 84},
+{student:&quot;Connor&quot;, exam:2, score: 54},
+{student:&quot;Connor&quot;, exam:3, score: 37},
+{student:&quot;Daniela&quot;, exam:1, score: 61},
+{student:&quot;Daniela&quot;, exam:2, score: 58},
+{student:&quot;Daniela&quot;, exam:3, score: 64}
+]</pre>
+<p>Now, we would like to get, in one simple object, the average for each student.<br />
+We know we could reshape the array if we wanted by using pv.Nest and entries(): </p>
+<pre class="brush: jscript; title: ; notranslate" title="">pv.nest(scores).key(function(d) d.student).entries()</pre>
+<p>This would be something of the shape: </p>
+<pre class="brush: jscript; light: true; title: ; notranslate" title="">
+[{key:&quot;Adam&quot;, values:[
+    {exam:1, score: 77, student: &quot;Adam&quot;},
+    {exam:2, score: 34, student: &quot;Adam&quot;},
+    {exam:3, score: 85, student: &quot;Adam&quot;}
+    ]
+  },
+  {key:&quot;Barbara&quot;, values:[
+    {exam:1, score: 92, student: &quot;Barbara&quot;},
+    {exam:2, score: 68, student: &quot;Barbara&quot;},
+    {exam:3, score: 97, student: &quot;Barbara&quot;}
+   ]
+  },
+etc.
+</pre>
+<p>Useful, for instance, if we&#8217;d want to chart the progress of each student separately. </p>
+<p>Now if instead of using entries() at the end, we use rollup(), we could get this: </p>
+<pre class="brush: jscript; light: true; title: ; notranslate" title="">{
+Adam: 65.33333333333333
+Barbara: 85.66666666666667
+Connor: 58.333333333333336
+Daniela: 61}
+</pre>
+<p>The exact statement is </p>
+<pre class="brush: jscript; title: ; notranslate" title="">pv.nest(scores)
+  .key(function(d) d.student)
+  .rollup(function(data) pv.mean(data, function(d) d.score))</pre>
+<p>To understand how this works, it helps to visualize what the pv.nest would have returned if we had asked for entries.<br />
+What rollup does is that it would go through each of the values that correspond to the keys, and return one aggregate value, depending on the function. </p>
+<p>For the first student, &#8220;Adam&#8221;, the corresponding values array is like this: </p>
+<pre class="brush: jscript; light: true; title: ; notranslate" title="">[
+    {exam:1, score: 77, student: &quot;Adam&quot;},
+    {exam:2, score: 34, student: &quot;Adam&quot;},
+    {exam:3, score: 85, student: &quot;Adam&quot;}
+    ]</pre>
+<p>so rollup will just look at each element of this array and apply the function.<br />
+This is what (data) in &#8220;function(data)&#8221; corresponds to.<br />
+Next, we tell protovis what to do with these elements. Here, we are interested in the average, so we take pv.mean (not pv.average, <a href="http://www.jeromecukier.net/?p=494">remember</a>?)<br />
+However, we can&#8217;t directly compute the average of an array of associative arrays &#8211; we must tell protovis exactly what to average. This is why we use an accessor function, function(d) d.score.</p>
+<p>Of course, pv.mean used in this example can be replaced by just about any function.</p>
+<p>In the name of clarity, especially if there is only one property that can be aggregated, you can declare a function outside of the rollup() method. This is useful if you are going to aggregate your array by different dimensions:</p>
+<pre class="brush: jscript; title: ; notranslate" title="">function meanScore(data) pv.mean(data, function(d) d.score);
+var avgStudent=pv.nest(scores)
+  .key(function(d) d.student)
+  .rollup(meanScore);
+var avgExam=pv.nest(scores)
+  .key(function(d) d.exam)
+  .rollup(meanScore);</pre>
+<h3>Flattening</h3>
+<p>Protovis also provides methods that turn a &#8220;nested&#8221; array back into a flat array. And methods that turn a normal array into a tree.<br />
+The main advantage of having a flat array is that you can nest it in a different way. This is useful, for instance, if you got your data in a nested form that doesn&#8217;t work for you. Likewise, a tree is easier to reshape in protovis than an array.</p>
+<p>To create a flat array out of a nested one, you have to use pv.flatten and specify all the keys of the array and conclude by array().</p>
+<pre class="brush: jscript; light: true; title: ; notranslate" title="">barley=pv.flatten(barley).key(&quot;variety&quot;).key(&quot;site&quot;).key(&quot;year&quot;).key(&quot;yield&quot;).array()</pre>
+<p>It&#8217;s important to note that you need to specify all the keys, not just the keys that correspond to actual nesting. So again, if you start from a flat array, and you do</p>
+<pre class="brush: jscript; light: true; title: ; notranslate" title="">barley=pv.nest(barley).key(&quot;variety&quot;).entries()</pre>
+<p>to reverse this, you&#8217;ll have to enter the full formula, using key four times:</p>
+<pre class="brush: jscript; light: true; title: ; notranslate" title="">barley=pv.flatten(barley).key(&quot;variety&quot;).key(&quot;site&quot;).key(&quot;year&quot;).key(&quot;yield&quot;).array()</pre>
+<p>Finally, pv.tree &#8211; well, I haven&#8217;t seen this method used outside the <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Tree.html">documentation</a>. It&#8217;s not used in any live example, not covered by any question in the forum, and I haven&#8217;t found any trace of it in the internet. So I&#8217;d rather leave you with the explanation in the documentation which is fairly clear than come up with my own. If you find yourself in a situation like in the documentation, where you have a flat array of associative arrays, which have a property that could be interpreted as a hierarchy, then you could use this method to turn your array in something more useful to protovis.</p>
+<h3>Putting it all together</h3>
+<p>Instead of coming up with a specific new example for this section I refer you to my explanation of the <a href="http://www.jeromecukier.net/?p=534">Becker&#8217;s Barley example</a>.<br />
+On the same subject, see a comparison of how to <a href="http://www.jeromecukier.net/?p=550">re-create Becker&#8217;s Barley with protovis and Tableau</a></p>
+<p>next: <a href="http://www.jeromecukier.net/?p=623">working with layouts</a></p>
+	    		<div class="clear">&nbsp;</div>
+	</section>
+</article><!-- #post-## -->
+			
+				<nav class="pagination navigation paging-navigation" role="navigation">
+		<div class="nav-links">
+						<div class="older-posts"><a href="/category/charts/page/2/" >Older Posts <span class="meta-nav">&rarr;</span></a></div>
+							<div class="page-number">Page 1 of 3</div>
+			
+		</div><!-- .nav-links -->
+	</nav><!-- .navigation -->
+	
+		
+		</main><!-- #main -->
+	</section><!-- #primary -->
+
+	<div id="secondary" class="widget-area" role="complementary">
+		<aside id="search-2" class="widget widget_search"><form role="search" method="get" class="search-form" action="/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit" value="Search" />
+			</form></aside>		<aside id="recent-posts-2" class="widget widget_recent_entries">		<h1 class="widget-title">Recent Posts</h1>		<ul>
+					<li>
+				<a href="/2018/04/09/hello-world/">Hello world!</a>
+						</li>
+					<li>
+				<a href="/2016/08/17/the-big-leagues/">The big leagues</a>
+						</li>
+					<li>
+				<a href="/2016/08/17/creating-a-react-visualization-web-app/">Creating a React visualization web app</a>
+						</li>
+					<li>
+				<a href="/2016/08/13/beyond-rendering/">Beyond rendering</a>
+						</li>
+					<li>
+				<a href="/2016/08/11/react-components/">React components</a>
+						</li>
+				</ul>
+		</aside>		<aside id="recent-comments-2" class="widget widget_recent_comments"><h1 class="widget-title">Recent Comments</h1><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link"><a href='https://wordpress.org/' rel='external nofollow' class='url'>A WordPress Commenter</a></span> on <a href="/2018/04/09/hello-world/#comment-1">Hello world!</a></li><li class="recentcomments"><span class="comment-author-link"><a href='http://omeraz.wordpress.com/' rel='external nofollow' class='url'>עומר עזריאל</a></span> on <a href="/2016/08/17/the-big-leagues/#comment-567">The big leagues</a></li><li class="recentcomments"><span class="comment-author-link">Carlos Ayres</span> on <a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-312">Manipulating data like a boss with d3</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://migrate.powertripanalytics.com/game-of-thrones-interactions-among-the-top-30-characters/' rel='external nofollow' class='url'>Game of ThronesInteractions Among the Top 30 Characters &#8211; PowerTrip Analytics</a></span> on <a href="/2013/05/13/making-the-game-of-thrones-visualization/#comment-466">Making the game of thrones visualization</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://abgoswam.wordpress.com/2016/10/08/d3-getting-started/' rel='external nofollow' class='url'>D3 &#8211; Getting Started | abgoswam&#039;s tech blog</a></span> on <a href="/2012/09/04/getting-to-hello-world-with-d3/#comment-419">Getting to &#8220;Hello world&#8221; with d3</a></li></ul></aside><aside id="archives-2" class="widget widget_archive"><h1 class="widget-title">Archives</h1>		<ul>
+			<li><a href='/2018/04/'>April 2018</a></li>
+	<li><a href='/2016/08/'>August 2016</a></li>
+	<li><a href='/2015/05/'>May 2015</a></li>
+	<li><a href='/2015/02/'>February 2015</a></li>
+	<li><a href='/2014/10/'>October 2014</a></li>
+	<li><a href='/2013/11/'>November 2013</a></li>
+	<li><a href='/2013/05/'>May 2013</a></li>
+	<li><a href='/2013/03/'>March 2013</a></li>
+	<li><a href='/2013/01/'>January 2013</a></li>
+	<li><a href='/2012/12/'>December 2012</a></li>
+	<li><a href='/2012/11/'>November 2012</a></li>
+	<li><a href='/2012/10/'>October 2012</a></li>
+	<li><a href='/2012/09/'>September 2012</a></li>
+	<li><a href='/2012/07/'>July 2012</a></li>
+	<li><a href='/2012/06/'>June 2012</a></li>
+	<li><a href='/2012/05/'>May 2012</a></li>
+	<li><a href='/2012/04/'>April 2012</a></li>
+	<li><a href='/2012/01/'>January 2012</a></li>
+	<li><a href='/2011/11/'>November 2011</a></li>
+	<li><a href='/2011/10/'>October 2011</a></li>
+	<li><a href='/2011/09/'>September 2011</a></li>
+	<li><a href='/2011/08/'>August 2011</a></li>
+	<li><a href='/2011/07/'>July 2011</a></li>
+	<li><a href='/2011/06/'>June 2011</a></li>
+	<li><a href='/2011/05/'>May 2011</a></li>
+	<li><a href='/2011/04/'>April 2011</a></li>
+	<li><a href='/2011/03/'>March 2011</a></li>
+	<li><a href='/2011/02/'>February 2011</a></li>
+	<li><a href='/2011/01/'>January 2011</a></li>
+	<li><a href='/2010/11/'>November 2010</a></li>
+	<li><a href='/2010/04/'>April 2010</a></li>
+	<li><a href='/2010/03/'>March 2010</a></li>
+	<li><a href='/2010/02/'>February 2010</a></li>
+	<li><a href='/2010/01/'>January 2010</a></li>
+	<li><a href='/2009/12/'>December 2009</a></li>
+	<li><a href='/2009/10/'>October 2009</a></li>
+	<li><a href='/2009/09/'>September 2009</a></li>
+	<li><a href='/2009/08/'>August 2009</a></li>
+	<li><a href='/2009/07/'>July 2009</a></li>
+	<li><a href='/2009/06/'>June 2009</a></li>
+	<li><a href='/2009/05/'>May 2009</a></li>
+	<li><a href='/2008/12/'>December 2008</a></li>
+	<li><a href='/2008/11/'>November 2008</a></li>
+	<li><a href='/2008/10/'>October 2008</a></li>
+		</ul>
+		</aside><aside id="categories-2" class="widget widget_categories"><h1 class="widget-title">Categories</h1>		<ul>
+	<li class="cat-item cat-item-2"><a href="/category/book-review/" >book review</a>
+</li>
+	<li class="cat-item cat-item-3 current-cat"><a href="/category/charts/" >charts</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="/category/conferences/" >conferences</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="/category/d3/" >d3</a>
+</li>
+	<li class="cat-item cat-item-6"><a href="/category/dashboards/" >dashboards</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="/category/data-publishing/" >data publishing</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="/category/data-visualization/" >data visualization</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="/category/francais/" >français</a>
+</li>
+	<li class="cat-item cat-item-10"><a href="/category/javascript/" >javascript</a>
+</li>
+	<li class="cat-item cat-item-11"><a href="/category/presentation/" >presentation</a>
+</li>
+	<li class="cat-item cat-item-12"><a href="/category/protovis/" >protovis</a>
+</li>
+	<li class="cat-item cat-item-13"><a href="/category/react/" >react</a>
+</li>
+	<li class="cat-item cat-item-14"><a href="/category/tips/" >tips</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="/category/uncategorized/" >Uncategorized</a>
+</li>
+	<li class="cat-item cat-item-15"><a href="/category/web-sites/" >web sites</a>
+</li>
+		</ul>
+</aside><aside id="meta-2" class="widget widget_meta"><h1 class="widget-title">Meta</h1>			<ul>
+						<li><a href="/wp-login.php">Log in</a></li>
+			<li><a href="/feed/">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="/comments/feed/">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>			</ul>
+			</aside>		<div class="clear">&nbsp;</div>
+	</div><!-- #secondary -->
+	<footer id="colophon" class="site-footer" role="contentinfo">
+	    <a class="subscribe icon-feed" href="/feed/"><span class="tooltip">Subscribe!</span></a>
+		<div class="site-info inner">
+		    <section class="copyright">
+		    			    		<a href="https://github.com/lacymorrow/casper" rel="home">Casper WP</a> by Lacy Morrow		    			    </section>
+		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+</main><!-- /#content -->
+
+<script type='text/javascript' src='/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js?ver=3.0.9b'></script>
+<script type='text/javascript' src='/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushJScript.js?ver=3.0.9b'></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "http://localhost:8888/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "http://localhost:8888/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+<script type='text/javascript' src='/wp-content/themes/casper/js/main.js?ver=1.0.0'></script>
+<script type='text/javascript' src='/wp-includes/js/wp-embed.min.js?ver=4.6.10'></script>
+<!--stats_footer_test--></body>
+</html>

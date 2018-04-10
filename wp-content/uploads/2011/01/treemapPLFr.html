@@ -1,0 +1,274 @@
+<html><head>
+<script type="text/javascript" src="http://blog.oecdfactblog.org/wp-includes/js/protovis-r3.2.js"></script>
+    <script type="text/javascript" src="/wp-content/uploads/2011/01/PLF2011.js"></script>
+    <style type="text/css">
+
+
+#fig {
+  width: 100%;
+}
+
+#footer {
+  font: 24pt helvetica neue;
+  color: #666;
+}
+
+input {
+  font: 24pt helvetica neue;
+  background: none;
+  border: none;
+  outline: 0;
+}
+
+#title {
+  font: 24pt Verdana, Tahoma, sans serif;
+  float: right;
+  text-align: right;
+  margin-right:10px;
+}
+#title1 {
+  font: 24pt Verdana, Tahoma, sans serif;
+  float: left;
+  text-align: left;
+  margin-left:10px;
+}
+body {font: 10pt Verdana, Tahoma, sans serif;}
+    </style>
+  </head>
+  <body><div id="center"><div id="fig">
+	<div id="title1">Recettes de l'État</div>
+    <div id="title"></div>
+    <script type="text/javascript+protovis">
+    var myFont="10pt Verdana, Tahoma, sans serif";
+var tm=
+{								// recettes
+ 0:{
+  1:{
+    2:{3:59539},
+    4:{5:6032},
+    6:{7:56654},
+    8:{9:519, 10:4864, 11:3928,12:35,13:101,14:15,15:25,16:41,17:767},
+    18:{19:14155},
+    20:{21:175056},
+    22:{23:414,24:168,25:14,26:800,27:6950,28:340,29:261,30:140,31:145,32:294,33:6,34:70,35:221,36:25,37:342,38:174,39:4,40:71,41:57,42:30,43:75,44:689,45:24,46:1887,47:714,48:532,49:129,50:62,51:163}
+  },
+  52:{
+    53:{54:3329,55:372,56:4200},
+    57:{58:260,59:60,60:42,61:256,62:1131,63:60,64:1,65:35},
+    66:{67:463,68:518,69:80,70:3,71:205,72:20},
+    73:{74:514,75:4,76:31,77:291,78:230,79:11,80:3,81:30},
+    82:{83:441,84:250,85:50,86:25,87:339,88:120,89:12,90:3,91:6},
+    92:{93:600,94:1230,95:119,96:115,97:17,98:418,99:82,100:32,101:8,102:7,103:3,104:43,105:270,106:38,107:50,108:48,109:4,110:5,111:190,112:39,113:160}
+  }
+ }
+};
+
+var details=[{id: 0, lvl:0, label: "Total des recettes brutes", a:0, c: 353406999000, cA: 0, cC: 1},
+{id: 1, lvl:1, label: "1. Recettes fiscales", a:0, c: 336534002000, cA: 0, cC: 1},
+{id: 2, lvl:2, label: "11. Impôt sur le revenu", a:0, c: 59539000000, cA: 0, cC: 1},
+{id: 3, lvl:3, label: "1101 Impôt sur le revenu", a:0, c: 59539000000, cA: 0, cC: 1},
+{id: 4, lvl:2, label: "12. Autres impôts directs perçus par voie d’émission de rôles", a:0, c: 6032230000, cA: 0, cC: 1},
+{id: 5, lvl:3, label: "1201 Autres impôts directs perçus par voie d’émission de rôles", a:0, c: 6032230000, cA: 0, cC: 1},
+{id: 6, lvl:2, label: "13. Impôt sur les sociétés", a:0, c: 56654218000, cA: 0, cC: 1},
+{id: 7, lvl:3, label: "1301 Impôt sur les sociétés", a:0, c: 56654218000, cA: 0, cC: 1},
+{id: 8, lvl:2, label: "14. Autres impôts directs et taxes assimilées", a:0, c: 10295593000, cA: 0, cC: 1},
+{id: 9, lvl:3, label: "1401 Retenues à la source sur certains bénéfices non commerciaux et de l’impôt sur le revenu", a:0, c: 519100000, cA: 0, cC: 1},
+{id: 10, lvl:3, label: "1402 Retenues à la source et prélèvements sur les revenus de capitaux mobiliers et le prélèvement sur les bons anonymes", a:0, c: 4864000000, cA: 0, cC: 1},
+{id: 11, lvl:3, label: "1406 Impôt de solidarité sur la fortune", a:0, c: 3928000000, cA: 0, cC: 1},
+{id: 12, lvl:3, label: "1407 Taxe sur les locaux à usage de bureaux, les locaux commerciaux et de stockage", a:0, c: 35000000, cA: 0, cC: 1},
+{id: 13, lvl:3, label: "1408 Prélèvements sur les entreprises d’assurance", a:0, c: 101353000, cA: 0, cC: 1},
+{id: 14, lvl:3, label: "1411 Cotisations perçues au titre de la participation des employeurs à l’effort de construction", a:0, c: 15000000, cA: 0, cC: 1},
+{id: 15, lvl:3, label: "1412 Taxe de participation des employeurs au financement de la formation professionnelle continue", a:0, c: 25000000, cA: 0, cC: 1},
+{id: 16, lvl:3, label: "1413 Taxe forfaitaire sur les métaux précieux, les bijoux, les objets d’art, de collection et d’antiquité", a:0, c: 41140000, cA: 0, cC: 1},
+{id: 17, lvl:3, label: "1499 Recettes diverses", a:0, c: 767000000, cA: 0, cC: 1},
+{id: 18, lvl:2, label: "15. Taxe intérieure sur les produits pétroliers", a:0, c: 14154845000, cA: 0, cC: 1},
+{id: 19, lvl:3, label: "1501 Taxe intérieure sur les produits pétroliers", a:0, c: 14154845000, cA: 0, cC: 1},
+{id: 20, lvl:2, label: "16. Taxe sur la valeur ajoutée", a:0, c: 175056216000, cA: 0, cC: 1},
+{id: 21, lvl:3, label: "1601 Taxe sur la valeur ajoutée", a:0, c: 175056216000, cA: 0, cC: 1},
+{id: 22, lvl:2, label: "17. Enregistrement, timbre, autres contributions et taxes indirectes", a:0, c: 14801900000, cA: 0, cC: 1},
+{id: 23, lvl:3, label: "1701 Mutations à titre onéreux de créances, rentes, prix d’offices", a:0, c: 413955000, cA: 0, cC: 1},
+{id: 24, lvl:3, label: "1702 Mutations à titre onéreux de fonds de commerce", a:0, c: 168000000, cA: 0, cC: 1},
+{id: 25, lvl:3, label: "1704 Mutations à titre onéreux d’immeubles et droits immobiliers", a:0, c: 14346000, cA: 0, cC: 1},
+{id: 26, lvl:3, label: "1705 Mutations à titre gratuit entre vifs (donations)", a:0, c: 799727000, cA: 0, cC: 1},
+{id: 27, lvl:3, label: "1706 Mutations à titre gratuit par décès", a:0, c: 6950000000, cA: 0, cC: 1},
+{id: 28, lvl:3, label: "1711 Autres conventions et actes civils", a:0, c: 340000000, cA: 0, cC: 1},
+{id: 29, lvl:3, label: "1713 Taxe de publicité foncière", a:0, c: 261482000, cA: 0, cC: 1},
+{id: 30, lvl:3, label: "1716 Recettes diverses et pénalités", a:0, c: 139590000, cA: 0, cC: 1},
+{id: 31, lvl:3, label: "1721 Timbre unique", a:0, c: 145000000, cA: 0, cC: 1},
+{id: 32, lvl:3, label: "1753 Autres taxes intérieures", a:0, c: 294347000, cA: 0, cC: 1},
+{id: 33, lvl:3, label: "1754 Autres droits et recettes accessoires", a:0, c: 6000000, cA: 0, cC: 1},
+{id: 34, lvl:3, label: "1755 Amendes et confiscations", a:0, c: 70000000, cA: 0, cC: 1},
+{id: 35, lvl:3, label: "1756 Taxe générale sur les activités polluantes", a:0, c: 221000000, cA: 0, cC: 1},
+{id: 36, lvl:3, label: "1758 Droit de licence sur la rémunération des débitants de tabacs", a:0, c: 25000000, cA: 0, cC: 1},
+{id: 37, lvl:3, label: "1761 Taxe et droits de consommation sur les tabacs", a:0, c: 342049000, cA: 0, cC: 1},
+{id: 38, lvl:3, label: "1768 Taxe spéciale sur certains véhicules routiers", a:0, c: 174000000, cA: 0, cC: 1},
+{id: 39, lvl:3, label: "1769 Autres droits et recettes à différents titres", a:0, c: 4080000, cA: 0, cC: 1},
+{id: 40, lvl:3, label: "1774 Taxe spéciale sur la publicité télévisée", a:0, c: 70573000, cA: 0, cC: 1},
+{id: 41, lvl:3, label: "1776 Redevances sanitaires d’abattage et de découpage", a:0, c: 57000000, cA: 0, cC: 1},
+{id: 42, lvl:3, label: "1777 Taxe sur certaines dépenses de publicité", a:0, c: 30000000, cA: 0, cC: 1},
+{id: 43, lvl:3, label: "1780 Taxe de l’aviation civile", a:0, c: 75455000, cA: 0, cC: 1},
+{id: 44, lvl:3, label: "1781 Taxe sur les installations nucléaires de base", a:0, c: 689000000, cA: 0, cC: 1},
+{id: 45, lvl:3, label: "1782 Taxes sur les stations et liaisons radioélectriques privées", a:0, c: 24136000, cA: 0, cC: 1},
+{id: 46, lvl:3, label: "1785 Produits des jeux exploités par la Française des jeux (hors paris sportifs)", a:0, c: 1887033000, cA: 0, cC: 1},
+{id: 47, lvl:3, label: "1786 Prélèvements sur le produit des jeux dans les casinos", a:0, c: 713688000, cA: 0, cC: 1},
+{id: 48, lvl:3, label: "1787 Prélèvement sur le produit brut des paris hippiques", a:0, c: 532464000, cA: 0, cC: 1},
+{id: 49, lvl:3, label: "1788 Prélèvement sur les paris sportifs", a:0, c: 128696000, cA: 0, cC: 1},
+{id: 50, lvl:3, label: "1789 Prélèvement sur les jeux de cercle en ligne", a:0, c: 62208000, cA: 0, cC: 1},
+{id: 51, lvl:3, label: "1799 Autres taxes", a:0, c: 163071000, cA: 0, cC: 1},
+{id: 52, lvl:1, label: "2. Recettes non fiscales", a:0, c: 16872997000000, cA: 0, cC: 1},
+{id: 53, lvl:2, label: "21. Dividendes et recettes assimilées", a:0, c: 7901000000, cA: 0, cC: 1},
+{id: 54, lvl:3, label: "2110 Produits des participations de l’État dans des entreprises financières", a:0, c: 3329000000, cA: 0, cC: 1},
+{id: 55, lvl:3, label: "2111 Contribution de la Caisse des dépôts et consignations représentative de l’impôt sur les sociétés", a:0, c: 372000000, cA: 0, cC: 1},
+{id: 56, lvl:3, label: "2116 Produits des participations de l’État dans des entreprises non financières et bénéfices des établissements publics non financiers", a:0, c: 4200000000, cA: 0, cC: 1},
+{id: 57, lvl:2, label: "22. Produits du domaine de l’État", a:0, c: 1845000000, cA: 0, cC: 1},
+{id: 58, lvl:3, label: "2201 Revenus du domaine public non militaire", a:0, c: 260000000, cA: 0, cC: 1},
+{id: 59, lvl:3, label: "2202 Autres revenus du domaine public", a:0, c: 60000000, cA: 0, cC: 1},
+{id: 60, lvl:3, label: "2203 Revenus du domaine privé", a:0, c: 42000000, cA: 0, cC: 1},
+{id: 61, lvl:3, label: "2204 Redevances d’usage des fréquences radioélectriques", a:0, c: 256000000, cA: 0, cC: 1},
+{id: 62, lvl:3, label: "2209 Paiement par les administrations de leurs loyers budgétaires", a:0, c: 1131000000, cA: 0, cC: 1},
+{id: 63, lvl:3, label: "2211 Produit de la cession d’éléments du patrimoine immobilier de l’État", a:0, c: 60000000, cA: 0, cC: 1},
+{id: 64, lvl:3, label: "2212 Autres produits de cessions d’actifs", a:0, c: 1000000, cA: 0, cC: 1},
+{id: 65, lvl:3, label: "2299 Autres revenus du Domaine", a:0, c: 35000000, cA: 0, cC: 1},
+{id: 66, lvl:2, label: "23. Produits de la vente de biens et services", a:0, c: 1289000000, cA: 0, cC: 1},
+{id: 67, lvl:3, label: "2301 Remboursement par l’Union européenne des frais d’assiette et de perception des impôts et taxes perçus au profit de son budget", a:0, c: 463000000, cA: 0, cC: 1},
+{id: 68, lvl:3, label: "2303 Autres frais d’assiette et de recouvrement", a:0, c: 518000000, cA: 0, cC: 1},
+{id: 69, lvl:3, label: "2304 Rémunération des prestations assurées par les services du Trésor Public au titre de la collecte de l’épargne", a:0, c: 80000000, cA: 0, cC: 1},
+{id: 70, lvl:3, label: "2305 Produits de la vente de divers biens", a:0, c: 3000000, cA: 0, cC: 1},
+{id: 71, lvl:3, label: "2306 Produits de la vente de divers services", a:0, c: 205000000, cA: 0, cC: 1},
+{id: 72, lvl:3, label: "2399 Autres recettes diverses", a:0, c: 20000000, cA: 0, cC: 1},
+{id: 73, lvl:2, label: "24. Remboursements et intérêts des prêts, avances et autres immobilisations financières", a:0, c: 1114000000, cA: 0, cC: 1},
+{id: 74, lvl:3, label: "2401 Intérêts des prêts à des banques et à des Etats étrangers", a:0, c: 514000000, cA: 0, cC: 1},
+{id: 75, lvl:3, label: "2402 Intérêts des prêts du fonds de développement économique et social", a:0, c: 4000000, cA: 0, cC: 1},
+{id: 76, lvl:3, label: "2403 Intérêts des avances à divers services de l’Etat ou organismes gérant des services publics", a:0, c: 31000000, cA: 0, cC: 1},
+{id: 77, lvl:3, label: "2409 Intérêts des autres prêts et avances", a:0, c: 291000000, cA: 0, cC: 1},
+{id: 78, lvl:3, label: "2411 Avances remboursables sous conditions consenties à l’aviation civile", a:0, c: 230000000, cA: 0, cC: 1},
+{id: 79, lvl:3, label: "2412 Autres avances remboursables sous conditions", a:0, c: 11000000, cA: 0, cC: 1},
+{id: 80, lvl:3, label: "2413 Reversement au titre des créances garanties par l’Etat", a:0, c: 3000000, cA: 0, cC: 1},
+{id: 81, lvl:3, label: "2499 Autres remboursements d’avances, de prêts et d’autres créances immobilisées", a:0, c: 30000000, cA: 0, cC: 1},
+{id: 82, lvl:2, label: "25. Amendes, sanctions, pénalités et frais de poursuites", a:0, c: 1245997000, cA: 0, cC: 1},
+{id: 83, lvl:3, label: "2501 Produits des amendes de la police de la circulation et du stationnement routiers", a:0, c: 440817000, cA: 0, cC: 1},
+{id: 84, lvl:3, label: "2502 Produits des amendes prononcées par les autorités de la concurrence", a:0, c: 250000000, cA: 0, cC: 1},
+{id: 85, lvl:3, label: "2503 Produits des amendes prononcées par les autres autorités administratives indépendantes", a:0, c: 50000000, cA: 0, cC: 1},
+{id: 86, lvl:3, label: "2504 Recouvrements poursuivis à l’initiative de l’agence judiciaire du Trésor", a:0, c: 25000000, cA: 0, cC: 1},
+{id: 87, lvl:3, label: "2505 Produit des autres amendes et condamnations pécuniaires", a:0, c: 339180000, cA: 0, cC: 1},
+{id: 88, lvl:3, label: "2510 Frais de poursuite", a:0, c: 120000000, cA: 0, cC: 1},
+{id: 89, lvl:3, label: "2511 Frais de justice et d’instance", a:0, c: 12000000, cA: 0, cC: 1},
+{id: 90, lvl:3, label: "2512 Intérêts moratoires", a:0, c: 3000000, cA: 0, cC: 1},
+{id: 91, lvl:3, label: "2513 Pénalités", a:0, c: 6000000, cA: 0, cC: 1},
+{id: 92, lvl:2, label: "26. Divers", a:0, c: 3478000000, cA: 0, cC: 1},
+{id: 93, lvl:3, label: "2602 Reversements de la Compagnie française d’assurance pour le commerce extérieur", a:0, c: 600000000, cA: 0, cC: 1},
+{id: 94, lvl:3, label: "2603 Prélèvements sur les fonds d’épargne gérés par la Caisse des Dépôts et Consignations", a:0, c: 1230000000, cA: 0, cC: 1},
+{id: 95, lvl:3, label: "2604 Divers produits de la rémunération de la garantie de l’Etat", a:0, c: 119000000, cA: 0, cC: 1},
+{id: 96, lvl:3, label: "2611 Produits des chancelleries diplomatiques et consulaires", a:0, c: 115000000, cA: 0, cC: 1},
+{id: 97, lvl:3, label: "2612 Redevances et divers produits pour frais de contrôle et de gestion", a:0, c: 17000000, cA: 0, cC: 1},
+{id: 98, lvl:3, label: "2613 Prélèvement effectué sur les salaires des conservateurs des hypothèques", a:0, c: 418000000, cA: 0, cC: 1},
+{id: 99, lvl:3, label: "2614 Prélèvements effectués dans le cadre de la directive épargne", a:0, c: 82000000, cA: 0, cC: 1},
+{id: 100, lvl:3, label: "2615 Commissions et frais de trésorerie perçus par l’Etat dans le cadre de son activité régalienne", a:0, c: 32000000, cA: 0, cC: 1},
+{id: 101, lvl:3, label: "2616 Frais d’inscription", a:0, c: 8000000, cA: 0, cC: 1},
+{id: 102, lvl:3, label: "2617 Recouvrement des indemnisations versées par l’Etat au titre des expulsions locatives", a:0, c: 7000000, cA: 0, cC: 1},
+{id: 103, lvl:3, label: "2618 Remboursement des frais de scolarité et accessoires", a:0, c: 3000000, cA: 0, cC: 1},
+{id: 104, lvl:3, label: "2620 Récupération d’indus", a:0, c: 43000000, cA: 0, cC: 1},
+{id: 105, lvl:3, label: "2621 Recouvrements après admission en non-valeur", a:0, c: 270000000, cA: 0, cC: 1},
+{id: 106, lvl:3, label: "2622 Divers versements de l’Union européenne", a:0, c: 38000000, cA: 0, cC: 1},
+{id: 107, lvl:3, label: "2623 Reversements de fonds sur les dépenses des ministères ne donnant pas lieu à rétablissement de crédits", a:0, c: 50000000, cA: 0, cC: 1},
+{id: 108, lvl:3, label: "2624 Intérêts divers (hors immobilisations financières)", a:0, c: 48000000, cA: 0, cC: 1},
+{id: 109, lvl:3, label: "2625 Recettes diverses en provenance de l’étranger", a:0, c: 4000000, cA: 0, cC: 1},
+{id: 110, lvl:3, label: "2626 Remboursement de certaines exonérations de taxe foncière sur les propriétés non bâties (art 109 de la loi de finances pour 1992)", a:0, c: 5000000, cA: 0, cC: 1},
+{id: 111, lvl:3, label: "2697 Recettes accidentelles", a:0, c: 190000000, cA: 0, cC: 1},
+{id: 112, lvl:3, label: "2698 Produits divers", a:0, c: 39000000, cA: 0, cC: 1},
+{id: 113, lvl:3, label: "2699 Autres produits divers", a:0, c: 160000000, cA: 0, cC: 1}]
+
+;
+
+String.prototype.visualLength = function(fontFamily)
+	{
+	    var ruler = document.getElementById("ruler");
+	    ruler.style.font = fontFamily;
+	    ruler.innerHTML = this;
+	    return ruler.offsetWidth;
+	}
+
+/** Computes the full class name of a given node. */
+function title(d) {
+  return d.parentNode ? (title(d.parentNode) + " > " + (d.nodeName>-1?details[d.nodeName].label:"")) : (d.nodeName>-1?details[d.nodeName].label:"");
+}
+
+var re = "",
+    color = pv.Colors.category19().by(function(d) d.parentNode.nodeName)
+    nodes = pv.dom(tm).root("tm").nodes();
+
+var vis = new pv.Panel()
+    .width(function() window.innerWidth - 20)
+    .height(function() window.innerHeight - 100)
+    .margin(.5);
+
+var fill = pv.Scale.linear()
+    .domain(0.8, 1, 2)
+    //.range("#91bfdb", "#ffffbf", "#fc8d59")
+    .range("#67A9CF","#F7F7F7", "#EF8A62")
+    ;
+
+var treemap = vis.add(pv.Layout.Treemap)
+    .nodes(nodes)
+    .paddingTop(20)
+    .round(true);
+
+treemap.node.add(pv.Panel)
+
+	//.strokeStyle(function(d) (d.nodeName>-1)?(details[d.nodeName].lvl<3?"#000":"#fff"):"#fff")
+	//.lineWidth(function(d) (d.nodeName>-1)?(details[d.nodeName].lvl<3?5-details[d.nodeName].lvl:0):0)
+	.fillStyle(function(d) (d.nodeName>-1)?(details[d.nodeName].lvl<3?"#ccc":color(d)):undefined)
+	.visible(function(d) (d.dx>0)&&(d.dy>0))
+	.title(function(d) (d.nodeName>-1)?details[d.nodeName].label+" ("+pv.Format.number().format((details[d.nodeName].c/1000000).toFixed(0))+" mE)":"")
+	.anchor("top").add(pv.Label)
+		.left(0)
+		.textAlign("left").textBaseline("top")
+		.text(function(d) (d.nodeName>-1)?((details[d.nodeName].label)+" ("+pv.Format.number().format((details[d.nodeName].c/1000000000).toFixed(1))+" milliards)").substr(0,d.dx/7):"")
+		.visible(function(d) (d.nodeName>-1)&&(details[d.nodeName].lvl<3)&&(d.dy>20)&&(d.dx>10))
+		.font(myFont)
+	.parent.anchor("center").add(pv.Label).visible(function(d) d.nodeName==11).text("ISF")
+
+;
+
+
+
+
+vis.render();
+
+//** Counts the number of matching classes, updating the title element. */
+function count() {
+  var classes = 0, bytes = 0, total = 0;
+  for (var i = 0; i < nodes.length; i++) {
+    var n = nodes[i];
+    if(n.firstChild) continue;
+    total += n.nodeValue;
+    if (title(n).match(re)) {
+      classes++;
+      bytes += n.nodeValue;
+    }
+  }
+  var percent = bytes / total * 100;
+  document.getElementById("title").innerHTML
+      = classes + " postes; "
+      + (bytes / 1000)  + " milliards";
+}
+
+/** Updates the visualization and count when a new query is entered. */
+function update(query) {
+  if (query != re) {
+    re = new RegExp(query, "i");
+    count();
+    vis.render();
+  }
+}
+
+count();
+
+    </script>
+  </div></div>
+  <span id="ruler"></span>
+  </body>
+
+</html>
+
+

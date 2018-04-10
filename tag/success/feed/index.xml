@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>success &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/success/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>Is data visualization needed?</title>
+		<link>/2008/12/10/is-data-visualization-needed/</link>
+		<comments>/2008/12/10/is-data-visualization-needed/#respond</comments>
+		<pubDate>Wed, 10 Dec 2008 21:48:21 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[applications]]></category>
+		<category><![CDATA[data]]></category>
+		<category><![CDATA[experts]]></category>
+		<category><![CDATA[industries]]></category>
+		<category><![CDATA[jobs]]></category>
+		<category><![CDATA[justification for data visualization]]></category>
+		<category><![CDATA[solving problems]]></category>
+		<category><![CDATA[success]]></category>
+		<category><![CDATA[visual analytics]]></category>
+		<category><![CDATA[why data visualization]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=43</guid>
+		<description><![CDATA[Today, Flowing Data has a post on the jobs in data visualization and gives a list, im my opinion quite restrictive, of the industries that need data visualization specialists &#8211; media, research, design. The truth is, any activity that produce data, which is every activity on  earth, needs a better way to represent and communicate <a class="read-more" href="/2008/12/10/is-data-visualization-needed/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>Today, Flowing Data has a post on the <a href="http://flowingdata.com/2008/12/10/what-jobs-are-there-in-data-visualization/">jobs in data visualization</a> and gives a list, im my opinion quite restrictive, of the industries that need data visualization specialists &#8211; media, research, design.</p>
+<p>The truth is, <strong>any activity that produce data, </strong>which is every activity on  earth, needs a better way to represent and communicate that data. And they also often need a way to engage others through data. This is exactly the mission statement for data visualization.</p>
+<p>As far as I know, areas with the most complex data visualization challenges are sciences, like medicine, physics or meteorology, which use gigantic datasets. Other fields, like finance or even intelligence also demand advanced visualization solution. But really, <strong>all activities handle data, </strong>because they all generate data.</p>
+<p>So <strong>everyone needs data visualization. </strong>But do they need data visualization experts? The answer is a resounding yes, even if they are <strong>not aware of this </strong>yet. Graphical representations are as pervasive as data. Even the most humble of datasets has good chances to be displayed on a graph, more or less happily. By improving the effectiveness of these charts, the impacts on businesses can be tremendous.</p>
+<p>At a higher scale, complex problems can be tackled with data visualization. <a href="http://www.infovis-wiki.net/index.php/Visual_Analytics">Visual analytics</a>, for instance, helps people think with data and visual interfaces. It can help people discover outstanding elements in a large dataset, or hidden relationships between elements, among other things. Possibilities are limitless.</p>
+<p>All in all, there are many situations which need data visualization. When people and businesses will have realized that, finding a jobs for data visualization experts might get easier.</p>
+<p>PS. That reminds me of an <a href="http://www.slackermanager.com/2004/12/im_not_a_progra.html">old post I once read</a> stating that &#8220;deep understanding of [&#8230;] databases is a key skill that too many managers lack.&#8221;- fast forward 4 years, add the visual element and the conclusions are the same, understanding how to show data can really help you go places.</p>
+]]></content:encoded>
+			<wfw:commentRss>/2008/12/10/is-data-visualization-needed/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

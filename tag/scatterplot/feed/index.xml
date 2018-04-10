@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>scatterplot &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/scatterplot/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>Tableau contest 2011</title>
+		<link>/2011/06/03/tableau-contest-2011/</link>
+		<comments>/2011/06/03/tableau-contest-2011/#comments</comments>
+		<pubDate>Fri, 03 Jun 2011 00:17:19 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[2011]]></category>
+		<category><![CDATA[contest]]></category>
+		<category><![CDATA[manhattan]]></category>
+		<category><![CDATA[real estate]]></category>
+		<category><![CDATA[scatterplot]]></category>
+		<category><![CDATA[Tableau]]></category>
+		<category><![CDATA[viz]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=906</guid>
+		<description><![CDATA[Real-estate transactions in ManhattanResidential buildings, 2003-present Powered by Tableau Here is my Tableau contest 2011 entry. The rules stipulated it had to be about business, real-estate or finance, so I chose real-estate. Since everyone loves New-York, and since the data for real-estate transaction is relatively easy to get, that&#8217;s what I show. In order to <a class="read-more" href="/2011/06/03/tableau-contest-2011/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p><script type="text/javascript" src="http://public.tableausoftware.com/javascripts/api/viz_v1.js"></script><object class="tableauViz" width="654" height="719" style="display:none;"><param name="host_url" value="http%3A%2F%2Fpublic.tableausoftware.com%2F" /><param name="name" value="contest2011&#47;Winning" /><param name="tabs" value="no" /><param name="toolbar" value="yes" /><param name="animate_transition" value="yes" /><param name="display_static_image" value="yes" /><param name="display_spinner" value="yes" /><param name="display_overlay" value="yes" /></object><noscript>Real-estate transactions in ManhattanResidential buildings, 2003-present <br /><a href="#"><img alt="Real-estate transactions in ManhattanResidential buildings, 2003-present " src="http:&#47;&#47;public.tableausoftware.com&#47;static&#47;images&#47;co&#47;contest2011&#47;Winning&#47;1_rss.png" height="100%" /></a></noscript>
+<div style="width:654px;height:22px;padding:0px 10px 0px 0px;color:black;font:normal 8pt verdana,helvetica,arial,sans-serif;">
+<div style="float:right; padding-right:8px;"><a href="http://www.tableausoftware.com/public?ref=http://public.tableausoftware.com/views/contest2011/Winning" target="_blank">Powered by Tableau</a></div>
+</div>
+<p>Here is my Tableau contest 2011 entry.<br />
+The rules stipulated it had to be about business, real-estate or finance, so I chose real-estate. Since everyone loves New-York, and since the data for real-estate transaction is <a href="http://www.nyc.gov/html/dof/html/property/property_val_sales.shtml">relatively easy to get</a>, that&#8217;s what I show. In order to be within Tableau Public 100,000 row limit, I chose to show only the residential transactions (apartment buildings or buildings converted to apartment buildings), larger than 100 square foot and sold at at least $1. </p>
+<p>Before I started, I wanted to create a Tableau that would be legible as a static image.<br />
+We tableau tribe have seen a lot of interactive dashboards with sophisticated action. Here, I wanted to cater to the discriminate analyst who gets their kicks from seeing patterns emerge with a glance to 90k datapoints. </p>
+<p>What does it show for instance? well, while the bulk of transactions are at a price close to the average there are a large part which are done considerably below that, and comparatively, very few which are markedly over that.<br />
+The marks which are aligned show either many transactions at the same price (there are distinct $1, $10 and $100 lines for instance) or sales of similar properties. There were a string of sales of identical apartments at 1335 6th Avenue, for instance.</p>
+<p>It&#8217;s possible to switch the function of the Y-axis of the scatterplot, which can either represent square feet or sale price. The largest transaction on the period was around $4 billion, and the largest in terms of area was just above 10m square feet.<br />
+It is also possible to explore through the lists on the right. By selecting &#8220;other types&#8221; of buildings for instance you can see which apartment buildings once were yeshivas or fire stations or (what?) &#8220;detention houses for wayward girls&#8221; (there&#8217;s one in upper east side).<br />
+You can also switch to a <a href="http://public.tableausoftware.com/views/contest2011/WMap">map-based version of this dashboard</a>. Speaking of maps, a right-click on any mark can open a google maps window centered on that address for you.</p>
+<p>So here goes, enjoy the viz and good luck to all contestants</p>
+]]></content:encoded>
+			<wfw:commentRss>/2011/06/03/tableau-contest-2011/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>The top TV earners are not found on tabloids.</title>
+		<link>/2011/02/22/the-top-tv-earners-are-not-found-on-tabloids/</link>
+		<comments>/2011/02/22/the-top-tv-earners-are-not-found-on-tabloids/#comments</comments>
+		<pubDate>Tue, 22 Feb 2011 17:23:48 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[charts]]></category>
+		<category><![CDATA[protovis]]></category>
+		<category><![CDATA[flowing data challenge]]></category>
+		<category><![CDATA[scatterplot]]></category>
+		<category><![CDATA[tv earners]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=681</guid>
+		<description><![CDATA[This is my contribution to Flowing Data challenge: visualize this / top tv earners. When I looked at the dataset provided by Nathan I first wondered what was missing. Quite a few stars were missing in the list. I added Simon Baker whose Mentalist gets a huge audience and who is said to be getting <a class="read-more" href="/2011/02/22/the-top-tv-earners-are-not-found-on-tabloids/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[This is my contribution to Flowing Data challenge: <a href="http://flowingdata.com/2011/02/15/visualize-this-tvs-top-earners/">visualize this / top tv earners</a>.</p>
+<div>
+<script type="text/javascript" src="http://blog.oecdfactblog.org/wp-includes/js/protovis-r3.2.js"></script>
+<script type="text/javascript+protovis">
+var TRUE=true;
+var FALSE=false;
+
+var data=[
+{actor: "William Shatner", show: "$#*! My Dad Says", ppe: 150000, type:"Comedy", viewers:5.2, channel:"cbs",mins:21, ey:18, ppm:7142.85714285714, ppy:2700000, star:TRUE},
+{actor: "Tina Fey", show: "30 Rock", ppe: 350000, type:"Comedy", viewers:2.3, channel:"nbc",mins:21, ey:18.8, ppm:16666.6666666667, ppy:6580000, star:TRUE},
+{actor: "Tom Selleck", show: "Blue Bloods", ppe: 125000, type:"Drama", viewers:11.1, channel:"cbs",mins:45, ey:15, ppm:2777.77777777778, ppy:1875000, star:TRUE},
+{actor: "Dana Delany", show: "Body of Proof", ppe: 150000, type:"Drama", viewers:4, channel:"abc",mins:42, ey:13, ppm:3571.42857142857, ppy:1950000, star:TRUE},
+{actor: "David Boreanaz", show: "Bones", ppe: 200000, type:"Drama", viewers:10.1, channel:"fox",mins:43, ey:20, ppm:4651.16279069767, ppy:4000000, star:TRUE},
+{actor: "Jeffrey Donovan", show: "Burn Notice", ppe: 200000, type:"Drama", viewers:4.8, channel:"usa",mins:42, ey:15.5, ppm:4761.90476190476, ppy:3100000, star:TRUE},
+{actor: "David Duchovny", show: "Californication", ppe: 200000, type:"Comedy", viewers:0.5, channel:"showtime",mins:26, ey:10.75, ppm:7692.30769230769, ppy:2150000, star:TRUE},
+{actor: "Nathan Fillion", show: "Castle", ppe: 100000, type:"Drama", viewers:8.75, channel:"abc",mins:43, ey:16.6666666666667, ppm:2325.58139534884, ppy:1666666.66666667, star:TRUE},
+{actor: "Cole Hauser", show: "Chase", ppe: 100000, type:"Drama", viewers:4.3, channel:"nbc",mins:42, ey:13, ppm:2380.95238095238, ppy:1300000, star:TRUE},
+{actor: "Zachary Levi", show: "Chuck", ppe: 60000, type:"Drama", viewers:5.5, channel:"abc",mins:43, ey:17.5, ppm:1395.3488372093, ppy:1050000, star:TRUE},
+{actor: "Joe Mantegna", show: "Criminal Minds", ppe: 125000, type:"Drama", viewers:12.8, channel:"cbs",mins:45, ey:21.5, ppm:2777.77777777778, ppy:2687500, star:TRUE},
+{actor: "Thomas Gibson", show: "Criminal Minds", ppe: 100000, type:"Drama", viewers:12.8, channel:"cbs",mins:45, ey:21.5, ppm:2222.22222222222, ppy:2150000, star:FALSE},
+{actor: "Marg Helgenberger", show: "CSI", ppe: 375000, type:"Drama", viewers:12.65, channel:"cbs",mins:42, ey:22.1818181818182, ppm:8928.57142857143, ppy:8318181.81818182, star:TRUE},
+{actor: "Laurence Fishburne", show: "CSI", ppe: 350000, type:"Drama", viewers:12.65, channel:"cbs",mins:42, ey:22.1818181818182, ppm:8333.33333333333, ppy:7763636.36363636, star:FALSE},
+{actor: "David Caruso", show: "CSI: Miami", ppe: 375000, type:"Drama", viewers:10.4, channel:"cbs",mins:44, ey:22.6666666666667, ppm:8522.72727272727, ppy:8500000, star:TRUE},
+{actor: "Gary Sinise", show: "CSI: NY", ppe: 275000, type:"Drama", viewers:10.6, channel:"cbs",mins:43, ey:22.1428571428571, ppm:6395.3488372093, ppy:6089285.71428571, star:TRUE},
+{actor: "Marcia Cross", show: "Desperate Housewives", ppe: 400000, type:"Comedy", viewers:10.4, channel:"abc",mins:41, ey:21.2857142857143, ppm:9756.09756097561, ppy:8514285.71428571, star:FALSE},
+{actor: "Felicity Huffman", show: "Desperate Housewives", ppe: 400000, type:"Comedy", viewers:10.4, channel:"abc",mins:41, ey:21.2857142857143, ppm:9756.09756097561, ppy:8514285.71428571, star:FALSE},
+{actor: "Eva Longoria", show: "Desperate Housewives", ppe: 400000, type:"Comedy", viewers:10.4, channel:"abc",mins:41, ey:21.2857142857143, ppm:9756.09756097561, ppy:8514285.71428571, star:FALSE},
+{actor: "Teri Hatcher", show: "Desperate Housewives", ppe: 400000, type:"Comedy", viewers:10.4, channel:"abc",mins:41, ey:21.2857142857143, ppm:9756.09756097561, ppy:8514285.71428571, star:TRUE},
+{actor: "Jeremy Piven", show: "Entourage", ppe: 350000, type:"Comedy", viewers:1.85, channel:"hbo",mins:26, ey:12.5714285714286, ppm:13461.5384615385, ppy:4400000, star:TRUE},
+{actor: "Kevin Dillon", show: "Entourage", ppe: 200000, type:"Comedy", viewers:1.85, channel:"hbo",mins:26, ey:12.5714285714286, ppm:7692.30769230769, ppy:2514285.71428571, star:FALSE},
+{actor: "Adrian Grenier", show: "Entourage", ppe: 200000, type:"Comedy", viewers:1.85, channel:"hbo",mins:26, ey:12.5714285714286, ppm:7692.30769230769, ppy:2514285.71428571, star:FALSE},
+{actor: "Jane Lynch", show: "Glee", ppe: 50000, type:"Comedy", viewers:10.5, channel:"fox",mins:45, ey:17.5, ppm:1111.11111111111, ppy:875000, star:TRUE},
+{actor: "Matthew Morrison", show: "Glee", ppe: 30000, type:"Comedy", viewers:10.5, channel:"fox",mins:45, ey:17.5, ppm:666.666666666667, ppy:525000, star:FALSE},
+{actor: "Patrick Dempsey", show: "Grey's Anatomy", ppe: 250000, type:"Drama", viewers:10.4, channel:"abc",mins:43, ey:20, ppm:5813.95348837209, ppy:5000000, star:TRUE},
+{actor: "Alex O'Loughlin", show: "Hawaii Five-O", ppe: 100000, type:"Drama", viewers:10.6, channel:"cbs",mins:42, ey:18, ppm:2380.95238095238, ppy:1800000, star:TRUE},
+{actor: "Scott Caan", show: "Hawaii Five-O", ppe: 80000, type:"Drama", viewers:10.6, channel:"cbs",mins:42, ey:18, ppm:1904.7619047619, ppy:1440000, star:FALSE},
+{actor: "Jada Pinkett Smith", show: "HawthoRNe", ppe: 150000, type:"Drama", viewers:3.6, channel:"tnt",mins:42, ey:10, ppm:3571.42857142857, ppy:1500000, star:TRUE},
+{actor: "Ashley Tisdale", show: "Hellcats", ppe: 30000, type:"Drama", viewers:1.6, channel:"cw",mins:41, ey:15, ppm:731.707317073171, ppy:450000, star:TRUE},
+{actor: "Ed O'Neil", show: "Hot in Cleveland", ppe: 100000, type:"Comedy", viewers:0.95, channel:"tvl",mins:23, ey:7, ppm:4347.82608695652, ppy:700000, star:TRUE},
+{actor: "Betty White", show: "Hot in Cleveland", ppe: 75000, type:"Comedy", viewers:0.95, channel:"tvl",mins:23, ey:7, ppm:3260.86956521739, ppy:525000, star:FALSE},
+{actor: "Hugh Laurie", show: "House", ppe: 400000, type:"Drama", viewers:9.9, channel:"fox",mins:42, ey:20.7142857142857, ppm:9523.80952380952, ppy:8285714.28571429, star:TRUE},
+{actor: "Miranada Cosgrove", show: "iCarly", ppe: 180000, type:"Comedy", viewers:4.9, channel:"nick",mins:23, ey:19.5, ppm:7826.08695652174, ppy:3510000, star:TRUE},
+{actor: "Timothy Olyphant", show: "Justified", ppe: 100000, type:"Drama", viewers:2.4, channel:"fx",mins:42, ey:7.5, ppm:2380.95238095238, ppy:750000, star:TRUE},
+{actor: "Christopher Meloni", show: "Law & Order: SVU", ppe: 395000, type:"Drama", viewers:17.6, channel:"nbc",mins:42, ey:22.0833333333333, ppm:9404.7619047619, ppy:8722916.66666667, star:TRUE},
+{actor: "Mariska Hargitay", show: "Law & Order: SVU", ppe: 395000, type:"Drama", viewers:17.6, channel:"nbc",mins:42, ey:22.0833333333333, ppm:9404.7619047619, ppy:8722916.66666667, star:FALSE},
+{actor: "Jon Hamm", show: "Mad Men", ppe: 100000, type:"Drama", viewers:2, channel:"amc",mins:47, ey:13, ppm:2127.65957446808, ppy:1300000, star:TRUE},
+{actor: "Jason Lee", show: "Memphis Beat", ppe: 125000, type:"Drama", viewers:3.6, channel:"tnt",mins:43, ey:10, ppm:2906.97674418605, ppy:1250000, star:TRUE},
+{actor: "Ty Burrell", show: "Modern Family", ppe: 50000, type:"Comedy", viewers:6.55, channel:"abc",mins:22, ey:12, ppm:2272.72727272727, ppy:600000, star:TRUE},
+{actor: "Rico Rodriguez", show: "Modern Family", ppe: 15000, type:"Comedy", viewers:6.55, channel:"abc",mins:22, ey:12, ppm:681.818181818182, ppy:180000, star:FALSE},
+{actor: "Mark Harmon", show: "NCIS", ppe: 375000, type:"Drama", viewers:19.5, channel:"cbs",mins:43, ey:22.125, ppm:8720.93023255814, ppy:8296875, star:TRUE},
+{actor: "Michael Weatherly", show: "NCIS", ppe: 125000, type:"Drama", viewers:19.5, channel:"cbs",mins:43, ey:22.125, ppm:2906.97674418605, ppy:2765625, star:FALSE},
+{actor: "LL Cool J", show: "NCIS: Los Angeles", ppe: 125000, type:"Drama", viewers:16.8, channel:"cbs",mins:43, ey:20, ppm:2906.97674418605, ppy:2500000, star:TRUE},
+{actor: "Chris O'Donnell", show: "NCIS: Los Angeles", ppe: 125000, type:"Drama", viewers:16.8, channel:"cbs",mins:43, ey:20, ppm:2906.97674418605, ppy:2500000, star:FALSE},
+{actor: "Edie Falco", show: "Nurse Jackie", ppe: 175000, type:"Comedy", viewers:0.45, channel:"showtime",mins:27, ey:12, ppm:6481.48148148148, ppy:2100000, star:TRUE},
+{actor: "Jimmy Smits", show: "Outlaw", ppe: 150000, type:"Drama", viewers:3.4, channel:"nbc",mins:43, ey:8, ppm:3488.37209302326, ppy:1200000, star:TRUE},
+{actor: "Lauren Graham", show: "Parenthood", ppe: 150000, type:"Drama", viewers:1.9, channel:"nbc",mins:43, ey:14.5, ppm:3488.37209302326, ppy:2175000, star:TRUE},
+{actor: "Denis Leary", show: "Rescue Me", ppe: 350000, type:"Drama", viewers:1.2, channel:"fx",mins:43, ey:14, ppm:8139.53488372093, ppy:4900000, star:TRUE},
+{actor: "Angie Harmon", show: "Rizzoli & Isles", ppe: 75000, type:"Drama", viewers:9, channel:"tnt",mins:45, ey:10, ppm:1666.66666666667, ppy:750000, star:TRUE},
+{actor: "Mark Feuerstein", show: "Royal Pains", ppe: 125000, type:"Drama", viewers:3.9, channel:"usa",mins:42, ey:14.5, ppm:2976.19047619048, ppy:1812500, star:TRUE},
+{actor: "David Spade", show: "Rules of Engagement", ppe: 150000, type:"Comedy", viewers:4.3, channel:"cbs",mins:30, ey:12.6, ppm:5000, ppy:1890000, star:TRUE},
+{actor: "Patrick Warburton", show: "Rules of Engagement", ppe: 85000, type:"Comedy", viewers:4.3, channel:"cbs",mins:30, ey:12.6, ppm:2833.33333333333, ppy:1071000, star:FALSE},
+{actor: "Kaley Cuoco", show: "The Big Bang Theory", ppe: 60000, type:"Comedy", viewers:6.4, channel:"cbs",mins:21, ey:19.75, ppm:2857.14285714286, ppy:1185000, star:TRUE},
+{actor: "Jaonny Galecki", show: "The Big Bang Theory", ppe: 60000, type:"Comedy", viewers:6.4, channel:"cbs",mins:21, ey:19.75, ppm:2857.14285714286, ppy:1185000, star:FALSE},
+{actor: "Jim Parsons", show: "The Big Bang Theory", ppe: 40000, type:"Comedy", viewers:6.4, channel:"cbs",mins:21, ey:19.75, ppm:1904.7619047619, ppy:790000, star:FALSE},
+{actor: "Kyra Sedwick", show: "The Closer", ppe: 350000, type:"Drama", viewers:7.2, channel:"tnt",mins:51, ey:14.6666666666667, ppm:6862.74509803922, ppy:5133333.33333333, star:TRUE},
+{actor: "Blair Underwood", show: "The Event", ppe: 75000, type:"Drama", viewers:5.6, channel:"nbc",mins:43, ey:10, ppm:1744.18604651163, ppy:750000, star:TRUE},
+{actor: "Julianna Margulies", show: "The Good Wife", ppe: 175000, type:"Drama", viewers:11.4, channel:"cbs",mins:43, ey:17, ppm:4069.76744186047, ppy:2975000, star:TRUE},
+{actor: "Simon Baker", show: "the mentalist", ppe: 450000, type:"Drama", viewers:14.75, channel:"cbs",mins:43, ey:20.3333333333333, ppm:10465.1162790698, ppy:9150000, star:TRUE},
+{actor: "Steve Carell", show: "The Office", ppe: 297000, type:"Comedy", viewers:3.45, channel:"nbc",mins:21, ey:20.4285714285714, ppm:14142.8571428571, ppy:6067285.71428571, star:TRUE},
+{actor: "Shailene Woodley", show: "The Secret Life of the American Teenager", ppe: 40000, type:"Drama", viewers:3.2, channel:"abc",mins:45, ey:20.3333333333333, ppm:888.888888888889, ppy:813333.333333333, star:TRUE},
+{actor: "Dan Castellaneta", show: "The Simpsons", ppe: 400000, type:"Comedy", viewers:5, channel:"fox",mins:23, ey:21.7272727272727, ppm:17391.3043478261, ppy:8690909.09090909, star:TRUE},
+{actor: "Julie Kavner", show: "The Simpsons", ppe: 400000, type:"Comedy", viewers:5, channel:"fox",mins:23, ey:21.7272727272727, ppm:17391.3043478261, ppy:8690909.09090909, star:FALSE},
+{actor: "Dylan Sprouse", show: "The Suite Life of Zack and Cody", ppe: 20000, type:"Comedy", viewers:2.5, channel:"disn",mins:22, ey:29, ppm:909.090909090909, ppy:580000, star:TRUE},
+{actor: "Cole Sprouse", show: "The Suite Life of Zack and Cody", ppe: 20000, type:"Comedy", viewers:2.5, channel:"disn",mins:22, ey:29, ppm:909.090909090909, ppy:580000, star:FALSE},
+{actor: "Ian Somerhalder", show: "The Vampire Diaries", ppe: 40000, type:"Drama", viewers:2.75, channel:"cw",mins:41, ey:18.5, ppm:975.609756097561, ppy:740000, star:TRUE},
+{actor: "Anna Paquin", show: "True Blood", ppe: 75000, type:"Drama", viewers:5.1, channel:"hbo",mins:55, ey:12, ppm:1363.63636363636, ppy:900000, star:TRUE},
+{actor: "Charlie Sheen", show: "Two and a Half Men", ppe: 1250000, type:"Comedy", viewers:7.25, channel:"cbs",mins:20, ey:22.125, ppm:62500, ppy:27656250, star:TRUE},
+{actor: "Jon Cryer", show: "Two and a Half Men", ppe: 550000, type:"Comedy", viewers:7.25, channel:"cbs",mins:20, ey:22.125, ppm:27500, ppy:12168750, star:FALSE},
+{actor: "Angus T. Jones", show: "Two and a Half Men", ppe: 250000, type:"Comedy", viewers:7.25, channel:"cbs",mins:20, ey:22.125, ppm:12500, ppy:5531250, star:FALSE},
+{actor: "Matt Bomer", show: "White Collar", ppe: 100000, type:"Drama", viewers:5.6, channel:"usa",mins:42, ey:13.5, ppm:2380.95238095238, ppy:1350000, star:TRUE},
+{actor: "Selena Gomez", show: "Wizards of Waverly Place", ppe: 30000, type:"Comedy", viewers:1.7, channel:"disn",mins:22, ey:22.25, ppm:1363.63636363636, ppy:667500, star:TRUE}];
+
+
+var c={
+abc: "#1f77b4",
+amc: "#aec7e8",
+cbs: "#ff7f0e",
+cw: "#ffbb78",
+disn: "#2ca02c",
+fox: "#98df8a",
+fx: "#d62728",
+hbo: "#ff9896",
+nbc: "#9467bd",
+nick: "#c5b0d5",
+showtime: "#8c564b",
+tnt: "#c49c94",
+tvl: "#e377c2",
+usa: "#f7b6d2"};
+
+
+
+function nformatter(number) {
+	if (number>1000000){
+		var x=Math.floor(number/1000000);
+		return (x+"."+nformatter(number-x*1000000));
+		}
+	else if(number>1000){
+		var x=Math.floor(number/1000);
+		return (x+"."+nformatter(number-x*1000));
+		} else {return ((number<100)?'0':'')+((number<10)?'0':'')+number;}
+		}
+
+
+
+//var myData=data.filter(function(d) {return d.star;});
+var myData=data; myData.forEach(function(d) {d.jitterX=6*Math.random(); d.jitterY=6*Math.random();});
+
+var maxPay=pv.max(myData, function(d) {return d.ppe;});
+var maxView=pv.max(myData, function(d) {return d.viewers;});
+var maxPpm=pv.max(myData, function(d) {return d.ppm;});
+
+maxView=20;
+maxPay=1300000;
+
+var selBubble=0;
+var th=620,w=500
+var h=500,w=500;
+
+vis=new pv.Panel()
+	.width(w)
+	.height(th)
+	;
+
+vis.add(pv.Label).top(35).left(w/2).textAlign("center").font("20px Georgia bold").text("Pay of TV series actors")
+
+vis.add(pv.Rule).bottom(145).top(75).data(pv.range(14)).left(function(d) 45+430*d*100000/maxPay).strokeStyle(function(d) d?"#eee":"#000")
+	.anchor("bottom").add(pv.Label).textAlign("center").textBaseline("top").visible(function(d) d).text(function(d) (d<10)?d*100+"k":(d/10)+"m")
+
+vis.add(pv.Label).top(75).left(13).textAngle(-Math.PI/2).text("Audience").textAlign("right")
+
+vis.add(pv.Rule).left(function(d) d?46:45).right(25).data(pv.range(11)).bottom(function(d) 145+400*d*2/maxView).strokeStyle(function(d) d?"#eee":"#000")
+	.anchor("left").add(pv.Label).textAlign("right").textBaseline("middle").visible(function(d) d).text(function(d) d*2+"m")
+
+vis.add(pv.Label).top(505).left(410).text("Pay per episode")
+
+vis.add(pv.Panel).bottom(120)
+	.add(pv.Dot)
+	.data(myData)
+	.bottom(function(d) 22+400*d.viewers/maxView+d.jitterX)
+	.left(function(d) 42+430*d.ppe/maxPay+d.jitterY)
+	.size(function(d) Math.sqrt(d.ppm)/2)
+	.event("mouseover", function() {selBubble=this.index;vis.render();})
+	//.event("unpoint", function() {selBubble=-1;})
+	.title(function(d) d.actor)
+	.fillStyle(function(d) pv.color(c[d.channel]).alpha(.8))
+	.strokeStyle(function(d) this.index==selBubble?"#000":null);
+
+
+vis.add(pv.Panel).top(520).height(120)//.add(pv.Rule).top(0).width(w).left(0).strokeStyle("dimgrey").parent
+	.add(pv.Label).top(35).left(20).text(function() myData[selBubble].actor).font("20px Georgia bold").parent
+	.add(pv.Label).top(55).left(20).text(function() myData[selBubble].show + " - "+(myData[selBubble].channel).toUpperCase()).font("12px Georgia").parent
+	.add(pv.Label).top(70).left(20).text("Pay per episode: ").font("12px Georgia").parent
+	.add(pv.Label).top(70).right(200).textAlign("right").text(function() '$'+nformatter(myData[selBubble].ppe)).font("12px Georgia").parent
+	.add(pv.Label).top(84).left(20).text("Pay per minute: ").font("12px Georgia").parent
+	.add(pv.Label).top(84).right(200).textAlign("right").text(function() '$'+nformatter(Math.floor(myData[selBubble].ppm))).font("12px Georgia").parent
+	.add(pv.Label).top(98).left(20).text("Hourly viewers per week (millions): ").font("12px Georgia").parent
+	.add(pv.Label).top(98).right(200).textAlign("right").text(function() +nformatter(myData[selBubble].viewers)).font("12px Georgia").parent
+
+	.add(pv.Label).top(55).left(350).text("The color of the bubble is").font("12px Georgia italic").parent
+	.add(pv.Label).top(70).left(350).text("the channel of the show, ").font("12px Georgia italic").parent
+	.add(pv.Label).top(84).left(350).text("the size of the bubble is").font("12px Georgia italic").parent
+	.add(pv.Label).top(98).left(350).text("the pay per minute.").font("12px Georgia italic").parent
+vis.render();
+
+
+
+    </script>
+</div><p>
+When I looked at the dataset <a href="http://datasets.flowingdata.com/tv-earners/top-tv-earners.csv">provided by Nathan</a> I first wondered what was missing. 
+Quite a few stars were missing in the list. I added Simon Baker whose Mentalist gets a huge audience and who is said to be getting $450k per show. Others who probably should be there include Forest Whittaker for the Criminal Minds spinoff, Jim Belushi in the Defenders, Kate Walsh in Private Practice or Elizabeth Michell in V. I don't think any of them is settling for less than $15k per episode. </p>
+
+<p>Another thing were the audiences. There are a few good sources for that (and some less good) so I tried to approximate how much viewers a show would generate for their channel. I came up with hourly viewers because a show that brings 10 million people to one channel for half an hour should be equivalent to one that gets 5 million viewers for an hour, right? </br>
+In fact, I wanted to come up with a proxy of how much value a TV show was generating and how much of that went into the pockets of the cast. It's probably possible to come up with a precise answer with better data than could be assembled by an amateur over a lunch break, audience is probably a part of the equation, but the short story doesn't require much calculation: actors only get the crumbs of a very fat pie. </br>
+A show like Grey's Anatomy got <a href="http://sbnikita.blogspot.com/2010/05/top-10-prime-network-programs-on-ad.html">$329.1m dollars of ad revenue in 2009</a>, which I assume is an US-only figure, the show being syndicated in many countries, unfortunately including France. And that excludes sales of DVD, paid donwloads and other streams of revenue. Out of that, Patrick Dempsey only got $6m. Now $6m is a lot of money, but actors of successful, established shows don't get a very good deal here. In the last seasons of "Friends", the 6 main actors all got <a href="http://www.nytimes.com/2002/02/12/business/friends-deal-will-pay-each-of-its-6-stars-22-million.html">$1m per episode</a>, which seemed fair in retrospect. Sarah Jessica Parker's salary even reached <a href="http://www.telegraph.co.uk/culture/film/starsandstories/3673404/Sarah-Jessica-Parker-Am-I-really-the-worlds-unsexiest-woman.html">$3.2m per Sex and the City episode</a>, but she was co-producer. And this was then. </p>
+
+<p>The chart can be divided in quadrants. On the lower-right corner, Charlie Sheen, who is the only one there with an old-school deal. </br>
+On the higher-left corner, the work horses - stars of the crime shows with stellar ratings, who could ask for more. </br>
+On the very bottom-left, those who are happy to be there. Etc.</p>
+
+<p>Now some stars of shows that get well over 10m viewers get "only" around $100k per episode. So obviously the revenue stream must go somewhere else! my money is on the writers <img src="https://s.w.org/images/core/emoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+
+<p>Also for fun, I computed the ratio of their salary to the length of each episode. I once calculated that I earned about 83 cents a minute, which sounds pretty ridiculous compared to Charlie Sheen's $62500!</p>
+
+
+
+]]></content:encoded>
+			<wfw:commentRss>/2011/02/22/the-top-tv-earners-are-not-found-on-tabloids/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Are the richest Americans the best educated?</title>
+		<link>/2011/01/29/are-the-richest-americans-the-best-educated/</link>
+		<comments>/2011/01/29/are-the-richest-americans-the-best-educated/#comments</comments>
+		<pubDate>Fri, 28 Jan 2011 23:38:34 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[charts]]></category>
+		<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[education]]></category>
+		<category><![CDATA[GOOD]]></category>
+		<category><![CDATA[protovis]]></category>
+		<category><![CDATA[scatterplot]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=449</guid>
+		<description><![CDATA[This all started from this map from GOOD magazine. It went viral on Twitter, which puzzled the data vis community. Moritz Stefaner notably asked others for advice and input, and Andy Kirk, then Enrico Bertini answered in some detail. I won't go into great detail on why I didn't like the original map much, it <a class="read-more" href="/2011/01/29/are-the-richest-americans-the-best-educated/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[This all started from <a href="http://awesome.good.is/transparency/web/1101/census-data/flat.html">this map</a> from GOOD magazine. It went viral on Twitter, which puzzled the data vis community. <a href="http://well-formed-data.net/">Moritz Stefaner</a> notably asked others for advice and input, and <a href="http://www.visualisingdata.com/index.php/2011/01/discussing-are-the-richest-americans-also-the-best-educated/">Andy Kirk</a>, then <a href="http://fellinlovewithdata.com/reflections/demystifying-cargo-cult-visualization-you-cannot-visualize-3-variables-by-mixing-3-colors">Enrico Bertini</a> answered in some detail.</p><span id="more-449"></span>
+I won't go into great detail on why I didn't like the original map much, it has been amply criticized as is. So, what's a better way to answer this question?</p>
+</p>
+<script type="text/javascript" src="http://blog.oecdfactblog.org/wp-includes/js/protovis-r3.2.js"></script>
+<script type="text/javascript" src="http://www.jeromecukier.net/wp-content/uploads/2011/01/pisa21.js"></script>
+<script type="text/javascript">var myVar=24;</script>
+<h3>Are the richest Americans the best educated?</h3>
+<em>Wealth vs. School performance</em></p>
+<div class="protovis">
+<form id="myForm" ><select id="Variable" onchange="myVar = value;vis.render();">
+
+<option value=0>Demographics - Sex</option>
+<option value=1>Demographics - Birth month</option>
+<option value=2>Demographics - Birth year</option>
+<option value=51>Demographics - Immigration status</option>
+<option value=3>Family - Father (or male guardian)?</option>
+<option value=4>Family - Mother (or female guardian)?</option>
+<option value=5>Family - Brothers?</option>
+<option value=6>Family - Sisters?</option>
+<option value=7>Family - Grand-parents?</option>
+<option value=8>Family - Others?</option>
+<option value=48>Family - Educational level of father</option>
+<option value=49>Family - Educational level of mother</option>
+<option value=50>Family - Highest level of parents</option>
+<option value=9>Do you have - A desk to work on</option>
+<option value=10>Do you have - Their own room</option>
+<option value=11>Do you have - A quiet place to study</option>
+<option value=12>Do you have - A computer</option>
+<option value=13>Do you have - Internet access</option>
+<option value=14>Do you have - Literature</option>
+<option value=15>Do you have - Poetry</option>
+<option value=16>Do you have - Art</option>
+<option value=17>Do you have - Textbooks</option>
+<option value=18>Do you have - A dictionary</option>
+<option value=19>How many in your home - Cellular phones</option>
+<option value=20>How many in your home - Televisions</option>
+<option value=21>How many in your home - Computers</option>
+<option value=22>How many in your home - Cars</option>
+<option value=23>How many in your home - Bathrooms</option>
+<option value=24 selected>How many in your home - Books</option>
+<option value=25>Reading attitude - Only if I have to</option>
+<option value=26>Reading attitude - One of my favourite hobbies</option>
+<option value=27>Reading attitude - Like to talk about books</option>
+<option value=28>Reading attitude - Find books hard to finish</option>
+<option value=29>Reading attitude - Happy to get books as gift</option>
+<option value=30>Reading attitude - Books are a waste of time</option>
+<option value=31>Reading attitude - I like the library</option>
+<option value=32>Reading attitude - Only read if I need to</option>
+<option value=33>Reading attitude - Can't stand still with book</option>
+<option value=34>Reading attitude - Like to voice opinion on books</option>
+<option value=35>Reading attitude - Like to exchange books</option>
+<option value=36>You like to read - Magazines</option>
+<option value=37>You like to read - Comics</option>
+<option value=38>You like to read - Fiction</option>
+<option value=39>You like to read - Non-fiction books</option>
+<option value=40>You like to read - Newspapers</option>
+<option value=41>At the library,  you - borrow for pleasure</option>
+<option value=42>At the library,  you - borrow for work</option>
+<option value=43>At the library,  you - do homework</option>
+<option value=44>At the library,  you - read magazines</option>
+<option value=45>At the library,  you - read for fun</option>
+<option value=46>At the library,  you - learn things</option>
+<option value=47>At the library,  you - go on internet</option>
+
+</select></form>
+<script type="text/javascript+protovis">
+function avg(data) pv.mean(data, function(d) (d[53]));
+var w = 500,
+    h = 500,
+	fill1="#EDF8B1",
+	fill2="#2C7FB8", // thank you, colorbrewer.org
+    x = pv.Scale.linear(-5,5).range(0, w),
+    y = pv.Scale.linear(800, 200).range(0, h);
+
+
+var vis = new pv.Panel()
+    .width(2*w)
+    .height(h)
+;
+vis.add(pv.Panel).width(w).height(h).strokeStyle("#eee");
+
+vis.add(pv.Rule)
+	.data(x.ticks())
+	.left(function(d) Math.round(x(d))-0.5)
+	.strokeStyle(function(d) d?(d>4?"#000":"#eee"):"#000")
+	;
+
+vis.add(pv.Rule)
+	.data(y.ticks())
+	.width(w)
+	.bottom(function(d) Math.round(y(d))-0.5)
+	.strokeStyle(function(d) d==500?"#000":"#eee")
+
+vis.add(pv.Label)
+	.top(h/2	)
+	.right(w+35)
+	.textAlign("RIGHT")
+	.text("wealth")
+;
+vis.add(pv.Label)
+	.left(w/2+5)
+	.top(10)
+	.textAlign("LEFT")
+	.text("school performance")
+;
+
+
+vis.add(pv.Line)
+	.data([{x:-5,y:351.5665256},{x:5,y:616.1095531}])
+	.top(function(d) y(d.y))
+	.left(function(d) x(d.x))
+	.strokeStyle("#000")
+	.lineWidth(1)
+	;
+
+
+vis.add(pv.Dot)
+
+	.data(pisa)
+	.top(function(d) y(d[53]))
+	.left(function(d) x(d[52]+(Math.random()-.5)/5))
+	.fillStyle(function(d) (legends[variables[myVar].legendType].type?pv.Scale.linear(legends[variables[myVar].legendType].min,legends[variables[myVar].legendType].max).range(fill1, fill2)(d[myVar]):pv.Scale.linear(legends[variables[myVar].legendType].min,legends[variables[myVar].legendType].max).range("steelblue", "orange")(d[myVar])).alpha(.5))
+	.visible(function(d) d[myVar]<(legends[variables[myVar].legendType].max+1))
+	.title(function(d) "School performance: "+d[53].toFixed(0)+", wealth:"+d[52].toFixed(1)+", "+variables[myVar].label+": "+legends[variables[myVar].legendType].categories[d[myVar]-legends[variables[myVar].legendType].min].label)
+	.size(5)
+	.strokeStyle(null)
+
+	;
+
+vis.add(pv.Label)
+	.top(.1*h-5)
+	.left(w*1.1)
+	.text(function() variables[myVar].label)
+	.textBaseline("BOTTOM")
+	.textAlign("LEFT")
+	;
+
+vis.add(pv.Bar)
+	.data(function() legends[variables[myVar].legendType].categories)
+	.top(function() .1*h+15*this.index)
+	.left(w*1.1)
+	.height(15)
+	.width(15)
+	.fillStyle(function(d) legends[variables[myVar].legendType].type?pv.Scale.linear(legends[variables[myVar].legendType].min,legends[variables[myVar].legendType].max).range(fill1, fill2)(d.value):pv.Scale.linear(legends[variables[myVar].legendType].min,legends[variables[myVar].legendType].max).range("steelblue", "orange")(d.value))
+	.anchor("right").add(pv.Label).left(w*1.1+20).text(function(d) d.label).textAlign("LEFT")
+;
+
+vis.add(pv.Dot)
+		.data(function() pv.values(pv.nest(pisa).key(function(d) d[myVar]).rollup(avg)).slice(0,1+legends[variables[myVar].legendType].max-legends[variables[myVar].legendType].min))
+		.top(function(d) y(d))
+		.left(w)
+		.fillStyle(function(d) (legends[variables[myVar].legendType].type?pv.Scale.linear(legends[variables[myVar].legendType].min,legends[variables[myVar].legendType].max).range(fill1, fill2)(this.index+legends[variables[myVar].legendType].min):pv.Scale.linear(legends[variables[myVar].legendType].min,legends[variables[myVar].legendType].max).range("steelblue", "orange")(this.index+legends[variables[myVar].legendType].min)))
+		.size(10)
+		.strokeStyle("#000")
+		.title(function(d) legends[variables[myVar].legendType].categories[this.index].label+" - "+d.toFixed(0))
+		.lineWidth(1)
+		;
+vis.render();
+    </script>
+</div>
+
+IMO, it doesn't make a lot of sense to talk of the <strong>richest Americans at the county level</strong>. There are huge inequalities even  in the better-off counties, so all schools in a county don't have the same resources, and obviously, all families don't have the same means. Those remarks also apply to academic achievement.</p>
+So it's more relevant to examine that <strong>at the individual level</strong>. The dataset I am using is an extract from <a href="http://www.pisa.oecd.org/">OECD PISA 2009 study</a>, where close to 450,000 15-years-olds have been given a standardized test where their reading, maths and science skills were assessed. Here, we are looking at the 5233 American kids only. The scores of the test go from 200 to 800.</p>
+In addition to the test questions, students must fill a very detailed questionnaire about their family, their habits, and other factors that could influence their results. From some of these answers a wealth index can be computed, based on the availability of various items or equipments in their home.</p>
+This visualization shows the correlation between the two. As the shape of the trend line and that of the cloud of points assess, <strong>there is a correlation but it's pretty weak</strong>. I've added the possibility to color the dots by the answers to some of the questions asked. Here's how to read that. If the colors are scattered all over the place, it means that this question is not very relevant. If the top half of the chart is different than the bottom half (as in : how many books do you have), it means that the question is important. If the left half is different than the right half, it means: this question has a strong impact on the wealth, not so much on the performance (as in: how many cars are there in your home).</p>
+I've only used a small subset of all the questions.</p>]]></content:encoded>
+			<wfw:commentRss>/2011/01/29/are-the-richest-americans-the-best-educated/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+	</channel>
+</rss>

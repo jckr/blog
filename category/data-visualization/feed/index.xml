@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>data visualization &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/category/data-visualization/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>Beyond rendering</title>
+		<link>/2016/08/13/beyond-rendering/</link>
+		<comments>/2016/08/13/beyond-rendering/#respond</comments>
+		<pubDate>Fri, 12 Aug 2016 23:41:36 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[d3]]></category>
+		<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[javascript]]></category>
+		<category><![CDATA[react]]></category>
+		<category><![CDATA[tips]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1758</guid>
+		<description><![CDATA[This is the 5th post in my Visualization with React series. Previous post: React components The lifecycle functions I&#8217;m not going to go into great details on this, but a talk on React without mentioning the lifecycle functions would not be complete. React components come with several functions which are fired when certain events occur, <a class="read-more" href="/2016/08/13/beyond-rendering/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>This is the 5th post in my <a href="http://wp.me/po630-rq">Visualization with React</a> series. Previous post: <a href="http://wp.me/po630-sg">React components</a></p>
+<h1>The lifecycle functions</h1>
+<p>I&#8217;m not going to go into great details on this, but a talk on React without mentioning the <a href="https://facebook.github.io/react/docs/component-specs.html">lifecycle functions</a> would not be complete.<br />
+React components come with several functions which are fired when certain events occur, such as when the component is first created (&#8216;mounts&#8217;), when it&#8217;s updated or when it&#8217;s removed (&#8216;unmounts&#8217;).<br />
+Pure functional components, which we&#8217;ve been mostly using, don&#8217;t have lifecycle functions.<br />
+But components with a state can have them.</p>
+<p>Some examples of usage of those lifecycle functions include: </p>
+<ul>
+<li>Before the component is rendered, you can load data. that&#8217;s a job for &#8216;componentWillMount&#8217;.</li>
+<li>After a component is rendered, you can animate it, or add an event listener. Use &#8216;componentDidMount&#8217;. </li>
+<li>Prevent a component from rendering under certain circumstances, even if it receives new properties or its state changes. Use &#8216;shouldComponentUpdate&#8217;. </li>
+<li>After a component receives new props or new state, you can trigger another function before the component updates (&#8216;componentWillUpdate&#8217;) or right after (&#8216;componentDidUpdate&#8217;). </li>
+<li>When a component is going to be removed, you can do some cleanups, like deleting event listeners. Use &#8216;componentWillUnmount&#8217;. </li>
+</ul>
+<p>Oftentimes, you can simply get by by using the default behavior of React components, which re-render only when they receive different properties or when their state changes. But it can be really convenient to have that extra degree of control.</p>
+<p>Here is an example of using these lifecycle functions in context.</p>
+<p data-height="400" data-theme-id="0" data-slug-hash="Vjxywz" data-default-tab="result" data-user="jckr" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/jckr/pen/Vjxywz/">lifecycle functions example</a> by Jerome Cukier (<a href="http://codepen.io/jckr">@jckr</a>) on <a href="http://codepen.io/">CodePen</a>.</p>
+<p>What is going on there?<br />
+We&#8217;re adapting our earlier <a href="http://codepen.io/jckr/pen/BzKVJq">scatterplot</a> example, only this time, we are not using pure functional components (which don&#8217;t have those lifecycle functions), but creating classes.<br />
+We&#8217;re going to have three classes: Chart, at the highest level; Scatterplot, a child of Chart; and Points.<br />
+Chart passes data to Scatterplot. What it passes depends on whether the button is clicked. That button changes the state of Chart (which causes a rerendering of the Scatterplot and the Point elements).<br />
+Chart also has a private variable that holds a message we can display on top. We can still use callback functions to change this variable, just like we change the state, but the difference between changing the state and changing a private variable is that changing a private variable doesn&#8217;t cause the children to re-render.<br />
+When we first create the scatterplot element, the componentDidMount function is called, and the message is changed to reflect that.<br />
+Then, each time we click the button, a different data property is passed to the Scatterplot element. Also, the componentDidUpdate method is triggered, which changes the message.<br />
+(changing the state of the parent from a componentDidUpdate method can cause an endless re-rendering loop, this is why I used private variables instead of the state, and there are ways to address this but for the sake of brevity this is the easiest way to deal with that problem).<br />
+Now, when a full dataset is passed to the Scatterplot element, many Point elements will be created. I&#8217;ve also added a lifecycle method to these Points: when they are first created, they receive a small animation. To that end, I have also used the componentDidMount method, but this time at the Point level.<br />
+Exit animations are also possible, but &#8211; full disclosure &#8211; they are less easy to implement in React than entry animations, or than in D3. So again in the interest of concision I&#8217;ll skip these for now.</p>
+<h1>React and D3</h1>
+<p>We just saw that with React, we can create a DOM element, then immediately after, call a function to do whatever we want, such as manipulating that element. That function would have access to all the properties and state of that React element.<br />
+So what prevents us from combining React and D3? Nothing!<br />
+We can create components that are, essentially, an SVG element, then use componentDidMount to perform D3 magic on that element.<br />
+Here&#8217;s an example:</p>
+<p data-height="600" data-theme-id="0" data-slug-hash="BzxbPY" data-default-tab="result" data-user="jckr" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/jckr/pen/BzxbPY/">mixing react and d3</a> by Jerome Cukier (<a href="http://codepen.io/jckr">@jckr</a>) on <a href="http://codepen.io/">CodePen</a>.</p>
+<p>In that example, I have used a bona fide bl.ocks (<a href="https://bl.ocks.org/mbostock/7881887">https://bl.ocks.org/mbostock/7881887</a>) and wrapped it inside a React component. So I can create one, or in the case of that example, several such elements by just passing properties. Those components can perfectly function as black boxes: we give them properties, they give us visualizations that correspond to these parameters. And it doesn&#8217;t have to be D3 &#8211; once a React element has been created, we can use componentDidMount to do all kinds of operations on it. </p>
+<p>In the last 2 articles I will present actual data visualization web apps made with React.<br />
+In the next post, we&#8217;ll see how to set up a simple web app and we&#8217;ll create our <a href="http://wp.me/po630-sp">first example app</a>. </p>
+]]></content:encoded>
+			<wfw:commentRss>/2016/08/13/beyond-rendering/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Coding with React</title>
+		<link>/2016/08/10/coding-with-react/</link>
+		<comments>/2016/08/10/coding-with-react/#respond</comments>
+		<pubDate>Wed, 10 Aug 2016 19:16:47 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[d3]]></category>
+		<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[javascript]]></category>
+		<category><![CDATA[react]]></category>
+		<category><![CDATA[tips]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1739</guid>
+		<description><![CDATA[This article is part of my series Visualization with React. Previous article: An ES6 primer Setting things up in Codepen In the last two articles of the series, I&#8217;ll cover how to get a real React coding environment going, but to start dabbling, playgrounds like jsFiddle or codepen are great. I&#8217;m partial to codepen. When <a class="read-more" href="/2016/08/10/coding-with-react/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p><script src="//assets.codepen.io/assets/embed/ei.js" async=""></script>This article is part of my series <a href="http://wp.me/po630-rQ">Visualization with React</a>. Previous article: <a href="http://wp.me/po630-rX">An ES6 primer</a></p>
+<h1>Setting things up in Codepen</h1>
+<p>In the last two articles of the series, I&#8217;ll cover how to get a real React coding environment going, but to start dabbling, playgrounds like <a href="https://jsfiddle.net/reactjs/69z2wepo/">jsFiddle</a> or <a href="http://codepen.io/">codepen</a> are great. I&#8217;m partial to codepen. When you create a new pen, you still have a couple of options to set up before you can start creating React code: <img src="http://jeromecukier.net/assets/visualization-with-react/react-settings-in-codepen.png" alt="" /></p>
+<p>In the Settings / Javascript / quick-add section (the drop-down at the bottom left) please choose React, then React DOM.</p>
+<p>All of the code examples of articles 1, 3, 4, and 5 can be found in this <a href="http://codepen.io/collection/XdEpyp/">codepen collection</a>.</p>
+<h1>Creating elements</h1>
+<p class="codepen" data-height="265" data-theme-id="0" data-slug-hash="pbjpOm" data-default-tab="result" data-user="jckr" data-embed-version="2">See the Pen <a href="http://codepen.io/jckr/pen/pbjpOm/">React simple scatterplot</a> by Jerome Cukier (<a href="http://codepen.io/jckr">@jckr</a>) on <a href="http://codepen.io/">CodePen</a>.</p>
+<p>In this first React example, we&#8217;re going to create a couple of very simple elements and render them. Let&#8217;s start by the end: <code>ReactDOM.render(myDiv, document.querySelector('#root'));</code> We use ReactDOM.render to, well, render something we have created (myDiv) somewhere in our document (on top of what corresponds to the &#8216;#root&#8217; selection. We conveniently have a div with the id &#8220;root&#8221; in the HTML part of the pen). That&#8217;s it! we&#8217;ve output something using React. While the syntax can appear a bit daunting, it really does one simple thing: take what you&#8217;ve made and put it where it should be. But what&#8217;s that myDiv? To find out, let&#8217;s look at the first 2 lines of our code. <code>const mySpan = React.createElement('span', {style: {fontFamily: 'sans-serif'}}, 'hello React world'); const myDiv = React.createElement('div', {className: 'my-div'}, mySpan);</code> Oh, so before there was a myDiv, there was a mySpan. MySpan is a React element, the building brick of the React eco system. To create it, we use React.createElement which is the workhorse of React. React.createElement takes three arguments: the type of React element we are creating, its properties, and its content. The type of element can be any HTML or SVG element, and we&#8217;ll see later that we can also make our own. The second argument is the properties. It&#8217;s an object. In the d3 world, the properties could be what goes in the attr method. So when you create an SVG element like a rect, its properties could include things like x, y, width and height. In d3, style is treated slightly differently. This is also the case in React. When using React.createElement with an HTML or SVG element, that could be styled using CSS, you can use a style property to pass a style object. That style object contains all CSS properties you want to apply to the object, but instead of hyphenating them, they are written in camel case (so font-family, for instance, becomes fontFamily). The third argument is content: it can either be a string, a single React element, or an array of React elements. In the first line (mySpan) we&#8217;ve used a string. So, this first line created a React element which is a span, which contains &#8220;hello React world&#8221;, and which has a simple style applied to it. In the second line, we create a second React element. Again, React.createElement takes three arguments: type of element (now it&#8217;s an HTML div), properties and content. Instead of providing a string, we can pass another React element, such as mySpan that we created above. And that&#8217;s it! we&#8217;ve rendered something using react.</p>
+<h1>Creating elements from data</h1>
+<p>In the example above, we&#8217;ve used React.createElement with two kind of content: a string and another React element. But I mentioned that there was a third possibility: an array of React elements. If you&#8217;re familiar with d3, you might think: in d3, I could do that from an array of data. The idea in React is pretty similar, only, instead of using select / selectAll / data / enter / append, we can just create our array.</p>
+<p class="codepen" data-height="350" data-theme-id="0" data-slug-hash="ezZrOM" data-default-tab="result" data-user="jckr" data-embed-version="2">See the Pen <a href="http://codepen.io/jckr/pen/ezZrOM/">React simple scatterplot</a> by Jerome Cukier (<a href="http://codepen.io/jckr">@jckr</a>) on <a href="http://codepen.io/">CodePen</a>.</p>
+<p>One simple way to do that is to use map: <code>myArray.map(d =&gt; React.createElement(...))</code>. This is exactly what we are doing in the snippet of code above. This uses the birthdeathrates dataset, one of the example files provided with R (number of births and deaths per thousand people per year in various countries.) The interestingness happens here:</p>
+<pre class="brush: jscript; title: ; notranslate">birthdeathrates.map(
+  (d, i) =&gt; React.createElement('div', {
+    'key': i,
+    'style': {
+       background: '#222',
+       borderRadius: 5,
+       height: 10,
+       left: 5 * d.birth,
+       top: 300 - 5 * d.death,
+       position: 'absolute',
+       width: 10,
+       opacity: .2}
+  })
+)</pre>
+<p>In the properties that I pass, some depend on the underlying data. This is a mapping so it&#8217;s going to return something for each item of the array. Each item of the array is represented by d, and has the birth, death and country properties. In left and top, we use a calculation based on these properties. And for each item, we get a React element created with these calculations. This isn&#8217;t unlike what we&#8217;d had in d3 if we had written:</p>
+<pre class="brush: jscript; title: ; notranslate"> ...
+ .selectAll('div')
+ .data(birthdeathrates)
+ .enter()
+ .append('div')
+ .style({ ..., left: d =&gt; 5 * d.birth, top: d =&gt; 300 - 5 * d.death, ...})
+</pre>
+<p>Take note of the key property in the react code. This is necessary when you create many elements using map (well not really necessary but strongly recommended, you&#8217;d get a warning if you don&#8217;t use it). This is used so that if for some reason your parent element has to re-render, each child element will only be re-rendered if needed. If you&#8217;ve followed this far, you are now capable of doing things in React the critical part of what you were doing with d3: creating elements out of data. You might wonder: but does it work for svg? yes, and the logic is exactly the same:</p>
+<p class="codepen" data-height="373" data-theme-id="0" data-slug-hash="MeyVLE" data-default-tab="result" data-user="jckr" data-embed-version="2">See the Pen <a href="http://codepen.io/jckr/pen/MeyVLE/">React simple scatterplot</a> by Jerome Cukier (<a href="http://codepen.io/jckr">@jckr</a>) on <a href="http://codepen.io/">CodePen</a>.</p>
+<h1>Introducing JSX</h1>
+<p data-height="373" data-theme-id="0" data-slug-hash="YWqLwz" data-default-tab="result" data-user="jckr" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/jckr/pen/YWqLwz/">React simple scatterplot JSX</a> by Jerome Cukier (<a href="http://codepen.io/jckr">@jckr</a>) on <a href="http://codepen.io/">CodePen</a>.</p>
+<p>At this point you might think: all of this is great, but typing React.createElement all the time is kind of cumbersome. Many people do too, and there are a number of ways to not do that. The most popular, and the one in use at Facebook, is JSX. I personally use <a title="r-dom" href="http://https://github.com/uber/r-dom">r-dom</a> most of the time, but since JSX is definitely the most common way to write React, now that you have a feel for what React.createElement does, it&#8217;s not unreasonable to continue with JSX.</p>
+<p>The main idea of JSX is that you&#8217;ll write tags in your javascript. Instead of writing:</p>
+<pre class="brush: jscript; title: ; notranslate">
+React.createElement('type', {property1: value1, property2: value2, ...}, content)
+</pre>
+<p>you would write:</p>
+<pre class="brush: plain; title: ; notranslate">
+&lt;type property1={value1} property2={value2} ...&gt;
+content
+&lt;/type&gt;
+</pre>
+<p>So in our previous example, we create an SVG element that has a width and a height property.<br />
+We&#8217;d write:</p>
+<pre class="brush: jscript; title: ; notranslate">
+const svg = &lt;svg height={300} width={300}&gt;
+//... content ...
+&lt;/svg&gt;
+</pre>
+<p>Inside the opening tag, we list all the properties and we give them a value. This isn&#8217;t unlike what you&#8217;d see when you watch the source of an HTML file.<br />
+The value of the properties go inside curly braces, unless they are a string. For length-type values (ie height, width, top, left, font-size&#8230;) if a number is provided, it&#8217;s assumed it&#8217;s in px.<br />
+If the element we create has other elements inside of it, there has to be an opening and a closing tag (ie &lt;element&gt; and &lt;/element&gt;). But if there isn&#8217;t, there can be a single tag (ie &lt;element /&gt;)<br />
+Inside our svg, we have a bunch of circle elements. They are of the form:</p>
+<pre class="brush: plain; title: ; notranslate">
+&lt;circle 
+  cx={5 * d.birth}
+  cy={300 - 5 * d.death}
+  key={i}
+  r={5}
+  style={{
+    fill: '#222',
+    opacity: .2
+  }}
+/&gt;</pre>
+<p>inside our curly braces, we can have calculations. And since there are no elements inside our circles, we don&#8217;t have to have both a &lt;cirlce&gt; and a &lt;/circle&gt; tag, although we could; we can have a single &lt;circle /&gt; tag.</p>
+<p>That&#8217;s it in a nutshell, more details can be found <a title="here" href="https://facebook.github.io/react/docs/jsx-in-depth.html">here.</a><br />
+Now you might think: if I type that in my text editor, I&#8217;m almost certain I&#8217;ll get an error! Indeed, behind the scenes, there has to be some transformation for your browser to understand JSX. This magical operation is called <em>transpilation</em>. Transpilation is just what you&#8217;d hope it is, it turns code written how you like into code that the browser can interpret flawlessly. The flip side is that&#8230; well, you have to transpile your code.<br />
+If you work into environments like codepen or JsFiddle, they can take care of this for you. The most common transpiler is Babel. Babel turns your code into ES2015 compliant javascript (that is, before ES6). So the added bonus is that we can use any ES6 feature without wondering whether the user browser supports it or not. Most ES6 features are supported by the latest versions of many browswers, but there&#8217;s no guarantee that your users will run your favorite browser, let alone its latest version.<br />
+If you want to do this on your own, you&#8217;ll have to set up a build environment, we&#8217;ll cover this in the last two articles.</p>
+<p>&nbsp;</p>
+]]></content:encoded>
+			<wfw:commentRss>/2016/08/10/coding-with-react/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>An ES6 primer</title>
+		<link>/2016/08/09/an-es6-primer/</link>
+		<comments>/2016/08/09/an-es6-primer/#respond</comments>
+		<pubDate>Tue, 09 Aug 2016 20:20:38 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[javascript]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1733</guid>
+		<description><![CDATA[This article is part of my series Visualization with React. Previous article: React and D3 &#8211; similarities and differences In this guide, I will use ES6 notation whenever I would normally do it in my day job. There are many, many differences in ES6 compared to previous versions of javascript and that can be daunting. <a class="read-more" href="/2016/08/09/an-es6-primer/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>This article is part of my series <a href="http://wp.me/po630-rQ">Visualization with React</a>. Previous article: <a href="http://wp.me/po630-rM">React and D3 &#8211; similarities and differences</a></p>
+<p>In this guide, I will use ES6 notation whenever I would normally do it in my day job. There are many, many differences in ES6 compared to previous versions of javascript and that can be daunting. But in this time and age, a lot of code you can run into is going to be written in ES6, so a cursory knowledge of some of its features can go a long way.<br />
+Here are the features I use most often:</p>
+<h1>Fat arrows functions</h1>
+<p>ES6 introduces a new, more concise way to write functions. Instead of writing:</p>
+<pre class="brush: jscript; title: ; notranslate">function add10(d) {return d + 10;}</pre>
+<p>one can write:</p>
+<pre class="brush: jscript; title: ; notranslate">var add10 = d =&gt; d + 10</pre>
+<p>Technically, <a href="http://stackoverflow.com/questions/32535110/what-are-the-differences-if-any-between-es6-arrow-functions-and-functions-boun">those two forms are not completely equivalent</a>. The main difference is if you need to use the context keyword <em>this</em>. But in most cases, fat arrows are a much more concise, and therefore more legible syntax.</p>
+<p>To do a function which takes more than 1 argument, wrap them in parentheses like so:</p>
+<pre class="brush: jscript; title: ; notranslate">(a, b) =&gt; a + b</pre>
+<p>For a function with several statements, you must use curly braces like a regular function, and use return if needs be:</p>
+<pre class="brush: jscript; title: ; notranslate">d =&gt; {
+  console.log(d);
+  return d;
+}</pre>
+<p>For a function that returns an object, wrap that object in parentheses to avoid confusing it with the previous form:</p>
+<pre class="brush: jscript; title: ; notranslate">d =&gt; ({key: d})</pre>
+<h1>const and let</h1>
+<p>Before ES6, to declare variables, you could only use the var keyword.</p>
+<pre class="brush: jscript; title: ; notranslate">var a;
+var b = 10;</pre>
+<p>In ES6, you can declare variables using const or let. When you use const, the variable cannot be reassigned:</p>
+<pre class="brush: jscript; title: ; notranslate"> const a; // error - a must be assigned a value </pre>
+<pre class="brush: jscript; title: ; notranslate"> const b = 1;
+b = 2; // error - b can no longer be reassigned</pre>
+<p>Variables declared with let can be reassigned.</p>
+<pre class="brush: jscript; title: ; notranslate"> let a; // ok
+a = 10; // ok
+a = 20; // still no error</pre>
+<p>const and let are more expressive than var, because they specify whether we plan to change the value of a variable or not. They have another advantage: they are scoped. They can be used inside of an if branch, or a for loop, and not be accessible outside of it. Conversely, var are not scoped &#8211; they are available everywhere within the function where they are declared, or globally if declared outside of a function.<br />
+So, there&#8217;s no reason to ever use the var keyword in ES6.</p>
+<h1>Spread operator</h1>
+<p>In ES6,if you have an array inside another array, you can replace that array with its items in sequence using the spread operator. An example would make this clearer:</p>
+<pre class="brush: jscript; title: ; notranslate">
+const a = [1, ...[2, 3, 4]]; // [1, 2, 3, 4].
+</pre>
+<p>That may seem like not much but it&#8217;s super versatile and useful. For instance, instead of concatenating two arrays, you can write:</p>
+<pre class="brush: jscript; title: ; notranslate">
+const a = [1, 2];
+const b = [3, 4]
+const c = [...a, ...b]; // [1, 2, 3, 4]
+</pre>
+<p>Interestingly, it works with empty arrays:</p>
+<pre class="brush: jscript; title: ; notranslate"> 
+const a = [1, 2];
+const b = [];
+const c = [...a, ...b]; // [1, 2]
+</pre>
+<p>But not with primitive literals (numbers, etc)</p>
+<pre class="brush: jscript; title: ; notranslate">
+const a = [1, 2];
+const b = 3;
+const c = [...a, ...b]; // error
+</pre>
+<p>Instead of pushing an item to the end of an array, you can also use the spread operator:</p>
+<pre class="brush: jscript; title: ; notranslate">
+const a = [1, 2];
+const b = 3;
+const c = [...a, b]; // added benefit - creates a new array instead of changing it in place.
+</pre>
+<p>Note the difference between these 2.<br />
+[&#8230;[1,2], <strong>3</strong>] will work;<br />
+[&#8230;[1, 2], <strong>&#8230;3</strong>] will not. </p>
+<p>Composing arrays like this can be conditional!</p>
+<pre class="brush: jscript; title: ; notranslate">
+const a = [1, 2];
+const b = 3;
+const condition = false;
+const c = [...a, ...(condition ? [b] : [])] // [1, 2];
+</pre>
+<p>What just happened? just like above, but we applied the spread operator to the expression which is in parentheses. If the condition were true, that expression would be equivalent to [b]. But since it&#8217;s false, it is equivalent to an empty array. </p>
+<p>An experimental feature of ES7 extends the spread operator to objects.</p>
+<pre class="brush: jscript; title: ; notranslate">
+const obj = {key: 'a'};
+const newObj = {...obj, value: 1}; // {key: 'a', value: 1}
+</pre>
+<h1>Destructuring assignment</h1>
+<p>You can do more stuff with objects in ES6. Destructuring assignment covers a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment">number of nifty features</a> but here are the two I use the most.</p>
+<pre class="brush: jscript; title: ; notranslate">const obj = {key: 'a', value: 123};
+// you can read several properties from an object at once and assign them to variables:
+const {key, value} = obj;
+console.log(key, value); // 'a', 123</pre>
+<p>Before ES6, you had to write a function like this:</p>
+<pre class="brush: jscript; title: ; notranslate">function div(num, den) {return num / den;}
+div(6, 2); // 3;
+div(2, 6); // 0.333333 order of the parameters matters!
+div(3); // NaN - can't forget an argument! 
+</pre>
+<p>In ES6, we can expect the function as argument to take an object and access its properties:</p>
+<pre class="brush: jscript; title: ; notranslate">
+function div({num, den = 1}) {return num / den;}
+div({num: 6, den: 2}); // 3
+div({den: 2, num: 6}); // still 3
+div({num: 3}); // still 3 - den has a default value
+</pre>
+<p>Using an object, we don&#8217;t have to remember in what order the function parameters have to be provided.</p>
+<h1>Wrapping it all together</h1>
+<p>what&#8217;s another form for the last function I wrote?</p>
+<pre class="brush: jscript; title: ; notranslate">const div = ({num, den = 1}) =&gt; num / den;</pre>
+<p>In the next article in the series, <a href="http://wp.me/po630-s3">Coding with React</a>, we will finally start to write some React code.</p>
+]]></content:encoded>
+			<wfw:commentRss>/2016/08/09/an-es6-primer/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>D3 and React &#8211; similarities and differences</title>
+		<link>/2016/08/09/d3-and-react-similarities-and-differences/</link>
+		<comments>/2016/08/09/d3-and-react-similarities-and-differences/#comments</comments>
+		<pubDate>Tue, 09 Aug 2016 04:13:37 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[d3]]></category>
+		<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[javascript]]></category>
+		<category><![CDATA[react]]></category>
+		<category><![CDATA[tips]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1722</guid>
+		<description><![CDATA[Previous article: Visualization with React d3, meet cousin React Let&#8217;s not sugarcoat it: working with React is more complicated than with plain vanilla javascript. There are a few additional notions which may sound complex. But the good news is that if you come from the d3 world, there are many concepts which are similar. Visualization <a class="read-more" href="/2016/08/09/d3-and-react-similarities-and-differences/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p><script src="//assets.codepen.io/assets/embed/ei.js" async=""></script><br />
+<a href="http://wp.me/po630-rr">Previous article: Visualization with React</a></p>
+<h1>d3, meet cousin React</h1>
+<p>Let&#8217;s not sugarcoat it: working with React is more complicated than with plain vanilla javascript. There are a few additional notions which may sound complex. But the good news is that if you come from the d3 world, there are many concepts which are similar. Visualization on the web is, at its core,<strong> transforming a dataset into a representation</strong>. That dataset is probably going to be an array, and at some point the framework will loop through the array and create something for each element of the array. For instance, if you want to make a bar chart, you probably will have at some point an array with one item that corresponds to each bar, which has a value that corresponds to its length. Looping through the array, each item is turned into a rectangle whose height depends on that value. That logic, which is at the core of d3 with <a href="http://www.jeromecukier.net/blog/2013/03/05/d3-tutorial-at-strata-redux/">selections</a>, is also present in React. In d3, <strong>visualizations are essentially hierarchical.</strong> We start from an SVG element (probably), add to it elements like groups, which can hold other elements. To continue with our bar chart example, our chart will have several data marks attached to it (the bars), and there&#8217;s a hierarchical relation between them: the chart contains those marks. Our chart could be part of a dashboard that has several charts, or part of a web page that has other information. At any rate, in the d3 world, everything we create is added to a root element or to elements we create and arranged in a tree-like hierarchy. This is also the case in React, with a difference: the world of React is mostly structured into components. When that of d3 is mostly made of DOM elements like HTML or SVG elements, that of React is made of components. A React component is a part of your end result. It can be as small as a DOM element, or as big as the whole application. And it can have component children. So, components are logical ways to package your application. Components are created with modularity and reusability in mind. For instance, I can create a bar chart component in React, and the next time I have a bar chart to make, I can just reuse the exact same component. I can also create components to make axes or the individual bars in the chart, which my bar chart component will use. But the next time I need a bar chart, I wouldn&#8217;t have to think about it. In contrast, if I want to create another bar chart in d3, I probably have to recreate it from scratch and decide manually what happens to all the SVG or HTML elements that constitute the bar chart.</p>
+<h1>You say dAYta, I say da-tah</h1>
+<p>One fundamental way in which d3 and React differ is by how they treat data. If you read about React, you may find fancy terms like one-way data binding. In how many ways the data is bound in d3 is not something which is on top of our head when we create visualization so that might sound confusing. In d3, an element can modify the data which is associated to it. I&#8217;ve used it so many times.</p>
+<p class="codepen" data-height="265" data-theme-id="0" data-slug-hash="XKmpYo" data-default-tab="result" data-user="jckr" data-embed-version="2">See the Pen <a href="http://codepen.io/jckr/pen/XKmpYo/">React simple scatterplot</a> by Jerome Cukier (<a href="http://codepen.io/jckr">@jckr</a>) on <a href="http://codepen.io/">CodePen</a>.</p>
+<p>These bars have been made with a very simple dataset shown below them. If you click on the bars, the underlying data will change and the representation will change as well. In the world of React, when properties are passed to a component, they cannot be changed. That&#8217;s what one-way binding means. Data in React flows unidirectionally. Once it&#8217;s defined, it determines the way all components should be displayed. In certain events, a parent component can pass different properties to its children component and they may be re-rendered (we&#8217;ll see this in just a moment). But the important part is that properties passed to a component can never be changed. You may wonder: why is that even a good thing? React makes it impossible to do things! yes, but in the process it also makes things much safer. If properties can&#8217;t be changed, it also means that they can&#8217;t be altered by something we hadn&#8217;t thought of. Also, it makes it much easier to work on components independently: one team mate could make a bar chart component while her colleague makes a line chart. They don&#8217;t really need to know the inner working of the other component, and they know that nothing unexpected will disturb the way their component function.</p>
+<h1>The state of affairs</h1>
+<p>Components of React have a really powerful feature which doesn&#8217;t explicitly exist in d3: the state. The state represents the current status of a component. Here&#8217;s a simple switch component:</p>
+<p class="codepen" data-height="265" data-theme-id="0" data-slug-hash="mEeRvr" data-default-tab="result" data-user="jckr" data-embed-version="2">See the Pen <a href="http://codepen.io/jckr/pen/mEeRvr/">React simple scatterplot</a> by Jerome Cukier (<a href="http://codepen.io/jckr">@jckr</a>) on <a href="http://codepen.io/">CodePen</a>.</p>
+<p>We want to record the fact that the switch can be turned on or off. Here&#8217;s how it should work: First we create our switch component, and it&#8217;s supposed to be off. Then, if the user clicks it, it becomes on if it were off and vice-versa. And it should also be redrawn, to reflect that it&#8217;s been turned on (or off). The state does all that. It records the current status of the component. Technically, it&#8217;s an object with properties, so it can save a lot of information, not just a simple true or false value. The other great thing about the state is that if it changes, then the component is re-rendered. Rendering a component could require rendering children component, and they may be re-rendered as well. So with the state and properties, we have a powerful framework to handle events and whatever may happen to our app. If there&#8217;s an event we care about, it can change the state of a component, then, all of the children components may be re-rendered. And there&#8217;s no other way to redraw them. This is in contrast with plain d3 where anything goes &#8211; anything can change anything, data can be used to render elements, the underlying data can be changed without changing the element, the element can be transformed without changing the underlying data.</p>
+<p>State is an important notion in computer science. In d3, it&#8217;s just doesn&#8217;t have a more formal representation than all the variables in your code.</p>
+<p>In the next article in the series, <a href="http://wp.me/po630-rX">an ES6 Primer</a>, we will look in some useful ES6 features for React. </p>
+]]></content:encoded>
+			<wfw:commentRss>/2016/08/09/d3-and-react-similarities-and-differences/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Visualization with React</title>
+		<link>/2016/08/09/visualization-with-react/</link>
+		<comments>/2016/08/09/visualization-with-react/#comments</comments>
+		<pubDate>Tue, 09 Aug 2016 04:07:56 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[d3]]></category>
+		<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[javascript]]></category>
+		<category><![CDATA[react]]></category>
+		<category><![CDATA[tips]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1726</guid>
+		<description><![CDATA[Some back story&#8230; In what seemed a lifetime ago now, I wrote tutorials to help people get started with Protovis as I learned it myself (it is indeed a lifetime away since Protovis is dead and buried for all intents and purposes). And a few years ago, I did the same for d3 as this <a class="read-more" href="/2016/08/09/visualization-with-react/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<h1>Some back story&#8230;</h1>
+<p>In what seemed a lifetime ago now, I wrote tutorials to help people get started with Protovis as I learned it myself (it is indeed a lifetime away since Protovis is dead and buried for all intents and purposes). And a few years ago, I did the same for d3 as this started to become the most powerful visualization framework and for which documentation was still scarce. I wrote these tutorials to help me learn, but since then I have met many people who found them useful which blew my mind. By documenting my learning, I got noticed by Facebook and travelled 9000 miles to a new life.</p>
+<p>At Facebook, I had some loosely-defined data visualization explorer role. While I joined during the infancy of React, I didn&#8217;t feel super comfortable using it then &#8211; I felt more effective writing one-off d3 applications. Eventually, I moved on and am now working at Uber as a fully-fledged <a href="https://eng.uber.com/data-viz-intel/">data visualization engineer</a>. I work almost exclusively with dashboards, which have a pretty elaborate UI.</p>
+<p>Like in many other companies, at Uber, we use React for our web applications, including our visualizations, dashboards and maps. Increasingly, React is becoming the lingua franca of visualization: more than a tool that allows one to draw data, a mindset that informs how one should think a visualization. React is no longer a young library &#8211; the initial public release dates back from May 2013, and its very first application at Facebook was visualization (my first Facebook project, pages insights). There&#8217;s already many, many learning resources and tutorials for React. What I&#8217;ll try to do here is to show how React can be used for visualization: hopefully, this will be useful both for people who come from d3 and who&#8217;ve never worked with a web framework before, and for people who are familiar with React but who don&#8217;t know visualization well. That won&#8217;t be a complete and exhaustive guide, more a way to get started with references on how to go further.</p>
+<h1>The articles</h1>
+<p>I&#8217;ve structured this guide in 7 parts, and I&#8217;ll publish one per day:</p>
+<ol>
+<li><a href="http://www.jeromecukier.net/blog/2016/08/09/d3-and-react-similarities-and-differences/">React vs D3</a>, where we&#8217;ll explore similarities and differences between these two frameworks.</li>
+<li><a href="http://wp.me/po630-rX">An ES6 primer</a>. I have written all the examples in good, sensible, modern ES6 javascript, because as of 2016 this is probably the most common syntax. Without going too deep into the details, I&#8217;ll explain what parts of the language I used for the examples, and how they differ from ES5.</li>
+<li>Gentle introduction to <a href="http://wp.me/po630-s3">coding with React</a>, where we&#8217;ll explore the high-level concepts of the framework and see how we can create visual elements from data. We&#8217;ll end on a presentation of JSX, a flavor of Javascript used to write React applications, which I&#8217;ll also use for most of the examples for the same reasons as ES6 &#8211; because it&#8217;s the most widespread way of writing React code today.</li>
+<li><a href="http://wp.me/po630-sg">React components</a>, the most important concept in React and the building blocks of React applications.</li>
+<li><a href="http://wp.me/po630-sm">Beyond rendering</a>. We&#8217;ll look at the React concept of lifecycle methods, and also how we can use d3 within React components.</li>
+<li><a href="http://wp.me/po630-st">Creating a React visualization web app</a> &#8211; using what we&#8217;ve seen, and two libraries &#8211; Facebook&#8217;s <a href="https://github.com/facebookincubator/create-react-app">create-react-app</a> and Uber&#8217;s <a href="https://github.com/uber/react-vis/">React-vis</a>, we&#8217;ll create a small standalone React visualization that can be deployed on its own website.</li>
+<li><a href="http://wp.me/po630-st">The big leagues</a> &#8211; in that last part, we&#8217;ll write together a more complex visualization with live data and several components interacting with one another.</li>
+</ol>
+<h1>The code</h1>
+<p>The examples of parts 1-5 can be found on <a href="http://codepen.io/collection/XdEpyp/">codepen</a>. I&#8217;ll add link to examples of part 6 and 7 when they go live.</p>
+]]></content:encoded>
+			<wfw:commentRss>/2016/08/09/visualization-with-react/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+		<item>
+		<title>Charts, assemble!</title>
+		<link>/2015/02/07/charts-assemble/</link>
+		<comments>/2015/02/07/charts-assemble/#comments</comments>
+		<pubDate>Sat, 07 Feb 2015 01:00:57 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[charts]]></category>
+		<category><![CDATA[dashboards]]></category>
+		<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[tips]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1628</guid>
+		<description><![CDATA[From the past posts, you would have gathered that dashboards are tools to solve specific problems. They are also formed from individual charts and data elements. Selecting information That dashboards are so specific is great, because the problem that they are designed to solve will help choosing the information that we need and also prioritizing it &#8211; <a class="read-more" href="/2015/02/07/charts-assemble/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p><a href="http://wp.me/po630-qe">From the past posts</a>, you would have gathered that dashboards are tools to solve specific problems. They are also formed from individual charts and data elements.</p>
+<h2>Selecting information</h2>
+<p>That dashboards are so specific is great, because the problem that they are designed to solve will help choosing the information that we need and also prioritizing it &#8211; two essential tasks in dashboard creation. Again, we don&#8217;t want to shove every data point we have.</p>
+<p>Another great tool to help us do those two tasks is user research. As a designer, we may think we chose the right metrics, but they have to make sense to real users and resonate with them. The bias that we may have is that we would favor data which is easy to obtain or that makes sense to us, compared to data which can be more elaborate, more sophisticated or more expensive to collect or compute, even if that makes more sense to the user.</p>
+<p>Here&#8217;s an illustration of that.</p>
+<p>When I was working at Facebook on this product, Audience Insights, we designed <a href="https://www.facebook.com/ads/audience_insights/activity?age=18-&amp;country=US&amp;interests=6003349754405">this page</a> to help marketers understand how a group of users they could be interested in used Facebook. (The link / screenshot showcases fans of the Golden State Warriors). One of the main ways we classified users at Facebook, for internal purposes, is by counting how many days of the last four weeks they have been on Facebook. It&#8217;s a metric called L28 and one of the high-level things Facebook knows about everyone. So, we integrated it in the first version of this page. But, even though it&#8217;s not a concept unique to Facebook, it wasn&#8217;t that useful to our users, and it was taking space from a more relevant indicator.</p>
+<p><img class="alignnone" src="http://jeromecukier.net/projects/dashboards/AI activity.png" alt="" width="800" height="625" /></p>
+<p>Instead, we have included indicators which are more relevant to the task at hand (ie getting a sense of who those users are through the prism of their activity). For instance we can see that very few Warriors fans only use Facebook on their computer, compared to the general population of US Facebook users. They tend to skew more towards Android and mobile web (going to www.facebook.com from their phone, versus using an app.) They tend to be more active in terms of likes, comments and shares.</p>
+<h2>Information hierarchy</h2>
+<p>Once information is chosen and you get a sense of what is more important than the rest, it&#8217;s time to represent that visually.</p>
+<p>Here are some of the choices you can make.</p>
+<p><em>Show some metrics <strong>on top </strong>or <strong>bigger than others</strong>. </em></p>
+<p>That&#8217;s probably the first thing that comes to mind when thinking hierarchy and prioritization. And it needs to be done! Typically, you should get one to three variables that really represent the most important thing you want your users to read or remember. If you come up with more than 3, you should refine your question/task and possibly split it in two.</p>
+<p>The rest of the variables will support these very high level metrics. Again, in a typical situation, you could come up with up to three levels of data (with more than three being a good indication to rethink your scope). Some metrics can support the high-level metrics (i.e. show them with a different angle, or explain them) and some metrics could in turn support them.</p>
+<p><em>Present some metrics <strong>together</strong>. </em></p>
+<p>Stephen Few argues that dashboards should fit on one page or one screen because their virtue is to present information together. With the flexibility offered by the modern web, and the size constraints of mobile, this is a requirement that shouldn&#8217;t be absolute. But it&#8217;s relevant to remember that some variables add value when seen along other variables. With that in mind, you can have part of your dashboard as a fixed element (always visible on screen) while the rest can scroll away, for instance.</p>
+<p><em>Push some metrics to <strong>secondary cards </strong>(such mouseovers, pop-ups or drill-down views)</em></p>
+<p>Hierarchizing information is not just about promoting important information. It&#8217;s also about demoting information which, while is useful in its own right, doesn&#8217;t deserve to steal the show from the higher level metric. The great thing about interactive dashboards is that there are many mechanisms for that. Some information can be kept as &#8220;details on demand&#8221; and only shown when needed.</p>
+<p><em>Figure out what <strong>form</strong> to give to the data</em></p>
+<p>So you have data. It probably changes over time, too (and you have that history as well!). And a sense of how important it is.</p>
+<p>You can represent it as a static number (and, further, to adjust the precision of that number) or as a time series (i.e. line graph, area graph, bar graph etc.), or both.</p>
+<p>The key question to answer is whether the history and how the metric moved over time is relevant and important, versus the latest figures.  If you think that the history is always important or that it doesn&#8217;t hurt to have it for context anyway, consider that it&#8217;s yet another visual element to digest, another thing that can be misinterpreted, and that unless its importance is clearly demonstrated, you&#8217;d rather not include it. Yes &#8211; even as a tiny sparkline.</p>
+<p><img class="alignnone" src="http://www.jeromecukier.net/projects/dashboards/jl-facebook-insights-overview.png" alt="" width="482" height="492" /></p>
+<p>Here is another example from my work at Facebook of a page where proper hierarchy has been applied.</p>
+<p>Page Insights, to use a parallel with a better known product, is like google analytics, only for Facebook Pages instead of web sites. Unsurprisingly, the metric we put to the top left is the Page Likes, which is the number of people who like a page. The whole point of the system is to let people understand what affects that number and how to grow it. Two other high-level metrics are shown on the same row in the two cards on the right: the Post Reach for the week (number of people who have seen content from this page this week, whether they like the Page or not) and Engagement (number of people who acted on the content &#8211; actions could be liking, commenting, sharing, clicking, etc.)</p>
+<p>The number of new Page Likes of the past week, which is represented as a both a line chart and a number in the left card, is an example of a level two metric. It supports the top metric &#8211; total likes. The number of Page Likes of the past week, which is represented as a line chart only, is a level three metric. It&#8217;s here just as a comparison to the number of the current week &#8211; here, it helps us figuring out that last week has been a better week.</p>
+<h2>Connecting the dots</h2>
+<p>Ultimately, a dashboard is more than a collection of charts. It&#8217;s an ensemble: charts and data are meant to be consumed as a whole, with an order and a structure. Charts that belong together should be seen together. The information gained like so will be much more useful than from looking at them in sequence.</p>
+<p><a href="http://www.infovis-wiki.net/index.php?title=Linking_and_Brushing">Linking</a>, for instance, is the concept of highlighting an element in a given chart with repercussions on other charts, depending on the element highlighted. A common use case is to look at a data for one given time point, and see the value for that time point highlighted in related charts. Here is an example:</p>
+<p><img class="alignnone" src="http://www.jeromecukier.net/projects/dashboards/linking.png" alt="" width="784" height="212" /></p>
+<p>In this specific case, the fact that both charts share the same x-axis makes comparing the shape of both charts easier even without linking.</p>
+<p>Each variable doesn&#8217;t have to be on its own chart. Your variables can have an implicit relation between one another. Bringing them together might make that relation explicit. Here are some interesting relationship between variables or properties of variables that can be made apparent through the right chart choice.</p>
+<ul>
+<li><strong>One variable could be always greater than another one</strong>, because the second is a subset of the first. Here are some examples:</li>
+</ul>
+<ol>
+<li>The number of visits on a website last week will <em>always </em>be greater or equal than the number of unique visitors that week, which will <em>always </em>be greater than the number of visitors last day.</li>
+<li>The number of visitors will <em>always</em> be greater to the number of first-time visitors.</li>
+<li>The cumulative number of orders over a period of time will <em>always</em> be greater than the number of daily orders over that same period.</li>
+<li>The time that users spend with a website in an active window of their browser will <em>always </em>be greater than the time they spend actively interacting with the site.</li>
+</ol>
+<p style="padding-left: 30px;">What&#8217;s interesting here is that these relations are not just true because of experience, they are true by definition. It&#8217;s also metrics that are expressed in the same units, and, in most cases, with the same order of magnitude, so they can be displayed on the same chart. When applicable, showing them together can show how they, indeed, move together or not.</p>
+<ul>
+<li><strong>One variable could be the sum of two other</strong>, less important <strong>variables</strong>.</li>
+</ul>
+<p style="padding-left: 30px;">In the example below we go even one step further and we show that one variable is the sum of two variables minus a fourth one.<br />
+Here, we look at the net likes of a Facebook Page, that is, the difference between the number of people who like a page on a given day and the day before.<br />
+Two factors can make more people like a page: paid likes (a user sees an ad, is interested, and from it, likes the page) or organic likes (a user visits a page, or somehow see content from that page, and likes it, without advertisement involved). Finally, people may also decide to stop liking the page (&#8220;unlikes&#8221;).<br />
+Here, net likes = organic likes + paid likes &#8211; unlikes. The reason why we have decomposed Likes between organic and paid is because we wanted to show that ads can amplify the effect of good content. So, visually, we chose to represent that as a layer on top of the rest. (important remark: your dashboard doesn&#8217;t have to be neutral. If it can show that your product, company, team etc. is delivering, and you have an occasion to demonstrate it, don&#8217;t hesitate a moment). By showing the unlikes as a negative number, as opposed to a positive variable, going up, possibly above the likes (which would be unpredictable) we can keep the visual legible and uncluttered. A user can do the visual combination of all these variables. This chart, by the way, shows the typical dynamic of a Page : new content will generate peaks of new users, but also will cause some users to stop liking the page.</p>
+<p><img class="alignnone" src="http://www.jeromecukier.net/projects/dashboards/net-likes-1024x454.png" alt="" width="832" height="453" /></p>
+<ul>
+<li>One variable could be <strong>always growing.</strong> Or <strong>always positive.</strong></li>
+</ul>
+<p style="padding-left: 30px;">When that is the case this can be used to make choices to represent the chart. If a variable is always growing by nature (i.e. cumulative revenue) you may want to consider representing a growth rate rather than the raw numbers. A reason to consider that is that your axis scale will have to change over time (i.e. if you plot a product that sells for around $1m per day, having an axis that goes from 0 to $10m would be enough for a week, but not for a month let alone for a year, whereas with a growth rate you can represent a long period of time consistently). And if a variable is always positive (ie stock price), your y axis can start at 0, or even at an arbitrary positive value, as opposed to allocate space for negative values.</p>
+<p style="padding-left: 30px;">Conversely, if a variable doesn&#8217;t change over time, it doesn&#8217;t mean that it&#8217;s not interesting to plot. That absence of change could be a sign of health of the system (which is the kind of task that dashboards can be useful for). So the absence of change doesn&#8217;t mean that there&#8217;s an absence of message.</p>
+<p style="padding-left: 30px;">
+]]></content:encoded>
+			<wfw:commentRss>/2015/02/07/charts-assemble/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Dashboards as products</title>
+		<link>/2015/02/07/dashboards-as-products/</link>
+		<comments>/2015/02/07/dashboards-as-products/#comments</comments>
+		<pubDate>Sat, 07 Feb 2015 01:00:19 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[charts]]></category>
+		<category><![CDATA[dashboards]]></category>
+		<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[tips]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1626</guid>
+		<description><![CDATA[In the past few articles I&#8217;ve exposed what dashboards are not: an exercise in visual design, an exercise in data visualization technique. Another way to put this is that &#8220;let&#8217;s do this just because we can&#8221; is a poor mantra when it comes to designing dashboards, or visualizations in the broader sense by the way. <a class="read-more" href="/2015/02/07/dashboards-as-products/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>In the <a href="http://wp.me/po630-q7">past few articles</a> I&#8217;ve exposed what dashboards are not:</p>
+<ul>
+<li>an exercise in <em>visual design</em>,</li>
+<li>an exercise in <em>data visualization</em> technique.</li>
+</ul>
+<p>Another way to put this is that &#8220;let&#8217;s do this just because we can&#8221; is a poor mantra when it comes to designing dashboards, or visualizations in the broader sense by the way.</p>
+<h3>Do it for the users</h3>
+<p>Now saying that dashboards should be products is a bit tautological. Products, in <a href="https://medium.com/@ericeriksson/what-is-product-design-9709572cb3ff">product design</a>, refer to the result of a holistic process that solves problems of users &#8211; a process that includes research, conception, exploration, implementation and testing.</p>
+<p>Most importantly, it&#8217;s about putting the needs of your users first. And your users first. Interestingly, treating your dashboard as a product means that the dashboard &#8211; your product &#8211; doesn&#8217;t come first.</p>
+<p>Creating an awesome dashboard is a paradox. Googling for that phrase yields results such as: <a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=6&amp;cad=rja&amp;uact=8&amp;ved=0CDwQFjAF&amp;url=http%3A%2F%2Fdesignrfix.com%2Fdesign%2Fdashboard-design&amp;ei=ZxLVVLHBDMinyATrrYKIDg&amp;usg=AFQjCNEYq1L0bANEmTwSHUGW_ik0BK7GYw&amp;sig2=YKmhFLbmFb0DyHzLAStdvw&amp;bvm=bv.85464276,d.aWw" data-href="http://designrfix.com/design/dashboard-design">20+ Awesome Dashboard Designs That Will Inspire You</a>, <a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=7&amp;cad=rja&amp;uact=8&amp;ved=0CEMQFjAG&amp;url=http%3A%2F%2Fthedesigninspiration.com%2Farticles%2F25-innovative-dashboard-concepts-and-designs%2F&amp;ei=ZxLVVLHBDMinyATrrYKIDg&amp;usg=AFQjCNFyv8w3cGH5EbU8B0Gz27itiPqOag&amp;sig2=r65foADN-OBimw71AsI7Yg&amp;bvm=bv.85464276,d.aWw" data-href="http://thedesigninspiration.com/articles/25-innovative-dashboard-concepts-and-designs/">25 Innovative Dashboard Concepts and Designs</a>, <a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=10&amp;cad=rja&amp;uact=8&amp;ved=0CFMQFjAJ&amp;url=https%3A%2F%2Feconsultancy.com%2Fblog%2F62844-24-beautifully-designed-web-dashboards-that-data-geeks-will-love%2F&amp;ei=ZxLVVLHBDMinyATrrYKIDg&amp;usg=AFQjCNFPyaQZJ_EUP-GRZJRdRRa8Ho5Cqw&amp;sig2=ypVCYsOtIemTJnX1R4Amuw&amp;bvm=bv.85464276,d.aWw" data-href="https://econsultancy.com/blog/62844-24-beautifully-designed-web-dashboards-that-data-geeks-will-love/">24 beautifully-designed web dashboards that data geeks</a> or <a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=13&amp;cad=rja&amp;uact=8&amp;ved=0CGUQFjAM&amp;url=http%3A%2F%2Fline25.com%2Farticles%2F25-visually-stunning-app-dashboard-design-concepts&amp;ei=ZxLVVLHBDMinyATrrYKIDg&amp;usg=AFQjCNHrWPNZt1Vn__39P4DkysUI1XStUA&amp;sig2=E9t5cHkELGbb_G8zGZSROA&amp;bvm=bv.85464276,d.aWw" data-href="http://line25.com/articles/25-visually-stunning-app-dashboard-design-concepts">25 Visually Stunning App Dashboard Design Concepts</a>. This is NOT dashboard product design (though it&#8217;s a good source of inspiration for visual design of individual charts).</p>
+<p>Eventually, <strong>no one cares for your dashboard</strong>. When designing a dashboard, it&#8217;s nice to think that somebody out there will now spend one hour everyday looking at all this information nicely collected and beautifully arranged, but who would want to do that? Who would want to add to their already busy day an extra task, just to look at information the way you decided to organize it? This point of view is a delusion. We must not work accordingly.</p>
+<p>Instead, let&#8217;s focus on the task at hand. What is something that your users would try to accomplish that could be supported by data and insights?</p>
+<h3>What is the task at hand?</h3>
+<p>If you start to think &#8220;show something at the weekly meeting&#8221; or &#8220;make a high-level dashboard&#8221; I invite you to go deeper. Show what? a dashboard for what? not for its own sake.</p>
+<p>Trickier &#8211; how about: &#8220;to showcase the data that we have&#8221;? That is still not good enough. <strong>You shouldn&#8217;t start from your data</strong> to create your dashboard, and for several reasons. Doing so would limit yourself to the data that you have or which is readily available for you. But maybe that this data, in its raw form, is not going to be relevant or useful to your users. Conversely, you would be tempted to include all the data that you have, but each additional information that you bring to your dashboard would make it harder to digest and eventually detrimental to the process. Most importantly, if you don&#8217;t have an idea of what the user would want to accomplish with your data, you cannot prioritize and organize it, which is the whole point of dashboard design.</p>
+<p>Finally &#8211; &#8220;to discover insights&#8221; is not a task either. Dashboards are a curated way to present data for a certain purpose. They are not unspecified, multi-purpose analytical exploration tools. In other words: dashboards will answer a specific, already formulated question. And they will answer in the best possible way, if they are designed as such. For exploration, ad-hoc analysis is more efficient, and is probably best left to analysts or data scientists than end users.</p>
+<p>Here are some example of tasks:</p>
+<ul>
+<li><strong>check</strong> that things are going ok &#8211; that there is no preventable disaster going on somewhere. For instance: website is up &#8211; visits follow a predictable pattern.</li>
+<li>Specifically, check that a <strong>process had completed</strong> in an expected way. For instance: all payments have been cleared.</li>
+<li>If something goes wrong, <strong>troubleshoot</strong> it &#8211; find the likely cause. For instance: sales were down for this shop&#8230; because we ran out of an important product. Order more to fix the problem, make sure to stock accordingly next time.</li>
+<li>Support a <strong>tactical decision</strong>. For instance: here are the sales of the new product, here are the costs. Should we keep on selling it or stop?</li>
+<li>Decide where to <strong>allocate resources</strong>. For instance: we launched three variations of a product, one is greatly outperforming the other two, let&#8217;s run an ad campaign to promote the winner.</li>
+<li>Try to <strong>better understand</strong> a complex system. For instance: user flow between pages can show where users are dropping out or where efficiency gains lie.</li>
+</ul>
+<p>This list is by no means limitative. But it&#8217;s really useful to start from the problem at hand than just try to create a visual repository for data.</p>
+<p>Next, we&#8217;ll see how to implement these in the last article: <a href="http://www.jeromecukier.net/blog/2015/02/07/charts-assemble/">charts assemble!</a></p>
+]]></content:encoded>
+			<wfw:commentRss>/2015/02/07/dashboards-as-products/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Dashboards versus data visualization</title>
+		<link>/2015/02/07/dashboards-versus-data-visualization/</link>
+		<comments>/2015/02/07/dashboards-versus-data-visualization/#comments</comments>
+		<pubDate>Sat, 07 Feb 2015 00:58:57 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[charts]]></category>
+		<category><![CDATA[dashboards]]></category>
+		<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[tips]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1619</guid>
+		<description><![CDATA[Dashboards are extreme data visualizations In the recent Information is Beautiful 2014 awards,  I found interesting that there is an infographics and a data visualization categories. My interpretation is that the entries in the infographics section are static and illustrated, while those in the data visualization are generated and data-driven. However, all the featured data <a class="read-more" href="/2015/02/07/dashboards-versus-data-visualization/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<h2>Dashboards are extreme data visualizations</h2>
+<p>In the recent <a href="http://www.informationisbeautifulawards.com/showcase?award=2014&amp;page=1&amp;pcategory=winner&amp;type=awards">Information is Beautiful 2014 awards</a>,  I found interesting that there is an infographics and a data visualization categories. My interpretation is that the entries in the infographics section are static and illustrated, while those in the data visualization are generated and data-driven. However, all the featured data visualization projects are about a one-off dataset. So aesthetical choices of the visualization depend on the characteristics of this particular dataset. By contrast, the dashboards I have worked with are about a live, real-time datastream. They have to look good (or at least &#8211; to function) whatever the shape and size of the data that they show. The google quote and news chart that we saw earlier must work for super volatile shares, for more stable ones, for indices, currencies, etc. So, if the distinction between infographics and data visualization makes sense to you, imagine that dashboards sit further in that continuum than data visualization. Not only are dashboards generated from data, like data visualizations, but they are also real-time and should function with datasets of many shapes and sizes.</p>
+<h2>But dashboards problems are not data visualization problems</h2>
+<p>Data visualization provides superior tools and techniques to present or analyze data. With libraries and languages dedicated to making visualizations, there is little that can&#8217;t be done. In many successful visualizations, the author will create an entirely new form, or at least control the form very finely to match their data and their angle. Even without inventing a new form, there are many which have been created for a specific use, and which are relatively easy to make on the web (as opposed to say, in Excel): <a href="https://www.google.fr/search?q=tree+maps&amp;safe=off&amp;espv=2&amp;biw=2025&amp;bih=1140&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ei=UCR4VNmKAufCiALyo4FY&amp;ved=0CAYQ_AUoAQ#safe=off&amp;tbm=isch&amp;q=treemaps">treemaps</a>, <a href="https://www.google.fr/search?q=tree+maps&amp;safe=off&amp;espv=2&amp;biw=2025&amp;bih=1140&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ei=UCR4VNmKAufCiALyo4FY&amp;ved=0CAYQ_AUoAQ#safe=off&amp;tbm=isch&amp;q=force-directed+graphs">force-directed graphs</a> and other <a href="https://www.google.fr/search?q=tree+maps&amp;safe=off&amp;espv=2&amp;biw=2025&amp;bih=1140&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ei=UCR4VNmKAufCiALyo4FY&amp;ved=0CAYQ_AUoAQ#safe=off&amp;tbm=isch&amp;q=node-link+diagrams">node-link diagrams</a>, <a href="https://www.google.fr/search?q=tree+maps&amp;safe=off&amp;espv=2&amp;biw=2025&amp;bih=1140&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ei=UCR4VNmKAufCiALyo4FY&amp;ved=0CAYQ_AUoAQ#safe=off&amp;tbm=isch&amp;q=chord+diagrams">chord diagrams</a>, <a href="https://www.google.fr/search?q=tree+maps&amp;safe=off&amp;espv=2&amp;biw=2025&amp;bih=1140&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ei=UCR4VNmKAufCiALyo4FY&amp;ved=0CAYQ_AUoAQ#safe=off&amp;tbm=isch&amp;q=dendrograms">trees</a>, <a href="https://www.google.fr/search?q=tree+maps&amp;safe=off&amp;espv=2&amp;biw=2025&amp;bih=1140&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ei=UCR4VNmKAufCiALyo4FY&amp;ved=0CAYQ_AUoAQ#safe=off&amp;tbm=isch&amp;q=bubble+charts">bubble charts</a> and the like. And even good old geographic maps.</p>
+<p>In most cases, it is not a good idea to be too clever and have a more advanced form.</p>
+<p>Up until mid November 2014, Google Analytics allowed users to view their data using <a href="https://www.youtube.com/watch?v=UKsBTqqhVTs">motion charts</a>.</p>
+<p><img class="alignnone" src="http://jeromecukier.net/projects/dashboards/motion charts" alt="" width="1280" height="784" /></p>
+<p>This was really an example of having a hammer and considering all problems as nails. Fortunately, this function disappeared from the latest redesign.</p>
+<p><img class="alignnone" src="http://media-cache-ec0.pinimg.com/736x/1c/69/b7/1c69b7ea8e23d5d8fd800a67e727d0db.jpg" alt="" width="736" height="432" /></p>
+<p>Likewise, on twitter followers dashboard, the treemap might be a bit over the top:</p>
+<p><img class="alignnone" src="http://media-cache-ec0.pinimg.com/736x/5c/27/85/5c278591a95c319bacdf974b62b991e2.jpg" alt="" width="736" height="775" /></p>
+<p>and possibly confusing and not immediately legible to some users. On the other hand, it is economical in terms of space and would probably work in almost every case which are two things that dashboards should be good at. So while I wouldn&#8217;t have used it myself I can understand why this decision has been made.</p>
+<h2>Dashboards are not an exercise in visual design either</h2>
+<p>A dashboard such as this:</p>
+<p><img class="alignnone" src="http://media-cache-ec0.pinimg.com/736x/b0/e1/8c/b0e18c6936bde1ce92c42a0b0c7e6f84.jpg" alt="" width="736" height="1128" /></p>
+<p>(for which I can&#8217;t find the source. I found it on pinterest and was able to trace it to <a href="https://econsultancy.com/blog/62844-24-beautifully-designed-web-dashboards-that-data-geeks-will-love">this post</a> but not prior) is well designed visually, it makes proper use of space, colors and type, its charts are simple.</p>
+<p>But what good is it? what do I learn, what can I take away from it, what actions can I perform?</p>
+<p>Most of the dashboards examples I find on sites like dribbble or beyance (see <a href="http://www.pinterest.com/jcukier/data-vis-dashboard-ui-elements/">my Pinterest board</a>) fall into that category: inspiring visual design, probably not real data, no flow, no obvious use.</p>
+<h2>Dashboards are problems of their own</h2>
+<p>What makes a dashboard, or any other information-based design successful, is neither the design execution nor the clever infovis technique. Dashboards, eventually, are meant to be useful and to solve a specific problem.</p>
+<p>How so? We&#8217;ll see in the next article: <a href="http://www.jeromecukier.net/blog/2015/02/07/dashboards-as-products/">dashboards as products. </a></p>
+<p>&nbsp;</p>
+]]></content:encoded>
+			<wfw:commentRss>/2015/02/07/dashboards-versus-data-visualization/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>Charts in the age of the web</title>
+		<link>/2015/02/07/charts-in-the-age-of-the-web/</link>
+		<comments>/2015/02/07/charts-in-the-age-of-the-web/#comments</comments>
+		<pubDate>Sat, 07 Feb 2015 00:57:41 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[charts]]></category>
+		<category><![CDATA[dashboards]]></category>
+		<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[tips]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1610</guid>
+		<description><![CDATA[In 2008, when I was working at OECD, my job description was that of an editor. That implied I was mostly working on books. I was designing charts, but they were seen as components of books. And this was typical of the era. So we would create charts like this one: And it was awesome! <a class="read-more" href="/2015/02/07/charts-in-the-age-of-the-web/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>In 2008, when I was working at <a href="http://www.oecd.org/">OECD</a>, my job description was that of an editor. That implied I was mostly working on books. I was designing charts, but they were seen as components of books. And this was typical of the era.</p>
+<p>So we would create charts like this one:</p>
+<p><img class="alignnone" src="http://jeromecukier.net/projects/dashboards/02-01-01-g2" alt="" width="685" height="288" /></p>
+<p>And it was awesome! (kind of). I mean, we respected all the rules. Look at that nicely labelled y-axis! and all the categories are on the x-axis! the bars are ordered in size, it&#8217;s easy to see which has the biggest or smallest value! And with those awesome gridlines, we can lookup values &#8211; at least get an order of magnitude.</p>
+<p>What we really did though was apply styling to an excel chart (literally).</p>
+<h2>Print charts vs interactive charts</h2>
+<h3>Origin of rules for print charts</h3>
+<p>Rules that govern traditional charts (which are many: ask Tufte, Few) make a certain number of assumptions which are interesting to question today.</p>
+<p>One is that charts should be designed so that values can be easily looked up (even approximately) from the chart. This is why having labeled axes and gridlines is so useful. This is also why ordering bar charts in value order is nice. With that in mind, it also makes sense that charts like bar charts or area charts, which compare surfaces, be drawn on axes that start at 0.</p>
+<p>The other assumption is that a chart will represent the entirety of a dataset that can be shown at a time. We have to come up with ways to make sure that every data point can be represented and remains legible. The chart author has to decide, once and for all, which is the dataset that will be represented, knowing that there will be &#8220;no backsies&#8221;.</p>
+<p>In the same order of thought, the author must decide the form of his chart. If she wants to compare categories, she may go for a bar chart. If she wants to show an evolution over time, for a line chart. And if she wants the user to have exact values, she will choose a table.</p>
+<p>And so, when everything else than a table is chosen, we typically don&#8217;t show values with all the data points, because adding data labels would burden the chart and make its overall shape harder to make out.</p>
+<p>In this framework, it makes sense to think in term of <strong>data-ink </strong>(the cornerstone of Tuftean concepts): make sure that out of all the ink needed to print the chart (you can tell it&#8217;s a print concept already&#8230;), as much should go to encode the data as possible, versus anything else.</p>
+<h3>How about now</h3>
+<p><img class="alignnone" src="http://jeromecukier.net/projects/dashboards/chart trad vs online 2" alt="" width="680" height="847" /></p>
+<p>However, there is not a single of these reasons which is valid today in the world of web or mobile charts. Data-ink only made sense on paper. </p>
+<p>Web charts have many mechanisms to let the user get extra information on a given data point. That can be information that updates on mouseover, callouts and tooltips&#8230; This might be less true of mobile in general where the distinction between hovering and clicking is less distinct. But it is definitely possible to obtain more than what is originally displayed. If I want to have an exact value, I shouldn&#8217;t have to simply deduce that from the shape of the chart. There can be mechanisms that can deliver that to me on demand.</p>
+<h3>An example: Google Finance Quote &amp; News</h3>
+<p>The <a href="https://www.google.com/finance?q=NASDAQ%3AGOOG">Google Finance Quote and News chart</a> is a very representative example of a web-native chart. Around since 2006, they provide the price of a given security, along with news for context. While its visual design has probably been topped by other dashboards, what makes it a great example is that it&#8217;s publicly available, which is uncommon for business data.</p>
+<p><img class="alignnone" src="http://jeromecukier.net/projects/dashboards/online chart" alt="" width="984" height="543" /></p>
+<p>While this chart has gridlines and labelled axes, that is not enough to lookup precise values. However, moving the <strong>mouse over</strong> the chart allows the user to read a precise value at a given point in time. A blue point appears and the precise value can be read in the top left corner.</p>
+<p><img class="alignnone" src="http://jeromecukier.net/projects/dashboards/mouseover" alt="" width="996" height="524" /></p>
+<p>One very common <strong>data filter </strong>in chart is controls that affect the time range: date pickers. By selecting a different time range, we make the chart represent a different slice of the dataset &#8211; we effectively filter the dataset so that only the relevant dates are shown. This is in contrast with the traditional printed charts, again, where all of the dataset is shown at once. For instance, we can click on &#8220;6m&#8221; and we&#8217;ll be treated with data from the last 6 months:</p>
+<p><img class="alignnone" src="http://jeromecukier.net/projects/dashboards/data filters" alt="" width="985" height="424" /></p>
+<p>Comparing the selected security with others will make the chart show the data in a <strong>different mode</strong>. This is the same data (plus added series), in the same screen and the same context, but the chart is visually very different:</p>
+<p><img class="alignnone" src="http://jeromecukier.net/projects/dashboards/different modes" alt="" width="986" height="526" /></p>
+<p>As to the other two characteristics of web charts I mentioned, <strong>data exports</strong> and <strong>drill downs, </strong>they are also featured (but less graphical to show, so I haven&#8217;t captured a screenshot for those). There is a link on a left-side column to get the equivalent data (so it is always possible to go beyond what is shown on screen). The little flags with letters in the 3 first screenshots are clickable, and represent relevant news. Clicking them will highlight that article in a right-side column. So it is always possible to get more information.</p>
+<h3>What does that change?</h3>
+<p>Everything.</p>
+<p>Rules or best practices based on the assumption that data is hard to lookup or to compare are less important. The chart itself has to be legible though. So, for instance, it&#8217;s ok to have pie charts or donut charts, as long as the number of categories doesn&#8217;t go totally overboard.</p>
+<p>Web charts, and dashboards even more so, should focus on<strong> only showing relevant data</strong> first, then showing it in the most useful and legible way. Again, a noted difference with the print philosophy where as much data as possible should be shown.</p>
+<p>How this play out is what we&#8217;ll cover in the <a href="http://www.jeromecukier.net/blog/2015/02/07/dashboards-versus-data-visualization/">next articles of the series: Dashboards versus data visualizations.</a></p>
+<p>&nbsp;</p>
+]]></content:encoded>
+			<wfw:commentRss>/2015/02/07/charts-in-the-age-of-the-web/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Dashboards ahoy!</title>
+		<link>/2015/02/07/dashboards-ahoy/</link>
+		<comments>/2015/02/07/dashboards-ahoy/#comments</comments>
+		<pubDate>Sat, 07 Feb 2015 00:56:12 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[dashboards]]></category>
+		<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[tips]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1608</guid>
+		<description><![CDATA[During my time at Facebook, I worked almost exclusively on one problem: dashboards. More specifically, how to present frequently-updated data in the most efficient way to business users. And so today, I am starting a series of blog posts / tutorials about dashboards. Why talk about dashboards? Legit questions. Dashboards are so uncool and boring! <a class="read-more" href="/2015/02/07/dashboards-ahoy/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>During my time at Facebook, I worked almost exclusively on one problem: dashboards. More specifically, how to present frequently-updated data in the most efficient way to business users. And so today, I am starting a series of blog posts / tutorials about dashboards.</p>
+<h2>Why talk about dashboards?</h2>
+<p>Legit questions. Dashboards are so uncool and boring! I could make more advanced tutorials on d3 or canvas or processing (which is also&#8230; in the plans). Or update new cool visualizations.</p>
+<p>But the interest of discussing dashboards is <em>precisely </em>because they are not cool. In the first part to his <a href="%20http://amzn.com/1938377001">Information Dashboard Design</a>, Stephen Few presents a lengthy gallery of terrible dashboards he collected over years. Most of these dashboards exhibit a serious and obvious production flaws: they are often gaudy, using 3d columns or pie charts, when not taking the dashboard metaphor too literally with replicas of gauges and meters. Here&#8217;s a typical dashboard from the early 2000s:</p>
+<p><img class="alignnone" src="http://www.jeromecukier.net/projects/dashboards/old dashboard.jpg" alt="" width="640" height="481" /></p>
+<p>In the past 5 years though, these problems have largely been solved. The overall <a href="http://www.perceptualedge.com/files/GraphDesignIQ.html">&#8220;Graph Design IQ&#8221;</a>, to borrow another Stephen Few concept, has greatly increased. People who make charts are increasingly aware that there are some best practices to build them and that there are a variety of forms beyond the core &#8220;Excel&#8221; chart types such as bar charts, line charts, pie charts and scatterplots. Besides, anyone who had to code a chart from scratch realized that, as opposed to Excel or similar software where users can rely on defaults, every detail of a chart needs decisions: not only how to encode the data (ie bars, lines etc.) but also whether to have gridlines or not and if so how, how to format axes, how to present legends, and so on and so forth. Oftentimes, having to make these decisions implies taking the time to think about these choices which makes the overall chart quality stronger. Also, in products like Tableau (and to be honest in every version of Excel) the default choices are much more robust than they used to be.</p>
+<h2>Down with the old, up with the new</h2>
+<p>While these old problems are as good as solved, dashboards are still not awesome because they are plagued with a set of new problems.</p>
+<p>First, the <strong><a href="http://www.jeromecukier.net/blog/2015/02/07/charts-in-the-age-of-the-web/">rules and best practices for charts</a> </strong>that we keep perpetuating were thought for an old world of printed or otherwise static charts,  not the interactive environments such as web or mobile. As such, some recommendations of the 90s have become myths that need to be busted (I&#8217;m looking squarely at you, data-ink ratio).</p>
+<p>Second, dashboard design is <strong><a href="http://www.jeromecukier.net/blog/2015/02/07/dashboards-versus-data-visualization/">neither a data visualization problem, nor a visual design problem.</a></strong> By this I mean that thinking strictly as a designer or as a data visualization specialist might provide a textbook answer to some well-identified problems that arise with dashboards, but neither of these approaches is optimal.</p>
+<p>The not-so-secret secret to dashboards is to apply <a href="http://www.jeromecukier.net/blog/2015/02/07/dashboards-as-products/"><strong>product thinking</strong>. </a>How will people use the dashboard? That should guide what you try to accomplish.</p>
+<p>Finally, it&#8217;s really critical to realize that dashboards are<strong><a href="http://www.jeromecukier.net/blog/2015/02/07/charts-assemble/"> not collection of individual charts, but an ensemble.</a> </strong>Components of a dashboard should not be thought individually but as pieces that fit with one another.</p>
+<p>Each of these themes will be the subject of an individual article!</p>
+<h2>Follow me on Pinterest</h2>
+<p>On <a href="http://pinterest.com/jcukier">Pinterest</a>, I maintain two dashboard-related boards you may find interesting.</p>
+<p>The first is called &#8220;<a href="http://www.pinterest.com/jcukier/dashboards/">Dashboards</a>&#8221; (duh) and is examples of complete dashboards, with no judgment on quality, most often found in the wild.</p>
+<p>The second, <a href="http://www.pinterest.com/jcukier/data-vis-dashboard-ui-elements/">data vis / dashboard UI elements</a>, is centered around lower-level problems such as charts, parts of dashboards and their visual design. Virtually every dashboard example found on a visual design platform like dribbble or beyance is not so much a true dashboard than a collection of individual charts, not that it&#8217;s not interesting.</p>
+]]></content:encoded>
+			<wfw:commentRss>/2015/02/07/dashboards-ahoy/feed/</wfw:commentRss>
+		<slash:comments>7</slash:comments>
+		</item>
+	</channel>
+</rss>

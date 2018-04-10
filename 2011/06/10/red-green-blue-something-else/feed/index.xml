@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Red + green + blue = something else</title>
+	<atom:link href="http://localhost/2011/06/10/red-green-blue-something-else/feed/" rel="self" type="application/rss+xml" />
+	<link>/2011/06/10/red-green-blue-something-else/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>By: jerome</title>
+		<link>/2011/06/10/red-green-blue-something-else/#comment-158</link>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+		<pubDate>Fri, 10 Jun 2011 19:07:14 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=925#comment-158</guid>
+		<description><![CDATA[Hi Alex and congrats for your win! 
+yes it is size of the mark that does it, though other things work (like filters for some values).]]></description>
+		<content:encoded><![CDATA[<p>Hi Alex and congrats for your win!<br />
+yes it is size of the mark that does it, though other things work (like filters for some values).</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Alex Kerin</title>
+		<link>/2011/06/10/red-green-blue-something-else/#comment-157</link>
+		<dc:creator><![CDATA[Alex Kerin]]></dc:creator>
+		<pubDate>Fri, 10 Jun 2011 17:33:36 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=925#comment-157</guid>
+		<description><![CDATA[Jerome, love it. Is it the size of the pixel that is giving the effect? Or do you have a custom color scale for each layer?]]></description>
+		<content:encoded><![CDATA[<p>Jerome, love it. Is it the size of the pixel that is giving the effect? Or do you have a custom color scale for each layer?</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

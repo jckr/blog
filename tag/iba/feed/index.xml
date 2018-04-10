@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>iba &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/iba/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>Hollywood + data III: our info+beauty awards entry. Bonus: making of.</title>
+		<link>/2012/04/22/hollywood-data-iii-our-infobeauty-awards-entry-bonus-making-of/</link>
+		<comments>/2012/04/22/hollywood-data-iii-our-infobeauty-awards-entry-bonus-making-of/#respond</comments>
+		<pubDate>Sun, 22 Apr 2012 15:08:14 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[d3]]></category>
+		<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[challenge]]></category>
+		<category><![CDATA[David mcCandless]]></category>
+		<category><![CDATA[hacks]]></category>
+		<category><![CDATA[iba]]></category>
+		<category><![CDATA[info+beauty awards]]></category>
+		<category><![CDATA[tutorial]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1204</guid>
+		<description><![CDATA[So Jen and I released our Info+beauty awards entry. How did we end up with this? it&#8217;s really cool working around movies, because it&#8217;s something we can relate to. At first I wanted to do something out of keywords we could grab on the movies but  Jen came up with another idea I found more <a class="read-more" href="/2012/04/22/hollywood-data-iii-our-infobeauty-awards-entry-bonus-making-of/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>So Jen and I released our <a href="http://bit.ly/starchallenge">Info+beauty awards entry</a>.</p>
+<p><a href="http://bit.ly/starchallenge"><img class="aligncenter size-full wp-image-1205" title="shootingstars" src="http://www.jeromecukier.net/wp-content/uploads/2012/02/shootingstars.png" alt="" width="628" height="636" /></a></p>
+<p>How did we end up with this?</p>
+<p>it&#8217;s really cool working around movies, because it&#8217;s something we can relate to.</p>
+<p><div id="attachment_1206" style="width: 610px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2012/02/20120203_105750.jpg"><img class="size-full wp-image-1206" title="20120203_105750" src="http://www.jeromecukier.net/wp-content/uploads/2012/02/20120203_105750.jpg" alt="" width="600" height="450" /></a><p class="wp-caption-text">A part of my movie ticket stubs stash.</p></div></p>
+<p>At first I wanted to do something out of keywords we could grab on the movies but  Jen came up with another idea I found more worth pursuing: working around the story types (which was the most interesting aspect of the curated contest dataset) and see if there was not some kind of grand truth we could unravel there. She also requested stars and glitter, because we were not going to work on this glamorous dataset with a tedious dashboard done in Excel.</p>
+<p>That truth didn&#8217;t take so much time to find: the most frequently used story types (like comedy or movies with monsters) do not perform well in the box office while different story types (stories of teens growing up, or when the main character turns into something else), which are used less often, are much more profitable. So why doesn&#8217;t hollywood make more Junos and Black Swans and fewer College Road Trips or Dylan Dogs?</p>
+<p>That&#8217;s the idea. Now the making.</p>
+<p><span style="color: #ff0000;">Fair warning &#8211; the rest of this post is fairly technical. </span></p>
+<h3>Making stars</h3>
+<p>If I had to contribute significantly to the project it had to be done in d3/svg.</p>
+<p>Fortunately, it&#8217;s easy to generate star shapes in d3. Once you have the coordinates of where the points of one unitary star should be, you can easily make stars of any size with a function and a parameter.</p>
+<pre class="brush: jscript; title: ; notranslate">
+var c1=Math.cos(.2*Math.PI),c2=Math.cos(.4*Math.PI),
+    s1=Math.sin(.2*Math.PI),s2=Math.sin(.4*Math.PI),
+    r=1,
+
+    // ok the constant after r1 is the thickness of the branches.
+    // 1 is a &quot;straight&quot; star, less is narrower, more is thicker.
+
+    r1=1.5*r*c2/c1,
+    star=[
+        [0,-r],
+        [r1*s1,-r1*c1],
+        [r*s2,-r*c2],
+        [r1*s2,r1*c2],
+        [r*s1,r*c1],
+        [0,r1],
+        [-r*s1,r*c1],
+        [-r1*s2,r1*c2],
+        [-r*s2,-r*c2],
+        [-r1*s1,-r1*c1],
+        [0,-r]
+        ];
+    // this is a list of the pair of coordinates of the points that make a star.
+lineStar=function(k) {
+	var line=d3.svg.line()
+		.x(function(d) {return d[0]*k;})
+		.y(function(d) {return d[1]*k;})
+	return line(star)+&quot;Z&quot;; // this will stitch everything together.
+}</pre>
+<p>Now, running lineStar(10) will return the path description of a star with a radius of 10, thusly:</p>
+<pre class="brush: jscript; title: ; notranslate">&quot;M0,-10L3.367709824346891,-4.635254915624212L9.510565162951535,-3.0901699437494745L5.449068960040206,
+1.770509831248423L5.877852522924732,8.090169943749475L0,5.729490168751577L-5.877852522924732,
+8.090169943749475L-5.449068960040206,1.770509831248423L-9.510565162951535,-3.0901699437494745
+L-3.367709824346891,-4.635254915624212L0,-10Z&quot;</pre>
+<h3>Placing, moving (and spinning) the stars</h3>
+<p>The next idea was placing the stars.</p>
+<p>And for this we need two things: being able to position them somewhere, and being able to move them easily from point A to point B, ideally with some cool effect in between.</p>
+<p>So, it would be possible to change the x and y attributes of the path, but each would have to be dealt with separately with a different function call. I found it a better approach to rely on the <strong>transform </strong>attribute and <strong>translate</strong>. Each time I want to position a star somewhere, I need it to be set at an x and y coordinate, which will always correspond to either the data of the star, or that of a group above it. For instance, a star corresponding to a movie will need to be at the position corresponding to the data of that movie, or that of the story type above it if it&#8217;s still collapsed, or that of the high-level grouping of story types if that&#8217;s collapsed.</p>
+<p>Now all of the data structures for that are array of objects which all have x and y keys. In other terms, for any star-shaped object, I can always expect the underlying datum d to have d.x and d.y values. So, I wrote a function <strong>translate(d)</strong> which works on those 2 properties. And as a result, when I need to position any object all I have to write is:</p>
+<pre class="brush: jscript; title: ; notranslate">.attr(&quot;transform&quot;,translate)</pre>
+<p>and the object will be positioned according to its underlying data. (this is equivalent to writing .attr(&#8220;transform&#8221;,function(d) {return translate(d);}) )</p>
+<p>If I need to be them elsewhere, i.e. at the position of their parent, I can pass the data of that parent as an argument, for instance:</p>
+<pre class="brush: jscript; title: ; notranslate">.attr(&quot;transform&quot;,function(d) {return translate(structs[d.struct]);})</pre>
+<p>For a cheap bit of extra action, I&#8217;ve added a spinning effect in the translate function. Since translate(d) returns a value for the transform attribute, nobody said it just had to be instructions for translation! so I&#8217;ve added a rotate after the translate. The arguments for the rotate function depend on the x and y properties of the argument as well, so when stars move across the screen, the rotate angle changes slightly with each increment of either coordinate, giving the impression of spinning.</p>
+<h3>Explosions, starlets and other effects</h3>
+<p>Most of the cool things happening in the visualization rely on one very simple principle about d3 transitions: <strong>chaining them. </strong><br />
+In the code you&#8217;ll find oftentimes this pattern:</p>
+<pre class="brush: jscript; title: ; notranslate">.selectAll(&quot;someobject&quot;).data(...).enter().append(...) // creates the items
+... // sets the initial attributes
+...
+.transition()
+... // change the attributes
+...
+...
+...
+.each(&quot;end&quot;, function() { // stuff to be done on each item after the transition is over
+</pre>
+<p>and within that function, you&#8217;ll find either:<br />
+another transition which starts exactly when the previous one ends, so for instance opacity can decrease (causing a fading effect): d3.select(this).transition()&#8230;</p>
+<p>or a command to remove the object: d3.select(this).remove().</p>
+<p>When another transition is called, there can be another one after, then another one, then another one, then eventually the object can be removed (or not).</p>
+<p>Now you may think of transitions as ways to get one object to change smoothly from state A to state B, like a rectangle moving across the screen. But if you start to think that the <strong>objects can be discarded after the transitions</strong>, you&#8217;ll realize that there is an unbelievable number of things that can be done with them.<br />
+For instance, upon clicking on some stars, I am creating another star shape at that same location. Initially it has a the same size as the star, but I increase that radius to a large number (1000px) while decreasing its opacity to 0. So it seems that the new star is both exploding and fading. When it&#8217;s become transparent I remove it.</p>
+<pre class="brush: jscript; title: ; notranslate">gStructs.append(&quot;svg:path&quot;) // here I'm creating a &quot;path&quot; shape
+.style(&quot;stroke&quot;,&quot;none&quot;) // with no outline
+.style(&quot;fill&quot;,colorXp)  // with the fill color of the explosion
+.style(&quot;opacity&quot;,0.2)  // and a low opacity to start with (translucent)
+.attr(&quot;d&quot;,lineStar(d.size[sizeAxis])) // I give it the shape of a star and the size of the
+                                      // star that's being clicked
+.attr(&quot;transform&quot;,translate(d)) // and I position it on that star
+
+.transition() // action!
+
+.duration(500)	// a 500ms transition. Long enough to see the effect.
+.attr(&quot;d&quot;,lineStar(1000)) // the star expands to a radius of 1000.
+.style(&quot;opacity&quot;,0) // while fading to transparency.
+
+.each(&quot;end&quot;,function() {d3.select(this).remove();}) // and when it's done - it's removed.
+</pre>
+<h3>Changing axes</h3>
+<p>In this visualization I let the user change what&#8217;s plotted along the axes. It&#8217;s not very difficult to do but it&#8217;s a hassle to do it late in the project as it has been our case because it requires a lot of housekeeping. This is really about the data structures that will support our items. Instead of having just one value for x, y and size they have an object with several keys, one per axis. Then we maintain one variable per axis type, so everywhere we should write: d.x, we write instead: d.x[xAxis].</p>
+<p>So when there is an axis change, of course, we do a transition so that the stars and everything move smoothly to their new position. But what if the objects were already moving? When an unplanned transition interferes with an ongoing one, the results are often ugly, especially if the current transition had chained transitions waiting to be triggered. In other words, this will leave a mess.</p>
+<p>The way I&#8217;ve dealt with this is by keeping a tab on the number of transitions going on at a certain time. The axis change could only occur if no other transitions were taken place. If that was the case they were simply denied. There are other ways to do that like a queue of actions but that seemed the simple and adequate way to deal with this.</p>
+<h3>Bootstrap and google fonts</h3>
+<p>This was the first non-trivial project where I used <a href="http://twitter.github.com/bootstrap/">bootstrap</a> and I&#8217;m just never going back. Bootstrap simply removes all the hassle of arranging all the elements of a visualization on a screen and is very easy to use. Plus, it comes up with sensible options for buttons, forms, and the like. Since the contest it has evolved faster than a pokémon, for instance it is now possible to specify custom colors in a form and bootstrap will generate the appropriate css files. <a href="http://www.google.com/webfonts">Google fonts</a> are another great help as they are a very easy solution to choose fonts among a relatively large number of choices without relying on the fact that all the users have these fonts on their computer.</p>
+<h3>Wrapping it up</h3>
+<p>There&#8217;s a lot of other hacks in the code which you are welcome to explore, I admit I don&#8217;t remember them all because I took too much time to write this blog post after creating the entry (bad). However if there is one point you would like be to explain please ask in the comments.<br />
+I&#8217;m not entirely sure of what happened when I submitted the entry though. First it wasn&#8217;t listed with the others, then I got a message saying it hadn&#8217;t been reviewed, so it didn&#8217;t win anything, yet some time after the prizes have been handled it appeared in the &#8220;shortlisted&#8221; visualizations for the contest (which I found by accident). So whether or not it was good, I let you guys judge, at any rate it was fun making.</p>
+]]></content:encoded>
+			<wfw:commentRss>/2012/04/22/hollywood-data-iii-our-infobeauty-awards-entry-bonus-making-of/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

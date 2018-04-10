@@ -1,0 +1,419 @@
+critique	flambée
+critique	crache
+critique	échec
+critique	umps
+critique	enfumeur
+critique	guerre
+critique	silence
+critique	crise
+critique	mépris
+critique	gros sabots
+critique	électoraliste
+critique	pressions
+critique	irréprochable
+critique	trompe
+critique	austérité
+critique	fardeau
+critique	nulle
+critique	humiliation
+critique	indécent
+critique	abject
+critique	ultra
+critique	honte
+critique	suicidaire
+critique	accablant
+critique	incompétence
+critique	mensonge
+critique	inaction
+critique	coupable
+critique	diktat
+critique	lamentable
+critique	haine
+critique	caste
+critique	bonimenteur
+critique	versatile
+critique	diviseur
+critique	déficit de cohérence
+critique	déconstruites
+critique	pas bien présidée
+critique	limites
+critique	impuissant
+critique	épuisement
+critique	rien de concret
+critique	indignation
+critique	corruption
+critique	insupportable
+critique	irresponsable
+critique	braderie
+critique	félonie
+critique	désastreux
+critique	blessant
+critique	injurieux
+critique	abaissement
+critique	fustige
+critique	hostile
+critique	trahir
+critique	Babar
+critique	légèreté
+critique	inacceptable
+critique	improvisation
+critique	démagogie
+critique	mauvaise foi
+critique	honteux
+critique	nucléopathe
+critique	dsk
+critique	dodo la saumure
+critique	bettencourt
+critique	karachi
+critique	takieddine
+critique	affaire
+critique	corruption
+critique	immigrationniste
+critique	rappelez
+critique	fausses promesses
+critique	vagabondage
+critique	ambiguïté
+critique	ne savez pas
+critique	abonné absent
+critique	ne propose rien
+critique	excessif
+critique	caricatural
+critique	amalgame
+critique	scandaleux
+critique	pas admissible
+critique	pedalo
+critique	remplaceunmotdansuntitredefilmparchevenement
+critique	pathetique
+critique	confond
+critique	pas pro
+critique	hors sujet
+critique	quelle classe
+critique	faire le beau
+critique	y a pas de pilote
+critique	ne sait pas
+critique	habillé pour l'hiver
+critique	l'honneur de sa présence
+critique	réducteur
+critique	opportunisme
+critique	porte un nouveau coup
+critique	agonie sociale
+critique	abus de pouvoir
+critique	dans le rejet
+critique	détestable
+critique	cannibalisme
+critique	laxisme
+critique	inaction
+critique	(Ben)
+culture	humaniste
+culture	romancier
+culture	essayiste
+culture	poète
+culture	enseignant
+culture	dramaturge
+culture	éditeur
+culture	lecteur
+culture	culture
+culture	culturel
+culture	musique
+culture	streaming
+culture	numérique
+culture	internet
+culture	fournisseurs d'accès
+culture	opendata
+culture	deezer
+culture	médias
+dem	vote
+dem	république
+dem	commémoration
+dem	présidentielle
+dem	G20
+dem	grec
+dem	accord
+dem	primaires
+dem	démocratie
+dem	gouvernance
+dem	sénatoriales
+dem	politique
+dem	patriote
+dem	français
+dem	souverainété
+dem	conscience
+dem	Syrie
+dem	Lybie
+dem	Iran
+dem	arme
+dem	Europe
+dem	France
+dem	secrétaire permanent
+dem	liberté
+dem	main dans la main
+dem	partipatif
+dem	républicain
+dem	mandat
+dem	proportionnelle
+dem	immunité
+dem	citoyens
+eco	budget
+eco	fraude
+eco	retraites
+eco	agricoles
+eco	euro
+eco	Dexia
+eco	économique
+eco	dette
+eco	déficit
+eco	cour des comptes
+eco	protectionnisme
+eco	emploi
+eco	industrie
+eco	chômage
+eco	désendetter
+eco	reguler
+eco	réforme bancaire
+eco	spéculation
+eco	logement
+eco	bâtiment
+eco	réforme fiscale
+eco	fond européen
+eco	capitaux
+eco	financier
+eco	banque
+eco	paradis fiscal
+eco	taxation
+eco	experts économiques
+eco	emprunter
+eco	retraite
+eco	licenciement
+eco	boursier
+eco	travail
+eco	croissance
+eco	investissement
+eco	désendettement
+eco	finance
+eco	industriels
+eco	impôts
+eco	bénéfices
+eco	notation
+eco	AAA
+eco	indigné
+eco	mondialisation
+eco	entreprise
+eco	PME
+eco	triple A
+eco	tourisme
+eco	services
+eco	taxe
+eco	agriculture
+eco	entrepreneurs
+eco	l'économie
+eco	FMI
+eco	déficits
+eco	taux d'intérêt
+egal	femmes
+egal	mariage
+egal	-es
+egal	égalité
+egal	parité
+egal	père
+egal	féministe
+egal	maternité
+egal	gay
+egal	lesbien
+egal	égalité
+egal	précarité
+egal	féminise
+egal	familles en difficulté
+egal	homosexuels
+egal	homoparentalité
+env	gazole
+env	nucléaire
+env	energétique
+env	environnement
+env	brûlés
+env	biodiversité
+env	environnemental
+env	biologique
+env	pesticides
+env	fukushima
+env	électricité
+env	écolologiste
+env	écologique
+env	nucléopathe
+env	énergétique
+env	énergie
+env	développement durable
+peur	victime
+peur	violence
+peur	insécurité
+peur	drame
+peur	policiers
+peur	gendarmes
+peur	douaniers
+peur	non droit
+peur	karcher
+peur	voyou
+peur	peur
+peur	sécurité
+peur	violentes
+peur	destrutrices
+peur	incendie
+peur	criminel
+peur	terroristes
+peur	barbare
+peur	mort
+peur	enlevée
+peur	récidive
+peur	ministre de l'Intérieur
+peur	immigration
+peur	prières
+peur	immigrationniste
+peur	clandestin
+peur	fondamentalisme
+peur	burqa
+peur	criminalité
+peur	meutre
+peur	moquée
+peur	(Ben)
+promo	salon
+promo	communiqué
+promo	lettre
+promo	exprime
+promo	discours
+promo	France 3
+promo	i-télé
+promo	dailymotion
+promo	intervention
+promo	salle pleine
+promo	présentation
+promo	analyse
+promo	confirmé
+promo	soutien
+promo	invité
+promo	France inter
+promo	RTL
+promo	Radio Classique
+promo	Public Sénat
+promo	20h
+promo	TF1
+promo	Objectif Elysée 2012
+promo	RMC
+promo	équipe
+promo	retrouvez
+promo	photos
+promo	direct
+promo	répond
+promo	BFM
+promo	France 2
+promo	popularité
+promo	favorable
+promo	sud radio
+promo	temps forts
+promo	déplacement
+promo	j'étais
+promo	ambiance
+promo	intégralité
+promo	vidéo
+promo	verbatim
+promo	travail
+promo	combat
+promo	actualité
+promo	sondages
+promo	plébiscitent
+promo	bilan
+promo	baromètre
+promo	remontée
+promo	@f_inter
+promo	Canal+
+promo	France Info
+promo	BFMtv
+promo	itélé
+promo	LCI
+promo	programme
+promo	projet
+promo	orientation
+promo	idées
+promo	mesures
+promo	campagne
+promo	équipe
+promo	organigramme
+promo	présentation
+promo	victoire
+promo	demain
+promo	sauver
+promo	avancer
+promo	bataille
+promo	offensive
+promo	Radio J
+promo	introduction
+promo	conclusion
+promo	découvrez
+promo	n'hésitez pas
+promo	google+
+promo	google +
+promo	mon agenda
+promo	LT
+promo	un billet
+promo	un article
+social	école
+social	éducation
+social	recherche
+social	étudiants
+social	enseignement
+social	université
+social	santé
+social	remboursement
+social	handicap
+social	sanitaire
+social	thyroïde
+social	prix
+social	payer
+social	pouvoir d'achat
+social	pauvreté
+social	riches
+social	expulsions
+social	revenu
+social	RSA
+social	infirmières
+social	enseignants
+social	sociale
+valeurs	hommage
+valeurs	grande dame
+valeurs	tristesse
+valeurs	valeurs
+valeurs	convictions
+valeurs	grand
+valeurs	disparaître
+valeurs	courage
+valeurs	salue
+valeurs	utile
+valeurs	dévouement
+valeurs	remercie
+valeurs	FF
+valeurs	félicite
+valeurs	juger
+valeurs	message
+valeurs	internationaliste
+valeurs	convictions
+valeurs	moderne
+valeurs	règle
+valeurs	juste
+valeurs	protectionnisme
+valeurs	ouverte
+valeurs	gagner
+valeurs	espérance
+valeurs	rêve
+valeurs	histoire
+valeurs	personnel
+valeurs	possible
+valeurs	espoir
+valeurs	honneur
+valeurs	force
+valeurs	irréprochable
+valeurs	ténacité
+valeurs	clarté
+valeurs	justice
+valeurs	solidaire
+valeurs	unité
+valeurs	mobilisation
+valeurs	proposer
+valeurs	proposition

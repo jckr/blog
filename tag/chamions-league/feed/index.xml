@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>chamion&#8217;s league &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/chamions-league/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>Tableau 2012 sports visualization contest entry</title>
+		<link>/2012/06/30/tableau-2012-sports-visualization-contest-entry/</link>
+		<comments>/2012/06/30/tableau-2012-sports-visualization-contest-entry/#comments</comments>
+		<pubDate>Fri, 29 Jun 2012 23:21:26 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[apoel nicosia]]></category>
+		<category><![CDATA[chamion's league]]></category>
+		<category><![CDATA[contest]]></category>
+		<category><![CDATA[football]]></category>
+		<category><![CDATA[real madrid]]></category>
+		<category><![CDATA[sports]]></category>
+		<category><![CDATA[Tableau]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1384</guid>
+		<description><![CDATA[So here goes for the 2012 Tableau contest entry. Before I go on explaining what this is about and how it&#8217;s been made, I&#8217;d like to express my thanks to Opta for letting me use this awesome dataset. They have been very reactive and supportive. So what is this? So the assignment was to create <a class="read-more" href="/2012/06/30/tableau-2012-sports-visualization-contest-entry/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p><iframe style="border: 0px;" src="http://public.tableausoftware.com/views/champions/champions?:embed=y&amp;:from_wg=true" scrolling="no" width="652px" height="756px"></iframe></p>
+<p>So here goes for the 2012 Tableau contest entry.<br />
+Before I go on explaining what this is about and how it&#8217;s been made, I&#8217;d like to express my thanks to <a href="http://www.optasports.com/">Opta</a> for letting me use this awesome dataset. They have been very reactive and supportive.</p>
+<h2>So what is this?</h2>
+<p>So the assignment was to create a visualization about sports. and who says sports, says football. There&#8217;s been a number of epic football games in recent history, and the Real Madrid / APOEL Nicosia match up last April is definitely one of them. It&#8217;s that game where APOEL defender Paolo Jorge, after losing 2 teeth after an unfortunate collision with a teammate, decided to pull out a third one that was hanging lose. And although Real ended up winning by a large margin 5-2, few teams were able to score 1 goal against 2012&#8217;s Real Madrid, let alone 2.</p>
+<p>So I chose to represent the game as a network.</p>
+<p>The circles on the right (Real Madrid) are much larger, which means that Real players were involved in more events in the game than their APOEL counterparts. The dataset I could work from had all sorts of events recorded such as passes or shots. The lines linking the left side also seem darker. You can also tell that lines across attackers (lower part of screen) are much thinner than those who involve mid-fields, who are really building the game, or defenders. Lines are colored by the team who initiated the action. So if a line of the color of one team ends connected to the player of another team, it means the ball has been stolen. So you can explore how defenders were able to stop individual attackers, duels among midfielders, etc.</p>
+<p>This being a contest, I&#8217;ve thrown in a little subtlety with the possibility of switching the form of the display from a more abstract circle diagram network, to a second representation where players are positioned according to their average physical position during the game. For this second representation, I&#8217;ve chosen to show teams side by side, and not one on top of the other, as to keep the chart legible.</p>
+<h2>How is this done?</h2>
+<p>First let me explain what I attempt to do in a contest.</p>
+<p>I try to do three things. First, work on interesting, non-trivial data. Second, aim for virtuosity in the execution, try to come up with a difficult technique and hopefully pull it out nicely. Finally, link the two together: make the visualization relevant, so it supports the interestingness of the data, without being too busy or complex.</p>
+<p>So we talked about the data. Again I must say it&#8217;s been really comfortable working with a professional dataset. The football statistics that reach mass audiences are usually very aggregated, so it&#8217;s really nice to have access to a degree of finesse. And by the way, I only used the tip of the iceberg of that data.</p>
+<p>Now the technique.</p>
+<p>Some time ago I wrote how <a href="http://www.google.fr/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;ved=0CFQQFjAA&amp;url=http%3A%2F%2Fwww.jeromecukier.net%2Fblog%2F2011%2F11%2F04%2Fan-open-letter-to-tableau%2F&amp;ei=gzDuT8WQPMfK0QWn5rmJDg&amp;usg=AFQjCNFHshZKvXmHRXzX1KnxvxTBc-dJKA&amp;sig2=i3qKGtUrVLrR0OWQkZnpoA">I regretted that Tableau doesn&#8217;t have a network graph module</a>. Though, I had a fair idea how to hack one.</p>
+<p>As in a previous post on treemaps, we are using the line mark with aptly chosen coordinates. Note that since the lines I am drawing rely on two records, we won&#8217;t be needing the path shelf this time.</p>
+<p>There are two kinds of &#8220;lines&#8221; here: those who act as nodes, and those who act as links.</p>
+<p>Nodes are where the players circles are, and are also used to support labels. Those are given a size depending on the number of events each player is involved in. That number has been precomputed and is made available with the data.</p>
+<p>To explain how links work, I have 3 sheets in my data. One on players (which provide the location of each player depending on each mode, their names, and other such details), one on points, which lists all the begin- and end-points of all the links, all of these points being linked to a record in the player sheet. The final sheet is the one on lines, where each record has a start and an end point.</p>
+<p>So essentially, all the positioning happens in the player sheet. Each player and each special location there is assigned two positions, one around the circle diagram and one in the other form. Both are calculated before the data is supplied to Tableau. In Tableau using a parameter we can simulate a transition from one form to another &#8211; the intermediary states are even legible <img src="https://s.w.org/images/core/emoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>For the tooltips, I have prepared different scenarios depending on the type of line which will be mouseovered (passes, shots, goals, players&#8230;) so one formula can be used to generate a useful and relevant text.</p>
+<p>Finally, I used a little trick around transparency. Here it is absolutely necessary to use transparency because else the networks will become very, very busy and difficult to read. However, I did want the goal lines to stand out. I wanted them to be not transparent. Problem: there is no transparency shelf. You can only set transparency for all the marks at once. So, each goal link is really several links one on top of the other, so the resulting line is really opaque.</p>
+<p>And finally the relevance.</p>
+<p>I didn&#8217;t want to pack too much data at once, I mean sure there is much more data than on a traditional game report we see in the sports press, but not to the point that it&#8217;s overwhelming. I tried to make it so that it&#8217;s possible to immediately see the outcome of the game by counting the thicker lines going out of the circle. 2 to 5.</p>
+<p>Instead of packing the dashboard with tightly fitted panels I have used just this one and only used one control to let the user change the representation.</p>
+<p>So, I hope you all like it!</p>
+]]></content:encoded>
+			<wfw:commentRss>/2012/06/30/tableau-2012-sports-visualization-contest-entry/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+	</channel>
+</rss>

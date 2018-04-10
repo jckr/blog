@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>radars &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/radars/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>Exaspérés par les radars</title>
+		<link>/2011/05/30/exasperes-par-les-radars/</link>
+		<comments>/2011/05/30/exasperes-par-les-radars/#comments</comments>
+		<pubDate>Mon, 30 May 2011 20:10:12 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[français]]></category>
+		<category><![CDATA[gouvernement]]></category>
+		<category><![CDATA[radars]]></category>
+		<category><![CDATA[sécurité routière]]></category>
+		<category><![CDATA[statistique]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=882</guid>
+		<description><![CDATA[Cette semaine le gouvernement a annoncé que le projet de retirer les panneaux annonçant les radars était gelé. Seuls 13 panneaux ont été retirés sur environ 1000. Cette décision fait suite à un appel de députés à qui leurs électeurs ont fait savoir leur &#8220;profonde exaspération&#8221; suite à ce fameux retrait de panneaux et plus <a class="read-more" href="/2011/05/30/exasperes-par-les-radars/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>Cette semaine le gouvernement a annoncé que le projet de retirer les panneaux annonçant les radars était gelé. Seuls 13 panneaux ont été retirés sur environ 1000. Cette décision fait suite à un <a href="http://www.lefigaro.fr/assets/pdf/110523-courrier-au-premier-ministre.pdf">appel de députés</a> à qui leurs électeurs ont fait savoir leur &#8220;profonde exaspération&#8221; suite à ce fameux retrait de panneaux et plus généralement, à cause des contrôles automatisés.</p>
+<p>Heureusement, la sécurité routière est l&#8217;un des sujets les plus analysés par les pouvoirs publics. Alors, chiffres en mains, quelle est la bonne décision?</p>
+<p>Est-ce que, <a href="http://blog.40millionsdautomobilistes.com/2011/05/24/verite-argent-radars/">comme disent certains</a>, les radars ne sont qu&#8217;un moyen de faire rentrer de l&#8217;argent dans les caisses de l&#8217;État? ou est-ce que les radars sauvent des vies?</p>
+<h3>Le rôle de la vitesse dans les accidents de la route</h3>
+<p>La théorie qui relie vitesse, nombre d&#8217;accidents et victimes est le modèle de Nilsson qui fut établi au début des années 1980. Pour simplifier, si la vitesse moyenne augmente de 1%, le nombre d&#8217;accidents augmente de 2% et celui de morts de 4%. Ce modèle s&#8217;est vérifié empiriquement, c&#8217;est pourquoi ont l&#8217;utilise toujours 30 ans plus tard.</p>
+<p>Cela dit, quand on parle d&#8217;augmentation ou de diminution de vitesse dans ce modèle, on parle de vitesse moyenne, avec la même distribution, c&#8217;est-à-dire qu&#8217;il y aura toujours autant de personnes qui conduisent 10% plus vite que la moyenne, 20% plus vite etc.<br />
+<script src="http://www.jeromecukier.net/wp-includes/js/protovis_r3_2.js" type="text/javascript"></script> <script src="http://www.jeromecukier.net/wp-content/uploads/2011/05/distri.js" type="text/javascript"></script><br />
+Or que savons-nous précisément sur ces vitesses trop élevées, celles précisément qui donnent lieu à des amendes?</p>
+<p>D&#8217;après <em>La sécurité routière en France – BILAN 2009</em>, page 168,</p>
+<blockquote><p>La vitesse est un facteur particulier d’accident dans la mesure où elle est pratiquement toujours présente dans une collision, que ce soit une vitesse inappropriée aux circonstances ou excessive.</p></blockquote>
+<h3>Dépassements de vitesse et radar</h3>
+<p>Mais est-ce que les radars ont été efficaces pour lutter contre ces vitesses excessives? Là encore on peut vérifier chiffres en main.<br />
+<!--[if IE]>
+<a href="http://www.jeromecukier.net/wp-content/uploads/2011/05/infractions.png" _mce_href="http://www.jeromecukier.net/wp-content/uploads/2011/05/infractions.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/05/infractions.png" _mce_src="http://www.jeromecukier.net/wp-content/uploads/2011/05/infractions.png" alt="" title="infractions" width="600" height="400" class="alignnone size-full wp-image-403" /></a>
+<a href="http://www.jeromecukier.net/wp-content/uploads/2011/05/vitesses.png" _mce_href="http://www.jeromecukier.net/wp-content/uploads/2011/05/vitesses.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/05/vitesses.png" _mce_src="http://www.jeromecukier.net/wp-content/uploads/2011/05/vitesses.png" alt="" title="vitesses" width="600" height="400" class="alignnone size-full wp-image-403" /></a>
+<!--><br />
+<script src="http://www.jeromecukier.net/wp-content/uploads/2011/05/infractions.js" type="text/javascript"></script> <script src="http://www.jeromecukier.net/wp-content/uploads/2011/05/vitesses.js" type="text/javascript"></script></p>
+<p>L&#8217;introduction des radars a augmenté le nombre de contrôles de vitesse dans de grandes proportions: de  1,350,000 à peu près en 2002 à près de 10 millions aujourd&#8217;hui. Dans le même temps,  la proportion de véhicules qui roulent 10km/h au-dessus des limites autorisées est passé d&#8217;environ 40% à 10%. Les chiffres passent de 5% à 0.5% pour ceux qui roulent à plus de 30 km/h au-dessus de la limite.<br />
+La <a href="http://www.lefigaro.fr/assets/pdf/110523-courrier-au-premier-ministre.pdf">lettre des députés</a> note que les accidents ont été divisés par 2 en 20 ans alors que la circulation a augmenté de 80%. Il serait plus exact de dire que les morts sur la route ont été divisés par 2&#8230; suite à l&#8217;introduction des radars automatiques.</p>
+<h3>Le coût des accidents</h3>
+<p>Un exercice récurrent des bilans de sécurité routière est de chiffrer le coût pour la société des accidents de la route. Ceux que le détail intéressent pourront consulter le <a href="http://www2.securiteroutiere.gouv.fr/ressources/bilan/2009/sources/index.htm">Bilan 2009 de la Sécurité Routière,</a> page 35 et suivantes.</p>
+<p>Les coûts unitaires et totaux sont les suivants:</p>
+<table width="600px">
+<tbody>
+<tr>
+<th style="text-align: left;"> Catégorie</th>
+<th style="text-align: right;">Nombre</th>
+<th style="text-align: right;">Coût unitaire</th>
+<th style="text-align: right;">Coût total</th>
+</tr>
+<tr>
+<td>morts</td>
+<td style="text-align: right;">4273</td>
+<td style="text-align: right;">1,254,474</td>
+<td style="text-align: right;">5,360,367,402</td>
+</tr>
+<tr>
+<td>blessés graves</td>
+<td style="text-align: right;">33323</td>
+<td style="text-align: right;">135,526</td>
+<td style="text-align: right;">4,516,132,898</td>
+</tr>
+<tr>
+<td>blessés légers</td>
+<td style="text-align: right;">57611</td>
+<td style="text-align: right;">5,421</td>
+<td style="text-align: right;">312,309,231</td>
+</tr>
+<tr>
+<td>accidents corporels</td>
+<td style="text-align: right;">72315</td>
+<td style="text-align: right;">6,526</td>
+<td style="text-align: right;">471,927,690</td>
+</tr>
+<tr>
+<td>accidents matériels</td>
+<td style="text-align: right;">1997140</td>
+<td style="text-align: right;">6,526</td>
+<td style="text-align: right;">13,033,335,640</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<th style="text-align: right;">23,694,072,861</th>
+</tr>
+</tbody>
+</table>
+<p>Le coût total de l&#8217;insécurité routière est donc de 23.7 milliards d&#8217;euros en 2009. Il y a un accident toutes les 15 secondes environ.</p>
+<p>En contrepartie, l&#8217;État a récupéré 212,000,000 €. (<a href="http://www.performance-publique.gouv.fr/farandole/2009/rap/pdf/DRGNORMALMSNYE.pdf">Contrôle de la circulation et du stationnement routiers</a>)</p>
+<p>Soit&#8230; 112 fois moins.</p>
+<h3>Un paradoxe statistique</h3>
+<p>Même avec une conduite dangereuse, la<strong> probabilité d&#8217;avoir un accident est relativement faible</strong>. Environ 70000 Français sont blessés chaque année, ce qui fait à peine plus de 1 sur 1000, et il y a <strong>moins d&#8217;une chance sur 100,000 de mourir de la route</strong>. Mêmes s&#8217;ils sont très graves, ces incidents sont suffisamment rares pour qu&#8217;il ne fassent pas partie de la vie quotidienne de la plupart des Français ou de leur entourage.</p>
+<p>En revanche, les <strong>chances de se faire flasher</strong> sont bien plus élevées. Avec 10 millions de PV par an pour environ 40 millions d&#8217;automobilistes, chaque conducteur a donc une chance sur 4 d&#8217;écoper d&#8217;une amende. Pour un groupe de 10 automobilistes (famille, collègues&#8230;) à risque égal, il y a<strong> 95% de chances </strong>pour qu&#8217;au moins l&#8217;un d&#8217;entre eux y soit confronté.</p>
+<p>Pour les Français, donc, pas étonnant que le désagrément de ces amendes semble bien plus important que les conséquences catastrophiques d&#8217;un accident grave. Pourtant, les conséquences de la vitesse au volant sont beaucoup plus graves que le mal nécessaire des radars. Plutôt que de céder aux sirènes de la démagogie, le rôle du gouvernement devrait être de défendre l&#8217;intérêt général et de faire comprendre son action aux Français.</p>
+]]></content:encoded>
+			<wfw:commentRss>/2011/05/30/exasperes-par-les-radars/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+	</channel>
+</rss>

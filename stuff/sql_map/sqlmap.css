@@ -1,0 +1,7 @@
+.container {-moz-user-select: none !important; // mozilla browsers
+    -khtml-user-select: none !important;
+    -webkit-user-select: none !important;} // webkit browsers
+.cell(stroke:#ccc;fill:#fff}
+.grid{fill:white;}
+.row{fill:white;}
+#chart {height:537px;width:520px;}

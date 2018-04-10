@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>grammar of graphics &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/grammar-of-graphics/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>Working with data in protovis &#8211; interlude: protovis nesting vs tableau</title>
+		<link>/2011/02/11/working-with-data-in-protovis-interlude-protovis-nesting-vs-tableau/</link>
+		<comments>/2011/02/11/working-with-data-in-protovis-interlude-protovis-nesting-vs-tableau/#comments</comments>
+		<pubDate>Fri, 11 Feb 2011 00:40:48 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[charts]]></category>
+		<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[protovis]]></category>
+		<category><![CDATA[tips]]></category>
+		<category><![CDATA[grammar of graphics]]></category>
+		<category><![CDATA[nesting]]></category>
+		<category><![CDATA[Tableau]]></category>
+		<category><![CDATA[tutorial]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=550</guid>
+		<description><![CDATA[Protovis, like Tableau, are based on the grammar of graphics framework. In a nutshell, in both environments, a chart designer can map visual attributes (such as x or y dimension, color, shape, etc.) to dimensions of data. The flat file which Becker&#8217;s Barley is based on can be used in Tableau public nearly as is. <a class="read-more" href="/2011/02/11/working-with-data-in-protovis-interlude-protovis-nesting-vs-tableau/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>Protovis, like Tableau, are based on the grammar of graphics framework. In a nutshell, in both environments, a chart designer can map visual attributes (such as x or y dimension, color, shape, etc.) to dimensions of data. </p>
+<p>The flat file which <a href="http://vis.stanford.edu/protovis/ex/barley.html">Becker&#8217;s Barley</a> is based on can be used in Tableau public nearly as is.<br />
+Here&#8217;s a size-by-size comparison of the results:</p>
+<table>
+<tr>
+<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/protovisBarley.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/protovisBarley.png" alt="" title="protovisBarley" width="350" height="830" class="aligncenter size-full wp-image-551" /></a></td>
+<td><script type="text/javascript" src="http://public.tableausoftware.com/javascripts/api/viz_v1.js"></script><object class="tableauViz" width="356" height="901" style="display:none;"><param name="name" value="barley/Dashboard1" /><param name="toolbar" value="no" /><param name="tabs" value="no" /></object><noscript>Dashboard 1 <br /><a href="#"><img alt="Dashboard 1 " src="http://public.tableausoftware.com/static/images/ba/barley/Dashboard1/1_rss.png" height="100%" /></a></noscript></td>
+</tr>
+</table>
+<h2>How it&#8217;s done in Protovis</h2>
+<p>In protovis, the flat file is nested several times, so that its various elements can be called in a hierarchy from series of dots per variety, to panel per sites to a grander panel. Legend and ticks are added by hand for a perfect finish. Still, some careful planning is required to prepare the data file and to adjust the various elements (choice of colors, sizes, etc.)</p>
+<h2>How it&#8217;s done in Tableau</h2>
+<p><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/tableauBarley.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/tableauBarley.png" alt="" title="tableauBarley" width="665" height="497" class="aligncenter size-full wp-image-554" /></a><br />
+The data file, unsurprisingly, has 4 dimensions: site, variety, year and yield. In tableau terms, yield is a measure (a numerical dimension) while the other 3 are categorical dimensions. With a few clicks, it is possible to get a result which is similar to the original vis in Protovis. We assign yield to column (horizontal attribute), site and variety to row in that order. We also untick aggregate measures in Analysis, so we get little circles and not big bars. Here, I&#8217;ve manually sorted the sites and the varieties. </p>
+<h2>Conclusion</h2>
+<p>It is much, much easier to achieve a similar result with Tableau, however using protovis provides a finer control. </p>
+]]></content:encoded>
+			<wfw:commentRss>/2011/02/11/working-with-data-in-protovis-interlude-protovis-nesting-vs-tableau/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+	</channel>
+</rss>

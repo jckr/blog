@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Working with data in protovis &#8211; interlude: protovis nesting vs tableau</title>
+	<atom:link href="http://localhost/2011/02/11/working-with-data-in-protovis-interlude-protovis-nesting-vs-tableau/feed/" rel="self" type="application/rss+xml" />
+	<link>/2011/02/11/working-with-data-in-protovis-interlude-protovis-nesting-vs-tableau/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>By: Andy Cotgreave</title>
+		<link>/2011/02/11/working-with-data-in-protovis-interlude-protovis-nesting-vs-tableau/#comment-105</link>
+		<dc:creator><![CDATA[Andy Cotgreave]]></dc:creator>
+		<pubDate>Fri, 11 Feb 2011 08:58:14 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=550#comment-105</guid>
+		<description><![CDATA[Great comparison Jerome. For me, this post highlights why I think Tableau is so successful. I am really excited by Protovis, and see some wonderful visualisations created with it. I particularly like Jan Willem Tulp&#039;s circular visualisations. Protovis is clearly one powerful tool. However, it&#039;s a programmer&#039;s tool. Even simple charts require some knowledge of programming. Instantly, you&#039;ve lost about 99% of all people who might be interested in vizualisation.
+
+When I use Tableau, I am always amazed at how far you can get with just the mouse. For this reason, it&#039;s future is bright as it puts the power back in the hands of the non-programmers.]]></description>
+		<content:encoded><![CDATA[<p>Great comparison Jerome. For me, this post highlights why I think Tableau is so successful. I am really excited by Protovis, and see some wonderful visualisations created with it. I particularly like Jan Willem Tulp&#8217;s circular visualisations. Protovis is clearly one powerful tool. However, it&#8217;s a programmer&#8217;s tool. Even simple charts require some knowledge of programming. Instantly, you&#8217;ve lost about 99% of all people who might be interested in vizualisation.</p>
+<p>When I use Tableau, I am always amazed at how far you can get with just the mouse. For this reason, it&#8217;s future is bright as it puts the power back in the hands of the non-programmers.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

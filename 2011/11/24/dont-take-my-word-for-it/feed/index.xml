@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Don&#8217;t take my word for it</title>
+	<atom:link href="http://localhost/2011/11/24/dont-take-my-word-for-it/feed/" rel="self" type="application/rss+xml" />
+	<link>/2011/11/24/dont-take-my-word-for-it/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>By: jerome</title>
+		<link>/2011/11/24/dont-take-my-word-for-it/#comment-229</link>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+		<pubDate>Thu, 24 Nov 2011 09:38:18 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1126#comment-229</guid>
+		<description><![CDATA[No I didn&#039;t try to pitch it that way. It was done after the fact. My main goal was to inspire administrations to use such tools and I can&#039;t say I have been that successful in that respect. 
+
+The pattern I see is that media would launch or propagate an assertion which attacks the current policies. Sometimes this is backed by a huge dataset and they can use datavis to make their point (Washington post has run a few such stories). But this is not always the case. For instance, media can simply cite a politician that makes an outlandish claim. 
+
+With that in mind administration is just a sitting duck. They are not equipped to face such claims. However, if visualization is done &quot;preemptively&quot; to show that the policy choice that they make coincide with public interest, then such accusations can be defused. Other media, for instance, could easily point a contradiction. 
+
+So, I&#039;m more interested in using visualizations to defend than to attack :)
+
+I have shown this vis to various senior officials who all liked it but didn&#039;t think they could afford going in that direction in this economic context. We&#039;ll eventually get there because vis can have an enormous ROI. 
+
+and if you read this and you are in a position to commission political visualizations do get in touch! I&#039;ll be happy to advise.]]></description>
+		<content:encoded><![CDATA[<p>No I didn&#8217;t try to pitch it that way. It was done after the fact. My main goal was to inspire administrations to use such tools and I can&#8217;t say I have been that successful in that respect. </p>
+<p>The pattern I see is that media would launch or propagate an assertion which attacks the current policies. Sometimes this is backed by a huge dataset and they can use datavis to make their point (Washington post has run a few such stories). But this is not always the case. For instance, media can simply cite a politician that makes an outlandish claim. </p>
+<p>With that in mind administration is just a sitting duck. They are not equipped to face such claims. However, if visualization is done &#8220;preemptively&#8221; to show that the policy choice that they make coincide with public interest, then such accusations can be defused. Other media, for instance, could easily point a contradiction. </p>
+<p>So, I&#8217;m more interested in using visualizations to defend than to attack 🙂</p>
+<p>I have shown this vis to various senior officials who all liked it but didn&#8217;t think they could afford going in that direction in this economic context. We&#8217;ll eventually get there because vis can have an enormous ROI. </p>
+<p>and if you read this and you are in a position to commission political visualizations do get in touch! I&#8217;ll be happy to advise.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Jan Willem Tulp</title>
+		<link>/2011/11/24/dont-take-my-word-for-it/#comment-228</link>
+		<dc:creator><![CDATA[Jan Willem Tulp]]></dc:creator>
+		<pubDate>Thu, 24 Nov 2011 08:58:08 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1126#comment-228</guid>
+		<description><![CDATA[Great post Jerome! Was your pension visualization tool picked up by the French media?]]></description>
+		<content:encoded><![CDATA[<p>Great post Jerome! Was your pension visualization tool picked up by the French media?</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

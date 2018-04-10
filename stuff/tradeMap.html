@@ -1,0 +1,139 @@
+
+<html>
+  <head>
+    <title>Choropleth Map</title>
+
+	<script type="text/javascript" src="http://blog.oecdfactblog.org/wp-includes/js/protovis-r3.2.js"></script>
+    <script type="text/javascript" src="countriesAgri.js"></script>
+    <style type="text/css">
+
+#fig {
+  width: 600px;
+  height: 550px;
+}
+
+    </style>
+  </head>
+  <body><div id="center"><div id="fig">
+    <div align="right">
+      <b>Zoom on:</b>
+      <select id="menu" onchange="updateZ(value);vis.render();">
+        <option value=0 selected>World</option>
+        <option value=1>Europe</option>
+        <option value=2>North America</option>
+        <option value=3>South America</option>
+        <option value=4>Africa</option>
+        <option value=5>Asia</option>
+        <option value=6>Oceania</option>
+      </select>
+    </div>
+    <script type="text/javascript+protovis">
+var geo;
+function updateZ(value)
+{
+if (value==0){geo.domain({lat:-90,lng:-180},{lat:90,lng:180});vis.zoom(0);}
+if (value==1){geo.domain({lat:70,lng:45},{lat:35,lng:-25});vis.zoom(1);}
+if (value==2){geo.domain({lat:90,lng:-180},{lat:15,lng:-50});vis.zoom(1);}
+if (value==3){geo.domain({lat:-60,lng:-150},{lat:20,lng:20});vis.zoom(1);}
+if (value==4){geo.domain({lat:-40,lng:-60},{lat:40,lng:100});vis.zoom(1);}
+if (value==5){geo.domain({lat:0,lng:0},{lat:90,lng:180});vis.zoom(1);}
+if (value==6){geo.domain({lat:-50,lng:70},{lat:10,lng:190});vis.zoom(1);}
+}
+
+var continents=[
+{name:"World", topRight:{lat:90,lng:180},bottomLeft:{lat:-90,lng:-180}},
+{name:"Europe", topRight:{lat:70,lng:45},bottomLeft:{lat:35,lng:-25}},
+{name:"North America", topRight:{lat:90,lng:-50},bottomLeft:{lat:15,lng:-180}},
+{name:"South America", topRight:{lat:20,lng:20},bottomLeft:{lat:-60,lng:-150}},
+{name:"Africa", topRight:{lat:40,lng:100},bottomLeft:{lat:-40,lng:-60}},
+{name:"Asia", topRight:{lat:90,lng:180},bottomLeft:{lat:0,lng:0}},
+{name:"Oceania", topRight:{lat:10,lng:190},bottomLeft:{lat:-50,lng:70}}
+];
+
+/*
+ * A diverging color scale, using previously-computed quantiles of population
+ * densities; in the future, we might use a quantile scale here to do this
+ * automatically. Map colors based on www.ColorBrewer.org, by Cynthia A. Brewer,
+ * Penn State.
+ */
+var fill = pv.Scale.linear()
+    .domain(-100000, 0, 10000)
+    //.range("#91bfdb", "#ffffbf", "#fc8d59");
+	.range("red","aliceblue","steelblue");
+/* Precompute the country's population density and color. */
+countries.forEach(function(c) {
+  c.color = stats[c.code].exports
+      ? fill(stats[c.code].exports)
+      : "#ccc"; // unknown
+});
+
+var w = 600,
+    h = 3 / 5 * w;
+    geo= pv.Geo.scale()
+    	.range({x: 0, y: 0}, {x: w, y: h});
+
+var vis = new pv.Panel()
+    .width(w)
+    .height(h)
+    .strokeStyle("rgba(128,128,128,.3)")
+    .def("zoom",0)
+    ;
+
+/* Continents zooming thang */
+vis.add(pv.Panel)
+	.data(continents)
+	.top(function(d) geo(d.topRight).y)
+	.height(function(d) geo(d.bottomLeft).y-geo(d.topRight).y)
+	.left(function(d) geo(d.bottomLeft).x)
+	.width(function(d) geo(d.topRight).x-geo(d.bottomLeft).x)
+	.fillStyle("rgba(255,255,255,0.1)")
+	.event("click", function(d) {if (vis.zoom()) {vis.zoom(0);geo.domain({lat:-90,lng:-180},{lat:90,lng:180});} else {vis.zoom(1);geo.domain(d.topRight,d.bottomLeft);};vis.render();})
+	;
+
+/* Countries. */
+vis.add(pv.Panel)
+    .data(countries)
+  .add(pv.Panel)
+    .data(function(c) c.borders)
+  .add(pv.Line)
+    .data(function(b) b)
+    .left(geo.x)
+    .top(geo.y)
+    .title(function(d, b, c) c.name)
+    .fillStyle(function(d, b, c) c.color)
+    //.strokeStyle(function() this.fillStyle().darker())
+    .strokeStyle(function() this.fillStyle())
+    .lineWidth(1)
+    .antialias(false);
+
+/* Latitude ticks. */
+vis.add(pv.Panel)
+    .data(geo.ticks.lat())
+  .add(pv.Line)
+    .data(function(b) b)
+    .left(geo.x)
+    .top(geo.y)
+    .strokeStyle("rgba(128,128,128,.3)")
+    .lineWidth(1)
+    //.title(function(d) d.lat)
+    .interpolate("cardinal")
+    .antialias(false);
+
+/* Longitude ticks. */
+vis.add(pv.Panel)
+    .data(geo.ticks.lng())
+  .add(pv.Line)
+    .data(function(b) b)
+    .left(geo.x)
+    .top(geo.y)
+    .strokeStyle("rgba(128,128,128,.3)")
+    .lineWidth(1)
+    .interpolate("cardinal")
+   // .title(function(d) d.lng)
+    .antialias(false);
+
+vis.render();
+
+    </script>
+  </div></div></body>
+</html>

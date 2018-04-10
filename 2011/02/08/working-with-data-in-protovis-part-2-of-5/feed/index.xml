@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Working with data in protovis – part 2 of 5</title>
+	<atom:link href="http://localhost/2011/02/08/working-with-data-in-protovis-part-2-of-5/feed/" rel="self" type="application/rss+xml" />
+	<link>/2011/02/08/working-with-data-in-protovis-part-2-of-5/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>By: KKU</title>
+		<link>/2011/02/08/working-with-data-in-protovis-part-2-of-5/#comment-92</link>
+		<dc:creator><![CDATA[KKU]]></dc:creator>
+		<pubDate>Mon, 18 Feb 2013 09:53:10 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=479#comment-92</guid>
+		<description><![CDATA[I&#039;m unable to draw a pv.Line in Protovis:
+points is a 2D array, which is working for painting pv.Dor
+for (var k=0;k&#060;points.length;k++)
+{
+	vis.add(pv.Line)
+    .bottom(points[k][0])
+    .left(points[k][1])
+    .cursor(&#034;move&#034;);
+}]]></description>
+		<content:encoded><![CDATA[<p>I&#8217;m unable to draw a pv.Line in Protovis:<br />
+points is a 2D array, which is working for painting pv.Dor<br />
+for (var k=0;k&lt;points.length;k++)<br />
+{<br />
+	vis.add(pv.Line)<br />
+    .bottom(points[k][0])<br />
+    .left(points[k][1])<br />
+    .cursor(&quot;move&quot;);<br />
+}</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Sean</title>
+		<link>/2011/02/08/working-with-data-in-protovis-part-2-of-5/#comment-91</link>
+		<dc:creator><![CDATA[Sean]]></dc:creator>
+		<pubDate>Thu, 03 Mar 2011 14:24:10 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=479#comment-91</guid>
+		<description><![CDATA[Brilliant write up!  Protovis desperately needs more documentation like this.  My biggest complaint so far is that the Chrome JS Debugger always reports my mistakes in protovis.js ... thus, finding where I went wrong is nearly impossible and forces me into a painful trial and error mode that takes forever (almost ready to settle for FLOT).  Any suggestions for dealing with this would be greatly appreciated.]]></description>
+		<content:encoded><![CDATA[<p>Brilliant write up!  Protovis desperately needs more documentation like this.  My biggest complaint so far is that the Chrome JS Debugger always reports my mistakes in protovis.js &#8230; thus, finding where I went wrong is nearly impossible and forces me into a painful trial and error mode that takes forever (almost ready to settle for FLOT).  Any suggestions for dealing with this would be greatly appreciated.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: jerome</title>
+		<link>/2011/02/08/working-with-data-in-protovis-part-2-of-5/#comment-90</link>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+		<pubDate>Fri, 18 Feb 2011 18:13:16 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=479#comment-90</guid>
+		<description><![CDATA[thanks, I find the the documentation quite good but what&#039;s missing are more examples and a bigger gallery, so that&#039;s my contribution :)]]></description>
+		<content:encoded><![CDATA[<p>thanks, I find the the documentation quite good but what&#8217;s missing are more examples and a bigger gallery, so that&#8217;s my contribution 🙂</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: hlomas</title>
+		<link>/2011/02/08/working-with-data-in-protovis-part-2-of-5/#comment-89</link>
+		<dc:creator><![CDATA[hlomas]]></dc:creator>
+		<pubDate>Fri, 18 Feb 2011 16:52:41 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=479#comment-89</guid>
+		<description><![CDATA[Thanks for the excellent tutorial, it likely took a while to write all this up but it is a wonderful guide and fills a lot of holes in the official documentation.]]></description>
+		<content:encoded><![CDATA[<p>Thanks for the excellent tutorial, it likely took a while to write all this up but it is a wonderful guide and fills a lot of holes in the official documentation.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Jerome Cukier &#187; Working with data in protovis – part 3 of 5</title>
+		<link>/2011/02/08/working-with-data-in-protovis-part-2-of-5/#comment-88</link>
+		<dc:creator><![CDATA[Jerome Cukier &#187; Working with data in protovis – part 3 of 5]]></dc:creator>
+		<pubDate>Wed, 09 Feb 2011 17:09:18 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=479#comment-88</guid>
+		<description><![CDATA[[...] Previous : Multi-dimensional arrays, inheritance and hierarchy [...]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] Previous : Multi-dimensional arrays, inheritance and hierarchy [&#8230;]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Tweets that mention Jerome Cukier » Working with data in protovis – part 2 of 5 -- Topsy.com</title>
+		<link>/2011/02/08/working-with-data-in-protovis-part-2-of-5/#comment-87</link>
+		<dc:creator><![CDATA[Tweets that mention Jerome Cukier » Working with data in protovis – part 2 of 5 -- Topsy.com]]></dc:creator>
+		<pubDate>Tue, 08 Feb 2011 18:27:21 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=479#comment-87</guid>
+		<description><![CDATA[[...] This post was mentioned on Twitter by Jérôme Cukier and Jeff Hendrickson, Andy Kirk. Andy Kirk said: RT @jcukier: Part 2/5 of my #protovis tutorial on data structures: inheritance &#038; hierarchy http://bit.ly/evqyff [...]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] This post was mentioned on Twitter by Jérôme Cukier and Jeff Hendrickson, Andy Kirk. Andy Kirk said: RT @jcukier: Part 2/5 of my #protovis tutorial on data structures: inheritance &amp; hierarchy <a href="http://bit.ly/evqyff" rel="nofollow">http://bit.ly/evqyff</a> [&#8230;]</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

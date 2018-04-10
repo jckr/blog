@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>doi &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/doi/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>Finding data</title>
+		<link>/2009/05/19/finding-data/</link>
+		<comments>/2009/05/19/finding-data/#comments</comments>
+		<pubDate>Tue, 19 May 2009 14:11:06 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[data]]></category>
+		<category><![CDATA[data publishing]]></category>
+		<category><![CDATA[data standards]]></category>
+		<category><![CDATA[data tables]]></category>
+		<category><![CDATA[dataset]]></category>
+		<category><![CDATA[doi]]></category>
+		<category><![CDATA[finding data]]></category>
+		<category><![CDATA[metadata]]></category>
+		<category><![CDATA[publishing]]></category>
+		<category><![CDATA[search]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=124</guid>
+		<description><![CDATA[To solve any problem with data, there are 5 things you need to do in sequence.  First, find the relevant data source. Then, access it and get the numbers you need.  Then, process those numbers to make them answer your question.  Present the results, for instance, as a data visualization,  and, optionally, share your analysis with <a class="read-more" href="/2009/05/19/finding-data/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p style="text-align: left; "><img class="aligncenter size-full wp-image-130" title="data flow" src="http://www.jeromecukier.net/wp-content/uploads/2009/05/data-problem2.png" alt="data flow" width="448" height="298" /></p>
+<p style="text-align: left; ">To solve any problem with data, there are 5 things you need to do in sequence. </p>
+<ul>
+<li>First, <strong>find </strong>the relevant data source.</li>
+<li>Then, <strong>access </strong>it and get the numbers you need. </li>
+<li>Then, <strong>process </strong>those numbers to make them answer your question. </li>
+<li><strong>Present </strong>the results, for instance, as a data visualization, </li>
+<li>and, optionally, <strong>share</strong> your analysis with your colleagues or the world.</li>
+</ul>
+<p>I&#8217;m not going to go into details here on how the last 4 steps are getting a lot of attention and dedicated tools. </p>
+<p>That leaves us with finding data. </p>
+<p>In many cases, finding data is a given: to work with data, you have to start from a dataset. And many researchers know for a given where the data they need are, so they only need to get them, not to find them. </p>
+<p>And besides, since 2002, there&#8217;s a canned answer to every search-related question &#8211; google.</p>
+<p>But the fact is, finding data <em>is </em>difficult, and, currently, google isn&#8217;t doing a great job to help. </p>
+<p>Datasets are produced by subject-matter experts who describe them in their own language. If you have a loosely-defined question, its terms won&#8217;t match the scientific description of the dataset. And even if you find something, you can&#8217;t tell for sure if you found the most appropriate dataset, if it&#8217;s reliable, or find related objects &#8211; actions which are common when one is searching among objects of the same nature, like books or journal articles. </p>
+<p>Publishers in those two activities adressed the problem by coming up with a standard metadata, with systems like <a href="http://www.loc.gov/marc/">MARC records</a> or <a href="http://dublincore.org/">Dublin Core</a>. But that doesn&#8217;t work so well on data.</p>
+<p>To address this issue, the <span style="font-variant: small-caps;">oecd</span> published a white paper: <a href="http://dx.doi.org/10.1787/603233448430">We Need Publishing Standards for Datasets and Data Tables</a>. (I&#8217;m credited in the end, but didn&#8217;t do much).</p>
+<p>Without structured metadata standards for datasets, it&#8217;s impossible to search data across several publishers with any degree of reliability. But what a huge step that would be if an agreement could be found.</p>
+]]></content:encoded>
+			<wfw:commentRss>/2009/05/19/finding-data/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+<link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
+<link href='http://fonts.googleapis.com/css?family=Lato:300|Source+Sans+Pro' rel='stylesheet' type='text/css'>
+
+<style>
+body {font-family:'Source Sans Pro';background-color:#eee;font-size:12px}
+#chart {font-family:lato;font-size:12px}
+#r1 {display:none;}
+#r2 {margin-top:20px;}
+#how {border-bottom:dotted 1px;}
+</style>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-27690071-1']);
+  _gaq.push(['_setDomainName', 'jeromecukier.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Le fav and touch icons -->
+	<link rel="shortcut icon" href="../bootstrap/ico/favicon.ico">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../bootstrap/ico/apple-touch-icon-114-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../bootstrap/ico/apple-touch-icon-72-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" href="../bootstrap/ico/apple-touch-icon-57-precomposed.png">
+</head>
+<body>
+
+<!--<script src="../../d3.v3.min.js"></script>
+<script src="../../queue.v1.min.js"></script>-->
+
+<script src="http://d3js.org/d3.v3.min.js">
+</script>
+<script src="http://d3js.org/queue.v1.min.js"></script>
+
+<div class="container">
+  <div class="row" id="r1">
+    <div class="span">
+      <h1>Happy new year!</h1>
+    </div>
+  </div>
+  <div class="row" id="r2">
+    <div class="span" id="chart"></div>
+  </div>
+  <footer class="span" style="width:1000px">
+<div class="row">
+<div class="span pull-right" style="text-align:right">
+  <p></p>
+Same color = same discussion thread. For each mail/tweet, the three most relevant words are displayed.<span id="how">How?</span></br><a href="#" id="link">Your data file</a></br>
+
+</div>
+</footer>
+
+
+</div>
+
+
+
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="../bootstrap/js/jquery.js"></script>
+<script></script>
+<script src="routine-cards.js">
+</script>
+
+
+
+<script src="../bootstrap/js/bootstrap-transition.js"></script>
+<script src="../bootstrap/js/bootstrap-alert.js"></script>
+<script src="../bootstrap/js/bootstrap-modal.js"></script>
+<script src="../bootstrap/js/bootstrap-dropdown.js"></script>
+<script src="../bootstrap/js/bootstrap-scrollspy.js"></script>
+<script src="../bootstrap/js/bootstrap-tab.js"></script>
+<script src="../bootstrap/js/bootstrap-tooltip.js"></script>
+<script src="../bootstrap/js/bootstrap-popover.js"></script>
+<script src="../bootstrap/js/bootstrap-button.js"></script>
+<script src="../bootstrap/js/bootstrap-collapse.js"></script>
+<script src="../bootstrap/js/bootstrap-carousel.js"></script>
+<script src="../bootstrap/js/bootstrap-typeahead.js"></script>
+
+</body>
+</html>

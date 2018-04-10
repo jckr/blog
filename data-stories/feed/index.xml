@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Data with stories workshop &#8211; examples</title>
+	<atom:link href="http://localhost/data-stories/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>By: Jerome Cukier &#187; Don&#8217;t take my word for it</title>
+		<link>/data-stories/#comment-12</link>
+		<dc:creator><![CDATA[Jerome Cukier &#187; Don&#8217;t take my word for it]]></dc:creator>
+		<pubDate>Thu, 24 Nov 2011 01:23:47 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?page_id=1073#comment-12</guid>
+		<description><![CDATA[[...] All examples I used in the presentation both good and bad, both mine and others can be found at http://www.jeromecukier.net/data-stories/ [...]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] All examples I used in the presentation both good and bad, both mine and others can be found at http://www.jeromecukier.net/data-stories/ [&#8230;]</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

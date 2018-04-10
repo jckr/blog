@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Tableau contest 2011</title>
+	<atom:link href="http://localhost/2011/06/03/tableau-contest-2011/feed/" rel="self" type="application/rss+xml" />
+	<link>/2011/06/03/tableau-contest-2011/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>By: Jerome Cukier &#187; &#8230; and tableau contest results</title>
+		<link>/2011/06/03/tableau-contest-2011/#comment-156</link>
+		<dc:creator><![CDATA[Jerome Cukier &#187; &#8230; and tableau contest results]]></dc:creator>
+		<pubDate>Thu, 09 Jun 2011 16:57:56 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=906#comment-156</guid>
+		<description><![CDATA[[...] been announced. My entry got honorary mentions which is the best I could hope for not being based in the US! anyway, the [...]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] been announced. My entry got honorary mentions which is the best I could hope for not being based in the US! anyway, the [&#8230;]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Andy Cotgreave</title>
+		<link>/2011/06/03/tableau-contest-2011/#comment-155</link>
+		<dc:creator><![CDATA[Andy Cotgreave]]></dc:creator>
+		<pubDate>Fri, 03 Jun 2011 15:20:13 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=906#comment-155</guid>
+		<description><![CDATA[Great work, Jerome. I&#039;ve written up my comments on my blog:
+http://www.thedatastudio.co.uk/blog/the-data-studio-blog/andy-cotgreave/jeromes-viz-contest-entry]]></description>
+		<content:encoded><![CDATA[<p>Great work, Jerome. I&#8217;ve written up my comments on my blog:<br />
+<a href="http://www.thedatastudio.co.uk/blog/the-data-studio-blog/andy-cotgreave/jeromes-viz-contest-entry" rel="nofollow">http://www.thedatastudio.co.uk/blog/the-data-studio-blog/andy-cotgreave/jeromes-viz-contest-entry</a></p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

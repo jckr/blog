@@ -1,0 +1,160 @@
+<html>
+  <head>
+    <title>Modèle de Nilsson</title>
+    <link type="text/css" rel="stylesheet" href="ex.css?3.2"/>
+    <link type="text/css" rel="stylesheet" href="http://vis.stanford.edu/protovis/ui-lightness/jquery-ui-1.8rc3.custom.css"/>
+    <script type="text/javascript" src="http://vis.stanford.edu/protovis//jquery-1.4.2.min.js"/></script>
+    <script type="text/javascript" src="http://blog.oecdfactblog.org/wp-includes/js/protovis-r3.2.js"></script>
+    <script type="text/javascript" src="http://vis.stanford.edu/protovis/jquery-ui-1.8rc3.custom.min.js"></script>
+
+    <style type="text/css">
+
+#fig {
+  width: 1080px;
+  height: 400px;
+  margin-top: 10px;
+}
+
+#container {
+  height: 10px;
+}
+
+#speedSlider {
+  position: absolute;
+  top: 371px;
+  width:400px;
+  left: 283px;
+  right: 755px;
+  #margin-top: 3;
+}
+
+
+
+
+    </style>
+  </head>
+  <body><div id="center"><div id="fig">
+    <div id="container">
+
+      <div id="speedSlider"></div>
+
+    </div>
+
+    <script type="text/javascript+protovis">
+
+$(speedSlider).slider({
+  min: -20,
+  max: 20,
+  value: 0,
+  slide: function(e, ui) {
+    vitesse = ui.value;
+    update();
+  }
+});
+
+function casFormat(casualties, baseCasualties){
+	var text="";
+	if (casualties==baseCasualties){return "";}
+	text+=(casualties>baseCasualties)?"+":"";
+	text+=(casualties-baseCasualties);
+	return text;
+	}
+
+var vitesse = 0;
+
+var stdFont="bold 14px Arial";
+var baseTues=4443;
+var baseBG=34506;
+var baseB=59487;
+var baseAC=74409;
+
+var tues=baseTues;
+var BG=baseBG;
+var B=baseB;
+var AC=baseAC;
+
+function update(){
+	tues=Math.round(Math.pow((1+(vitesse/100)),4)*baseTues);
+	BG=Math.round(Math.pow((1+(vitesse/100)),3)*baseBG);
+	B=Math.round(Math.pow((1+(vitesse/100)),2)*baseB);
+	AC=Math.round(Math.pow((1+(vitesse/100)),2)*baseAC);
+	vis.render();
+}
+
+
+vis=new pv.Panel()
+	.width(1080)
+	.height(400)
+	.top(0)
+	.left(0);
+
+
+
+vis.add(pv.Image).url("bck.png").top(9).left(49).width(737).height(385);
+vis.add(pv.Image).url("Vitesse.png").top(346).left(71).width(193).height(31);
+vis.add(pv.Image).url("vitesse_moyenne.png").top(377).left(426).width(98).height(12);
+vis.add(pv.Image).url("20.png").top(351).left(688).width(34).height(16);
+vis.add(pv.Image).url("legende.png").top(9).left(795).width(235).height(285);
+
+vis.add(pv.Image).url("bas.png").left(46).top(387).width(743).height(7);
+vis.add(pv.Image).url("haut.png").left(46).top(8).width(742).height(6);
+vis.add(pv.Image).url("unite.png").left(796).top(301).width(46).height(47);
+
+vis.add(pv.Label).top(88).left(1013)
+	.text(function() {return tues;}).font(stdFont).textBaseline("bottom").textAlign("right")
+vis.add(pv.Label).top(142).left(1013)
+	.text(function() {return BG;}).font(stdFont).textBaseline("bottom").textAlign("right")
+vis.add(pv.Label).top(194).left(1013)
+	.text(function() {return B;}).font(stdFont).textBaseline("bottom").textAlign("right")
+
+vis.add(pv.Label).top(282).left(833)
+	.text(function() {return casFormat(tues,baseTues);})
+.font(stdFont).textBaseline("bottom").textAlign("center")
+vis.add(pv.Label).top(282).left(913)
+	.text(function() {return casFormat(BG,baseBG);})
+.font(stdFont).textBaseline("bottom").textAlign("center")
+vis.add(pv.Label).top(282).left(993)
+	.text(function() {return casFormat(B,baseB);})
+.font(stdFont).textBaseline("bottom").textAlign("center")
+
+vis.add(pv.Label).left(843).top(339)
+	.text("1000 Personnes")
+.font(stdFont).textBaseline("bottom").textAlign("left")
+
+vis.add(pv.Label).left(819).top(227)
+	.text("Différence due à la vitesse")
+.font(stdFont).textBaseline("bottom").textAlign("left")
+
+vis.add(pv.Label).left(63).top(30)
+	.text("VICTIMES DE LA ROUTE")
+.font(stdFont).textBaseline("bottom").textAlign("left")
+
+
+
+
+rows=vis.add(pv.Panel)
+	.data(pv.range(10))
+	.top(function() 323-49-40*this.index);
+cells=rows.add(pv.Panel)
+	.data(pv.range(25))
+	.left(function() 66+25*this.index)//.width(20).strokeStyle("#fafafa").lineWidth(1)
+	;
+icon=cells.add(pv.Image)
+	.height(40)
+	.width(25)
+	.url(function(c,a,b) {var x=1000*(25*b+a);
+	if(x<tues){return "tues.png";}
+	if(x<tues+BG){return "hosp.png";}
+	if(x<tues+BG+B){return "bles.png";}
+	return "ok.png";}
+
+	)
+//vis.anchor("center").add(pv.Label).text(function() "tues: "+tues+", blessés graves: "+BG+", blessés: "+B);
+vis.render();
+
+
+
+
+	</script>
+  </div></div></body>
+</html>

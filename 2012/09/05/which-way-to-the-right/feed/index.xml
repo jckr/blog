@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Which way to the right?</title>
+	<atom:link href="http://localhost/2012/09/05/which-way-to-the-right/feed/" rel="self" type="application/rss+xml" />
+	<link>/2012/09/05/which-way-to-the-right/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>By: Jerome Cukier &#187; Dimensionality reduction</title>
+		<link>/2012/09/05/which-way-to-the-right/#comment-437</link>
+		<dc:creator><![CDATA[Jerome Cukier &#187; Dimensionality reduction]]></dc:creator>
+		<pubDate>Mon, 10 Sep 2012 09:14:00 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1445#comment-437</guid>
+		<description><![CDATA[[...] my Tableau politics contest entry, here is another view I had developed but which I didn&#8217;t include in the already full [...]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] my Tableau politics contest entry, here is another view I had developed but which I didn&#8217;t include in the already full [&#8230;]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Chris Gerrard</title>
+		<link>/2012/09/05/which-way-to-the-right/#comment-436</link>
+		<dc:creator><![CDATA[Chris Gerrard]]></dc:creator>
+		<pubDate>Fri, 07 Sep 2012 23:27:41 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1445#comment-436</guid>
+		<description><![CDATA[Oops - forgot to mention: the &quot;Values of the French&quot; tooltip&#039;s first line is the same for all marks:
+&quot;% of Total Number of Records: 0.06609%&quot;]]></description>
+		<content:encoded><![CDATA[<p>Oops &#8211; forgot to mention: the &#8220;Values of the French&#8221; tooltip&#8217;s first line is the same for all marks:<br />
+&#8220;% of Total Number of Records: 0.06609%&#8221;</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Chris Gerrard</title>
+		<link>/2012/09/05/which-way-to-the-right/#comment-435</link>
+		<dc:creator><![CDATA[Chris Gerrard]]></dc:creator>
+		<pubDate>Fri, 07 Sep 2012 23:23:35 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1445#comment-435</guid>
+		<description><![CDATA[Very nicely done. A couple of small points: the &quot;Values of the French&quot; tooltips&#039; 2nd values are, in left-right order: -200%, -100%, 0%, 100%, or 200% - it feels like this isn&#039;t what was intended; and the &quot;Position of candidates&quot; chart would be assisted with a legend to identify which marks are associated with which candidates.]]></description>
+		<content:encoded><![CDATA[<p>Very nicely done. A couple of small points: the &#8220;Values of the French&#8221; tooltips&#8217; 2nd values are, in left-right order: -200%, -100%, 0%, 100%, or 200% &#8211; it feels like this isn&#8217;t what was intended; and the &#8220;Position of candidates&#8221; chart would be assisted with a legend to identify which marks are associated with which candidates.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Alex McKenzie</title>
+		<link>/2012/09/05/which-way-to-the-right/#comment-434</link>
+		<dc:creator><![CDATA[Alex McKenzie]]></dc:creator>
+		<pubDate>Thu, 06 Sep 2012 20:27:32 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1445#comment-434</guid>
+		<description><![CDATA[Congrats Jerome, excellent submission!  
+I was wondering if you could include the meaning of colors in the &quot;Values of the French&quot; chart; it looks like they match the &quot;themes&quot; designation used in your last chart.  Best of luck!]]></description>
+		<content:encoded><![CDATA[<p>Congrats Jerome, excellent submission!<br />
+I was wondering if you could include the meaning of colors in the &#8220;Values of the French&#8221; chart; it looks like they match the &#8220;themes&#8221; designation used in your last chart.  Best of luck!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Jonathan Drummey</title>
+		<link>/2012/09/05/which-way-to-the-right/#comment-433</link>
+		<dc:creator><![CDATA[Jonathan Drummey]]></dc:creator>
+		<pubDate>Thu, 06 Sep 2012 12:48:49 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1445#comment-433</guid>
+		<description><![CDATA[Ok, I just read your blog post about the viz, I see why you made that choice with the layout containers. The only workaround I know of would be to use the swap views with a parameter filter trick.]]></description>
+		<content:encoded><![CDATA[<p>Ok, I just read your blog post about the viz, I see why you made that choice with the layout containers. The only workaround I know of would be to use the swap views with a parameter filter trick.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: jerome</title>
+		<link>/2012/09/05/which-way-to-the-right/#comment-432</link>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+		<pubDate>Thu, 06 Sep 2012 12:46:56 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1445#comment-432</guid>
+		<description><![CDATA[I see, this happens also on my current setting. I had assumed that the action url was to work as a hyperlink, not update the first web layout container. So that switching thing is best left outside of the dashboard. 
+Re: your question, yes I do, if I leave this worksheet inside the dashboard without wrapping it in a web container, it is getting very very slow, so slow that the page will probably not update between interactions.]]></description>
+		<content:encoded><![CDATA[<p>I see, this happens also on my current setting. I had assumed that the action url was to work as a hyperlink, not update the first web layout container. So that switching thing is best left outside of the dashboard.<br />
+Re: your question, yes I do, if I leave this worksheet inside the dashboard without wrapping it in a web container, it is getting very very slow, so slow that the page will probably not update between interactions.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Jonathan Drummey</title>
+		<link>/2012/09/05/which-way-to-the-right/#comment-431</link>
+		<dc:creator><![CDATA[Jonathan Drummey]]></dc:creator>
+		<pubDate>Thu, 06 Sep 2012 12:39:48 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1445#comment-431</guid>
+		<description><![CDATA[I&#039;m seeing the same behavior on Chrome for Mac and IE, so I just did a little more poking around, it looks like you have a web page layout container that contains the bar chart below &quot;What is the best strategy&quot;, so the URL Action to control the language is loading the entire French version into that web page container and not replacing the view. Do you have to use the web page layout container or can you use a regular layout container?]]></description>
+		<content:encoded><![CDATA[<p>I&#8217;m seeing the same behavior on Chrome for Mac and IE, so I just did a little more poking around, it looks like you have a web page layout container that contains the bar chart below &#8220;What is the best strategy&#8221;, so the URL Action to control the language is loading the entire French version into that web page container and not replacing the view. Do you have to use the web page layout container or can you use a regular layout container?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: jerome</title>
+		<link>/2012/09/05/which-way-to-the-right/#comment-430</link>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+		<pubDate>Thu, 06 Sep 2012 10:23:13 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1445#comment-430</guid>
+		<description><![CDATA[thanks for the heads up, I will check on a mac, though there is definitely a full French version to which this is supposed to point :)]]></description>
+		<content:encoded><![CDATA[<p>thanks for the heads up, I will check on a mac, though there is definitely a full French version to which this is supposed to point 🙂</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Jonathan Drummey</title>
+		<link>/2012/09/05/which-way-to-the-right/#comment-429</link>
+		<dc:creator><![CDATA[Jonathan Drummey]]></dc:creator>
+		<pubDate>Thu, 06 Sep 2012 09:50:24 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1445#comment-429</guid>
+		<description><![CDATA[Brilliant work! FYI, I&#039;m using Safari on a Mac and the Version française button is only swapping in/out a few of the views at the bottom of the view, still leaving a number of the English versions intact above.]]></description>
+		<content:encoded><![CDATA[<p>Brilliant work! FYI, I&#8217;m using Safari on a Mac and the Version française button is only swapping in/out a few of the views at the bottom of the view, still leaving a number of the English versions intact above.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Russian Sphinx</title>
+		<link>/2012/09/05/which-way-to-the-right/#comment-428</link>
+		<dc:creator><![CDATA[Russian Sphinx]]></dc:creator>
+		<pubDate>Wed, 05 Sep 2012 18:43:18 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1445#comment-428</guid>
+		<description><![CDATA[Perfect like always! Good luck!]]></description>
+		<content:encoded><![CDATA[<p>Perfect like always! Good luck!</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

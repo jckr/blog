@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>violette &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/violette/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>Red + green + blue = something else</title>
+		<link>/2011/06/10/red-green-blue-something-else/</link>
+		<comments>/2011/06/10/red-green-blue-something-else/#comments</comments>
+		<pubDate>Fri, 10 Jun 2011 16:35:34 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[rgb]]></category>
+		<category><![CDATA[Tableau]]></category>
+		<category><![CDATA[violette]]></category>
+		<category><![CDATA[vision]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=925</guid>
+		<description><![CDATA[I&#8217;ve been posting quite a few times on Tableau these last few days, so I&#8217;ll end up the week with one viz I had previously shared on twitter with some success. Sheet 1 Powered by Tableau so what&#8217;s the story? I have been inspired to do this via the work on onformative which I discovered <a class="read-more" href="/2011/06/10/red-green-blue-something-else/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>I&#8217;ve been posting quite a few times on Tableau these last few days, so I&#8217;ll end up the week with one viz I had previously shared on twitter with some success.<br />
+<script type="text/javascript" src="http://public.tableausoftware.com/javascripts/api/viz_v1.js"></script><object class="tableauViz" width="1667" height="870" style="display:none;"><param name="host_url" value="http%3A%2F%2Fpublic.tableausoftware.com%2F" /><param name="name" value="violette&#47;Sheet1" /><param name="tabs" value="no" /><param name="toolbar" value="yes" /><param name="animate_transition" value="yes" /><param name="display_static_image" value="yes" /><param name="display_spinner" value="yes" /><param name="display_overlay" value="yes" /></object><noscript>Sheet 1 <br /><a href="#"><img alt="Sheet 1 " src="http:&#47;&#47;public.tableausoftware.com&#47;static&#47;images&#47;vi&#47;violette&#47;Sheet1&#47;1_rss.png" height="100%" /></a></noscript>
+<div style="width:1667px;height:22px;padding:0px 10px 0px 0px;color:black;font:normal 8pt verdana,helvetica,arial,sans-serif;">
+<div style="float:right; padding-right:8px;"><a href="http://www.tableausoftware.com/public?ref=http://public.tableausoftware.com/views/violette/Sheet1" target="_blank">Powered by Tableau</a></div>
+</div>
+<p>so what&#8217;s the story?<br />
+I have been inspired to do this via the work on <a href="http://www.onformative.com/work/fragments-of-rgb/">onformative</a> which I discovered on <a href="http://butdoesitfloat.com/1420489/One-has-to-arrive-at-a-specific-temperature-at-which-the-objects">But does it float</a>.</p>
+<p>I was struck by how the proximity of a red dot, a green dot and a blue dot was interpreted by our human eyes as a spot of another color. Then again, this is how <a href="http://electronics.howstuffworks.com/lcd5.htm">monitors</a> <a href="http://computer.howstuffworks.com/monitor7.htm">work</a>. If you look hard enough on your lcd screen you may see the sub-pixels.<br />
+This is also why, in an image such as this one, the segments of the line appear unaligned, although logically this line is one pixel wide.<br />
+<a href="http://www.jeromecukier.net/wp-content/uploads/2011/06/unaligned.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/06/unaligned.png" alt="" title="unaligned" class="aligncenter size-full wp-image-926" /></a><br />
+Physically, the segments are <em>indeed</em> unaligned, as the each segment uses sub-pixels of a different color which don&#8217;t have the same horizontal position within one pixel. </p>
+<p>However, I didn&#8217;t realize that this effect would work with patches of blue, green and red much bigger than a subpixel.<br />
+I made the underlying dataset from a picture of my daughter Violette when she was 2. I converted the picture to a list of values of red, green and blue (thanks, processing) which were all associated to a x and y position on the screen and the name of their layer (so they could be turned on or off). These x and y positions were derived from the position of the pixel on the original image, but the red, blue and green dots are all shifted in one direction so they form a triangle.<br />
+Then, I&#8217;ve added some extra layers as noise to obfuscate the image. </p>
+<p>Here, the effect is voluntary. Then again, if you position lots of marks one next to the other, you could re-create it accidentally, and instead of seeing three distinct dots, your users would see just one and of a different color at that!</p>
+]]></content:encoded>
+			<wfw:commentRss>/2011/06/10/red-green-blue-something-else/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+	</channel>
+</rss>

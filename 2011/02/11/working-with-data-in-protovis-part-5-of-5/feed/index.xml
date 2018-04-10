@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Working with data in protovis: part 5 of 5</title>
+	<atom:link href="http://localhost/2011/02/11/working-with-data-in-protovis-part-5-of-5/feed/" rel="self" type="application/rss+xml" />
+	<link>/2011/02/11/working-with-data-in-protovis-part-5-of-5/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>By: Jake Lin</title>
+		<link>/2011/02/11/working-with-data-in-protovis-part-5-of-5/#comment-109</link>
+		<dc:creator><![CDATA[Jake Lin]]></dc:creator>
+		<pubDate>Mon, 12 Sep 2011 18:04:35 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=623#comment-109</guid>
+		<description><![CDATA[Very helpful series. I have been using javascript and protovis but this 5 part series is a nice complement to the protovis examples.]]></description>
+		<content:encoded><![CDATA[<p>Very helpful series. I have been using javascript and protovis but this 5 part series is a nice complement to the protovis examples.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Working with Data in Protovis on Datavisualization.ch</title>
+		<link>/2011/02/11/working-with-data-in-protovis-part-5-of-5/#comment-108</link>
+		<dc:creator><![CDATA[Working with Data in Protovis on Datavisualization.ch]]></dc:creator>
+		<pubDate>Thu, 17 Feb 2011 15:34:45 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=623#comment-108</guid>
+		<description><![CDATA[[...] as how to structure data to work with complex structures like treemaps or force-directed layouts (5).For the past year or so I have been dabbling with protovis. I don’t have a heavy CS background [...]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] as how to structure data to work with complex structures like treemaps or force-directed layouts (5).For the past year or so I have been dabbling with protovis. I don’t have a heavy CS background [&#8230;]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Tweets that mention Jerome Cukier » Working with data in protovis: part 5 of 5 -- Topsy.com</title>
+		<link>/2011/02/11/working-with-data-in-protovis-part-5-of-5/#comment-107</link>
+		<dc:creator><![CDATA[Tweets that mention Jerome Cukier » Working with data in protovis: part 5 of 5 -- Topsy.com]]></dc:creator>
+		<pubDate>Fri, 11 Feb 2011 19:29:36 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=623#comment-107</guid>
+		<description><![CDATA[[...] This post was mentioned on Twitter by Nathan Yau, Jérôme Cukier and sonngbogong, Andy Kirk. Andy Kirk said: RT @jcukier: I&#039;ve posted part 5/5 of my #protovis tutorial on working with data http://bit.ly/gBb7as, on layouts (treemaps, network grap ... [...]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] This post was mentioned on Twitter by Nathan Yau, Jérôme Cukier and sonngbogong, Andy Kirk. Andy Kirk said: RT @jcukier: I&#039;ve posted part 5/5 of my #protovis tutorial on working with data <a href="http://bit.ly/gBb7as" rel="nofollow">http://bit.ly/gBb7as</a>, on layouts (treemaps, network grap &#8230; [&#8230;]</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

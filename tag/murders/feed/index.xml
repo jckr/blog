@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>murders &#8211; jeromecukier.net</title>
+	<atom:link href="http://localhost/tag/murders/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>Gun murders in America</title>
+		<link>/2012/12/29/gun-murders-in-america/</link>
+		<comments>/2012/12/29/gun-murders-in-america/#comments</comments>
+		<pubDate>Sat, 29 Dec 2012 08:40:45 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[charts]]></category>
+		<category><![CDATA[d3]]></category>
+		<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[criminality]]></category>
+		<category><![CDATA[fbi]]></category>
+		<category><![CDATA[gun]]></category>
+		<category><![CDATA[homicide]]></category>
+		<category><![CDATA[map]]></category>
+		<category><![CDATA[mortality]]></category>
+		<category><![CDATA[murders]]></category>
+		<category><![CDATA[usa]]></category>
+		<category><![CDATA[violence]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1530</guid>
+		<description><![CDATA[Click for interactive visualization I have created this map of every homicide in the USA using firearms for the latest year where detailed information was available. Every, that is from all the agencies that report homicides to the FBI, which is not an obligation &#8211; this is why the map lacks Florida data. In the <a class="read-more" href="/2012/12/29/gun-murders-in-america/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p><a href="http://bit.ly/gunviolence"><img src="http://jeromecukier.net/projects/crime/murders.png" width="800" height="513" class="aligncenter" /></a><br />
+<a href="http://bit.ly/gunviolence"><strong>Click for interactive visualization</strong></a></p>
+<p>I have created this map of every homicide in the USA using firearms for the latest year where detailed information was available. Every, that is from all the agencies that report homicides to the FBI, which is not an obligation &#8211; this is why the map lacks Florida data.<br />
+In the interactive version you can see how murders happen through the year and explore them according to several criteria that were available in the database. While large shooting sprees receive media attention, unfortunately there are thousands of cases each year in just about every community.<br />
+Technically this is my first foray with <a href="http://d3js.org/">d3.v3</a> and it uses two of its major new features, topoJSON for easy, lightweight maps, and hex binning to represent many individual events in one hexagon. Thanks to Mike Bostock for tutoring on that.</p>
+]]></content:encoded>
+			<wfw:commentRss>/2012/12/29/gun-murders-in-america/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+	</channel>
+</rss>

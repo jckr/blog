@@ -1,0 +1,397 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8">
+		<script type="text/javascript" src="http://mbostock.github.com/d3/d3.js?2.0.0"></script>
+		<!--<script type="text/javascript" src="http://blog.oecdfactblog.org/wp-includes/js/protovis-r3.2.js"></script>-->
+		<style>
+			@import url("http://mbostock.github.com/d3/style.css?1.10.0");
+			@import url("http://mbostock.github.com/d3/syntax.css?1.10.0");
+		</style>
+		<style>
+		.cell {
+			position:absolute;
+			overflow:hidden;
+			height:20;
+			width:20;
+			border:1px solid white;
+			text-align:center;
+			vertical-align:middle;
+			}
+		.cellSVG {height:20;width:20;}
+		</style>
+	</head>
+	<body>
+		<div id="mode">
+		mode:0
+		</div>
+		<div id="info">
+		</div>
+		<div id="chart">
+		</div>
+
+		<script type="text/javascript">
+
+		/* version changes
+
+
+		8.000: key codes change various modes.
+		8.001: attribute set to faces now a variable, no longer magic number
+		8.002: cubes now delayed by attribute value and at once, no longer each dimension at a time.
+ 		8.003: some renaming, adding hidden faces
+
+		*/
+		var k=0.707106781;
+		var depth=k/2;
+		var u=10;
+		var a=u*depth;
+
+		var s=u+2*a;
+		var nb=1000;
+
+		var maxDim=Math.ceil(Math.sqrt(nb));
+		var cubeEdge=Math.ceil(Math.pow(nb,1/3));
+
+		var attrProba=[[15,15,10,7,6,4,2,2,2],
+					   [1,1,1,1,1,1,1,1,1],
+					   [3,5,2,4,6,4,2,1,5],
+					   [20,20,20,20,5,5,5,5,5],
+					   [1,2,3,4,5,6,7,8,9],
+					   [60,50,40,20,10,30,70,80,90]];
+
+		//var attrProba=[[1,1],[0,0,1,1],[0,0,0,0,1,1],[20,20,20,20,5,5,5,5,5],
+		//			   [1,2,3,4,5,6,7,8,9],
+		//				   [60,50,40,20,10,30,70,80,90]];
+
+		attrProba=attrProba.map(function(v) {return v.map(function(d) {return d/d3.sum(v);});});
+
+		var frontFace=0, topFace=1, rightFace=2, backFace=5, bottomFace=4, leftFace=3;
+
+		function detAttr(arg,attr) {var i=0;p=attrProba[attr][0];while(i<attrProba[attr].length){if(arg<p){return i;}else{p+=attrProba[attr][++i];}}}
+		function showData() {data.forEach(function(d) {console.log(d.id+" "+d.attr[0]+" "+d.attr[1]+" "+d.attr[2]+" "+d.attr[3]+" "+d.attr[4]+" "+d.attr[5]);})}
+		function showMatrix() {data.forEach(function(i,d) {console.log(matrix[0][d]+" "+matrix[1][d]+" "+matrix[2][d]+" "+matrix[3][d]+" "+matrix[4][d]+" "+matrix[5][d]+" "+matrix[6][d]);})}
+
+		var data=d3.range(nb).map(function(d) {return {'attr':d3.range(6).map(function(d) {return detAttr(Math.random(),d);}), 'id':d};})
+		//data=[{id:0,attr:[0,2,5,1,7,6]},{id:1,attr:[0,3,4,0,3,0]},{id:2,attr:[0,3,4,8,7,4]},{id:3,attr:[0,2,4,0,6,8]},{id:4,attr:[1,3,4,8,3,2]},{id:5,attr:[0,2,5,3,5,8]},{id:6,attr:[0,2,4,3,5,3]},{id:7,attr:[0,2,4,3,2,8]}];
+
+		var matrix=d3.range(7).map(function(c) {return d3.range(nb).map(function(r) {return r;});})
+		var pos=data.map(function(d) {return {id:d.id,x:0,y:0,z:0,order:-1};});
+
+
+
+		d3.range(6).forEach(function(i) {
+		  data.sort(function(a,b) {
+		    return a.attr[i]-b.attr[i]
+		  ;});
+		  matrix[i+1]=data.map(function(d) {return d.id;});
+		  data.sort(function(a,b) {return a.id-b.id;});
+  		})
+
+
+		var xScaleX=d3.scale.linear().domain([0,maxDim]).range([0,maxDim*u]),
+			xScaleZ=d3.scale.linear().domain([0,maxDim]).range([maxDim*a,0]),
+			yScaleY=d3.scale.linear().domain([0,maxDim]).range([50+maxDim*u,50]),
+			yScaleZ=d3.scale.linear().domain([0,maxDim]).range([50,50+maxDim*a]);
+
+		function renderX(vector) {return xScaleX(vector[0])+xScaleZ(vector[2]);}
+		function renderY(vector) {return yScaleY(vector[1])+yScaleZ(vector[2]);}
+
+
+
+		//      +----+
+		//    / 1   /|
+		//   +-----+ |
+		//   |     |2|
+		//   |  0  | +
+		//   |     |/
+		//   +-----+
+		//
+		//
+		//  0 - z=0
+ 		//  1 - y=0
+		//  2 - x=0
+
+
+
+
+		var mode=2;
+
+		cols=["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf"];
+		var vis=d3.select("body").append("svg:svg").attr("width",1500).attr("height",900)
+		var bigcube=vis.append("svg:g");
+
+		var cubes=bigcube.selectAll("rect").data(data).enter().append("svg:g");
+		cubes
+		    .style("stroke","black")
+			.attr("transform", function(d,i) {
+						var y=(~~(i/(cubeEdge*cubeEdge))),
+							x=(~~((i-(cubeEdge*cubeEdge)*y)/cubeEdge)),
+							z=(i%cubeEdge);
+						return "translate(" + (xScaleX(.75*cubeEdge+1.5*x)+xScaleZ(.75*cubeEdge+1.5*z)) +", "+(yScaleY(.75*cubeEdge+1.5*y)+yScaleZ(.75*cubeEdge+1.5*z))+")";
+			})
+			.attr("id", function(d) {return d.id;})
+		reDraw();
+		colorCubes();
+
+		function rePos() {
+			var sortArg;
+			switch (mode) {
+				case 1: sortArg=frontFace; break;
+				case 2: sortArg=topFace; break;
+				case 3: sortArg=rightFace; break;
+			}
+
+			if(mode) {
+				pos.sort(function(a,b) {return data[a.id].attr[sortArg]-data[b.id].attr[sortArg];})
+			}
+			pos.forEach(function(d,i) {
+				var x,y,z,delay;
+				switch (mode) {
+					case 0:
+						y=~~(i/(cubeEdge*cubeEdge));
+						x=(~~((i-(cubeEdge*cubeEdge)*y)/cubeEdge));
+						z=(i%cubeEdge);
+						break;
+					case 1:
+						z=0;
+						y=~~(i/maxDim);
+						x=i%maxDim;break;
+					case 2:
+						y=0;//maxDim;
+						z=~~(i/maxDim);
+						x=i%maxDim;break;
+					case 3:
+						x=0;//maxDim;
+						y=~~(i/maxDim);
+						z=i%maxDim;break;
+				}
+				pos[i]={id:d.id,x:x,y:y,z:z,ox:d.x,oy:d.y,oz;d.z,order:-1,delay:(d.id+(mode?100*data[d.id].attr[sortArg]:0))};
+			}
+			pos.sort(function(a,b) {return maxDim*maxDim*(a.y-b.y)+maxDim*(a.z-b.z)+a.x-b.x;});
+			pos.forEach(function(d,i) {pos[i]['order']=i;})
+			pos.sort(function(a,b) {return a.id-b.id;})
+		}
+
+		function colorCubes() {
+		// 0 face - frontFace
+		cubes.append("svg:path").attr("class","f0").attr("d","M 0 0 h "+u+" v -"+u+" h -"+u+" Z").style("fill", function(d) {return cols[d.attr[frontFace]];})
+		// 1 face - topFace
+		cubes.append("svg:path").attr("class","f1").attr("d","M 0 -"+u+" h "+u+" l "+a+" -"+a+" h -"+u+" Z").style("fill", function(d) {return cols[d.attr[topFace]];})
+		// 2 face - rightFace
+		cubes.append("svg:path").attr("class","f2").attr("d","M "+u+" -"+u+" v "+u+" l "+a+" -"+a+" v -"+u+" Z").style("fill", function(d) {return cols[d.attr[rightFace]];})
+		// 3 face - leftFace
+		cubes.append("svg:path").attr("class","f3").attr("d","M 0 0").style("fill", function(d) {return cols[d.attr[leftFace]];})
+		// 4 face - bottomFace
+		cubes.append("svg:path").attr("class","f4").attr("d","M 0 0").style("fill", function(d) {return cols[d.attr[bottomFace]];})
+		// 5 face - backFace
+		cubes.append("svg:path").attr("class","f5").attr("d","M 0 0").style("fill", function(d) {return cols[d.attr[backFace]];})
+		}
+
+		cubes.on("click",function(d,i) {
+		d3.select("#info").html(
+			"id:"+d.id+", i:"+i+"<br>attr:"+d.attr[0]+" "+d.attr[1]+" "+d.attr[2])
+
+		})
+
+		//cubes.on("mousedown", transform);
+		//d3.select(window).on("keydown", transform);
+		function transform() {
+			mode=0;
+			switch (d3.event.keyCode) {
+				case 37: mode = 3; break;
+				case 40: mode = 2; break;
+				case 38: mode = 1; break;
+			}
+
+			d3.select("#mode").html("mode:"+mode);
+
+
+
+			reDraw();
+		}
+
+		function reDraw(){
+			// this is what moves the cubes around
+			rePos();
+			//then (todo) the face will rotate so that it will face the user.
+
+
+			// then we draw them
+
+			cubes.each(function(d,i) {
+				var myPos=pos[d.id];
+				var myCube=d3.select(this);
+
+				myCube.transition()
+					.attr("transform", "translate(" + (xScaleX(myPos.x)+xScaleZ(myPos.z)) +", "+ (yScaleY(myPos.y)+yScaleZ(myPos.z)) +")")
+					.delay(myPos.delay)
+					.duration(500);
+			})
+
+			// and sort them cubes
+			//
+			// cubes.sort(function(a,b) {var ai=matrix[mode][a.id]; bi=matrix[mode][b.id];return (maxDim*maxDim*(~~(ai/maxDim))+maxDim*(ai%maxDim))-(maxDim*maxDim*(~~(bi/maxDim))+maxDim*(bi%maxDim));})
+			//
+			cubes.sort(function(a,b) {return pos[a.id].order-pos[b.id].order;})
+		}
+
+		function slabify() {
+		// creating the slab
+
+			bigcube.style("visibility", "hidden");
+			var slab=vis.append("svg:g");
+
+				var posSlab=pos;
+				posSlab.sort(function(a,b) {return a.order-b.order;});
+
+			// slab cube matrix is now sorted by z then by x.
+			// now we are going to isolate the faces we need.
+			//
+			// normally, the slab looks like this:
+			//
+			//         --------------
+			//       /              /|
+			//      /              //
+			//     /              //
+			//    /              //
+			//   /      ________//
+			//  /______/|______|/
+			//  |_____|/
+
+			// first to be drawn: frontFaces of the lower row.
+
+			var zmax=d3.max(pos,function(d) {return d.z;});
+			var xmax=d3.max(pos,function(d) {return d.x;});
+
+			var lowerRowIds=posSlab.filter(function(d) {return d.z==zmax;}).map(function(d) {return [d.id,0];});
+
+			// note: lowerRow[lowerRow.length-1] is one corner of the slab.
+
+			// next: frontFaces of the next row.
+			var nextRowIds=posSlab.filter(function(d) {return (d.z==(zmax-1))&&(d.x>lowerRowIds.length);}).map(function(d) {return [d.id,0];})
+
+
+			// next: rightFaces of the right row
+			var rightColIds=posSlab.filter(function(d) {return d.x==xmax;}).map(function(d) {return [d.id,0];});
+
+			// then, we willll draw backFaces of the top row
+			var topRowIds=posSlab.filter(function(d) {return d.z==0;}).map(function(d) {return [d.id,0];});
+
+			// and finally: topFaces of all cubes
+			allCubesIds=posSlab.map(function(d) {return [d.id,0];});
+
+			// now draw them motherfuckers
+
+
+			function topFacePath(angle,i) {
+				var x=i%maxDim, z=~~(i/maxDim),s=Math.sin(angle),c=Math.cos(angle);
+				var ex=renderX([x,c-s*z,s+c*z]), ey=renderY([x,c-s*z,s+c*z]),
+					fx=renderX([(x+1),s*z,s+c*z]),fy=renderY([(x+1),c-s*z,s+c*z]),
+					hx=renderX([(x+1),c-s*(z+1),s+c*(z+1)]),hy=renderY([(x+1),c-s*(z+1),s+c*(z+1)]),
+					gx=renderX([x,c-s*(z+1),s+c*(z+1)]),gy=renderY([x,c-s*(z+1),s+c*(z+1)]);
+
+				return ("M "+ex+" "+ey+" L "+fx+" "+fy+" L "+hx+" "+hy+" L "+gx+" "+gy+" Z");
+			}
+			function topFaceFill(angle,i) {return data[allCubesIds[i]].attr[topFace];}
+
+			function lowerRowFrontFacePath(angle,i) {
+				var x=i, z=zmax,s=Math.sin(angle),c=Math.cos(angle);
+				var cx=renderX([x,-s*(z+1), c*(z+1)]),cy=renderY([x,-s*(z+1), c*(z+1)]),
+					dx=renderX([x+1,-s*(z+1), c*(z+1)]),dy=renderY([x+1,-s*(z+1), c*(z+1)]),
+					hx=renderX([(x+1),c-s*(z+1),s+c*(z+1)]),hy=renderY([(x+1),c-s*(z+1),s+c*(z+1)]),
+					gx=renderX([x,c-s*(z+1),s+c*(z+1)]),gy=renderY([x,c-s*(z+1),s+c*(z+1)]);
+
+				return ("M "+cx+" "+cy+" L "+dx+" "+dy+" L "+hx+" "+hy+" L "+gx+" "+gy+" Z");
+			}
+			function lowerRowFrontFaceFill(angle,i) {return data[lowerRowIds[i]].attr[frontFace];}
+
+
+			function nextRowFrontFacePath(angle,i) {
+				var x=i+lowerRowIds.length, z=zmax-1,s=Math.sin(angle),c=Math.cos(angle);
+				var cx=renderX([x,-s*(z+1), c*(z+1)]),cy=renderY([x,-s*(z+1), c*(z+1)]),
+					dx=renderX([x+1,-s*(z+1), c*(z+1)]),dy=renderY([x+1,-s*(z+1), c*(z+1)]),
+					hx=renderX([(x+1),c-s*(z+1),s+c*(z+1)]),hy=renderY([(x+1),c-s*(z+1),s+c*(z+1)]),
+					gx=renderX([x,c-s*(z+1),s+c*(z+1)]),gy=renderY([x,c-s*(z+1),s+c*(z+1)]);
+
+				return ("M "+cx+" "+cy+" L "+dx+" "+dy+" L "+hx+" "+hy+" L "+gx+" "+gy+" Z");
+			}
+			function frontFaceNextRowFill(angle,i) {return data[nextRowIds[i]].attr[frontFace];}
+
+			function rightColRightFacePath(angle,i) {
+				var x=xmax, z=i,s=Math.sin(angle),c=Math.cos(angle);
+				var bx=renderX([x+1,-s*z, c*z]),by=renderY([x+1,-s*z, c*z]),
+					dx=renderX([x+1,-s*(z+1), c*(z+1)]),dy=renderY([x+1,-s*(z+1), c*(z+1)]),
+					hx=renderX([(x+1),c-s*(z+1),s+c*(z+1)]),hy=renderY([(x+1),c-s*(z+1),s+c*(z+1)]),
+					fx=renderX([(x+1),s*z,s+c*z]),ey=renderY([(x+1),c-s*z,s+c*z]);
+
+				return ("M "+bx+" "+by+" L "+dx+" "+dy+" L "+hx+" "+hy+" L "+fx+" "+fy+" Z");
+			}
+
+			function rightColRightFaceFill(angle,i) {return data[rightColIds[i]].attr[rightFace];}
+
+			function cornerRightFacePath(angle,i) {
+				var x=lowerRowIds.length-1;var z=zmax,s=Math.sin(angle),c=Math.cos(angle);
+					var bx=renderX([x+1,-s*z, c*z]),by=renderY([x+1,-s*z, c*z]),
+						dx=renderX([x+1,-s*(z+1), c*(z+1)]),dy=renderY([x+1,-s*(z+1), c*(z+1)]),
+						hx=renderX([(x+1),c-s*(z+1),s+c*(z+1)]),hy=renderY([(x+1),c-s*(z+1),s+c*(z+1)]),
+						fx=renderX([(x+1),s*z,s+c*z]),ey=renderY([(x+1),c-s*z,s+c*z]);
+
+
+				return ("M "+bx+" "+by+" L "+dx+" "+dy+" L "+hx+" "+hy+" L "+fx+" "+fy+" Z");
+			}
+			function cornerRightFaceFill(angle,i) {return data[lowerRowIds[lowerRowIds.length-1]].attr[rightFace];}
+
+			function topRowBackFacePath(angle,i) {
+				var x=i, z=0,s=Math.sin(angle),c=Math.cos(angle);
+				var bx=renderX([x,-s*z, c*z]),by=renderY([x,-s*z, c*z]),
+					bx=renderX([x+1,-s*z, c*z]),by=renderY([x+1,-s*z, c*z]),
+					cx=renderX([x,-s*(z+1), c*(z+1)]),cy=renderY([x,-s*(z+1), c*(z+1)]),
+					fx=renderX([(x+1),s*z,s+c*z]),ey=renderY([(x+1),c-s*z,s+c*z]);
+
+				return ("M "+ax+" "+ay+" L "+bx+" "+by+" L "+fx+" "+fy+" L "+ex+" "+ey+" Z");
+			}
+
+			function topRowBackFaceFill(angle,i) {return data[lowerRowIds[lowerRowIds.length-1]].attr[backFace];}
+
+
+			console.log("breakpoint");
+			/*
+
+			var lowerRowFrontFaces=slab.append("svg:g").selectAll("path").data(lowerRowIds.map(function() {return 0;})).enter().append("svg:path").attr("d",lowerRowFrontFacePath).style("fill",lowerRowFrontFaceFill);
+			var nextRowFrontFaces=slab
+				.append("svg:g").selectAll("path").data(nextRowIds.map(function() {return 0;}))
+				.enter()
+				.append("svg:path")
+				.attr("d",nextRowFrontFacePath)
+				.style("fill",nextFaceLowerRowFill);
+			var topRowBackFaces=slab.append("svg:g").selectAll("path").data(topRowIds.map(function() {return 0;})).enter().append("svg:path").attr("d",topRowBackFacePath).style("fill",topRowBackFaceFill);
+			var cornerRightFace=slab.append("svg:g").selectAll("path").data([0]).enter().append("svg:path").attr("d",cornerRightFacePath).style("fill",cornerRightFaceFill);
+			var rightColRightFaces=slab.append("svg:g").selectAll("path").data(rightColIds.map(function() {return 0;})).enter().append("svg:path").attr("d",rightColRightFacePath).style("fill",rightColRightFaceFill);
+			var topFaces=slab.append("svg:g").selectAll("path").data(allCubesIds.map(function() {return 0;})).enter().append("svg:path").attr("d",topFacePath).style("fill",topFaceFill);
+
+			// now here goes nothing
+
+			lowerRowFrontFaces.data(lowerRowIds.map(function() {return -Math.PI/2;})).transition().attr("d",frontFaceLowerRowPath);
+			nextRowFrontFaces
+				.data(nextRowIds.map(function() {return -Math.PI/2;}))
+				.transition()
+				.attr("d",nextRowFrontFacePath);
+			topRowBackFaces.data(topRowIds.map(function() {return -Math.PI/2;})).transition().attr("d",topRowBackFacePath);
+			cornerRightFace.data([-Math.PI/2]).transition().attr("d",cornerRightFacePath);
+			rightColRightFaces.data(rightColIds.map(function() {return -Math.PI/2;})).transition().attr("d",rightColRightFacePath);
+			topFaces.data(allCubesIds.map(function() {return -Math.PI/2;})).transition().attr("d",topFacePath);
+
+			// back to normal?
+
+			function revert() {var dummy=backFace;
+			backFace=bottomFace;bottomFace=frontFace;frontFace=topFace;topFace=dummy;
+			colorCubes();
+			bigcube.style("visibility","visible");
+			slab.remove();
+			}
+
+			setTimeout(revert, 300);*/
+		}
+		</script>
+	</body>
+</html>
+

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: VAST challenge 2011</title>
+	<atom:link href="http://localhost/2011/07/01/vast-challenge-2011/feed/" rel="self" type="application/rss+xml" />
+	<link>/2011/07/01/vast-challenge-2011/</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.10</generator>
+	<item>
+		<title>By: jerome</title>
+		<link>/2011/07/01/vast-challenge-2011/#comment-160</link>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+		<pubDate>Fri, 01 Jul 2011 14:05:09 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=930#comment-160</guid>
+		<description><![CDATA[thanks Enrico! I&#039;m looking forward to see what they came up with for MC2. I kind of got as far as understanding what had happened and when but not who and what for. maybe 2012...]]></description>
+		<content:encoded><![CDATA[<p>thanks Enrico! I&#8217;m looking forward to see what they came up with for MC2. I kind of got as far as understanding what had happened and when but not who and what for. maybe 2012&#8230;</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Enrico Bertini</title>
+		<link>/2011/07/01/vast-challenge-2011/#comment-159</link>
+		<dc:creator><![CDATA[Enrico Bertini]]></dc:creator>
+		<pubDate>Fri, 01 Jul 2011 09:47:49 +0000</pubDate>
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=930#comment-159</guid>
+		<description><![CDATA[Hi Jerome, great to see you finally made it! I love your neat and clean interface. Your solution and ours have many similarities, I am looking forward to show you what we did. I monitored the whole set of challenges from my students and thing MC1 was by far the nicest one. You did not miss much by focusing on this one. The more I see the results of the VAST Challenges the more I convince myself this is the way to go.]]></description>
+		<content:encoded><![CDATA[<p>Hi Jerome, great to see you finally made it! I love your neat and clean interface. Your solution and ours have many similarities, I am looking forward to show you what we did. I monitored the whole set of challenges from my students and thing MC1 was by far the nicest one. You did not miss much by focusing on this one. The more I see the results of the VAST Challenges the more I convince myself this is the way to go.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>
