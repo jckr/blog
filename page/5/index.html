@@ -49,19 +49,25 @@ img.emoji {
 <link rel='shortlink' href='http://wp.me/' />
 
    	<style type="text/css">
-					.blog-title a, .blog-description, .social-icons a { color: #ffffff; }
+					.blog-title a, .blog-description, .social-icons a { color: #222222; }
 		
 						                
 		
 							.main-navigation a { color: ; }
 		                                            </style>
     		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
-		<style type="text/css" id="syntaxhighlighteranchor"></style>
+			<style type="text/css">
+			.site-title a,
+		.site-description {
+			color: #222222;
+		}
+		</style>
+	<style type="text/css" id="syntaxhighlighteranchor"></style>
 </head>
 
 <body class="home blog paged paged-5 group-blog">
 
-<header id="masthead" role="banner" class="site-head site-header" >
+<header id="masthead" role="banner" class="site-head site-header" style="background-image: url(http://localhost:8888/wp-content/uploads/2018/04/Screenshot-2018-04-09-19.38.59.png);">
     <nav id="site-navigation" class="main-navigation" role="navigation">
         <div>
             <h1 class="menu-toggle">
@@ -70,7 +76,7 @@ img.emoji {
                 </a>
             </h1>
             <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
-            <div class="menu"><ul><li ><a href="/">Home</a></li><li class="page_item page-item-6"><a href="/about/">About</a></li><li class="page_item page-item-1073"><a href="/data-stories/">Data with stories workshop &#8211; examples</a></li><li class="page_item page-item-437"><a href="/proofs-of-concept/">Private section</a></li><li class="page_item page-item-2"><a href="/sample-page/">Sample Page</a></li></ul></div>
+            <div class="menu"><ul><li ><a href="/">Home</a></li></ul></div>
         </div>
     </nav><!-- #site-navigation -->
 
@@ -92,42 +98,6 @@ img.emoji {
 
 		
 						
-				
-<article id="post-1264" class="post-1264 post type-post status-publish format-standard hentry category-d3 category-data-visualization category-francais tag-coordonnees-paralleles tag-elections">
-		    <header class="post-header">
-        			<span class="post-meta">
-				<span class="posted-on"><a href="/2012/05/07/a-la-decouverte-des-resultats-des-presidentielles-avec-les-coordonnees-paralleles/" rel="bookmark"><time class="entry-date published" datetime="2012-05-07T19:20:39+00:00">May 7, 2012</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/d3/" rel="category tag">d3</a>, <a href="/category/data-visualization/" rel="category tag">data visualization</a>, <a href="/category/francais/" rel="category tag">français</a>			</span>
-		        <h1 class="post-title"><a href="/2012/05/07/a-la-decouverte-des-resultats-des-presidentielles-avec-les-coordonnees-paralleles/" rel="bookmark">À la découverte des résultats des présidentielles avec les coordonnées parallèles</a></h1>
-         
-    </header>
-	<section class="post-content">
-
-		<p style="text-align: center;"><a href="http://www.jeromecukier.net/projects/elections/dtour2012.html"><img class="aligncenter size-full wp-image-1265" title="front" src="http://www.jeromecukier.net/wp-content/uploads/2012/05/front.jpg" alt="" width="700" height="374" /></a></p>
-<p>Qui dit élection présidentielle, dit résultats.</p>
-<p>Et qui dit résultats dit représentation visuelle dans les médias.</p>
-<p>Et donc souvent carte.</p>
-<p>Cela dit, une carte ne nous apprend pas grand chose de ce qui s&#8217;est vraiment passé dans une élection. C&#8217;est vrai que c&#8217;est utile pour retrouver sa région ou sa ville, mais les résultats de deux villes proches géographiquement (par exemple, Boulogne-Billancourt et Issy-les-Moulineaux) n&#8217;a strictement rien à voir.</p>
-<p>En revanche, avec une carte c&#8217;est très difficile de répondre à certaines questions, comme: où a-t-on le plus voté pour Nicolas Sarkozy? Qu&#8217;est ce qui s&#8217;est passé dans les villes qui ont beaucoup voté pour Marine Le Pen ou François Bayrou? D&#8217;où vient l&#8217;explosion du vote blanc au deuxième tour?</p>
-<p>Pour répondre à ces questions, on peut utiliser les <a href="http://www.jeromecukier.net/projects/elections/dtour2012.html">coordonnées parallèles</a>.</p>
-<p>Chaque axe vertical correspond à un vote possible &#8211; d&#8217;abord ceux du premier tour, puis ceux du deuxième. Chaque ligne de couleur correspond à une ville (ou à un département, à une région, ou à la France). Chacune de ces lignes coupe chaque axe à une hauteur qui correspond à la proportion des gens qui ont fait tel ou tel choix. Par exemple, les villes où on a beaucoup voté pour Jean-Luc Mélenchon, comme Bagnolet ou Gennevilliers, se retrouveront vers le haut de l&#8217;axe du milieu.</p>
-<p>En s&#8217;approchant des axes, le curseur devient une croix. Il suffit alors de le faire glisser le long de l&#8217;axe pour dessiner un rectangle, et mettre en valeur toutes les lignes qui passent par ce rectangle. Par exemple, voici les villes qui ont donné plus de 70% de leurs voix du second tour à François Hollande:</p>
-<p><a href="http://jeromecukier.net/projects/elections/dtour2012.html"><img class="aligncenter size-full wp-image-1266" title="hollande70" src="http://www.jeromecukier.net/wp-content/uploads/2012/05/hollande70.jpg" alt="" width="700" height="500" /></a></p>
-<p>&nbsp;</p>
-<p>On peut tracer autant de rectangles qu&#8217;on veut. Par exemple, on peut ne garder que les endroits qui avaient soutenu Bayrou (par exemple à plus de 10%).</p>
-<p><a href="http://jeromecukier.net/projects/elections/dtour2012.html"><img class="aligncenter size-full wp-image-1267" title="hollande70bayrou10" src="http://www.jeromecukier.net/wp-content/uploads/2012/05/hollande70bayrou10.jpg" alt="" width="700" height="500" /></a></p>
-<p>et voilà: il n&#8217;y en a plus que 2.</p>
-<p>Pour supprimer une sélection, il suffit de cliquer près de l&#8217;axe sans glisser. Si on clique sur un rectangle, on peut aussi le faire coulisser le long de l&#8217;axe.</p>
-<p>Avec cette technique, on peut tout de suite voir les fiefs de tel ou tel candidat: il s&#8217;agit des lignes qui touchent le haut du graphique.</p>
-<p>On peut répondre à des questions plus complexes. Par exemple, je parlais de l&#8217;explosion du vote blanc au deuxième tour. Que s&#8217;est-il passé?</p>
-<p>Sélectionnons les endroits où le vote blanc a dépassé les 4% au deuxième tour, tout en restant à moins de 1.5% au premier tour:</p>
-<p><a href="http://www.jeromecukier.net/projects/elections/dtour2012.html"><img class="aligncenter size-full wp-image-1268" title="blanc" src="http://www.jeromecukier.net/wp-content/uploads/2012/05/blanc.jpg" alt="" width="700" height="370" /></a></p>
-<p>On voit trois pics: les villes où Marine Le Pen, Jean-Luc Mélenchon ou François Bayrou ont fait un très gros score. On peut continuer à sélectionner et voir que ce sont bien les villes qui sont dans la pointe de l&#8217;un des trois triangles et pas celles qui passent par le bas qui se retrouvent dans ce cas de figure. Ces électeurs ont préféré voter blanc plutôt que de choisir.</p>
-<p>Bonne exploration!</p>
-<p><a href="http://www.jeromecukier.net/projects/elections/dtour2012.html">http://www.jeromecukier.net/projects/elections/dtour2012.html</a></p>
-	    		<div class="clear">&nbsp;</div>
-	</section>
-</article><!-- #post-## -->
-			
 				
 <article id="post-1255" class="post-1255 post type-post status-publish format-standard hentry category-conferences tag-datavis tag-see-conference tag-see tag-wiesbaden">
 		    <header class="post-header">
@@ -7969,10 +7939,69 @@ All examples I used in the presentation both good and bad, both mine and others 
 	</section>
 </article><!-- #post-## -->
 			
+				
+<article id="post-1111" class="post-1111 post type-post status-publish format-standard hentry category-data-visualization tag-cognitive-cost tag-critique tag-desirable-difficulty tag-infovis tag-storytelling tag-theory tag-visweek">
+		    <header class="post-header">
+        			<span class="post-meta">
+				<span class="posted-on"><a href="/2011/11/13/promising-difficulties/" rel="bookmark"><time class="entry-date published" datetime="2011-11-13T22:18:28+00:00">November 13, 2011</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/data-visualization/" rel="category tag">data visualization</a>			</span>
+		        <h1 class="post-title"><a href="/2011/11/13/promising-difficulties/" rel="bookmark">Promising difficulties</a></h1>
+         
+    </header>
+	<section class="post-content">
+
+		<p>At the recent VisWeek conference, Jessica Hullman and her coauthors presented &#8220;<a href="http://www.cond.org/difficulties.pdf">Benefitting Infovis with Visual Difficulties</a> (pdf)&#8221;, a paper that suggests that the charts which are read almost effortlessly are not necessarily the ones that readers understand or remember best. To answer that claim, Stephen Few wrote <a href="http://www.perceptualedge.com/articles/visual_business_intelligence/visual_difficulties.pdf">a rather harsh critique of this paper</a> (pdf). As I read this I felt the original paper was not always fairly represented, but more importantly, that the views develop by both parties are not at all inreconcilable. Let me explain.</p>
+<h2>What is cognitive efficiency, or &#8220;say it with bar charts&#8221;</h2>
+<p>For quite some time, we were told that to better communicate with data, we had to make visuals as clear as possible.</p>
+<p>The more complicated way of saying that is talking of &#8220;cognitive efficiency&#8221;. By reducing the number of tasks needed to understand a chart and simplifying them, which is sometimes called reducing the &#8220;cognitive cost&#8221; or &#8220;cognitive load&#8221;, we improve all virtues of the chart.</p>
+<p><div id="attachment_1115" style="width: 683px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2011/11/frompietobar.png"><img class="size-full wp-image-1115" title="frompietobar" src="http://www.jeromecukier.net/wp-content/uploads/2011/11/frompietobar.png" alt="Various charts based on the same data points, shown in order of cognitive cost" width="673" height="142" /></a><p class="wp-caption-text">Various charts based on the same data points. From left to right, they make the task of comparing individuals value increasingly easier</p></div></p>
+<p>For instance: bar charts are easier to process than pie charts, because it&#8217;s easier for the human eye to compare lengths than angles. So, with equivalent data, bar charts have a lower cognitive cost than pie charts. Likewise, bar charts which are ordered by value (smallest bars to largest bars) are easier to read than unordered ones. Ordered bar charts have an even lower cognitive cost than unordered ones.</p>
+<p>Conversely, adding non-data elements add extra tasks for the reader and increase cognitive cost. These non-data elements have been reviled by Edward Tufte as &#8220;chartjunk&#8221;. His data-ink theory says that out of all the ink used for the chart, as much as possible should be devoted to data elements. Again, this goes in the direction of data efficiency.</p>
+<h2>Engagement rather than immediacy?</h2>
+<p>Again for quite some times those rules were held to be universal. Yet, several tried to challenge them, the latest being Jessica Hullman in her paper &#8220;<a href="http://www.cond.org/difficulties.pdf">Benefitting Infovis with Visual Difficulties</a>&#8220;. This paper was so thought-provoking that it received an honorable mention at the recent IEEE Information Visualization Conference 2011 (as a note to the non-academic reader, this is quite a competitive achievement).</p>
+<p>New information visualisation techniques are often <strong>evaluated</strong>.  This paper argues that such evaluations typically consider response time or accuracy, and not how well users are able to interpret and remember visuals. When only the former criteria are taken into account then cognitive efficiency is the superior framework. But this is not the case of data storytelling (which is, arguably, a small subset of  all data visualizations).</p>
+<p>When visualizations attempt to transmit a message, then how well users can receive this message, as well their capacity to remember this for a long time are of utmost importance, much more than the ease with which a visualization is read.</p>
+<p>In that case, Jessica Hullman proposes a trade-off between cognitive efficiency and &#8220;obstructions&#8221;. The idea is that such obstructions, or <strong>visual difficulties, can trigger active learning processes</strong>. In other words, if when trying to read a chart, a user doesn&#8217;t understand it effortlessly, but is somehow willing to get to the bottom of it, she will apply all her active brainpower to it. This effort surge will lead her to not only better interpret it but also to better remember it. To sum up, these obstructions can have positive effects, this is why when this effect works, they are called <em>desirable difficulties</em>.</p>
+<p>Desirable difficulties are tricky, because if the &#8220;obstruction&#8221; is too large, if a small additional effort is not enough to understand the chart, then it will not work. So, this is definitely not about maximizing the difficulty to understand the visualizations.</p>
+<p>In the recommendations parts of the paper the authors say:</p>
+<blockquote><p>Instead of minimizing the steps required to process visualization, induce <strong>constructive</strong>, self-directed, cognitive activity on the part of the user.</p></blockquote>
+<p>This doesn&#8217;t mean that anything goes. This paper does not argue to add as many difficulties as possible, to use every gratuitous effect in the book. Instead, the paper goes on to give actionable design suggestions to enhance reader stimulation and active information processing.</p>
+<p><a href="http://www.jeromecukier.net/wp-content/uploads/2011/05/bli.png"><img class="aligncenter size-full wp-image-880" title="bli" src="http://www.jeromecukier.net/wp-content/uploads/2011/05/bli.png" alt="" /></a></p>
+<p><a href="http://www.jeromecukier.net/blog/2011/05/25/better-life-index-a-post-mortem/">In my practice,</a> for instance with the <a href="http://oe.cd/bli">Better Life Index</a>, I verify the analyses of the Hullman paper: the novelty of the form and the aesthetic appeal of the representation drive the users to overcome the difficulty posed by the unusual shape of the flower/glyph. Would bar charts have conveyed the data more efficiently and more accurately? Definitely! would the user engagement have been comparable? Definitely not.</p>
+<h1>A critique by Stephen Few</h1>
+<p>Stephen Few, whose work I have praised at multiple occasions in this blog, has published a <a href="http://www.perceptualedge.com/articles/visual_business_intelligence/visual_difficulties.pdf">critique of this paper</a> (pdf). Reading his article, then the paper again, I had the feeling that they didn&#8217;t talk about the same things. In certain contexts, difficulties are not desirable at all and must be eradicated. Yet, in other contexts, cognitive efficiency does not provide the  optimal solution.</p>
+<p>For instance, Stephen writes:</p>
+<blockquote><p>Long-term recall is rarely the purpose of information visualization.</p></blockquote>
+<p>Fair enough! so let&#8217;s agree that when it is not the case, we should not trouble ourselves with seeking to add obstructions to the display. For instance: business intelligence systems, dashboards (for monitoring), visual analytics (and more on this shortly). Spreadsheets, mostly. All usages of data that support decision, and most usages in the corporate world. The Hullman paper only applies in the other cases anyway.</p>
+<p>He would also write (emphasis by me):</p>
+<blockquote><p><strong>Skilled data analysts</strong> learn to view data from many perspectives to prevent knee-jerk conclusions based on inappropriate heuristics.</p></blockquote>
+<p>Agreed! and by all means, let them analyse and let them view data from as many perspectives as they see fit, and don&#8217;t get in the way of their job.</p>
+<p><div id="attachment_1116" style="width: 815px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2011/11/palantir-fraud.png"><img class="size-full wp-image-1116" title="palantir-fraud" src="http://www.jeromecukier.net/wp-content/uploads/2011/11/palantir-fraud.png" alt="" width="805" height="605" /></a><p class="wp-caption-text">For context, check out www.palantirtech.com/government/analysis-blog/mortgage-fraud</p></div></p>
+<p>This here is taken from a demo from Palantir government. Here analysts are tracking mortgage fraud. Each yellow dot on the top display is a transaction where a house has been sold for over 200% of its purchase value, and the ones which are connected are about the same house. We can immediately see 2 suspicious clusters where a property has been resold 4 times in these conditions. And if at the end of their work day the analysts don&#8217;t remember the address of the fraudulent transaction, it&#8217;s no big deal as long as they have identified a wrong practice.</p>
+<p>Conversely, at the risk of repetition, the paper authors write of a trade-off between efficiency and obstructions &#8211; cognitive efficiency being generally positive. They say that obstructions become desirable difficulties only if they are <em>constructive, </em>that is if they are able to trigger active information processing. They are <strong>not </strong>championning 3D pie charts or atrocious dashboards as the one at the end of Stephen&#8217;s article.  Jessica signals that novelty enhance active information processing. I don&#8217;t know how to characterize speed dials in dashboards, for instance, but novel would not be the word I&#8217;d use, and again they wouldn&#8217;t be favoured by the authors of the paper. So, I think it&#8217;s a bit unfair to associate the paper with the terrible, terrible visuals presented in Stephen&#8217;s article, the ones in the original paper being a little bit more defendable.</p>
+<p><div id="attachment_1119" style="width: 610px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2011/11/mortgage-delinquency.png"><img class="size-full wp-image-1119" title="mortgage-delinquency" src="http://www.jeromecukier.net/wp-content/uploads/2011/11/mortgage-delinquency.png" alt="" width="600" height="283" /></a><p class="wp-caption-text">To see this chart in context see http://www.oecd.org/dataoecd/41/50/47984536.pdf</p></div></p>
+<p>Consider this other chart (and let&#8217;s assume for the sake of discussion that its cognitive cost is low, while it could be much lower by showing fewer time series for instance). This was published in an OECD publication almost 2 years before the 2008 crisis. I would say this chart is easy to read (we see mortgage delinquency rates dropping in most countries) but difficult to interpret and to recall. Like other charts of the document, this one is an oracle of financial apocalypse, as the proportion of delinquent mortgage in the US, the only one without a downward trend, will have the consequences that we know. So if a different way of showing the same data could have made that more obvious at the cost of legibility, I think it would have been worth a shot.</p>
+<h2>Are we on common ground yet?</h2>
+<p>If not, let&#8217;s assume now that there exists visualizations where long-term recall is, indeed, the main purpose. Examples would include use in journalism, politics, advocacy, marketing&#8230; Jessica has been involved in the series of workshop <a href="http://data-stories.com/">Telling stories with data</a> at VisWeek. This suggests an interesting distinction.</p>
+<ul>
+<li>visualizations which are tools with which a user accesses or manipulates data.</li>
+<li>visualizations where an author, with a specific intent, tries to frame data in a certain way to an audience. In that case, the author wants to make sure the audience receives the message as intended, and remembers it.</li>
+</ul>
+<div>See where I&#8217;m going?</div>
+<div>In the <strong>first</strong> case, we want <strong>cognitive efficiency</strong> all the way.</div>
+<div>In the <strong>second</strong>, we are mostly concerned with <strong>getting our message across</strong> and <strong>making it stick</strong>.</div>
+<div>So, <strong>there is no contradiction</strong> between having a set of rules for one category of visuals, and a different one for the other, especially since the criteria of success are so different. To illustrate this I note that both the article and the paper refer to Tableau, a &#8220;cognitive efficiency&#8221; company. Yet, it turns out that Tableau is also very interested in doing as well as possible in the story telling front, and that questions asked at the paper&#8217;s presentation by Tableau representatives show their interest in this research.</div>
+<h2>Where to from there?</h2>
+<div>We have proven methods to reduce the cognitive cost of a visual, and we can thank Stephen Few for making them more accessible. It&#8217;s much more difficult, though, to optimize the characteristics of a successful &#8220;data narrative&#8221;, that is interpretation and memorability. It&#8217;s an infographics jungle out there. Those of us who haven&#8217;t seen their share of undefendable visuals just haven&#8217;t searched enough, but absolutely anything goes.</div>
+<div>We still do not have an equivalent framework for visualizations that tell stories. InfoVis started to study them (such as in the remarkable <a href="http://vis.stanford.edu/papers/narrative">Narrative Visualization: Telling Stories With Data</a>) and characterize them, but we don&#8217;t have a systematic, reproducible way to make sure that data narrative will work well, just as we can do the perfect dashboard.  We do know that the best examples at large do not comply with the rules of cognitive efficiency though. Fortunately, practitioners have not waited for convincing resarch and are leading the way, even though many get lost in the process. This is why we need more research on that front! I for one is looking forward new developments in this area of InfoVis.</div>
+<pre></pre>
+	    		<div class="clear">&nbsp;</div>
+	</section>
+</article><!-- #post-## -->
+			
 				<nav class="pagination navigation paging-navigation" role="navigation">
 		<div class="nav-links">
 						<div class="older-posts"><a href="/page/6/" >Older Posts <span class="meta-nav">&rarr;</span></a></div>
-							<div class="page-number">Page 5 of 13</div>
+							<div class="page-number">Page 5 of 12</div>
 						<div class="newer-posts"><a href="/page/4/" ><span class="meta-nav">&larr;</span> Newer Posts</a></div>
 			
 		</div><!-- .nav-links -->
@@ -7990,9 +8019,6 @@ All examples I used in the presentation both good and bad, both mine and others 
 				<input type="submit" class="search-submit" value="Search" />
 			</form></aside>		<aside id="recent-posts-2" class="widget widget_recent_entries">		<h1 class="widget-title">Recent Posts</h1>		<ul>
 					<li>
-				<a href="/2018/04/09/hello-world/">Hello world!</a>
-						</li>
-					<li>
 				<a href="/2016/08/17/the-big-leagues/">The big leagues</a>
 						</li>
 					<li>
@@ -8004,10 +8030,12 @@ All examples I used in the presentation both good and bad, both mine and others 
 					<li>
 				<a href="/2016/08/11/react-components/">React components</a>
 						</li>
+					<li>
+				<a href="/2016/08/10/coding-with-react/">Coding with React</a>
+						</li>
 				</ul>
-		</aside>		<aside id="recent-comments-2" class="widget widget_recent_comments"><h1 class="widget-title">Recent Comments</h1><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link"><a href='https://wordpress.org/' rel='external nofollow' class='url'>A WordPress Commenter</a></span> on <a href="/2018/04/09/hello-world/#comment-1">Hello world!</a></li><li class="recentcomments"><span class="comment-author-link"><a href='http://omeraz.wordpress.com/' rel='external nofollow' class='url'>עומר עזריאל</a></span> on <a href="/2016/08/17/the-big-leagues/#comment-567">The big leagues</a></li><li class="recentcomments"><span class="comment-author-link">Carlos Ayres</span> on <a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-312">Manipulating data like a boss with d3</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://migrate.powertripanalytics.com/game-of-thrones-interactions-among-the-top-30-characters/' rel='external nofollow' class='url'>Game of ThronesInteractions Among the Top 30 Characters &#8211; PowerTrip Analytics</a></span> on <a href="/2013/05/13/making-the-game-of-thrones-visualization/#comment-466">Making the game of thrones visualization</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://abgoswam.wordpress.com/2016/10/08/d3-getting-started/' rel='external nofollow' class='url'>D3 &#8211; Getting Started | abgoswam&#039;s tech blog</a></span> on <a href="/2012/09/04/getting-to-hello-world-with-d3/#comment-419">Getting to &#8220;Hello world&#8221; with d3</a></li></ul></aside><aside id="archives-2" class="widget widget_archive"><h1 class="widget-title">Archives</h1>		<ul>
-			<li><a href='/2018/04/'>April 2018</a></li>
-	<li><a href='/2016/08/'>August 2016</a></li>
+		</aside>		<aside id="recent-comments-2" class="widget widget_recent_comments"><h1 class="widget-title">Recent Comments</h1><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link"><a href='http://omeraz.wordpress.com/' rel='external nofollow' class='url'>עומר עזריאל</a></span> on <a href="/2016/08/17/the-big-leagues/#comment-567">The big leagues</a></li><li class="recentcomments"><span class="comment-author-link">Carlos Ayres</span> on <a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-312">Manipulating data like a boss with d3</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://migrate.powertripanalytics.com/game-of-thrones-interactions-among-the-top-30-characters/' rel='external nofollow' class='url'>Game of ThronesInteractions Among the Top 30 Characters &#8211; PowerTrip Analytics</a></span> on <a href="/2013/05/13/making-the-game-of-thrones-visualization/#comment-466">Making the game of thrones visualization</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://abgoswam.wordpress.com/2016/10/08/d3-getting-started/' rel='external nofollow' class='url'>D3 &#8211; Getting Started | abgoswam&#039;s tech blog</a></span> on <a href="/2012/09/04/getting-to-hello-world-with-d3/#comment-419">Getting to &#8220;Hello world&#8221; with d3</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://plus.google.com/+BrotoBhattacharjee' rel='external nofollow' class='url'>Broto Bhattacharjee</a></span> on <a href="/2012/09/04/getting-to-hello-world-with-d3/#comment-418">Getting to &#8220;Hello world&#8221; with d3</a></li></ul></aside><aside id="archives-2" class="widget widget_archive"><h1 class="widget-title">Archives</h1>		<ul>
+			<li><a href='/2016/08/'>August 2016</a></li>
 	<li><a href='/2015/05/'>May 2015</a></li>
 	<li><a href='/2015/02/'>February 2015</a></li>
 	<li><a href='/2014/10/'>October 2014</a></li>

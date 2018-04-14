@@ -12,27 +12,12 @@
 	<atom:link href="http://localhost/feed/" rel="self" type="application/rss+xml" />
 	<link>/</link>
 	<description>Just another WordPress site</description>
-	<lastBuildDate>Mon, 09 Apr 2018 21:49:15 +0000</lastBuildDate>
+	<lastBuildDate>Wed, 17 Aug 2016 05:36:39 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
 	<generator>https://wordpress.org/?v=4.6.10</generator>
 	<item>
-		<title>Hello world!</title>
-		<link>/2018/04/09/hello-world/</link>
-		<comments>/2018/04/09/hello-world/#comments</comments>
-		<pubDate>Mon, 09 Apr 2018 21:49:15 +0000</pubDate>
-		<dc:creator><![CDATA[jerome]]></dc:creator>
-				<category><![CDATA[Uncategorized]]></category>
-
-		<guid isPermaLink="false">/?p=1</guid>
-		<description><![CDATA[Welcome to WordPress. This is your first post. Edit or delete it, then start writing!]]></description>
-				<content:encoded><![CDATA[<p>Welcome to WordPress. This is your first post. Edit or delete it, then start writing!</p>
-]]></content:encoded>
-			<wfw:commentRss>/2018/04/09/hello-world/feed/</wfw:commentRss>
-		<slash:comments>1</slash:comments>
-		</item>
-		<item>
 		<title>The big leagues</title>
 		<link>/2016/08/17/the-big-leagues/</link>
 		<comments>/2016/08/17/the-big-leagues/#comments</comments>
@@ -1685,6 +1670,28 @@ The spark that led me to write was Lea Verou&#8217;s article <a href="http://lea
 ]]></content:encoded>
 			<wfw:commentRss>/2015/05/19/you-may-not-need-d3/feed/</wfw:commentRss>
 		<slash:comments>8</slash:comments>
+		</item>
+		<item>
+		<title>Blending mode and SVG</title>
+		<link>/2015/05/05/blending-mode-and-svg/</link>
+		<comments>/2015/05/05/blending-mode-and-svg/#comments</comments>
+		<pubDate>Tue, 05 May 2015 21:56:46 +0000</pubDate>
+		<dc:creator><![CDATA[jerome]]></dc:creator>
+				<category><![CDATA[d3]]></category>
+		<category><![CDATA[tips]]></category>
+
+		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1661</guid>
+		<description><![CDATA[One great thing about canvas is that it&#8217;s super easy to change the compositing mode. And sure, you can do all sorts of fancy things with that, but my basic usage of that is to control how opacity is handled. By default, in svg, if you add one element which is not fully opaque on <a class="read-more" href="/2015/05/05/blending-mode-and-svg/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>One great thing about canvas is that it&#8217;s super easy to change the compositing mode. And sure, you can do all sorts of fancy things with that, but my basic usage of that is to control how opacity is handled. By default, in svg, if you add one element which is not fully opaque on top of another, the top element makes the bottom element darker. By contrast, in canvas you can have access to globalCompositeOperation that let you change how new elements drawn on top of an existing image are handled, or in processing, you have blendMode, etc.</p>
+<p>In SVG, there are a variety of operations accessible through filters: see <a href="http://apike.ca/prog_svg_filters.html">http://apike.ca/prog_svg_filters.html</a> for an excellent overview. I must admit that I find filters a bit intimidating to set up and need to always go back to a reference to achieve anything.</p>
+<p>I was reading this article this morning on CSS graphical effects <a href="http://blogs.adobe.com/dreamweaver/2015/04/an-introduction-to-graphical-effects-in-css.html">http://blogs.adobe.com/dreamweaver/2015/04/an-introduction-to-graphical-effects-in-css.html</a> thinking, wouldn&#8217;t that be nice if we could do control compositing in SVG.</p>
+<p>It turns out that we can! By manipulating the &#8220;mix-blend-mode&#8221; style attribute of any graphical element, we can achieve one of 16 blending modes (which is actually more than canvas or processing!)<br />
+Here&#8217;s a demo that shows what can be done. This is an adaptation of <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-blend-mode">this</a> example.</p>
+<p>So, through the use of the right blending mode, opacity can be used to make the resulting image lighter (among many other things).</p>
+<p><iframe src="http://www.jeromecukier.net/stuff/blendmode/blendmode.html" width="600" height="750" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe></p>
+]]></content:encoded>
+			<wfw:commentRss>/2015/05/05/blending-mode-and-svg/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
 		</item>
 	</channel>
 </rss>

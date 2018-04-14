@@ -49,19 +49,25 @@ img.emoji {
 <link rel='shortlink' href='http://wp.me/' />
 
    	<style type="text/css">
-					.blog-title a, .blog-description, .social-icons a { color: #ffffff; }
+					.blog-title a, .blog-description, .social-icons a { color: #222222; }
 		
 						                
 		
 							.main-navigation a { color: ; }
 		                                            </style>
     		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
-		<style type="text/css" id="syntaxhighlighteranchor"></style>
+			<style type="text/css">
+			.site-title a,
+		.site-description {
+			color: #222222;
+		}
+		</style>
+	<style type="text/css" id="syntaxhighlighteranchor"></style>
 </head>
 
 <body class="home blog paged paged-9 group-blog">
 
-<header id="masthead" role="banner" class="site-head site-header" >
+<header id="masthead" role="banner" class="site-head site-header" style="background-image: url(http://localhost:8888/wp-content/uploads/2018/04/Screenshot-2018-04-09-19.38.59.png);">
     <nav id="site-navigation" class="main-navigation" role="navigation">
         <div>
             <h1 class="menu-toggle">
@@ -70,7 +76,7 @@ img.emoji {
                 </a>
             </h1>
             <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
-            <div class="menu"><ul><li ><a href="/">Home</a></li><li class="page_item page-item-6"><a href="/about/">About</a></li><li class="page_item page-item-1073"><a href="/data-stories/">Data with stories workshop &#8211; examples</a></li><li class="page_item page-item-437"><a href="/proofs-of-concept/">Private section</a></li><li class="page_item page-item-2"><a href="/sample-page/">Sample Page</a></li></ul></div>
+            <div class="menu"><ul><li ><a href="/">Home</a></li></ul></div>
         </div>
     </nav><!-- #site-navigation -->
 
@@ -92,36 +98,6 @@ img.emoji {
 
 		
 						
-				
-<article id="post-550" class="post-550 post type-post status-publish format-standard hentry category-charts category-data-visualization category-protovis category-tips tag-grammar-of-graphics tag-nesting tag-protovis tag-tableau tag-tutorial">
-		    <header class="post-header">
-        			<span class="post-meta">
-				<span class="posted-on"><a href="/2011/02/11/working-with-data-in-protovis-interlude-protovis-nesting-vs-tableau/" rel="bookmark"><time class="entry-date published" datetime="2011-02-11T02:40:48+00:00">February 11, 2011</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/charts/" rel="category tag">charts</a>, <a href="/category/data-visualization/" rel="category tag">data visualization</a>, <a href="/category/protovis/" rel="category tag">protovis</a>, <a href="/category/tips/" rel="category tag">tips</a>			</span>
-		        <h1 class="post-title"><a href="/2011/02/11/working-with-data-in-protovis-interlude-protovis-nesting-vs-tableau/" rel="bookmark">Working with data in protovis &#8211; interlude: protovis nesting vs tableau</a></h1>
-         
-    </header>
-	<section class="post-content">
-
-		<p>Protovis, like Tableau, are based on the grammar of graphics framework. In a nutshell, in both environments, a chart designer can map visual attributes (such as x or y dimension, color, shape, etc.) to dimensions of data. </p>
-<p>The flat file which <a href="http://vis.stanford.edu/protovis/ex/barley.html">Becker&#8217;s Barley</a> is based on can be used in Tableau public nearly as is.<br />
-Here&#8217;s a size-by-size comparison of the results:</p>
-<table>
-<tr>
-<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/protovisBarley.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/protovisBarley.png" alt="" title="protovisBarley" width="350" height="830" class="aligncenter size-full wp-image-551" /></a></td>
-<td><script type="text/javascript" src="http://public.tableausoftware.com/javascripts/api/viz_v1.js"></script><object class="tableauViz" width="356" height="901" style="display:none;"><param name="name" value="barley/Dashboard1" /><param name="toolbar" value="no" /><param name="tabs" value="no" /></object><noscript>Dashboard 1 <br /><a href="#"><img alt="Dashboard 1 " src="http://public.tableausoftware.com/static/images/ba/barley/Dashboard1/1_rss.png" height="100%" /></a></noscript></td>
-</tr>
-</table>
-<h2>How it&#8217;s done in Protovis</h2>
-<p>In protovis, the flat file is nested several times, so that its various elements can be called in a hierarchy from series of dots per variety, to panel per sites to a grander panel. Legend and ticks are added by hand for a perfect finish. Still, some careful planning is required to prepare the data file and to adjust the various elements (choice of colors, sizes, etc.)</p>
-<h2>How it&#8217;s done in Tableau</h2>
-<p><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/tableauBarley.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/tableauBarley.png" alt="" title="tableauBarley" width="665" height="497" class="aligncenter size-full wp-image-554" /></a><br />
-The data file, unsurprisingly, has 4 dimensions: site, variety, year and yield. In tableau terms, yield is a measure (a numerical dimension) while the other 3 are categorical dimensions. With a few clicks, it is possible to get a result which is similar to the original vis in Protovis. We assign yield to column (horizontal attribute), site and variety to row in that order. We also untick aggregate measures in Analysis, so we get little circles and not big bars. Here, I&#8217;ve manually sorted the sites and the varieties. </p>
-<h2>Conclusion</h2>
-<p>It is much, much easier to achieve a similar result with Tableau, however using protovis provides a finer control. </p>
-	    		<div class="clear">&nbsp;</div>
-	</section>
-</article><!-- #post-## -->
-			
 				
 <article id="post-494" class="post-494 post type-post status-publish format-standard hentry category-charts category-data-visualization category-protovis category-tips tag-arrays tag-javascript tag-protovis tag-tutorial">
 		    <header class="post-header">
@@ -826,10 +802,72 @@ This suggests that there could be some cultural/regional explanations to the hea
 	</section>
 </article><!-- #post-## -->
 			
+				
+<article id="post-355" class="post-355 post type-post status-publish format-standard hentry category-data-visualization category-uncategorized tag-contest tag-data-visualization tag-tableau">
+		    <header class="post-header">
+        			<span class="post-meta">
+				<span class="posted-on"><a href="/2010/03/26/my-tableau-contest-entry/" rel="bookmark"><time class="entry-date published" datetime="2010-03-26T20:35:59+00:00">March 26, 2010</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/data-visualization/" rel="category tag">data visualization</a>, <a href="/category/uncategorized/" rel="category tag">Uncategorized</a>			</span>
+		        <h1 class="post-title"><a href="/2010/03/26/my-tableau-contest-entry/" rel="bookmark">My tableau contest entry</a></h1>
+         
+    </header>
+	<section class="post-content">
+
+		<p><script type="text/javascript" src="http://public.tableausoftware.com/javascripts/api/viz_v1.js"></script><object class="tableauViz" width="704" height="839" style="display:none;"><param name="name" value="contest/myDashboard" /><param name="toolbar" value="yes" /></object><noscript>myDashboard <br /><a href="#"><img alt="myDashboard " src="http://public.tableausoftware.com/static/images/contest-myDashboard_rss.png" height="100%" /></a></noscript>
+<div style="width:704px;height:22px;padding:0px 10px 0px 0px; margin-top: -6px; color:black;font:normal 8pt verdana,helvetica,arial,sans-serif;">
+<div style="padding-left: 588px;"><a href="http://www.tableausoftware.com/public?ref=http://public.tableausoftware.com/views/contest/myDashboard" target="_blank">Powered by Tableau</a></div>
+</div>
+<p>so here it is. I chose to compete on the <a href="http://www.tableausoftware.com/public/sites/default/files/Activity_Rates_and_Healthy_Living.xls">Activity Rates and Healthy Living</a> data set, because after downloading it I really enjoyed exploring it.</p>
+<p>If the viz doesn&#8217;t show well in the blog, here&#8217;s a <a href="http://public.tableausoftware.com/views/contest/myDashboard">link to its page</a></p>
+<p>My main reason for entering the <a href="http://www.tableausoftware.com/public/viz-contest">contest</a> is to be able to see what others have done. There are obviously many, many ways to tackle this and I am very much looking forward to see everyone&#8217;s work! my interactions with the Tableau community, especially through the forum, have always been very rewarding and what better way to learn than from example!</p>
+<p>So for the fellow contestants that will see my work, here is my train of thoughts for the dashboard.</p>
+<h3>The dataset</h3>
+<p>I&#8217;m aware of USDA&#8217;s <a href="http://maps.ers.usda.gov/FoodAtlas/">food environment atlas</a>. It&#8217;s an application where people can see various food-related indicators on a map. The dataset we were handled is actually the background data of this. So, there is already a place where people can <em>consult </em>food indicators.</p>
+<p>Now this beeing Tableau and all, I wanted to create an <em>analytical</em> dashboard where people could understand if and how the <em>input </em>variables affected the <em>output </em>variables.</p>
+<p>The dataset consists mostly of <em>input </em>variables: various indicators that influence how healthy a local population is. That status (<em>output</em>) is expressed through a few variables, such as adult and child obesity rates and adult diabetes rates. Those variables are highly correlated with each other, so in my work I chose to focus on adult obesity rates which is the simplest one.</p>
+<p>Now, inputs. The rest of the variables fall in several categories:</p>
+<ul>
+<li>income (median household income, poverty rates);</li>
+<li>diet (consumption of various food items per capita);</li>
+<li>shopping habits (for various types of stores or restaurants, the dataset would give their number and the money spent in each county, both in absolute numbers and per capita);</li>
+<li>lifestyle information (data on households without cars and far from stores, on the physical activity level of the population, and the facilities offered by the state);</li>
+<li>pricing variables (price ratios between some &#8220;healthy&#8221; food items and some less healthy, equivalent food items, for instance fruits vs. snacks; tax information on unhealthy food);</li>
+<li>policy variables (measuring participation to various programmes such as SNAP or WIC); </li>
+<li>socio-demographic variables (ethnic groups in population, &#8220;metro&#8221; status of county, whether the county was growing and shrinking, and voting preferences).</li>
+</ul>
+<p>Yes, that&#8217;s a lot of variables (about 90, plus the county and state dimensions).</p>
+<p>Oddly enough, there wasn&#8217;t a population measure in the dataset, and many indicators were available in absolute value only, so I constructed a proxy by dividing two variables on the same subject (something like &#8220;number of convenience stores&#8221; and &#8220;number of convenience stores / capita&#8221;).</p>
+<p>That enabled me to build indicators per capita for all subjects, so I could see if they were correlated with my obesity rates.</p>
+<h3>Findings &#8211; using Tableau desktop to make sense of the dataset</h3>
+<p>The indicators which were most correlated with obesity were the income ones, which came as no surprise. All income indicators were also very correlated to each other. In the USA, <a href="http://www.census.gov/hhes/www/poverty/povdef.html#2">poverty</a> means having an income below a certain threshold which is defined at the <em>federal level</em>. But in other contexts, poverty is most often defined in relation to the median income (typically, a household is in poverty if its income is below half of the median income), so it can be used to measure inequality of a community, and <em>dispersion </em>of incomes.</p>
+<p>As a result, many indicators appear to be correlated with obesity because they are not independent of income. This is the case for instance for most of the policy indicators: if a programme has many recipients in a county, it is because poverty is widespread, so residents are more likely to be affected by obesity. This makes it difficult to measure the impact of the programmes with this dataset. This is also the case, unfortunately, for racial indicators, as most of the counties with a very high black population have a low income.</p>
+<p>Diet indicators also appear to be uncorrelated with obesity. This is counter-intuitive &#8211; isn&#8217;t eating vegetables or fresh farm produce the most certain way to prevent obesity? But one has to remember that this dataset is aggregated at the county level. Just because a county has a high level of, say, fruits consumption per capita doesn&#8217;t mean that every household is eating that much. Realistically, consumption will be very dispersed: the households where people cook, which are <a href="http://www.ted.com/talks/jamie_oliver.html">less likely to be affected by obesity</a>, will buy all the fruits, and those where people don&#8217;t cook will simply buy none. Also, just because one buys more vegetable than average doesn&#8217;t mean they don&#8217;t also buy other, less recommended foodstuff.</p>
+<p>The only diet indicator that appear to be somewhat correlated to obesity is the consumption of soft drinks.</p>
+<p>When it comes to lifestyle habits, surprisingly, the proportion of households without car and living far from a store &#8211; people likely to walk more, so to be healthier &#8211; is positively correlated with obesity. This is because counties where this indicator is high are also poorer than average &#8211; again, income explains most of this. However, physical activity in general plays a positive role. States where people are most active, such as Colorado, enjoy the lowest obesity figures. In fact, all the counties with less than 15% of obesity are in Colorado.</p>
+<p>Finally, pricing didn&#8217;t seem to have much impact on neither obesity, nor consumption. Why is that? Economists would call this &#8220;low price elasticity&#8221;, meaning that price changes do not encourage people to switch products and habits. But there is another explanation. Again, people who can&#8217;t cook are not going to buy green vegetables because they are cheaper. Also, consider the tax amount that are applied: no more than 7% in the most aggressive states. Compare that figure to the 400%+ levy that is applied to cigarettes in many countries of the world! Clearly, 4-7% is not strong enough to change habits. However, this money can be used to sponsor programmes that can help people adopt safer behaviors.</p>
+<h3>What to show? making the visualization</h3>
+<p>First, I wanted to show all of those findings. If 2 variables that you expect to be correlated (say, consumption of vegetables and obesity) are in fact not correlated, a point is made! But visually, nothing is less interesting than a scatterplot that doesn&#8217;t exhibit correlation. It&#8217;s just a stupid cloud of dots.</p>
+<p>So instead I chose to focus on the correlations I could establish, namely: obesity and income, and obesity and activity. Those are the 2 lower scatterplot of my dashboard. I chose the poverty rate measure, because I&#8217;d rather have a trend line going up, than going down.</p>
+<p>I duplicated that finding with a bar chart made with median income bins. For each bin (which represent all the counties where the median income fall in that range), I would plot the average obesity rate, and, miracle! this comes up as a markedly decreasing bar chart. Now, this figure doesn&#8217;t <em>establish </em>correlation, let alone causality, but it certainly <em>suggests </em>it more efficiently than a scatterplot. Also, it can be doubled as a navigation aide: clicking on a bar would highlight or select the relevant counties.</p>
+<p>Finally, I decided to do a map. Well, actually, it was the first thing I had done, but  had second thoughts about it, and eventually I put it in. Why? first, to allow people to look up their county. Technically, my county is Travis county (Austin, TX) and I can find it easily on a map. Less so if I have to look for county names listed in order of any of their indicators. I added a quick filter on county name, for those who&#8217;d rather type than look up.</p>
+<p>I also wanted to see whether there was a link between geography and obesity. So try the following.</p>
+<ul>
+<li>Where are the counties with obesity rates less than 15% ? Colorado only. </li>
+<li>If we raise the threshold a little, we get San Francisco and New York. But until 20%, these counties remain very localized.</li>
+<li>Likewise, virtually all counties above 35% are in the South &#8211; Alabama, Louisianne, Mississipi.</li>
+</ul>
+<p>Population also has an importance. The counties with a population above 1m people tend to have lower rates &#8211; their citizens also usually have higher incomes.</p>
+<p>I decided to zoom the map on the lower 48 by default. It is possible to zoom out to see Alaska and Hawaii, but I don&#8217;t think that the advantage of seeing them all the time is greater than the inconvenient of having a smaller view point even if they are not necessary.</p>
+<p>Regarding the marks. Originally, I didn&#8217;t assign any variable to their size, but then thought that the larger counties (i.e. LA, Harris (Houston), Cook (Chicago) &#8230;) were underrepresented. So I assigned my population proxy to size. But then, the density of the marks competed with the intensity of the color, which was attributed to the obesity rate. So I removed that and chose a size so that marks wouldn&#8217;t overlap each other too much. Regarding color, I wasn&#8217;t happy with the default scale. If I let it as is, it would consider that 12.5%, the minimum value of the dataset, is an extremely low number. But in absolute terms, it&#8217;s not. Most developed countries have obesity rates lower than that value at the national level. Japan or Korea are <a href="http://dx.doi.org/10.1787/538537864717">below 4%</a>. So I made the scale start at 0. But I didn&#8217;t like the output: the counties with the highest values didn&#8217;t stand out. Eventually, I chose a diverging scale, which helped counties with high and low values to be more visible.</p>
+<p>I edited an tooltip card for the view. In another version of the dashboard, I had a sheet with numbers written out that would change depending on which country was last brushed. I like the idea that this information can stay on. But I got confused in the configuration of the actions, and couldn&#8217;t completely prevent the filter that applied to this sheet to be disabled, sometimes, which caused number for all counties to overlap, and an annoying downtime as that happens. So I made an tooltipinstead. Anyway, it&#8217;s easier to format text like this. But the problem is that it can hide a good portion of the dashboard. So I exercised constraint and only chose what I found the 15 or so most relevant variables.</p>
+<p>Voilà! that&#8217; s it. I hope you like my dashboard, and I look forward to see the work of others! If you are a contestant, please leave a link to your entry in the comments. Good luck to all!!</p>
+	    		<div class="clear">&nbsp;</div>
+	</section>
+</article><!-- #post-## -->
+			
 				<nav class="pagination navigation paging-navigation" role="navigation">
 		<div class="nav-links">
 						<div class="older-posts"><a href="/page/10/" >Older Posts <span class="meta-nav">&rarr;</span></a></div>
-							<div class="page-number">Page 9 of 13</div>
+							<div class="page-number">Page 9 of 12</div>
 						<div class="newer-posts"><a href="/page/8/" ><span class="meta-nav">&larr;</span> Newer Posts</a></div>
 			
 		</div><!-- .nav-links -->
@@ -847,9 +885,6 @@ This suggests that there could be some cultural/regional explanations to the hea
 				<input type="submit" class="search-submit" value="Search" />
 			</form></aside>		<aside id="recent-posts-2" class="widget widget_recent_entries">		<h1 class="widget-title">Recent Posts</h1>		<ul>
 					<li>
-				<a href="/2018/04/09/hello-world/">Hello world!</a>
-						</li>
-					<li>
 				<a href="/2016/08/17/the-big-leagues/">The big leagues</a>
 						</li>
 					<li>
@@ -861,10 +896,12 @@ This suggests that there could be some cultural/regional explanations to the hea
 					<li>
 				<a href="/2016/08/11/react-components/">React components</a>
 						</li>
+					<li>
+				<a href="/2016/08/10/coding-with-react/">Coding with React</a>
+						</li>
 				</ul>
-		</aside>		<aside id="recent-comments-2" class="widget widget_recent_comments"><h1 class="widget-title">Recent Comments</h1><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link"><a href='https://wordpress.org/' rel='external nofollow' class='url'>A WordPress Commenter</a></span> on <a href="/2018/04/09/hello-world/#comment-1">Hello world!</a></li><li class="recentcomments"><span class="comment-author-link"><a href='http://omeraz.wordpress.com/' rel='external nofollow' class='url'>עומר עזריאל</a></span> on <a href="/2016/08/17/the-big-leagues/#comment-567">The big leagues</a></li><li class="recentcomments"><span class="comment-author-link">Carlos Ayres</span> on <a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-312">Manipulating data like a boss with d3</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://migrate.powertripanalytics.com/game-of-thrones-interactions-among-the-top-30-characters/' rel='external nofollow' class='url'>Game of ThronesInteractions Among the Top 30 Characters &#8211; PowerTrip Analytics</a></span> on <a href="/2013/05/13/making-the-game-of-thrones-visualization/#comment-466">Making the game of thrones visualization</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://abgoswam.wordpress.com/2016/10/08/d3-getting-started/' rel='external nofollow' class='url'>D3 &#8211; Getting Started | abgoswam&#039;s tech blog</a></span> on <a href="/2012/09/04/getting-to-hello-world-with-d3/#comment-419">Getting to &#8220;Hello world&#8221; with d3</a></li></ul></aside><aside id="archives-2" class="widget widget_archive"><h1 class="widget-title">Archives</h1>		<ul>
-			<li><a href='/2018/04/'>April 2018</a></li>
-	<li><a href='/2016/08/'>August 2016</a></li>
+		</aside>		<aside id="recent-comments-2" class="widget widget_recent_comments"><h1 class="widget-title">Recent Comments</h1><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link"><a href='http://omeraz.wordpress.com/' rel='external nofollow' class='url'>עומר עזריאל</a></span> on <a href="/2016/08/17/the-big-leagues/#comment-567">The big leagues</a></li><li class="recentcomments"><span class="comment-author-link">Carlos Ayres</span> on <a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-312">Manipulating data like a boss with d3</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://migrate.powertripanalytics.com/game-of-thrones-interactions-among-the-top-30-characters/' rel='external nofollow' class='url'>Game of ThronesInteractions Among the Top 30 Characters &#8211; PowerTrip Analytics</a></span> on <a href="/2013/05/13/making-the-game-of-thrones-visualization/#comment-466">Making the game of thrones visualization</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://abgoswam.wordpress.com/2016/10/08/d3-getting-started/' rel='external nofollow' class='url'>D3 &#8211; Getting Started | abgoswam&#039;s tech blog</a></span> on <a href="/2012/09/04/getting-to-hello-world-with-d3/#comment-419">Getting to &#8220;Hello world&#8221; with d3</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://plus.google.com/+BrotoBhattacharjee' rel='external nofollow' class='url'>Broto Bhattacharjee</a></span> on <a href="/2012/09/04/getting-to-hello-world-with-d3/#comment-418">Getting to &#8220;Hello world&#8221; with d3</a></li></ul></aside><aside id="archives-2" class="widget widget_archive"><h1 class="widget-title">Archives</h1>		<ul>
+			<li><a href='/2016/08/'>August 2016</a></li>
 	<li><a href='/2015/05/'>May 2015</a></li>
 	<li><a href='/2015/02/'>February 2015</a></li>
 	<li><a href='/2014/10/'>October 2014</a></li>
