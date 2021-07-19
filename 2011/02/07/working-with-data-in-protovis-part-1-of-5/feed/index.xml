@@ -19,7 +19,7 @@
 		<link>/2011/02/07/working-with-data-in-protovis-part-1-of-5/#comment-85</link>
 		<dc:creator><![CDATA[Google Maps ja Protovis kartta CDE:ssä - Blogi - evabidm.fi]]></dc:creator>
 		<pubDate>Sat, 11 Jun 2011 04:03:08 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=429#comment-85</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=429#comment-85</guid>
 		<description><![CDATA[[...] ratkaisua, mutta aina meni jokin pieleen. L&#246;ysin sitten netist&#228; blogisarjan &#034;Working with data in protovis&#034;, jonka avulla opin paremmin ymm&#228;rt&#228;m&#228;&#228;n Protovis-kirjastoa. [...]]]></description>
 		<content:encoded><![CDATA[<p>[&#8230;] ratkaisua, mutta aina meni jokin pieleen. L&ouml;ysin sitten netist&auml; blogisarjan &quot;Working with data in protovis&quot;, jonka avulla opin paremmin ymm&auml;rt&auml;m&auml;&auml;n Protovis-kirjastoa. [&#8230;]</p>
 ]]></content:encoded>
@@ -29,7 +29,7 @@
 		<link>/2011/02/07/working-with-data-in-protovis-part-1-of-5/#comment-84</link>
 		<dc:creator><![CDATA[jerome]]></dc:creator>
 		<pubDate>Wed, 01 Jun 2011 16:01:27 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=429#comment-84</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=429#comment-84</guid>
 		<description><![CDATA[afaik, using text/javascript+protovis instead of text/javascript allows you to omit semi-colons or curly braces + return statements in functions. 
 
 but standard code written with semi-colons, return statements etc. will work fine within the text/javascript+protovis type.]]></description>
@@ -42,7 +42,7 @@ but standard code written with semi-colons, return statements etc. will work fin
 		<link>/2011/02/07/working-with-data-in-protovis-part-1-of-5/#comment-83</link>
 		<dc:creator><![CDATA[phuerter]]></dc:creator>
 		<pubDate>Wed, 01 Jun 2011 15:55:12 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=429#comment-83</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=429#comment-83</guid>
 		<description><![CDATA[Is this the only difference between &quot;text/javascript&quot; and &quot;text/javascript+protovis&quot;.  So does that mean that it is possible to use the Protovis library with code that is pure java script?
 Thanks for the great tutorials.
 Pete.]]></description>
@@ -56,7 +56,7 @@ Pete.</p>
 		<link>/2011/02/07/working-with-data-in-protovis-part-1-of-5/#comment-82</link>
 		<dc:creator><![CDATA[jerome]]></dc:creator>
 		<pubDate>Tue, 08 Mar 2011 21:59:59 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=429#comment-82</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=429#comment-82</guid>
 		<description><![CDATA[thanks - Yes, for these same reasons I try to use it as little as possible, but it&#039;s good to know it&#039;s there, especially when reading someone else&#039;s code :)]]></description>
 		<content:encoded><![CDATA[<p>thanks &#8211; Yes, for these same reasons I try to use it as little as possible, but it&#8217;s good to know it&#8217;s there, especially when reading someone else&#8217;s code 🙂</p>
 ]]></content:encoded>
@@ -66,7 +66,7 @@ Pete.</p>
 		<link>/2011/02/07/working-with-data-in-protovis-part-1-of-5/#comment-81</link>
 		<dc:creator><![CDATA[Sean]]></dc:creator>
 		<pubDate>Tue, 08 Mar 2011 21:01:29 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=429#comment-81</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=429#comment-81</guid>
 		<description><![CDATA[Amazing tutorial!!!!
 
 I would highly recommend to not use the &quot;syntactic sugar&quot; supplied by protovis and advise people to rewrite everything that looks like (function(d) d * 80) as plain JavaScript code (function(d) {return d*80;}).  This way, the  tag type can equal &quot;text/javascript&quot; instead of &quot;text/javascript+protovis&quot; and various debuggers will highlight the error in the user&#039;s source file and NOT the protovis library ... this makes debugging much less frustrating.]]></description>
@@ -79,7 +79,7 @@ I would highly recommend to not use the &quot;syntactic sugar&quot; supplied by 
 		<link>/2011/02/07/working-with-data-in-protovis-part-1-of-5/#comment-80</link>
 		<dc:creator><![CDATA[Working with Data in Protovis on Datavisualization.ch]]></dc:creator>
 		<pubDate>Thu, 17 Feb 2011 15:36:47 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=429#comment-80</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=429#comment-80</guid>
 		<description><![CDATA[[...] about how to work with data in Protovis. The tutorial is split in five parts covering using (1, 2), sorting (3) and reshaping (4) arrays as well as how to structure data to work with complex [...]]]></description>
 		<content:encoded><![CDATA[<p>[&#8230;] about how to work with data in Protovis. The tutorial is split in five parts covering using (1, 2), sorting (3) and reshaping (4) arrays as well as how to structure data to work with complex [&#8230;]</p>
 ]]></content:encoded>
@@ -89,7 +89,7 @@ I would highly recommend to not use the &quot;syntactic sugar&quot; supplied by 
 		<link>/2011/02/07/working-with-data-in-protovis-part-1-of-5/#comment-79</link>
 		<dc:creator><![CDATA[Jerome Cukier &#187; Working with data in protovis]]></dc:creator>
 		<pubDate>Tue, 08 Feb 2011 17:52:16 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=429#comment-79</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=429#comment-79</guid>
 		<description><![CDATA[[...] we&#8217;ll look at the humble arrays and how protovis works with [...]]]></description>
 		<content:encoded><![CDATA[<p>[&#8230;] we&#8217;ll look at the humble arrays and how protovis works with [&#8230;]</p>
 ]]></content:encoded>
@@ -99,7 +99,7 @@ I would highly recommend to not use the &quot;syntactic sugar&quot; supplied by 
 		<link>/2011/02/07/working-with-data-in-protovis-part-1-of-5/#comment-78</link>
 		<dc:creator><![CDATA[Jerome Cukier &#187; Working with data in protovis – part 2 of 5]]></dc:creator>
 		<pubDate>Tue, 08 Feb 2011 17:51:11 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=429#comment-78</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=429#comment-78</guid>
 		<description><![CDATA[[...] Previous post: simple arrays [...]]]></description>
 		<content:encoded><![CDATA[<p>[&#8230;] Previous post: simple arrays [&#8230;]</p>
 ]]></content:encoded>
@@ -109,7 +109,7 @@ I would highly recommend to not use the &quot;syntactic sugar&quot; supplied by 
 		<link>/2011/02/07/working-with-data-in-protovis-part-1-of-5/#comment-77</link>
 		<dc:creator><![CDATA[jerome]]></dc:creator>
 		<pubDate>Mon, 07 Feb 2011 23:10:51 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=429#comment-77</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=429#comment-77</guid>
 		<description><![CDATA[thanks for the precision, that must explain why I never found an allusion to &quot;protovis shorthand&quot; :)
 I&#039;m mostly using protovis with chrome which has javascript 1.5, so protovis must implement this as you say]]></description>
 		<content:encoded><![CDATA[<p>thanks for the precision, that must explain why I never found an allusion to &#8220;protovis shorthand&#8221; 🙂<br />
@@ -121,7 +121,7 @@ I&#8217;m mostly using protovis with chrome which has javascript 1.5, so protovi
 		<link>/2011/02/07/working-with-data-in-protovis-part-1-of-5/#comment-76</link>
 		<dc:creator><![CDATA[Jan Willem Tulp]]></dc:creator>
 		<pubDate>Mon, 07 Feb 2011 23:06:59 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=429#comment-76</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=429#comment-76</guid>
 		<description><![CDATA[Hi Jerome,
 
 just one short remark: you mention that protovis uses a shorthand notation that allows us to omit curly braces and the return statement. 

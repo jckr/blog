@@ -32,7 +32,7 @@
 		<category><![CDATA[Tableau]]></category>
 		<category><![CDATA[UMP]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1445</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1445</guid>
 		<description><![CDATA[Here is my entry for the Tableau 2012 politics contest. Source of the data: Economic statistics from OECD, opinion data from TNS Sofres. Making-of and explanation post to follow.]]></description>
 				<content:encoded><![CDATA[<p>Here is my entry for the Tableau 2012 politics contest.</p>
 <p><iframe style="border: 0px;" src="http://public.tableausoftware.com/views/politics/DashEN" scrolling="no" width="802px" height="4000px"></iframe></p>

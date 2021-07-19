@@ -114,7 +114,7 @@ img.emoji {
     </header>
 	<section class="post-content">
 
-		<p>So I made this <a href="http://www.jeromecukier.net/projects/agot/events.html">interactive visualization</a> about the 5 Game of Thrones books. How?</p>
+		<p>So I made this <a href="http://jckr.github.io/blog/projects/agot/events.html">interactive visualization</a> about the 5 Game of Thrones books. How?</p>
 <h2>The project</h2>
 <p>The visualization is based on the events which happen to the main characters of the books. With over 2000 characters and close to 5000 pages over 343 chapters, it&#8217;s not possible to show everything, so I took about 300 characters and restricted to a small selection of events, such as characters killing each other. Also, I regrouped characters in a 2-level hierarchy so that it would be easier to find them and see what happens at a higher level.</p>
 <h2>Data</h2>
@@ -133,7 +133,7 @@ this has not been a small task. When I read the books, which was a while back (b
 <p>The other 3 groups are as follows: antagonists, that is aggressive characters (including monsters) who may attack any other; neutral characters, who tend to stay out of conflict, and opportunists, who look for more power.</p>
 <p>Each of the 5 groups exhibits different patterns when it comes to killing: Starks (&#8220;the good guys&#8221;) don&#8217;t kill their own or neutral characters, but may have to fight characters from the other groups; conversely, some characters in the Lannister clan or among opportunists may carry out assassinations where anyone can be targeted. Neutral characters don&#8217;t fight except against antagonists, and the latter may fight characters from any group.</p>
 <h2>Drawing the visualization</h2>
-<p>I started thinking of that project a long time ago, and I&#8217;ve made experiments taking many forms. One of such form was a previous visualization on the <a href="http://www.jeromecukier.net/projects/agot/places.html">places in Games of Thrones</a>. That one visualization was the low-hanging fruit of the dataset I was building and refining. I knew I wanted to show events happening to the characters. Originally I thought of something linear, like a gantt chart, possibly grouping the characters by families which would be collapsable. But even in the broad sense that&#8217;s a lot of families, it wouldn&#8217;t make the visualization very legible.</p>
+<p>I started thinking of that project a long time ago, and I&#8217;ve made experiments taking many forms. One of such form was a previous visualization on the <a href="http://jckr.github.io/blog/projects/agot/places.html">places in Games of Thrones</a>. That one visualization was the low-hanging fruit of the dataset I was building and refining. I knew I wanted to show events happening to the characters. Originally I thought of something linear, like a gantt chart, possibly grouping the characters by families which would be collapsable. But even in the broad sense that&#8217;s a lot of families, it wouldn&#8217;t make the visualization very legible.</p>
 <p>What I had in mind then was to find a way to represent the status of the characters over time, who got killed, who got crippled, that sort of thing.</p>
 <p>Eventually, I thought it was more interesting to represent the relationships of characters among themselves, so I started to take notice of all the interactions between characters, such as: who kills whom, who captures whom, who marries whom, etc. There were many which didn&#8217;t make it in the final visualization which is already complex enough as is.</p>
 <p>I thought of the chord form early because it&#8217;s possible to use it to represent a lot of nodes and a lot of relationships among them even and even if it&#8217;s difficult to see one individual node expect the most important ones, and even more difficult to see one individual relationship, it&#8217;s possible to get a vague idea of mass. So I thought of representing characters as circles around a main circle coloring them by family or something. But doesn&#8217;t work, there are just too many different families. By so doing I was just plotting complexity.</p>
@@ -143,7 +143,7 @@ this has not been a small task. When I read the books, which was a while back (b
 <p>The method I chose was good (but not completely accurate) at preserving the relative importance of one clique compared to all the others, but just barely ok at preserving the relative importance of one given character.</p>
 <p>I would take all the mentions of all the characters, tally that by clique, then take the square roots of that for each clique. Then, for each clique I compute the ratio of that square root to the sum of all the other square roots.</p>
 <p>I multiply that by 2π and that&#8217;s an angle, that&#8217;s the &#8220;slice&#8221; of the main circle that will be occupied by the circle corresponding to that clique. Picture:<br />
-<iframe src="http://www.jeromecukier.net/projects/agot/littleChords.html" frameborder="0" width="800px" height="500px"></iframe></p>
+<iframe src="http://jckr.github.io/blog/projects/agot/littleChords.html" frameborder="0" width="800px" height="500px"></iframe></p>
 <p>(btw click on the circle on the left to regenerate the data points)</p>
 <p>So while those proportions don&#8217;t exactly match they are very very close. That doesn&#8217;t hold at the character level, because the sum of the areas of the character circles can occupy anywhere between 50% and 100% of the areas of the larger circle. But that&#8217;s not important. Accuracy is not important, as long as it is sufficient to say: this character appears often and this one doesn&#8217;t.</p>
 <p>Two other technical points about the making of the viz.<br />
@@ -154,7 +154,7 @@ So it wasn&#8217;t possible to read the datafile in sequence and to draw some ad
 <p>so it&#8217;s just a matter of separating the code that calculates all the positions from the one that draws the viz, two operations which more often than not are intertwined.</p>
 <p>Last, in the visualization I get to write group names in a circle around the main circle. How is this done?</p>
 <p>Well, in svg, you can&#8217;t write &#8220;on a circle&#8221;. You can write on a path, which can be anything, a circular arc for instance. In this case it&#8217;s a bit more complicated because I wanted to make sure that the writing would not be upside down. So I actually used two arcs.</p>
-<p><iframe src="http://www.jeromecukier.net/projects/agot/littleTextPaths.html" width="500px" height="500px" frameborder=0></iframe></p>
+<p><iframe src="http://jckr.github.io/blog/projects/agot/littleTextPaths.html" width="500px" height="500px" frameborder=0></iframe></p>
 	    		<div class="clear">&nbsp;</div>
 	</section>
 </article><!-- #post-## -->

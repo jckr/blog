@@ -19,7 +19,7 @@
 		<link>/2012/07/02/embedding-tableau-visualizations-on-the-web/#comment-369</link>
 		<dc:creator><![CDATA[Abhiram]]></dc:creator>
 		<pubDate>Thu, 22 Sep 2016 05:53:21 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1395#comment-369</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1395#comment-369</guid>
 		<description><![CDATA[Thanks Jerome, this was a lifesaver for I have less than zero knowledge in html :P]]></description>
 		<content:encoded><![CDATA[<p>Thanks Jerome, this was a lifesaver for I have less than zero knowledge in html 😛</p>
 ]]></content:encoded>
@@ -29,7 +29,7 @@
 		<link>/2012/07/02/embedding-tableau-visualizations-on-the-web/#comment-362</link>
 		<dc:creator><![CDATA[Can Known embed a Tableau viz? Does Tableau play nice with Google's Chart API?]]></dc:creator>
 		<pubDate>Sun, 22 Feb 2015 02:40:42 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1395#comment-362</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1395#comment-362</guid>
 		<description><![CDATA[[&#8230;] Jerome Cukier&#160;for the tip on embedding a viz.&#160; You saved me a ton of time and research. [&#8230;]]]></description>
 		<content:encoded><![CDATA[<p>[&#8230;] Jerome Cukier&nbsp;for the tip on embedding a viz.&nbsp; You saved me a ton of time and research. [&#8230;]</p>
 ]]></content:encoded>
@@ -39,7 +39,7 @@
 		<link>/2012/07/02/embedding-tableau-visualizations-on-the-web/#comment-361</link>
 		<dc:creator><![CDATA[Oscar]]></dc:creator>
 		<pubDate>Fri, 30 Jan 2015 15:56:50 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1395#comment-361</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1395#comment-361</guid>
 		<description><![CDATA[HI, 
 I tried your quick iframe hack and it worked! For the newbies out there (like me) there&#039;s one caveat, you need to install the iframes plug-in if your site is a Wordpress.org blog. Once you install the plug-in, just copy and paste Jerome&#039;s code and replace with your own URL. 
 I also found that if you set the dashboard size to &quot;automatic&quot; it might not resize properly according to your site&#039;s layout. If you don&#039;t want to bother using fixed width and height measures, theres an option in Tableau 8.2 to size the dashboard or story at &quot;medium/large&quot; blog size. This worked perfect for me.]]></description>
@@ -53,7 +53,7 @@ I also found that if you set the dashboard size to &#8220;automatic&#8221; it mi
 		<link>/2012/07/02/embedding-tableau-visualizations-on-the-web/#comment-360</link>
 		<dc:creator><![CDATA[dimeler]]></dc:creator>
 		<pubDate>Mon, 29 Dec 2014 18:33:26 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1395#comment-360</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1395#comment-360</guid>
 		<description><![CDATA[Hey Jerome.  Great post!  I like the thorough explanation of each line of code.  It helps a beginner like me learn and not just copy/paste. I&#039;m having the same problem as the user above.  Still trying to research a way to get this to work.  You can see what I&#039;ve done over at my wordpress blog: https://dimeler.wordpress.com/ .
 
 If you take a look at my post, I&#039;m having the same issue when I post the Tableau Public viz code where there’s a “Play” sign in the middle of it which does nothing when you click on it.  When I try your iframe code, I get the same thing where there&#039;s just a link to my Tableau Public workbook.  I understand this is an older blog post, but any insight would be greatly appreciated!  Looking forward to your response.]]></description>
@@ -66,7 +66,7 @@ If you take a look at my post, I&#039;m having the same issue when I post the Ta
 		<link>/2012/07/02/embedding-tableau-visualizations-on-the-web/#comment-359</link>
 		<dc:creator><![CDATA[jerome]]></dc:creator>
 		<pubDate>Mon, 01 Dec 2014 22:03:25 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1395#comment-359</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1395#comment-359</guid>
 		<description><![CDATA[hi, this has been written a long time ago and this might not work anymore... even though my post that uses it still works :) 
 can you point me to your page where you have the problem?]]></description>
 		<content:encoded><![CDATA[<p>hi, this has been written a long time ago and this might not work anymore&#8230; even though my post that uses it still works 🙂<br />
@@ -78,7 +78,7 @@ can you point me to your page where you have the problem?</p>
 		<link>/2012/07/02/embedding-tableau-visualizations-on-the-web/#comment-358</link>
 		<dc:creator><![CDATA[evetslefurac]]></dc:creator>
 		<pubDate>Mon, 01 Dec 2014 04:34:34 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1395#comment-358</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1395#comment-358</guid>
 		<description><![CDATA[Hi,
 
 I tried your iframe code and the only thing appearing is the hyperlink to my data stuff at Tableau website. I expected the actual graph to appear and being interactive.
@@ -94,7 +94,7 @@ But also, if I copy the long code provided by Tableau Public the graph on my web
 		<link>/2012/07/02/embedding-tableau-visualizations-on-the-web/#comment-357</link>
 		<dc:creator><![CDATA[Andrea]]></dc:creator>
 		<pubDate>Thu, 13 Nov 2014 15:55:42 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1395#comment-357</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1395#comment-357</guid>
 		<description><![CDATA[You saved my life... =)]]></description>
 		<content:encoded><![CDATA[<p>You saved my life&#8230; =)</p>
 ]]></content:encoded>
@@ -104,7 +104,7 @@ But also, if I copy the long code provided by Tableau Public the graph on my web
 		<link>/2012/07/02/embedding-tableau-visualizations-on-the-web/#comment-351</link>
 		<dc:creator><![CDATA[jerome]]></dc:creator>
 		<pubDate>Tue, 19 Nov 2013 15:16:53 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1395#comment-351</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1395#comment-351</guid>
 		<description><![CDATA[you should look at one of my posts that contains a tableau dashboard, do view source and copy the code changing the name of the dashboard with your own. It&#039;s been a long time since I last tried this, so it&#039;s entirely possible that Tableau has come up with a better way of doing this since then.]]></description>
 		<content:encoded><![CDATA[<p>you should look at one of my posts that contains a tableau dashboard, do view source and copy the code changing the name of the dashboard with your own. It&#8217;s been a long time since I last tried this, so it&#8217;s entirely possible that Tableau has come up with a better way of doing this since then.</p>
 ]]></content:encoded>
@@ -114,7 +114,7 @@ But also, if I copy the long code provided by Tableau Public the graph on my web
 		<link>/2012/07/02/embedding-tableau-visualizations-on-the-web/#comment-350</link>
 		<dc:creator><![CDATA[John Burrett]]></dc:creator>
 		<pubDate>Sun, 10 Nov 2013 17:28:44 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1395#comment-350</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1395#comment-350</guid>
 		<description><![CDATA[Hi Jerome - thanks for the solution.  As I relatively new to this (trying to embed Tableau vix into Wordpress) ,  could you show me the iframe solution above, as it fits into the whole body of the embedding code?
 
 Thank you in advance]]></description>
@@ -127,7 +127,7 @@ Thank you in advance]]></description>
 		<link>/2012/07/02/embedding-tableau-visualizations-on-the-web/#comment-349</link>
 		<dc:creator><![CDATA[emily.bronte]]></dc:creator>
 		<pubDate>Mon, 15 Jul 2013 00:22:25 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1395#comment-349</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1395#comment-349</guid>
 		<description><![CDATA[the best part is that In tableau, when creating dashboards, I have always used the option to size them exactly at a precise size and I recommend you do that too. Then add 2-6 px to each dimension and use that as width and height.
 thanks
 regard

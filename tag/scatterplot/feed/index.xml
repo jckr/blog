@@ -32,7 +32,7 @@
 		<category><![CDATA[Tableau]]></category>
 		<category><![CDATA[viz]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=906</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=906</guid>
 		<description><![CDATA[Real-estate transactions in ManhattanResidential buildings, 2003-present Powered by Tableau Here is my Tableau contest 2011 entry. The rules stipulated it had to be about business, real-estate or finance, so I chose real-estate. Since everyone loves New-York, and since the data for real-estate transaction is relatively easy to get, that&#8217;s what I show. In order to <a class="read-more" href="/2011/06/03/tableau-contest-2011/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[<p><script type="text/javascript" src="http://public.tableausoftware.com/javascripts/api/viz_v1.js"></script><object class="tableauViz" width="654" height="719" style="display:none;"><param name="host_url" value="http%3A%2F%2Fpublic.tableausoftware.com%2F" /><param name="name" value="contest2011&#47;Winning" /><param name="tabs" value="no" /><param name="toolbar" value="yes" /><param name="animate_transition" value="yes" /><param name="display_static_image" value="yes" /><param name="display_spinner" value="yes" /><param name="display_overlay" value="yes" /></object><noscript>Real-estate transactions in ManhattanResidential buildings, 2003-present <br /><a href="#"><img alt="Real-estate transactions in ManhattanResidential buildings, 2003-present " src="http:&#47;&#47;public.tableausoftware.com&#47;static&#47;images&#47;co&#47;contest2011&#47;Winning&#47;1_rss.png" height="100%" /></a></noscript>
 <div style="width:654px;height:22px;padding:0px 10px 0px 0px;color:black;font:normal 8pt verdana,helvetica,arial,sans-serif;">
@@ -64,7 +64,7 @@ You can also switch to a <a href="http://public.tableausoftware.com/views/contes
 		<category><![CDATA[scatterplot]]></category>
 		<category><![CDATA[tv earners]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=681</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=681</guid>
 		<description><![CDATA[This is my contribution to Flowing Data challenge: visualize this / top tv earners. When I looked at the dataset provided by Nathan I first wondered what was missing. Quite a few stars were missing in the list. I added Simon Baker whose Mentalist gets a huge audience and who is said to be getting <a class="read-more" href="/2011/02/22/the-top-tv-earners-are-not-found-on-tabloids/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[This is my contribution to Flowing Data challenge: <a href="http://flowingdata.com/2011/02/15/visualize-this-tvs-top-earners/">visualize this / top tv earners</a>.</p>
 <div>
@@ -278,13 +278,13 @@ On the very bottom-left, those who are happy to be there. Etc.</p>
 		<category><![CDATA[protovis]]></category>
 		<category><![CDATA[scatterplot]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=449</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=449</guid>
 		<description><![CDATA[This all started from this map from GOOD magazine. It went viral on Twitter, which puzzled the data vis community. Moritz Stefaner notably asked others for advice and input, and Andy Kirk, then Enrico Bertini answered in some detail. I won't go into great detail on why I didn't like the original map much, it <a class="read-more" href="/2011/01/29/are-the-richest-americans-the-best-educated/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[This all started from <a href="http://awesome.good.is/transparency/web/1101/census-data/flat.html">this map</a> from GOOD magazine. It went viral on Twitter, which puzzled the data vis community. <a href="http://well-formed-data.net/">Moritz Stefaner</a> notably asked others for advice and input, and <a href="http://www.visualisingdata.com/index.php/2011/01/discussing-are-the-richest-americans-also-the-best-educated/">Andy Kirk</a>, then <a href="http://fellinlovewithdata.com/reflections/demystifying-cargo-cult-visualization-you-cannot-visualize-3-variables-by-mixing-3-colors">Enrico Bertini</a> answered in some detail.</p><span id="more-449"></span>
 I won't go into great detail on why I didn't like the original map much, it has been amply criticized as is. So, what's a better way to answer this question?</p>
 </p>
 <script type="text/javascript" src="http://blog.oecdfactblog.org/wp-includes/js/protovis-r3.2.js"></script>
-<script type="text/javascript" src="http://www.jeromecukier.net/wp-content/uploads/2011/01/pisa21.js"></script>
+<script type="text/javascript" src="http://jckr.github.io/blog/wp-content/uploads/2011/01/pisa21.js"></script>
 <script type="text/javascript">var myVar=24;</script>
 <h3>Are the richest Americans the best educated?</h3>
 <em>Wealth vs. School performance</em></p>

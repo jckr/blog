@@ -33,7 +33,7 @@
 		<category><![CDATA[library]]></category>
 		<category><![CDATA[svg]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1664</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1664</guid>
 		<description><![CDATA[If you&#8217;re working on visualization on the web, the go-to choice is to use d3js (or a higher-level library). d3js is powerful and versatile. The best proof of that is the lead author of d3, Mike Bostock, worked until recently at the New York Times which many, including myself, consider the ultimate reference in terms of <a class="read-more" href="/2015/05/19/you-may-not-need-d3/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[<p>If you&#8217;re working on visualization on the web, the go-to choice is to use <a href="http://d3js.org/">d3js</a> (or a higher-level library). d3js is powerful and versatile. The best proof of that is the lead author of d3, Mike Bostock, worked until recently at the New York Times which many, including myself, consider the ultimate reference in terms of information graphics. At the NYT and elsewhere, d3js has powered breathtaking projects.</p>
 <p>d3js was built as a successor to protovis. Protovis was a slightly higher-level library than d3js, more specialized in data graphics, and designed with the assumption that it could be used with little or no programming experience. And indeed this was true. When I started using protovis in 2009, my javascript skills were limited, and so I learned by deconstructing and recombining the examples. I kept on doing that when d3 came along &#8211; learning through examples. And the d3 examples, like those in protovis before, were short and standalone, demonstrating how easy it was to create something with a few lines of code.</p>
@@ -272,7 +272,7 @@ d3.select(&quot;svg&quot;).append(&quot;rect&quot;);
 <pre class="brush: jscript; title: ; notranslate">
 d3.select(&quot;svg&quot;).selectAll(&quot;rect&quot;).remove(); // removes all rect elements which are children of the SVG element
 </pre>
-<p>But the most intriguing and the most characteristic way to <a href="http://www.jeromecukier.net/blog/2011/08/09/d3-adding-stuff-and-oh-understanding-selections/">create new elements</a> in d3js is to use a data join.</p>
+<p>But the most intriguing and the most characteristic way to <a href="http://jckr.github.io/blog/blog/2011/08/09/d3-adding-stuff-and-oh-understanding-selections/">create new elements</a> in d3js is to use a data join.</p>
 <pre class="brush: jscript; title: ; notranslate">
 d3.select(&quot;svg&quot;)
   .selectAll(&quot;rect&quot;)
@@ -282,7 +282,7 @@ d3.select(&quot;svg&quot;)
 </pre>
 <p>The above snippet of code counts all the rect children of the svg element, and, if there are fewer than 5 &#8211; the number of items in d3.range(5), which is the [0,1,2,3,4] array &#8211; creates as many as needed to get to 5, and binds values to those elements &#8211; the contents of d3.range(5) in order. If there are already 5 rect elements, no new elements will be created, but the data assignment to the existing elements will still occur.</p>
 <h2>Data joins, or the lack thereof</h2>
-<p>The select / selectAll / data / enter / append sequence can sound exotic to people who learn d3js, but to its practitioners, <a href="http://www.jeromecukier.net/blog/2011/08/09/d3-adding-stuff-and-oh-understanding-selections/">it is its angular stone</a>. Not only is it a quick way to create many elements (which, in vanilla javascript, takes at least 2 steps. Creating them, and assigning them to the right parent), but it also associates them with a data element. That data element can then be accessed each time the element is being manipulated, notably when setting attributes or styles and handling events.</p>
+<p>The select / selectAll / data / enter / append sequence can sound exotic to people who learn d3js, but to its practitioners, <a href="http://jckr.github.io/blog/blog/2011/08/09/d3-adding-stuff-and-oh-understanding-selections/">it is its angular stone</a>. Not only is it a quick way to create many elements (which, in vanilla javascript, takes at least 2 steps. Creating them, and assigning them to the right parent), but it also associates them with a data element. That data element can then be accessed each time the element is being manipulated, notably when setting attributes or styles and handling events.</p>
 <p>For instance,</p>
 <pre class="brush: jscript; title: ; notranslate">
 d3.selectAll(&quot;rect&quot;)
@@ -373,7 +373,7 @@ function readFile() {
 </pre>
 <p>The syntax of loading the file isn&#8217;t that cumbersome, and there are tons of nice things that can be done through XMLHttpRequest(), but let&#8217;s admit that d3js/queue.js functions make it much more comfortable to work with csv files.</p>
 <h2>Animations</h2>
-<p>d3js transitions is one of my favorite part of the library. I understand it&#8217;s also one the things which couldn&#8217;t be done well in protovis and which caused that framework to break. It feels so natural: you define what you want to animate, all that needs to change, the time frame and the easing functions, and you&#8217;re good to go (<a href="http://www.jeromecukier.net/blog/2012/07/16/animations-and-transitions/">see my previous post on animations and transitions</a>). In native javascript, while you can have deep control of animations, it&#8217;s also, unsurprisingly, much more cumbersome. However, CSS3 provides an animation interface which is comparable in flexibility, expressiveness and ease of use to what d3js does. First let&#8217;s get a high-level view of how to do this entirely within JS. Then let&#8217;s get a sense of what CSS can do.</p>
+<p>d3js transitions is one of my favorite part of the library. I understand it&#8217;s also one the things which couldn&#8217;t be done well in protovis and which caused that framework to break. It feels so natural: you define what you want to animate, all that needs to change, the time frame and the easing functions, and you&#8217;re good to go (<a href="http://jckr.github.io/blog/blog/2012/07/16/animations-and-transitions/">see my previous post on animations and transitions</a>). In native javascript, while you can have deep control of animations, it&#8217;s also, unsurprisingly, much more cumbersome. However, CSS3 provides an animation interface which is comparable in flexibility, expressiveness and ease of use to what d3js does. First let&#8217;s get a high-level view of how to do this entirely within JS. Then let&#8217;s get a sense of what CSS can do.</p>
 <h4>requestAnimationFrame and animation in JavaScript</h4>
 <p>JavaScript has timer functions, window.setTimeout and window.setTimeinterval, which let you run some code after a certain delay or every so often, respectively. But this isn&#8217;t great for animation. Your computer draws to screen a fixed number of times per second. So if you try to redraw the same element several times before in between those times, it&#8217;s a waste of resources! What requestAnimationFrame does is tell your system to wait for the next occasion to draw to execute a given function. Here&#8217;s how it will look in general.</p>
 <pre class="brush: jscript; title: ; notranslate">
@@ -428,7 +428,7 @@ It turns out there actually is &#8211; the animation element of SVG, or SMIL. Th
 <p>d3js comes with a number of array functions. Some are here for convenience, such as d3.min or d3.max which can easily be replaced by using the native reduce method of arrays. When comparing only two variables, d3.max([a, b]) is not much more convenient than Math.max(a,b) or a &gt; b ? a : b.</p>
 <p>Likewise, d3js has many statistical functions, which saves you the trouble to implement them yourself if you need them, such as d3.quantile. There are other libraries who do that, but they&#8217;re here and it&#8217;s really not useful to recode that from scratch.</p>
 <p>d3js comes with shims for maps and sets, which will be supported by ES6. By now, there are transpilers which can let you use ES6 data structures. But it&#8217;s nice to have them.</p>
-<p>In my experience, d3js most useful tool in terms of data processing is the d3.nest function, which can transform an array of objects into a nested object. (I wrote <a href="http://www.jeromecukier.net/blog/2012/05/28/manipulating-data-like-a-boss-with-d3/">this article</a> about them).  Underscore has something similar. While you can definitely getting a dataset of any shape and size by parsing an array and performing any grouping or operations manually, this is not only very tedious but <strong>also extremely error prone.</strong></p>
+<p>In my experience, d3js most useful tool in terms of data processing is the d3.nest function, which can transform an array of objects into a nested object. (I wrote <a href="http://jckr.github.io/blog/blog/2012/05/28/manipulating-data-like-a-boss-with-d3/">this article</a> about them).  Underscore has something similar. While you can definitely getting a dataset of any shape and size by parsing an array and performing any grouping or operations manually, this is not only very tedious but <strong>also extremely error prone.</strong></p>
 <h4>Scales</h4>
 <p>Scales are one superb feature of d3js. They are simple to understand, yet very versatile and convenient. Oftentimes, d3 scales, especially the linear ones, are a replacement for linear algebra.</p>
 <pre class="brush: jscript; title: ; notranslate">
@@ -452,7 +452,7 @@ Scale, maps, layouts and geometries are extremely helpful features however and I
 <h2>Credit where it&#8217;s due</h2>
 <p>To write this I drew inspiration from many articles and I will try to list them all here.<br />
 The spark that led me to write was Lea Verou&#8217;s article <a href="http://lea.verou.me/2015/04/jquery-considered-harmful/">jQuery considered harmful</a>, as well as articles she cites (<a href="http://youmightnotneedjquery.com/">you might not need jQuery</a>, <a href="http://blog.garstasio.com/you-dont-need-jquery/">you don&#8217;t need jQuery</a>, <a href="http://www.sitepoint.com/do-you-really-need-jquery/">Do you really need jQuery?</a>, <a href="http://tutorialzine.com/2014/06/10-tips-for-writing-javascript-without-jquery/">10 tips for writing JavaScript without jQuery</a>).</p>
-<p>Most of the information I used especially in the beginning of the article comes more or less directly from <a href="https://developer.mozilla.org/en-US/">MDN documentation</a>, and direct experimentation. For CSS and animation, I found the articles of Chris Coyier (such as <a href="https://css-tricks.com/animating-svg-css/">this one</a> or <a href="https://css-tricks.com/animate-to-an-inline-style/">this one</a>) and Sara Soueidan (<a href="https://css-tricks.com/guide-svg-animations-smil/">here</a>) on <a href="https://css-tricks.com/">CSS Tricks</a> to be extremely helpful. Those are definitely among the first resources to check out to go deeper on the subject. Sara was also <a href="http://blogs.adobe.com/dreamweaver/2015/04/an-introduction-to-graphical-effects-in-css.html">the inspiration</a> behind <a href="http://www.jeromecukier.net/blog/2015/05/05/blending-mode-and-svg/">my previous post</a>, so thanks to her again!</p>
+<p>Most of the information I used especially in the beginning of the article comes more or less directly from <a href="https://developer.mozilla.org/en-US/">MDN documentation</a>, and direct experimentation. For CSS and animation, I found the articles of Chris Coyier (such as <a href="https://css-tricks.com/animating-svg-css/">this one</a> or <a href="https://css-tricks.com/animate-to-an-inline-style/">this one</a>) and Sara Soueidan (<a href="https://css-tricks.com/guide-svg-animations-smil/">here</a>) on <a href="https://css-tricks.com/">CSS Tricks</a> to be extremely helpful. Those are definitely among the first resources to check out to go deeper on the subject. Sara was also <a href="http://blogs.adobe.com/dreamweaver/2015/04/an-introduction-to-graphical-effects-in-css.html">the inspiration</a> behind <a href="http://jckr.github.io/blog/blog/2015/05/05/blending-mode-and-svg/">my previous post</a>, so thanks to her again!</p>
 <p>Finally, I&#8217;ve read <a href="http://blog.webkid.io/replacing-jquery-with-d3/">Replacing jQuery with d3</a> with great interest (like <a href="http://snips.net/blog/posts/2014/01-10-fast-interactive_prototyping_with_d3_js.html">Fast interactive prototyping with d3js and sketch</a> about a year ago). It may seem that what I write goes in the opposite direction, but we&#8217;re really talking about the same thing -that there are many ways to power front ends and that it&#8217;s important to maintain awareness of alternative methods.</p>
 ]]></content:encoded>
 			<wfw:commentRss>/2015/05/19/you-may-not-need-d3/feed/</wfw:commentRss>
@@ -469,7 +469,7 @@ The spark that led me to write was Lea Verou&#8217;s article <a href="http://lea
 		<category><![CDATA[data visualization]]></category>
 		<category><![CDATA[tips]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1628</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1628</guid>
 		<description><![CDATA[From the past posts, you would have gathered that dashboards are tools to solve specific problems. They are also formed from individual charts and data elements. Selecting information That dashboards are so specific is great, because the problem that they are designed to solve will help choosing the information that we need and also prioritizing it &#8211; <a class="read-more" href="/2015/02/07/charts-assemble/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[<p><a href="http://wp.me/po630-qe">From the past posts</a>, you would have gathered that dashboards are tools to solve specific problems. They are also formed from individual charts and data elements.</p>
 <h2>Selecting information</h2>
@@ -477,7 +477,7 @@ The spark that led me to write was Lea Verou&#8217;s article <a href="http://lea
 <p>Another great tool to help us do those two tasks is user research. As a designer, we may think we chose the right metrics, but they have to make sense to real users and resonate with them. The bias that we may have is that we would favor data which is easy to obtain or that makes sense to us, compared to data which can be more elaborate, more sophisticated or more expensive to collect or compute, even if that makes more sense to the user.</p>
 <p>Here&#8217;s an illustration of that.</p>
 <p>When I was working at Facebook on this product, Audience Insights, we designed <a href="https://www.facebook.com/ads/audience_insights/activity?age=18-&amp;country=US&amp;interests=6003349754405">this page</a> to help marketers understand how a group of users they could be interested in used Facebook. (The link / screenshot showcases fans of the Golden State Warriors). One of the main ways we classified users at Facebook, for internal purposes, is by counting how many days of the last four weeks they have been on Facebook. It&#8217;s a metric called L28 and one of the high-level things Facebook knows about everyone. So, we integrated it in the first version of this page. But, even though it&#8217;s not a concept unique to Facebook, it wasn&#8217;t that useful to our users, and it was taking space from a more relevant indicator.</p>
-<p><img class="alignnone" src="http://jeromecukier.net/projects/dashboards/AI activity.png" alt="" width="800" height="625" /></p>
+<p><img class="alignnone" src="http://jckr.github.io/blog/projects/dashboards/AI activity.png" alt="" width="800" height="625" /></p>
 <p>Instead, we have included indicators which are more relevant to the task at hand (ie getting a sense of who those users are through the prism of their activity). For instance we can see that very few Warriors fans only use Facebook on their computer, compared to the general population of US Facebook users. They tend to skew more towards Android and mobile web (going to www.facebook.com from their phone, versus using an app.) They tend to be more active in terms of likes, comments and shares.</p>
 <h2>Information hierarchy</h2>
 <p>Once information is chosen and you get a sense of what is more important than the rest, it&#8217;s time to represent that visually.</p>
@@ -493,14 +493,14 @@ The spark that led me to write was Lea Verou&#8217;s article <a href="http://lea
 <p>So you have data. It probably changes over time, too (and you have that history as well!). And a sense of how important it is.</p>
 <p>You can represent it as a static number (and, further, to adjust the precision of that number) or as a time series (i.e. line graph, area graph, bar graph etc.), or both.</p>
 <p>The key question to answer is whether the history and how the metric moved over time is relevant and important, versus the latest figures.  If you think that the history is always important or that it doesn&#8217;t hurt to have it for context anyway, consider that it&#8217;s yet another visual element to digest, another thing that can be misinterpreted, and that unless its importance is clearly demonstrated, you&#8217;d rather not include it. Yes &#8211; even as a tiny sparkline.</p>
-<p><img class="alignnone" src="http://www.jeromecukier.net/projects/dashboards/jl-facebook-insights-overview.png" alt="" width="482" height="492" /></p>
+<p><img class="alignnone" src="http://jckr.github.io/blog/projects/dashboards/jl-facebook-insights-overview.png" alt="" width="482" height="492" /></p>
 <p>Here is another example from my work at Facebook of a page where proper hierarchy has been applied.</p>
 <p>Page Insights, to use a parallel with a better known product, is like google analytics, only for Facebook Pages instead of web sites. Unsurprisingly, the metric we put to the top left is the Page Likes, which is the number of people who like a page. The whole point of the system is to let people understand what affects that number and how to grow it. Two other high-level metrics are shown on the same row in the two cards on the right: the Post Reach for the week (number of people who have seen content from this page this week, whether they like the Page or not) and Engagement (number of people who acted on the content &#8211; actions could be liking, commenting, sharing, clicking, etc.)</p>
 <p>The number of new Page Likes of the past week, which is represented as a both a line chart and a number in the left card, is an example of a level two metric. It supports the top metric &#8211; total likes. The number of Page Likes of the past week, which is represented as a line chart only, is a level three metric. It&#8217;s here just as a comparison to the number of the current week &#8211; here, it helps us figuring out that last week has been a better week.</p>
 <h2>Connecting the dots</h2>
 <p>Ultimately, a dashboard is more than a collection of charts. It&#8217;s an ensemble: charts and data are meant to be consumed as a whole, with an order and a structure. Charts that belong together should be seen together. The information gained like so will be much more useful than from looking at them in sequence.</p>
 <p><a href="http://www.infovis-wiki.net/index.php?title=Linking_and_Brushing">Linking</a>, for instance, is the concept of highlighting an element in a given chart with repercussions on other charts, depending on the element highlighted. A common use case is to look at a data for one given time point, and see the value for that time point highlighted in related charts. Here is an example:</p>
-<p><img class="alignnone" src="http://www.jeromecukier.net/projects/dashboards/linking.png" alt="" width="784" height="212" /></p>
+<p><img class="alignnone" src="http://jckr.github.io/blog/projects/dashboards/linking.png" alt="" width="784" height="212" /></p>
 <p>In this specific case, the fact that both charts share the same x-axis makes comparing the shape of both charts easier even without linking.</p>
 <p>Each variable doesn&#8217;t have to be on its own chart. Your variables can have an implicit relation between one another. Bringing them together might make that relation explicit. Here are some interesting relationship between variables or properties of variables that can be made apparent through the right chart choice.</p>
 <ul>
@@ -520,7 +520,7 @@ The spark that led me to write was Lea Verou&#8217;s article <a href="http://lea
 Here, we look at the net likes of a Facebook Page, that is, the difference between the number of people who like a page on a given day and the day before.<br />
 Two factors can make more people like a page: paid likes (a user sees an ad, is interested, and from it, likes the page) or organic likes (a user visits a page, or somehow see content from that page, and likes it, without advertisement involved). Finally, people may also decide to stop liking the page (&#8220;unlikes&#8221;).<br />
 Here, net likes = organic likes + paid likes &#8211; unlikes. The reason why we have decomposed Likes between organic and paid is because we wanted to show that ads can amplify the effect of good content. So, visually, we chose to represent that as a layer on top of the rest. (important remark: your dashboard doesn&#8217;t have to be neutral. If it can show that your product, company, team etc. is delivering, and you have an occasion to demonstrate it, don&#8217;t hesitate a moment). By showing the unlikes as a negative number, as opposed to a positive variable, going up, possibly above the likes (which would be unpredictable) we can keep the visual legible and uncluttered. A user can do the visual combination of all these variables. This chart, by the way, shows the typical dynamic of a Page : new content will generate peaks of new users, but also will cause some users to stop liking the page.</p>
-<p><img class="alignnone" src="http://www.jeromecukier.net/projects/dashboards/net-likes-1024x454.png" alt="" width="832" height="453" /></p>
+<p><img class="alignnone" src="http://jckr.github.io/blog/projects/dashboards/net-likes-1024x454.png" alt="" width="832" height="453" /></p>
 <ul>
 <li>One variable could be <strong>always growing.</strong> Or <strong>always positive.</strong></li>
 </ul>
@@ -542,7 +542,7 @@ Here, net likes = organic likes + paid likes &#8211; unlikes. The reason why we 
 		<category><![CDATA[data visualization]]></category>
 		<category><![CDATA[tips]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1626</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1626</guid>
 		<description><![CDATA[In the past few articles I&#8217;ve exposed what dashboards are not: an exercise in visual design, an exercise in data visualization technique. Another way to put this is that &#8220;let&#8217;s do this just because we can&#8221; is a poor mantra when it comes to designing dashboards, or visualizations in the broader sense by the way. <a class="read-more" href="/2015/02/07/dashboards-as-products/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[<p>In the <a href="http://wp.me/po630-q7">past few articles</a> I&#8217;ve exposed what dashboards are not:</p>
 <ul>
@@ -570,7 +570,7 @@ Here, net likes = organic likes + paid likes &#8211; unlikes. The reason why we 
 <li>Try to <strong>better understand</strong> a complex system. For instance: user flow between pages can show where users are dropping out or where efficiency gains lie.</li>
 </ul>
 <p>This list is by no means limitative. But it&#8217;s really useful to start from the problem at hand than just try to create a visual repository for data.</p>
-<p>Next, we&#8217;ll see how to implement these in the last article: <a href="http://www.jeromecukier.net/blog/2015/02/07/charts-assemble/">charts assemble!</a></p>
+<p>Next, we&#8217;ll see how to implement these in the last article: <a href="http://jckr.github.io/blog/blog/2015/02/07/charts-assemble/">charts assemble!</a></p>
 ]]></content:encoded>
 			<wfw:commentRss>/2015/02/07/dashboards-as-products/feed/</wfw:commentRss>
 		<slash:comments>1</slash:comments>
@@ -586,7 +586,7 @@ Here, net likes = organic likes + paid likes &#8211; unlikes. The reason why we 
 		<category><![CDATA[data visualization]]></category>
 		<category><![CDATA[tips]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1619</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1619</guid>
 		<description><![CDATA[Dashboards are extreme data visualizations In the recent Information is Beautiful 2014 awards,  I found interesting that there is an infographics and a data visualization categories. My interpretation is that the entries in the infographics section are static and illustrated, while those in the data visualization are generated and data-driven. However, all the featured data <a class="read-more" href="/2015/02/07/dashboards-versus-data-visualization/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[<h2>Dashboards are extreme data visualizations</h2>
 <p>In the recent <a href="http://www.informationisbeautifulawards.com/showcase?award=2014&amp;page=1&amp;pcategory=winner&amp;type=awards">Information is Beautiful 2014 awards</a>,  I found interesting that there is an infographics and a data visualization categories. My interpretation is that the entries in the infographics section are static and illustrated, while those in the data visualization are generated and data-driven. However, all the featured data visualization projects are about a one-off dataset. So aesthetical choices of the visualization depend on the characteristics of this particular dataset. By contrast, the dashboards I have worked with are about a live, real-time datastream. They have to look good (or at least &#8211; to function) whatever the shape and size of the data that they show. The google quote and news chart that we saw earlier must work for super volatile shares, for more stable ones, for indices, currencies, etc. So, if the distinction between infographics and data visualization makes sense to you, imagine that dashboards sit further in that continuum than data visualization. Not only are dashboards generated from data, like data visualizations, but they are also real-time and should function with datasets of many shapes and sizes.</p>
@@ -594,7 +594,7 @@ Here, net likes = organic likes + paid likes &#8211; unlikes. The reason why we 
 <p>Data visualization provides superior tools and techniques to present or analyze data. With libraries and languages dedicated to making visualizations, there is little that can&#8217;t be done. In many successful visualizations, the author will create an entirely new form, or at least control the form very finely to match their data and their angle. Even without inventing a new form, there are many which have been created for a specific use, and which are relatively easy to make on the web (as opposed to say, in Excel): <a href="https://www.google.fr/search?q=tree+maps&amp;safe=off&amp;espv=2&amp;biw=2025&amp;bih=1140&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ei=UCR4VNmKAufCiALyo4FY&amp;ved=0CAYQ_AUoAQ#safe=off&amp;tbm=isch&amp;q=treemaps">treemaps</a>, <a href="https://www.google.fr/search?q=tree+maps&amp;safe=off&amp;espv=2&amp;biw=2025&amp;bih=1140&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ei=UCR4VNmKAufCiALyo4FY&amp;ved=0CAYQ_AUoAQ#safe=off&amp;tbm=isch&amp;q=force-directed+graphs">force-directed graphs</a> and other <a href="https://www.google.fr/search?q=tree+maps&amp;safe=off&amp;espv=2&amp;biw=2025&amp;bih=1140&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ei=UCR4VNmKAufCiALyo4FY&amp;ved=0CAYQ_AUoAQ#safe=off&amp;tbm=isch&amp;q=node-link+diagrams">node-link diagrams</a>, <a href="https://www.google.fr/search?q=tree+maps&amp;safe=off&amp;espv=2&amp;biw=2025&amp;bih=1140&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ei=UCR4VNmKAufCiALyo4FY&amp;ved=0CAYQ_AUoAQ#safe=off&amp;tbm=isch&amp;q=chord+diagrams">chord diagrams</a>, <a href="https://www.google.fr/search?q=tree+maps&amp;safe=off&amp;espv=2&amp;biw=2025&amp;bih=1140&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ei=UCR4VNmKAufCiALyo4FY&amp;ved=0CAYQ_AUoAQ#safe=off&amp;tbm=isch&amp;q=dendrograms">trees</a>, <a href="https://www.google.fr/search?q=tree+maps&amp;safe=off&amp;espv=2&amp;biw=2025&amp;bih=1140&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ei=UCR4VNmKAufCiALyo4FY&amp;ved=0CAYQ_AUoAQ#safe=off&amp;tbm=isch&amp;q=bubble+charts">bubble charts</a> and the like. And even good old geographic maps.</p>
 <p>In most cases, it is not a good idea to be too clever and have a more advanced form.</p>
 <p>Up until mid November 2014, Google Analytics allowed users to view their data using <a href="https://www.youtube.com/watch?v=UKsBTqqhVTs">motion charts</a>.</p>
-<p><img class="alignnone" src="http://jeromecukier.net/projects/dashboards/motion charts" alt="" width="1280" height="784" /></p>
+<p><img class="alignnone" src="http://jckr.github.io/blog/projects/dashboards/motion charts" alt="" width="1280" height="784" /></p>
 <p>This was really an example of having a hammer and considering all problems as nails. Fortunately, this function disappeared from the latest redesign.</p>
 <p><img class="alignnone" src="http://media-cache-ec0.pinimg.com/736x/1c/69/b7/1c69b7ea8e23d5d8fd800a67e727d0db.jpg" alt="" width="736" height="432" /></p>
 <p>Likewise, on twitter followers dashboard, the treemap might be a bit over the top:</p>
@@ -608,7 +608,7 @@ Here, net likes = organic likes + paid likes &#8211; unlikes. The reason why we 
 <p>Most of the dashboards examples I find on sites like dribbble or beyance (see <a href="http://www.pinterest.com/jcukier/data-vis-dashboard-ui-elements/">my Pinterest board</a>) fall into that category: inspiring visual design, probably not real data, no flow, no obvious use.</p>
 <h2>Dashboards are problems of their own</h2>
 <p>What makes a dashboard, or any other information-based design successful, is neither the design execution nor the clever infovis technique. Dashboards, eventually, are meant to be useful and to solve a specific problem.</p>
-<p>How so? We&#8217;ll see in the next article: <a href="http://www.jeromecukier.net/blog/2015/02/07/dashboards-as-products/">dashboards as products. </a></p>
+<p>How so? We&#8217;ll see in the next article: <a href="http://jckr.github.io/blog/blog/2015/02/07/dashboards-as-products/">dashboards as products. </a></p>
 <p>&nbsp;</p>
 ]]></content:encoded>
 			<wfw:commentRss>/2015/02/07/dashboards-versus-data-visualization/feed/</wfw:commentRss>
@@ -625,11 +625,11 @@ Here, net likes = organic likes + paid likes &#8211; unlikes. The reason why we 
 		<category><![CDATA[data visualization]]></category>
 		<category><![CDATA[tips]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1610</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1610</guid>
 		<description><![CDATA[In 2008, when I was working at OECD, my job description was that of an editor. That implied I was mostly working on books. I was designing charts, but they were seen as components of books. And this was typical of the era. So we would create charts like this one: And it was awesome! <a class="read-more" href="/2015/02/07/charts-in-the-age-of-the-web/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[<p>In 2008, when I was working at <a href="http://www.oecd.org/">OECD</a>, my job description was that of an editor. That implied I was mostly working on books. I was designing charts, but they were seen as components of books. And this was typical of the era.</p>
 <p>So we would create charts like this one:</p>
-<p><img class="alignnone" src="http://jeromecukier.net/projects/dashboards/02-01-01-g2" alt="" width="685" height="288" /></p>
+<p><img class="alignnone" src="http://jckr.github.io/blog/projects/dashboards/02-01-01-g2" alt="" width="685" height="288" /></p>
 <p>And it was awesome! (kind of). I mean, we respected all the rules. Look at that nicely labelled y-axis! and all the categories are on the x-axis! the bars are ordered in size, it&#8217;s easy to see which has the biggest or smallest value! And with those awesome gridlines, we can lookup values &#8211; at least get an order of magnitude.</p>
 <p>What we really did though was apply styling to an excel chart (literally).</p>
 <h2>Print charts vs interactive charts</h2>
@@ -641,24 +641,24 @@ Here, net likes = organic likes + paid likes &#8211; unlikes. The reason why we 
 <p>And so, when everything else than a table is chosen, we typically don&#8217;t show values with all the data points, because adding data labels would burden the chart and make its overall shape harder to make out.</p>
 <p>In this framework, it makes sense to think in term of <strong>data-ink </strong>(the cornerstone of Tuftean concepts): make sure that out of all the ink needed to print the chart (you can tell it&#8217;s a print concept already&#8230;), as much should go to encode the data as possible, versus anything else.</p>
 <h3>How about now</h3>
-<p><img class="alignnone" src="http://jeromecukier.net/projects/dashboards/chart trad vs online 2" alt="" width="680" height="847" /></p>
+<p><img class="alignnone" src="http://jckr.github.io/blog/projects/dashboards/chart trad vs online 2" alt="" width="680" height="847" /></p>
 <p>However, there is not a single of these reasons which is valid today in the world of web or mobile charts. Data-ink only made sense on paper. </p>
 <p>Web charts have many mechanisms to let the user get extra information on a given data point. That can be information that updates on mouseover, callouts and tooltips&#8230; This might be less true of mobile in general where the distinction between hovering and clicking is less distinct. But it is definitely possible to obtain more than what is originally displayed. If I want to have an exact value, I shouldn&#8217;t have to simply deduce that from the shape of the chart. There can be mechanisms that can deliver that to me on demand.</p>
 <h3>An example: Google Finance Quote &amp; News</h3>
 <p>The <a href="https://www.google.com/finance?q=NASDAQ%3AGOOG">Google Finance Quote and News chart</a> is a very representative example of a web-native chart. Around since 2006, they provide the price of a given security, along with news for context. While its visual design has probably been topped by other dashboards, what makes it a great example is that it&#8217;s publicly available, which is uncommon for business data.</p>
-<p><img class="alignnone" src="http://jeromecukier.net/projects/dashboards/online chart" alt="" width="984" height="543" /></p>
+<p><img class="alignnone" src="http://jckr.github.io/blog/projects/dashboards/online chart" alt="" width="984" height="543" /></p>
 <p>While this chart has gridlines and labelled axes, that is not enough to lookup precise values. However, moving the <strong>mouse over</strong> the chart allows the user to read a precise value at a given point in time. A blue point appears and the precise value can be read in the top left corner.</p>
-<p><img class="alignnone" src="http://jeromecukier.net/projects/dashboards/mouseover" alt="" width="996" height="524" /></p>
+<p><img class="alignnone" src="http://jckr.github.io/blog/projects/dashboards/mouseover" alt="" width="996" height="524" /></p>
 <p>One very common <strong>data filter </strong>in chart is controls that affect the time range: date pickers. By selecting a different time range, we make the chart represent a different slice of the dataset &#8211; we effectively filter the dataset so that only the relevant dates are shown. This is in contrast with the traditional printed charts, again, where all of the dataset is shown at once. For instance, we can click on &#8220;6m&#8221; and we&#8217;ll be treated with data from the last 6 months:</p>
-<p><img class="alignnone" src="http://jeromecukier.net/projects/dashboards/data filters" alt="" width="985" height="424" /></p>
+<p><img class="alignnone" src="http://jckr.github.io/blog/projects/dashboards/data filters" alt="" width="985" height="424" /></p>
 <p>Comparing the selected security with others will make the chart show the data in a <strong>different mode</strong>. This is the same data (plus added series), in the same screen and the same context, but the chart is visually very different:</p>
-<p><img class="alignnone" src="http://jeromecukier.net/projects/dashboards/different modes" alt="" width="986" height="526" /></p>
+<p><img class="alignnone" src="http://jckr.github.io/blog/projects/dashboards/different modes" alt="" width="986" height="526" /></p>
 <p>As to the other two characteristics of web charts I mentioned, <strong>data exports</strong> and <strong>drill downs, </strong>they are also featured (but less graphical to show, so I haven&#8217;t captured a screenshot for those). There is a link on a left-side column to get the equivalent data (so it is always possible to go beyond what is shown on screen). The little flags with letters in the 3 first screenshots are clickable, and represent relevant news. Clicking them will highlight that article in a right-side column. So it is always possible to get more information.</p>
 <h3>What does that change?</h3>
 <p>Everything.</p>
 <p>Rules or best practices based on the assumption that data is hard to lookup or to compare are less important. The chart itself has to be legible though. So, for instance, it&#8217;s ok to have pie charts or donut charts, as long as the number of categories doesn&#8217;t go totally overboard.</p>
 <p>Web charts, and dashboards even more so, should focus on<strong> only showing relevant data</strong> first, then showing it in the most useful and legible way. Again, a noted difference with the print philosophy where as much data as possible should be shown.</p>
-<p>How this play out is what we&#8217;ll cover in the <a href="http://www.jeromecukier.net/blog/2015/02/07/dashboards-versus-data-visualization/">next articles of the series: Dashboards versus data visualizations.</a></p>
+<p>How this play out is what we&#8217;ll cover in the <a href="http://jckr.github.io/blog/blog/2015/02/07/dashboards-versus-data-visualization/">next articles of the series: Dashboards versus data visualizations.</a></p>
 <p>&nbsp;</p>
 ]]></content:encoded>
 			<wfw:commentRss>/2015/02/07/charts-in-the-age-of-the-web/feed/</wfw:commentRss>
@@ -683,9 +683,9 @@ Here, net likes = organic likes + paid likes &#8211; unlikes. The reason why we 
 		<category><![CDATA[usa]]></category>
 		<category><![CDATA[violence]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1530</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1530</guid>
 		<description><![CDATA[Click for interactive visualization I have created this map of every homicide in the USA using firearms for the latest year where detailed information was available. Every, that is from all the agencies that report homicides to the FBI, which is not an obligation &#8211; this is why the map lacks Florida data. In the <a class="read-more" href="/2012/12/29/gun-murders-in-america/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
-				<content:encoded><![CDATA[<p><a href="http://bit.ly/gunviolence"><img src="http://jeromecukier.net/projects/crime/murders.png" width="800" height="513" class="aligncenter" /></a><br />
+				<content:encoded><![CDATA[<p><a href="http://bit.ly/gunviolence"><img src="http://jckr.github.io/blog/projects/crime/murders.png" width="800" height="513" class="aligncenter" /></a><br />
 <a href="http://bit.ly/gunviolence"><strong>Click for interactive visualization</strong></a></p>
 <p>I have created this map of every homicide in the USA using firearms for the latest year where detailed information was available. Every, that is from all the agencies that report homicides to the FBI, which is not an obligation &#8211; this is why the map lacks Florida data.<br />
 In the interactive version you can see how murders happen through the year and explore them according to several criteria that were available in the database. While large shooting sprees receive media attention, unfortunately there are thousands of cases each year in just about every community.<br />
@@ -705,7 +705,7 @@ Technically this is my first foray with <a href="http://d3js.org/">d3.v3</a> and
 		<category><![CDATA[Tableau]]></category>
 		<category><![CDATA[Tableau Public]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=737</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=737</guid>
 		<description><![CDATA[I put together a list of some of the things I&#8217;ve done with Tableau public there. I had put the link on twitter last Friday, and I just saw the number of connections through bit.ly &#8211; never thought something posted just before the week-end could get so much attention! so thanks, twitter followers. I&#8217;m putting <a class="read-more" href="/2011/03/14/stuff-i-do-with-tableau/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[<p>I put together a list of some of the things I&#8217;ve done with Tableau public <a href="http://bit.ly/f9bfS3">there</a>. I had put the link on twitter last Friday, and I just saw the number of connections through bit.ly &#8211; never thought something posted just before the week-end could get so much attention! so thanks, twitter followers. I&#8217;m putting another link here on the blog for convenience.</p>
 <p>I&#8217;ve been using Tableau public ever since its release (well actually a tad before).  Over time I&#8217;ve been trying to use it less as a visually pleasing and convenient way to shove a lot of data in a limited space (like <a href="http://public.tableausoftware.com/views/LabourForceStats/empag">here</a>), and more as a way to promote a certain angle when looking at a dataset (like <a href="http://public.tableausoftware.com/views/Africa_1/converging">here</a>), that is, as an invitation to the viewers to reach the same conclusions than us, but by giving them access to the data so they can see for themselves.</p>
@@ -731,7 +731,7 @@ Technically this is my first foray with <a href="http://d3js.org/">d3.v3</a> and
 		<category><![CDATA[scatterplot]]></category>
 		<category><![CDATA[tv earners]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=681</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=681</guid>
 		<description><![CDATA[This is my contribution to Flowing Data challenge: visualize this / top tv earners. When I looked at the dataset provided by Nathan I first wondered what was missing. Quite a few stars were missing in the list. I added Simon Baker whose Mentalist gets a huge audience and who is said to be getting <a class="read-more" href="/2011/02/22/the-top-tv-earners-are-not-found-on-tabloids/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[This is my contribution to Flowing Data challenge: <a href="http://flowingdata.com/2011/02/15/visualize-this-tvs-top-earners/">visualize this / top tv earners</a>.</p>
 <div>
@@ -955,9 +955,9 @@ On the very bottom-left, those who are happy to be there. Etc.</p>
 		<category><![CDATA[trees]]></category>
 		<category><![CDATA[tutorial]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=623</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=623</guid>
 		<description><![CDATA[previous: reshaping complex arrays (4/5) Working with layouts In this final part, we&#8217;re going to look at how we can shape our data to use the protovis built-in layouts such as stacked areas, treemaps or force-directed graphs. This is not a tutorial on how to use layouts stricto sensu, and I advise anyone interested to <a class="read-more" href="/2011/02/11/working-with-data-in-protovis-part-5-of-5/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
-				<content:encoded><![CDATA[<p>previous: <a href="http://www.jeromecukier.net/?p=502">reshaping complex arrays (4/5)</a></p>
+				<content:encoded><![CDATA[<p>previous: <a href="http://jckr.github.io/blog/?p=502">reshaping complex arrays (4/5)</a></p>
 <h2>Working with layouts</h2>
 <p>In this final part, we&#8217;re going to look at how we can shape our data to use the protovis built-in layouts such as stacked areas, treemaps or force-directed graphs.<br />
 This is not a tutorial on how to use layouts stricto sensu, and I advise anyone interested to first look at the <a href="http://vis.stanford.edu/protovis/docs/layout.html">protovis documentation</a> to see what can be done with this and to understand the underlying concepts. </p>
@@ -1062,10 +1062,10 @@ vis.add(pv.Layout.Grid)
      ;
 vis.render();</pre>
 </td>
-<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/QR-grid-big.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/QR-grid-big.png" alt="" title="QR-grid-big" width="216" height="216" class="aligncenter size-full wp-image-628" /></a>(BTW, this is the QR code to this page)</td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/QR-grid-big.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/QR-grid-big.png" alt="" title="QR-grid-big" width="216" height="216" class="aligncenter size-full wp-image-628" /></a>(BTW, this is the QR code to this page)</td>
 </tr>
 </table>
-<p>On line 29, I&#8217;m using a <a href="http://www.jeromecukier.net/?p=494">map function</a> to turn this array of strings, which is easier and shorter to type, into a <em>bona fide</em> 2-dimensional array. </p>
+<p>On line 29, I&#8217;m using a <a href="http://jckr.github.io/blog/?p=494">map function</a> to turn this array of strings, which is easier and shorter to type, into a <em>bona fide</em> 2-dimensional array. </p>
 <p>That&#8217;s all there is to grids, of all the layouts they are among the easiest to reproduce with regular protovis.</p>
 <p>Now, stacks.<br />
 The easiest way to use them is to pass them 2-dimensional arrays. Now it doesn&#8217;t have to be arrays of numbers, it can be arrays of associative arrays in case you need to do something exotic. But for the following examples let&#8217;s just assume you don&#8217;t. Here is how you&#8217;d do a stacked area, stacked columns and stacked bars respectively:</p>
@@ -1083,7 +1083,7 @@ vis.add(pv.Layout.Stack)
     .y(function(d) d/20)
     .layer.add(pv.Area)</pre>
 </td>
-<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/stackedAreas.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/stackedAreas.png" alt="" title="stackedAreas" width="200" height="200" class="aligncenter size-full wp-image-636" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/stackedAreas.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/stackedAreas.png" alt="" title="stackedAreas" width="200" height="200" class="aligncenter size-full wp-image-636" /></a></td>
 </tr>
 </table>
 <p>all you need is to feed the layers, x, y properties of your stack, then say what you want to add to your layers.<br />
@@ -1097,7 +1097,7 @@ Now, columns: </p>
     .y(function(d) d/20)
     .layer.add(pv.Bar).width(40)</pre>
 </td>
-<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/stackedColumns.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/stackedColumns.png" alt="" title="stackedColumns" width="200" height="200" class="aligncenter size-full wp-image-637" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/stackedColumns.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/stackedColumns.png" alt="" title="stackedColumns" width="200" height="200" class="aligncenter size-full wp-image-637" /></a></td>
 </tr>
 </table>
 <p>and finally, bars: </p>
@@ -1111,7 +1111,7 @@ Now, columns: </p>
     .y(function(d) d/20)
     .layer.add(pv.Bar).height(40)</pre>
 </td>
-<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/stackedBars.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/stackedBars.png" alt="" title="stackedBars" width="200" height="200" class="aligncenter size-full wp-image-638" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/stackedBars.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/stackedBars.png" alt="" title="stackedBars" width="200" height="200" class="aligncenter size-full wp-image-638" /></a></td>
 </tr>
 </table>
 <p>For bars, there is a little trick here. I specify that the layer orientation is horizontal (&#8220;left&#8221;) and I change the height instead of the width of the added pv.Bar.<br />
@@ -1148,7 +1148,7 @@ arc.node.add(pv.Dot)
     .size(50)
 vis.render();</pre>
 </td>
-<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleNetwork1.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleNetwork1.png" alt="" title="simpleNetwork" width="200" height="200" class="aligncenter size-full wp-image-644" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleNetwork1.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleNetwork1.png" alt="" title="simpleNetwork" width="200" height="200" class="aligncenter size-full wp-image-644" /></a></td>
 </tr>
 </table>
 <p>Here, by varying the strength of the link, the thickness of the arcs changes accordingly. The nodes are left unstyled, had we passed a more complicated dataset to the nodes array, we could have changed their properties (fillStyle, size, strokeStyle, labels etc.) with appropriate accessor functions. </p>
@@ -1171,7 +1171,7 @@ force.node.add(pv.Dot)
 vis.render();
 </pre>
 </td>
-<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleForce.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleForce.png" alt="" title="simpleForce" width="200" height="200" class="aligncenter size-full wp-image-645" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleForce.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleForce.png" alt="" title="simpleForce" width="200" height="200" class="aligncenter size-full wp-image-645" /></a></td>
 </tr>
 </table>
 <p>Here I labelled the nodes so one can tell which is which. This is done by adding a pv.Label to the pv.Dot that&#8217;s attached to the node, just like with any other mark.</p>
@@ -1193,7 +1193,7 @@ Matrix.label.add(pv.Label).text(function() Math.floor(this.index/2))
 
 vis.render();</pre>
 </td>
-<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleMatrix1.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleMatrix1.png" alt="" title="simpleMatrix" width="200" height="200" class="aligncenter size-full wp-image-647" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleMatrix1.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleMatrix1.png" alt="" title="simpleMatrix" width="200" height="200" class="aligncenter size-full wp-image-647" /></a></td>
 </tr>
 </table>
 <p>For the matrix things are slightly more complex than for the previous 2. Here I opted for a directed matrix, as opposed to a bidirectional one: this means that each link is shown once, to its source from its target, and not twice (ie from its target back to its source) which is the default.<br />
@@ -1252,7 +1252,7 @@ tree.node.add(pv.Dot)
 	.anchor(&quot;center&quot;).add(pv.Label).textAlign(&quot;center&quot;).text(function(n) n.nodeName)
 vis.render();</pre>
 <p>And here is the result:<br />
-<a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleTree.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleTree.png" alt="" title="simpleTree" width="500" height="200" class="aligncenter size-full wp-image-652" /></a></p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleTree.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleTree.png" alt="" title="simpleTree" width="500" height="200" class="aligncenter size-full wp-image-652" /></a></p>
 <p>There are many styling possibilities obviously left unexplored in this simple example (you can control properties of the tree.link, tree.node, tree.labels which we didn&#8217;t use here, etc.), but this won&#8217;t change much as far as data are concerned. </p>
 <p>Now let&#8217;s try a treemap with the same dataset.</p>
 <pre class="brush: jscript; first-line: 14; title: ; notranslate">var vis = new pv.Panel()
@@ -1289,7 +1289,7 @@ vis.render();
 </pre>
 <p>and what took the longest part of the code was making the legend.</p>
 <p>Here is the outcome:<br />
-<a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleTreemap.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleTreemap.png" alt="" title="simpleTreemap" width="400" height="200" class="aligncenter size-full wp-image-653" /></a></p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleTreemap.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleTreemap.png" alt="" title="simpleTreemap" width="400" height="200" class="aligncenter size-full wp-image-653" /></a></p>
 ]]></content:encoded>
 			<wfw:commentRss>/2011/02/11/working-with-data-in-protovis-part-5-of-5/feed/</wfw:commentRss>
 		<slash:comments>3</slash:comments>
@@ -1311,12 +1311,12 @@ vis.render();
 		<category><![CDATA[rollup]]></category>
 		<category><![CDATA[trees]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=502</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=502</guid>
 		<description><![CDATA[Previous: array functions in javascript and protovis Reshaping complex arrays This really is what protovis data processing is all about. In today&#8217;s tutorial, I am going to refer extensively to protovis&#8217;s Becker&#8217;s Barley example. One reason for that is that it&#8217;s also used in the API documentation of the methods we are going to cover, <a class="read-more" href="/2011/02/11/working-with-data-in-protovis-part-4-of-5/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
-				<content:encoded><![CDATA[<p><a href="http://www.jeromecukier.net/?p=494">Previous: array functions in javascript and protovis</a></p>
+				<content:encoded><![CDATA[<p><a href="http://jckr.github.io/blog/?p=494">Previous: array functions in javascript and protovis</a></p>
 <h2>Reshaping complex arrays</h2>
 <p>This really is what protovis data processing is all about.<br />
-In today&#8217;s tutorial, I am going to refer extensively to protovis&#8217;s <a href="http://vis.stanford.edu/protovis/ex/barley.html">Becker&#8217;s Barley</a> example. One reason for that is that it&#8217;s also used in the <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Nest.html">API documentation of the methods</a> we are going to cover, and also because I am posting <a href="http://www.jeromecukier.net/?p=534">a line-by-line explanation of this example</a> that you can refer to.</p>
+In today&#8217;s tutorial, I am going to refer extensively to protovis&#8217;s <a href="http://vis.stanford.edu/protovis/ex/barley.html">Becker&#8217;s Barley</a> example. One reason for that is that it&#8217;s also used in the <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Nest.html">API documentation of the methods</a> we are going to cover, and also because I am posting <a href="http://jckr.github.io/blog/?p=534">a line-by-line explanation of this example</a> that you can refer to.</p>
 <p>So far we’ve seen that :</p>
 <ul>
 <li>Associative arrays are great as data elements, as their various values can be used for various attributes.<br />
@@ -1347,7 +1347,7 @@ An array of the shape:</p>
 </ul>
 <h3>Nesting</h3>
 <p>For this last reason, you may want to turn one flat array of associative arrays into an array of arrays of associative arrays. This process is called <strong>nesting</strong>.</p>
-<p><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/nesting.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/nesting.png" alt="" title="nesting" width="700" height="250" class="aligncenter size-full wp-image-528" /></a></p>
+<p><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/nesting.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/nesting.png" alt="" title="nesting" width="700" height="250" class="aligncenter size-full wp-image-528" /></a></p>
 <h4>Simple nesting</h4>
 <p>If you turn a <strong>single array</strong> like the one on the left-hand side to <strong>an array of arrays</strong> like on the right-hand side, you could easily do 3 smaller charts, one next to the other, by creating them inside of panels. You could have some information at this panel level (for instance the variety) and the rest at a lower level. </p>
 <p>Fortunately, there are protovis methods that can turn your flat list into a more complex array of arrays. And since protovis methods are meant to be chained, you can even go on and create arrays of arrays of arrays of arrays if needs be.<br />
@@ -1358,7 +1358,7 @@ To do the above, all you have to type is </p>
 <p>What this does is that it nests your <em>barley</em> array, according to the <em>variety</em> key. entries() at the end is required to obtain the array of arrays needed.</p>
 <p>Here is an example of what can be done with both kinds of data structures in just a few lines of code (which won&#8217;t include the data proper. The long, flat array is stored in the variable barley, as above).<br />
 Without nesting:<br />
-<a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/BarleyWithoutNesting.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/BarleyWithoutNesting.png" alt="" title="BarleyWithoutNesting" width="606" height="198" class="aligncenter size-full wp-image-594" /></a></p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/BarleyWithoutNesting.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/BarleyWithoutNesting.png" alt="" title="BarleyWithoutNesting" width="606" height="198" class="aligncenter size-full wp-image-594" /></a></p>
 <pre class="brush: jscript; title: ; notranslate">var vis = new pv.Panel()
     .width(600)
     .height(200)
@@ -1374,7 +1374,7 @@ vis.add(pv.Bar)
 vis.render();</pre>
 <p>As the pv.Bar goes through the array, there is not much it can do to structure it. We can just size the bars according to the value of yield, and color them according to another key (here the year).</p>
 <p>Now using nesting:<br />
-<a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/BarleyWithNesting2.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/BarleyWithNesting2.png" alt="" title="BarleyWithNesting2" width="711" height="160" class="aligncenter size-full wp-image-598" /></a></p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/BarleyWithNesting2.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/BarleyWithNesting2.png" alt="" title="BarleyWithNesting2" width="711" height="160" class="aligncenter size-full wp-image-598" /></a></p>
 <pre class="brush: jscript; highlight: [1,8,15]; title: ; notranslate">barley2=pv.nest(barley).key(function(d) d.variety).entries();
 barley2=pv.nest(barley).key(function(d) d.variety).entries();
 var vis = new pv.Panel()
@@ -1431,8 +1431,8 @@ vis.render();
 </td>
 </tr>
 <tr>
-<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/sort-unsorted.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/sort-unsorted.png" alt="" title="sort-unsorted" width="300" height="250" class="aligncenter size-full wp-image-524" /></a></td>
-<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/sort-sorted.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/sort-sorted.png" alt="" title="sort-sorted" width="300" height="250" class="aligncenter size-full wp-image-525" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/sort-unsorted.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/sort-unsorted.png" alt="" title="sort-unsorted" width="300" height="250" class="aligncenter size-full wp-image-524" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/sort-sorted.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/sort-sorted.png" alt="" title="sort-sorted" width="300" height="250" class="aligncenter size-full wp-image-525" /></a></td>
 </tr>
 </table>
 </li>
@@ -1617,7 +1617,7 @@ What rollup does is that it would go through each of the values that correspond 
     ]</pre>
 <p>so rollup will just look at each element of this array and apply the function.<br />
 This is what (data) in &#8220;function(data)&#8221; corresponds to.<br />
-Next, we tell protovis what to do with these elements. Here, we are interested in the average, so we take pv.mean (not pv.average, <a href="http://www.jeromecukier.net/?p=494">remember</a>?)<br />
+Next, we tell protovis what to do with these elements. Here, we are interested in the average, so we take pv.mean (not pv.average, <a href="http://jckr.github.io/blog/?p=494">remember</a>?)<br />
 However, we can&#8217;t directly compute the average of an array of associative arrays &#8211; we must tell protovis exactly what to average. This is why we use an accessor function, function(d) d.score.</p>
 <p>Of course, pv.mean used in this example can be replaced by just about any function.</p>
 <p>In the name of clarity, especially if there is only one property that can be aggregated, you can declare a function outside of the rollup() method. This is useful if you are going to aggregate your array by different dimensions:</p>
@@ -1639,9 +1639,9 @@ The main advantage of having a flat array is that you can nest it in a different
 <pre class="brush: jscript; light: true; title: ; notranslate">barley=pv.flatten(barley).key(&quot;variety&quot;).key(&quot;site&quot;).key(&quot;year&quot;).key(&quot;yield&quot;).array()</pre>
 <p>Finally, pv.tree &#8211; well, I haven&#8217;t seen this method used outside the <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Tree.html">documentation</a>. It&#8217;s not used in any live example, not covered by any question in the forum, and I haven&#8217;t found any trace of it in the internet. So I&#8217;d rather leave you with the explanation in the documentation which is fairly clear than come up with my own. If you find yourself in a situation like in the documentation, where you have a flat array of associative arrays, which have a property that could be interpreted as a hierarchy, then you could use this method to turn your array in something more useful to protovis.</p>
 <h3>Putting it all together</h3>
-<p>Instead of coming up with a specific new example for this section I refer you to my explanation of the <a href="http://www.jeromecukier.net/?p=534">Becker&#8217;s Barley example</a>.<br />
-On the same subject, see a comparison of how to <a href="http://www.jeromecukier.net/?p=550">re-create Becker&#8217;s Barley with protovis and Tableau</a></p>
-<p>next: <a href="http://www.jeromecukier.net/?p=623">working with layouts</a></p>
+<p>Instead of coming up with a specific new example for this section I refer you to my explanation of the <a href="http://jckr.github.io/blog/?p=534">Becker&#8217;s Barley example</a>.<br />
+On the same subject, see a comparison of how to <a href="http://jckr.github.io/blog/?p=550">re-create Becker&#8217;s Barley with protovis and Tableau</a></p>
+<p>next: <a href="http://jckr.github.io/blog/?p=623">working with layouts</a></p>
 ]]></content:encoded>
 			<wfw:commentRss>/2011/02/11/working-with-data-in-protovis-part-4-of-5/feed/</wfw:commentRss>
 		<slash:comments>5</slash:comments>

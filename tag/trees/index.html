@@ -115,7 +115,7 @@ img.emoji {
     </header>
 	<section class="post-content">
 
-		<p>previous: <a href="http://www.jeromecukier.net/?p=502">reshaping complex arrays (4/5)</a></p>
+		<p>previous: <a href="http://jckr.github.io/blog/?p=502">reshaping complex arrays (4/5)</a></p>
 <h2>Working with layouts</h2>
 <p>In this final part, we&#8217;re going to look at how we can shape our data to use the protovis built-in layouts such as stacked areas, treemaps or force-directed graphs.<br />
 This is not a tutorial on how to use layouts stricto sensu, and I advise anyone interested to first look at the <a href="http://vis.stanford.edu/protovis/docs/layout.html">protovis documentation</a> to see what can be done with this and to understand the underlying concepts. </p>
@@ -220,10 +220,10 @@ vis.add(pv.Layout.Grid)
      ;
 vis.render();</pre>
 </td>
-<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/QR-grid-big.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/QR-grid-big.png" alt="" title="QR-grid-big" width="216" height="216" class="aligncenter size-full wp-image-628" /></a>(BTW, this is the QR code to this page)</td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/QR-grid-big.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/QR-grid-big.png" alt="" title="QR-grid-big" width="216" height="216" class="aligncenter size-full wp-image-628" /></a>(BTW, this is the QR code to this page)</td>
 </tr>
 </table>
-<p>On line 29, I&#8217;m using a <a href="http://www.jeromecukier.net/?p=494">map function</a> to turn this array of strings, which is easier and shorter to type, into a <em>bona fide</em> 2-dimensional array. </p>
+<p>On line 29, I&#8217;m using a <a href="http://jckr.github.io/blog/?p=494">map function</a> to turn this array of strings, which is easier and shorter to type, into a <em>bona fide</em> 2-dimensional array. </p>
 <p>That&#8217;s all there is to grids, of all the layouts they are among the easiest to reproduce with regular protovis.</p>
 <p>Now, stacks.<br />
 The easiest way to use them is to pass them 2-dimensional arrays. Now it doesn&#8217;t have to be arrays of numbers, it can be arrays of associative arrays in case you need to do something exotic. But for the following examples let&#8217;s just assume you don&#8217;t. Here is how you&#8217;d do a stacked area, stacked columns and stacked bars respectively:</p>
@@ -241,7 +241,7 @@ vis.add(pv.Layout.Stack)
     .y(function(d) d/20)
     .layer.add(pv.Area)</pre>
 </td>
-<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/stackedAreas.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/stackedAreas.png" alt="" title="stackedAreas" width="200" height="200" class="aligncenter size-full wp-image-636" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/stackedAreas.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/stackedAreas.png" alt="" title="stackedAreas" width="200" height="200" class="aligncenter size-full wp-image-636" /></a></td>
 </tr>
 </table>
 <p>all you need is to feed the layers, x, y properties of your stack, then say what you want to add to your layers.<br />
@@ -255,7 +255,7 @@ Now, columns: </p>
     .y(function(d) d/20)
     .layer.add(pv.Bar).width(40)</pre>
 </td>
-<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/stackedColumns.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/stackedColumns.png" alt="" title="stackedColumns" width="200" height="200" class="aligncenter size-full wp-image-637" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/stackedColumns.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/stackedColumns.png" alt="" title="stackedColumns" width="200" height="200" class="aligncenter size-full wp-image-637" /></a></td>
 </tr>
 </table>
 <p>and finally, bars: </p>
@@ -269,7 +269,7 @@ Now, columns: </p>
     .y(function(d) d/20)
     .layer.add(pv.Bar).height(40)</pre>
 </td>
-<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/stackedBars.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/stackedBars.png" alt="" title="stackedBars" width="200" height="200" class="aligncenter size-full wp-image-638" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/stackedBars.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/stackedBars.png" alt="" title="stackedBars" width="200" height="200" class="aligncenter size-full wp-image-638" /></a></td>
 </tr>
 </table>
 <p>For bars, there is a little trick here. I specify that the layer orientation is horizontal (&#8220;left&#8221;) and I change the height instead of the width of the added pv.Bar.<br />
@@ -306,7 +306,7 @@ arc.node.add(pv.Dot)
     .size(50)
 vis.render();</pre>
 </td>
-<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleNetwork1.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleNetwork1.png" alt="" title="simpleNetwork" width="200" height="200" class="aligncenter size-full wp-image-644" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleNetwork1.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleNetwork1.png" alt="" title="simpleNetwork" width="200" height="200" class="aligncenter size-full wp-image-644" /></a></td>
 </tr>
 </table>
 <p>Here, by varying the strength of the link, the thickness of the arcs changes accordingly. The nodes are left unstyled, had we passed a more complicated dataset to the nodes array, we could have changed their properties (fillStyle, size, strokeStyle, labels etc.) with appropriate accessor functions. </p>
@@ -329,7 +329,7 @@ force.node.add(pv.Dot)
 vis.render();
 </pre>
 </td>
-<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleForce.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleForce.png" alt="" title="simpleForce" width="200" height="200" class="aligncenter size-full wp-image-645" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleForce.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleForce.png" alt="" title="simpleForce" width="200" height="200" class="aligncenter size-full wp-image-645" /></a></td>
 </tr>
 </table>
 <p>Here I labelled the nodes so one can tell which is which. This is done by adding a pv.Label to the pv.Dot that&#8217;s attached to the node, just like with any other mark.</p>
@@ -351,7 +351,7 @@ Matrix.label.add(pv.Label).text(function() Math.floor(this.index/2))
 
 vis.render();</pre>
 </td>
-<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleMatrix1.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleMatrix1.png" alt="" title="simpleMatrix" width="200" height="200" class="aligncenter size-full wp-image-647" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleMatrix1.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleMatrix1.png" alt="" title="simpleMatrix" width="200" height="200" class="aligncenter size-full wp-image-647" /></a></td>
 </tr>
 </table>
 <p>For the matrix things are slightly more complex than for the previous 2. Here I opted for a directed matrix, as opposed to a bidirectional one: this means that each link is shown once, to its source from its target, and not twice (ie from its target back to its source) which is the default.<br />
@@ -410,7 +410,7 @@ tree.node.add(pv.Dot)
 	.anchor(&quot;center&quot;).add(pv.Label).textAlign(&quot;center&quot;).text(function(n) n.nodeName)
 vis.render();</pre>
 <p>And here is the result:<br />
-<a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleTree.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleTree.png" alt="" title="simpleTree" width="500" height="200" class="aligncenter size-full wp-image-652" /></a></p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleTree.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleTree.png" alt="" title="simpleTree" width="500" height="200" class="aligncenter size-full wp-image-652" /></a></p>
 <p>There are many styling possibilities obviously left unexplored in this simple example (you can control properties of the tree.link, tree.node, tree.labels which we didn&#8217;t use here, etc.), but this won&#8217;t change much as far as data are concerned. </p>
 <p>Now let&#8217;s try a treemap with the same dataset.</p>
 <pre class="brush: jscript; first-line: 14; title: ; notranslate" title="">var vis = new pv.Panel()
@@ -447,7 +447,7 @@ vis.render();
 </pre>
 <p>and what took the longest part of the code was making the legend.</p>
 <p>Here is the outcome:<br />
-<a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleTreemap.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleTreemap.png" alt="" title="simpleTreemap" width="400" height="200" class="aligncenter size-full wp-image-653" /></a></p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleTreemap.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleTreemap.png" alt="" title="simpleTreemap" width="400" height="200" class="aligncenter size-full wp-image-653" /></a></p>
 	    		<div class="clear">&nbsp;</div>
 	</section>
 </article><!-- #post-## -->
@@ -462,10 +462,10 @@ vis.render();
     </header>
 	<section class="post-content">
 
-		<p><a href="http://www.jeromecukier.net/?p=494">Previous: array functions in javascript and protovis</a></p>
+		<p><a href="http://jckr.github.io/blog/?p=494">Previous: array functions in javascript and protovis</a></p>
 <h2>Reshaping complex arrays</h2>
 <p>This really is what protovis data processing is all about.<br />
-In today&#8217;s tutorial, I am going to refer extensively to protovis&#8217;s <a href="http://vis.stanford.edu/protovis/ex/barley.html">Becker&#8217;s Barley</a> example. One reason for that is that it&#8217;s also used in the <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Nest.html">API documentation of the methods</a> we are going to cover, and also because I am posting <a href="http://www.jeromecukier.net/?p=534">a line-by-line explanation of this example</a> that you can refer to.</p>
+In today&#8217;s tutorial, I am going to refer extensively to protovis&#8217;s <a href="http://vis.stanford.edu/protovis/ex/barley.html">Becker&#8217;s Barley</a> example. One reason for that is that it&#8217;s also used in the <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Nest.html">API documentation of the methods</a> we are going to cover, and also because I am posting <a href="http://jckr.github.io/blog/?p=534">a line-by-line explanation of this example</a> that you can refer to.</p>
 <p>So far we’ve seen that :</p>
 <ul>
 <li>Associative arrays are great as data elements, as their various values can be used for various attributes.<br />
@@ -496,7 +496,7 @@ An array of the shape:</p>
 </ul>
 <h3>Nesting</h3>
 <p>For this last reason, you may want to turn one flat array of associative arrays into an array of arrays of associative arrays. This process is called <strong>nesting</strong>.</p>
-<p><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/nesting.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/nesting.png" alt="" title="nesting" width="700" height="250" class="aligncenter size-full wp-image-528" /></a></p>
+<p><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/nesting.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/nesting.png" alt="" title="nesting" width="700" height="250" class="aligncenter size-full wp-image-528" /></a></p>
 <h4>Simple nesting</h4>
 <p>If you turn a <strong>single array</strong> like the one on the left-hand side to <strong>an array of arrays</strong> like on the right-hand side, you could easily do 3 smaller charts, one next to the other, by creating them inside of panels. You could have some information at this panel level (for instance the variety) and the rest at a lower level. </p>
 <p>Fortunately, there are protovis methods that can turn your flat list into a more complex array of arrays. And since protovis methods are meant to be chained, you can even go on and create arrays of arrays of arrays of arrays if needs be.<br />
@@ -507,7 +507,7 @@ To do the above, all you have to type is </p>
 <p>What this does is that it nests your <em>barley</em> array, according to the <em>variety</em> key. entries() at the end is required to obtain the array of arrays needed.</p>
 <p>Here is an example of what can be done with both kinds of data structures in just a few lines of code (which won&#8217;t include the data proper. The long, flat array is stored in the variable barley, as above).<br />
 Without nesting:<br />
-<a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/BarleyWithoutNesting.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/BarleyWithoutNesting.png" alt="" title="BarleyWithoutNesting" width="606" height="198" class="aligncenter size-full wp-image-594" /></a></p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/BarleyWithoutNesting.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/BarleyWithoutNesting.png" alt="" title="BarleyWithoutNesting" width="606" height="198" class="aligncenter size-full wp-image-594" /></a></p>
 <pre class="brush: jscript; title: ; notranslate" title="">var vis = new pv.Panel()
     .width(600)
     .height(200)
@@ -523,7 +523,7 @@ vis.add(pv.Bar)
 vis.render();</pre>
 <p>As the pv.Bar goes through the array, there is not much it can do to structure it. We can just size the bars according to the value of yield, and color them according to another key (here the year).</p>
 <p>Now using nesting:<br />
-<a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/BarleyWithNesting2.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/BarleyWithNesting2.png" alt="" title="BarleyWithNesting2" width="711" height="160" class="aligncenter size-full wp-image-598" /></a></p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/BarleyWithNesting2.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/BarleyWithNesting2.png" alt="" title="BarleyWithNesting2" width="711" height="160" class="aligncenter size-full wp-image-598" /></a></p>
 <pre class="brush: jscript; highlight: [1,8,15]; title: ; notranslate" title="">barley2=pv.nest(barley).key(function(d) d.variety).entries();
 barley2=pv.nest(barley).key(function(d) d.variety).entries();
 var vis = new pv.Panel()
@@ -580,8 +580,8 @@ vis.render();
 </td>
 </tr>
 <tr>
-<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/sort-unsorted.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/sort-unsorted.png" alt="" title="sort-unsorted" width="300" height="250" class="aligncenter size-full wp-image-524" /></a></td>
-<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/sort-sorted.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/sort-sorted.png" alt="" title="sort-sorted" width="300" height="250" class="aligncenter size-full wp-image-525" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/sort-unsorted.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/sort-unsorted.png" alt="" title="sort-unsorted" width="300" height="250" class="aligncenter size-full wp-image-524" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/sort-sorted.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/sort-sorted.png" alt="" title="sort-sorted" width="300" height="250" class="aligncenter size-full wp-image-525" /></a></td>
 </tr>
 </table>
 </li>
@@ -766,7 +766,7 @@ What rollup does is that it would go through each of the values that correspond 
     ]</pre>
 <p>so rollup will just look at each element of this array and apply the function.<br />
 This is what (data) in &#8220;function(data)&#8221; corresponds to.<br />
-Next, we tell protovis what to do with these elements. Here, we are interested in the average, so we take pv.mean (not pv.average, <a href="http://www.jeromecukier.net/?p=494">remember</a>?)<br />
+Next, we tell protovis what to do with these elements. Here, we are interested in the average, so we take pv.mean (not pv.average, <a href="http://jckr.github.io/blog/?p=494">remember</a>?)<br />
 However, we can&#8217;t directly compute the average of an array of associative arrays &#8211; we must tell protovis exactly what to average. This is why we use an accessor function, function(d) d.score.</p>
 <p>Of course, pv.mean used in this example can be replaced by just about any function.</p>
 <p>In the name of clarity, especially if there is only one property that can be aggregated, you can declare a function outside of the rollup() method. This is useful if you are going to aggregate your array by different dimensions:</p>
@@ -788,9 +788,9 @@ The main advantage of having a flat array is that you can nest it in a different
 <pre class="brush: jscript; light: true; title: ; notranslate" title="">barley=pv.flatten(barley).key(&quot;variety&quot;).key(&quot;site&quot;).key(&quot;year&quot;).key(&quot;yield&quot;).array()</pre>
 <p>Finally, pv.tree &#8211; well, I haven&#8217;t seen this method used outside the <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Tree.html">documentation</a>. It&#8217;s not used in any live example, not covered by any question in the forum, and I haven&#8217;t found any trace of it in the internet. So I&#8217;d rather leave you with the explanation in the documentation which is fairly clear than come up with my own. If you find yourself in a situation like in the documentation, where you have a flat array of associative arrays, which have a property that could be interpreted as a hierarchy, then you could use this method to turn your array in something more useful to protovis.</p>
 <h3>Putting it all together</h3>
-<p>Instead of coming up with a specific new example for this section I refer you to my explanation of the <a href="http://www.jeromecukier.net/?p=534">Becker&#8217;s Barley example</a>.<br />
-On the same subject, see a comparison of how to <a href="http://www.jeromecukier.net/?p=550">re-create Becker&#8217;s Barley with protovis and Tableau</a></p>
-<p>next: <a href="http://www.jeromecukier.net/?p=623">working with layouts</a></p>
+<p>Instead of coming up with a specific new example for this section I refer you to my explanation of the <a href="http://jckr.github.io/blog/?p=534">Becker&#8217;s Barley example</a>.<br />
+On the same subject, see a comparison of how to <a href="http://jckr.github.io/blog/?p=550">re-create Becker&#8217;s Barley with protovis and Tableau</a></p>
+<p>next: <a href="http://jckr.github.io/blog/?p=623">working with layouts</a></p>
 	    		<div class="clear">&nbsp;</div>
 	</section>
 </article><!-- #post-## -->

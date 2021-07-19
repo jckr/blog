@@ -29,30 +29,30 @@
 		<category><![CDATA[coordonnées parallèles]]></category>
 		<category><![CDATA[élections]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1264</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1264</guid>
 		<description><![CDATA[Qui dit élection présidentielle, dit résultats. Et qui dit résultats dit représentation visuelle dans les médias. Et donc souvent carte. Cela dit, une carte ne nous apprend pas grand chose de ce qui s&#8217;est vraiment passé dans une élection. C&#8217;est vrai que c&#8217;est utile pour retrouver sa région ou sa ville, mais les résultats de <a class="read-more" href="/2012/05/07/a-la-decouverte-des-resultats-des-presidentielles-avec-les-coordonnees-paralleles/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
-				<content:encoded><![CDATA[<p style="text-align: center;"><a href="http://www.jeromecukier.net/projects/elections/dtour2012.html"><img class="aligncenter size-full wp-image-1265" title="front" src="http://www.jeromecukier.net/wp-content/uploads/2012/05/front.jpg" alt="" width="700" height="374" /></a></p>
+				<content:encoded><![CDATA[<p style="text-align: center;"><a href="http://jckr.github.io/blog/projects/elections/dtour2012.html"><img class="aligncenter size-full wp-image-1265" title="front" src="http://jckr.github.io/blog/wp-content/uploads/2012/05/front.jpg" alt="" width="700" height="374" /></a></p>
 <p>Qui dit élection présidentielle, dit résultats.</p>
 <p>Et qui dit résultats dit représentation visuelle dans les médias.</p>
 <p>Et donc souvent carte.</p>
 <p>Cela dit, une carte ne nous apprend pas grand chose de ce qui s&#8217;est vraiment passé dans une élection. C&#8217;est vrai que c&#8217;est utile pour retrouver sa région ou sa ville, mais les résultats de deux villes proches géographiquement (par exemple, Boulogne-Billancourt et Issy-les-Moulineaux) n&#8217;a strictement rien à voir.</p>
 <p>En revanche, avec une carte c&#8217;est très difficile de répondre à certaines questions, comme: où a-t-on le plus voté pour Nicolas Sarkozy? Qu&#8217;est ce qui s&#8217;est passé dans les villes qui ont beaucoup voté pour Marine Le Pen ou François Bayrou? D&#8217;où vient l&#8217;explosion du vote blanc au deuxième tour?</p>
-<p>Pour répondre à ces questions, on peut utiliser les <a href="http://www.jeromecukier.net/projects/elections/dtour2012.html">coordonnées parallèles</a>.</p>
+<p>Pour répondre à ces questions, on peut utiliser les <a href="http://jckr.github.io/blog/projects/elections/dtour2012.html">coordonnées parallèles</a>.</p>
 <p>Chaque axe vertical correspond à un vote possible &#8211; d&#8217;abord ceux du premier tour, puis ceux du deuxième. Chaque ligne de couleur correspond à une ville (ou à un département, à une région, ou à la France). Chacune de ces lignes coupe chaque axe à une hauteur qui correspond à la proportion des gens qui ont fait tel ou tel choix. Par exemple, les villes où on a beaucoup voté pour Jean-Luc Mélenchon, comme Bagnolet ou Gennevilliers, se retrouveront vers le haut de l&#8217;axe du milieu.</p>
 <p>En s&#8217;approchant des axes, le curseur devient une croix. Il suffit alors de le faire glisser le long de l&#8217;axe pour dessiner un rectangle, et mettre en valeur toutes les lignes qui passent par ce rectangle. Par exemple, voici les villes qui ont donné plus de 70% de leurs voix du second tour à François Hollande:</p>
-<p><a href="http://jeromecukier.net/projects/elections/dtour2012.html"><img class="aligncenter size-full wp-image-1266" title="hollande70" src="http://www.jeromecukier.net/wp-content/uploads/2012/05/hollande70.jpg" alt="" width="700" height="500" /></a></p>
+<p><a href="http://jckr.github.io/blog/projects/elections/dtour2012.html"><img class="aligncenter size-full wp-image-1266" title="hollande70" src="http://jckr.github.io/blog/wp-content/uploads/2012/05/hollande70.jpg" alt="" width="700" height="500" /></a></p>
 <p>&nbsp;</p>
 <p>On peut tracer autant de rectangles qu&#8217;on veut. Par exemple, on peut ne garder que les endroits qui avaient soutenu Bayrou (par exemple à plus de 10%).</p>
-<p><a href="http://jeromecukier.net/projects/elections/dtour2012.html"><img class="aligncenter size-full wp-image-1267" title="hollande70bayrou10" src="http://www.jeromecukier.net/wp-content/uploads/2012/05/hollande70bayrou10.jpg" alt="" width="700" height="500" /></a></p>
+<p><a href="http://jckr.github.io/blog/projects/elections/dtour2012.html"><img class="aligncenter size-full wp-image-1267" title="hollande70bayrou10" src="http://jckr.github.io/blog/wp-content/uploads/2012/05/hollande70bayrou10.jpg" alt="" width="700" height="500" /></a></p>
 <p>et voilà: il n&#8217;y en a plus que 2.</p>
 <p>Pour supprimer une sélection, il suffit de cliquer près de l&#8217;axe sans glisser. Si on clique sur un rectangle, on peut aussi le faire coulisser le long de l&#8217;axe.</p>
 <p>Avec cette technique, on peut tout de suite voir les fiefs de tel ou tel candidat: il s&#8217;agit des lignes qui touchent le haut du graphique.</p>
 <p>On peut répondre à des questions plus complexes. Par exemple, je parlais de l&#8217;explosion du vote blanc au deuxième tour. Que s&#8217;est-il passé?</p>
 <p>Sélectionnons les endroits où le vote blanc a dépassé les 4% au deuxième tour, tout en restant à moins de 1.5% au premier tour:</p>
-<p><a href="http://www.jeromecukier.net/projects/elections/dtour2012.html"><img class="aligncenter size-full wp-image-1268" title="blanc" src="http://www.jeromecukier.net/wp-content/uploads/2012/05/blanc.jpg" alt="" width="700" height="370" /></a></p>
+<p><a href="http://jckr.github.io/blog/projects/elections/dtour2012.html"><img class="aligncenter size-full wp-image-1268" title="blanc" src="http://jckr.github.io/blog/wp-content/uploads/2012/05/blanc.jpg" alt="" width="700" height="370" /></a></p>
 <p>On voit trois pics: les villes où Marine Le Pen, Jean-Luc Mélenchon ou François Bayrou ont fait un très gros score. On peut continuer à sélectionner et voir que ce sont bien les villes qui sont dans la pointe de l&#8217;un des trois triangles et pas celles qui passent par le bas qui se retrouvent dans ce cas de figure. Ces électeurs ont préféré voter blanc plutôt que de choisir.</p>
 <p>Bonne exploration!</p>
-<p><a href="http://www.jeromecukier.net/projects/elections/dtour2012.html">http://www.jeromecukier.net/projects/elections/dtour2012.html</a></p>
+<p><a href="http://jckr.github.io/blog/projects/elections/dtour2012.html">http://jckr.github.io/blog/projects/elections/dtour2012.html</a></p>
 ]]></content:encoded>
 			<wfw:commentRss>/2012/05/07/a-la-decouverte-des-resultats-des-presidentielles-avec-les-coordonnees-paralleles/feed/</wfw:commentRss>
 		<slash:comments>0</slash:comments>

@@ -117,11 +117,11 @@ img.emoji {
 
 		<p>Creating visualizations from static files is fine and dandy but sometimes you need to be able to access dynamic data. And some other times, you may want to somehow record interactions from your users. One way to do that is by interacting with a mySql database.</p>
 <p>Without further ado here is the demo:</p>
-<p><iframe src="http://www.jeromecukier.net/stuff/sql_map/sqlmap.html" scrolling="no" width="542px" height="680px"></iframe></p>
+<p><iframe src="http://jckr.github.io/blog/stuff/sql_map/sqlmap.html" scrolling="no" width="542px" height="680px"></iframe></p>
 <h3>How does it work?</h3>
 <p>There are several parts to that.</p>
-<p>First, one <a href="http://www.jeromecukier.net/stuff/sql_map/sqlmap.html">html file</a> which holds everything together. By the way, for the styling I used Twitter&#8217;s <a href="http://twitter.github.com/bootstrap/">bootstrap</a> which makes it easy for all elements to find their place, and look at those purty buttons.</p>
-<p>Second, one <a href="http://www.jeromecukier.net/stuff/sql_map/sqlmap.js">javascript file</a> which contains the visualization proper.  If you have some familiarity with <a href="http://www.d3-js.org/">d3</a>, there is really nothing scary in this script. I&#8217;ll go back to the parts where the script interacts with databases in detail.</p>
+<p>First, one <a href="http://jckr.github.io/blog/stuff/sql_map/sqlmap.html">html file</a> which holds everything together. By the way, for the styling I used Twitter&#8217;s <a href="http://twitter.github.com/bootstrap/">bootstrap</a> which makes it easy for all elements to find their place, and look at those purty buttons.</p>
+<p>Second, one <a href="http://jckr.github.io/blog/stuff/sql_map/sqlmap.js">javascript file</a> which contains the visualization proper.  If you have some familiarity with <a href="http://www.d3-js.org/">d3</a>, there is really nothing scary in this script. I&#8217;ll go back to the parts where the script interacts with databases in detail.</p>
 <p>Here&#8217;s what the rest does at a high level.</p>
 <ol>
 <li>We give some behaviors to the buttons</li>
@@ -232,12 +232,12 @@ mysql_close();
 	<section class="post-content">
 
 		<p>In March this year, überscientist <a href="http://en.wikipedia.org/wiki/Stephen_Wolfram">Stephen Wolfram</a>, of <a href="http://www.wolfram.com/products/mathematica/index.html">Mathematica </a>fame, revealed the world he was working on something new, something big, something different. The first time I heard of this was through semantic web prophet <a href="http://en.wikipedia.org/wiki/Nova_Spivack">Nova Spivack</a>, who is not known to get excited by less-than-revolutionary projects. That, plus the fact that the project was announced so short before its release, contributed to build anticipation to huge levels.</p>
-<p><img class="aligncenter size-medium wp-image-146" title="wolframalpha" src="http://www.jeromecukier.net/wp-content/uploads/2009/06/wolframalpha-275x300.png" alt="wolframalpha" width="275" height="300" /></p>
+<p><img class="aligncenter size-medium wp-image-146" title="wolframalpha" src="http://jckr.github.io/blog/wp-content/uploads/2009/06/wolframalpha-275x300.png" alt="wolframalpha" width="275" height="300" /></p>
 <p><a href="http://www.wolframalpha.com/">Wolfram|alpha</a> describes itself as a &#8220;computational knowledge engine&#8221; or, simply put, as an &#8220;answer engine&#8221;. Like google and search engines, it tries to provide information based on a query. But while search engines simply try to retrieve the keywords of the query in their indexed pages, the answer engine tries to understand the query as a question and forms an educated answer. In a sense, this is similar to the <a href="http://www.freebase.com/">freebase</a> project, which is to put all the knowledge of a world in a database where links could be established across items.</p>
 <p>It attempts to detect the nature of each of the word of the query. Is that a city? a mathematic formula? foodstuff? an economic variable? Once it understands the terms of the query, it gives the user all the data it can to answer.</p>
 <p>Here for instance:</p>
-<p><img class="aligncenter size-full wp-image-147" title="wolframalpha-2" src="http://www.jeromecukier.net/wp-content/uploads/2009/06/wolframalpha-2.png" alt="wolframalpha-2" width="445" height="1052" /></p>
-<p>Using the same <strong>find </strong>&gt; <strong>access </strong>&gt; <strong>process </strong>&gt; <strong>present </strong>&gt; <strong>share</strong> <a href="http://www.jeromecukier.net/?p=124">diagram</a> as before,</p>
+<p><img class="aligncenter size-full wp-image-147" title="wolframalpha-2" src="http://jckr.github.io/blog/wp-content/uploads/2009/06/wolframalpha-2.png" alt="wolframalpha-2" width="445" height="1052" /></p>
+<p>Using the same <strong>find </strong>&gt; <strong>access </strong>&gt; <strong>process </strong>&gt; <strong>present </strong>&gt; <strong>share</strong> <a href="http://jckr.github.io/blog/?p=124">diagram</a> as before,</p>
 <p>Wolfram|alpha&#8217;s got &#8220;find&#8221; covered. More about that below.</p>
 <p>It lets you access the data. If data have been used to produce a chart, then there is a query that will retrieve those bare numbers in a table format.</p>
 <p>Process is perhaps Wolfram|Alpha&#8217;s forte. It will internally reformulate and cook your query to produce all meaningful outputs in its capacity.</p>

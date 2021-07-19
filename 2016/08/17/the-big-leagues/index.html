@@ -108,8 +108,8 @@ img.emoji {
 		    <p>This is the 7th and last post in my <a href="http://wp.me/po630-rq">Visualization with React</a> series. Previous post: <a href="http://wp.me/po630-sp">Creating a React visualization web app</a></p>
 <p>We can finally take the little wheels off and create a real React app.<br />
 That&#8217;s what we&#8217;ll make:<br />
-<img src="http://jeromecukier.net/assets/visualization-with-react/react-weather-app.png" alt="App screenshot" /><br />
-You can <a href="http://www.jeromecukier.net/projects/react-weather/">try the app for yourself here</a>. The code is available on <a href="https://github.com/jckr/react-weather">github</a>. </p>
+<img src="http://jckr.github.io/blog/assets/visualization-with-react/react-weather-app.png" alt="App screenshot" /><br />
+You can <a href="http://jckr.github.io/blog/projects/react-weather/">try the app for yourself here</a>. The code is available on <a href="https://github.com/jckr/react-weather">github</a>. </p>
 <p>This time, instead of loading data from a paltry CSV file, we&#8217;ll go live and hit the <a href="http://openweathermap.org/">openweathermap</a> API and get live weather data.</p>
 <p>The app may be more complex than anything we&#8217;ve done before, but it&#8217;s really more of the same, so I&#8217;ll be probably quicker. </p>
 <p>First, look at the secrets.json file. As you can guess, it can&#8217;t work as is &#8211; if you want to try this at home, you must get your own (free) API key from openweathermap. </p>
@@ -280,7 +280,7 @@ const FlexibleXYPlot = makeWidthFlexible(XYPlot);
 </pre>
 <p>so far, we&#8217;re importing a bunch of stuff.<br />
 the two constants that we create are the numbers of milliseconds in an hour, and in a day, which will be useful in a bit.<br />
-FlexibleXYPlot is a special react-vis component that can resize (in width). By using this as opposed to XYPlot with a fixed width, we can make our app layout responsive (<a href="http://www.jeromecukier.net/projects/react-weather/">try resizing the window!</a>) without having to think too hard it.</p>
+FlexibleXYPlot is a special react-vis component that can resize (in width). By using this as opposed to XYPlot with a fixed width, we can make our app layout responsive (<a href="http://jckr.github.io/blog/projects/react-weather/">try resizing the window!</a>) without having to think too hard it.</p>
 <pre class="brush: plain; title: ; notranslate" title="">
 export default class LargeChart extends Component {
   render() {

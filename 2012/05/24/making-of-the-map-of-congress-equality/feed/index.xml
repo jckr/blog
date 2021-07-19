@@ -19,7 +19,7 @@
 		<link>/2012/05/24/making-of-the-map-of-congress-equality/#comment-329</link>
 		<dc:creator><![CDATA[mehmet alp]]></dc:creator>
 		<pubDate>Fri, 08 Feb 2013 08:22:07 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1297#comment-329</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1297#comment-329</guid>
 		<description><![CDATA[thank you.. great tutorial.]]></description>
 		<content:encoded><![CDATA[<p>thank you.. great tutorial.</p>
 ]]></content:encoded>
@@ -29,7 +29,7 @@
 		<link>/2012/05/24/making-of-the-map-of-congress-equality/#comment-328</link>
 		<dc:creator><![CDATA[oscar6echo]]></dc:creator>
 		<pubDate>Fri, 04 Jan 2013 01:09:49 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1297#comment-328</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1297#comment-328</guid>
 		<description><![CDATA[In case it is still relevant.
 You can get a shape file a country&#039; administrative areas from http://www.gadm.org/country. For France, at least, it very accurately gives 5 (!) admin levels (region, departement, and then I don&#039;t know...) You can then simplify (if necessary) it using mapshaper.com/test/MapShaper.swf (~80% reduction is hardly visible), and turn it to a geoJSON/totpoJSON file with ogr2ogr (cf http://bost.ocks.org/mike/map/).
 Hope this helps.]]></description>

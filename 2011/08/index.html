@@ -117,7 +117,7 @@ img.emoji {
 		<p>In <a href="http://mbostock.github.com/protovis/docs/scale.html">protovis</a>, scales were super-useful in just about everything. That much hasn&#8217;t changed in d3, even though <a href="https://github.com/mbostock/d3/wiki/Scales">d3.scale</a> is a bit different from pv.Scale. (do note that <strong>d3.scale</strong> is in lowercase for starters).</p>
 <h2>Scales: the main idea</h2>
 <p>Simply put: scales transform a number in a certain interval (called the <em>domain</em>) into a number in another interval (called the <em>range</em>).<br />
-<img src="http://www.jeromecukier.net/wp-content/uploads/2011/08/d3scale1.png" alt="an example of how scales work" /><br />
+<img src="http://jckr.github.io/blog/wp-content/uploads/2011/08/d3scale1.png" alt="an example of how scales work" /><br />
 For instance, let&#8217;s suppose you <em>know</em> your data is always over 20 and always below 80. You would like to plot it, say, in a bar chart, which can be only 120 pixels tall.<br />
 You could, obviously, do the math:</p>
 <pre class="brush: jscript; title: ; notranslate" title="">.attr(&quot;height&quot;, function(d) {return (d-20)*2;})</pre>
@@ -144,14 +144,14 @@ First, note that <strong>unlike in protovis</strong>, domain and range take an a
 var y=d3.scale.linear().range([20,60]).domain([0,120]);</pre>
 <p>This is because <strong>contrary to protovis</strong>, where domain could be a whole dataset, in d3, domain contains the bounds of the interval that is going to be transformed.<br />
 Typically, this is two numbers. If this is more, we are talking about a polypoint scale: there are as many segments in the intervals as there are numbers in the domain (minus one). The range must have as many numbers, and so as many segments. When using the scale, if a number is in the n-th segment of the domain, it is transformed into a number in the n-th segment of the range.<br />
-<img src="http://www.jeromecukier.net/wp-content/uploads/2011/08/d3scaleMultipoint.png" alt="illustration of a multipoint scale" /><br />
+<img src="http://jckr.github.io/blog/wp-content/uploads/2011/08/d3scaleMultipoint.png" alt="illustration of a multipoint scale" /><br />
 With this example, 30 finds itself in the first segment of the domain. So it&#8217;s transformed to a value in the first segment of the range. 60, however, is in the 2nd segment, so it&#8217;s transformed into a value in the 2nd segment of the range.<br />
 Also, bounds of domain and range need not be numbers, as long as they can be converted to numbers. One useful examples are colors. Color names can be used as range, for instance, to create <em>color ramps</em>:</p>
 <pre class="brush: jscript; title: ; notranslate" title="">var ramp=d3.scale.linear().domain([0,100]).range([&quot;red&quot;,&quot;blue&quot;]);</pre>
 <p>This will transform any value betwen 0 and 100 into the corresponding color between red and blue.</p>
 <h3>Clamping</h3>
 <p>What happends if the scale is asked to process a number outside of the domain? That&#8217;s what clamping controls. If it is set, then the bounds of the range are the minimum and maximum value that can be returned by the scale. Else, the same transformation applies to all numbers, whether they fall within the domain or not.<br />
-<img src="http://www.jeromecukier.net/wp-content/uploads/2011/08/d3clamping.png" alt="Clamping example" /><br />
+<img src="http://jckr.github.io/blog/wp-content/uploads/2011/08/d3clamping.png" alt="Clamping example" /><br />
 Here, with clamping, the result of the linear transformation is 120, but without it, it&#8217;s 160. </p>
 <pre class="brush: jscript; title: ; notranslate" title="">var clamp=d3.scale.linear().domain([20,80]).range([0,120]);
 clamp(100); // 160
@@ -191,7 +191,7 @@ y.invert(60); // 50</pre>
 <p>The <em>linear</em>scale is a function of the form y=ax+b which works for both ends of the domain and range. In the example we&#8217;ve used most often until now, this function is really f(x): y=2x-40.<br />
 Power and logarithm scales work the same, only we are looking for a function of the form y=ax<sup>k</sup>+b, or y=a.log(x)+b.<br />
 For the power scales, you can specify an exponent (k) with the .exponent() method. For instance, if we specify an exponent of 2, here is what the scale would look like:<br />
-<img src="http://www.jeromecukier.net/wp-content/uploads/2011/08/d3scalePower.png" alt="an example of a power scale" /><br />
+<img src="http://jckr.github.io/blog/wp-content/uploads/2011/08/d3scalePower.png" alt="an example of a power scale" /><br />
 The equation is now f(x): y=x²/50-8. So 20 still becomes 0 and 80 still becomes 120, but other than that the values at the beginning of the domain would be lower than with the linear scale, and those at the end of the scale will be higher.<br />
 For convenience, d3 includes a d3.scale.sqrt() (the square root scale) so you never have to type d3.scale.pow.exponent(0.5) in full.<br />
 Also note that if you are using a log scale, you <strong>cannot</strong> have 0 in the domain. </p>
@@ -244,7 +244,7 @@ x(&quot;Tuesday&quot;); // 34.285714285714285
 <p>With .rangePoints(<em>interval</em>), d3 fits n points within the interval, n being the number of categories in the domain. In that case, the value of the first point is the beginning of the interval, that of the last point is the end of the interval.<br />
 With .rangeBands(<em>interval</em>), d3 fit n <em>bands</em> within the interval. Here, the value of the last item in the domain is less than the upper bound of the interval.<br />
 Those methods <strong>replace the protovis methods</strong> .split() and .splitBanded().<br />
-<img src="http://www.jeromecukier.net/wp-content/uploads/2011/08/d3ordinalRange.png" alt="difference between rangeBands and rangePoints" /><br />
+<img src="http://jckr.github.io/blog/wp-content/uploads/2011/08/d3ordinalRange.png" alt="difference between rangeBands and rangePoints" /><br />
 This chart illustrates the difference between using rangeBands and rangePoints. </p>
 <pre class="brush: jscript; title: ; notranslate" title="">var x=d3.scale.ordinal()
   .domain([&quot;Sunday&quot;,&quot;Monday&quot;,&quot;Tuesday&quot;,&quot;Wednesday&quot;,&quot;Thursday&quot;,&quot;Friday&quot;,&quot;Saturday&quot;]);
@@ -326,7 +326,7 @@ c.hsl().toString() // &quot;hsl(300, 76, 72)&quot;</pre>
 	<section class="post-content">
 
 		<h2>From data to graphics</h2>
-<p><img src="http://jeromecukier.net/wp-content/uploads/2011/08/d3principle.png" alt="the d3 principle (and also the protovis principle)" /><br />
+<p><img src="http://jckr.github.io/blog/wp-content/uploads/2011/08/d3principle.png" alt="the d3 principle (and also the protovis principle)" /><br />
 d3 and protovis are built around the same principle. Take data, put it into an array, and for each element of data a graphical object can be created, whose properties are derived from the data that was provided.</p>
 <p>Only d3 and protovis have a slightly different way of adding those graphical elements and getting data. </p>
 <p>In protovis, you start from a panel, a protovis-specific object, to which you add various marks. Each time you add a mark, you can either:</p>
@@ -346,7 +346,7 @@ vis.add(pv.Panel).top(10).left(10)
     .bottom(0)
     .height(function(d) {return d*10;});
 vis.render();</pre>
-<p><img src="http://jeromecukier.net/wp-content/uploads/2011/08/protoBar.png" alt="this simple bar chart in protovis" /><br />
+<p><img src="http://jckr.github.io/blog/wp-content/uploads/2011/08/protoBar.png" alt="this simple bar chart in protovis" /><br />
 you first create a panel (first line), you may add an element without data (here, another panel, line 2), and add to this panel bars: there would be 5, one for each element in the array in line 4. </p>
 <h2>And in d3?</h2>
 <p>In d3, you also have a way to add either one object without passing data, or a series of objects &#8211; one per data element. </p>
@@ -414,17 +414,17 @@ And since you have to know: there is no easy way to retrieve the data of the par
 <p>To add many elements at once we&#8217;ve used the sequence: selectAll, data, enter, append.<br />
 Why use 4 methods for what appears to be one elementary task? If you don&#8217;t care about manipulating nodes individually, for instance for animations, you can just remember the sequence. But if you want to know more, here is what each method does. </p>
 <h3>selectAll</h3>
-<p><img src="http://jeromecukier.net/wp-content/uploads/2011/08/d3selectAll.png" alt="the selectAll method" /><br />
+<p><img src="http://jckr.github.io/blog/wp-content/uploads/2011/08/d3selectAll.png" alt="the selectAll method" /><br />
 First, we select a point on which to add your new graphical objects. When you are creating your objects and use the selectAll method, it will return an <em>empty selection</em> but based on that given point. You may also use selectAll in another context, to update your objects for instance. But here, an empty selection is expected. </p>
 <h3>data</h3>
-<p><img src="http://jeromecukier.net/wp-content/uploads/2011/08/d3data.png" alt="the data method" /><br />
+<p><img src="http://jckr.github.io/blog/wp-content/uploads/2011/08/d3data.png" alt="the data method" /><br />
 Then, you attribute data. This works quite similarly to protovis: d3 expects an array. d3 takes the concept further (with the concept of <em>data joins</em>) but you need not concern yourself with that until you look at transitions.<br />
 Anyway, at this stage you have an empty selection, based on a given point in the page, but with data.</p>
 <h3>enter</h3>
-<p><img src="http://jeromecukier.net/wp-content/uploads/2011/08/d3enter.png" alt="the enter method" /><br />
+<p><img src="http://jckr.github.io/blog/wp-content/uploads/2011/08/d3enter.png" alt="the enter method" /><br />
 The enter method updates the selection with nodes which have data, but no graphical representation. Using enter() is like creating stubs where the graphical elements will be grafted. </p>
 <h3>append</h3>
-<p><img src="http://jeromecukier.net/wp-content/uploads/2011/08/d3append.png" alt="the append method" /><br />
+<p><img src="http://jckr.github.io/blog/wp-content/uploads/2011/08/d3append.png" alt="the append method" /><br />
 Finally, by appending we actually create the graphical objects. Each is tied to one data element, so it can be further styled (for instance, through &#8220;attr&#8221;) to derive its characteristics from the value of that data.</p>
 	    		<div class="clear">&nbsp;</div>
 	</section>
@@ -440,7 +440,7 @@ Finally, by appending we actually create the graphical objects. Each is tied to 
     </header>
 	<section class="post-content">
 
-		<p>You&#8217;ve spent some time <a href="http://www.jeromecukier.net/blog/2011/02/07/working-with-data-in-protovis/">learning protovis</a> only to find that its development is halted as authors have switched to work on <a href="http://www.d3-js.org/">d3</a>. Have your efforts all been in vain? Fear not! This series of posts will help you adapt to d3 with a protovis background. </p>
+		<p>You&#8217;ve spent some time <a href="http://jckr.github.io/blog/blog/2011/02/07/working-with-data-in-protovis/">learning protovis</a> only to find that its development is halted as authors have switched to work on <a href="http://www.d3-js.org/">d3</a>. Have your efforts all been in vain? Fear not! This series of posts will help you adapt to d3 with a protovis background. </p>
 <p>Before we go anywhere further, let me say that <strong>these posts won&#8217;t make you awesome at d3</strong> (yet). We won&#8217;t be talking about how to do all amazing things you could never do in protovis. Rather, we&#8217;ll focus on enabling you to be as comfortable with d3 than you could have been with protovis. And once that&#8217;s done, nothing will prevent you from learning the more powerful aspects of d3. </p>
 <p>Anyway, if you&#8217;re reading this, <strong>you are already awesome.</strong></p>
 <h2>Why should I make the switch to d3?</h2>
@@ -513,7 +513,7 @@ Nathan pulled this off by posting something everyday: original content, fine exa
 <p>Which lead us to&#8230;</p>
 <h3>Visualize this or Show me the Numbers?</h3>
 <p><img class="alignleft" src="http://ecx.images-amazon.com/images/I/31ohzJBcb5L._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU01_.jpg" alt="" width="210" height="210" /></p>
-<p><strong>Show me the Numbers</strong> by Stephen Few is one the essential books on data visualization. I have <a href="http://www.jeromecukier.net/blog/2010/02/10/making-data-meaningful-style-guide-on-the-presentation-of-statistics/">said </a> <a href="http://www.quora.com/What-are-the-best-data-visualization-books">many</a> <a href="http://www.amazon.com/review/R1Z9KCILF8UJIF">times</a> that if one should read only one book on charts and tables, it should be this. A few years after reading it, I find its recommendations to be a bit rigid (which its author is not).</p>
+<p><strong>Show me the Numbers</strong> by Stephen Few is one the essential books on data visualization. I have <a href="http://jckr.github.io/blog/blog/2010/02/10/making-data-meaningful-style-guide-on-the-presentation-of-statistics/">said </a> <a href="http://www.quora.com/What-are-the-best-data-visualization-books">many</a> <a href="http://www.amazon.com/review/R1Z9KCILF8UJIF">times</a> that if one should read only one book on charts and tables, it should be this. A few years after reading it, I find its recommendations to be a bit rigid (which its author is not).</p>
 <p>For comparison&#8217;s sake, here is what Stephen says about pie charts.</p>
 <blockquote><p>Speaking of &#8220;difficult to read&#8221;, allow me to declare with no further delay that <em>I don&#8217;t use pie charts, </em>and I strongly recommend that you abandon them as well. My reason is simple: pie charts communicate poorly. This is a fundamental problem with all types of area graphs but especially with pie charts. Our visual perception is not designed to accurately assign quantitative values to 2-D areas, and we have an even harder time when the third dimension of depth is added.</p></blockquote>
 <p>Now here&#8217;s what Nathan has to say on the subject:</p>

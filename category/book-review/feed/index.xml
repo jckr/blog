@@ -31,7 +31,7 @@
 		<category><![CDATA[review]]></category>
 		<category><![CDATA[visualization]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1155</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1155</guid>
 		<description><![CDATA[Noah Iliinsky and O&#8217;Reilly were kind enough to send me one review copy of Noah&#8217;s book and who says review copy says review, so here goes. We need more introductory books to data visualization. I&#8217;ve had several discussions with data visualization colleagues who feel that there are too many books already. I strongly believe otherwise. <a class="read-more" href="/2012/04/22/designing-data-visualizations/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[<p><a href="http://www.amazon.com/Designing-Data-Visualizations-Noah-Iliinsky/dp/1449312284/ref=tag_stp_s2f_edpp_data_v18on"><img class="alignnone" title="Designing data visualization book cover" src="http://covers.oreilly.com/images/0636920022060/cat.gif" alt="Designing data visualization book cover" width="180" height="236" /></a></p>
 <p>Noah Iliinsky and O&#8217;Reilly were kind enough to send me one review copy of Noah&#8217;s book and who says review copy says review, so here goes.</p>
@@ -68,7 +68,7 @@
 		<dc:creator><![CDATA[jerome]]></dc:creator>
 				<category><![CDATA[book review]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=972</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=972</guid>
 		<description><![CDATA[I&#8217;ve just read Visualize This by Nathan Yau and you should too. Before I go and develop why, I&#8217;d like to say a few words about the author. Thank you Nathan! Nathan started flowingdata in 2007. This wasn&#8217;t the first blog on data visualization, and his author wasn&#8217;t the best known member of this community. <a class="read-more" href="/2011/08/03/now-reading-visualize-this/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[<p><a href="http://amzn.com/0470944889"><img src="http://ecx.images-amazon.com/images/I/51Wr2UTqNRL._AA115_.jpg"/></a>I&#8217;ve just read Visualize This by Nathan Yau and you should too.<br />
 Before I go and develop why, I&#8217;d like to say a few words about the author.</p>
@@ -84,7 +84,7 @@ Nathan pulled this off by posting something everyday: original content, fine exa
 <p>Which lead us to&#8230;</p>
 <h3>Visualize this or Show me the Numbers?</h3>
 <p><img class="alignleft" src="http://ecx.images-amazon.com/images/I/31ohzJBcb5L._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU01_.jpg" alt="" width="210" height="210" /></p>
-<p><strong>Show me the Numbers</strong> by Stephen Few is one the essential books on data visualization. I have <a href="http://www.jeromecukier.net/blog/2010/02/10/making-data-meaningful-style-guide-on-the-presentation-of-statistics/">said </a> <a href="http://www.quora.com/What-are-the-best-data-visualization-books">many</a> <a href="http://www.amazon.com/review/R1Z9KCILF8UJIF">times</a> that if one should read only one book on charts and tables, it should be this. A few years after reading it, I find its recommendations to be a bit rigid (which its author is not).</p>
+<p><strong>Show me the Numbers</strong> by Stephen Few is one the essential books on data visualization. I have <a href="http://jckr.github.io/blog/blog/2010/02/10/making-data-meaningful-style-guide-on-the-presentation-of-statistics/">said </a> <a href="http://www.quora.com/What-are-the-best-data-visualization-books">many</a> <a href="http://www.amazon.com/review/R1Z9KCILF8UJIF">times</a> that if one should read only one book on charts and tables, it should be this. A few years after reading it, I find its recommendations to be a bit rigid (which its author is not).</p>
 <p>For comparison&#8217;s sake, here is what Stephen says about pie charts.</p>
 <blockquote><p>Speaking of &#8220;difficult to read&#8221;, allow me to declare with no further delay that <em>I don&#8217;t use pie charts, </em>and I strongly recommend that you abandon them as well. My reason is simple: pie charts communicate poorly. This is a fundamental problem with all types of area graphs but especially with pie charts. Our visual perception is not designed to accurately assign quantitative values to 2-D areas, and we have an even harder time when the third dimension of depth is added.</p></blockquote>
 <p>Now here&#8217;s what Nathan has to say on the subject:</p>
@@ -117,9 +117,9 @@ Nathan pulled this off by posting something everyday: original content, fine exa
 		<category><![CDATA[how to]]></category>
 		<category><![CDATA[meaningful graphics]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=342</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=342</guid>
 		<description><![CDATA[Introducing Making Data Meaningful Part 2 &#8211; Style guide on the presentation of statistics &#8211; which, as its name cleverly suggests, is a compilation of  advice to present graphical information. It&#8217;s a follow up to Making Data Meaningul part 1 , which focused on writing about data, as opposed to visualize it. The book is a <a class="read-more" href="/2010/02/10/making-data-meaningful-style-guide-on-the-presentation-of-statistics/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
-				<content:encoded><![CDATA[<p><a href="http://bit.ly/mdm-2"><img class="aligncenter size-full wp-image-343" title="Making Data Meaningful part 2" src="http://www.jeromecukier.net/wp-content/uploads/2010/02/mdm2.png" alt="Making Data Meaningful part 2" width="400" height="564" /></a><br />
+				<content:encoded><![CDATA[<p><a href="http://bit.ly/mdm-2"><img class="aligncenter size-full wp-image-343" title="Making Data Meaningful part 2" src="http://jckr.github.io/blog/wp-content/uploads/2010/02/mdm2.png" alt="Making Data Meaningful part 2" width="400" height="564" /></a><br />
 Introducing <a href="http://bit.ly/mdm-2">Making Data Meaningful Part 2 &#8211; Style guide on the presentation of statistics</a> &#8211; which, as its name cleverly suggests, is a compilation of  advice to present graphical information.</p>
 <p>It&#8217;s a follow up to <a href="www.unece.org/stats/documents/writing/">Making Data Meaningul part 1</a> , which focused on <em>writing </em>about data, as opposed to visualize it.</p>
 <p>The book is a cooperation between representatives of national statistical offices and intergovernmental organizations &#8211; all public statisticians, if you will. I hope it will help others to communicate their data better. Personally, I have written the part about charts and collaborated to some other chapters. But if I could sum up my advice in one sentence, it would be: go buy <a href="http://www.perceptualedge.com/">Stephen Few</a> books. Start with <a href="http://www.amazon.com/Show-Me-Numbers-Designing-Enlighten/dp/0970601999/ref=sr_1_1?ie=UTF8&amp;s=books&amp;qid=1265820159&amp;sr=8-1">Show me the numbers.</a></p>
@@ -150,7 +150,7 @@ Introducing <a href="http://bit.ly/mdm-2">Making Data Meaningful Part 2 &#8211;
 		<category><![CDATA[dan roam]]></category>
 		<category><![CDATA[slideshare]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=212</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=212</guid>
 		<description><![CDATA[Healthcare Napkins All View more documents from Dan Roam. Slideshare 2009 contest is up again, and there&#8217;s about 1 week to vote. For the contest, I&#8217;m endorsing Dan Roam and counting on everyone to vote for him and support his presentation. Previous winners of the contest include Shift happens or Thirst who got a lot <a class="read-more" href="/2009/09/02/slidesharenet-2009-contest-im-endorsing-dan-roam/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[<div id="__ss_1867808" style="width: 425px; text-align: left;"><a style="font:14px Helvetica,Arial,Sans-serif;display:block;margin:12px 0 3px 0;text-decoration:underline;" title="Healthcare Napkins All" href="http://www.slideshare.net/danroam/healthcare-napkins-all">Healthcare Napkins All</a><object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="425" height="355" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="allowFullScreen" value="true" /><param name="allowScriptAccess" value="always" /><param name="src" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=healthcarenapkinall-090816001957-phpapp01&amp;rel=0&amp;stripped_title=healthcare-napkins-all" /><param name="allowfullscreen" value="true" /><embed type="application/x-shockwave-flash" width="425" height="355" src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=healthcarenapkinall-090816001957-phpapp01&amp;rel=0&amp;stripped_title=healthcare-napkins-all" allowscriptaccess="always" allowfullscreen="true"></embed></object></p>
 <div style="font-size: 11px; font-family: tahoma,arial; height: 26px; padding-top: 2px;">View more <a style="text-decoration:underline;" href="http://www.slideshare.net/">documents</a> from <a style="text-decoration:underline;" href="http://www.slideshare.net/danroam">Dan Roam</a>.</div>
@@ -196,7 +196,7 @@ Introducing <a href="http://bit.ly/mdm-2">Making Data Meaningful Part 2 &#8211;
 		<category><![CDATA[story]]></category>
 		<category><![CDATA[visual]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=15</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=15</guid>
 		<description><![CDATA[Presentation Zen, by Garr Reynolds, has been my favorite business book in 2008. Whatever your field, if you are a professional, chances are that you are going to make a presentation at least once a year. If you are looking for guidance, you could do worse than checking Garr&#8217;s website, aptly named presentation zen, or <a class="read-more" href="/2008/11/26/book-review-presentation-zen-by-garr-reynolds/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[<p><a href="http://www.amazon.com/dp/0321525655?tag=jeromecukiern-20&amp;camp=14573&amp;creative=327641&amp;linkCode=as1&amp;creativeASIN=0321525655&amp;adid=1SMVEYMJTKAVERYAM6YM&amp;"><img class="alignleft" style="padding:10px;" title="Presentation Zen cover" src="http://sixminutes.dlugan.com/wp-content/uploads/2008/01/presentation-zen-book.jpg" alt="" width="200" height="245" /></a>Presentation Zen, by Garr Reynolds, has been my favorite business book in 2008.</p>
 <p>Whatever your field, if you are a professional, chances are that you are going to make a presentation at least once a year. If you are looking for guidance, you could do worse than checking Garr&#8217;s website, aptly named <a href="http://www.presentationzen.com/">presentation zen</a>, or buying the book.</p>

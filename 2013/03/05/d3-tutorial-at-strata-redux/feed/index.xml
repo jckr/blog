@@ -19,7 +19,7 @@
 		<link>/2013/03/05/d3-tutorial-at-strata-redux/#comment-503</link>
 		<dc:creator><![CDATA[D3 and React &#8211; similarities and differences &#124; Jerome Cukier]]></dc:creator>
 		<pubDate>Tue, 09 Aug 2016 04:16:02 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1548#comment-503</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1548#comment-503</guid>
 		<description><![CDATA[[&#8230;] into a rectangle whose height depends on that value. That logic, which is at the core of d3 with selections, is also present in React. In d3, visualizations are essentially hierarchical. We start from an SVG [&#8230;]]]></description>
 		<content:encoded><![CDATA[<p>[&#8230;] into a rectangle whose height depends on that value. That logic, which is at the core of d3 with selections, is also present in React. In d3, visualizations are essentially hierarchical. We start from an SVG [&#8230;]</p>
 ]]></content:encoded>
@@ -29,7 +29,7 @@
 		<link>/2013/03/05/d3-tutorial-at-strata-redux/#comment-496</link>
 		<dc:creator><![CDATA[Yang]]></dc:creator>
 		<pubDate>Sat, 16 May 2015 15:56:06 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1548#comment-496</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1548#comment-496</guid>
 		<description><![CDATA[Really like it!]]></description>
 		<content:encoded><![CDATA[<p>Really like it!</p>
 ]]></content:encoded>
@@ -39,7 +39,7 @@
 		<link>/2013/03/05/d3-tutorial-at-strata-redux/#comment-495</link>
 		<dc:creator><![CDATA[Julien B]]></dc:creator>
 		<pubDate>Mon, 11 May 2015 17:52:30 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1548#comment-495</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1548#comment-495</guid>
 		<description><![CDATA[Hey Jerome,
 
 I can&#039;t stress enough how much your article was useful to me today! I have been struggling a entire afternoon around selections/creation for a multi dimensional dataset and I really thinks this is something a newcomer to D3 will overlook and get doomed.
@@ -58,7 +58,7 @@ Julien]]></description>
 		<link>/2013/03/05/d3-tutorial-at-strata-redux/#comment-494</link>
 		<dc:creator><![CDATA[BibSonomy :: url :: Selections in d3 – the long story &#124; Jerome Cukier]]></dc:creator>
 		<pubDate>Wed, 29 Apr 2015 18:20:52 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1548#comment-494</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1548#comment-494</guid>
 		<description><![CDATA[[&#8230;]  1Selections in d3 – the long story &#124; Jerome Cukier  [&#8230;]]]></description>
 		<content:encoded><![CDATA[<p>[&#8230;]  1Selections in d3 – the long story | Jerome Cukier  [&#8230;]</p>
 ]]></content:encoded>
@@ -68,7 +68,7 @@ Julien]]></description>
 		<link>/2013/03/05/d3-tutorial-at-strata-redux/#comment-493</link>
 		<dc:creator><![CDATA[nashvileric]]></dc:creator>
 		<pubDate>Tue, 21 Apr 2015 06:58:25 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1548#comment-493</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1548#comment-493</guid>
 		<description><![CDATA[@Linda (and post author): insert(&quot;h1&quot;) will insert the h1 at the beginning of the set of matching elements in the container, not at the beginning of the container. This means if you had multiple existing h1s it would be the first one, but not the first thing overall in that container. Docs: https://github.com/mbostock/d3/wiki/Selections#insert
 
 &#062; Inserts a new element with the specified name before the element matching the specified before selector
@@ -84,7 +84,7 @@ Not super intuitive given how `append` and `prepend` work in certain popular lib
 		<link>/2013/03/05/d3-tutorial-at-strata-redux/#comment-492</link>
 		<dc:creator><![CDATA[jerome]]></dc:creator>
 		<pubDate>Mon, 30 Mar 2015 17:57:17 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1548#comment-492</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1548#comment-492</guid>
 		<description><![CDATA[hi. For the first syntax (d3.selectAll(&quot;p&quot;) etc) it might work now, it certainly didn&#039;t work when I wrote the tutorial but regardless I wouldn&#039;t recommend it. You want to have the finest control about where your elements will appear. And if this syntax makes them appear after everything else in the document, that wouldn&#039;t work well for svg elements which would have to be children/descendents of an svg container anyway. 
 yes it is true that when you write:
 container.selectAll(selector1).data(data).enter().append(selector2), selector1 and selector2 don&#039;t have to match. you may even write something like:
@@ -112,7 +112,7 @@ I typically use only &#8220;append&#8221;. The reason I do that is that when I g
 		<link>/2013/03/05/d3-tutorial-at-strata-redux/#comment-491</link>
 		<dc:creator><![CDATA[Linda]]></dc:creator>
 		<pubDate>Mon, 30 Mar 2015 17:36:37 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1548#comment-491</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1548#comment-491</guid>
 		<description><![CDATA[Hi, great tutorial! 
 
 When I tried d3.selectAll(&quot;p&quot;).data(text).enter().append(&quot;p&quot;).html(String), which was supposed to generate a DOM error because it lacked select(&quot;body&quot;), it worked fine in Chrome, except on inspection I see the p tags were created after the body tag, before the html close tag. Is that browser specific?
@@ -134,7 +134,7 @@ I&#039;m currently working on a pie chart and having trouble making the wedges c
 		<link>/2013/03/05/d3-tutorial-at-strata-redux/#comment-484</link>
 		<dc:creator><![CDATA[jerome]]></dc:creator>
 		<pubDate>Tue, 03 Dec 2013 02:22:46 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1548#comment-484</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1548#comment-484</guid>
 		<description><![CDATA[hi, it&#039;s not super easy to mix click events and brush events. this is because when you click, you are first creating a brush element at the svg level. 
 when you select multiple events - that&#039;s the easy part, you can just add &quot;.data()&quot; at the end of your console.log statement to display only the data of the selected nodes. 
 to mix those 2 types of events I suggest you look at this bl.ocks.org: 
@@ -150,7 +150,7 @@ to mix those 2 types of events I suggest you look at this bl.ocks.org:<br />
 		<link>/2013/03/05/d3-tutorial-at-strata-redux/#comment-483</link>
 		<dc:creator><![CDATA[Jeet Chatterjee]]></dc:creator>
 		<pubDate>Thu, 28 Nov 2013 03:38:07 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1548#comment-483</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1548#comment-483</guid>
 		<description><![CDATA[hii my name is Jeet i am new to D3.I have  a problem can you help???.. i am able to select multiple nodes in my application using brush but i can not do a little bit of some more requirements.
 this is the fiddle i am giving you suits my purpose very nicely but i need some more functionality see this first
 http://jsfiddle.net/yr9Zp/
@@ -167,7 +167,7 @@ this is the fiddle i am giving you suits my purpose very nicely but i need some 
 		<link>/2013/03/05/d3-tutorial-at-strata-redux/#comment-482</link>
 		<dc:creator><![CDATA[Jeet Chatterjee]]></dc:creator>
 		<pubDate>Tue, 26 Nov 2013 12:47:39 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1548#comment-482</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1548#comment-482</guid>
 		<description><![CDATA[Can you help me with this issue please i need it very urgently in my company..i have to do this..]]></description>
 		<content:encoded><![CDATA[<p>Can you help me with this issue please i need it very urgently in my company..i have to do this..</p>
 ]]></content:encoded>

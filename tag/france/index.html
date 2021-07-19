@@ -115,12 +115,12 @@ img.emoji {
     </header>
 	<section class="post-content">
 
-		<p>This is a follow-up to <a href="http://www.jeromecukier.net/?p=764">the previous post</a> where I used a Dorling cartogram to show election results in France. So how did I come up with that?</p>
+		<p>This is a follow-up to <a href="http://jckr.github.io/blog/?p=764">the previous post</a> where I used a Dorling cartogram to show election results in France. So how did I come up with that?</p>
 <h2>Step 1: the data</h2>
 <p>Without data, there wouldn&#8217;t be much to plot, right? So the first order of business was to fetch the data, which is theoretically available from an <a href="http://elections.interieur.gouv.fr/CN2011/">official source.</a> Unfortunately, there is no way to download those results at once, instead they are presented in a myriad of formatted HTML pages &#8211; over 2000 in all. </br><br />
 I used <a href="http://www.google.com/search?q=wget">wget</a> to download them all. wget allows for recursive download, that is, you can download a page, and all the links from that page, etc. You can also specify the depth of the recursive download, which is a good idea in that case because there are lots of duplicates of that information on the server, so trying to get everything will take a couple of hours vs about 10 minutes.</p>
 <p>Once that&#8217;s done, I used python and <a href="http://www.crummy.com/software/BeautifulSoup/">Beautiful Soup</a> to turn the HTML pages into nice JSON objects. Fortunately the pages followed the same strict template, so I could run a relatively simple extraction script, like: look at the second HTML table of the page, get the number of registered voters who didn&#8217;t vote from the 2nd cell of the 2nd row, etc.<br />
-Once that was done I came up with 2 files: <a href="http://www.jeromecukier.net/wp-content/uploads/2011/03/votes.js">one which listed the aggregate votes per county</a> and per party, and another one which listed all the candidates, their affiliation and their votes. I ended up using only the 1st one, actually at an even more aggregated level, but I may use the second one for further work.</p>
+Once that was done I came up with 2 files: <a href="http://jckr.github.io/blog/wp-content/uploads/2011/03/votes.js">one which listed the aggregate votes per county</a> and per party, and another one which listed all the candidates, their affiliation and their votes. I ended up using only the 1st one, actually at an even more aggregated level, but I may use the second one for further work.</p>
 <h2>Next up: setting the geography</h2>
 <p>A dorling cartogram is really a kind of <a href="http://en.wikipedia.org/wiki/Force-based_algorithms_(graph_drawing)">force-directed layout graph</a> where the nodes represent geographical entities, which are initially positioned at a place corresponding to their geography, but which are then resized by a variable, and whose movement is subject to several forces: each node is linked to its original geographical neighbors, which attract each other, but also cannot intersect with other nodes, so it pushes back its neighbors.</p>
 <p>So for this to work I had to:
@@ -130,7 +130,7 @@ Once that was done I came up with 2 files: <a href="http://www.jeromecukier.net/
 </ul>
 <p>To get the initial position I fetched the list of all French towns and their lon-lat coordinates which I averaged for each département. That gave me a workable proxy of the centroid of that departement. Note that I didn&#8217;t need anything very accurate at this stage, since nodes are going to be pushing each other anyway.<br />
 I listed the neighbors manually, since the number of départements is workable. Else, one possible way to do that from a shape file is look at every point of every shape and list all the entities that use it. If two entities use it they are neighbors. Again at this stage it&#8217;s not mandatory to be exhaustive. If an entity is surrounded by 8 others and we only use 4 the results will look sensibly the same.<br />
-Anyone who wants to create dorling cartograms for France can <a href="http://www.jeromecukier.net/wp-content/uploads/2011/03/francedorling.js">reuse the file</a>. </p>
+Anyone who wants to create dorling cartograms for France can <a href="http://jckr.github.io/blog/wp-content/uploads/2011/03/francedorling.js">reuse the file</a>. </p>
 <h2>Putting it all together</h2>
 <p>The rest is standard protovis fare. There is an example which uses <a href="http://vis.stanford.edu/protovis/ex/cartogram.html">Dorling cartograms</a> which I used as a basis. I prepared my data files so that I could aggregate the stuff I needed at the level of the département (which is about 20 counties). I never really considered showing anything at the county level because except for looking up specific results it is never too relevant. For instance, in most places there are some agreement between parties which don&#8217;t all present candidates in order to favor their allies. </p>
 <p>An interesting parameter when building the visualization is choosing the constant by which to multiply the size of the nodes. If it is too high, the cartogram will look like a featureless cluster of circles. If it is too low, it will ressemble the map a lot, and circles won&#8217;t touch each other.</p>
@@ -148,13 +148,13 @@ Anyone who wants to create dorling cartograms for France can <a href="http://www
     </header>
 	<section class="post-content">
 
-		[I write this here post in French because it's more relevant for a French audience, a <a href="http://www.jeromecukier.net/?p=796">more technical post</a> with an explanation of how it's done follows in English].</p>
+		[I write this here post in French because it's more relevant for a French audience, a <a href="http://jckr.github.io/blog/?p=796">more technical post</a> with an explanation of how it's done follows in English].</p>
 
 J'ai écrit que j'avais été déçu par les infographies des principaux médias au lendemain des cantonales.</p>
 
 Si on prend la carte du Monde par exemple, on y voit la France nettemement découpée en départements, soit bien roses, soit bien bleus, ou à la rigueur gris si l'issue est incertaine. Mais ce n'est pas l'enjeu de ces élections. Ce sont les dernières élections avant la présidentielle, et on est donc attentif aux enseignements nationaux du scrutin au-delà de la composition des conseils généraux. Ce qu'on commente, c'est plus la percée de l'extrême droite ou le poids de l'abstention. C'est la capacité de la droite ou de la gauche à s'imposer. </p>
 Dans cette optique, chaque département n'a pas le même poids. Le Nord par exemple, avec presque 900,000 électeurs, compte plus que la Lozère qui en compte juste un peu plus de 20,000. Donc, tracer une carte géographiquement exacte n'est pas très honnête, puisque cela cache ces différences qui peuvent être énormes.</p>
-Comme je n'ai pas l'habitude de porter des critiques <a href="http://www.jeromecukier.net/?p=661">sans proposer autre chose</a>, j'ai fabriqué des cartogrammes de Dorling pour rendre compte de ce qui s'est vraiment passé dimanche dernier.</p>
+Comme je n'ai pas l'habitude de porter des critiques <a href="http://jckr.github.io/blog/?p=661">sans proposer autre chose</a>, j'ai fabriqué des cartogrammes de Dorling pour rendre compte de ce qui s'est vraiment passé dimanche dernier.</p>
 
 Les cartogrammes, ce sont presque des cartes, sauf que le côté géographique n'est pas pris au sens strict. Leur forme dépend plus des données qu'elles représentent. Et dans la version de Dorling, on remplace les morceaux de la carte (ici, les départements) par des cercles, plus ou moins gros. Là, la taille des cercles dépend du nombre d'électeurs inscrits aux cantonales. Du coup, leur position sur la carte n'est pas exactement la même que celle des départements sur la carte de France mais elle est assez proche pour qu'on puisse les retrouver.</p>
 
@@ -165,9 +165,9 @@ Je propose 3 scénarios: une comparaison gauche-droite, l'importance de l'extrê
 <input type="radio" checked name="group1" value="0" onclick="sc=0;reinit() ;vis.render();">Gauche-droite
 <input type="radio" name="group1" value="1" onclick="sc=1;reinit() ;vis.render();">Extrême-droite
 <input type="radio" name="group1" value="2" onclick="sc=2;reinit() ;vis.render();">Abstention</form>
-<script type="text/javascript" src="http://www.jeromecukier.net/wp-content/uploads/2011/03/votes.js"></script>
-<script type="text/javascript" src="http://www.jeromecukier.net/wp-content/uploads/2011/03/francedorling.js"></script>
-<script type="text/javascript" src="http://www.jeromecukier.net/wp-content/uploads/2011/03/cantonales.js"></script>
+<script type="text/javascript" src="http://jckr.github.io/blog/wp-content/uploads/2011/03/votes.js"></script>
+<script type="text/javascript" src="http://jckr.github.io/blog/wp-content/uploads/2011/03/francedorling.js"></script>
+<script type="text/javascript" src="http://jckr.github.io/blog/wp-content/uploads/2011/03/cantonales.js"></script>
 	    		<div class="clear">&nbsp;</div>
 	</section>
 </article><!-- #post-## -->
@@ -185,22 +185,22 @@ Je propose 3 scénarios: une comparaison gauche-droite, l'importance de l'extrê
 		<p>This week, I was made aware of a new set of maps by French ministry of Foreign Trade, called <em>cartographie de la France qui exporte</em> (map of France exports) (<a href="http://www.exporter.gouv.fr/exporter/Pages.aspx?iddoc=1821&#038;pex=1-2-40-926-1821">link</a>). Since I&#8217;m interested in the topic and that I know that French public services have killer cartographers I was eager to see what was so exciting about the first set of online maps on French exports. </p>
 <p>I was a little underwhelmed to be honest. Online here meant static pdf files, although this is a dataset that just begs to be explored and manipulated.<br />
 On top of that, those where basic choropleth maps with markers such as this one here:<br />
-<a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/largemap.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/largemap.png" alt="" title="largemap" width="626" height="631" class="size-full wp-image-662" /></a></p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/largemap.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/largemap.png" alt="" title="largemap" width="626" height="631" class="size-full wp-image-662" /></a></p>
 <p>Now this map has two problems. First, it&#8217;s a choropleth with a discrete scale, but the values of adjacent areas can vary a lot. So, if you look at this portion of the map, what can be deduced on the values? not much I&#8217;m afraid.<br />
-<a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/choropleth.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/choropleth.png" alt="" title="choropleth" width="123" height="132" class="aligncenter size-full wp-image-663" /></a></p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/choropleth.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/choropleth.png" alt="" title="choropleth" width="123" height="132" class="aligncenter size-full wp-image-663" /></a></p>
 <p>Second, it&#8217;s difficult to compare the marks on the map. Which region has the biggest? the smallest? how do two specific regions compare? with this representation, this type of question is even more difficult to answer than with a table.<br />
-<a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/marks-only.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/marks-only.png" alt="" title="marks only" width="313" height="316" class="aligncenter size-full wp-image-664" /></a></p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/marks-only.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/marks-only.png" alt="" title="marks only" width="313" height="316" class="aligncenter size-full wp-image-664" /></a></p>
 <p>Also these charts answer one partial question. So this one, here, shows which region exports most food products. But to where? and how about the imports and balance? now if one given view was the most relevant and could illustrate some important finding, it can be highlighted but here the website gives us collections of many of such maps. As a citizen I&#8217;m leaving no more informed than I was.</p>
 <p>Not being the one to criticize without proposing an alternative, I whipped out an <strong>interactive exploratory tool of France trade flows</strong>.<br />
-<a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/franceexport.html" target=”_blank”><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/treemap.png" alt="" title="treemap" width="561" height="443" class="aligncenter size-full wp-image-668" /></a><br />
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/franceexport.html" target=”_blank”><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/treemap.png" alt="" title="treemap" width="561" height="443" class="aligncenter size-full wp-image-668" /></a><br />
 (The interactive vis is too wide to conveniently fit in a blog, but clicking on the image will open it in a new tab).</p>
 <p>I don&#8217;t have access to the same dataset so I can&#8217;t show a strict equivalent. My data comes from <a href="http://comtrade.un.org/">COMTRADE</a>, the UN database of trade flows, and shows all exports and imports to France in 2009. They are not broken down by region or by type of company, but I got the flows by partner country and product category.<br />
 The idea is that one can select something on one treemap to update the other. Also, it&#8217;s possible to alternate between a categorical view (where all groups of products and continents look neatly separated) and a view of the balance, which quickly shows which products or which countries get the bulk of French trade. </p>
 <hr>
 (technical explanation follows for those interested in the code proper)<br />
-Now following last week&#8217;s <a href="http://www.jeromecukier.net/?p=426">tutorial</a>, of course it had to be done in <a href="http://www.protovis.org/">protovis</a>.<br />
+Now following last week&#8217;s <a href="http://jckr.github.io/blog/?p=426">tutorial</a>, of course it had to be done in <a href="http://www.protovis.org/">protovis</a>.<br />
 Actually it illustrates some interesting principles of working with arrays, trees, maps etc. </p>
-<p>First, I want to do as much data manipulation as possible in protovis as opposed to manually. So, my source <a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/data.js">data</a> for the treemap is stored as an array of associative arrays, which is probably the preferred form in protovis. This is no different than, for instance, <a href="http://www.jeromecukier.net/?p=534">Protovis&#8217;s barley example</a>.<br />
+<p>First, I want to do as much data manipulation as possible in protovis as opposed to manually. So, my source <a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/data.js">data</a> for the treemap is stored as an array of associative arrays, which is probably the preferred form in protovis. This is no different than, for instance, <a href="http://jckr.github.io/blog/?p=534">Protovis&#8217;s barley example</a>.<br />
 Now how do you get something of the shape &#8211;</p>
 <pre class="brush: jscript; title: ; notranslate" title="">var data=
 [{com:&quot;02&quot;,cat:0,cou:4,con:3,imp:0,exp:101421},
@@ -255,7 +255,7 @@ For the left treemap (and left bar chart) the user has selected a country. (and 
 <pre class="brush: jscript; title: ; notranslate" title="">catsByCountry = pv.flatten(myProductTree).key(&quot;cat&quot;).key(&quot;com&quot;).key(&quot;exp&quot;).array(); </pre>
 <p>Here, note that the arguments: &#8220;cat&#8221;, &#8220;com&#8221;, &#8220;exp&#8221; are completely arbitrary. But, since I&#8217;m recreating the array almost as it originally was, I might as well use the same names for the keys. </p>
 <p>So now, I have like a little subset of my original dataset, only the records of the selected country.<br />
-I can now proceed to sum exports by categories using a standard rollup method, just as <a href="http://www.jeromecukier.net/?p=502">we&#8217;ve seen here</a>. </p>
+I can now proceed to sum exports by categories using a standard rollup method, just as <a href="http://jckr.github.io/blog/?p=502">we&#8217;ve seen here</a>. </p>
 <pre class="brush: jscript; title: ; notranslate" title="">catsByCountry = pv.nest(catsByCountry).key(function(d) {return d.cat;}).rollup(rollup);</pre>
 <p>Conveniently, the rollup function that I defined earlier sums the records! and here I do need summing, not any aggregation. </p>
 <p>The problem is that the rollup() method creates an associative array, and if I need to use that in a bar chart I need a proper array! so, I use pv.values() which does just that, it creates an array out of the values of an associative array. </p>

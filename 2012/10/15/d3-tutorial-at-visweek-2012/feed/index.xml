@@ -19,7 +19,7 @@
 		<link>/2012/10/15/d3-tutorial-at-visweek-2012/#comment-446</link>
 		<dc:creator><![CDATA[Alexandre Rousseau]]></dc:creator>
 		<pubDate>Fri, 11 Jan 2013 10:50:44 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1488#comment-446</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1488#comment-446</guid>
 		<description><![CDATA[Thanks a lot for your cheat sheet. Very useful.]]></description>
 		<content:encoded><![CDATA[<p>Thanks a lot for your cheat sheet. Very useful.</p>
 ]]></content:encoded>
@@ -29,7 +29,7 @@
 		<link>/2012/10/15/d3-tutorial-at-visweek-2012/#comment-445</link>
 		<dc:creator><![CDATA[jerome]]></dc:creator>
 		<pubDate>Thu, 13 Dec 2012 16:38:06 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1488#comment-445</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1488#comment-445</guid>
 		<description><![CDATA[Hi, 
 i didn&#039;t write this one and there are a few things I find odd about this code, for instance the fill which is an attribute and which takes an rgb string as an argument. 
 if instead the fill is set as a style, and if the returned value is an RGB color object (ie d3.rgb(r,g,b)) this works just as expected with or without the transition. 
@@ -71,7 +71,7 @@ this works</p>
 		<link>/2012/10/15/d3-tutorial-at-visweek-2012/#comment-444</link>
 		<dc:creator><![CDATA[Kuan]]></dc:creator>
 		<pubDate>Fri, 07 Dec 2012 19:59:13 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1488#comment-444</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1488#comment-444</guid>
 		<description><![CDATA[Hi, J:
 Nice tutorial. I have a question about tutorial 8 transition_color in d3 tutorial at visWeek 2012.
 I wonder why all rects turn together into black or some other color rather  into varied colors when I remove transition() and duration(500)? Why can not I just directly add attr(&#039;fill&#039; function(){......return random color value here.....}) after rect appending?
