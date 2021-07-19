@@ -29,9 +29,9 @@
 		<category><![CDATA[real estate]]></category>
 		<category><![CDATA[Tableau]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=917</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=917</guid>
 		<description><![CDATA[have been announced. My entry got honorary mentions which is the best I could hope for not being based in the US! anyway, the rewards is going through the process, seeing what others have done. and learn from the process. I was pleasantly surprised to see that Agnieszka &#8211; Russian Sphinx chose a subject similar <a class="read-more" href="/2011/06/09/and-tableau-contest-results/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
-				<content:encoded><![CDATA[<p>have been <a href="http://www.tableausoftware.com/about/blog/2011/06/dozens-vizzes-shine-tableau-interactive-viz-contest-11481">announced</a>. <a href="http://www.jeromecukier.net/blog/2011/06/03/tableau-contest-2011/">My entry</a> got honorary mentions which is the best I could hope for not being based in the US! anyway, the rewards is going through the process, seeing what <a href="http://www.datadrivenconsulting.com/2011/05/the-us-has-3-years-of-oil-in-the-ground-oil-exports-imports-and-consumption/">others</a> <a href="http://vizwiz.blogspot.com/2011/06/tableau-viz-contest-support-my-entry.html">have</a> <a href="http://russiansphinx.blogspot.com/2011/05/prices-of-real-estate-by-moscow.html">done</a>. and learn from the process. </p>
+				<content:encoded><![CDATA[<p>have been <a href="http://www.tableausoftware.com/about/blog/2011/06/dozens-vizzes-shine-tableau-interactive-viz-contest-11481">announced</a>. <a href="http://jckr.github.io/blog/blog/2011/06/03/tableau-contest-2011/">My entry</a> got honorary mentions which is the best I could hope for not being based in the US! anyway, the rewards is going through the process, seeing what <a href="http://www.datadrivenconsulting.com/2011/05/the-us-has-3-years-of-oil-in-the-ground-oil-exports-imports-and-consumption/">others</a> <a href="http://vizwiz.blogspot.com/2011/06/tableau-viz-contest-support-my-entry.html">have</a> <a href="http://russiansphinx.blogspot.com/2011/05/prices-of-real-estate-by-moscow.html">done</a>. and learn from the process. </p>
 <p>I was pleasantly surprised to see that Agnieszka &#8211; Russian Sphinx chose a subject similar to mine &#8211; real estate, but in Moscow. Here&#8217;s her entry:<br />
 <script type="text/javascript" src="http://public.tableausoftware.com/javascripts/api/viz_v1.js"></script><object class="tableauViz" width="654" height="732" style="display:none;"><param name="host_url" value="http%3A%2F%2Fpublic.tableausoftware.com%2F" /><param name="name" value="Moscow_prices&#47;Dashboard1" /><param name="tabs" value="no" /><param name="toolbar" value="yes" /><param name="animate_transition" value="yes" /><param name="display_static_image" value="yes" /><param name="display_spinner" value="yes" /><param name="display_overlay" value="yes" /><param name="host_url" value="http%3A%2F%2Fpublic.tableausoftware.com%2F" /><param name="animate_transition" value="yes" /><param name="display_static_image" value="yes" /><param name="display_spinner" value="yes" /><param name="display_overlay" value="yes" /></object><noscript>Prices of real estate by Moscow Districts in April 2011 (Click district to filter, keep Shift to select more districts. Click in white space to remove filter) <br /><a href="#"><img alt="Prices of real estate by Moscow Districts in April 2011 (Click district to filter, keep Shift to select more districts. Click in white space to remove filter) " src="http:&#47;&#47;public.tableausoftware.com&#47;static&#47;images&#47;Mo&#47;Moscow_prices&#47;Dashboard1&#47;1_rss.png" height="100%" /></a></noscript>
 <div style="width:654px;height:22px;padding:0px 10px 0px 0px;color:black;font:normal 8pt verdana,helvetica,arial,sans-serif;">
@@ -44,7 +44,7 @@ Here&#8217;s my map for the record:<br />
 <div style="float:right; padding-right:8px;"><a href="http://www.tableausoftware.com/public?ref=http://public.tableausoftware.com/views/contest2011/WMap" target="_blank">Powered by Tableau</a></div>
 </div>
 <p>To create my map, I used the default mapping function of Tableau, where you declare the geographic role of two of your measures &#8211; one as latitude, one as longitude &#8211; and you can plot marks on a map, that can be zoomed, panned etc.<br />
-<a href="http://www.jeromecukier.net/wp-content/uploads/2011/06/latitude.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/06/latitude.png" alt="" title="latitude" class="aligncenter size-full wp-image-918" /></a><br />
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/06/latitude.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/06/latitude.png" alt="" title="latitude" class="aligncenter size-full wp-image-918" /></a><br />
 If one of your dimensions is geographical in nature, like a country, US state, US county name or code, Tableau can calculate latitude and longitude so you don&#8217;t have to provide them. This also works for zip codes. So, if you have a valid US address, you can extract the zip code out of that (before you put your data in Tableau) and Tableau can represent this on a map quite accurately.<br />
 In my case, I had tens of thousands of marks, which were available at a much finer level than the zip code (sometimes down to the appartment number) so I thought it would be a pity to aggregate them so. My data came with notions like neighborhood or block numbers, which is specific to the New York administration I suppose, but interesting in my context. That idea of block number sounded like the right level of aggregation for my data.<br />
 The problem is, how do I get the latitude and longitude of each of the blocks?<br />
@@ -54,7 +54,7 @@ In another view, I have a simpler map &#8211; by neighborhood. Neighborhoods are
 <p>While it can be desirable to let users interact with the map, in many cases it is not a safe option. Once you let your users unzoom and/or scrool away from the action, it is not obvious for them to get back.<br />
 So Agnieszka has used another nifty technique, that of background images.<br />
 Her map is really a static file imported with the background image function which is found in the data menu:<br />
-<a href="http://www.jeromecukier.net/wp-content/uploads/2011/06/background-image.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/06/background-image.png" alt="" title="background image" class="aligncenter size-full wp-image-919" /></a><br />
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/06/background-image.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/06/background-image.png" alt="" title="background image" class="aligncenter size-full wp-image-919" /></a><br />
 Like this, the user can really specify what to use for a map, when does it start, where does it end. The map won&#8217;t move afterwards.<br />
 However, by doing so one cannot use geographic coordinates to display marks. One has to obtain, outside of Tableau, the x and y coordinates of each mark on the screen. Then, those x and y coordinates can be made into measures, and assigned respectively to the column and row shelves of the viz. </p>
 <p>I&#8217;ll let you figure out which one is best for your next map project. Note that you can generate highly customizable map backgrounds with a service like <a href="http://www.cloudmade.com/">cloudmade</a>.</p>
@@ -76,27 +76,27 @@ However, by doing so one cannot use geographic coordinates to display marks. One
 		<category><![CDATA[trade]]></category>
 		<category><![CDATA[treemaps]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=661</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=661</guid>
 		<description><![CDATA[This week, I was made aware of a new set of maps by French ministry of Foreign Trade, called cartographie de la France qui exporte (map of France exports) (link). Since I&#8217;m interested in the topic and that I know that French public services have killer cartographers I was eager to see what was so <a class="read-more" href="/2011/02/18/la-france-qui-exporte/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[<p>This week, I was made aware of a new set of maps by French ministry of Foreign Trade, called <em>cartographie de la France qui exporte</em> (map of France exports) (<a href="http://www.exporter.gouv.fr/exporter/Pages.aspx?iddoc=1821&#038;pex=1-2-40-926-1821">link</a>). Since I&#8217;m interested in the topic and that I know that French public services have killer cartographers I was eager to see what was so exciting about the first set of online maps on French exports. </p>
 <p>I was a little underwhelmed to be honest. Online here meant static pdf files, although this is a dataset that just begs to be explored and manipulated.<br />
 On top of that, those where basic choropleth maps with markers such as this one here:<br />
-<a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/largemap.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/largemap.png" alt="" title="largemap" width="626" height="631" class="size-full wp-image-662" /></a></p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/largemap.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/largemap.png" alt="" title="largemap" width="626" height="631" class="size-full wp-image-662" /></a></p>
 <p>Now this map has two problems. First, it&#8217;s a choropleth with a discrete scale, but the values of adjacent areas can vary a lot. So, if you look at this portion of the map, what can be deduced on the values? not much I&#8217;m afraid.<br />
-<a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/choropleth.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/choropleth.png" alt="" title="choropleth" width="123" height="132" class="aligncenter size-full wp-image-663" /></a></p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/choropleth.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/choropleth.png" alt="" title="choropleth" width="123" height="132" class="aligncenter size-full wp-image-663" /></a></p>
 <p>Second, it&#8217;s difficult to compare the marks on the map. Which region has the biggest? the smallest? how do two specific regions compare? with this representation, this type of question is even more difficult to answer than with a table.<br />
-<a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/marks-only.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/marks-only.png" alt="" title="marks only" width="313" height="316" class="aligncenter size-full wp-image-664" /></a></p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/marks-only.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/marks-only.png" alt="" title="marks only" width="313" height="316" class="aligncenter size-full wp-image-664" /></a></p>
 <p>Also these charts answer one partial question. So this one, here, shows which region exports most food products. But to where? and how about the imports and balance? now if one given view was the most relevant and could illustrate some important finding, it can be highlighted but here the website gives us collections of many of such maps. As a citizen I&#8217;m leaving no more informed than I was.</p>
 <p>Not being the one to criticize without proposing an alternative, I whipped out an <strong>interactive exploratory tool of France trade flows</strong>.<br />
-<a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/franceexport.html" target=”_blank”><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/treemap.png" alt="" title="treemap" width="561" height="443" class="aligncenter size-full wp-image-668" /></a><br />
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/franceexport.html" target=”_blank”><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/treemap.png" alt="" title="treemap" width="561" height="443" class="aligncenter size-full wp-image-668" /></a><br />
 (The interactive vis is too wide to conveniently fit in a blog, but clicking on the image will open it in a new tab).</p>
 <p>I don&#8217;t have access to the same dataset so I can&#8217;t show a strict equivalent. My data comes from <a href="http://comtrade.un.org/">COMTRADE</a>, the UN database of trade flows, and shows all exports and imports to France in 2009. They are not broken down by region or by type of company, but I got the flows by partner country and product category.<br />
 The idea is that one can select something on one treemap to update the other. Also, it&#8217;s possible to alternate between a categorical view (where all groups of products and continents look neatly separated) and a view of the balance, which quickly shows which products or which countries get the bulk of French trade. </p>
 <hr>
 (technical explanation follows for those interested in the code proper)<br />
-Now following last week&#8217;s <a href="http://www.jeromecukier.net/?p=426">tutorial</a>, of course it had to be done in <a href="http://www.protovis.org/">protovis</a>.<br />
+Now following last week&#8217;s <a href="http://jckr.github.io/blog/?p=426">tutorial</a>, of course it had to be done in <a href="http://www.protovis.org/">protovis</a>.<br />
 Actually it illustrates some interesting principles of working with arrays, trees, maps etc. </p>
-<p>First, I want to do as much data manipulation as possible in protovis as opposed to manually. So, my source <a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/data.js">data</a> for the treemap is stored as an array of associative arrays, which is probably the preferred form in protovis. This is no different than, for instance, <a href="http://www.jeromecukier.net/?p=534">Protovis&#8217;s barley example</a>.<br />
+<p>First, I want to do as much data manipulation as possible in protovis as opposed to manually. So, my source <a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/data.js">data</a> for the treemap is stored as an array of associative arrays, which is probably the preferred form in protovis. This is no different than, for instance, <a href="http://jckr.github.io/blog/?p=534">Protovis&#8217;s barley example</a>.<br />
 Now how do you get something of the shape &#8211;</p>
 <pre class="brush: jscript; title: ; notranslate">var data=
 [{com:&quot;02&quot;,cat:0,cou:4,con:3,imp:0,exp:101421},
@@ -151,7 +151,7 @@ For the left treemap (and left bar chart) the user has selected a country. (and 
 <pre class="brush: jscript; title: ; notranslate">catsByCountry = pv.flatten(myProductTree).key(&quot;cat&quot;).key(&quot;com&quot;).key(&quot;exp&quot;).array(); </pre>
 <p>Here, note that the arguments: &#8220;cat&#8221;, &#8220;com&#8221;, &#8220;exp&#8221; are completely arbitrary. But, since I&#8217;m recreating the array almost as it originally was, I might as well use the same names for the keys. </p>
 <p>So now, I have like a little subset of my original dataset, only the records of the selected country.<br />
-I can now proceed to sum exports by categories using a standard rollup method, just as <a href="http://www.jeromecukier.net/?p=502">we&#8217;ve seen here</a>. </p>
+I can now proceed to sum exports by categories using a standard rollup method, just as <a href="http://jckr.github.io/blog/?p=502">we&#8217;ve seen here</a>. </p>
 <pre class="brush: jscript; title: ; notranslate">catsByCountry = pv.nest(catsByCountry).key(function(d) {return d.cat;}).rollup(rollup);</pre>
 <p>Conveniently, the rollup function that I defined earlier sums the records! and here I do need summing, not any aggregation. </p>
 <p>The problem is that the rollup() method creates an associative array, and if I need to use that in a bar chart I need a proper array! so, I use pv.values() which does just that, it creates an array out of the values of an associative array. </p>
@@ -194,12 +194,12 @@ so I can have to write things like: </p>
 		<category><![CDATA[rollup]]></category>
 		<category><![CDATA[trees]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=502</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=502</guid>
 		<description><![CDATA[Previous: array functions in javascript and protovis Reshaping complex arrays This really is what protovis data processing is all about. In today&#8217;s tutorial, I am going to refer extensively to protovis&#8217;s Becker&#8217;s Barley example. One reason for that is that it&#8217;s also used in the API documentation of the methods we are going to cover, <a class="read-more" href="/2011/02/11/working-with-data-in-protovis-part-4-of-5/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
-				<content:encoded><![CDATA[<p><a href="http://www.jeromecukier.net/?p=494">Previous: array functions in javascript and protovis</a></p>
+				<content:encoded><![CDATA[<p><a href="http://jckr.github.io/blog/?p=494">Previous: array functions in javascript and protovis</a></p>
 <h2>Reshaping complex arrays</h2>
 <p>This really is what protovis data processing is all about.<br />
-In today&#8217;s tutorial, I am going to refer extensively to protovis&#8217;s <a href="http://vis.stanford.edu/protovis/ex/barley.html">Becker&#8217;s Barley</a> example. One reason for that is that it&#8217;s also used in the <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Nest.html">API documentation of the methods</a> we are going to cover, and also because I am posting <a href="http://www.jeromecukier.net/?p=534">a line-by-line explanation of this example</a> that you can refer to.</p>
+In today&#8217;s tutorial, I am going to refer extensively to protovis&#8217;s <a href="http://vis.stanford.edu/protovis/ex/barley.html">Becker&#8217;s Barley</a> example. One reason for that is that it&#8217;s also used in the <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Nest.html">API documentation of the methods</a> we are going to cover, and also because I am posting <a href="http://jckr.github.io/blog/?p=534">a line-by-line explanation of this example</a> that you can refer to.</p>
 <p>So far we’ve seen that :</p>
 <ul>
 <li>Associative arrays are great as data elements, as their various values can be used for various attributes.<br />
@@ -230,7 +230,7 @@ An array of the shape:</p>
 </ul>
 <h3>Nesting</h3>
 <p>For this last reason, you may want to turn one flat array of associative arrays into an array of arrays of associative arrays. This process is called <strong>nesting</strong>.</p>
-<p><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/nesting.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/nesting.png" alt="" title="nesting" width="700" height="250" class="aligncenter size-full wp-image-528" /></a></p>
+<p><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/nesting.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/nesting.png" alt="" title="nesting" width="700" height="250" class="aligncenter size-full wp-image-528" /></a></p>
 <h4>Simple nesting</h4>
 <p>If you turn a <strong>single array</strong> like the one on the left-hand side to <strong>an array of arrays</strong> like on the right-hand side, you could easily do 3 smaller charts, one next to the other, by creating them inside of panels. You could have some information at this panel level (for instance the variety) and the rest at a lower level. </p>
 <p>Fortunately, there are protovis methods that can turn your flat list into a more complex array of arrays. And since protovis methods are meant to be chained, you can even go on and create arrays of arrays of arrays of arrays if needs be.<br />
@@ -241,7 +241,7 @@ To do the above, all you have to type is </p>
 <p>What this does is that it nests your <em>barley</em> array, according to the <em>variety</em> key. entries() at the end is required to obtain the array of arrays needed.</p>
 <p>Here is an example of what can be done with both kinds of data structures in just a few lines of code (which won&#8217;t include the data proper. The long, flat array is stored in the variable barley, as above).<br />
 Without nesting:<br />
-<a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/BarleyWithoutNesting.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/BarleyWithoutNesting.png" alt="" title="BarleyWithoutNesting" width="606" height="198" class="aligncenter size-full wp-image-594" /></a></p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/BarleyWithoutNesting.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/BarleyWithoutNesting.png" alt="" title="BarleyWithoutNesting" width="606" height="198" class="aligncenter size-full wp-image-594" /></a></p>
 <pre class="brush: jscript; title: ; notranslate">var vis = new pv.Panel()
     .width(600)
     .height(200)
@@ -257,7 +257,7 @@ vis.add(pv.Bar)
 vis.render();</pre>
 <p>As the pv.Bar goes through the array, there is not much it can do to structure it. We can just size the bars according to the value of yield, and color them according to another key (here the year).</p>
 <p>Now using nesting:<br />
-<a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/BarleyWithNesting2.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/BarleyWithNesting2.png" alt="" title="BarleyWithNesting2" width="711" height="160" class="aligncenter size-full wp-image-598" /></a></p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/BarleyWithNesting2.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/BarleyWithNesting2.png" alt="" title="BarleyWithNesting2" width="711" height="160" class="aligncenter size-full wp-image-598" /></a></p>
 <pre class="brush: jscript; highlight: [1,8,15]; title: ; notranslate">barley2=pv.nest(barley).key(function(d) d.variety).entries();
 barley2=pv.nest(barley).key(function(d) d.variety).entries();
 var vis = new pv.Panel()
@@ -314,8 +314,8 @@ vis.render();
 </td>
 </tr>
 <tr>
-<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/sort-unsorted.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/sort-unsorted.png" alt="" title="sort-unsorted" width="300" height="250" class="aligncenter size-full wp-image-524" /></a></td>
-<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/sort-sorted.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/sort-sorted.png" alt="" title="sort-sorted" width="300" height="250" class="aligncenter size-full wp-image-525" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/sort-unsorted.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/sort-unsorted.png" alt="" title="sort-unsorted" width="300" height="250" class="aligncenter size-full wp-image-524" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/sort-sorted.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/sort-sorted.png" alt="" title="sort-sorted" width="300" height="250" class="aligncenter size-full wp-image-525" /></a></td>
 </tr>
 </table>
 </li>
@@ -500,7 +500,7 @@ What rollup does is that it would go through each of the values that correspond 
     ]</pre>
 <p>so rollup will just look at each element of this array and apply the function.<br />
 This is what (data) in &#8220;function(data)&#8221; corresponds to.<br />
-Next, we tell protovis what to do with these elements. Here, we are interested in the average, so we take pv.mean (not pv.average, <a href="http://www.jeromecukier.net/?p=494">remember</a>?)<br />
+Next, we tell protovis what to do with these elements. Here, we are interested in the average, so we take pv.mean (not pv.average, <a href="http://jckr.github.io/blog/?p=494">remember</a>?)<br />
 However, we can&#8217;t directly compute the average of an array of associative arrays &#8211; we must tell protovis exactly what to average. This is why we use an accessor function, function(d) d.score.</p>
 <p>Of course, pv.mean used in this example can be replaced by just about any function.</p>
 <p>In the name of clarity, especially if there is only one property that can be aggregated, you can declare a function outside of the rollup() method. This is useful if you are going to aggregate your array by different dimensions:</p>
@@ -522,9 +522,9 @@ The main advantage of having a flat array is that you can nest it in a different
 <pre class="brush: jscript; light: true; title: ; notranslate">barley=pv.flatten(barley).key(&quot;variety&quot;).key(&quot;site&quot;).key(&quot;year&quot;).key(&quot;yield&quot;).array()</pre>
 <p>Finally, pv.tree &#8211; well, I haven&#8217;t seen this method used outside the <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Tree.html">documentation</a>. It&#8217;s not used in any live example, not covered by any question in the forum, and I haven&#8217;t found any trace of it in the internet. So I&#8217;d rather leave you with the explanation in the documentation which is fairly clear than come up with my own. If you find yourself in a situation like in the documentation, where you have a flat array of associative arrays, which have a property that could be interpreted as a hierarchy, then you could use this method to turn your array in something more useful to protovis.</p>
 <h3>Putting it all together</h3>
-<p>Instead of coming up with a specific new example for this section I refer you to my explanation of the <a href="http://www.jeromecukier.net/?p=534">Becker&#8217;s Barley example</a>.<br />
-On the same subject, see a comparison of how to <a href="http://www.jeromecukier.net/?p=550">re-create Becker&#8217;s Barley with protovis and Tableau</a></p>
-<p>next: <a href="http://www.jeromecukier.net/?p=623">working with layouts</a></p>
+<p>Instead of coming up with a specific new example for this section I refer you to my explanation of the <a href="http://jckr.github.io/blog/?p=534">Becker&#8217;s Barley example</a>.<br />
+On the same subject, see a comparison of how to <a href="http://jckr.github.io/blog/?p=550">re-create Becker&#8217;s Barley with protovis and Tableau</a></p>
+<p>next: <a href="http://jckr.github.io/blog/?p=623">working with layouts</a></p>
 ]]></content:encoded>
 			<wfw:commentRss>/2011/02/11/working-with-data-in-protovis-part-4-of-5/feed/</wfw:commentRss>
 		<slash:comments>5</slash:comments>

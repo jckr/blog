@@ -19,7 +19,7 @@
 		<link>/2009/12/21/plotter-a-tool-to-create-bitmap-charts-for-the-web/#comment-46</link>
 		<dc:creator><![CDATA[jerome]]></dc:creator>
 		<pubDate>Tue, 22 Dec 2009 10:48:05 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=279#comment-46</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=279#comment-46</guid>
 		<description><![CDATA[It&#039;s true that saving a chart in jpg format, especially with less than perfect quality, will smear it terribly. 
 On a couple of occasions I&#039;ve seen my charts reposted on other blogs in jpg format and the result is &lt;a href=&quot;http://www.cbc.ca/money/story/2009/11/19/oecd-increases-2010-forecast-unemployment.html&quot; rel=&quot;nofollow&quot;&gt;less than optimal&lt;/a&gt;. 
 For the vector vs raster problem, I think in all fairness it&#039;s possible to create a crisp chart out of Excel if all operations are performed in an order that make sense, for instance, by only redimensioning a vector object rather than a bitmap. But that&#039;s seldom the case, partly because some CMS resize and compress images automatically when they are posted.]]></description>
@@ -33,7 +33,7 @@ For the vector vs raster problem, I think in all fairness it&#8217;s possible to
 		<link>/2009/12/21/plotter-a-tool-to-create-bitmap-charts-for-the-web/#comment-45</link>
 		<dc:creator><![CDATA[Jon Peltier]]></dc:creator>
 		<pubDate>Tue, 22 Dec 2009 03:37:09 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=279#comment-45</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=279#comment-45</guid>
 		<description><![CDATA[1. Part of the reason the images from the appleblog site are of such poor quality is that they used the JPG format, which was designed for photographic images with continuously varying tones and shades. A chart has areas of constant color, which change abruptly to areas of different colors. Formats like GIF and PNG render sharp color changes, such as text, clearly, while JPG smears out sharp edges and text.
 
 2. Regardless of which tool you use to generate web graphics, the original source of the graphics should remain in vector format until it is finally sized to the exact size and shape that is required for its use on the web. It should not be rasterized until it is iin its final configuration.]]></description>

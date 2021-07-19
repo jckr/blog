@@ -8,7 +8,7 @@ var colors=["green","darkorange","salmon","green","navy","red","mediumblue","gre
 var myCandidat=-1;
 var trueCandidat=-1;
 
-var server="http://jeromecukier.net/stuff/vote/"
+var server="http://jckr.github.io/blog/stuff/vote/"
 
 var hasVoted=0;
 var id;

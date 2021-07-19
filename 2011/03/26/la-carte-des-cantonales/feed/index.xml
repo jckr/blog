@@ -19,7 +19,7 @@
 		<link>/2011/03/26/la-carte-des-cantonales/#comment-133</link>
 		<dc:creator><![CDATA[jerome]]></dc:creator>
 		<pubDate>Tue, 06 Sep 2011 12:38:15 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=764#comment-133</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=764#comment-133</guid>
 		<description><![CDATA[Hi Sarah. 
 I don&#039;t know of a software that could generate dorling cartograms. Coding them with protovis is not so difficult, if you have some knowledge of the library you can easily adapt existing programs such as this one with your geography (or have it done if you don&#039;t want to code it yourself, I can give you names). 
 now to do a map instead of a cartogram - with, for instance, circles of various sizes laid upon countries. For this any mapping library would do, like google maps for instance. coding is still required though but there are tutorials to walk you through that. 
@@ -37,7 +37,7 @@ hope it helps</p>
 		<link>/2011/03/26/la-carte-des-cantonales/#comment-132</link>
 		<dc:creator><![CDATA[Sarah Bachman]]></dc:creator>
 		<pubDate>Mon, 05 Sep 2011 21:21:16 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=764#comment-132</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=764#comment-132</guid>
 		<description><![CDATA[Hello Jerome, I am very happy to have found your blog. I would like to create a simple-looking map -- a contiguous cartogram, or dorling cartogram, or graduated symbol map -- showing value of exports from the San Francisco Bay Area to countries around the world. In concept, it is simple, but I am finding that the mapping software sites (for freeware downloads) quite complicated to interpret. Can you make any suggestions? Thank you. Sincerely, Sarah]]></description>
 		<content:encoded><![CDATA[<p>Hello Jerome, I am very happy to have found your blog. I would like to create a simple-looking map &#8212; a contiguous cartogram, or dorling cartogram, or graduated symbol map &#8212; showing value of exports from the San Francisco Bay Area to countries around the world. In concept, it is simple, but I am finding that the mapping software sites (for freeware downloads) quite complicated to interpret. Can you make any suggestions? Thank you. Sincerely, Sarah</p>
 ]]></content:encoded>
@@ -47,7 +47,7 @@ hope it helps</p>
 		<link>/2011/03/26/la-carte-des-cantonales/#comment-131</link>
 		<dc:creator><![CDATA[Cantonales suite et fin: duels et transferts de voix &#124; Jérôme Cukier]]></dc:creator>
 		<pubDate>Wed, 08 Jun 2011 15:20:26 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=764#comment-131</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=764#comment-131</guid>
 		<description><![CDATA[[...] 27 a eu lieu le deuxième tour des élections cantonales, dont j&#8217;ai déjà un peu parlé ici ou ici. Et qui dit second tour dit duels [...]]]></description>
 		<content:encoded><![CDATA[<p>[&#8230;] 27 a eu lieu le deuxième tour des élections cantonales, dont j&#8217;ai déjà un peu parlé ici ou ici. Et qui dit second tour dit duels [&#8230;]</p>
 ]]></content:encoded>
@@ -57,7 +57,7 @@ hope it helps</p>
 		<link>/2011/03/26/la-carte-des-cantonales/#comment-130</link>
 		<dc:creator><![CDATA[Jerome Cukier &#187; Cantonales suite et fin: duels et transferts de voix]]></dc:creator>
 		<pubDate>Fri, 08 Apr 2011 13:09:48 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=764#comment-130</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=764#comment-130</guid>
 		<description><![CDATA[[...] 27 a eu lieu le deuxième tour des élections cantonales, dont j&#8217;ai déjà un peu parlé ici ou ici. Et qui dit second tour dit duels [...]]]></description>
 		<content:encoded><![CDATA[<p>[&#8230;] 27 a eu lieu le deuxième tour des élections cantonales, dont j&#8217;ai déjà un peu parlé ici ou ici. Et qui dit second tour dit duels [&#8230;]</p>
 ]]></content:encoded>
@@ -67,7 +67,7 @@ hope it helps</p>
 		<link>/2011/03/26/la-carte-des-cantonales/#comment-129</link>
 		<dc:creator><![CDATA[Jerome Cukier &#187; Building the France Dorling cartogram]]></dc:creator>
 		<pubDate>Sun, 27 Mar 2011 12:28:37 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=764#comment-129</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=764#comment-129</guid>
 		<description><![CDATA[[...] is a follow-up to the previous post where I used a Dorling cartogram to show election results in France. So how did I come up with [...]]]></description>
 		<content:encoded><![CDATA[<p>[&#8230;] is a follow-up to the previous post where I used a Dorling cartogram to show election results in France. So how did I come up with [&#8230;]</p>
 ]]></content:encoded>

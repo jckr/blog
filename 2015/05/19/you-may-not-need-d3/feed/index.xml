@@ -19,7 +19,7 @@
 		<link>/2015/05/19/you-may-not-need-d3/#comment-554</link>
 		<dc:creator><![CDATA[saravna]]></dc:creator>
 		<pubDate>Thu, 08 Sep 2016 04:46:51 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1664#comment-554</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1664#comment-554</guid>
 		<description><![CDATA[such a nice post!!!!]]></description>
 		<content:encoded><![CDATA[<p>such a nice post!!!!</p>
 ]]></content:encoded>
@@ -29,7 +29,7 @@
 		<link>/2015/05/19/you-may-not-need-d3/#comment-553</link>
 		<dc:creator><![CDATA[Richard]]></dc:creator>
 		<pubDate>Thu, 04 Aug 2016 04:53:09 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1664#comment-553</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1664#comment-553</guid>
 		<description><![CDATA[It is not clear to me that D3 uses requestAnimationFrames at all. I see it being set. But, in following the path of the calls it seem to get lost (or I get lost). I half think it&#039;s still using the timerQueue. There may be a difference between v3 and v4 however. But, I recall with D3 filling the timer queue with new elements entering and leaving from fast data streams coming into the browser. It was easy to put the queue into a timer override, where the javascript spends all of its time emptying the queue and continues long after the program stops updating data. I was thinking of putting draw states into frame buckets, with as little computation used to refresh states (e.g. precomputed tweens, etc.) It seems that exactly time sliced frames would run out of time without paying to much attention to unscheduled data, perhaps ignoring some states that it passes by. Anybody have thoughts on this?]]></description>
 		<content:encoded><![CDATA[<p>It is not clear to me that D3 uses requestAnimationFrames at all. I see it being set. But, in following the path of the calls it seem to get lost (or I get lost). I half think it&#8217;s still using the timerQueue. There may be a difference between v3 and v4 however. But, I recall with D3 filling the timer queue with new elements entering and leaving from fast data streams coming into the browser. It was easy to put the queue into a timer override, where the javascript spends all of its time emptying the queue and continues long after the program stops updating data. I was thinking of putting draw states into frame buckets, with as little computation used to refresh states (e.g. precomputed tweens, etc.) It seems that exactly time sliced frames would run out of time without paying to much attention to unscheduled data, perhaps ignoring some states that it passes by. Anybody have thoughts on this?</p>
 ]]></content:encoded>
@@ -39,7 +39,7 @@
 		<link>/2015/05/19/you-may-not-need-d3/#comment-552</link>
 		<dc:creator><![CDATA[vzR]]></dc:creator>
 		<pubDate>Mon, 25 Jul 2016 17:12:20 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1664#comment-552</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1664#comment-552</guid>
 		<description><![CDATA[Thanks for a great commentary, it&#039;s a great idea to want to know what&#039;s happening to the code you&#039;re use, and especially how it works. For me I would be very interested in knowing how the d3 source code operates. Often the callstack consists of functions that are very weird and tough to understand (with names like N or E and variables like a, b, t); I gave up trying to understand how the source code works but i&#039;d jump on any resource that can help clarify how things are moving behind the scenes.]]></description>
 		<content:encoded><![CDATA[<p>Thanks for a great commentary, it&#8217;s a great idea to want to know what&#8217;s happening to the code you&#8217;re use, and especially how it works. For me I would be very interested in knowing how the d3 source code operates. Often the callstack consists of functions that are very weird and tough to understand (with names like N or E and variables like a, b, t); I gave up trying to understand how the source code works but i&#8217;d jump on any resource that can help clarify how things are moving behind the scenes.</p>
 ]]></content:encoded>
@@ -49,7 +49,7 @@
 		<link>/2015/05/19/you-may-not-need-d3/#comment-551</link>
 		<dc:creator><![CDATA[kae99]]></dc:creator>
 		<pubDate>Tue, 21 Jun 2016 11:26:53 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1664#comment-551</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1664#comment-551</guid>
 		<description><![CDATA[Very good article about D3 and vanilla JS. Really clear, very detailed. Even being extremely long, I read every word of it and it was a pleasure to read.]]></description>
 		<content:encoded><![CDATA[<p>Very good article about D3 and vanilla JS. Really clear, very detailed. Even being extremely long, I read every word of it and it was a pleasure to read.</p>
 ]]></content:encoded>
@@ -59,7 +59,7 @@
 		<link>/2015/05/19/you-may-not-need-d3/#comment-550</link>
 		<dc:creator><![CDATA[Mariprasad]]></dc:creator>
 		<pubDate>Wed, 23 Mar 2016 02:56:09 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1664#comment-550</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1664#comment-550</guid>
 		<description><![CDATA[Love the way you think! this helped me think broader! Thanks]]></description>
 		<content:encoded><![CDATA[<p>Love the way you think! this helped me think broader! Thanks</p>
 ]]></content:encoded>
@@ -69,9 +69,9 @@
 		<link>/2015/05/19/you-may-not-need-d3/#comment-549</link>
 		<dc:creator><![CDATA[2 – You may not need d3 - Exploding Ads]]></dc:creator>
 		<pubDate>Sun, 01 Nov 2015 13:17:15 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1664#comment-549</guid>
-		<description><![CDATA[[&#8230;] Read more here: http://www.jeromecukier.net/blog/2015/05/19/you-may-not-need-d3/ [&#8230;]]]></description>
-		<content:encoded><![CDATA[<p>[&#8230;] Read more here: <a href="http://www.jeromecukier.net/blog/2015/05/19/you-may-not-need-d3/" rel="nofollow">http://www.jeromecukier.net/blog/2015/05/19/you-may-not-need-d3/</a> [&#8230;]</p>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1664#comment-549</guid>
+		<description><![CDATA[[&#8230;] Read more here: http://jckr.github.io/blog/blog/2015/05/19/you-may-not-need-d3/ [&#8230;]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] Read more here: <a href="http://jckr.github.io/blog/blog/2015/05/19/you-may-not-need-d3/" rel="nofollow">http://jckr.github.io/blog/blog/2015/05/19/you-may-not-need-d3/</a> [&#8230;]</p>
 ]]></content:encoded>
 	</item>
 	<item>
@@ -79,7 +79,7 @@
 		<link>/2015/05/19/you-may-not-need-d3/#comment-548</link>
 		<dc:creator><![CDATA[em talukder (@terminally_em)]]></dc:creator>
 		<pubDate>Wed, 21 Oct 2015 20:34:50 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1664#comment-548</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1664#comment-548</guid>
 		<description><![CDATA[Agree with it all. Understanding and stepping through the abstractions is important to debugging and optimizing code, while building a better library. Also, it gives you the understanding needed to make different libraries and frameworks play nice together.]]></description>
 		<content:encoded><![CDATA[<p>Agree with it all. Understanding and stepping through the abstractions is important to debugging and optimizing code, while building a better library. Also, it gives you the understanding needed to make different libraries and frameworks play nice together.</p>
 ]]></content:encoded>
@@ -89,7 +89,7 @@
 		<link>/2015/05/19/you-may-not-need-d3/#comment-546</link>
 		<dc:creator><![CDATA[Chris]]></dc:creator>
 		<pubDate>Sat, 23 May 2015 09:58:32 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1664#comment-546</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1664#comment-546</guid>
 		<description><![CDATA[Nice article, I like the idea of first understanding what&#039;s going on before using certain tools. I think the same situation applies to many tools, too often you read &quot;no coding experience required&quot;... like that, it will be extremely hard to come up with new concepts and people will be heavily depended on libraries or tools.]]></description>
 		<content:encoded><![CDATA[<p>Nice article, I like the idea of first understanding what&#8217;s going on before using certain tools. I think the same situation applies to many tools, too often you read &#8220;no coding experience required&#8221;&#8230; like that, it will be extremely hard to come up with new concepts and people will be heavily depended on libraries or tools.</p>
 ]]></content:encoded>

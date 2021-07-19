@@ -120,14 +120,14 @@ img.emoji {
 Here&#8217;s a size-by-size comparison of the results:</p>
 <table>
 <tr>
-<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/protovisBarley.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/protovisBarley.png" alt="" title="protovisBarley" width="350" height="830" class="aligncenter size-full wp-image-551" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/protovisBarley.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/protovisBarley.png" alt="" title="protovisBarley" width="350" height="830" class="aligncenter size-full wp-image-551" /></a></td>
 <td><script type="text/javascript" src="http://public.tableausoftware.com/javascripts/api/viz_v1.js"></script><object class="tableauViz" width="356" height="901" style="display:none;"><param name="name" value="barley/Dashboard1" /><param name="toolbar" value="no" /><param name="tabs" value="no" /></object><noscript>Dashboard 1 <br /><a href="#"><img alt="Dashboard 1 " src="http://public.tableausoftware.com/static/images/ba/barley/Dashboard1/1_rss.png" height="100%" /></a></noscript></td>
 </tr>
 </table>
 <h2>How it&#8217;s done in Protovis</h2>
 <p>In protovis, the flat file is nested several times, so that its various elements can be called in a hierarchy from series of dots per variety, to panel per sites to a grander panel. Legend and ticks are added by hand for a perfect finish. Still, some careful planning is required to prepare the data file and to adjust the various elements (choice of colors, sizes, etc.)</p>
 <h2>How it&#8217;s done in Tableau</h2>
-<p><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/tableauBarley.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/tableauBarley.png" alt="" title="tableauBarley" width="665" height="497" class="aligncenter size-full wp-image-554" /></a><br />
+<p><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/tableauBarley.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/tableauBarley.png" alt="" title="tableauBarley" width="665" height="497" class="aligncenter size-full wp-image-554" /></a><br />
 The data file, unsurprisingly, has 4 dimensions: site, variety, year and yield. In tableau terms, yield is a measure (a numerical dimension) while the other 3 are categorical dimensions. With a few clicks, it is possible to get a result which is similar to the original vis in Protovis. We assign yield to column (horizontal attribute), site and variety to row in that order. We also untick aggregate measures in Analysis, so we get little circles and not big bars. Here, I&#8217;ve manually sorted the sites and the varieties. </p>
 <h2>Conclusion</h2>
 <p>It is much, much easier to achieve a similar result with Tableau, however using protovis provides a finer control. </p>

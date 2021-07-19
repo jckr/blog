@@ -19,7 +19,7 @@
 		<link>/2011/03/15/more-fun-with-arrays-in-protovis/#comment-121</link>
 		<dc:creator><![CDATA[dotnetCarpenter]]></dc:creator>
 		<pubDate>Sat, 03 Nov 2012 12:51:54 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=699#comment-121</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=699#comment-121</guid>
 		<description><![CDATA[Regarding Visualizing arrays, you can always use console.dir to get both Firebug and Chrome Dev tools (and IE with the console open, Opera DragonFly and Safari) to output all children of a given object. It&#039;s also formatted more nicely than JSON.stringify.
 Ei. console.dir(barley)]]></description>
 		<content:encoded><![CDATA[<p>Regarding Visualizing arrays, you can always use console.dir to get both Firebug and Chrome Dev tools (and IE with the console open, Opera DragonFly and Safari) to output all children of a given object. It&#8217;s also formatted more nicely than JSON.stringify.<br />

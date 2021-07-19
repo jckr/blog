@@ -19,7 +19,7 @@
 		<link>/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-312</link>
 		<dc:creator><![CDATA[Carlos Ayres]]></dc:creator>
 		<pubDate>Tue, 01 Nov 2016 10:04:23 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1246#comment-312</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1246#comment-312</guid>
 		<description><![CDATA[Yes, an old post, but still excelent. Thanks for sharing]]></description>
 		<content:encoded><![CDATA[<p>Yes, an old post, but still excelent. Thanks for sharing</p>
 ]]></content:encoded>
@@ -29,7 +29,7 @@
 		<link>/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-311</link>
 		<dc:creator><![CDATA[rookalkar]]></dc:creator>
 		<pubDate>Fri, 05 Aug 2016 12:07:16 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1246#comment-311</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1246#comment-311</guid>
 		<description><![CDATA[Really helpful tutorial. Thanks!]]></description>
 		<content:encoded><![CDATA[<p>Really helpful tutorial. Thanks!</p>
 ]]></content:encoded>
@@ -39,7 +39,7 @@
 		<link>/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-310</link>
 		<dc:creator><![CDATA[Mohammad Alshafey]]></dc:creator>
 		<pubDate>Sat, 28 May 2016 02:03:09 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1246#comment-310</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1246#comment-310</guid>
 		<description><![CDATA[Many tutorials about how to use json or csv with d3.json or d3.csv, but the simplest idea of using an array or data object is still a mystery...
 
 For simple applications, updating a json or csv file dynamically is a nightmare. Being able to load an object with the needed data dynamically should be simple, darn it!]]></description>
@@ -52,7 +52,7 @@ For simple applications, updating a json or csv file dynamically is a nightmare.
 		<link>/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-305</link>
 		<dc:creator><![CDATA[You may not need d3 &#124; Jerome Cukier]]></dc:creator>
 		<pubDate>Tue, 19 May 2015 21:16:27 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1246#comment-305</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1246#comment-305</guid>
 		<description><![CDATA[[&#8230;] is the d3.nest function, which can transform an array of objects into a nested object. (I wrote this article about them).  Underscore has something similar. While you can definitely getting a dataset of any [&#8230;]]]></description>
 		<content:encoded><![CDATA[<p>[&#8230;] is the d3.nest function, which can transform an array of objects into a nested object. (I wrote this article about them).  Underscore has something similar. While you can definitely getting a dataset of any [&#8230;]</p>
 ]]></content:encoded>
@@ -62,9 +62,9 @@ For simple applications, updating a json or csv file dynamically is a nightmare.
 		<link>/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-304</link>
 		<dc:creator><![CDATA[Resources for using multiple graphs in D3.js, from #knightD3 teachers / students &#124; Drawing the Data]]></dc:creator>
 		<pubDate>Thu, 16 Apr 2015 06:34:27 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1246#comment-304</guid>
-		<description><![CDATA[[&#8230;] http://www.jeromecukier.net/blog/2012/05/28/manipulating-data-like-a-boss-with-d3/ [&#8230;]]]></description>
-		<content:encoded><![CDATA[<p>[&#8230;] <a href="http://www.jeromecukier.net/blog/2012/05/28/manipulating-data-like-a-boss-with-d3/" rel="nofollow">http://www.jeromecukier.net/blog/2012/05/28/manipulating-data-like-a-boss-with-d3/</a> [&#8230;]</p>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1246#comment-304</guid>
+		<description><![CDATA[[&#8230;] http://jckr.github.io/blog/blog/2012/05/28/manipulating-data-like-a-boss-with-d3/ [&#8230;]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] <a href="http://jckr.github.io/blog/blog/2012/05/28/manipulating-data-like-a-boss-with-d3/" rel="nofollow">http://jckr.github.io/blog/blog/2012/05/28/manipulating-data-like-a-boss-with-d3/</a> [&#8230;]</p>
 ]]></content:encoded>
 	</item>
 	<item>
@@ -72,7 +72,7 @@ For simple applications, updating a json or csv file dynamically is a nightmare.
 		<link>/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-297</link>
 		<dc:creator><![CDATA[Steve Bennett]]></dc:creator>
 		<pubDate>Tue, 21 Jan 2014 06:42:04 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1246#comment-297</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1246#comment-297</guid>
 		<description><![CDATA[Hey, thanks for the tutorial. I was a bit put off by the 3 caveats, but they&#039;re actually much more minor than you make them sound:
 
 1. A really easy way to make something run on a webserver is using site44 - host the files from your dropbox.
@@ -89,7 +89,7 @@ For simple applications, updating a json or csv file dynamically is a nightmare.
 		<link>/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-296</link>
 		<dc:creator><![CDATA[Emesh]]></dc:creator>
 		<pubDate>Wed, 04 Dec 2013 23:34:02 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1246#comment-296</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1246#comment-296</guid>
 		<description><![CDATA[Hi Jerome,
 I am very new to D3.js, currently i was working on a school project using d3  and json. Your tutorial was very helpful so i decide to implement it in my project  since it the nested data its much more similar to mine even though mine is json file  . at the moment  it groups the data correctly unfortunately the individual data which is represented by the circle faille to work. i was wondering what went wrong, I really appreciate it if you can take a look at it.
 here is the link to the project    (https://github.com/emesh/IPU-Zabbix-D3)  
@@ -105,7 +105,7 @@ Thanks in advance!!</p>
 		<link>/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-295</link>
 		<dc:creator><![CDATA[jerome]]></dc:creator>
 		<pubDate>Tue, 19 Nov 2013 15:20:11 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1246#comment-295</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1246#comment-295</guid>
 		<description><![CDATA[well, the name of the attributes would come from your data file. so this assumes that you know your data file. 
 that being said, for any element of the array, you can do d3.keys() which will return the list of properties of that element. ie d3.keys(csv[0]).]]></description>
 		<content:encoded><![CDATA[<p>well, the name of the attributes would come from your data file. so this assumes that you know your data file.<br />
@@ -117,7 +117,7 @@ that being said, for any element of the array, you can do d3.keys() which will r
 		<link>/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-294</link>
 		<dc:creator><![CDATA[jerome]]></dc:creator>
 		<pubDate>Tue, 19 Nov 2013 15:15:10 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1246#comment-294</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1246#comment-294</guid>
 		<description><![CDATA[i can&#039;t be definitive without seeing your data file but mostly, do you define your line function somewhere?]]></description>
 		<content:encoded><![CDATA[<p>i can&#8217;t be definitive without seeing your data file but mostly, do you define your line function somewhere?</p>
 ]]></content:encoded>
@@ -127,7 +127,7 @@ that being said, for any element of the array, you can do d3.keys() which will r
 		<link>/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-293</link>
 		<dc:creator><![CDATA[maadso]]></dc:creator>
 		<pubDate>Fri, 15 Nov 2013 18:23:36 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1246#comment-293</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1246#comment-293</guid>
 		<description><![CDATA[Hi Jerome, 
 
 Great tutorial, this was super helpful for my entrance into d3 with csvs!  I&#039;m trying to make a line chart with date as the x-axis, sum of orders as the y-axis, and a line/color for each of my three stores.  My dataset has a row for each order, so I need to sum the order by date and store: 

@@ -19,7 +19,7 @@
 		<link>/2011/08/08/from-protovis-to-d3/#comment-163</link>
 		<dc:creator><![CDATA[jerome]]></dc:creator>
 		<pubDate>Mon, 08 Aug 2011 18:59:54 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=995#comment-163</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=995#comment-163</guid>
 		<description><![CDATA[Hi, actually what I meant is that in protovis, to set height, you need to use the .height() method, to set width, you need to use the .width method... all of which are distinct.
 However, with d3, all such attributes are set with the same method, .attr() - be this height, width, fill, etc.]]></description>
 		<content:encoded><![CDATA[<p>Hi, actually what I meant is that in protovis, to set height, you need to use the .height() method, to set width, you need to use the .width method&#8230; all of which are distinct.<br />
@@ -31,7 +31,7 @@ However, with d3, all such attributes are set with the same method, .attr() &#82
 		<link>/2011/08/08/from-protovis-to-d3/#comment-162</link>
 		<dc:creator><![CDATA[kerry]]></dc:creator>
 		<pubDate>Mon, 08 Aug 2011 16:08:29 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=995#comment-162</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=995#comment-162</guid>
 		<description><![CDATA[Where you have &quot;In protovis, it is inherently&quot; I think you mean &quot;In D3...&quot;]]></description>
 		<content:encoded><![CDATA[<p>Where you have &#8220;In protovis, it is inherently&#8221; I think you mean &#8220;In D3&#8230;&#8221;</p>
 ]]></content:encoded>

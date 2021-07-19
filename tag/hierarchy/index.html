@@ -115,10 +115,10 @@ img.emoji {
     </header>
 	<section class="post-content">
 
-		<p><a href="http://www.jeromecukier.net/?p=494">Previous: array functions in javascript and protovis</a></p>
+		<p><a href="http://jckr.github.io/blog/?p=494">Previous: array functions in javascript and protovis</a></p>
 <h2>Reshaping complex arrays</h2>
 <p>This really is what protovis data processing is all about.<br />
-In today&#8217;s tutorial, I am going to refer extensively to protovis&#8217;s <a href="http://vis.stanford.edu/protovis/ex/barley.html">Becker&#8217;s Barley</a> example. One reason for that is that it&#8217;s also used in the <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Nest.html">API documentation of the methods</a> we are going to cover, and also because I am posting <a href="http://www.jeromecukier.net/?p=534">a line-by-line explanation of this example</a> that you can refer to.</p>
+In today&#8217;s tutorial, I am going to refer extensively to protovis&#8217;s <a href="http://vis.stanford.edu/protovis/ex/barley.html">Becker&#8217;s Barley</a> example. One reason for that is that it&#8217;s also used in the <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Nest.html">API documentation of the methods</a> we are going to cover, and also because I am posting <a href="http://jckr.github.io/blog/?p=534">a line-by-line explanation of this example</a> that you can refer to.</p>
 <p>So far we’ve seen that :</p>
 <ul>
 <li>Associative arrays are great as data elements, as their various values can be used for various attributes.<br />
@@ -149,7 +149,7 @@ An array of the shape:</p>
 </ul>
 <h3>Nesting</h3>
 <p>For this last reason, you may want to turn one flat array of associative arrays into an array of arrays of associative arrays. This process is called <strong>nesting</strong>.</p>
-<p><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/nesting.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/nesting.png" alt="" title="nesting" width="700" height="250" class="aligncenter size-full wp-image-528" /></a></p>
+<p><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/nesting.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/nesting.png" alt="" title="nesting" width="700" height="250" class="aligncenter size-full wp-image-528" /></a></p>
 <h4>Simple nesting</h4>
 <p>If you turn a <strong>single array</strong> like the one on the left-hand side to <strong>an array of arrays</strong> like on the right-hand side, you could easily do 3 smaller charts, one next to the other, by creating them inside of panels. You could have some information at this panel level (for instance the variety) and the rest at a lower level. </p>
 <p>Fortunately, there are protovis methods that can turn your flat list into a more complex array of arrays. And since protovis methods are meant to be chained, you can even go on and create arrays of arrays of arrays of arrays if needs be.<br />
@@ -160,7 +160,7 @@ To do the above, all you have to type is </p>
 <p>What this does is that it nests your <em>barley</em> array, according to the <em>variety</em> key. entries() at the end is required to obtain the array of arrays needed.</p>
 <p>Here is an example of what can be done with both kinds of data structures in just a few lines of code (which won&#8217;t include the data proper. The long, flat array is stored in the variable barley, as above).<br />
 Without nesting:<br />
-<a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/BarleyWithoutNesting.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/BarleyWithoutNesting.png" alt="" title="BarleyWithoutNesting" width="606" height="198" class="aligncenter size-full wp-image-594" /></a></p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/BarleyWithoutNesting.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/BarleyWithoutNesting.png" alt="" title="BarleyWithoutNesting" width="606" height="198" class="aligncenter size-full wp-image-594" /></a></p>
 <pre class="brush: jscript; title: ; notranslate" title="">var vis = new pv.Panel()
     .width(600)
     .height(200)
@@ -176,7 +176,7 @@ vis.add(pv.Bar)
 vis.render();</pre>
 <p>As the pv.Bar goes through the array, there is not much it can do to structure it. We can just size the bars according to the value of yield, and color them according to another key (here the year).</p>
 <p>Now using nesting:<br />
-<a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/BarleyWithNesting2.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/BarleyWithNesting2.png" alt="" title="BarleyWithNesting2" width="711" height="160" class="aligncenter size-full wp-image-598" /></a></p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/BarleyWithNesting2.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/BarleyWithNesting2.png" alt="" title="BarleyWithNesting2" width="711" height="160" class="aligncenter size-full wp-image-598" /></a></p>
 <pre class="brush: jscript; highlight: [1,8,15]; title: ; notranslate" title="">barley2=pv.nest(barley).key(function(d) d.variety).entries();
 barley2=pv.nest(barley).key(function(d) d.variety).entries();
 var vis = new pv.Panel()
@@ -233,8 +233,8 @@ vis.render();
 </td>
 </tr>
 <tr>
-<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/sort-unsorted.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/sort-unsorted.png" alt="" title="sort-unsorted" width="300" height="250" class="aligncenter size-full wp-image-524" /></a></td>
-<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/sort-sorted.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/sort-sorted.png" alt="" title="sort-sorted" width="300" height="250" class="aligncenter size-full wp-image-525" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/sort-unsorted.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/sort-unsorted.png" alt="" title="sort-unsorted" width="300" height="250" class="aligncenter size-full wp-image-524" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/sort-sorted.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/sort-sorted.png" alt="" title="sort-sorted" width="300" height="250" class="aligncenter size-full wp-image-525" /></a></td>
 </tr>
 </table>
 </li>
@@ -419,7 +419,7 @@ What rollup does is that it would go through each of the values that correspond 
     ]</pre>
 <p>so rollup will just look at each element of this array and apply the function.<br />
 This is what (data) in &#8220;function(data)&#8221; corresponds to.<br />
-Next, we tell protovis what to do with these elements. Here, we are interested in the average, so we take pv.mean (not pv.average, <a href="http://www.jeromecukier.net/?p=494">remember</a>?)<br />
+Next, we tell protovis what to do with these elements. Here, we are interested in the average, so we take pv.mean (not pv.average, <a href="http://jckr.github.io/blog/?p=494">remember</a>?)<br />
 However, we can&#8217;t directly compute the average of an array of associative arrays &#8211; we must tell protovis exactly what to average. This is why we use an accessor function, function(d) d.score.</p>
 <p>Of course, pv.mean used in this example can be replaced by just about any function.</p>
 <p>In the name of clarity, especially if there is only one property that can be aggregated, you can declare a function outside of the rollup() method. This is useful if you are going to aggregate your array by different dimensions:</p>
@@ -441,9 +441,9 @@ The main advantage of having a flat array is that you can nest it in a different
 <pre class="brush: jscript; light: true; title: ; notranslate" title="">barley=pv.flatten(barley).key(&quot;variety&quot;).key(&quot;site&quot;).key(&quot;year&quot;).key(&quot;yield&quot;).array()</pre>
 <p>Finally, pv.tree &#8211; well, I haven&#8217;t seen this method used outside the <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Tree.html">documentation</a>. It&#8217;s not used in any live example, not covered by any question in the forum, and I haven&#8217;t found any trace of it in the internet. So I&#8217;d rather leave you with the explanation in the documentation which is fairly clear than come up with my own. If you find yourself in a situation like in the documentation, where you have a flat array of associative arrays, which have a property that could be interpreted as a hierarchy, then you could use this method to turn your array in something more useful to protovis.</p>
 <h3>Putting it all together</h3>
-<p>Instead of coming up with a specific new example for this section I refer you to my explanation of the <a href="http://www.jeromecukier.net/?p=534">Becker&#8217;s Barley example</a>.<br />
-On the same subject, see a comparison of how to <a href="http://www.jeromecukier.net/?p=550">re-create Becker&#8217;s Barley with protovis and Tableau</a></p>
-<p>next: <a href="http://www.jeromecukier.net/?p=623">working with layouts</a></p>
+<p>Instead of coming up with a specific new example for this section I refer you to my explanation of the <a href="http://jckr.github.io/blog/?p=534">Becker&#8217;s Barley example</a>.<br />
+On the same subject, see a comparison of how to <a href="http://jckr.github.io/blog/?p=550">re-create Becker&#8217;s Barley with protovis and Tableau</a></p>
+<p>next: <a href="http://jckr.github.io/blog/?p=623">working with layouts</a></p>
 	    		<div class="clear">&nbsp;</div>
 	</section>
 </article><!-- #post-## -->
@@ -458,7 +458,7 @@ On the same subject, see a comparison of how to <a href="http://www.jeromecukier
     </header>
 	<section class="post-content">
 
-		<p>Previous post: <a href="http://www.jeromecukier.net/?p=429">simple arrays</a></p>
+		<p>Previous post: <a href="http://jckr.github.io/blog/?p=429">simple arrays</a></p>
 <h2>Multi-dimensional arrays, associative arrays and protovis</h2>
 <p>Even for a simple chart, chances are that you’ll have more than a single series of numbers to represent. For instance, you could have labels to describe what they mean, several series, and so on and so forth.<br />
 So, let’s say we want to add these labels to our original examples, so we know what those bars represent.</p>
@@ -483,7 +483,7 @@ vis.add(pv.Bar)
 vis.render();
 </pre>
 </td>
-<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/categories.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/categories.png" alt="" title="categories" width="144" height="135" class="aligncenter size-full wp-image-483" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/categories.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/categories.png" alt="" title="categories" width="144" height="135" class="aligncenter size-full wp-image-483" /></a></td>
 </tr>
 </tbody>
 </table>
@@ -537,7 +537,7 @@ var bar = vis.add(pv.Bar)
 
 vis.render();</pre>
 </td>
-<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/hierarchy.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/hierarchy.png" alt="" title="hierarchy" width="220" height="170" class="aligncenter size-full wp-image-485" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/hierarchy.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/hierarchy.png" alt="" title="hierarchy" width="220" height="170" class="aligncenter size-full wp-image-485" /></a></td>
 </tr>
 </table>
 <p>The bar object is considered to be the child of vis, who is its parent.</br><br />
@@ -555,7 +555,7 @@ var bar = vis.add(pv.Bar)
   .anchor(&quot;top&quot;).add(pv.Label)
 vis.render();</pre>
 <td>
-<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/part3.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/part3.png" alt="" title="part3" width="154" height="154" class="aligncenter size-full wp-image-487" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/part3.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/part3.png" alt="" title="part3" width="154" height="154" class="aligncenter size-full wp-image-487" /></a></td>
 </tr>
 </table>
 <p>Here, I didn’t specify a data or a text value for the labels I added. They just took the value of its parent element – the marks of the pv.Bar object.<br />
@@ -572,7 +572,7 @@ vis.add(pv.Panel)
   .anchor(&quot;top&quot;).add(pv.Label)
 vis.render();</pre>
 </td>
-<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/part4.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/part4.png" alt="" title="part4" width="154" height="154" class="aligncenter size-full wp-image-488" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/part4.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/part4.png" alt="" title="part4" width="154" height="154" class="aligncenter size-full wp-image-488" /></a></td>
 </tr>
 </table>
 <p>Here, I’m adding panels, then a bar in each panel.<br />
@@ -595,7 +595,7 @@ vis.add(pv.Panel)
 vis.render();
 </pre>
 </td>
-<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/part4.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/part4.png" alt="" title="part4" width="154" height="154" class="aligncenter size-full wp-image-488" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/part4.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/part4.png" alt="" title="part4" width="154" height="154" class="aligncenter size-full wp-image-488" /></a></td>
 </tr>
 </table>
 <p>Well, the output is exactly the same, but how I obtained the data is different. Instead of getting the data using the standard accessor function, I passed two arguments: function(a, b).<br />
@@ -664,8 +664,8 @@ and c is the data value of the parent of the parent of the row, the square &#821
 The square number can be obtained by this.parent.parent.index.</p>
 <p>Finally, we add the numbers in large transparent gray digits on top of the squares.</p>
 <p>Here is the result:<br />
-<a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/squarePies.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/squarePies.png" alt="" title="squarePies" width="660" height="160" class="aligncenter size-full wp-image-559" /></a></p>
-<p>Next: <a href="http://www.jeromecukier.net/?p=49">Javascript and protovis array functions</a></p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/squarePies.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/squarePies.png" alt="" title="squarePies" width="660" height="160" class="aligncenter size-full wp-image-559" /></a></p>
+<p>Next: <a href="http://jckr.github.io/blog/?p=49">Javascript and protovis array functions</a></p>
 	    		<div class="clear">&nbsp;</div>
 	</section>
 </article><!-- #post-## -->
