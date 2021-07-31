@@ -30,7 +30,7 @@
 				<content:encoded><![CDATA[<p>This is the 7th and last post in my <a href="/2016/08/09/visualization-with-react/">Visualization with React</a> series. Previous post: <a href="/2016/08/17/creating-a-react-visualization-web-app/">Creating a React visualization web app</a></p>
 <p>We can finally take the little wheels off and create a real React app.<br />
 That&#8217;s what we&#8217;ll make:<br />
-<img src="http://jckr.github.io/blog/assets/visualization-with-react/react-weather-app" alt="App screenshot" /><br />
+<img src="https://jckr.github.io/blog/assets/visualization-with-react/react-weather-app" alt="App screenshot" /><br />
 You can <a href="http://jckr.github.io/blog/projects/react-weather/">try the app for yourself here</a>. The code is available on <a href="https://github.com/jckr/react-weather">github</a>. </p>
 <p>This time, instead of loading data from a paltry CSV file, we&#8217;ll go live and hit the <a href="http://openweathermap.org/">openweathermap</a> API and get live weather data.</p>
 <p>The app may be more complex than anything we&#8217;ve done before, but it&#8217;s really more of the same, so I&#8217;ll be probably quicker. </p>
@@ -338,7 +338,7 @@ Our visualization team is also behind three amazing open source libraries which 
 		<description><![CDATA[This is the 6th post in my Visualization with React series. Previous post: Beyond rendering Playing with codepen is fun, but chances are that you have other ambitions for your visualization projects. In the real world, well, in my day job at least, React is used to create web apps. So, in that last part, <a class="read-more" href="/2016/08/17/creating-a-react-visualization-web-app/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[<p>This is the 6th post in my <a href="/2016/08/09/visualization-with-react/">Visualization with React</a> series. Previous post: <a href="/2016/08/13/beyond-rendering/">Beyond rendering</a></p>
 <p>Playing with codepen is fun, but chances are that you have other ambitions for your visualization projects. In the real world, well, in my day job at least, React is used to create web apps. So, in that last part, we&#8217;re going to create our own web app, load some real data, and use some existing modules to visualize it like pros! In this article, we are going to build this:<br />
-<img src="http://jckr.github.io/blog/assets/visualization-with-react/example-app-screenshot.png" alt="" /><br />
+<img src="https://jckr.github.io/blog/assets/visualization-with-react/example-app-screenshot.png" alt="" /><br />
 You can try a demo of the app at <a href="https://jckr.github.io/example-react-app/">https://jckr.github.io/example-react-app/</a>.<br />
 All the code is at <a href="https://github.com/jckr/example-react-app">https://github.com/jckr/example-react-app</a>.</p>
 <p>What&#8217;s the difference between a web app and a web page you may ask? Well, a web page is an html document with some links to scripts or some inline javascript. A web app is a comprehensive system of code files working together, including a server. All of these files are transformed via a build system, which creates a compiled version that runs on the browser. Such transformations can include JSX support, or supporting ES6/ES7 syntax. Your work can be split in many, easy to read, easy to maintain source files, but your browser will just read one single file written in a version of Javascript it can understand. </p>
@@ -346,13 +346,13 @@ All the code is at <a href="https://github.com/jckr/example-react-app">https://g
 Facebook recently released &#8216;create-react-app&#8217;, which is a simpler scaffolding tool, aimed at simple React apps.</p>
 <p>You will need access to a command line environment, such as Terminal on MacOS or Cygwin on windows, and have nodejs and npm installed. (see <a href="https://nodejs.org/en/">https://nodejs.org/en/</a>). You will need node version 4 and above. You may want to use <a href="https://github.com/creationix/nvm">nvm</a> to easily change versions of node if needed.</p>
 <p>Here&#8217;s an illustrated guide to what you need to do to get started:<br />
-<img src="http://jckr.github.io/blog/assets/visualization-with-react/installing-create-react-app.png" alt="" /><br />
+<img src="https://jckr.github.io/blog/assets/visualization-with-react/installing-create-react-app.png" alt="" /><br />
 First, install create-react-app with the command: npm install create-react-app -g.<br />
-<img src="http://jckr.github.io/blog/assets/visualization-with-react/create-a-new-react-app.png" alt="" /><br />
+<img src="https://jckr.github.io/blog/assets/visualization-with-react/create-a-new-react-app.png" alt="" /><br />
 From the parent directory where you want your app to be, use the command: create-react-app + the name of your app. This will also be the name of the directory this app will be in.<br />
-<img src="http://jckr.github.io/blog/assets/visualization-with-react/start-the-app.png" alt="" /><br />
+<img src="https://jckr.github.io/blog/assets/visualization-with-react/start-the-app.png" alt="" /><br />
 The above command will copy a bunch of files. When it&#8217;s done, go to the directory of your app and type npm start&#8230;<br />
-<img src="http://jckr.github.io/blog/assets/visualization-with-react/a-new-react-app-created-with-create-react-app.png" alt="" /><br />
+<img src="https://jckr.github.io/blog/assets/visualization-with-react/a-new-react-app-created-with-create-react-app.png" alt="" /><br />
 And lo and behold, the app will start and a browser window will appear with the results!<br />
 From now on, whenever you change one of the source files, the app will reload and reflect the changes.</p>
 <p>Remember when we did scatterplots, I never really got into doing the menial work of making gridlines, axes etc. Exactly for this reason &#8211; it can be a lot of manual work.<br />
@@ -968,7 +968,7 @@ This time, the top level component is Dashboard, which has 2 Chart components, w
 		<description><![CDATA[This article is part of my series Visualization with React. Previous article: An ES6 primer Setting things up in Codepen In the last two articles of the series, I&#8217;ll cover how to get a real React coding environment going, but to start dabbling, playgrounds like jsFiddle or codepen are great. I&#8217;m partial to codepen. When <a class="read-more" href="/2016/08/10/coding-with-react/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[<p><script src="//assets.codepen.io/assets/embed/ei.js" async=""></script>This article is part of my series <a href="/2016/08/09/visualization-with-react/">Visualization with React</a>. Previous article: <a href="/2016/08/09/an-es6-primer/">An ES6 primer</a></p>
 <h1>Setting things up in Codepen</h1>
-<p>In the last two articles of the series, I&#8217;ll cover how to get a real React coding environment going, but to start dabbling, playgrounds like <a href="https://jsfiddle.net/reactjs/69z2wepo/">jsFiddle</a> or <a href="http://codepen.io/">codepen</a> are great. I&#8217;m partial to codepen. When you create a new pen, you still have a couple of options to set up before you can start creating React code: <img src="http://jckr.github.io/blog/assets/visualization-with-react/react-settings-in-codepen.png" alt="" /></p>
+<p>In the last two articles of the series, I&#8217;ll cover how to get a real React coding environment going, but to start dabbling, playgrounds like <a href="https://jsfiddle.net/reactjs/69z2wepo/">jsFiddle</a> or <a href="http://codepen.io/">codepen</a> are great. I&#8217;m partial to codepen. When you create a new pen, you still have a couple of options to set up before you can start creating React code: <img src="https://jckr.github.io/blog/assets/visualization-with-react/react-settings-in-codepen.png" alt="" /></p>
 <p>In the Settings / Javascript / quick-add section (the drop-down at the bottom left) please choose React, then React DOM.</p>
 <p>All of the code examples of articles 1, 3, 4, and 5 can be found in this <a href="http://codepen.io/collection/XdEpyp/">codepen collection</a>.</p>
 <h1>Creating elements</h1>
@@ -1688,7 +1688,7 @@ The spark that led me to write was Lea Verou&#8217;s article <a href="http://lea
 <p>It turns out that we can! By manipulating the &#8220;mix-blend-mode&#8221; style attribute of any graphical element, we can achieve one of 16 blending modes (which is actually more than canvas or processing!)<br />
 Here&#8217;s a demo that shows what can be done. This is an adaptation of <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-blend-mode">this</a> example.</p>
 <p>So, through the use of the right blending mode, opacity can be used to make the resulting image lighter (among many other things).</p>
-<p><iframe src="http://jckr.github.io/blog/stuff/blendmode/blendmode.html" width="600" height="750" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe></p>
+<p><iframe src="https://jckr.github.io/blog/stuff/blendmode/blendmode.html" width="600" height="750" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe></p>
 ]]></content:encoded>
 			<wfw:commentRss>/2015/05/05/blending-mode-and-svg/feed/</wfw:commentRss>
 		<slash:comments>1</slash:comments>

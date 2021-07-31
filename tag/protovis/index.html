@@ -10,12 +10,12 @@
 <title>protovis | jckr.github.io/blog</title>
 
 <link rel="profile" href="http://gmpg.org/xfn/11">
-<link rel="pingback" href="/xmlrpc.php">
+<link rel="pingback" href="/blog/xmlrpc.php">
 <link rel='dns-prefetch' href='//fonts.googleapis.com' />
 <link rel='dns-prefetch' href='//s.w.org' />
-<link rel="alternate" type="application/rss+xml" title="jckr.github.io/blog &raquo; Feed" href="/feed/" />
-<link rel="alternate" type="application/rss+xml" title="jckr.github.io/blog &raquo; Comments Feed" href="/comments/feed/" />
-<link rel="alternate" type="application/rss+xml" title="jckr.github.io/blog &raquo; protovis Tag Feed" href="/tag/protovis/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jckr.github.io/blog &raquo; Feed" href="/blog/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jckr.github.io/blog &raquo; Comments Feed" href="/blog/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jckr.github.io/blog &raquo; protovis Tag Feed" href="/blog/tag/protovis/feed/" />
 <!-- This site uses the Google Analytics by MonsterInsights plugin v7.0.5 - Using Analytics tracking - https://www.monsterinsights.com/ -->
 <!-- Note: MonsterInsights is not currently configured on this site. The site owner needs to authenticate with Google Analytics in the MonsterInsights settings panel. -->
 <!-- No UA code set -->
@@ -44,8 +44,8 @@ img.emoji {
 <script type='text/javascript' src='/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
 <script type='text/javascript' src='/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
 <link rel='https://api.w.org/' href='/wp-json/' />
-<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd" />
-<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml" /> 
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/blog/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/blog/wp-includes/wlwmanifest.xml" /> 
 <meta name="generator" content="WordPress 4.6.10" />
 
    	<style type="text/css">
@@ -76,7 +76,7 @@ img.emoji {
                 </a>
             </h1>
             <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
-            <div class="menu"><ul><li ><a href="/">Home</a></li></ul></div>
+            <div class="menu"><ul><li ><a href="/blog/">Home</a></li></ul></div>
         </div>
     </nav><!-- #site-navigation -->
 
@@ -109,8 +109,8 @@ img.emoji {
 <article id="post-1026" class="post-1026 post type-post status-publish format-standard hentry category-d3 category-protovis category-tips tag-color tag-color-palettes tag-d3 tag-hsl tag-linear tag-logarithmic tag-ordinal tag-power tag-protovis tag-quantitative tag-rgb tag-scales tag-tutorial">
 		    <header class="post-header">
         			<span class="post-meta">
-				<span class="posted-on"><a href="/2011/08/11/d3-scales-and-color/" rel="bookmark"><time class="entry-date published" datetime="2011-08-11T12:03:21+00:00">August 11, 2011</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/d3/" rel="category tag">d3</a>, <a href="/category/protovis/" rel="category tag">protovis</a>, <a href="/category/tips/" rel="category tag">tips</a>			</span>
-		        <h1 class="post-title"><a href="/2011/08/11/d3-scales-and-color/" rel="bookmark">d3: scales, and color.</a></h1>
+				<span class="posted-on"><a href="/blog/2011/08/11/d3-scales-and-color/" rel="bookmark"><time class="entry-date published" datetime="2011-08-11T12:03:21+00:00">August 11, 2011</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/blog/author/jerome/">jerome</a></span></span> on <a href="/blog/category/d3/" rel="category tag">d3</a>, <a href="/blog/category/protovis/" rel="category tag">protovis</a>, <a href="/blog/category/tips/" rel="category tag">tips</a>			</span>
+		        <h1 class="post-title"><a href="/blog/2011/08/11/d3-scales-and-color/" rel="bookmark">d3: scales, and color.</a></h1>
          
     </header>
 	<section class="post-content">
@@ -118,7 +118,7 @@ img.emoji {
 		<p>In <a href="http://mbostock.github.com/protovis/docs/scale.html">protovis</a>, scales were super-useful in just about everything. That much hasn&#8217;t changed in d3, even though <a href="https://github.com/mbostock/d3/wiki/Scales">d3.scale</a> is a bit different from pv.Scale. (do note that <strong>d3.scale</strong> is in lowercase for starters).</p>
 <h2>Scales: the main idea</h2>
 <p>Simply put: scales transform a number in a certain interval (called the <em>domain</em>) into a number in another interval (called the <em>range</em>).<br />
-<img src="http://jckr.github.io/blog/wp-content/uploads/2011/08/d3scale1.png" alt="an example of how scales work" /><br />
+<img src="https://jckr.github.io/blog/wp-content/uploads/2011/08/d3scale1.png" alt="an example of how scales work" /><br />
 For instance, let&#8217;s suppose you <em>know</em> your data is always over 20 and always below 80. You would like to plot it, say, in a bar chart, which can be only 120 pixels tall.<br />
 You could, obviously, do the math:</p>
 <pre class="brush: jscript; title: ; notranslate" title="">.attr(&quot;height&quot;, function(d) {return (d-20)*2;})</pre>
@@ -145,14 +145,14 @@ First, note that <strong>unlike in protovis</strong>, domain and range take an a
 var y=d3.scale.linear().range([20,60]).domain([0,120]);</pre>
 <p>This is because <strong>contrary to protovis</strong>, where domain could be a whole dataset, in d3, domain contains the bounds of the interval that is going to be transformed.<br />
 Typically, this is two numbers. If this is more, we are talking about a polypoint scale: there are as many segments in the intervals as there are numbers in the domain (minus one). The range must have as many numbers, and so as many segments. When using the scale, if a number is in the n-th segment of the domain, it is transformed into a number in the n-th segment of the range.<br />
-<img src="http://jckr.github.io/blog/wp-content/uploads/2011/08/d3scaleMultipoint.png" alt="illustration of a multipoint scale" /><br />
+<img src="https://jckr.github.io/blog/wp-content/uploads/2011/08/d3scaleMultipoint.png" alt="illustration of a multipoint scale" /><br />
 With this example, 30 finds itself in the first segment of the domain. So it&#8217;s transformed to a value in the first segment of the range. 60, however, is in the 2nd segment, so it&#8217;s transformed into a value in the 2nd segment of the range.<br />
 Also, bounds of domain and range need not be numbers, as long as they can be converted to numbers. One useful examples are colors. Color names can be used as range, for instance, to create <em>color ramps</em>:</p>
 <pre class="brush: jscript; title: ; notranslate" title="">var ramp=d3.scale.linear().domain([0,100]).range([&quot;red&quot;,&quot;blue&quot;]);</pre>
 <p>This will transform any value betwen 0 and 100 into the corresponding color between red and blue.</p>
 <h3>Clamping</h3>
 <p>What happends if the scale is asked to process a number outside of the domain? That&#8217;s what clamping controls. If it is set, then the bounds of the range are the minimum and maximum value that can be returned by the scale. Else, the same transformation applies to all numbers, whether they fall within the domain or not.<br />
-<img src="http://jckr.github.io/blog/wp-content/uploads/2011/08/d3clamping.png" alt="Clamping example" /><br />
+<img src="https://jckr.github.io/blog/wp-content/uploads/2011/08/d3clamping.png" alt="Clamping example" /><br />
 Here, with clamping, the result of the linear transformation is 120, but without it, it&#8217;s 160. </p>
 <pre class="brush: jscript; title: ; notranslate" title="">var clamp=d3.scale.linear().domain([20,80]).range([0,120]);
 clamp(100); // 160
@@ -192,7 +192,7 @@ y.invert(60); // 50</pre>
 <p>The <em>linear</em>scale is a function of the form y=ax+b which works for both ends of the domain and range. In the example we&#8217;ve used most often until now, this function is really f(x): y=2x-40.<br />
 Power and logarithm scales work the same, only we are looking for a function of the form y=ax<sup>k</sup>+b, or y=a.log(x)+b.<br />
 For the power scales, you can specify an exponent (k) with the .exponent() method. For instance, if we specify an exponent of 2, here is what the scale would look like:<br />
-<img src="http://jckr.github.io/blog/wp-content/uploads/2011/08/d3scalePower.png" alt="an example of a power scale" /><br />
+<img src="https://jckr.github.io/blog/wp-content/uploads/2011/08/d3scalePower.png" alt="an example of a power scale" /><br />
 The equation is now f(x): y=x²/50-8. So 20 still becomes 0 and 80 still becomes 120, but other than that the values at the beginning of the domain would be lower than with the linear scale, and those at the end of the scale will be higher.<br />
 For convenience, d3 includes a d3.scale.sqrt() (the square root scale) so you never have to type d3.scale.pow.exponent(0.5) in full.<br />
 Also note that if you are using a log scale, you <strong>cannot</strong> have 0 in the domain. </p>
@@ -245,7 +245,7 @@ x(&quot;Tuesday&quot;); // 34.285714285714285
 <p>With .rangePoints(<em>interval</em>), d3 fits n points within the interval, n being the number of categories in the domain. In that case, the value of the first point is the beginning of the interval, that of the last point is the end of the interval.<br />
 With .rangeBands(<em>interval</em>), d3 fit n <em>bands</em> within the interval. Here, the value of the last item in the domain is less than the upper bound of the interval.<br />
 Those methods <strong>replace the protovis methods</strong> .split() and .splitBanded().<br />
-<img src="http://jckr.github.io/blog/wp-content/uploads/2011/08/d3ordinalRange.png" alt="difference between rangeBands and rangePoints" /><br />
+<img src="https://jckr.github.io/blog/wp-content/uploads/2011/08/d3ordinalRange.png" alt="difference between rangeBands and rangePoints" /><br />
 This chart illustrates the difference between using rangeBands and rangePoints. </p>
 <pre class="brush: jscript; title: ; notranslate" title="">var x=d3.scale.ordinal()
   .domain([&quot;Sunday&quot;,&quot;Monday&quot;,&quot;Tuesday&quot;,&quot;Wednesday&quot;,&quot;Thursday&quot;,&quot;Friday&quot;,&quot;Saturday&quot;]);
@@ -320,14 +320,14 @@ c.hsl().toString() // &quot;hsl(300, 76, 72)&quot;</pre>
 <article id="post-1012" class="post-1012 post type-post status-publish format-standard hentry category-d3 category-protovis category-tips tag-charts tag-d3 tag-javascript tag-protovis tag-selection tag-svg tag-tutorial">
 		    <header class="post-header">
         			<span class="post-meta">
-				<span class="posted-on"><a href="/2011/08/09/d3-adding-stuff-and-oh-understanding-selections/" rel="bookmark"><time class="entry-date published" datetime="2011-08-09T14:49:23+00:00">August 9, 2011</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/d3/" rel="category tag">d3</a>, <a href="/category/protovis/" rel="category tag">protovis</a>, <a href="/category/tips/" rel="category tag">tips</a>			</span>
-		        <h1 class="post-title"><a href="/2011/08/09/d3-adding-stuff-and-oh-understanding-selections/" rel="bookmark">d3: adding stuff. And, oh, understanding selections</a></h1>
+				<span class="posted-on"><a href="/blog/2011/08/09/d3-adding-stuff-and-oh-understanding-selections/" rel="bookmark"><time class="entry-date published" datetime="2011-08-09T14:49:23+00:00">August 9, 2011</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/blog/author/jerome/">jerome</a></span></span> on <a href="/blog/category/d3/" rel="category tag">d3</a>, <a href="/blog/category/protovis/" rel="category tag">protovis</a>, <a href="/blog/category/tips/" rel="category tag">tips</a>			</span>
+		        <h1 class="post-title"><a href="/blog/2011/08/09/d3-adding-stuff-and-oh-understanding-selections/" rel="bookmark">d3: adding stuff. And, oh, understanding selections</a></h1>
          
     </header>
 	<section class="post-content">
 
 		<h2>From data to graphics</h2>
-<p><img src="http://jckr.github.io/blog/wp-content/uploads/2011/08/d3principle.png" alt="the d3 principle (and also the protovis principle)" /><br />
+<p><img src="https://jckr.github.io/blog/wp-content/uploads/2011/08/d3principle.png" alt="the d3 principle (and also the protovis principle)" /><br />
 d3 and protovis are built around the same principle. Take data, put it into an array, and for each element of data a graphical object can be created, whose properties are derived from the data that was provided.</p>
 <p>Only d3 and protovis have a slightly different way of adding those graphical elements and getting data. </p>
 <p>In protovis, you start from a panel, a protovis-specific object, to which you add various marks. Each time you add a mark, you can either:</p>
@@ -347,7 +347,7 @@ vis.add(pv.Panel).top(10).left(10)
     .bottom(0)
     .height(function(d) {return d*10;});
 vis.render();</pre>
-<p><img src="http://jckr.github.io/blog/wp-content/uploads/2011/08/protoBar.png" alt="this simple bar chart in protovis" /><br />
+<p><img src="https://jckr.github.io/blog/wp-content/uploads/2011/08/protoBar.png" alt="this simple bar chart in protovis" /><br />
 you first create a panel (first line), you may add an element without data (here, another panel, line 2), and add to this panel bars: there would be 5, one for each element in the array in line 4. </p>
 <h2>And in d3?</h2>
 <p>In d3, you also have a way to add either one object without passing data, or a series of objects &#8211; one per data element. </p>
@@ -415,17 +415,17 @@ And since you have to know: there is no easy way to retrieve the data of the par
 <p>To add many elements at once we&#8217;ve used the sequence: selectAll, data, enter, append.<br />
 Why use 4 methods for what appears to be one elementary task? If you don&#8217;t care about manipulating nodes individually, for instance for animations, you can just remember the sequence. But if you want to know more, here is what each method does. </p>
 <h3>selectAll</h3>
-<p><img src="http://jckr.github.io/blog/wp-content/uploads/2011/08/d3selectAll.png" alt="the selectAll method" /><br />
+<p><img src="https://jckr.github.io/blog/wp-content/uploads/2011/08/d3selectAll.png" alt="the selectAll method" /><br />
 First, we select a point on which to add your new graphical objects. When you are creating your objects and use the selectAll method, it will return an <em>empty selection</em> but based on that given point. You may also use selectAll in another context, to update your objects for instance. But here, an empty selection is expected. </p>
 <h3>data</h3>
-<p><img src="http://jckr.github.io/blog/wp-content/uploads/2011/08/d3data.png" alt="the data method" /><br />
+<p><img src="https://jckr.github.io/blog/wp-content/uploads/2011/08/d3data.png" alt="the data method" /><br />
 Then, you attribute data. This works quite similarly to protovis: d3 expects an array. d3 takes the concept further (with the concept of <em>data joins</em>) but you need not concern yourself with that until you look at transitions.<br />
 Anyway, at this stage you have an empty selection, based on a given point in the page, but with data.</p>
 <h3>enter</h3>
-<p><img src="http://jckr.github.io/blog/wp-content/uploads/2011/08/d3enter.png" alt="the enter method" /><br />
+<p><img src="https://jckr.github.io/blog/wp-content/uploads/2011/08/d3enter.png" alt="the enter method" /><br />
 The enter method updates the selection with nodes which have data, but no graphical representation. Using enter() is like creating stubs where the graphical elements will be grafted. </p>
 <h3>append</h3>
-<p><img src="http://jckr.github.io/blog/wp-content/uploads/2011/08/d3append.png" alt="the append method" /><br />
+<p><img src="https://jckr.github.io/blog/wp-content/uploads/2011/08/d3append.png" alt="the append method" /><br />
 Finally, by appending we actually create the graphical objects. Each is tied to one data element, so it can be further styled (for instance, through &#8220;attr&#8221;) to derive its characteristics from the value of that data.</p>
 	    		<div class="clear">&nbsp;</div>
 	</section>
@@ -435,8 +435,8 @@ Finally, by appending we actually create the graphical objects. Each is tied to 
 <article id="post-995" class="post-995 post type-post status-publish format-standard hentry category-d3 category-protovis tag-d3 tag-protovis tag-svg tag-tutorial">
 		    <header class="post-header">
         			<span class="post-meta">
-				<span class="posted-on"><a href="/2011/08/08/from-protovis-to-d3/" rel="bookmark"><time class="entry-date published" datetime="2011-08-08T16:47:45+00:00">August 8, 2011</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/d3/" rel="category tag">d3</a>, <a href="/category/protovis/" rel="category tag">protovis</a>			</span>
-		        <h1 class="post-title"><a href="/2011/08/08/from-protovis-to-d3/" rel="bookmark">From protovis to d3</a></h1>
+				<span class="posted-on"><a href="/blog/2011/08/08/from-protovis-to-d3/" rel="bookmark"><time class="entry-date published" datetime="2011-08-08T16:47:45+00:00">August 8, 2011</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/blog/author/jerome/">jerome</a></span></span> on <a href="/blog/category/d3/" rel="category tag">d3</a>, <a href="/blog/category/protovis/" rel="category tag">protovis</a>			</span>
+		        <h1 class="post-title"><a href="/blog/2011/08/08/from-protovis-to-d3/" rel="bookmark">From protovis to d3</a></h1>
          
     </header>
 	<section class="post-content">
@@ -494,14 +494,14 @@ For instance:</p>
 <article id="post-799" class="post-799 post type-post status-publish format-standard hentry category-data-visualization category-protovis tag-budget tag-challenge tag-datavizchallenge tag-game-y-infographics tag-protovis tag-treemap">
 		    <header class="post-header">
         			<span class="post-meta">
-				<span class="posted-on"><a href="/2011/03/27/datavizchallenge-org-my-entry/" rel="bookmark"><time class="entry-date published" datetime="2011-03-27T16:03:12+00:00">March 27, 2011</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/data-visualization/" rel="category tag">data visualization</a>, <a href="/category/protovis/" rel="category tag">protovis</a>			</span>
-		        <h1 class="post-title"><a href="/2011/03/27/datavizchallenge-org-my-entry/" rel="bookmark">datavizchallenge.org: my entry</a></h1>
+				<span class="posted-on"><a href="/blog/2011/03/27/datavizchallenge-org-my-entry/" rel="bookmark"><time class="entry-date published" datetime="2011-03-27T16:03:12+00:00">March 27, 2011</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/blog/author/jerome/">jerome</a></span></span> on <a href="/blog/category/data-visualization/" rel="category tag">data visualization</a>, <a href="/blog/category/protovis/" rel="category tag">protovis</a>			</span>
+		        <h1 class="post-title"><a href="/blog/2011/03/27/datavizchallenge-org-my-entry/" rel="bookmark">datavizchallenge.org: my entry</a></h1>
          
     </header>
 	<section class="post-content">
 
 		<p>I just posted my <a href="http://www.datavizchallenge.org/">www.datavizchallenge.org</a> <a href="http://jckr.github.io/blog/stuff/datavizchallenge/index.html">entry</a>!<br />
-<a href="http://jckr.github.io/blog/stuff/datavizchallenge/index.html"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/03/myEntry3.png" alt="" title="My  datavizchallenge.org entry" width="323" height="330" class="aligncenter size-full wp-image-801" /></a></p>
+<a href="http://jckr.github.io/blog/stuff/datavizchallenge/index.html"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/03/myEntry3.png" alt="" title="My  datavizchallenge.org entry" width="323" height="330" class="aligncenter size-full wp-image-801" /></a></p>
 <p>So here&#8217;s a little explanation about what I&#8217;ve done, how and why. </p>
 <p>The idea behind the data provider web site, <a href="http://www.whatwepayfor.com/">WhatWePayFor</a>, is that billions and millions don&#8217;t talk to the average citizen. This doesn&#8217;t help them understand where their money goes.</p>
 <p>And in my work, I generally try to show as little data as possible to make a point. And I like to use interactivity to involve users. </p>
@@ -517,8 +517,8 @@ For instance:</p>
 <article id="post-796" class="post-796 post type-post status-publish format-standard hentry category-data-visualization category-protovis tag-cartogram tag-dorling tag-france tag-map tag-protovis">
 		    <header class="post-header">
         			<span class="post-meta">
-				<span class="posted-on"><a href="/2011/03/27/building-the-france-dorling-cartogram/" rel="bookmark"><time class="entry-date published" datetime="2011-03-27T14:28:33+00:00">March 27, 2011</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/data-visualization/" rel="category tag">data visualization</a>, <a href="/category/protovis/" rel="category tag">protovis</a>			</span>
-		        <h1 class="post-title"><a href="/2011/03/27/building-the-france-dorling-cartogram/" rel="bookmark">Building the France Dorling cartogram</a></h1>
+				<span class="posted-on"><a href="/blog/2011/03/27/building-the-france-dorling-cartogram/" rel="bookmark"><time class="entry-date published" datetime="2011-03-27T14:28:33+00:00">March 27, 2011</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/blog/author/jerome/">jerome</a></span></span> on <a href="/blog/category/data-visualization/" rel="category tag">data visualization</a>, <a href="/blog/category/protovis/" rel="category tag">protovis</a>			</span>
+		        <h1 class="post-title"><a href="/blog/2011/03/27/building-the-france-dorling-cartogram/" rel="bookmark">Building the France Dorling cartogram</a></h1>
          
     </header>
 	<section class="post-content">
@@ -550,8 +550,8 @@ Anyone who wants to create dorling cartograms for France can <a href="http://jck
 <article id="post-699" class="post-699 post type-post status-publish format-standard hentry category-protovis tag-array tag-data tag-protovis">
 		    <header class="post-header">
         			<span class="post-meta">
-				<span class="posted-on"><a href="/2011/03/15/more-fun-with-arrays-in-protovis/" rel="bookmark"><time class="entry-date published" datetime="2011-03-15T18:21:21+00:00">March 15, 2011</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/protovis/" rel="category tag">protovis</a>			</span>
-		        <h1 class="post-title"><a href="/2011/03/15/more-fun-with-arrays-in-protovis/" rel="bookmark">More fun with arrays in protovis</a></h1>
+				<span class="posted-on"><a href="/blog/2011/03/15/more-fun-with-arrays-in-protovis/" rel="bookmark"><time class="entry-date published" datetime="2011-03-15T18:21:21+00:00">March 15, 2011</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/blog/author/jerome/">jerome</a></span></span> on <a href="/blog/category/protovis/" rel="category tag">protovis</a>			</span>
+		        <h1 class="post-title"><a href="/blog/2011/03/15/more-fun-with-arrays-in-protovis/" rel="bookmark">More fun with arrays in protovis</a></h1>
          
     </header>
 	<section class="post-content">
@@ -585,7 +585,7 @@ vis.add(pv.Bar)
 
 vis.render();
 </pre></td>
-<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/categories.png"><img class="aligncenter size-full wp-image-483" title="categories" src="http://jckr.github.io/blog/wp-content/uploads/2011/02/categories.png" alt="" width="144" height="135" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/categories.png"><img class="aligncenter size-full wp-image-483" title="categories" src="https://jckr.github.io/blog/wp-content/uploads/2011/02/categories.png" alt="" width="144" height="135" /></a></td>
 </tr>
 </tbody>
 </table>
@@ -806,8 +806,8 @@ No matter the manipulations you inflict to an array you will always be able to m
 <article id="post-573" class="post-573 post type-post status-publish format-standard hentry category-data-visualization category-protovis tag-arrays tag-data tag-map tag-projections tag-protovis">
 		    <header class="post-header">
         			<span class="post-meta">
-				<span class="posted-on"><a href="/2011/03/15/protovis-analysis-of-the-map-projections-example/" rel="bookmark"><time class="entry-date published" datetime="2011-03-15T18:17:31+00:00">March 15, 2011</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/data-visualization/" rel="category tag">data visualization</a>, <a href="/category/protovis/" rel="category tag">protovis</a>			</span>
-		        <h1 class="post-title"><a href="/2011/03/15/protovis-analysis-of-the-map-projections-example/" rel="bookmark">Protovis: analysis of the Map projections example</a></h1>
+				<span class="posted-on"><a href="/blog/2011/03/15/protovis-analysis-of-the-map-projections-example/" rel="bookmark"><time class="entry-date published" datetime="2011-03-15T18:17:31+00:00">March 15, 2011</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/blog/author/jerome/">jerome</a></span></span> on <a href="/blog/category/data-visualization/" rel="category tag">data visualization</a>, <a href="/blog/category/protovis/" rel="category tag">protovis</a>			</span>
+		        <h1 class="post-title"><a href="/blog/2011/03/15/protovis-analysis-of-the-map-projections-example/" rel="bookmark">Protovis: analysis of the Map projections example</a></h1>
          
     </header>
 	<section class="post-content">
@@ -815,9 +815,9 @@ No matter the manipulations you inflict to an array you will always be able to m
 		<h2>What is a map?</h2>
 <p>before we start looking at the code it may be a good idea to think of the best way to represent a country.<br />
 Countries are areas of land surrounded by borders, which are imaginary (or sometimes physical) <strong>lines</strong> going through a set of <strong>points</strong>.<br />
-<a href="http://jckr.github.io/blog/wp-content/uploads/2011/03/square.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/03/square.png" alt="" title="square" width="200" height="200" class="aligncenter size-full wp-image-748" /></a></p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/03/square.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/03/square.png" alt="" title="square" width="200" height="200" class="aligncenter size-full wp-image-748" /></a></p>
 <p>Some countries are made of one of such surfaces, but many countries are not one contiguous territory (they may include islands for instance) so they could be made out of <strong>several disjointed polygons</strong>.<br />
-<a href="http://jckr.github.io/blog/wp-content/uploads/2011/03/square1.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/03/square1.png" alt="" title="square" width="200" height="200" class="aligncenter size-full wp-image-749" /></a>.</p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/03/square1.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/03/square1.png" alt="" title="square" width="200" height="200" class="aligncenter size-full wp-image-749" /></a>.</p>
 <p>Now let&#8217;s put on our protovis hat. Let&#8217;s suppose we want to draw a map where each country could be colored differently (choropleth). What kind of data structure should be use to represent that?<br />
 First there should be a sort of array of countries. Each country should be an item in that array, so they can be indexed and assigned an individual color and various data points.<br />
 Then, at the lowest level, we would be drawing polygons, which are treated as pv.Line in protovis. For each polygon, we would require an array of coordinate pairs. To draw a country, we would need a list (array) of those polygons. </p>
@@ -839,7 +839,7 @@ Then, at the lowest level, we would be drawing polygons, which are treated as pv
 ...
 ]</pre>
 <h2>the map projections example</h2>
-<p><a href="http://jckr.github.io/blog/wp-content/uploads/2011/03/projections.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/03/projections.png" alt="" title="projections" width="600" height="360" class="aligncenter size-full wp-image-754" /></a></p>
+<p><a href="http://jckr.github.io/blog/wp-content/uploads/2011/03/projections.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/03/projections.png" alt="" title="projections" width="600" height="360" class="aligncenter size-full wp-image-754" /></a></p>
 <p>Can be found <a href="http://vis.stanford.edu/protovis/ex/projection.html">here: </a> http://vis.stanford.edu/protovis/ex/projection.html</p>
 <pre class="brush: jscript; title: ; notranslate" title="">/*
  * A diverging color scale, using previously-computed quantiles of population
@@ -993,8 +993,8 @@ so, function(d,b,c) c.name retrieves the country name, and function(d,b,c) c.col
 <article id="post-681" class="post-681 post type-post status-publish format-standard hentry category-charts category-protovis tag-flowing-data-challenge tag-protovis tag-scatterplot tag-tv-earners">
 		    <header class="post-header">
         			<span class="post-meta">
-				<span class="posted-on"><a href="/2011/02/22/the-top-tv-earners-are-not-found-on-tabloids/" rel="bookmark"><time class="entry-date published" datetime="2011-02-22T19:23:48+00:00">February 22, 2011</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/charts/" rel="category tag">charts</a>, <a href="/category/protovis/" rel="category tag">protovis</a>			</span>
-		        <h1 class="post-title"><a href="/2011/02/22/the-top-tv-earners-are-not-found-on-tabloids/" rel="bookmark">The top TV earners are not found on tabloids.</a></h1>
+				<span class="posted-on"><a href="/blog/2011/02/22/the-top-tv-earners-are-not-found-on-tabloids/" rel="bookmark"><time class="entry-date published" datetime="2011-02-22T19:23:48+00:00">February 22, 2011</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/blog/author/jerome/">jerome</a></span></span> on <a href="/blog/category/charts/" rel="category tag">charts</a>, <a href="/blog/category/protovis/" rel="category tag">protovis</a>			</span>
+		        <h1 class="post-title"><a href="/blog/2011/02/22/the-top-tv-earners-are-not-found-on-tabloids/" rel="bookmark">The top TV earners are not found on tabloids.</a></h1>
          
     </header>
 	<section class="post-content">
@@ -1202,8 +1202,8 @@ On the very bottom-left, those who are happy to be there. Etc.</p>
 <article id="post-623" class="post-623 post type-post status-publish format-standard hentry category-charts category-data-visualization category-protovis category-tips tag-arc-diagrams tag-force-directed-graphs tag-graphs tag-layouts tag-matrix-diagrams tag-network tag-protovis tag-stacked-areas tag-stacked-bars tag-stacked-columns tag-treemaps tag-trees tag-tutorial">
 		    <header class="post-header">
         			<span class="post-meta">
-				<span class="posted-on"><a href="/2011/02/11/working-with-data-in-protovis-part-5-of-5/" rel="bookmark"><time class="entry-date published" datetime="2011-02-11T20:11:22+00:00">February 11, 2011</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/charts/" rel="category tag">charts</a>, <a href="/category/data-visualization/" rel="category tag">data visualization</a>, <a href="/category/protovis/" rel="category tag">protovis</a>, <a href="/category/tips/" rel="category tag">tips</a>			</span>
-		        <h1 class="post-title"><a href="/2011/02/11/working-with-data-in-protovis-part-5-of-5/" rel="bookmark">Working with data in protovis: part 5 of 5</a></h1>
+				<span class="posted-on"><a href="/blog/2011/02/11/working-with-data-in-protovis-part-5-of-5/" rel="bookmark"><time class="entry-date published" datetime="2011-02-11T20:11:22+00:00">February 11, 2011</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/blog/author/jerome/">jerome</a></span></span> on <a href="/blog/category/charts/" rel="category tag">charts</a>, <a href="/blog/category/data-visualization/" rel="category tag">data visualization</a>, <a href="/blog/category/protovis/" rel="category tag">protovis</a>, <a href="/blog/category/tips/" rel="category tag">tips</a>			</span>
+		        <h1 class="post-title"><a href="/blog/2011/02/11/working-with-data-in-protovis-part-5-of-5/" rel="bookmark">Working with data in protovis: part 5 of 5</a></h1>
          
     </header>
 	<section class="post-content">
@@ -1313,7 +1313,7 @@ vis.add(pv.Layout.Grid)
      ;
 vis.render();</pre>
 </td>
-<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/QR-grid-big.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/QR-grid-big.png" alt="" title="QR-grid-big" width="216" height="216" class="aligncenter size-full wp-image-628" /></a>(BTW, this is the QR code to this page)</td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/QR-grid-big.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/QR-grid-big.png" alt="" title="QR-grid-big" width="216" height="216" class="aligncenter size-full wp-image-628" /></a>(BTW, this is the QR code to this page)</td>
 </tr>
 </table>
 <p>On line 29, I&#8217;m using a <a href="http://jckr.github.io/blog/?p=494">map function</a> to turn this array of strings, which is easier and shorter to type, into a <em>bona fide</em> 2-dimensional array. </p>
@@ -1334,7 +1334,7 @@ vis.add(pv.Layout.Stack)
     .y(function(d) d/20)
     .layer.add(pv.Area)</pre>
 </td>
-<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/stackedAreas.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/stackedAreas.png" alt="" title="stackedAreas" width="200" height="200" class="aligncenter size-full wp-image-636" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/stackedAreas.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/stackedAreas.png" alt="" title="stackedAreas" width="200" height="200" class="aligncenter size-full wp-image-636" /></a></td>
 </tr>
 </table>
 <p>all you need is to feed the layers, x, y properties of your stack, then say what you want to add to your layers.<br />
@@ -1348,7 +1348,7 @@ Now, columns: </p>
     .y(function(d) d/20)
     .layer.add(pv.Bar).width(40)</pre>
 </td>
-<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/stackedColumns.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/stackedColumns.png" alt="" title="stackedColumns" width="200" height="200" class="aligncenter size-full wp-image-637" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/stackedColumns.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/stackedColumns.png" alt="" title="stackedColumns" width="200" height="200" class="aligncenter size-full wp-image-637" /></a></td>
 </tr>
 </table>
 <p>and finally, bars: </p>
@@ -1362,7 +1362,7 @@ Now, columns: </p>
     .y(function(d) d/20)
     .layer.add(pv.Bar).height(40)</pre>
 </td>
-<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/stackedBars.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/stackedBars.png" alt="" title="stackedBars" width="200" height="200" class="aligncenter size-full wp-image-638" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/stackedBars.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/stackedBars.png" alt="" title="stackedBars" width="200" height="200" class="aligncenter size-full wp-image-638" /></a></td>
 </tr>
 </table>
 <p>For bars, there is a little trick here. I specify that the layer orientation is horizontal (&#8220;left&#8221;) and I change the height instead of the width of the added pv.Bar.<br />
@@ -1399,7 +1399,7 @@ arc.node.add(pv.Dot)
     .size(50)
 vis.render();</pre>
 </td>
-<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleNetwork1.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleNetwork1.png" alt="" title="simpleNetwork" width="200" height="200" class="aligncenter size-full wp-image-644" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleNetwork1.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/simpleNetwork1.png" alt="" title="simpleNetwork" width="200" height="200" class="aligncenter size-full wp-image-644" /></a></td>
 </tr>
 </table>
 <p>Here, by varying the strength of the link, the thickness of the arcs changes accordingly. The nodes are left unstyled, had we passed a more complicated dataset to the nodes array, we could have changed their properties (fillStyle, size, strokeStyle, labels etc.) with appropriate accessor functions. </p>
@@ -1422,7 +1422,7 @@ force.node.add(pv.Dot)
 vis.render();
 </pre>
 </td>
-<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleForce.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleForce.png" alt="" title="simpleForce" width="200" height="200" class="aligncenter size-full wp-image-645" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleForce.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/simpleForce.png" alt="" title="simpleForce" width="200" height="200" class="aligncenter size-full wp-image-645" /></a></td>
 </tr>
 </table>
 <p>Here I labelled the nodes so one can tell which is which. This is done by adding a pv.Label to the pv.Dot that&#8217;s attached to the node, just like with any other mark.</p>
@@ -1444,7 +1444,7 @@ Matrix.label.add(pv.Label).text(function() Math.floor(this.index/2))
 
 vis.render();</pre>
 </td>
-<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleMatrix1.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleMatrix1.png" alt="" title="simpleMatrix" width="200" height="200" class="aligncenter size-full wp-image-647" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleMatrix1.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/simpleMatrix1.png" alt="" title="simpleMatrix" width="200" height="200" class="aligncenter size-full wp-image-647" /></a></td>
 </tr>
 </table>
 <p>For the matrix things are slightly more complex than for the previous 2. Here I opted for a directed matrix, as opposed to a bidirectional one: this means that each link is shown once, to its source from its target, and not twice (ie from its target back to its source) which is the default.<br />
@@ -1503,7 +1503,7 @@ tree.node.add(pv.Dot)
 	.anchor(&quot;center&quot;).add(pv.Label).textAlign(&quot;center&quot;).text(function(n) n.nodeName)
 vis.render();</pre>
 <p>And here is the result:<br />
-<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleTree.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleTree.png" alt="" title="simpleTree" width="500" height="200" class="aligncenter size-full wp-image-652" /></a></p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleTree.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/simpleTree.png" alt="" title="simpleTree" width="500" height="200" class="aligncenter size-full wp-image-652" /></a></p>
 <p>There are many styling possibilities obviously left unexplored in this simple example (you can control properties of the tree.link, tree.node, tree.labels which we didn&#8217;t use here, etc.), but this won&#8217;t change much as far as data are concerned. </p>
 <p>Now let&#8217;s try a treemap with the same dataset.</p>
 <pre class="brush: jscript; first-line: 14; title: ; notranslate" title="">var vis = new pv.Panel()
@@ -1540,7 +1540,7 @@ vis.render();
 </pre>
 <p>and what took the longest part of the code was making the legend.</p>
 <p>Here is the outcome:<br />
-<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleTreemap.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleTreemap.png" alt="" title="simpleTreemap" width="400" height="200" class="aligncenter size-full wp-image-653" /></a></p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleTreemap.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/simpleTreemap.png" alt="" title="simpleTreemap" width="400" height="200" class="aligncenter size-full wp-image-653" /></a></p>
 	    		<div class="clear">&nbsp;</div>
 	</section>
 </article><!-- #post-## -->
@@ -1549,8 +1549,8 @@ vis.render();
 <article id="post-502" class="post-502 post type-post status-publish format-standard hentry category-charts category-data-visualization category-protovis category-tips tag-aggregation tag-hierarchy tag-maps tag-nesting tag-protovis tag-rollup tag-trees">
 		    <header class="post-header">
         			<span class="post-meta">
-				<span class="posted-on"><a href="/2011/02/11/working-with-data-in-protovis-part-4-of-5/" rel="bookmark"><time class="entry-date published" datetime="2011-02-11T02:51:39+00:00">February 11, 2011</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/charts/" rel="category tag">charts</a>, <a href="/category/data-visualization/" rel="category tag">data visualization</a>, <a href="/category/protovis/" rel="category tag">protovis</a>, <a href="/category/tips/" rel="category tag">tips</a>			</span>
-		        <h1 class="post-title"><a href="/2011/02/11/working-with-data-in-protovis-part-4-of-5/" rel="bookmark">Working with data in protovis &#8211; part 4 of 5</a></h1>
+				<span class="posted-on"><a href="/blog/2011/02/11/working-with-data-in-protovis-part-4-of-5/" rel="bookmark"><time class="entry-date published" datetime="2011-02-11T02:51:39+00:00">February 11, 2011</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/blog/author/jerome/">jerome</a></span></span> on <a href="/blog/category/charts/" rel="category tag">charts</a>, <a href="/blog/category/data-visualization/" rel="category tag">data visualization</a>, <a href="/blog/category/protovis/" rel="category tag">protovis</a>, <a href="/blog/category/tips/" rel="category tag">tips</a>			</span>
+		        <h1 class="post-title"><a href="/blog/2011/02/11/working-with-data-in-protovis-part-4-of-5/" rel="bookmark">Working with data in protovis &#8211; part 4 of 5</a></h1>
          
     </header>
 	<section class="post-content">
@@ -1589,7 +1589,7 @@ An array of the shape:</p>
 </ul>
 <h3>Nesting</h3>
 <p>For this last reason, you may want to turn one flat array of associative arrays into an array of arrays of associative arrays. This process is called <strong>nesting</strong>.</p>
-<p><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/nesting.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/nesting.png" alt="" title="nesting" width="700" height="250" class="aligncenter size-full wp-image-528" /></a></p>
+<p><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/nesting.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/nesting.png" alt="" title="nesting" width="700" height="250" class="aligncenter size-full wp-image-528" /></a></p>
 <h4>Simple nesting</h4>
 <p>If you turn a <strong>single array</strong> like the one on the left-hand side to <strong>an array of arrays</strong> like on the right-hand side, you could easily do 3 smaller charts, one next to the other, by creating them inside of panels. You could have some information at this panel level (for instance the variety) and the rest at a lower level. </p>
 <p>Fortunately, there are protovis methods that can turn your flat list into a more complex array of arrays. And since protovis methods are meant to be chained, you can even go on and create arrays of arrays of arrays of arrays if needs be.<br />
@@ -1600,7 +1600,7 @@ To do the above, all you have to type is </p>
 <p>What this does is that it nests your <em>barley</em> array, according to the <em>variety</em> key. entries() at the end is required to obtain the array of arrays needed.</p>
 <p>Here is an example of what can be done with both kinds of data structures in just a few lines of code (which won&#8217;t include the data proper. The long, flat array is stored in the variable barley, as above).<br />
 Without nesting:<br />
-<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/BarleyWithoutNesting.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/BarleyWithoutNesting.png" alt="" title="BarleyWithoutNesting" width="606" height="198" class="aligncenter size-full wp-image-594" /></a></p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/BarleyWithoutNesting.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/BarleyWithoutNesting.png" alt="" title="BarleyWithoutNesting" width="606" height="198" class="aligncenter size-full wp-image-594" /></a></p>
 <pre class="brush: jscript; title: ; notranslate" title="">var vis = new pv.Panel()
     .width(600)
     .height(200)
@@ -1616,7 +1616,7 @@ vis.add(pv.Bar)
 vis.render();</pre>
 <p>As the pv.Bar goes through the array, there is not much it can do to structure it. We can just size the bars according to the value of yield, and color them according to another key (here the year).</p>
 <p>Now using nesting:<br />
-<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/BarleyWithNesting2.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/BarleyWithNesting2.png" alt="" title="BarleyWithNesting2" width="711" height="160" class="aligncenter size-full wp-image-598" /></a></p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/BarleyWithNesting2.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/BarleyWithNesting2.png" alt="" title="BarleyWithNesting2" width="711" height="160" class="aligncenter size-full wp-image-598" /></a></p>
 <pre class="brush: jscript; highlight: [1,8,15]; title: ; notranslate" title="">barley2=pv.nest(barley).key(function(d) d.variety).entries();
 barley2=pv.nest(barley).key(function(d) d.variety).entries();
 var vis = new pv.Panel()
@@ -1673,8 +1673,8 @@ vis.render();
 </td>
 </tr>
 <tr>
-<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/sort-unsorted.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/sort-unsorted.png" alt="" title="sort-unsorted" width="300" height="250" class="aligncenter size-full wp-image-524" /></a></td>
-<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/sort-sorted.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/sort-sorted.png" alt="" title="sort-sorted" width="300" height="250" class="aligncenter size-full wp-image-525" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/sort-unsorted.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/sort-unsorted.png" alt="" title="sort-unsorted" width="300" height="250" class="aligncenter size-full wp-image-524" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/sort-sorted.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/sort-sorted.png" alt="" title="sort-sorted" width="300" height="250" class="aligncenter size-full wp-image-525" /></a></td>
 </tr>
 </table>
 </li>
@@ -1890,7 +1890,7 @@ On the same subject, see a comparison of how to <a href="http://jckr.github.io/b
 			
 				<nav class="pagination navigation paging-navigation" role="navigation">
 		<div class="nav-links">
-						<div class="older-posts"><a href="/tag/protovis/page/2/" >Older Posts <span class="meta-nav">&rarr;</span></a></div>
+						<div class="older-posts"><a href="/blog/tag/protovis/page/2/" >Older Posts <span class="meta-nav">&rarr;</span></a></div>
 							<div class="page-number">Page 1 of 2</div>
 			
 		</div><!-- .nav-links -->
@@ -1909,22 +1909,22 @@ On the same subject, see a comparison of how to <a href="http://jckr.github.io/b
 				<input type="submit" class="search-submit" value="Search" />
 			</form></aside>		<aside id="recent-posts-2" class="widget widget_recent_entries">		<h1 class="widget-title">Recent Posts</h1>		<ul>
 					<li>
-				<a href="/2016/08/17/the-big-leagues/">The big leagues</a>
+				<a href="/blog/2016/08/17/the-big-leagues/">The big leagues</a>
 						</li>
 					<li>
-				<a href="/2016/08/17/creating-a-react-visualization-web-app/">Creating a React visualization web app</a>
+				<a href="/blog/2016/08/17/creating-a-react-visualization-web-app/">Creating a React visualization web app</a>
 						</li>
 					<li>
-				<a href="/2016/08/13/beyond-rendering/">Beyond rendering</a>
+				<a href="/blog/2016/08/13/beyond-rendering/">Beyond rendering</a>
 						</li>
 					<li>
-				<a href="/2016/08/11/react-components/">React components</a>
+				<a href="/blog/2016/08/11/react-components/">React components</a>
 						</li>
 					<li>
-				<a href="/2016/08/10/coding-with-react/">Coding with React</a>
+				<a href="/blog/2016/08/10/coding-with-react/">Coding with React</a>
 						</li>
 				</ul>
-		</aside>		<aside id="recent-comments-2" class="widget widget_recent_comments"><h1 class="widget-title">Recent Comments</h1><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link"><a href='http://omeraz.wordpress.com/' rel='external nofollow' class='url'>עומר עזריאל</a></span> on <a href="/2016/08/17/the-big-leagues/#comment-567">The big leagues</a></li><li class="recentcomments"><span class="comment-author-link">Carlos Ayres</span> on <a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-312">Manipulating data like a boss with d3</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://migrate.powertripanalytics.com/game-of-thrones-interactions-among-the-top-30-characters/' rel='external nofollow' class='url'>Game of ThronesInteractions Among the Top 30 Characters &#8211; PowerTrip Analytics</a></span> on <a href="/2013/05/13/making-the-game-of-thrones-visualization/#comment-466">Making the game of thrones visualization</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://abgoswam.wordpress.com/2016/10/08/d3-getting-started/' rel='external nofollow' class='url'>D3 &#8211; Getting Started | abgoswam&#039;s tech blog</a></span> on <a href="/2012/09/04/getting-to-hello-world-with-d3/#comment-419">Getting to &#8220;Hello world&#8221; with d3</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://plus.google.com/+BrotoBhattacharjee' rel='external nofollow' class='url'>Broto Bhattacharjee</a></span> on <a href="/2012/09/04/getting-to-hello-world-with-d3/#comment-418">Getting to &#8220;Hello world&#8221; with d3</a></li></ul></aside><aside id="archives-2" class="widget widget_archive"><h1 class="widget-title">Archives</h1>		<ul>
+		</aside>		<aside id="recent-comments-2" class="widget widget_recent_comments"><h1 class="widget-title">Recent Comments</h1><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link"><a href='http://omeraz.wordpress.com/' rel='external nofollow' class='url'>עומר עזריאל</a></span> on <a href="/blog/2016/08/17/the-big-leagues/#comment-567">The big leagues</a></li><li class="recentcomments"><span class="comment-author-link">Carlos Ayres</span> on <a href="/blog/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-312">Manipulating data like a boss with d3</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://migrate.powertripanalytics.com/game-of-thrones-interactions-among-the-top-30-characters/' rel='external nofollow' class='url'>Game of ThronesInteractions Among the Top 30 Characters &#8211; PowerTrip Analytics</a></span> on <a href="/blog/2013/05/13/making-the-game-of-thrones-visualization/#comment-466">Making the game of thrones visualization</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://abgoswam.wordpress.com/2016/10/08/d3-getting-started/' rel='external nofollow' class='url'>D3 &#8211; Getting Started | abgoswam&#039;s tech blog</a></span> on <a href="/blog/2012/09/04/getting-to-hello-world-with-d3/#comment-419">Getting to &#8220;Hello world&#8221; with d3</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://plus.google.com/+BrotoBhattacharjee' rel='external nofollow' class='url'>Broto Bhattacharjee</a></span> on <a href="/blog/2012/09/04/getting-to-hello-world-with-d3/#comment-418">Getting to &#8220;Hello world&#8221; with d3</a></li></ul></aside><aside id="archives-2" class="widget widget_archive"><h1 class="widget-title">Archives</h1>		<ul>
 			<li><a href='/2016/08/'>August 2016</a></li>
 	<li><a href='/2015/05/'>May 2015</a></li>
 	<li><a href='/2015/02/'>February 2015</a></li>
@@ -1970,46 +1970,46 @@ On the same subject, see a comparison of how to <a href="http://jckr.github.io/b
 	<li><a href='/2008/10/'>October 2008</a></li>
 		</ul>
 		</aside><aside id="categories-2" class="widget widget_categories"><h1 class="widget-title">Categories</h1>		<ul>
-	<li class="cat-item cat-item-2"><a href="/category/book-review/" >book review</a>
+	<li class="cat-item cat-item-2"><a href="/blog/category/book-review/" >book review</a>
 </li>
-	<li class="cat-item cat-item-3"><a href="/category/charts/" >charts</a>
+	<li class="cat-item cat-item-3"><a href="/blog/category/charts/" >charts</a>
 </li>
-	<li class="cat-item cat-item-4"><a href="/category/conferences/" >conferences</a>
+	<li class="cat-item cat-item-4"><a href="/blog/category/conferences/" >conferences</a>
 </li>
-	<li class="cat-item cat-item-5"><a href="/category/d3/" >d3</a>
+	<li class="cat-item cat-item-5"><a href="/blog/category/d3/" >d3</a>
 </li>
-	<li class="cat-item cat-item-6"><a href="/category/dashboards/" >dashboards</a>
+	<li class="cat-item cat-item-6"><a href="/blog/category/dashboards/" >dashboards</a>
 </li>
-	<li class="cat-item cat-item-7"><a href="/category/data-publishing/" >data publishing</a>
+	<li class="cat-item cat-item-7"><a href="/blog/category/data-publishing/" >data publishing</a>
 </li>
-	<li class="cat-item cat-item-8"><a href="/category/data-visualization/" >data visualization</a>
+	<li class="cat-item cat-item-8"><a href="/blog/category/data-visualization/" >data visualization</a>
 </li>
-	<li class="cat-item cat-item-9"><a href="/category/francais/" >français</a>
+	<li class="cat-item cat-item-9"><a href="/blog/category/francais/" >français</a>
 </li>
-	<li class="cat-item cat-item-10"><a href="/category/javascript/" >javascript</a>
+	<li class="cat-item cat-item-10"><a href="/blog/category/javascript/" >javascript</a>
 </li>
-	<li class="cat-item cat-item-11"><a href="/category/presentation/" >presentation</a>
+	<li class="cat-item cat-item-11"><a href="/blog/category/presentation/" >presentation</a>
 </li>
-	<li class="cat-item cat-item-12"><a href="/category/protovis/" >protovis</a>
+	<li class="cat-item cat-item-12"><a href="/blog/category/protovis/" >protovis</a>
 </li>
-	<li class="cat-item cat-item-13"><a href="/category/react/" >react</a>
+	<li class="cat-item cat-item-13"><a href="/blog/category/react/" >react</a>
 </li>
-	<li class="cat-item cat-item-14"><a href="/category/tips/" >tips</a>
+	<li class="cat-item cat-item-14"><a href="/blog/category/tips/" >tips</a>
 </li>
-	<li class="cat-item cat-item-1"><a href="/category/uncategorized/" >Uncategorized</a>
+	<li class="cat-item cat-item-1"><a href="/blog/category/uncategorized/" >Uncategorized</a>
 </li>
-	<li class="cat-item cat-item-15"><a href="/category/web-sites/" >web sites</a>
+	<li class="cat-item cat-item-15"><a href="/blog/category/web-sites/" >web sites</a>
 </li>
 		</ul>
 </aside><aside id="meta-2" class="widget widget_meta"><h1 class="widget-title">Meta</h1>			<ul>
-						<li><a href="/wp-login.php">Log in</a></li>
-			<li><a href="/feed/">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
-			<li><a href="/comments/feed/">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+						<li><a href="/blog/wp-login.php">Log in</a></li>
+			<li><a href="/blog/feed/">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="/blog/comments/feed/">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
 			<li><a href="https://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>			</ul>
 			</aside>		<div class="clear">&nbsp;</div>
 	</div><!-- #secondary -->
 	<footer id="colophon" class="site-footer" role="contentinfo">
-	    <a class="subscribe icon-feed" href="/feed/"><span class="tooltip">Subscribe!</span></a>
+	    <a class="subscribe icon-feed" href="/blog/feed/"><span class="tooltip">Subscribe!</span></a>
 		<div class="site-info inner">
 		    <section class="copyright">
 		    			    		<a href="https://github.com/lacymorrow/casper" rel="home">Casper WP</a> by Lacy Morrow		    			    </section>

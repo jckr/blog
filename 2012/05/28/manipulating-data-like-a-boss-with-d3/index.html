@@ -143,7 +143,7 @@ Let&#8217;s do a bubble chart for instance.<br />
     .append(&quot;title&quot;)
     .text(String)</pre>
 <p>and this works:<br />
-<iframe src="http://jckr.github.io/blog/stuff/data%20example/data-example0.html" width=512px height=520px scrolling=no style="border:0px"></iframe><br />
+<iframe src="https://jckr.github.io/blog/stuff/data%20example/data-example0.html" width=512px height=520px scrolling=no style="border:0px"></iframe><br />
 <a href="http://jckr.github.io/blog/stuff/data%20example/data-example0.html">See example in its own tab or window</a><br />
 but this is hell to maintain. If for some reason there is an error in one of the values, for instance due to a cat or a small child in the proximity of the computer, the error will be very difficult to troubleshoot.<br />
 Another problem is that it&#8217;s very difficult to apply any kind of subsequent treatment to the data. For instance, you will notice that there are smaller bubbles entirely within the large orange bubble which happens to be on top of them. So it&#8217;s not possible to mouseover the smaller bubbles. One way to address that would be to sort data in order of decreasing population (the size of the bubbles) so that it would be impossible to have this kind of situation. Now while it is possible sorting 6 arrays according to the values of one, it&#8217;s very messy.</p>
@@ -198,7 +198,7 @@ Another problem is that it&#8217;s very difficult to apply any kind of subsequen
 ]</pre>
 <p>and get this done, and furthermore if you are thinking &#8220;Hey, I can do this in Excel from my csv file, with one formula that I will copy across the rows&#8221;, <strong>you need to stop right now in the name of all that is good and holy</strong>.<br />
 Even though it works: </p>
-<p><iframe src="http://jckr.github.io/blog/stuff/data%20example/data-example1.html" width=512px height=520px scrolling=no style="border:0px"></iframe><br />
+<p><iframe src="https://jckr.github.io/blog/stuff/data%20example/data-example1.html" width=512px height=520px scrolling=no style="border:0px"></iframe><br />
 <a href="http://jckr.github.io/blog/stuff/data%20example/data-example1.html">See example in its own tab or window</a></p>
 <p>This approach has a number of flaws which you can all avoid if you read on.<br />
 First, the execution of your program will be stopped while your browser reads the source code that contains the &#8220;data&#8221; variable. This is negligible for 36 rows, but as objects get bigger and more complex, an equivalent variable may take seconds or even minutes to load. And now we have a problem.<br />
@@ -242,7 +242,7 @@ In other words, once inside the d3.csv function, the &#8220;csv&#8221; variable 
 <li>Everything read from the file is treated as strings. Javascript does a lot of type conversion but be mindful of that or you will have surprises. This is why I wrote x(+d.GERD) for instance (+ before a string converts it to a number).</li>
 </ul>
 <p>To celebrate this superior way of aquiring data, we&#8217;ve thrown in animated data entry: the circles are initiated at a default value and move towards their position. You may want to check the link to see the transition effect.</p>
-<p><iframe src="http://jckr.github.io/blog/stuff/data%20example/data-example2.html" width=512px height=520px scrolling=no style="border:0px"></iframe><br />
+<p><iframe src="https://jckr.github.io/blog/stuff/data%20example/data-example2.html" width=512px height=520px scrolling=no style="border:0px"></iframe><br />
 <a href="http://jckr.github.io/blog/stuff/data%20example/data-example2.html">See example in its own tab or window</a></p>
 <p>So, at the level of the mark (ie our circles) the most comfortable form of data is an object with at least as many keys as there will be graphical properties to change dynamically.<br />
 One flat array of data is fine if we have just one series of data. But what if we have several series? Indeed, most visualizations have a structure and a hierarchy.<br />
@@ -325,7 +325,7 @@ The last part of the statement, .entries(csv), says that we want to do that oper
       .style(&quot;opacity&quot;,function(d) {return o(d.population)})
       .style(&quot;opacity&quot;,function(d) {return o(+d.GDPcap);})</pre>
 <p>(you may want to click on the link to see the transition effect and read the full source).<br />
-<iframe src="http://jckr.github.io/blog/stuff/data%20example/data-example3.html" width=512px height=122px scrolling=no style="border:0px"></iframe><br />
+<iframe src="https://jckr.github.io/blog/stuff/data%20example/data-example3.html" width=512px height=122px scrolling=no style="border:0px"></iframe><br />
 <a href="http://jckr.github.io/blog/stuff/data%20example/data-example3.html">See example in its own tab or window</a></p>
 <p>This is all very nice but wouldn&#8217;t it be better if we could characterize some aggregate information from the continents? Let&#8217;s try to find out the average values for R&#038;D expenditure and GDP growth. </p>
 <p>Can it be done easily? This is a job for the other main d3.nest method, rollup.</p>
@@ -411,7 +411,7 @@ Now it&#8217;s just a matter of adding them to the sketch. Two little additions 
     .attr(&quot;x1&quot;,function(d,i) {return x(avgs[i].values.GERD);})
     .attr(&quot;x2&quot;,function(d,i) {return x(avgs[i].values.GERD);})</pre>
 <p>This is the final example &#8211; again you may want to click on the link to see the transition and get the entirety of the source.<br />
-<iframe src="http://jckr.github.io/blog/stuff/data%20example/data-example4.html" width=512px height=122px scrolling=no style="border:0px"></iframe><br />
+<iframe src="https://jckr.github.io/blog/stuff/data%20example/data-example4.html" width=512px height=122px scrolling=no style="border:0px"></iframe><br />
 <a href="http://jckr.github.io/blog/stuff/data%20example/data-example4.html">See example in its own tab or window</a></p>
 <p>To wrap up:</p>
 <ul>

@@ -115,7 +115,7 @@ img.emoji {
     </header>
 	<section class="post-content">
 
-		<p><div id="attachment_1290" style="width: 620px" class="wp-caption aligncenter"><a href="http://jckr.github.io/blog/projects/elections/parite.html"><img class="size-full wp-image-1290" title="La parité, c'est maintenant" src="http://jckr.github.io/blog/wp-content/uploads/2012/05/parite.png" alt="" width="610" height="572" /></a><p class="wp-caption-text">Cliquez sur l&#39;image pour arriver à l&#39;application interactive</p></div></p>
+		<p><div id="attachment_1290" style="width: 620px" class="wp-caption aligncenter"><a href="http://jckr.github.io/blog/projects/elections/parite.html"><img class="size-full wp-image-1290" title="La parité, c'est maintenant" src="https://jckr.github.io/blog/wp-content/uploads/2012/05/parite.png" alt="" width="610" height="572" /></a><p class="wp-caption-text">Cliquez sur l&#39;image pour arriver à l&#39;application interactive</p></div></p>
 <p>J&#8217;ai eu l&#8217;idée de créer cette carte quand j&#8217;ai pu mettre la main sur les données des résultats de la présidentielle par circonscription législative. En 2007, les résulats du deuxième tour ont été un très bon prédicteur de ceux des législatives qui ont suivi: une circonscription pour qui un candidat à la présidentielle au second tour a fait ne serait-ce que 52% a plus de 75% de chances d&#8217;être remportée par le député du même parti.<br />
 Et encore, tout le monde s&#8217;était accordé à dire qu&#8217;en 2007, la gauche avait fait une très bonne campagne et qu&#8217;elle avait <a href="http://www.rfi.fr/actufr/articles/090/article_52924.asp">endigué la vague bleue</a>. Les probabilités sont sûrement encore plus élevées.</p>
 <p>Or, presque 80% des circonscriptions ont été gagnées avec un score supérieur à 52%, ce qui est donc une très grosse marge. Dans plus du quart d&#8217;entre elles, le gagnant du scrutin a même récolté plus de 60% des voix&#8230;</p>
@@ -147,10 +147,10 @@ Et encore, tout le monde s&#8217;était accordé à dire qu&#8217;en 2007, la ga
 <p>So I needed the results by the finest possible unit, that is by individual polling station. During the election night these results are compiled by city and centralized, so you would assume that the raw data of each polling station is available somewhere. That is not the case, unfortunately. Although it seems that they will be made public eventually, that may not be the case before the June 2012 election.</p>
 <p>Fortunately, <a href="http://opendata.paris.fr/opendata/jsp/site/Portal.jsp?document_id=133&amp;portlet_id=102">Open Data Paris</a> had the results by polling station. More: it had their address and matching of every inhabited building in Paris to its corresponding polling station.</p>
 <p>To map the polling stations, my first intuition was to create a <a href="http://en.wikipedia.org/wiki/Voronoi_diagram">voronoi tesselation</a> of their projected, geocoded coordinates (I only had their addresses in the raw data file). In short, voronoi polygons can be generated for a certain number of control points and correspond to the area nearer to that control point than to any other. So it&#8217;s a good approximation of the areas  which correspond to a given polling station.</p>
-<p><iframe style="border:none;" src="http://jckr.github.io/blog/stuff/littlevoronoi.html" scrolling="no" width="502px" height="270px"></iframe></p>
+<p><iframe style="border:none;" src="https://jckr.github.io/blog/stuff/littlevoronoi.html" scrolling="no" width="502px" height="270px"></iframe></p>
 <p>Problem: several polling stations could be in the same address, and for the voronoi algorithm the control points have to be distinct. So I tried jittering them (adding random noise to each one). A tesselation could be done that kind of looked like Paris but voting districts will look messy as there were frequent inversions between neighboring districts.</p>
 <p>So I had to come up with a better approximation of what part of the city corresponded to what voting district. So I used the address to polling station correspondance, and for each polling station I took the first and the last street number of any street that was covered by it. Then I geocoded the whole lot. That&#8217;s about 16000 points. It took some time.</p>
-<p><div id="attachment_1280" style="width: 616px" class="wp-caption aligncenter"><a href="http://jckr.github.io/blog/wp-content/uploads/2012/05/centroids.png"><img class="wp-image-1280" title="centroids" src="http://jckr.github.io/blog/wp-content/uploads/2012/05/centroids.png" alt="" width="606" height="478" /></a><p class="wp-caption-text">Here&#39;s my polling station as an example.</p></div></p>
+<p><div id="attachment_1280" style="width: 616px" class="wp-caption aligncenter"><a href="http://jckr.github.io/blog/wp-content/uploads/2012/05/centroids.png"><img class="wp-image-1280" title="centroids" src="https://jckr.github.io/blog/wp-content/uploads/2012/05/centroids.png" alt="" width="606" height="478" /></a><p class="wp-caption-text">Here&#39;s my polling station as an example.</p></div></p>
 <p>Then, for each polling station area, I took the minimum and maximum longitude and latitude, which formed a bounding box, and assigned the polling station to the center of that box. Then, I used tesselation again.</p>
 <p>I found a number of oddities in the geocoding that I had to correct manually, because if one address was not accurately coded, chances are it would change the shape of the bounding box drastically and so the position of its corresponding polling station. Sometimes the geocoding service wouldn&#8217;t find the street and/or would use a street of the same name in another city, sometimes they did find the street but the coordinates were way off&#8230; So the dataset required a lot of massaging before it got into shape.</p>
 <p>The last geographic errand I had to do for this visualization was to create a perimeter of Paris to use as a clipping mask, else the tesselation would be done on a rectangular shape with the edge polygons being very large and very skewed. So I collected coordinates of points around Paris to create one polygon. Only what&#8217;s inside of this polygon is shown (.style(&#8220;clip-path&#8221;) in d3).</p>
@@ -171,7 +171,7 @@ Et encore, tout le monde s&#8217;était accordé à dire qu&#8217;en 2007, la ga
     </header>
 	<section class="post-content">
 
-		<p style="text-align: center;"><a href="http://jckr.github.io/blog/projects/elections/dtour2012.html"><img class="aligncenter size-full wp-image-1265" title="front" src="http://jckr.github.io/blog/wp-content/uploads/2012/05/front.jpg" alt="" width="700" height="374" /></a></p>
+		<p style="text-align: center;"><a href="http://jckr.github.io/blog/projects/elections/dtour2012.html"><img class="aligncenter size-full wp-image-1265" title="front" src="https://jckr.github.io/blog/wp-content/uploads/2012/05/front.jpg" alt="" width="700" height="374" /></a></p>
 <p>Qui dit élection présidentielle, dit résultats.</p>
 <p>Et qui dit résultats dit représentation visuelle dans les médias.</p>
 <p>Et donc souvent carte.</p>
@@ -180,16 +180,16 @@ Et encore, tout le monde s&#8217;était accordé à dire qu&#8217;en 2007, la ga
 <p>Pour répondre à ces questions, on peut utiliser les <a href="http://jckr.github.io/blog/projects/elections/dtour2012.html">coordonnées parallèles</a>.</p>
 <p>Chaque axe vertical correspond à un vote possible &#8211; d&#8217;abord ceux du premier tour, puis ceux du deuxième. Chaque ligne de couleur correspond à une ville (ou à un département, à une région, ou à la France). Chacune de ces lignes coupe chaque axe à une hauteur qui correspond à la proportion des gens qui ont fait tel ou tel choix. Par exemple, les villes où on a beaucoup voté pour Jean-Luc Mélenchon, comme Bagnolet ou Gennevilliers, se retrouveront vers le haut de l&#8217;axe du milieu.</p>
 <p>En s&#8217;approchant des axes, le curseur devient une croix. Il suffit alors de le faire glisser le long de l&#8217;axe pour dessiner un rectangle, et mettre en valeur toutes les lignes qui passent par ce rectangle. Par exemple, voici les villes qui ont donné plus de 70% de leurs voix du second tour à François Hollande:</p>
-<p><a href="http://jckr.github.io/blog/projects/elections/dtour2012.html"><img class="aligncenter size-full wp-image-1266" title="hollande70" src="http://jckr.github.io/blog/wp-content/uploads/2012/05/hollande70.jpg" alt="" width="700" height="500" /></a></p>
+<p><a href="http://jckr.github.io/blog/projects/elections/dtour2012.html"><img class="aligncenter size-full wp-image-1266" title="hollande70" src="https://jckr.github.io/blog/wp-content/uploads/2012/05/hollande70.jpg" alt="" width="700" height="500" /></a></p>
 <p>&nbsp;</p>
 <p>On peut tracer autant de rectangles qu&#8217;on veut. Par exemple, on peut ne garder que les endroits qui avaient soutenu Bayrou (par exemple à plus de 10%).</p>
-<p><a href="http://jckr.github.io/blog/projects/elections/dtour2012.html"><img class="aligncenter size-full wp-image-1267" title="hollande70bayrou10" src="http://jckr.github.io/blog/wp-content/uploads/2012/05/hollande70bayrou10.jpg" alt="" width="700" height="500" /></a></p>
+<p><a href="http://jckr.github.io/blog/projects/elections/dtour2012.html"><img class="aligncenter size-full wp-image-1267" title="hollande70bayrou10" src="https://jckr.github.io/blog/wp-content/uploads/2012/05/hollande70bayrou10.jpg" alt="" width="700" height="500" /></a></p>
 <p>et voilà: il n&#8217;y en a plus que 2.</p>
 <p>Pour supprimer une sélection, il suffit de cliquer près de l&#8217;axe sans glisser. Si on clique sur un rectangle, on peut aussi le faire coulisser le long de l&#8217;axe.</p>
 <p>Avec cette technique, on peut tout de suite voir les fiefs de tel ou tel candidat: il s&#8217;agit des lignes qui touchent le haut du graphique.</p>
 <p>On peut répondre à des questions plus complexes. Par exemple, je parlais de l&#8217;explosion du vote blanc au deuxième tour. Que s&#8217;est-il passé?</p>
 <p>Sélectionnons les endroits où le vote blanc a dépassé les 4% au deuxième tour, tout en restant à moins de 1.5% au premier tour:</p>
-<p><a href="http://jckr.github.io/blog/projects/elections/dtour2012.html"><img class="aligncenter size-full wp-image-1268" title="blanc" src="http://jckr.github.io/blog/wp-content/uploads/2012/05/blanc.jpg" alt="" width="700" height="370" /></a></p>
+<p><a href="http://jckr.github.io/blog/projects/elections/dtour2012.html"><img class="aligncenter size-full wp-image-1268" title="blanc" src="https://jckr.github.io/blog/wp-content/uploads/2012/05/blanc.jpg" alt="" width="700" height="370" /></a></p>
 <p>On voit trois pics: les villes où Marine Le Pen, Jean-Luc Mélenchon ou François Bayrou ont fait un très gros score. On peut continuer à sélectionner et voir que ce sont bien les villes qui sont dans la pointe de l&#8217;un des trois triangles et pas celles qui passent par le bas qui se retrouvent dans ce cas de figure. Ces électeurs ont préféré voter blanc plutôt que de choisir.</p>
 <p>Bonne exploration!</p>
 <p><a href="http://jckr.github.io/blog/projects/elections/dtour2012.html">http://jckr.github.io/blog/projects/elections/dtour2012.html</a></p>
@@ -208,10 +208,10 @@ Et encore, tout le monde s&#8217;était accordé à dire qu&#8217;en 2007, la ga
 	<section class="post-content">
 
 		<p>So Jen and I released our <a href="http://bit.ly/starchallenge">Info+beauty awards entry</a>.</p>
-<p><a href="http://bit.ly/starchallenge"><img class="aligncenter size-full wp-image-1205" title="shootingstars" src="http://jckr.github.io/blog/wp-content/uploads/2012/02/shootingstars.png" alt="" width="628" height="636" /></a></p>
+<p><a href="http://bit.ly/starchallenge"><img class="aligncenter size-full wp-image-1205" title="shootingstars" src="https://jckr.github.io/blog/wp-content/uploads/2012/02/shootingstars.png" alt="" width="628" height="636" /></a></p>
 <p>How did we end up with this?</p>
 <p>it&#8217;s really cool working around movies, because it&#8217;s something we can relate to.</p>
-<p><div id="attachment_1206" style="width: 610px" class="wp-caption aligncenter"><a href="http://jckr.github.io/blog/wp-content/uploads/2012/02/20120203_105750.jpg"><img class="size-full wp-image-1206" title="20120203_105750" src="http://jckr.github.io/blog/wp-content/uploads/2012/02/20120203_105750.jpg" alt="" width="600" height="450" /></a><p class="wp-caption-text">A part of my movie ticket stubs stash.</p></div></p>
+<p><div id="attachment_1206" style="width: 610px" class="wp-caption aligncenter"><a href="http://jckr.github.io/blog/wp-content/uploads/2012/02/20120203_105750.jpg"><img class="size-full wp-image-1206" title="20120203_105750" src="https://jckr.github.io/blog/wp-content/uploads/2012/02/20120203_105750.jpg" alt="" width="600" height="450" /></a><p class="wp-caption-text">A part of my movie ticket stubs stash.</p></div></p>
 <p>At first I wanted to do something out of keywords we could grab on the movies but  Jen came up with another idea I found more worth pursuing: working around the story types (which was the most interesting aspect of the curated contest dataset) and see if there was not some kind of grand truth we could unravel there. She also requested stars and glitter, because we were not going to work on this glamorous dataset with a tedious dashboard done in Excel.</p>
 <p>That truth didn&#8217;t take so much time to find: the most frequently used story types (like comedy or movies with monsters) do not perform well in the box office while different story types (stories of teens growing up, or when the main character turns into something else), which are used less often, are much more profitable. So why doesn&#8217;t hollywood make more Junos and Black Swans and fewer College Road Trips or Dylan Dogs?</p>
 <p>That&#8217;s the idea. Now the making.</p>
@@ -478,7 +478,7 @@ Let's take a look at a few rows :</p>
 </table>
 I'm creating 4 lines per "leaf" node. So in this example which has 220 nodes, that amounts to 880 lines. Why 4? Because to draw a rectangle in Tableau you really need to define 4 corners. This is why there is a column "Corner" which is worth 0,1,2 and 3. This, we will use to tell Tableau to read our corners in bottom left, bottom right, top right, top left order which produces a nice convex rectangle and not a concave hourglass shape.</p>
 
-Now off to Tableau with this data. <a href="http://jckr.github.io/blog/wp-content/uploads/2012/04/complex.png"><img class="aligncenter size-full wp-image-1212" title="complex" src="http://jckr.github.io/blog/wp-content/uploads/2012/04/complex.png" alt="" width="558" height="477" /></a></p>
+Now off to Tableau with this data. <a href="http://jckr.github.io/blog/wp-content/uploads/2012/04/complex.png"><img class="aligncenter size-full wp-image-1212" title="complex" src="https://jckr.github.io/blog/wp-content/uploads/2012/04/complex.png" alt="" width="558" height="477" /></a></p>
 
 Now it's just a matter of doing like this screen. Unsurprisingly the columns and rows are going to be determined by x and y. You want a polygon mark, and you absolutely must use your corner measure in the path. For color, you'll have a choice, you can use the top-level category column (as I have) or the full path which will divide your treemap in finer parts. Finally, level of detail: you must use the Id and not the name in case several of your nodes have the same name. It's quite important at this point to uncheck aggregate measures in Analysis. You do NOT want aggregate measures (though it's quite pretty). To be able to use the name, you must first make a measure out of it. And finally, you'll want to update your infotip slightly.</p>
 
@@ -492,7 +492,7 @@ This is fine and dandy if your data doesn't change but it won't scale if you nee
 
 To that end I've tried to emulate the <a href="http://www.congressspeaks.com/">Congress speaks</a> visualization by <a href="http://periscopic.com/">Periscopic</a>. I really like it. When you've selected representatives at the end of the process you are taken to a screen which shows the following mini-treemap:</p>
 
-<a href="http://jckr.github.io/blog/wp-content/uploads/2012/04/votingrecord.png"><img class="aligncenter size-full wp-image-1213" title="votingrecord" src="http://jckr.github.io/blog/wp-content/uploads/2012/04/votingrecord.png" alt="" width="246" height="166" /></a></p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2012/04/votingrecord.png"><img class="aligncenter size-full wp-image-1213" title="votingrecord" src="https://jckr.github.io/blog/wp-content/uploads/2012/04/votingrecord.png" alt="" width="246" height="166" /></a></p>
 
 There are just 5 rectangles. But they will change for any representative that we choose. Can this be done with Tableau? Obviously.</p>
 
@@ -867,7 +867,7 @@ Here is the final result:</p>
 
 		<p>Creating visualizations from static files is fine and dandy but sometimes you need to be able to access dynamic data. And some other times, you may want to somehow record interactions from your users. One way to do that is by interacting with a mySql database.</p>
 <p>Without further ado here is the demo:</p>
-<p><iframe src="http://jckr.github.io/blog/stuff/sql_map/sqlmap.html" scrolling="no" width="542px" height="680px"></iframe></p>
+<p><iframe src="https://jckr.github.io/blog/stuff/sql_map/sqlmap.html" scrolling="no" width="542px" height="680px"></iframe></p>
 <h3>How does it work?</h3>
 <p>There are several parts to that.</p>
 <p>First, one <a href="http://jckr.github.io/blog/stuff/sql_map/sqlmap.html">html file</a> which holds everything together. By the way, for the styling I used Twitter&#8217;s <a href="http://twitter.github.com/bootstrap/">bootstrap</a> which makes it easy for all elements to find their place, and look at those purty buttons.</p>
@@ -984,7 +984,7 @@ mysql_close();
 		<p>In <a href="http://mbostock.github.com/protovis/docs/scale.html">protovis</a>, scales were super-useful in just about everything. That much hasn&#8217;t changed in d3, even though <a href="https://github.com/mbostock/d3/wiki/Scales">d3.scale</a> is a bit different from pv.Scale. (do note that <strong>d3.scale</strong> is in lowercase for starters).</p>
 <h2>Scales: the main idea</h2>
 <p>Simply put: scales transform a number in a certain interval (called the <em>domain</em>) into a number in another interval (called the <em>range</em>).<br />
-<img src="http://jckr.github.io/blog/wp-content/uploads/2011/08/d3scale1.png" alt="an example of how scales work" /><br />
+<img src="https://jckr.github.io/blog/wp-content/uploads/2011/08/d3scale1.png" alt="an example of how scales work" /><br />
 For instance, let&#8217;s suppose you <em>know</em> your data is always over 20 and always below 80. You would like to plot it, say, in a bar chart, which can be only 120 pixels tall.<br />
 You could, obviously, do the math:</p>
 <pre class="brush: jscript; title: ; notranslate" title="">.attr(&quot;height&quot;, function(d) {return (d-20)*2;})</pre>
@@ -1011,14 +1011,14 @@ First, note that <strong>unlike in protovis</strong>, domain and range take an a
 var y=d3.scale.linear().range([20,60]).domain([0,120]);</pre>
 <p>This is because <strong>contrary to protovis</strong>, where domain could be a whole dataset, in d3, domain contains the bounds of the interval that is going to be transformed.<br />
 Typically, this is two numbers. If this is more, we are talking about a polypoint scale: there are as many segments in the intervals as there are numbers in the domain (minus one). The range must have as many numbers, and so as many segments. When using the scale, if a number is in the n-th segment of the domain, it is transformed into a number in the n-th segment of the range.<br />
-<img src="http://jckr.github.io/blog/wp-content/uploads/2011/08/d3scaleMultipoint.png" alt="illustration of a multipoint scale" /><br />
+<img src="https://jckr.github.io/blog/wp-content/uploads/2011/08/d3scaleMultipoint.png" alt="illustration of a multipoint scale" /><br />
 With this example, 30 finds itself in the first segment of the domain. So it&#8217;s transformed to a value in the first segment of the range. 60, however, is in the 2nd segment, so it&#8217;s transformed into a value in the 2nd segment of the range.<br />
 Also, bounds of domain and range need not be numbers, as long as they can be converted to numbers. One useful examples are colors. Color names can be used as range, for instance, to create <em>color ramps</em>:</p>
 <pre class="brush: jscript; title: ; notranslate" title="">var ramp=d3.scale.linear().domain([0,100]).range([&quot;red&quot;,&quot;blue&quot;]);</pre>
 <p>This will transform any value betwen 0 and 100 into the corresponding color between red and blue.</p>
 <h3>Clamping</h3>
 <p>What happends if the scale is asked to process a number outside of the domain? That&#8217;s what clamping controls. If it is set, then the bounds of the range are the minimum and maximum value that can be returned by the scale. Else, the same transformation applies to all numbers, whether they fall within the domain or not.<br />
-<img src="http://jckr.github.io/blog/wp-content/uploads/2011/08/d3clamping.png" alt="Clamping example" /><br />
+<img src="https://jckr.github.io/blog/wp-content/uploads/2011/08/d3clamping.png" alt="Clamping example" /><br />
 Here, with clamping, the result of the linear transformation is 120, but without it, it&#8217;s 160. </p>
 <pre class="brush: jscript; title: ; notranslate" title="">var clamp=d3.scale.linear().domain([20,80]).range([0,120]);
 clamp(100); // 160
@@ -1058,7 +1058,7 @@ y.invert(60); // 50</pre>
 <p>The <em>linear</em>scale is a function of the form y=ax+b which works for both ends of the domain and range. In the example we&#8217;ve used most often until now, this function is really f(x): y=2x-40.<br />
 Power and logarithm scales work the same, only we are looking for a function of the form y=ax<sup>k</sup>+b, or y=a.log(x)+b.<br />
 For the power scales, you can specify an exponent (k) with the .exponent() method. For instance, if we specify an exponent of 2, here is what the scale would look like:<br />
-<img src="http://jckr.github.io/blog/wp-content/uploads/2011/08/d3scalePower.png" alt="an example of a power scale" /><br />
+<img src="https://jckr.github.io/blog/wp-content/uploads/2011/08/d3scalePower.png" alt="an example of a power scale" /><br />
 The equation is now f(x): y=x²/50-8. So 20 still becomes 0 and 80 still becomes 120, but other than that the values at the beginning of the domain would be lower than with the linear scale, and those at the end of the scale will be higher.<br />
 For convenience, d3 includes a d3.scale.sqrt() (the square root scale) so you never have to type d3.scale.pow.exponent(0.5) in full.<br />
 Also note that if you are using a log scale, you <strong>cannot</strong> have 0 in the domain. </p>
@@ -1111,7 +1111,7 @@ x(&quot;Tuesday&quot;); // 34.285714285714285
 <p>With .rangePoints(<em>interval</em>), d3 fits n points within the interval, n being the number of categories in the domain. In that case, the value of the first point is the beginning of the interval, that of the last point is the end of the interval.<br />
 With .rangeBands(<em>interval</em>), d3 fit n <em>bands</em> within the interval. Here, the value of the last item in the domain is less than the upper bound of the interval.<br />
 Those methods <strong>replace the protovis methods</strong> .split() and .splitBanded().<br />
-<img src="http://jckr.github.io/blog/wp-content/uploads/2011/08/d3ordinalRange.png" alt="difference between rangeBands and rangePoints" /><br />
+<img src="https://jckr.github.io/blog/wp-content/uploads/2011/08/d3ordinalRange.png" alt="difference between rangeBands and rangePoints" /><br />
 This chart illustrates the difference between using rangeBands and rangePoints. </p>
 <pre class="brush: jscript; title: ; notranslate" title="">var x=d3.scale.ordinal()
   .domain([&quot;Sunday&quot;,&quot;Monday&quot;,&quot;Tuesday&quot;,&quot;Wednesday&quot;,&quot;Thursday&quot;,&quot;Friday&quot;,&quot;Saturday&quot;]);
@@ -1193,7 +1193,7 @@ c.hsl().toString() // &quot;hsl(300, 76, 72)&quot;</pre>
 	<section class="post-content">
 
 		<h2>From data to graphics</h2>
-<p><img src="http://jckr.github.io/blog/wp-content/uploads/2011/08/d3principle.png" alt="the d3 principle (and also the protovis principle)" /><br />
+<p><img src="https://jckr.github.io/blog/wp-content/uploads/2011/08/d3principle.png" alt="the d3 principle (and also the protovis principle)" /><br />
 d3 and protovis are built around the same principle. Take data, put it into an array, and for each element of data a graphical object can be created, whose properties are derived from the data that was provided.</p>
 <p>Only d3 and protovis have a slightly different way of adding those graphical elements and getting data. </p>
 <p>In protovis, you start from a panel, a protovis-specific object, to which you add various marks. Each time you add a mark, you can either:</p>
@@ -1213,7 +1213,7 @@ vis.add(pv.Panel).top(10).left(10)
     .bottom(0)
     .height(function(d) {return d*10;});
 vis.render();</pre>
-<p><img src="http://jckr.github.io/blog/wp-content/uploads/2011/08/protoBar.png" alt="this simple bar chart in protovis" /><br />
+<p><img src="https://jckr.github.io/blog/wp-content/uploads/2011/08/protoBar.png" alt="this simple bar chart in protovis" /><br />
 you first create a panel (first line), you may add an element without data (here, another panel, line 2), and add to this panel bars: there would be 5, one for each element in the array in line 4. </p>
 <h2>And in d3?</h2>
 <p>In d3, you also have a way to add either one object without passing data, or a series of objects &#8211; one per data element. </p>
@@ -1281,17 +1281,17 @@ And since you have to know: there is no easy way to retrieve the data of the par
 <p>To add many elements at once we&#8217;ve used the sequence: selectAll, data, enter, append.<br />
 Why use 4 methods for what appears to be one elementary task? If you don&#8217;t care about manipulating nodes individually, for instance for animations, you can just remember the sequence. But if you want to know more, here is what each method does. </p>
 <h3>selectAll</h3>
-<p><img src="http://jckr.github.io/blog/wp-content/uploads/2011/08/d3selectAll.png" alt="the selectAll method" /><br />
+<p><img src="https://jckr.github.io/blog/wp-content/uploads/2011/08/d3selectAll.png" alt="the selectAll method" /><br />
 First, we select a point on which to add your new graphical objects. When you are creating your objects and use the selectAll method, it will return an <em>empty selection</em> but based on that given point. You may also use selectAll in another context, to update your objects for instance. But here, an empty selection is expected. </p>
 <h3>data</h3>
-<p><img src="http://jckr.github.io/blog/wp-content/uploads/2011/08/d3data.png" alt="the data method" /><br />
+<p><img src="https://jckr.github.io/blog/wp-content/uploads/2011/08/d3data.png" alt="the data method" /><br />
 Then, you attribute data. This works quite similarly to protovis: d3 expects an array. d3 takes the concept further (with the concept of <em>data joins</em>) but you need not concern yourself with that until you look at transitions.<br />
 Anyway, at this stage you have an empty selection, based on a given point in the page, but with data.</p>
 <h3>enter</h3>
-<p><img src="http://jckr.github.io/blog/wp-content/uploads/2011/08/d3enter.png" alt="the enter method" /><br />
+<p><img src="https://jckr.github.io/blog/wp-content/uploads/2011/08/d3enter.png" alt="the enter method" /><br />
 The enter method updates the selection with nodes which have data, but no graphical representation. Using enter() is like creating stubs where the graphical elements will be grafted. </p>
 <h3>append</h3>
-<p><img src="http://jckr.github.io/blog/wp-content/uploads/2011/08/d3append.png" alt="the append method" /><br />
+<p><img src="https://jckr.github.io/blog/wp-content/uploads/2011/08/d3append.png" alt="the append method" /><br />
 Finally, by appending we actually create the graphical objects. Each is tied to one data element, so it can be further styled (for instance, through &#8220;attr&#8221;) to derive its characteristics from the value of that data.</p>
 	    		<div class="clear">&nbsp;</div>
 	</section>

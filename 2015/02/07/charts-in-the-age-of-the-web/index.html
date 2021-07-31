@@ -113,7 +113,7 @@ img.emoji {
     		<section class="post-content">
 		    <p>In 2008, when I was working at <a href="http://www.oecd.org/">OECD</a>, my job description was that of an editor. That implied I was mostly working on books. I was designing charts, but they were seen as components of books. And this was typical of the era.</p>
 <p>So we would create charts like this one:</p>
-<p><img class="alignnone" src="http://jckr.github.io/blog/projects/dashboards/02-01-01-g2" alt="" width="685" height="288" /></p>
+<p><img class="alignnone" src="https://jckr.github.io/blog/projects/dashboards/02-01-01-g2" alt="" width="685" height="288" /></p>
 <p>And it was awesome! (kind of). I mean, we respected all the rules. Look at that nicely labelled y-axis! and all the categories are on the x-axis! the bars are ordered in size, it&#8217;s easy to see which has the biggest or smallest value! And with those awesome gridlines, we can lookup values &#8211; at least get an order of magnitude.</p>
 <p>What we really did though was apply styling to an excel chart (literally).</p>
 <h2>Print charts vs interactive charts</h2>
@@ -125,18 +125,18 @@ img.emoji {
 <p>And so, when everything else than a table is chosen, we typically don&#8217;t show values with all the data points, because adding data labels would burden the chart and make its overall shape harder to make out.</p>
 <p>In this framework, it makes sense to think in term of <strong>data-ink </strong>(the cornerstone of Tuftean concepts): make sure that out of all the ink needed to print the chart (you can tell it&#8217;s a print concept already&#8230;), as much should go to encode the data as possible, versus anything else.</p>
 <h3>How about now</h3>
-<p><img class="alignnone" src="http://jckr.github.io/blog/projects/dashboards/chart trad vs online 2" alt="" width="680" height="847" /></p>
+<p><img class="alignnone" src="https://jckr.github.io/blog/projects/dashboards/chart trad vs online 2" alt="" width="680" height="847" /></p>
 <p>However, there is not a single of these reasons which is valid today in the world of web or mobile charts. Data-ink only made sense on paper. </p>
 <p>Web charts have many mechanisms to let the user get extra information on a given data point. That can be information that updates on mouseover, callouts and tooltips&#8230; This might be less true of mobile in general where the distinction between hovering and clicking is less distinct. But it is definitely possible to obtain more than what is originally displayed. If I want to have an exact value, I shouldn&#8217;t have to simply deduce that from the shape of the chart. There can be mechanisms that can deliver that to me on demand.</p>
 <h3>An example: Google Finance Quote &amp; News</h3>
 <p>The <a href="https://www.google.com/finance?q=NASDAQ%3AGOOG">Google Finance Quote and News chart</a> is a very representative example of a web-native chart. Around since 2006, they provide the price of a given security, along with news for context. While its visual design has probably been topped by other dashboards, what makes it a great example is that it&#8217;s publicly available, which is uncommon for business data.</p>
-<p><img class="alignnone" src="http://jckr.github.io/blog/projects/dashboards/online chart" alt="" width="984" height="543" /></p>
+<p><img class="alignnone" src="https://jckr.github.io/blog/projects/dashboards/online chart" alt="" width="984" height="543" /></p>
 <p>While this chart has gridlines and labelled axes, that is not enough to lookup precise values. However, moving the <strong>mouse over</strong> the chart allows the user to read a precise value at a given point in time. A blue point appears and the precise value can be read in the top left corner.</p>
-<p><img class="alignnone" src="http://jckr.github.io/blog/projects/dashboards/mouseover" alt="" width="996" height="524" /></p>
+<p><img class="alignnone" src="https://jckr.github.io/blog/projects/dashboards/mouseover" alt="" width="996" height="524" /></p>
 <p>One very common <strong>data filter </strong>in chart is controls that affect the time range: date pickers. By selecting a different time range, we make the chart represent a different slice of the dataset &#8211; we effectively filter the dataset so that only the relevant dates are shown. This is in contrast with the traditional printed charts, again, where all of the dataset is shown at once. For instance, we can click on &#8220;6m&#8221; and we&#8217;ll be treated with data from the last 6 months:</p>
-<p><img class="alignnone" src="http://jckr.github.io/blog/projects/dashboards/data filters" alt="" width="985" height="424" /></p>
+<p><img class="alignnone" src="https://jckr.github.io/blog/projects/dashboards/data filters" alt="" width="985" height="424" /></p>
 <p>Comparing the selected security with others will make the chart show the data in a <strong>different mode</strong>. This is the same data (plus added series), in the same screen and the same context, but the chart is visually very different:</p>
-<p><img class="alignnone" src="http://jckr.github.io/blog/projects/dashboards/different modes" alt="" width="986" height="526" /></p>
+<p><img class="alignnone" src="https://jckr.github.io/blog/projects/dashboards/different modes" alt="" width="986" height="526" /></p>
 <p>As to the other two characteristics of web charts I mentioned, <strong>data exports</strong> and <strong>drill downs, </strong>they are also featured (but less graphical to show, so I haven&#8217;t captured a screenshot for those). There is a link on a left-side column to get the equivalent data (so it is always possible to go beyond what is shown on screen). The little flags with letters in the 3 first screenshots are clickable, and represent relevant news. Clicking them will highlight that article in a right-side column. So it is always possible to get more information.</p>
 <h3>What does that change?</h3>
 <p>Everything.</p>

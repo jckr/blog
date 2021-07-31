@@ -37,7 +37,7 @@
 		<category><![CDATA[tutorial]]></category>
 
 		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1548</guid>
-		<description><![CDATA[This past week, Scott Murray and I presented a tutorial at Strata on d3 (of all things!) First things first, you probably want to get Scott&#8217;s book on the subject when it&#8217;s out. I should be translating it into French eventually. You&#8217;re also welcome to the slides and examples of the tutorial which can be <a class="read-more" href="/2013/03/05/d3-tutorial-at-strata-redux/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+		<description><![CDATA[This past week, Scott Murray and I presented a tutorial at Strata on d3 (of all things!) First things first, you probably want to get Scott&#8217;s book on the subject when it&#8217;s out. I should be translating it into French eventually. You&#8217;re also welcome to the slides and examples of the tutorial which can be <a class="read-more" href="/blog/2013/03/05/d3-tutorial-at-strata-redux/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[<p>This past week, Scott Murray and I presented a tutorial at Strata on d3 (of all things!)<br />
 First things first, you probably want to get <a href="http://amzn.com/1449339735">Scott&#8217;s book on the subject</a> when it&#8217;s out. I should be translating it into French eventually.<br />
 You&#8217;re also welcome to the slides and examples of the tutorial which can be found on <a href="https://github.com/alignedleft/strata-d3-tutorial">https://github.com/alignedleft/strata-d3-tutorial</a>. That include my <a href="https://github.com/alignedleft/strata-d3-tutorial/blob/master/d3%20Cheat%20Sheet.pdf">d3 cheat sheet</a>.</p>

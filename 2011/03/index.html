@@ -115,7 +115,7 @@ img.emoji {
 	<section class="post-content">
 
 		<p>I just posted my <a href="http://www.datavizchallenge.org/">www.datavizchallenge.org</a> <a href="http://jckr.github.io/blog/stuff/datavizchallenge/index.html">entry</a>!<br />
-<a href="http://jckr.github.io/blog/stuff/datavizchallenge/index.html"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/03/myEntry3.png" alt="" title="My  datavizchallenge.org entry" width="323" height="330" class="aligncenter size-full wp-image-801" /></a></p>
+<a href="http://jckr.github.io/blog/stuff/datavizchallenge/index.html"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/03/myEntry3.png" alt="" title="My  datavizchallenge.org entry" width="323" height="330" class="aligncenter size-full wp-image-801" /></a></p>
 <p>So here&#8217;s a little explanation about what I&#8217;ve done, how and why. </p>
 <p>The idea behind the data provider web site, <a href="http://www.whatwepayfor.com/">WhatWePayFor</a>, is that billions and millions don&#8217;t talk to the average citizen. This doesn&#8217;t help them understand where their money goes.</p>
 <p>And in my work, I generally try to show as little data as possible to make a point. And I like to use interactivity to involve users. </p>
@@ -187,9 +187,9 @@ Je propose 3 scénarios: une comparaison gauche-droite, l'importance de l'extrê
 <input type="radio" checked name="group1" value="0" onclick="sc=0;reinit() ;vis.render();">Gauche-droite
 <input type="radio" name="group1" value="1" onclick="sc=1;reinit() ;vis.render();">Extrême-droite
 <input type="radio" name="group1" value="2" onclick="sc=2;reinit() ;vis.render();">Abstention</form>
-<script type="text/javascript" src="http://jckr.github.io/blog/wp-content/uploads/2011/03/votes.js"></script>
-<script type="text/javascript" src="http://jckr.github.io/blog/wp-content/uploads/2011/03/francedorling.js"></script>
-<script type="text/javascript" src="http://jckr.github.io/blog/wp-content/uploads/2011/03/cantonales.js"></script>
+<script type="text/javascript" src="https://jckr.github.io/blog/wp-content/uploads/2011/03/votes.js"></script>
+<script type="text/javascript" src="https://jckr.github.io/blog/wp-content/uploads/2011/03/francedorling.js"></script>
+<script type="text/javascript" src="https://jckr.github.io/blog/wp-content/uploads/2011/03/cantonales.js"></script>
 	    		<div class="clear">&nbsp;</div>
 	</section>
 </article><!-- #post-## -->
@@ -233,7 +233,7 @@ vis.add(pv.Bar)
 
 vis.render();
 </pre></td>
-<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/categories.png"><img class="aligncenter size-full wp-image-483" title="categories" src="http://jckr.github.io/blog/wp-content/uploads/2011/02/categories.png" alt="" width="144" height="135" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/categories.png"><img class="aligncenter size-full wp-image-483" title="categories" src="https://jckr.github.io/blog/wp-content/uploads/2011/02/categories.png" alt="" width="144" height="135" /></a></td>
 </tr>
 </tbody>
 </table>
@@ -463,9 +463,9 @@ No matter the manipulations you inflict to an array you will always be able to m
 		<h2>What is a map?</h2>
 <p>before we start looking at the code it may be a good idea to think of the best way to represent a country.<br />
 Countries are areas of land surrounded by borders, which are imaginary (or sometimes physical) <strong>lines</strong> going through a set of <strong>points</strong>.<br />
-<a href="http://jckr.github.io/blog/wp-content/uploads/2011/03/square.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/03/square.png" alt="" title="square" width="200" height="200" class="aligncenter size-full wp-image-748" /></a></p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/03/square.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/03/square.png" alt="" title="square" width="200" height="200" class="aligncenter size-full wp-image-748" /></a></p>
 <p>Some countries are made of one of such surfaces, but many countries are not one contiguous territory (they may include islands for instance) so they could be made out of <strong>several disjointed polygons</strong>.<br />
-<a href="http://jckr.github.io/blog/wp-content/uploads/2011/03/square1.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/03/square1.png" alt="" title="square" width="200" height="200" class="aligncenter size-full wp-image-749" /></a>.</p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/03/square1.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/03/square1.png" alt="" title="square" width="200" height="200" class="aligncenter size-full wp-image-749" /></a>.</p>
 <p>Now let&#8217;s put on our protovis hat. Let&#8217;s suppose we want to draw a map where each country could be colored differently (choropleth). What kind of data structure should be use to represent that?<br />
 First there should be a sort of array of countries. Each country should be an item in that array, so they can be indexed and assigned an individual color and various data points.<br />
 Then, at the lowest level, we would be drawing polygons, which are treated as pv.Line in protovis. For each polygon, we would require an array of coordinate pairs. To draw a country, we would need a list (array) of those polygons. </p>
@@ -487,7 +487,7 @@ Then, at the lowest level, we would be drawing polygons, which are treated as pv
 ...
 ]</pre>
 <h2>the map projections example</h2>
-<p><a href="http://jckr.github.io/blog/wp-content/uploads/2011/03/projections.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/03/projections.png" alt="" title="projections" width="600" height="360" class="aligncenter size-full wp-image-754" /></a></p>
+<p><a href="http://jckr.github.io/blog/wp-content/uploads/2011/03/projections.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/03/projections.png" alt="" title="projections" width="600" height="360" class="aligncenter size-full wp-image-754" /></a></p>
 <p>Can be found <a href="http://vis.stanford.edu/protovis/ex/projection.html">here: </a> http://vis.stanford.edu/protovis/ex/projection.html</p>
 <pre class="brush: jscript; title: ; notranslate" title="">/*
  * A diverging color scale, using previously-computed quantiles of population

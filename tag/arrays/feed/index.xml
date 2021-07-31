@@ -31,13 +31,13 @@
 		<category><![CDATA[projections]]></category>
 
 		<guid isPermaLink="false">http://jckr.github.io/blog/?p=573</guid>
-		<description><![CDATA[What is a map? before we start looking at the code it may be a good idea to think of the best way to represent a country. Countries are areas of land surrounded by borders, which are imaginary (or sometimes physical) lines going through a set of points. Some countries are made of one of <a class="read-more" href="/2011/03/15/protovis-analysis-of-the-map-projections-example/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+		<description><![CDATA[What is a map? before we start looking at the code it may be a good idea to think of the best way to represent a country. Countries are areas of land surrounded by borders, which are imaginary (or sometimes physical) lines going through a set of points. Some countries are made of one of <a class="read-more" href="/blog/2011/03/15/protovis-analysis-of-the-map-projections-example/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[<h2>What is a map?</h2>
 <p>before we start looking at the code it may be a good idea to think of the best way to represent a country.<br />
 Countries are areas of land surrounded by borders, which are imaginary (or sometimes physical) <strong>lines</strong> going through a set of <strong>points</strong>.<br />
-<a href="http://jckr.github.io/blog/wp-content/uploads/2011/03/square.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/03/square.png" alt="" title="square" width="200" height="200" class="aligncenter size-full wp-image-748" /></a></p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/03/square.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/03/square.png" alt="" title="square" width="200" height="200" class="aligncenter size-full wp-image-748" /></a></p>
 <p>Some countries are made of one of such surfaces, but many countries are not one contiguous territory (they may include islands for instance) so they could be made out of <strong>several disjointed polygons</strong>.<br />
-<a href="http://jckr.github.io/blog/wp-content/uploads/2011/03/square1.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/03/square1.png" alt="" title="square" width="200" height="200" class="aligncenter size-full wp-image-749" /></a>.</p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/03/square1.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/03/square1.png" alt="" title="square" width="200" height="200" class="aligncenter size-full wp-image-749" /></a>.</p>
 <p>Now let&#8217;s put on our protovis hat. Let&#8217;s suppose we want to draw a map where each country could be colored differently (choropleth). What kind of data structure should be use to represent that?<br />
 First there should be a sort of array of countries. Each country should be an item in that array, so they can be indexed and assigned an individual color and various data points.<br />
 Then, at the lowest level, we would be drawing polygons, which are treated as pv.Line in protovis. For each polygon, we would require an array of coordinate pairs. To draw a country, we would need a list (array) of those polygons. </p>
@@ -59,7 +59,7 @@ Then, at the lowest level, we would be drawing polygons, which are treated as pv
 ...
 ]</pre>
 <h2>the map projections example</h2>
-<p><a href="http://jckr.github.io/blog/wp-content/uploads/2011/03/projections.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/03/projections.png" alt="" title="projections" width="600" height="360" class="aligncenter size-full wp-image-754" /></a></p>
+<p><a href="http://jckr.github.io/blog/wp-content/uploads/2011/03/projections.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/03/projections.png" alt="" title="projections" width="600" height="360" class="aligncenter size-full wp-image-754" /></a></p>
 <p>Can be found <a href="http://vis.stanford.edu/protovis/ex/projection.html">here: </a> http://vis.stanford.edu/protovis/ex/projection.html</p>
 <pre class="brush: jscript; title: ; notranslate">/*
  * A diverging color scale, using previously-computed quantiles of population
@@ -224,7 +224,7 @@ so, function(d,b,c) c.name retrieves the country name, and function(d,b,c) c.col
 		<category><![CDATA[tutorial]]></category>
 
 		<guid isPermaLink="false">http://jckr.github.io/blog/?p=494</guid>
-		<description><![CDATA[Previous : Multi-dimensional arrays, inheritance and hierarchy Short interlude: what can be done with arrays in javascript? Now that we have a grasp on how arrays work and how they can be used in protovis, let’s take a step back and look at some very useful methods for working with arrays in standard javascript. Sorting <a class="read-more" href="/2011/02/09/working-with-data-in-protovis-part-3-of-5/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+		<description><![CDATA[Previous : Multi-dimensional arrays, inheritance and hierarchy Short interlude: what can be done with arrays in javascript? Now that we have a grasp on how arrays work and how they can be used in protovis, let’s take a step back and look at some very useful methods for working with arrays in standard javascript. Sorting <a class="read-more" href="/blog/2011/02/09/working-with-data-in-protovis-part-3-of-5/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[<p>Previous : <a href="http://jckr.github.io/blog/?p=479">Multi-dimensional arrays, inheritance and hierarchy</a></p>
 <h2>Short interlude: what can be done with arrays in javascript?</h2>
 <p>Now that we have a grasp on how arrays work and how they can be used in protovis, let’s take a step back and look at some very useful methods for working with arrays in standard javascript.</p>
@@ -410,7 +410,7 @@ I want to sort the rows by the value of the latest year (which happens to be the
 And, since I only want the top 12 values, I just write .slice(0,12) after that. </p>
 <p>In line 55, I just add a label. pv.Label inherits the data of its parent. The data item is the whole row of my 2-dimensional table, so if I write function(d) d[0], I am referring to the left-most item which will be the country name. </p>
 <p>So, with the use of simple array functions, I can easily rework an unprepared dataset in protovis, rather than having to tailor my dataset with manual (and error-prone) manipulations in external programs. Here is the result:<br />
-<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/sortedBar.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/sortedBar.png" alt="" title="sortedBar" width="250" height="200" class="aligncenter size-full wp-image-589" /></a><br />
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/sortedBar.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/sortedBar.png" alt="" title="sortedBar" width="250" height="200" class="aligncenter size-full wp-image-589" /></a><br />
 Next: <a href="http://jckr.github.io/blog/?p=502">reshaping complex arrays</a></p>
 ]]></content:encoded>
 			<wfw:commentRss>/2011/02/09/working-with-data-in-protovis-part-3-of-5/feed/</wfw:commentRss>
@@ -430,7 +430,7 @@ Next: <a href="http://jckr.github.io/blog/?p=502">reshaping complex arrays</a></
 		<category><![CDATA[tutorial]]></category>
 
 		<guid isPermaLink="false">http://jckr.github.io/blog/?p=429</guid>
-		<description><![CDATA[When I started using protovis I had only a very basic knowledge of javascript, which in theory isn’t a problem as protovis is meant to be learned by example, and as it has its own logic and structure which is different from typical javascript code. So I started by looking and modifying examples which was <a class="read-more" href="/2011/02/07/working-with-data-in-protovis-part-1-of-5/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+		<description><![CDATA[When I started using protovis I had only a very basic knowledge of javascript, which in theory isn’t a problem as protovis is meant to be learned by example, and as it has its own logic and structure which is different from typical javascript code. So I started by looking and modifying examples which was <a class="read-more" href="/blog/2011/02/07/working-with-data-in-protovis-part-1-of-5/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[<p>When I started using <a href="http://www.protovis.org/">protovis </a>I had only a very basic knowledge of javascript, which in theory isn’t a problem as protovis is meant to be learned by example, and as it has its own logic and structure which is different from typical javascript code. So I started by looking and modifying examples which was enough to do basic stuff.<br />
 But I soon felt limited by what hid behind a single property: <strong>data</strong>. I knew that protovis had lots of features to manipulate and process data but they were not obvious from the examples.</p>
 <p>I mean,</p>
@@ -449,7 +449,7 @@ vis.add(pv.Bar)
 
 vis.render();</pre>
 </td>
-<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/01/basic-example1.png"><img class="aligncenter size-full wp-image-433" title="basic example" src="http://jckr.github.io/blog/wp-content/uploads/2011/01/basic-example1.png" alt="" width="150" height="150" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/01/basic-example1.png"><img class="aligncenter size-full wp-image-433" title="basic example" src="https://jckr.github.io/blog/wp-content/uploads/2011/01/basic-example1.png" alt="" width="150" height="150" /></a></td>
 </tr>
 </tbody>
 </table>

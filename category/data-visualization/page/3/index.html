@@ -233,7 +233,7 @@ Let&#8217;s do a bubble chart for instance.<br />
     .append(&quot;title&quot;)
     .text(String)</pre>
 <p>and this works:<br />
-<iframe src="http://jckr.github.io/blog/stuff/data%20example/data-example0.html" width=512px height=520px scrolling=no style="border:0px"></iframe><br />
+<iframe src="https://jckr.github.io/blog/stuff/data%20example/data-example0.html" width=512px height=520px scrolling=no style="border:0px"></iframe><br />
 <a href="http://jckr.github.io/blog/stuff/data%20example/data-example0.html">See example in its own tab or window</a><br />
 but this is hell to maintain. If for some reason there is an error in one of the values, for instance due to a cat or a small child in the proximity of the computer, the error will be very difficult to troubleshoot.<br />
 Another problem is that it&#8217;s very difficult to apply any kind of subsequent treatment to the data. For instance, you will notice that there are smaller bubbles entirely within the large orange bubble which happens to be on top of them. So it&#8217;s not possible to mouseover the smaller bubbles. One way to address that would be to sort data in order of decreasing population (the size of the bubbles) so that it would be impossible to have this kind of situation. Now while it is possible sorting 6 arrays according to the values of one, it&#8217;s very messy.</p>
@@ -288,7 +288,7 @@ Another problem is that it&#8217;s very difficult to apply any kind of subsequen
 ]</pre>
 <p>and get this done, and furthermore if you are thinking &#8220;Hey, I can do this in Excel from my csv file, with one formula that I will copy across the rows&#8221;, <strong>you need to stop right now in the name of all that is good and holy</strong>.<br />
 Even though it works: </p>
-<p><iframe src="http://jckr.github.io/blog/stuff/data%20example/data-example1.html" width=512px height=520px scrolling=no style="border:0px"></iframe><br />
+<p><iframe src="https://jckr.github.io/blog/stuff/data%20example/data-example1.html" width=512px height=520px scrolling=no style="border:0px"></iframe><br />
 <a href="http://jckr.github.io/blog/stuff/data%20example/data-example1.html">See example in its own tab or window</a></p>
 <p>This approach has a number of flaws which you can all avoid if you read on.<br />
 First, the execution of your program will be stopped while your browser reads the source code that contains the &#8220;data&#8221; variable. This is negligible for 36 rows, but as objects get bigger and more complex, an equivalent variable may take seconds or even minutes to load. And now we have a problem.<br />
@@ -332,7 +332,7 @@ In other words, once inside the d3.csv function, the &#8220;csv&#8221; variable 
 <li>Everything read from the file is treated as strings. Javascript does a lot of type conversion but be mindful of that or you will have surprises. This is why I wrote x(+d.GERD) for instance (+ before a string converts it to a number).</li>
 </ul>
 <p>To celebrate this superior way of aquiring data, we&#8217;ve thrown in animated data entry: the circles are initiated at a default value and move towards their position. You may want to check the link to see the transition effect.</p>
-<p><iframe src="http://jckr.github.io/blog/stuff/data%20example/data-example2.html" width=512px height=520px scrolling=no style="border:0px"></iframe><br />
+<p><iframe src="https://jckr.github.io/blog/stuff/data%20example/data-example2.html" width=512px height=520px scrolling=no style="border:0px"></iframe><br />
 <a href="http://jckr.github.io/blog/stuff/data%20example/data-example2.html">See example in its own tab or window</a></p>
 <p>So, at the level of the mark (ie our circles) the most comfortable form of data is an object with at least as many keys as there will be graphical properties to change dynamically.<br />
 One flat array of data is fine if we have just one series of data. But what if we have several series? Indeed, most visualizations have a structure and a hierarchy.<br />
@@ -415,7 +415,7 @@ The last part of the statement, .entries(csv), says that we want to do that oper
       .style(&quot;opacity&quot;,function(d) {return o(d.population)})
       .style(&quot;opacity&quot;,function(d) {return o(+d.GDPcap);})</pre>
 <p>(you may want to click on the link to see the transition effect and read the full source).<br />
-<iframe src="http://jckr.github.io/blog/stuff/data%20example/data-example3.html" width=512px height=122px scrolling=no style="border:0px"></iframe><br />
+<iframe src="https://jckr.github.io/blog/stuff/data%20example/data-example3.html" width=512px height=122px scrolling=no style="border:0px"></iframe><br />
 <a href="http://jckr.github.io/blog/stuff/data%20example/data-example3.html">See example in its own tab or window</a></p>
 <p>This is all very nice but wouldn&#8217;t it be better if we could characterize some aggregate information from the continents? Let&#8217;s try to find out the average values for R&#038;D expenditure and GDP growth. </p>
 <p>Can it be done easily? This is a job for the other main d3.nest method, rollup.</p>
@@ -501,7 +501,7 @@ Now it&#8217;s just a matter of adding them to the sketch. Two little additions 
     .attr(&quot;x1&quot;,function(d,i) {return x(avgs[i].values.GERD);})
     .attr(&quot;x2&quot;,function(d,i) {return x(avgs[i].values.GERD);})</pre>
 <p>This is the final example &#8211; again you may want to click on the link to see the transition and get the entirety of the source.<br />
-<iframe src="http://jckr.github.io/blog/stuff/data%20example/data-example4.html" width=512px height=122px scrolling=no style="border:0px"></iframe><br />
+<iframe src="https://jckr.github.io/blog/stuff/data%20example/data-example4.html" width=512px height=122px scrolling=no style="border:0px"></iframe><br />
 <a href="http://jckr.github.io/blog/stuff/data%20example/data-example4.html">See example in its own tab or window</a></p>
 <p>To wrap up:</p>
 <ul>
@@ -524,7 +524,7 @@ Now it&#8217;s just a matter of adding them to the sketch. Two little additions 
     </header>
 	<section class="post-content">
 
-		<p><div id="attachment_1290" style="width: 620px" class="wp-caption aligncenter"><a href="http://jckr.github.io/blog/projects/elections/parite.html"><img class="size-full wp-image-1290" title="La parité, c'est maintenant" src="http://jckr.github.io/blog/wp-content/uploads/2012/05/parite.png" alt="" width="610" height="572" /></a><p class="wp-caption-text">It&#39;s all about this map (click for interactive version)</p></div></p>
+		<p><div id="attachment_1290" style="width: 620px" class="wp-caption aligncenter"><a href="http://jckr.github.io/blog/projects/elections/parite.html"><img class="size-full wp-image-1290" title="La parité, c'est maintenant" src="https://jckr.github.io/blog/wp-content/uploads/2012/05/parite.png" alt="" width="610" height="572" /></a><p class="wp-caption-text">It&#39;s all about this map (click for interactive version)</p></div></p>
 <p>To my datavis readers, sorry for that string of posts in French but what better data to visualize than political data, and what better time to visualize political data than election time, and what better audience for such visualizations than the folks who are asked to vote?</p>
 <p><a href="http://jckr.github.io/blog/blog/2012/05/15/making-of-cutting-paris-in-voting-districts/">Like last time</a>, though, I am writing a follow-up technical post about how I dealt with the issues of this visualization.</p>
 <p>So anyone who ever tried to make data visualizations knows that you can hardly start without <strong>data</strong>.</p>
@@ -539,16 +539,16 @@ Now it&#8217;s just a matter of adding them to the sketch. Two little additions 
 <p>Predicting these chances is a well-known problem known as <em>classification </em> for which the textbook method is <em>logistic regression.</em></p>
 <p>All we need was the 575 districts for which I had results. We then associate the score of a party at the 2nd round of the election to whether the corresponding congress candidate got elected (1 or 0). That gives us <a href="http://jckr.github.io/blog/projects/elections/deputes.txt">1150 pairs of values</a> which we throw in the mathematical cooking pot.</p>
 <p>And what we get is the following formula:</p>
-<p><a href="http://jckr.github.io/blog/wp-content/uploads/2012/05/equation.png"><img class="aligncenter size-full wp-image-1305" title="equation" src="http://jckr.github.io/blog/wp-content/uploads/2012/05/equation.png" alt="" width="297" height="66" /></a></p>
+<p><a href="http://jckr.github.io/blog/wp-content/uploads/2012/05/equation.png"><img class="aligncenter size-full wp-image-1305" title="equation" src="https://jckr.github.io/blog/wp-content/uploads/2012/05/equation.png" alt="" width="297" height="66" /></a></p>
 <p>where x is the score in the previous election (between 0 and 1).  As you can see when x gets close to 0, the denominator becomes a very large number and the probability quickly drops to virtually nothing, and converserly when x gets close to 1, the denominator becomes very close to 1 so the probability rises up to 1 equally fast.</p>
-<p><iframe style="border: none;" src="http://jckr.github.io/blog/stuff/littlesigmoid.html" scrolling="no" width="502px" height="270px"></iframe></p>
+<p><iframe style="border: none;" src="https://jckr.github.io/blog/stuff/littlesigmoid.html" scrolling="no" width="502px" height="270px"></iframe></p>
 <p>With this and that in place, it is possible to come up with a <a href="http://jckr.github.io/blog/projects/elections/pariteFM.csv">reasonable estimation</a> of the chances of any candidate based on the recent results. As an aside, the current Prime Minister has renewed the tradition started by his predecessor to ask ministers to seek office and to force them to step down if they fail to win their district. As a result, 24 out of the 37 ministers are campaigning. Out of those 24, 2 are taking very serious risks according to this model: Marie-Anne Carlotti and Benoît Hamon.</p>
 <p>Finally, <strong>geography</strong>.</p>
 <p>In an ideal world, there will be an abundance of geoJSON files describing France and its many administrative entities. Usable data must exist somewhere, because the maps on <a href="view-source:http://www.elections-legislatives.fr/candidats.asp">www.elections-legislatives.fr</a> have all been generated (by Raphael.js says the source code). If I&#8217;m doing another project on these elections I might reverse engineer the shape of the maps to extract the coordinates.</p>
 <p>Without a dataset, the work of drawing the boundaries of 577 districts is just huge. However, accuracy is not required as I&#8217;m only putting the districts on a map so people can look up where they live or places they know. <a href="http://jckr.github.io/blog/blog/2012/05/15/making-of-cutt…ting-districts/">In my previous work</a> in order to let users change the composition of the districts, I wanted to be rigorous in the placement of everything but here we can live with imperfection.</p>
 <p>So I am using the same <a href="http://jckr.github.io/blog/blog/2012/05/15/making-of-cutt…ting-districts/">principle as I did</a>: voronoi tesselation.</p>
 <p>For each district I am picking the largest city, for which I have the coordinates. But most large cities belong to several districts. So I am adding random noise to each point. Then, I am drawing shapes around them.</p>
-<p><iframe style="border: none;" src="http://jckr.github.io/blog/stuff/littlevoronoi.html" scrolling="no" width="502px" height="270px"></iframe></p>
+<p><iframe style="border: none;" src="https://jckr.github.io/blog/stuff/littlevoronoi.html" scrolling="no" width="502px" height="270px"></iframe></p>
 <p>That would normally fill a rectangle, so in order to make it look like France, I have drawn a <a href="http://commons.oreilly.com/wiki/index.php/SVG_Essentials/Clipping_and_Masking">clipping mask</a> on top of it (that, I&#8217;ve done by hand, picking coordinates of the outline of France).</p>
 <p>That about wraps it up!</p>
 	    		<div class="clear">&nbsp;</div>
@@ -565,7 +565,7 @@ Now it&#8217;s just a matter of adding them to the sketch. Two little additions 
     </header>
 	<section class="post-content">
 
-		<p><div id="attachment_1290" style="width: 620px" class="wp-caption aligncenter"><a href="http://jckr.github.io/blog/projects/elections/parite.html"><img class="size-full wp-image-1290" title="La parité, c'est maintenant" src="http://jckr.github.io/blog/wp-content/uploads/2012/05/parite.png" alt="" width="610" height="572" /></a><p class="wp-caption-text">Cliquez sur l&#39;image pour arriver à l&#39;application interactive</p></div></p>
+		<p><div id="attachment_1290" style="width: 620px" class="wp-caption aligncenter"><a href="http://jckr.github.io/blog/projects/elections/parite.html"><img class="size-full wp-image-1290" title="La parité, c'est maintenant" src="https://jckr.github.io/blog/wp-content/uploads/2012/05/parite.png" alt="" width="610" height="572" /></a><p class="wp-caption-text">Cliquez sur l&#39;image pour arriver à l&#39;application interactive</p></div></p>
 <p>J&#8217;ai eu l&#8217;idée de créer cette carte quand j&#8217;ai pu mettre la main sur les données des résultats de la présidentielle par circonscription législative. En 2007, les résulats du deuxième tour ont été un très bon prédicteur de ceux des législatives qui ont suivi: une circonscription pour qui un candidat à la présidentielle au second tour a fait ne serait-ce que 52% a plus de 75% de chances d&#8217;être remportée par le député du même parti.<br />
 Et encore, tout le monde s&#8217;était accordé à dire qu&#8217;en 2007, la gauche avait fait une très bonne campagne et qu&#8217;elle avait <a href="http://www.rfi.fr/actufr/articles/090/article_52924.asp">endigué la vague bleue</a>. Les probabilités sont sûrement encore plus élevées.</p>
 <p>Or, presque 80% des circonscriptions ont été gagnées avec un score supérieur à 52%, ce qui est donc une très grosse marge. Dans plus du quart d&#8217;entre elles, le gagnant du scrutin a même récolté plus de 60% des voix&#8230;</p>
@@ -597,10 +597,10 @@ Et encore, tout le monde s&#8217;était accordé à dire qu&#8217;en 2007, la ga
 <p>So I needed the results by the finest possible unit, that is by individual polling station. During the election night these results are compiled by city and centralized, so you would assume that the raw data of each polling station is available somewhere. That is not the case, unfortunately. Although it seems that they will be made public eventually, that may not be the case before the June 2012 election.</p>
 <p>Fortunately, <a href="http://opendata.paris.fr/opendata/jsp/site/Portal.jsp?document_id=133&amp;portlet_id=102">Open Data Paris</a> had the results by polling station. More: it had their address and matching of every inhabited building in Paris to its corresponding polling station.</p>
 <p>To map the polling stations, my first intuition was to create a <a href="http://en.wikipedia.org/wiki/Voronoi_diagram">voronoi tesselation</a> of their projected, geocoded coordinates (I only had their addresses in the raw data file). In short, voronoi polygons can be generated for a certain number of control points and correspond to the area nearer to that control point than to any other. So it&#8217;s a good approximation of the areas  which correspond to a given polling station.</p>
-<p><iframe style="border:none;" src="http://jckr.github.io/blog/stuff/littlevoronoi.html" scrolling="no" width="502px" height="270px"></iframe></p>
+<p><iframe style="border:none;" src="https://jckr.github.io/blog/stuff/littlevoronoi.html" scrolling="no" width="502px" height="270px"></iframe></p>
 <p>Problem: several polling stations could be in the same address, and for the voronoi algorithm the control points have to be distinct. So I tried jittering them (adding random noise to each one). A tesselation could be done that kind of looked like Paris but voting districts will look messy as there were frequent inversions between neighboring districts.</p>
 <p>So I had to come up with a better approximation of what part of the city corresponded to what voting district. So I used the address to polling station correspondance, and for each polling station I took the first and the last street number of any street that was covered by it. Then I geocoded the whole lot. That&#8217;s about 16000 points. It took some time.</p>
-<p><div id="attachment_1280" style="width: 616px" class="wp-caption aligncenter"><a href="http://jckr.github.io/blog/wp-content/uploads/2012/05/centroids.png"><img class="wp-image-1280" title="centroids" src="http://jckr.github.io/blog/wp-content/uploads/2012/05/centroids.png" alt="" width="606" height="478" /></a><p class="wp-caption-text">Here&#39;s my polling station as an example.</p></div></p>
+<p><div id="attachment_1280" style="width: 616px" class="wp-caption aligncenter"><a href="http://jckr.github.io/blog/wp-content/uploads/2012/05/centroids.png"><img class="wp-image-1280" title="centroids" src="https://jckr.github.io/blog/wp-content/uploads/2012/05/centroids.png" alt="" width="606" height="478" /></a><p class="wp-caption-text">Here&#39;s my polling station as an example.</p></div></p>
 <p>Then, for each polling station area, I took the minimum and maximum longitude and latitude, which formed a bounding box, and assigned the polling station to the center of that box. Then, I used tesselation again.</p>
 <p>I found a number of oddities in the geocoding that I had to correct manually, because if one address was not accurately coded, chances are it would change the shape of the bounding box drastically and so the position of its corresponding polling station. Sometimes the geocoding service wouldn&#8217;t find the street and/or would use a street of the same name in another city, sometimes they did find the street but the coordinates were way off&#8230; So the dataset required a lot of massaging before it got into shape.</p>
 <p>The last geographic errand I had to do for this visualization was to create a perimeter of Paris to use as a clipping mask, else the tesselation would be done on a rectangular shape with the edge polygons being very large and very skewed. So I collected coordinates of points around Paris to create one polygon. Only what&#8217;s inside of this polygon is shown (.style(&#8220;clip-path&#8221;) in d3).</p>
@@ -622,7 +622,7 @@ Et encore, tout le monde s&#8217;était accordé à dire qu&#8217;en 2007, la ga
 	<section class="post-content">
 
 		<p>Mon <a href="http://jckr.github.io/blog/projects/elections/circonscriptions.html">dernier projet</a> permet de voir les résultats des élections présidentielles à Paris par bureau de vote et de les projeter sur les circonscriptions qui serviront aux élections législatives de juin 2012.</p>
-<p><a href="http://jckr.github.io/blog/projects/elections/circonscriptions.html"><img class="aligncenter size-full wp-image-1274" title="votes" src="http://jckr.github.io/blog/wp-content/uploads/2012/05/votes.jpg" alt="" width="556" height="385" /></a>Et surtout il permet de changer la composition de ces circonscriptions, dont le tracé aujourd&#8217;hui est assez arbitraire. Il y aura 18 circonscriptions à Paris contre 21 aujourd&#8217;hui, et elles ne suivent pas les arrondissements.</p>
+<p><a href="http://jckr.github.io/blog/projects/elections/circonscriptions.html"><img class="aligncenter size-full wp-image-1274" title="votes" src="https://jckr.github.io/blog/wp-content/uploads/2012/05/votes.jpg" alt="" width="556" height="385" /></a>Et surtout il permet de changer la composition de ces circonscriptions, dont le tracé aujourd&#8217;hui est assez arbitraire. Il y aura 18 circonscriptions à Paris contre 21 aujourd&#8217;hui, et elles ne suivent pas les arrondissements.</p>
 <p>Le tracé de ces circonscriptions est déterminant pour le résultat des élections. Aujourd&#8217;hui, par exemple, il y a deux circonscriptions où Nicolas Sarkozy a récupéré plus de 75% des voix au 2ème tour de l&#8217;élection présidentielle, j&#8217;imagine que la gauche ne place pas trop d&#8217;espoir sur leur reconquête. De même, il existe pas moins de 9 circonscriptions où François Hollande a reçu plus de 60% des votes. En l&#8217;état actuel des choses, 12 circonscriptions semblent acquises à la gauche et 6 à la droite, dont 3 pourraient peut-être quand même être gagnées par la gauche.</p>
 <p>Le découpage actuel n&#8217;est optimum ni pour la gauche, ni pour la droite. En modifiant le tracé des circonscriptions, la gauche pourrait toutes les remporter, et la droite pourrait en gagner 12 sur 18 (ou peut-être plus, 12 restant mon <em>high-score</em> personnel). Pour favoriser un camp, l&#8217;idée consiste à répartir les bureaux de votes les plus favorables entre le plus de circonscriptions possibles, plutôt que de les garder dans peu de circonscriptions. En généralisant sur le territoire, on imagine ce que ça peut donner!</p>
 <p>Donc, quelque soit le sentiment actuel, tel ou tel redécoupage peut complètement redistribuer les cartes. C&#8217;est un sentiment dérangeant parce que ces redécoupages arrivent régulièrement et sont relativement opaques. D&#8217;ailleurs, il est assez difficile de faire le lien entre les données des élections présidentielles et les circonscriptions législatives parce que les résultats ne sont que rarement disponibles par bureau de vote.</p>
@@ -641,7 +641,7 @@ Et encore, tout le monde s&#8217;était accordé à dire qu&#8217;en 2007, la ga
     </header>
 	<section class="post-content">
 
-		<p style="text-align: center;"><a href="http://jckr.github.io/blog/projects/elections/dtour2012.html"><img class="aligncenter size-full wp-image-1265" title="front" src="http://jckr.github.io/blog/wp-content/uploads/2012/05/front.jpg" alt="" width="700" height="374" /></a></p>
+		<p style="text-align: center;"><a href="http://jckr.github.io/blog/projects/elections/dtour2012.html"><img class="aligncenter size-full wp-image-1265" title="front" src="https://jckr.github.io/blog/wp-content/uploads/2012/05/front.jpg" alt="" width="700" height="374" /></a></p>
 <p>Qui dit élection présidentielle, dit résultats.</p>
 <p>Et qui dit résultats dit représentation visuelle dans les médias.</p>
 <p>Et donc souvent carte.</p>
@@ -650,16 +650,16 @@ Et encore, tout le monde s&#8217;était accordé à dire qu&#8217;en 2007, la ga
 <p>Pour répondre à ces questions, on peut utiliser les <a href="http://jckr.github.io/blog/projects/elections/dtour2012.html">coordonnées parallèles</a>.</p>
 <p>Chaque axe vertical correspond à un vote possible &#8211; d&#8217;abord ceux du premier tour, puis ceux du deuxième. Chaque ligne de couleur correspond à une ville (ou à un département, à une région, ou à la France). Chacune de ces lignes coupe chaque axe à une hauteur qui correspond à la proportion des gens qui ont fait tel ou tel choix. Par exemple, les villes où on a beaucoup voté pour Jean-Luc Mélenchon, comme Bagnolet ou Gennevilliers, se retrouveront vers le haut de l&#8217;axe du milieu.</p>
 <p>En s&#8217;approchant des axes, le curseur devient une croix. Il suffit alors de le faire glisser le long de l&#8217;axe pour dessiner un rectangle, et mettre en valeur toutes les lignes qui passent par ce rectangle. Par exemple, voici les villes qui ont donné plus de 70% de leurs voix du second tour à François Hollande:</p>
-<p><a href="http://jckr.github.io/blog/projects/elections/dtour2012.html"><img class="aligncenter size-full wp-image-1266" title="hollande70" src="http://jckr.github.io/blog/wp-content/uploads/2012/05/hollande70.jpg" alt="" width="700" height="500" /></a></p>
+<p><a href="http://jckr.github.io/blog/projects/elections/dtour2012.html"><img class="aligncenter size-full wp-image-1266" title="hollande70" src="https://jckr.github.io/blog/wp-content/uploads/2012/05/hollande70.jpg" alt="" width="700" height="500" /></a></p>
 <p>&nbsp;</p>
 <p>On peut tracer autant de rectangles qu&#8217;on veut. Par exemple, on peut ne garder que les endroits qui avaient soutenu Bayrou (par exemple à plus de 10%).</p>
-<p><a href="http://jckr.github.io/blog/projects/elections/dtour2012.html"><img class="aligncenter size-full wp-image-1267" title="hollande70bayrou10" src="http://jckr.github.io/blog/wp-content/uploads/2012/05/hollande70bayrou10.jpg" alt="" width="700" height="500" /></a></p>
+<p><a href="http://jckr.github.io/blog/projects/elections/dtour2012.html"><img class="aligncenter size-full wp-image-1267" title="hollande70bayrou10" src="https://jckr.github.io/blog/wp-content/uploads/2012/05/hollande70bayrou10.jpg" alt="" width="700" height="500" /></a></p>
 <p>et voilà: il n&#8217;y en a plus que 2.</p>
 <p>Pour supprimer une sélection, il suffit de cliquer près de l&#8217;axe sans glisser. Si on clique sur un rectangle, on peut aussi le faire coulisser le long de l&#8217;axe.</p>
 <p>Avec cette technique, on peut tout de suite voir les fiefs de tel ou tel candidat: il s&#8217;agit des lignes qui touchent le haut du graphique.</p>
 <p>On peut répondre à des questions plus complexes. Par exemple, je parlais de l&#8217;explosion du vote blanc au deuxième tour. Que s&#8217;est-il passé?</p>
 <p>Sélectionnons les endroits où le vote blanc a dépassé les 4% au deuxième tour, tout en restant à moins de 1.5% au premier tour:</p>
-<p><a href="http://jckr.github.io/blog/projects/elections/dtour2012.html"><img class="aligncenter size-full wp-image-1268" title="blanc" src="http://jckr.github.io/blog/wp-content/uploads/2012/05/blanc.jpg" alt="" width="700" height="370" /></a></p>
+<p><a href="http://jckr.github.io/blog/projects/elections/dtour2012.html"><img class="aligncenter size-full wp-image-1268" title="blanc" src="https://jckr.github.io/blog/wp-content/uploads/2012/05/blanc.jpg" alt="" width="700" height="370" /></a></p>
 <p>On voit trois pics: les villes où Marine Le Pen, Jean-Luc Mélenchon ou François Bayrou ont fait un très gros score. On peut continuer à sélectionner et voir que ce sont bien les villes qui sont dans la pointe de l&#8217;un des trois triangles et pas celles qui passent par le bas qui se retrouvent dans ce cas de figure. Ces électeurs ont préféré voter blanc plutôt que de choisir.</p>
 <p>Bonne exploration!</p>
 <p><a href="http://jckr.github.io/blog/projects/elections/dtour2012.html">http://jckr.github.io/blog/projects/elections/dtour2012.html</a></p>

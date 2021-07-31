@@ -36,8 +36,8 @@
 		<category><![CDATA[search]]></category>
 
 		<guid isPermaLink="false">http://jckr.github.io/blog/?p=124</guid>
-		<description><![CDATA[To solve any problem with data, there are 5 things you need to do in sequence.  First, find the relevant data source. Then, access it and get the numbers you need.  Then, process those numbers to make them answer your question.  Present the results, for instance, as a data visualization,  and, optionally, share your analysis with <a class="read-more" href="/2009/05/19/finding-data/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
-				<content:encoded><![CDATA[<p style="text-align: left; "><img class="aligncenter size-full wp-image-130" title="data flow" src="http://jckr.github.io/blog/wp-content/uploads/2009/05/data-problem2.png" alt="data flow" width="448" height="298" /></p>
+		<description><![CDATA[To solve any problem with data, there are 5 things you need to do in sequence.  First, find the relevant data source. Then, access it and get the numbers you need.  Then, process those numbers to make them answer your question.  Present the results, for instance, as a data visualization,  and, optionally, share your analysis with <a class="read-more" href="/blog/2009/05/19/finding-data/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p style="text-align: left; "><img class="aligncenter size-full wp-image-130" title="data flow" src="https://jckr.github.io/blog/wp-content/uploads/2009/05/data-problem2.png" alt="data flow" width="448" height="298" /></p>
 <p style="text-align: left; ">To solve any problem with data, there are 5 things you need to do in sequence. </p>
 <ul>
 <li>First, <strong>find </strong>the relevant data source.</li>

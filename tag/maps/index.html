@@ -10,12 +10,12 @@
 <title>maps | jckr.github.io/blog</title>
 
 <link rel="profile" href="http://gmpg.org/xfn/11">
-<link rel="pingback" href="/xmlrpc.php">
+<link rel="pingback" href="/blog/xmlrpc.php">
 <link rel='dns-prefetch' href='//fonts.googleapis.com' />
 <link rel='dns-prefetch' href='//s.w.org' />
-<link rel="alternate" type="application/rss+xml" title="jckr.github.io/blog &raquo; Feed" href="/feed/" />
-<link rel="alternate" type="application/rss+xml" title="jckr.github.io/blog &raquo; Comments Feed" href="/comments/feed/" />
-<link rel="alternate" type="application/rss+xml" title="jckr.github.io/blog &raquo; maps Tag Feed" href="/tag/maps/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jckr.github.io/blog &raquo; Feed" href="/blog/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jckr.github.io/blog &raquo; Comments Feed" href="/blog/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jckr.github.io/blog &raquo; maps Tag Feed" href="/blog/tag/maps/feed/" />
 <!-- This site uses the Google Analytics by MonsterInsights plugin v7.0.5 - Using Analytics tracking - https://www.monsterinsights.com/ -->
 <!-- Note: MonsterInsights is not currently configured on this site. The site owner needs to authenticate with Google Analytics in the MonsterInsights settings panel. -->
 <!-- No UA code set -->
@@ -44,8 +44,8 @@ img.emoji {
 <script type='text/javascript' src='/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
 <script type='text/javascript' src='/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
 <link rel='https://api.w.org/' href='/wp-json/' />
-<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd" />
-<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml" /> 
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/blog/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/blog/wp-includes/wlwmanifest.xml" /> 
 <meta name="generator" content="WordPress 4.6.10" />
 
    	<style type="text/css">
@@ -76,7 +76,7 @@ img.emoji {
                 </a>
             </h1>
             <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
-            <div class="menu"><ul><li ><a href="/">Home</a></li></ul></div>
+            <div class="menu"><ul><li ><a href="/blog/">Home</a></li></ul></div>
         </div>
     </nav><!-- #site-navigation -->
 
@@ -109,8 +109,8 @@ img.emoji {
 <article id="post-917" class="post-917 post type-post status-publish format-standard hentry category-data-visualization tag-contest tag-maps tag-real-estate tag-tableau">
 		    <header class="post-header">
         			<span class="post-meta">
-				<span class="posted-on"><a href="/2011/06/09/and-tableau-contest-results/" rel="bookmark"><time class="entry-date published" datetime="2011-06-09T18:57:49+00:00">June 9, 2011</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/data-visualization/" rel="category tag">data visualization</a>			</span>
-		        <h1 class="post-title"><a href="/2011/06/09/and-tableau-contest-results/" rel="bookmark">&#8230; and tableau contest results</a></h1>
+				<span class="posted-on"><a href="/blog/2011/06/09/and-tableau-contest-results/" rel="bookmark"><time class="entry-date published" datetime="2011-06-09T18:57:49+00:00">June 9, 2011</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/blog/author/jerome/">jerome</a></span></span> on <a href="/blog/category/data-visualization/" rel="category tag">data visualization</a>			</span>
+		        <h1 class="post-title"><a href="/blog/2011/06/09/and-tableau-contest-results/" rel="bookmark">&#8230; and tableau contest results</a></h1>
          
     </header>
 	<section class="post-content">
@@ -128,7 +128,7 @@ Here&#8217;s my map for the record:<br />
 <div style="float:right; padding-right:8px;"><a href="http://www.tableausoftware.com/public?ref=http://public.tableausoftware.com/views/contest2011/WMap" target="_blank">Powered by Tableau</a></div>
 </div>
 <p>To create my map, I used the default mapping function of Tableau, where you declare the geographic role of two of your measures &#8211; one as latitude, one as longitude &#8211; and you can plot marks on a map, that can be zoomed, panned etc.<br />
-<a href="http://jckr.github.io/blog/wp-content/uploads/2011/06/latitude.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/06/latitude.png" alt="" title="latitude" class="aligncenter size-full wp-image-918" /></a><br />
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/06/latitude.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/06/latitude.png" alt="" title="latitude" class="aligncenter size-full wp-image-918" /></a><br />
 If one of your dimensions is geographical in nature, like a country, US state, US county name or code, Tableau can calculate latitude and longitude so you don&#8217;t have to provide them. This also works for zip codes. So, if you have a valid US address, you can extract the zip code out of that (before you put your data in Tableau) and Tableau can represent this on a map quite accurately.<br />
 In my case, I had tens of thousands of marks, which were available at a much finer level than the zip code (sometimes down to the appartment number) so I thought it would be a pity to aggregate them so. My data came with notions like neighborhood or block numbers, which is specific to the New York administration I suppose, but interesting in my context. That idea of block number sounded like the right level of aggregation for my data.<br />
 The problem is, how do I get the latitude and longitude of each of the blocks?<br />
@@ -138,7 +138,7 @@ In another view, I have a simpler map &#8211; by neighborhood. Neighborhoods are
 <p>While it can be desirable to let users interact with the map, in many cases it is not a safe option. Once you let your users unzoom and/or scrool away from the action, it is not obvious for them to get back.<br />
 So Agnieszka has used another nifty technique, that of background images.<br />
 Her map is really a static file imported with the background image function which is found in the data menu:<br />
-<a href="http://jckr.github.io/blog/wp-content/uploads/2011/06/background-image.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/06/background-image.png" alt="" title="background image" class="aligncenter size-full wp-image-919" /></a><br />
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/06/background-image.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/06/background-image.png" alt="" title="background image" class="aligncenter size-full wp-image-919" /></a><br />
 Like this, the user can really specify what to use for a map, when does it start, where does it end. The map won&#8217;t move afterwards.<br />
 However, by doing so one cannot use geographic coordinates to display marks. One has to obtain, outside of Tableau, the x and y coordinates of each mark on the screen. Then, those x and y coordinates can be made into measures, and assigned respectively to the column and row shelves of the viz. </p>
 <p>I&#8217;ll let you figure out which one is best for your next map project. Note that you can generate highly customizable map backgrounds with a service like <a href="http://www.cloudmade.com/">cloudmade</a>.</p>
@@ -150,8 +150,8 @@ However, by doing so one cannot use geographic coordinates to display marks. One
 <article id="post-661" class="post-661 post type-post status-publish format-standard hentry category-data-visualization category-protovis tag-exports tag-france tag-maps tag-trade tag-treemaps">
 		    <header class="post-header">
         			<span class="post-meta">
-				<span class="posted-on"><a href="/2011/02/18/la-france-qui-exporte/" rel="bookmark"><time class="entry-date published" datetime="2011-02-18T20:10:38+00:00">February 18, 2011</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/data-visualization/" rel="category tag">data visualization</a>, <a href="/category/protovis/" rel="category tag">protovis</a>			</span>
-		        <h1 class="post-title"><a href="/2011/02/18/la-france-qui-exporte/" rel="bookmark">La france qui exporte</a></h1>
+				<span class="posted-on"><a href="/blog/2011/02/18/la-france-qui-exporte/" rel="bookmark"><time class="entry-date published" datetime="2011-02-18T20:10:38+00:00">February 18, 2011</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/blog/author/jerome/">jerome</a></span></span> on <a href="/blog/category/data-visualization/" rel="category tag">data visualization</a>, <a href="/blog/category/protovis/" rel="category tag">protovis</a>			</span>
+		        <h1 class="post-title"><a href="/blog/2011/02/18/la-france-qui-exporte/" rel="bookmark">La france qui exporte</a></h1>
          
     </header>
 	<section class="post-content">
@@ -159,14 +159,14 @@ However, by doing so one cannot use geographic coordinates to display marks. One
 		<p>This week, I was made aware of a new set of maps by French ministry of Foreign Trade, called <em>cartographie de la France qui exporte</em> (map of France exports) (<a href="http://www.exporter.gouv.fr/exporter/Pages.aspx?iddoc=1821&#038;pex=1-2-40-926-1821">link</a>). Since I&#8217;m interested in the topic and that I know that French public services have killer cartographers I was eager to see what was so exciting about the first set of online maps on French exports. </p>
 <p>I was a little underwhelmed to be honest. Online here meant static pdf files, although this is a dataset that just begs to be explored and manipulated.<br />
 On top of that, those where basic choropleth maps with markers such as this one here:<br />
-<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/largemap.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/largemap.png" alt="" title="largemap" width="626" height="631" class="size-full wp-image-662" /></a></p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/largemap.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/largemap.png" alt="" title="largemap" width="626" height="631" class="size-full wp-image-662" /></a></p>
 <p>Now this map has two problems. First, it&#8217;s a choropleth with a discrete scale, but the values of adjacent areas can vary a lot. So, if you look at this portion of the map, what can be deduced on the values? not much I&#8217;m afraid.<br />
-<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/choropleth.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/choropleth.png" alt="" title="choropleth" width="123" height="132" class="aligncenter size-full wp-image-663" /></a></p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/choropleth.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/choropleth.png" alt="" title="choropleth" width="123" height="132" class="aligncenter size-full wp-image-663" /></a></p>
 <p>Second, it&#8217;s difficult to compare the marks on the map. Which region has the biggest? the smallest? how do two specific regions compare? with this representation, this type of question is even more difficult to answer than with a table.<br />
-<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/marks-only.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/marks-only.png" alt="" title="marks only" width="313" height="316" class="aligncenter size-full wp-image-664" /></a></p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/marks-only.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/marks-only.png" alt="" title="marks only" width="313" height="316" class="aligncenter size-full wp-image-664" /></a></p>
 <p>Also these charts answer one partial question. So this one, here, shows which region exports most food products. But to where? and how about the imports and balance? now if one given view was the most relevant and could illustrate some important finding, it can be highlighted but here the website gives us collections of many of such maps. As a citizen I&#8217;m leaving no more informed than I was.</p>
 <p>Not being the one to criticize without proposing an alternative, I whipped out an <strong>interactive exploratory tool of France trade flows</strong>.<br />
-<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/franceexport.html" target=”_blank”><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/treemap.png" alt="" title="treemap" width="561" height="443" class="aligncenter size-full wp-image-668" /></a><br />
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/franceexport.html" target=”_blank”><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/treemap.png" alt="" title="treemap" width="561" height="443" class="aligncenter size-full wp-image-668" /></a><br />
 (The interactive vis is too wide to conveniently fit in a blog, but clicking on the image will open it in a new tab).</p>
 <p>I don&#8217;t have access to the same dataset so I can&#8217;t show a strict equivalent. My data comes from <a href="http://comtrade.un.org/">COMTRADE</a>, the UN database of trade flows, and shows all exports and imports to France in 2009. They are not broken down by region or by type of company, but I got the flows by partner country and product category.<br />
 The idea is that one can select something on one treemap to update the other. Also, it&#8217;s possible to alternate between a categorical view (where all groups of products and continents look neatly separated) and a view of the balance, which quickly shows which products or which countries get the bulk of French trade. </p>
@@ -259,8 +259,8 @@ so I can have to write things like: </p>
 <article id="post-502" class="post-502 post type-post status-publish format-standard hentry category-charts category-data-visualization category-protovis category-tips tag-aggregation tag-hierarchy tag-maps tag-nesting tag-protovis tag-rollup tag-trees">
 		    <header class="post-header">
         			<span class="post-meta">
-				<span class="posted-on"><a href="/2011/02/11/working-with-data-in-protovis-part-4-of-5/" rel="bookmark"><time class="entry-date published" datetime="2011-02-11T02:51:39+00:00">February 11, 2011</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/author/jerome/">jerome</a></span></span> on <a href="/category/charts/" rel="category tag">charts</a>, <a href="/category/data-visualization/" rel="category tag">data visualization</a>, <a href="/category/protovis/" rel="category tag">protovis</a>, <a href="/category/tips/" rel="category tag">tips</a>			</span>
-		        <h1 class="post-title"><a href="/2011/02/11/working-with-data-in-protovis-part-4-of-5/" rel="bookmark">Working with data in protovis &#8211; part 4 of 5</a></h1>
+				<span class="posted-on"><a href="/blog/2011/02/11/working-with-data-in-protovis-part-4-of-5/" rel="bookmark"><time class="entry-date published" datetime="2011-02-11T02:51:39+00:00">February 11, 2011</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="/blog/author/jerome/">jerome</a></span></span> on <a href="/blog/category/charts/" rel="category tag">charts</a>, <a href="/blog/category/data-visualization/" rel="category tag">data visualization</a>, <a href="/blog/category/protovis/" rel="category tag">protovis</a>, <a href="/blog/category/tips/" rel="category tag">tips</a>			</span>
+		        <h1 class="post-title"><a href="/blog/2011/02/11/working-with-data-in-protovis-part-4-of-5/" rel="bookmark">Working with data in protovis &#8211; part 4 of 5</a></h1>
          
     </header>
 	<section class="post-content">
@@ -299,7 +299,7 @@ An array of the shape:</p>
 </ul>
 <h3>Nesting</h3>
 <p>For this last reason, you may want to turn one flat array of associative arrays into an array of arrays of associative arrays. This process is called <strong>nesting</strong>.</p>
-<p><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/nesting.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/nesting.png" alt="" title="nesting" width="700" height="250" class="aligncenter size-full wp-image-528" /></a></p>
+<p><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/nesting.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/nesting.png" alt="" title="nesting" width="700" height="250" class="aligncenter size-full wp-image-528" /></a></p>
 <h4>Simple nesting</h4>
 <p>If you turn a <strong>single array</strong> like the one on the left-hand side to <strong>an array of arrays</strong> like on the right-hand side, you could easily do 3 smaller charts, one next to the other, by creating them inside of panels. You could have some information at this panel level (for instance the variety) and the rest at a lower level. </p>
 <p>Fortunately, there are protovis methods that can turn your flat list into a more complex array of arrays. And since protovis methods are meant to be chained, you can even go on and create arrays of arrays of arrays of arrays if needs be.<br />
@@ -310,7 +310,7 @@ To do the above, all you have to type is </p>
 <p>What this does is that it nests your <em>barley</em> array, according to the <em>variety</em> key. entries() at the end is required to obtain the array of arrays needed.</p>
 <p>Here is an example of what can be done with both kinds of data structures in just a few lines of code (which won&#8217;t include the data proper. The long, flat array is stored in the variable barley, as above).<br />
 Without nesting:<br />
-<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/BarleyWithoutNesting.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/BarleyWithoutNesting.png" alt="" title="BarleyWithoutNesting" width="606" height="198" class="aligncenter size-full wp-image-594" /></a></p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/BarleyWithoutNesting.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/BarleyWithoutNesting.png" alt="" title="BarleyWithoutNesting" width="606" height="198" class="aligncenter size-full wp-image-594" /></a></p>
 <pre class="brush: jscript; title: ; notranslate" title="">var vis = new pv.Panel()
     .width(600)
     .height(200)
@@ -326,7 +326,7 @@ vis.add(pv.Bar)
 vis.render();</pre>
 <p>As the pv.Bar goes through the array, there is not much it can do to structure it. We can just size the bars according to the value of yield, and color them according to another key (here the year).</p>
 <p>Now using nesting:<br />
-<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/BarleyWithNesting2.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/BarleyWithNesting2.png" alt="" title="BarleyWithNesting2" width="711" height="160" class="aligncenter size-full wp-image-598" /></a></p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/BarleyWithNesting2.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/BarleyWithNesting2.png" alt="" title="BarleyWithNesting2" width="711" height="160" class="aligncenter size-full wp-image-598" /></a></p>
 <pre class="brush: jscript; highlight: [1,8,15]; title: ; notranslate" title="">barley2=pv.nest(barley).key(function(d) d.variety).entries();
 barley2=pv.nest(barley).key(function(d) d.variety).entries();
 var vis = new pv.Panel()
@@ -383,8 +383,8 @@ vis.render();
 </td>
 </tr>
 <tr>
-<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/sort-unsorted.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/sort-unsorted.png" alt="" title="sort-unsorted" width="300" height="250" class="aligncenter size-full wp-image-524" /></a></td>
-<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/sort-sorted.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/sort-sorted.png" alt="" title="sort-sorted" width="300" height="250" class="aligncenter size-full wp-image-525" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/sort-unsorted.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/sort-unsorted.png" alt="" title="sort-unsorted" width="300" height="250" class="aligncenter size-full wp-image-524" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/sort-sorted.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/sort-sorted.png" alt="" title="sort-sorted" width="300" height="250" class="aligncenter size-full wp-image-525" /></a></td>
 </tr>
 </table>
 </li>
@@ -612,22 +612,22 @@ On the same subject, see a comparison of how to <a href="http://jckr.github.io/b
 				<input type="submit" class="search-submit" value="Search" />
 			</form></aside>		<aside id="recent-posts-2" class="widget widget_recent_entries">		<h1 class="widget-title">Recent Posts</h1>		<ul>
 					<li>
-				<a href="/2016/08/17/the-big-leagues/">The big leagues</a>
+				<a href="/blog/2016/08/17/the-big-leagues/">The big leagues</a>
 						</li>
 					<li>
-				<a href="/2016/08/17/creating-a-react-visualization-web-app/">Creating a React visualization web app</a>
+				<a href="/blog/2016/08/17/creating-a-react-visualization-web-app/">Creating a React visualization web app</a>
 						</li>
 					<li>
-				<a href="/2016/08/13/beyond-rendering/">Beyond rendering</a>
+				<a href="/blog/2016/08/13/beyond-rendering/">Beyond rendering</a>
 						</li>
 					<li>
-				<a href="/2016/08/11/react-components/">React components</a>
+				<a href="/blog/2016/08/11/react-components/">React components</a>
 						</li>
 					<li>
-				<a href="/2016/08/10/coding-with-react/">Coding with React</a>
+				<a href="/blog/2016/08/10/coding-with-react/">Coding with React</a>
 						</li>
 				</ul>
-		</aside>		<aside id="recent-comments-2" class="widget widget_recent_comments"><h1 class="widget-title">Recent Comments</h1><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link"><a href='http://omeraz.wordpress.com/' rel='external nofollow' class='url'>עומר עזריאל</a></span> on <a href="/2016/08/17/the-big-leagues/#comment-567">The big leagues</a></li><li class="recentcomments"><span class="comment-author-link">Carlos Ayres</span> on <a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-312">Manipulating data like a boss with d3</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://migrate.powertripanalytics.com/game-of-thrones-interactions-among-the-top-30-characters/' rel='external nofollow' class='url'>Game of ThronesInteractions Among the Top 30 Characters &#8211; PowerTrip Analytics</a></span> on <a href="/2013/05/13/making-the-game-of-thrones-visualization/#comment-466">Making the game of thrones visualization</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://abgoswam.wordpress.com/2016/10/08/d3-getting-started/' rel='external nofollow' class='url'>D3 &#8211; Getting Started | abgoswam&#039;s tech blog</a></span> on <a href="/2012/09/04/getting-to-hello-world-with-d3/#comment-419">Getting to &#8220;Hello world&#8221; with d3</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://plus.google.com/+BrotoBhattacharjee' rel='external nofollow' class='url'>Broto Bhattacharjee</a></span> on <a href="/2012/09/04/getting-to-hello-world-with-d3/#comment-418">Getting to &#8220;Hello world&#8221; with d3</a></li></ul></aside><aside id="archives-2" class="widget widget_archive"><h1 class="widget-title">Archives</h1>		<ul>
+		</aside>		<aside id="recent-comments-2" class="widget widget_recent_comments"><h1 class="widget-title">Recent Comments</h1><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link"><a href='http://omeraz.wordpress.com/' rel='external nofollow' class='url'>עומר עזריאל</a></span> on <a href="/blog/2016/08/17/the-big-leagues/#comment-567">The big leagues</a></li><li class="recentcomments"><span class="comment-author-link">Carlos Ayres</span> on <a href="/blog/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-312">Manipulating data like a boss with d3</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://migrate.powertripanalytics.com/game-of-thrones-interactions-among-the-top-30-characters/' rel='external nofollow' class='url'>Game of ThronesInteractions Among the Top 30 Characters &#8211; PowerTrip Analytics</a></span> on <a href="/blog/2013/05/13/making-the-game-of-thrones-visualization/#comment-466">Making the game of thrones visualization</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://abgoswam.wordpress.com/2016/10/08/d3-getting-started/' rel='external nofollow' class='url'>D3 &#8211; Getting Started | abgoswam&#039;s tech blog</a></span> on <a href="/blog/2012/09/04/getting-to-hello-world-with-d3/#comment-419">Getting to &#8220;Hello world&#8221; with d3</a></li><li class="recentcomments"><span class="comment-author-link"><a href='https://plus.google.com/+BrotoBhattacharjee' rel='external nofollow' class='url'>Broto Bhattacharjee</a></span> on <a href="/blog/2012/09/04/getting-to-hello-world-with-d3/#comment-418">Getting to &#8220;Hello world&#8221; with d3</a></li></ul></aside><aside id="archives-2" class="widget widget_archive"><h1 class="widget-title">Archives</h1>		<ul>
 			<li><a href='/2016/08/'>August 2016</a></li>
 	<li><a href='/2015/05/'>May 2015</a></li>
 	<li><a href='/2015/02/'>February 2015</a></li>
@@ -673,46 +673,46 @@ On the same subject, see a comparison of how to <a href="http://jckr.github.io/b
 	<li><a href='/2008/10/'>October 2008</a></li>
 		</ul>
 		</aside><aside id="categories-2" class="widget widget_categories"><h1 class="widget-title">Categories</h1>		<ul>
-	<li class="cat-item cat-item-2"><a href="/category/book-review/" >book review</a>
+	<li class="cat-item cat-item-2"><a href="/blog/category/book-review/" >book review</a>
 </li>
-	<li class="cat-item cat-item-3"><a href="/category/charts/" >charts</a>
+	<li class="cat-item cat-item-3"><a href="/blog/category/charts/" >charts</a>
 </li>
-	<li class="cat-item cat-item-4"><a href="/category/conferences/" >conferences</a>
+	<li class="cat-item cat-item-4"><a href="/blog/category/conferences/" >conferences</a>
 </li>
-	<li class="cat-item cat-item-5"><a href="/category/d3/" >d3</a>
+	<li class="cat-item cat-item-5"><a href="/blog/category/d3/" >d3</a>
 </li>
-	<li class="cat-item cat-item-6"><a href="/category/dashboards/" >dashboards</a>
+	<li class="cat-item cat-item-6"><a href="/blog/category/dashboards/" >dashboards</a>
 </li>
-	<li class="cat-item cat-item-7"><a href="/category/data-publishing/" >data publishing</a>
+	<li class="cat-item cat-item-7"><a href="/blog/category/data-publishing/" >data publishing</a>
 </li>
-	<li class="cat-item cat-item-8"><a href="/category/data-visualization/" >data visualization</a>
+	<li class="cat-item cat-item-8"><a href="/blog/category/data-visualization/" >data visualization</a>
 </li>
-	<li class="cat-item cat-item-9"><a href="/category/francais/" >français</a>
+	<li class="cat-item cat-item-9"><a href="/blog/category/francais/" >français</a>
 </li>
-	<li class="cat-item cat-item-10"><a href="/category/javascript/" >javascript</a>
+	<li class="cat-item cat-item-10"><a href="/blog/category/javascript/" >javascript</a>
 </li>
-	<li class="cat-item cat-item-11"><a href="/category/presentation/" >presentation</a>
+	<li class="cat-item cat-item-11"><a href="/blog/category/presentation/" >presentation</a>
 </li>
-	<li class="cat-item cat-item-12"><a href="/category/protovis/" >protovis</a>
+	<li class="cat-item cat-item-12"><a href="/blog/category/protovis/" >protovis</a>
 </li>
-	<li class="cat-item cat-item-13"><a href="/category/react/" >react</a>
+	<li class="cat-item cat-item-13"><a href="/blog/category/react/" >react</a>
 </li>
-	<li class="cat-item cat-item-14"><a href="/category/tips/" >tips</a>
+	<li class="cat-item cat-item-14"><a href="/blog/category/tips/" >tips</a>
 </li>
-	<li class="cat-item cat-item-1"><a href="/category/uncategorized/" >Uncategorized</a>
+	<li class="cat-item cat-item-1"><a href="/blog/category/uncategorized/" >Uncategorized</a>
 </li>
-	<li class="cat-item cat-item-15"><a href="/category/web-sites/" >web sites</a>
+	<li class="cat-item cat-item-15"><a href="/blog/category/web-sites/" >web sites</a>
 </li>
 		</ul>
 </aside><aside id="meta-2" class="widget widget_meta"><h1 class="widget-title">Meta</h1>			<ul>
-						<li><a href="/wp-login.php">Log in</a></li>
-			<li><a href="/feed/">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
-			<li><a href="/comments/feed/">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+						<li><a href="/blog/wp-login.php">Log in</a></li>
+			<li><a href="/blog/feed/">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="/blog/comments/feed/">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
 			<li><a href="https://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>			</ul>
 			</aside>		<div class="clear">&nbsp;</div>
 	</div><!-- #secondary -->
 	<footer id="colophon" class="site-footer" role="contentinfo">
-	    <a class="subscribe icon-feed" href="/feed/"><span class="tooltip">Subscribe!</span></a>
+	    <a class="subscribe icon-feed" href="/blog/feed/"><span class="tooltip">Subscribe!</span></a>
 		<div class="site-info inner">
 		    <section class="copyright">
 		    			    		<a href="https://github.com/lacymorrow/casper" rel="home">Casper WP</a> by Lacy Morrow		    			    </section>
