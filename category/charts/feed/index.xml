@@ -471,7 +471,7 @@ The spark that led me to write was Lea Verou&#8217;s article <a href="http://lea
 
 		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1628</guid>
 		<description><![CDATA[From the past posts, you would have gathered that dashboards are tools to solve specific problems. They are also formed from individual charts and data elements. Selecting information That dashboards are so specific is great, because the problem that they are designed to solve will help choosing the information that we need and also prioritizing it &#8211; <a class="read-more" href="/2015/02/07/charts-assemble/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
-				<content:encoded><![CDATA[<p><a href="http://wp.me/po630-qe">From the past posts</a>, you would have gathered that dashboards are tools to solve specific problems. They are also formed from individual charts and data elements.</p>
+				<content:encoded><![CDATA[<p><a href="/category/dashboards/">From the past posts</a>, you would have gathered that dashboards are tools to solve specific problems. They are also formed from individual charts and data elements.</p>
 <h2>Selecting information</h2>
 <p>That dashboards are so specific is great, because the problem that they are designed to solve will help choosing the information that we need and also prioritizing it &#8211; two essential tasks in dashboard creation. Again, we don&#8217;t want to shove every data point we have.</p>
 <p>Another great tool to help us do those two tasks is user research. As a designer, we may think we chose the right metrics, but they have to make sense to real users and resonate with them. The bias that we may have is that we would favor data which is easy to obtain or that makes sense to us, compared to data which can be more elaborate, more sophisticated or more expensive to collect or compute, even if that makes more sense to the user.</p>
@@ -544,7 +544,7 @@ Here, net likes = organic likes + paid likes &#8211; unlikes. The reason why we 
 
 		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1626</guid>
 		<description><![CDATA[In the past few articles I&#8217;ve exposed what dashboards are not: an exercise in visual design, an exercise in data visualization technique. Another way to put this is that &#8220;let&#8217;s do this just because we can&#8221; is a poor mantra when it comes to designing dashboards, or visualizations in the broader sense by the way. <a class="read-more" href="/2015/02/07/dashboards-as-products/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
-				<content:encoded><![CDATA[<p>In the <a href="http://wp.me/po630-q7">past few articles</a> I&#8217;ve exposed what dashboards are not:</p>
+				<content:encoded><![CDATA[<p>In the <a href="/category/dashboards/">past few articles</a> I&#8217;ve exposed what dashboards are not:</p>
 <ul>
 <li>an exercise in <em>visual design</em>,</li>
 <li>an exercise in <em>data visualization</em> technique.</li>

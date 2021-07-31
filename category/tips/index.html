@@ -115,7 +115,7 @@ img.emoji {
     </header>
 	<section class="post-content">
 
-		<p>This is the 5th post in my <a href="/2016/08/09/visualization-with-react/">Visualization with React</a> series. Previous post: <a href="http://wp.me/po630-sg">React components</a></p>
+		<p>This is the 5th post in my <a href="/2016/08/09/visualization-with-react/">Visualization with React</a> series. Previous post: <a href="/2016/08/11/react-components/">React components</a></p>
 <h1>The lifecycle functions</h1>
 <p>I&#8217;m not going to go into great details on this, but a talk on React without mentioning the <a href="https://facebook.github.io/react/docs/component-specs.html">lifecycle functions</a> would not be complete.<br />
 React components come with several functions which are fired when certain events occur, such as when the component is first created (&#8216;mounts&#8217;), when it&#8217;s updated or when it&#8217;s removed (&#8216;unmounts&#8217;).<br />
@@ -257,7 +257,7 @@ If you want to do this on your own, you&#8217;ll have to set up a build environm
 	<section class="post-content">
 
 		<p><script src="//assets.codepen.io/assets/embed/ei.js" async=""></script><br />
-<a href="http://wp.me/po630-rr">Previous article: Visualization with React</a></p>
+<a href="/2016/08/09/visualization-with-react/">Previous article: Visualization with React</a></p>
 <h1>d3, meet cousin React</h1>
 <p>Let&#8217;s not sugarcoat it: working with React is more complicated than with plain vanilla javascript. There are a few additional notions which may sound complex. But the good news is that if you come from the d3 world, there are many concepts which are similar. Visualization on the web is, at its core,<strong> transforming a dataset into a representation</strong>. That dataset is probably going to be an array, and at some point the framework will loop through the array and create something for each element of the array. For instance, if you want to make a bar chart, you probably will have at some point an array with one item that corresponds to each bar, which has a value that corresponds to its length. Looping through the array, each item is turned into a rectangle whose height depends on that value. That logic, which is at the core of d3 with <a href="http://jckr.github.io/blog/blog/2013/03/05/d3-tutorial-at-strata-redux/">selections</a>, is also present in React. In d3, <strong>visualizations are essentially hierarchical.</strong> We start from an SVG element (probably), add to it elements like groups, which can hold other elements. To continue with our bar chart example, our chart will have several data marks attached to it (the bars), and there&#8217;s a hierarchical relation between them: the chart contains those marks. Our chart could be part of a dashboard that has several charts, or part of a web page that has other information. At any rate, in the d3 world, everything we create is added to a root element or to elements we create and arranged in a tree-like hierarchy. This is also the case in React, with a difference: the world of React is mostly structured into components. When that of d3 is mostly made of DOM elements like HTML or SVG elements, that of React is made of components. A React component is a part of your end result. It can be as small as a DOM element, or as big as the whole application. And it can have component children. So, components are logical ways to package your application. Components are created with modularity and reusability in mind. For instance, I can create a bar chart component in React, and the next time I have a bar chart to make, I can just reuse the exact same component. I can also create components to make axes or the individual bars in the chart, which my bar chart component will use. But the next time I need a bar chart, I wouldn&#8217;t have to think about it. In contrast, if I want to create another bar chart in d3, I probably have to recreate it from scratch and decide manually what happens to all the SVG or HTML elements that constitute the bar chart.</p>
 <h1>You say dAYta, I say da-tah</h1>
@@ -294,8 +294,8 @@ If you want to do this on your own, you&#8217;ll have to set up a build environm
 <li><a href="http://jckr.github.io/blog/blog/2016/08/09/d3-and-react-similarities-and-differences/">React vs D3</a>, where we&#8217;ll explore similarities and differences between these two frameworks.</li>
 <li><a href="/2016/08/09/an-es6-primer/">An ES6 primer</a>. I have written all the examples in good, sensible, modern ES6 javascript, because as of 2016 this is probably the most common syntax. Without going too deep into the details, I&#8217;ll explain what parts of the language I used for the examples, and how they differ from ES5.</li>
 <li>Gentle introduction to <a href="/2016/08/10/coding-with-react/">coding with React</a>, where we&#8217;ll explore the high-level concepts of the framework and see how we can create visual elements from data. We&#8217;ll end on a presentation of JSX, a flavor of Javascript used to write React applications, which I&#8217;ll also use for most of the examples for the same reasons as ES6 &#8211; because it&#8217;s the most widespread way of writing React code today.</li>
-<li><a href="http://wp.me/po630-sg">React components</a>, the most important concept in React and the building blocks of React applications.</li>
-<li><a href="http://wp.me/po630-sm">Beyond rendering</a>. We&#8217;ll look at the React concept of lifecycle methods, and also how we can use d3 within React components.</li>
+<li><a href="/2016/08/11/react-components/">React components</a>, the most important concept in React and the building blocks of React applications.</li>
+<li><a href="/2016/08/13/beyond-rendering/">Beyond rendering</a>. We&#8217;ll look at the React concept of lifecycle methods, and also how we can use d3 within React components.</li>
 <li><a href="/2016/08/17/the-big-leagues/">Creating a React visualization web app</a> &#8211; using what we&#8217;ve seen, and two libraries &#8211; Facebook&#8217;s <a href="https://github.com/facebookincubator/create-react-app">create-react-app</a> and Uber&#8217;s <a href="https://github.com/uber/react-vis/">React-vis</a>, we&#8217;ll create a small standalone React visualization that can be deployed on its own website.</li>
 <li><a href="/2016/08/17/the-big-leagues/">The big leagues</a> &#8211; in that last part, we&#8217;ll write together a more complex visualization with live data and several components interacting with one another.</li>
 </ol>
@@ -769,7 +769,7 @@ Here&#8217;s a demo that shows what can be done. This is an adaptation of <a hre
     </header>
 	<section class="post-content">
 
-		<p><a href="http://wp.me/po630-qe">From the past posts</a>, you would have gathered that dashboards are tools to solve specific problems. They are also formed from individual charts and data elements.</p>
+		<p><a href="/category/dashboards/">From the past posts</a>, you would have gathered that dashboards are tools to solve specific problems. They are also formed from individual charts and data elements.</p>
 <h2>Selecting information</h2>
 <p>That dashboards are so specific is great, because the problem that they are designed to solve will help choosing the information that we need and also prioritizing it &#8211; two essential tasks in dashboard creation. Again, we don&#8217;t want to shove every data point we have.</p>
 <p>Another great tool to help us do those two tasks is user research. As a designer, we may think we chose the right metrics, but they have to make sense to real users and resonate with them. The bias that we may have is that we would favor data which is easy to obtain or that makes sense to us, compared to data which can be more elaborate, more sophisticated or more expensive to collect or compute, even if that makes more sense to the user.</p>
@@ -839,7 +839,7 @@ Here, net likes = organic likes + paid likes &#8211; unlikes. The reason why we 
     </header>
 	<section class="post-content">
 
-		<p>In the <a href="http://wp.me/po630-q7">past few articles</a> I&#8217;ve exposed what dashboards are not:</p>
+		<p>In the <a href="/category/dashboards/">past few articles</a> I&#8217;ve exposed what dashboards are not:</p>
 <ul>
 <li>an exercise in <em>visual design</em>,</li>
 <li>an exercise in <em>data visualization</em> technique.</li>
