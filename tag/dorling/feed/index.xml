@@ -31,7 +31,7 @@
 		<category><![CDATA[map]]></category>
 
 		<guid isPermaLink="false">http://jckr.github.io/blog/?p=796</guid>
-		<description><![CDATA[This is a follow-up to the previous post where I used a Dorling cartogram to show election results in France. So how did I come up with that? Step 1: the data Without data, there wouldn&#8217;t be much to plot, right? So the first order of business was to fetch the data, which is theoretically <a class="read-more" href="/2011/03/27/building-the-france-dorling-cartogram/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+		<description><![CDATA[This is a follow-up to the previous post where I used a Dorling cartogram to show election results in France. So how did I come up with that? Step 1: the data Without data, there wouldn&#8217;t be much to plot, right? So the first order of business was to fetch the data, which is theoretically <a class="read-more" href="/blog/2011/03/27/building-the-france-dorling-cartogram/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[<p>This is a follow-up to <a href="http://jckr.github.io/blog/?p=764">the previous post</a> where I used a Dorling cartogram to show election results in France. So how did I come up with that?</p>
 <h2>Step 1: the data</h2>
 <p>Without data, there wouldn&#8217;t be much to plot, right? So the first order of business was to fetch the data, which is theoretically available from an <a href="http://elections.interieur.gouv.fr/CN2011/">official source.</a> Unfortunately, there is no way to download those results at once, instead they are presented in a myriad of formatted HTML pages &#8211; over 2000 in all. </br><br />
@@ -72,7 +72,7 @@ Anyone who wants to create dorling cartograms for France can <a href="http://jck
 		<category><![CDATA[politiques]]></category>
 
 		<guid isPermaLink="false">http://jckr.github.io/blog/?p=764</guid>
-		<description><![CDATA[[I write this here post in French because it's more relevant for a French audience, a more technical post with an explanation of how it's done follows in English]. J'ai écrit que j'avais été déçu par les infographies des principaux médias au lendemain des cantonales. Si on prend la carte du Monde par exemple, on <a class="read-more" href="/2011/03/26/la-carte-des-cantonales/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+		<description><![CDATA[[I write this here post in French because it's more relevant for a French audience, a more technical post with an explanation of how it's done follows in English]. J'ai écrit que j'avais été déçu par les infographies des principaux médias au lendemain des cantonales. Si on prend la carte du Monde par exemple, on <a class="read-more" href="/blog/2011/03/26/la-carte-des-cantonales/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[[I write this here post in French because it's more relevant for a French audience, a <a href="http://jckr.github.io/blog/?p=796">more technical post</a> with an explanation of how it's done follows in English].</p>
 
 J'ai écrit que j'avais été déçu par les infographies des principaux médias au lendemain des cantonales.</p>
@@ -90,9 +90,9 @@ Je propose 3 scénarios: une comparaison gauche-droite, l'importance de l'extrê
 <input type="radio" checked name="group1" value="0" onclick="sc=0;reinit() ;vis.render();">Gauche-droite
 <input type="radio" name="group1" value="1" onclick="sc=1;reinit() ;vis.render();">Extrême-droite
 <input type="radio" name="group1" value="2" onclick="sc=2;reinit() ;vis.render();">Abstention</form>
-<script type="text/javascript" src="http://jckr.github.io/blog/wp-content/uploads/2011/03/votes.js"></script>
-<script type="text/javascript" src="http://jckr.github.io/blog/wp-content/uploads/2011/03/francedorling.js"></script>
-<script type="text/javascript" src="http://jckr.github.io/blog/wp-content/uploads/2011/03/cantonales.js"></script>
+<script type="text/javascript" src="https://jckr.github.io/blog/wp-content/uploads/2011/03/votes.js"></script>
+<script type="text/javascript" src="https://jckr.github.io/blog/wp-content/uploads/2011/03/francedorling.js"></script>
+<script type="text/javascript" src="https://jckr.github.io/blog/wp-content/uploads/2011/03/cantonales.js"></script>
 ]]></content:encoded>
 			<wfw:commentRss>/2011/03/26/la-carte-des-cantonales/feed/</wfw:commentRss>
 		<slash:comments>5</slash:comments>

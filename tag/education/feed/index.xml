@@ -31,12 +31,12 @@
 		<category><![CDATA[scatterplot]]></category>
 
 		<guid isPermaLink="false">http://jckr.github.io/blog/?p=449</guid>
-		<description><![CDATA[This all started from this map from GOOD magazine. It went viral on Twitter, which puzzled the data vis community. Moritz Stefaner notably asked others for advice and input, and Andy Kirk, then Enrico Bertini answered in some detail. I won't go into great detail on why I didn't like the original map much, it <a class="read-more" href="/2011/01/29/are-the-richest-americans-the-best-educated/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+		<description><![CDATA[This all started from this map from GOOD magazine. It went viral on Twitter, which puzzled the data vis community. Moritz Stefaner notably asked others for advice and input, and Andy Kirk, then Enrico Bertini answered in some detail. I won't go into great detail on why I didn't like the original map much, it <a class="read-more" href="/blog/2011/01/29/are-the-richest-americans-the-best-educated/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[This all started from <a href="http://awesome.good.is/transparency/web/1101/census-data/flat.html">this map</a> from GOOD magazine. It went viral on Twitter, which puzzled the data vis community. <a href="http://well-formed-data.net/">Moritz Stefaner</a> notably asked others for advice and input, and <a href="http://www.visualisingdata.com/index.php/2011/01/discussing-are-the-richest-americans-also-the-best-educated/">Andy Kirk</a>, then <a href="http://fellinlovewithdata.com/reflections/demystifying-cargo-cult-visualization-you-cannot-visualize-3-variables-by-mixing-3-colors">Enrico Bertini</a> answered in some detail.</p><span id="more-449"></span>
 I won't go into great detail on why I didn't like the original map much, it has been amply criticized as is. So, what's a better way to answer this question?</p>
 </p>
 <script type="text/javascript" src="http://blog.oecdfactblog.org/wp-includes/js/protovis-r3.2.js"></script>
-<script type="text/javascript" src="http://jckr.github.io/blog/wp-content/uploads/2011/01/pisa21.js"></script>
+<script type="text/javascript" src="https://jckr.github.io/blog/wp-content/uploads/2011/01/pisa21.js"></script>
 <script type="text/javascript">var myVar=24;</script>
 <h3>Are the richest Americans the best educated?</h3>
 <em>Wealth vs. School performance</em></p>

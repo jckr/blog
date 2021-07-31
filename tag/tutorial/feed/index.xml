@@ -37,7 +37,7 @@
 		<category><![CDATA[tutorial]]></category>
 
 		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1548</guid>
-		<description><![CDATA[This past week, Scott Murray and I presented a tutorial at Strata on d3 (of all things!) First things first, you probably want to get Scott&#8217;s book on the subject when it&#8217;s out. I should be translating it into French eventually. You&#8217;re also welcome to the slides and examples of the tutorial which can be <a class="read-more" href="/2013/03/05/d3-tutorial-at-strata-redux/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+		<description><![CDATA[This past week, Scott Murray and I presented a tutorial at Strata on d3 (of all things!) First things first, you probably want to get Scott&#8217;s book on the subject when it&#8217;s out. I should be translating it into French eventually. You&#8217;re also welcome to the slides and examples of the tutorial which can be <a class="read-more" href="/blog/2013/03/05/d3-tutorial-at-strata-redux/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[<p>This past week, Scott Murray and I presented a tutorial at Strata on d3 (of all things!)<br />
 First things first, you probably want to get <a href="http://amzn.com/1449339735">Scott&#8217;s book on the subject</a> when it&#8217;s out. I should be translating it into French eventually.<br />
 You&#8217;re also welcome to the slides and examples of the tutorial which can be found on <a href="https://github.com/alignedleft/strata-d3-tutorial">https://github.com/alignedleft/strata-d3-tutorial</a>. That include my <a href="https://github.com/alignedleft/strata-d3-tutorial/blob/master/d3%20Cheat%20Sheet.pdf">d3 cheat sheet</a>.</p>
@@ -335,7 +335,7 @@ At Strata, we went further &#8211; we discussed interaction and transition, but 
 		<category><![CDATA[visweek]]></category>
 
 		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1488</guid>
-		<description><![CDATA[Jeff Heer, Scott Murray and myself have done a d3 tutorial at visWeek 2012. You probably gathered that from the title of the post. Here is a link to all the slides and code examples that we have presented: d3 tutorial For the purpose of the tutorial I have compiled a d3 cheat sheet, on <a class="read-more" href="/2012/10/15/d3-tutorial-at-visweek-2012/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+		<description><![CDATA[Jeff Heer, Scott Murray and myself have done a d3 tutorial at visWeek 2012. You probably gathered that from the title of the post. Here is a link to all the slides and code examples that we have presented: d3 tutorial For the purpose of the tutorial I have compiled a d3 cheat sheet, on <a class="read-more" href="/blog/2012/10/15/d3-tutorial-at-visweek-2012/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[<p>Jeff Heer, Scott Murray and myself have done a d3 tutorial at visWeek 2012. You probably gathered that from the title of the post.</p>
 <p>Here is a link to all the slides and code examples that we have presented:</p>
 <p><a href="http://jckr.github.io/blog/d3_tutorial.zip">d3 tutorial</a></p>
@@ -368,7 +368,7 @@ At Strata, we went further &#8211; we discussed interaction and transition, but 
 		<category><![CDATA[web server]]></category>
 
 		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1419</guid>
-		<description><![CDATA[Back when I started learning programming, it was always fairly simple to achieve the canonical first step of accomplishments, that is, to get the system to announce that you are ready to do more by displaying &#8220;hello world&#8221; on the screen. In most systems then, there was a command prompt somewhere that would usually do <a class="read-more" href="/2012/09/04/getting-to-hello-world-with-d3/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+		<description><![CDATA[Back when I started learning programming, it was always fairly simple to achieve the canonical first step of accomplishments, that is, to get the system to announce that you are ready to do more by displaying &#8220;hello world&#8221; on the screen. In most systems then, there was a command prompt somewhere that would usually do <a class="read-more" href="/blog/2012/09/04/getting-to-hello-world-with-d3/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[<p>Back when I started learning programming, it was always fairly simple to achieve the canonical first step of accomplishments, that is, to get the system to announce that you are ready to do more by displaying &#8220;hello world&#8221; on the screen.</p>
 <p>In most systems then, there was a command prompt somewhere that would usually do that when you would type, say:</p>
 <pre class="brush: jscript; title: ; notranslate">PRINT &quot;hello world&quot;</pre>
@@ -382,16 +382,16 @@ At Strata, we went further &#8211; we discussed interaction and transition, but 
 <h2>The pan: a text editor</h2>
 <p>The first thing is really the pan. If you don&#8217;t have one when cooking eggs, you borrow one or go buy one. In our analogy the pan is the text editor. This is the tool with which you are going to make the files that will constitute your visualization.</p>
 <p>There was a time when it was ok to use notepad (textedit if you are of the apple persuasion). And it&#8217;s still possible, but you are not making your life easier. What I recommend instead is that you get a hold of a copy of SublimeText2. (<a href="http://www.sublimetext.com/2">http://www.sublimetext.com/2</a>). There are windows versions. And Mac versions. And linux versions. For windows users, there is a mobile version so you don&#8217;t need administrator access to install it. There is a free, unlimited evaluation version,  but unless you can&#8217;t spend $69, I strongly recommend that you buy it. Sublime Text 2 has a nearly infinite amount of niceties built in. And unlike some other powerful text editors, where the best features are only understandable by the tech masters, what&#8217;s really nice about Sublime Text 2 is that it would make you gain time even if you are an absolute beginner. One such nice things that it does is detect what language you are working with, automatically color and format the words as you type them depending on the category they fall in, and when possible, suggesting the word you are trying to type, automatically format and indent your code, all in a very unobtrusive and pleasant way. This will really help you troubleshoot problems like strings not closed properly or loose closing bracket which typically consume a lot of time.</p>
-<p><div id="attachment_1434" style="width: 423px" class="wp-caption aligncenter"><a href="http://jckr.github.io/blog/wp-content/uploads/2012/09/ST0.png"><img class="size-full wp-image-1434" title="ST0" src="http://jckr.github.io/blog/wp-content/uploads/2012/09/ST0.png" alt="" width="413" height="253" /></a><p class="wp-caption-text">Let&#8217;s type a fairly common d3 statement to see how SublimeText2 can help. First, it recognized the var keyword as such and writes it in italics and cyan. Second, when I type my opening parenthesis, it adds a closing one, and as long as my cursor touches either it underlines them both.</p></div></p>
-<p><div id="attachment_1435" style="width: 423px" class="wp-caption aligncenter"><a href="http://jckr.github.io/blog/wp-content/uploads/2012/09/ST1.png"><img class="size-full wp-image-1435 " title="ST1" src="http://jckr.github.io/blog/wp-content/uploads/2012/09/ST1.png" alt="" width="413" height="253" /></a><p class="wp-caption-text">Let&#8217;s carry on. The function keyword is highlighted in italics cyan too &#8211; useful. The opening/closing thing works for curly braces too.</p></div></p>
-<p><div id="attachment_1426" style="width: 564px" class="wp-caption aligncenter"><a href="http://jckr.github.io/blog/wp-content/uploads/2012/09/ST2.png"><img class="size-full wp-image-1426 " title="ST2" src="http://jckr.github.io/blog/wp-content/uploads/2012/09/ST2.png" alt="" width="554" height="253" /></a><p class="wp-caption-text">The return statement is highlighted in red. With the cursor on the closing parenthesis, we are starting to get a feel that the underlining function is a useful safety net</p></div></p>
-<p><div id="attachment_1427" style="width: 564px" class="wp-caption aligncenter"><a href="http://jckr.github.io/blog/wp-content/uploads/2012/09/ST3.png"><img class="size-full wp-image-1427" title="ST3" src="http://jckr.github.io/blog/wp-content/uploads/2012/09/ST3.png" alt="" width="554" height="253" /></a><p class="wp-caption-text">New line. Joy! the indentation is aligned with the line above.</p></div></p>
-<p><div id="attachment_1428" style="width: 564px" class="wp-caption aligncenter"><a href="http://jckr.github.io/blog/wp-content/uploads/2012/09/ST4.png"><img class="size-full wp-image-1428" title="ST4" src="http://jckr.github.io/blog/wp-content/uploads/2012/09/ST4.png" alt="" width="554" height="253" /></a><p class="wp-caption-text">We now have four consecutive opening or closing curly braces and parentheses. Typically, this is where errors sneak in, and where sublime text 2 really shines.</p></div></p>
-<p><div id="attachment_1429" style="width: 564px" class="wp-caption aligncenter"><a href="http://jckr.github.io/blog/wp-content/uploads/2012/09/ST5.png"><img class="size-full wp-image-1429" title="ST5" src="http://jckr.github.io/blog/wp-content/uploads/2012/09/ST5.png" alt="" width="554" height="253" /></a><p class="wp-caption-text">And we now have 5 consecutive closing curly braces and parentheses. This is fairly common in d3 code. Is the order correct? Thank you Sublime Text 2!</p></div></p>
-<p><div id="attachment_1430" style="width: 564px" class="wp-caption aligncenter"><a href="http://jckr.github.io/blog/wp-content/uploads/2012/09/ST6.png"><img class="size-full wp-image-1430" title="ST6" src="http://jckr.github.io/blog/wp-content/uploads/2012/09/ST6.png" alt="" width="554" height="253" /></a><p class="wp-caption-text">we finish up writing the statement.</p></div></p>
-<p><div id="attachment_1431" style="width: 564px" class="wp-caption aligncenter"><a href="http://jckr.github.io/blog/wp-content/uploads/2012/09/ST7.png"><img class="size-full wp-image-1431" title="ST7" src="http://jckr.github.io/blog/wp-content/uploads/2012/09/ST7.png" alt="" width="554" height="253" /></a><p class="wp-caption-text">When moving the cursor to the left side, where the line numbers are, we notice down-pointing arrows. We know our code is correct, and we don&#8217;t want to see it again, so&#8230;</p></div></p>
-<p><div id="attachment_1432" style="width: 564px" class="wp-caption aligncenter"><a href="http://jckr.github.io/blog/wp-content/uploads/2012/09/ST8.png"><img class="size-full wp-image-1432" title="ST8" src="http://jckr.github.io/blog/wp-content/uploads/2012/09/ST8.png" alt="" width="554" height="253" /></a><p class="wp-caption-text">we just click on the top one to collapse this section. If we need to edit it again we can expand it.</p></div></p>
-<p><div id="attachment_1433" style="width: 564px" class="wp-caption aligncenter"><a href="http://jckr.github.io/blog/wp-content/uploads/2012/09/ST9.png"><img class="size-full wp-image-1433" title="ST9" src="http://jckr.github.io/blog/wp-content/uploads/2012/09/ST9.png" alt="" width="554" height="253" /></a><p class="wp-caption-text">Finally, we add a comment above. Notice the syntax highlighting, comments are colored with an unobtrusive dark grey.</p></div></p>
+<p><div id="attachment_1434" style="width: 423px" class="wp-caption aligncenter"><a href="http://jckr.github.io/blog/wp-content/uploads/2012/09/ST0.png"><img class="size-full wp-image-1434" title="ST0" src="https://jckr.github.io/blog/wp-content/uploads/2012/09/ST0.png" alt="" width="413" height="253" /></a><p class="wp-caption-text">Let&#8217;s type a fairly common d3 statement to see how SublimeText2 can help. First, it recognized the var keyword as such and writes it in italics and cyan. Second, when I type my opening parenthesis, it adds a closing one, and as long as my cursor touches either it underlines them both.</p></div></p>
+<p><div id="attachment_1435" style="width: 423px" class="wp-caption aligncenter"><a href="http://jckr.github.io/blog/wp-content/uploads/2012/09/ST1.png"><img class="size-full wp-image-1435 " title="ST1" src="https://jckr.github.io/blog/wp-content/uploads/2012/09/ST1.png" alt="" width="413" height="253" /></a><p class="wp-caption-text">Let&#8217;s carry on. The function keyword is highlighted in italics cyan too &#8211; useful. The opening/closing thing works for curly braces too.</p></div></p>
+<p><div id="attachment_1426" style="width: 564px" class="wp-caption aligncenter"><a href="http://jckr.github.io/blog/wp-content/uploads/2012/09/ST2.png"><img class="size-full wp-image-1426 " title="ST2" src="https://jckr.github.io/blog/wp-content/uploads/2012/09/ST2.png" alt="" width="554" height="253" /></a><p class="wp-caption-text">The return statement is highlighted in red. With the cursor on the closing parenthesis, we are starting to get a feel that the underlining function is a useful safety net</p></div></p>
+<p><div id="attachment_1427" style="width: 564px" class="wp-caption aligncenter"><a href="http://jckr.github.io/blog/wp-content/uploads/2012/09/ST3.png"><img class="size-full wp-image-1427" title="ST3" src="https://jckr.github.io/blog/wp-content/uploads/2012/09/ST3.png" alt="" width="554" height="253" /></a><p class="wp-caption-text">New line. Joy! the indentation is aligned with the line above.</p></div></p>
+<p><div id="attachment_1428" style="width: 564px" class="wp-caption aligncenter"><a href="http://jckr.github.io/blog/wp-content/uploads/2012/09/ST4.png"><img class="size-full wp-image-1428" title="ST4" src="https://jckr.github.io/blog/wp-content/uploads/2012/09/ST4.png" alt="" width="554" height="253" /></a><p class="wp-caption-text">We now have four consecutive opening or closing curly braces and parentheses. Typically, this is where errors sneak in, and where sublime text 2 really shines.</p></div></p>
+<p><div id="attachment_1429" style="width: 564px" class="wp-caption aligncenter"><a href="http://jckr.github.io/blog/wp-content/uploads/2012/09/ST5.png"><img class="size-full wp-image-1429" title="ST5" src="https://jckr.github.io/blog/wp-content/uploads/2012/09/ST5.png" alt="" width="554" height="253" /></a><p class="wp-caption-text">And we now have 5 consecutive closing curly braces and parentheses. This is fairly common in d3 code. Is the order correct? Thank you Sublime Text 2!</p></div></p>
+<p><div id="attachment_1430" style="width: 564px" class="wp-caption aligncenter"><a href="http://jckr.github.io/blog/wp-content/uploads/2012/09/ST6.png"><img class="size-full wp-image-1430" title="ST6" src="https://jckr.github.io/blog/wp-content/uploads/2012/09/ST6.png" alt="" width="554" height="253" /></a><p class="wp-caption-text">we finish up writing the statement.</p></div></p>
+<p><div id="attachment_1431" style="width: 564px" class="wp-caption aligncenter"><a href="http://jckr.github.io/blog/wp-content/uploads/2012/09/ST7.png"><img class="size-full wp-image-1431" title="ST7" src="https://jckr.github.io/blog/wp-content/uploads/2012/09/ST7.png" alt="" width="554" height="253" /></a><p class="wp-caption-text">When moving the cursor to the left side, where the line numbers are, we notice down-pointing arrows. We know our code is correct, and we don&#8217;t want to see it again, so&#8230;</p></div></p>
+<p><div id="attachment_1432" style="width: 564px" class="wp-caption aligncenter"><a href="http://jckr.github.io/blog/wp-content/uploads/2012/09/ST8.png"><img class="size-full wp-image-1432" title="ST8" src="https://jckr.github.io/blog/wp-content/uploads/2012/09/ST8.png" alt="" width="554" height="253" /></a><p class="wp-caption-text">we just click on the top one to collapse this section. If we need to edit it again we can expand it.</p></div></p>
+<p><div id="attachment_1433" style="width: 564px" class="wp-caption aligncenter"><a href="http://jckr.github.io/blog/wp-content/uploads/2012/09/ST9.png"><img class="size-full wp-image-1433" title="ST9" src="https://jckr.github.io/blog/wp-content/uploads/2012/09/ST9.png" alt="" width="554" height="253" /></a><p class="wp-caption-text">Finally, we add a comment above. Notice the syntax highlighting, comments are colored with an unobtrusive dark grey.</p></div></p>
 <h2>The recipe: a basic file structure</h2>
 <p>In d3, you can&#8217;t really type a &#8220;print&#8221; command from a prompt. You need to write some files, which are loaded by a browser (that&#8217;s your &#8220;plate&#8221; in the metaphor, but let&#8217;s not get ahead of ourselves).</p>
 <p>You are going to need up to 5 types of files.</p>
@@ -492,7 +492,7 @@ text:{font-size:36px;}
 <p>On Macs, you&#8217;re pretty much all set. All you have to do is <a href="http://pagekite.net/wiki/Howto/Mac/PersonalWebServer/">enable web-sharing</a> in your system preferences. Then, http://localhost/~YOURNAME will point to /Users/YOURNAME/Sites where YOURNAME is your user name. Just put your files there and go at it.</p>
 <p>For windows, there are a bunch of solutions. The &#8220;Professional&#8221; versions of windows include the IIS web server, so, there. But beyond that, there is a lot of web server software available. I personally use <a href="http://www.easyphp.org/">EasyPHP</a>. EasyPHP comes up with a web server (Apache), a mySql database, a PHP preprocessor and other niceties. And, as an aside, it doesn&#8217;t require administrator rights, for you corporate users.</p>
 <p>EasyPHP installation is a breeze. When it&#8217;s on, by default, http://localhost/ points to the www/ directory in the install directory of EasyPHP, so you may want to install it in a place that suits you. Alternatively, you can create aliases in the admin panel of EasyPHP (<a href="http://localhost/home/index.php">http://localhost/home/index.php</a>), in other words to give a name to any part of your hard drive. This is what I do, I put all my projects there and have a shortcut to that name in my browser, so whenever I want to see a project I use that shortcut and I can see the visualization as if it were on the web.</p>
-<p><div id="attachment_1436" style="width: 787px" class="wp-caption aligncenter"><a href="http://jckr.github.io/blog/wp-content/uploads/2012/09/easyPHPalias.png"><img class="size-full wp-image-1436" title="easyPHPalias" src="http://jckr.github.io/blog/wp-content/uploads/2012/09/easyPHPalias.png" alt="" width="777" height="526" /></a><p class="wp-caption-text">This is how you create aliases in EasyPHP.</p></div></p>
+<p><div id="attachment_1436" style="width: 787px" class="wp-caption aligncenter"><a href="http://jckr.github.io/blog/wp-content/uploads/2012/09/easyPHPalias.png"><img class="size-full wp-image-1436" title="easyPHPalias" src="https://jckr.github.io/blog/wp-content/uploads/2012/09/easyPHPalias.png" alt="" width="777" height="526" /></a><p class="wp-caption-text">This is how you create aliases in EasyPHP.</p></div></p>
 <h2>The plate: a browser</h2>
 <p>We&#8217;ve talked browsers before, and chances are you have one (or several) on your computer.</p>
 <p>Now I wish that by browsers, we could just skip it and mean &#8220;the latest version of chrome&#8221;, but it turns out that there are slight differences in the way that browsers handle d3 code so you should really test your work in at least chrome and firefox. As of this writing, Chrome + Firefox (version 5 and up) represent just under 50% of the browser market share. If you add all browsers that are d3-capable (Safari, earlier versions of Firefox, Opera, IE9) you reach about 75% of the market. Sadly, IE8 and IE7 which account for slightly over 20% of the market are not d3-compatible, though they can use the Google <a href="http://www.google.com/chromeframe?hl=en&amp;quickenable=true">ChromeFrame</a> free plug-in and do pretty much all that chrome does.</p>
@@ -502,11 +502,11 @@ text:{font-size:36px;}
 <p>Not too long ago, debugging javascript was really a pain. You&#8217;d have to fire those annoying alert boxes to understand what was the value of the variables, and dispatch them manually. Fortunately, that time is gone and now is the age of the Console.</p>
 <p>There are console functionalities for Chrome, Firefox and Safari, and while the interface slightly varies, the idea is the same. The console allows you to do three main things:</p>
 <p>&#8211; first, to see if your code executed without errors or warning. Some of those messages can be generated by javascript, and some can be added by you if certain unfortunate conditions are met. You get the position of the error in your code, which helps you to understand what went wrong and fix it.</p>
-<p><div id="attachment_1437" style="width: 661px" class="wp-caption aligncenter"><a href="http://jckr.github.io/blog/wp-content/uploads/2012/09/consoleError.png"><img class=" wp-image-1437 " title="consoleError" src="http://jckr.github.io/blog/wp-content/uploads/2012/09/consoleError.png" alt="" width="651" height="469" /></a><p class="wp-caption-text">I have planted an error at the end of the code and it&#8217;s been picked up by the console which explains what&#8217;s wrong and when. Notice the red cross in the lower-right corner which counts errors. If there were warning, they would be indicated by a yellow triangle.</p></div></p>
+<p><div id="attachment_1437" style="width: 661px" class="wp-caption aligncenter"><a href="http://jckr.github.io/blog/wp-content/uploads/2012/09/consoleError.png"><img class=" wp-image-1437 " title="consoleError" src="https://jckr.github.io/blog/wp-content/uploads/2012/09/consoleError.png" alt="" width="651" height="469" /></a><p class="wp-caption-text">I have planted an error at the end of the code and it&#8217;s been picked up by the console which explains what&#8217;s wrong and when. Notice the red cross in the lower-right corner which counts errors. If there were warning, they would be indicated by a yellow triangle.</p></div></p>
 <p>&#8211; second, to inspect elements, that is to find out all the information about the elements displayed on screen, even if (especially if) they have been generated at runtime. So you can see if those elements you really wanted to create have been indeed added, and if the right attributes have been passed.  third, to interact with the code after it&#8217;s run (or while it runs, if you manage to pause if with breakpoints). The most common use of this is, IMO, is to check the value of variables, which you can do simply by typing their name at the console command prompt. But you can also type in one-liner javascript statements, even if they are quite complicated. So it&#8217;s a way to test your code before you write it in your script file.</p>
-<p><div id="attachment_1439" style="width: 661px" class="wp-caption aligncenter"><a href="http://jckr.github.io/blog/wp-content/uploads/2012/09/consoleInspect.png"><img class=" wp-image-1439 " title="consoleInspect" src="http://jckr.github.io/blog/wp-content/uploads/2012/09/consoleInspect.png" alt="" width="651" height="469" /></a><p class="wp-caption-text">What a relief! all those paths elements that were supposed to be created in the code have been added as expected.</p></div></p>
+<p><div id="attachment_1439" style="width: 661px" class="wp-caption aligncenter"><a href="http://jckr.github.io/blog/wp-content/uploads/2012/09/consoleInspect.png"><img class=" wp-image-1439 " title="consoleInspect" src="https://jckr.github.io/blog/wp-content/uploads/2012/09/consoleInspect.png" alt="" width="651" height="469" /></a><p class="wp-caption-text">What a relief! all those paths elements that were supposed to be created in the code have been added as expected.</p></div></p>
 <p>&#8211; third, it can be used to interact with the code after it&#8217;s run (or even during run-time, because you can pause the code with breakpoints using the console, but we won&#8217;t go into that). The most common use for that IMO is to check the value of variables, which can be changed during the code execution, but it can also be used to enter one-liner statements, which can be quite complicated. Such a use allows you to test and preview code hypothesis before you write it down in your script file, or to troubleshoot a problem that you could have difficulties seeing outside of the context.</p>
-<p><div id="attachment_1438" style="width: 661px" class="wp-caption aligncenter"><a href="http://jckr.github.io/blog/wp-content/uploads/2012/09/consoleInteract.png"><img class=" wp-image-1438 " title="consoleInteract" src="http://jckr.github.io/blog/wp-content/uploads/2012/09/consoleInteract.png" alt="" width="651" height="469" /></a><p class="wp-caption-text">Here, I am using the console to check the value of one variable, and to enter a statement that turns all the shapes orange.</p></div></p>
+<p><div id="attachment_1438" style="width: 661px" class="wp-caption aligncenter"><a href="http://jckr.github.io/blog/wp-content/uploads/2012/09/consoleInteract.png"><img class=" wp-image-1438 " title="consoleInteract" src="https://jckr.github.io/blog/wp-content/uploads/2012/09/consoleInteract.png" alt="" width="651" height="469" /></a><p class="wp-caption-text">Here, I am using the console to check the value of one variable, and to enter a statement that turns all the shapes orange.</p></div></p>
 <p>Voilà! the last thing you need when you cook food is people to share it with, same goes for visualizations!</p>
 ]]></content:encoded>
 			<wfw:commentRss>/2012/09/04/getting-to-hello-world-with-d3/feed/</wfw:commentRss>
@@ -525,7 +525,7 @@ text:{font-size:36px;}
 		<category><![CDATA[tutorial]]></category>
 
 		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1351</guid>
-		<description><![CDATA[That post originally appeared on visual.ly, I&#8217;m reproducing it here for clarity and ease of retrieval In interactive visualisation, there is the word reactive. Well, maybe not literally, but close enough. The fact is that reactivity, or the propension of a visualisation to respond to user actions, can really help engage the user in a <a class="read-more" href="/2012/07/16/animations-and-transitions/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+		<description><![CDATA[That post originally appeared on visual.ly, I&#8217;m reproducing it here for clarity and ease of retrieval In interactive visualisation, there is the word reactive. Well, maybe not literally, but close enough. The fact is that reactivity, or the propension of a visualisation to respond to user actions, can really help engage the user in a <a class="read-more" href="/blog/2012/07/16/animations-and-transitions/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[<p><strong>That post originally appeared on <a href="blog.visual.ly/creating-animations-and-transitions-with-d3-js/">visual.ly</a>, I&#8217;m reproducing it here for clarity and ease of retrieval</strong></p>
 <p>In interactive visualisation, there is the word reactive. Well, maybe not literally, but close enough.<br />
 The fact is that reactivity, or the propension of a visualisation to respond to user actions, can really help engage the user in a visualisation, and help them understand its results. Both of which are usually good things. And how can this reactivity be achieved? Through animations. </p>
@@ -535,8 +535,8 @@ How is that?</p>
 <li>When coupled with interaction, it&#8217;s a very useful way to give feedback to the user. What has changed since their last command? If what&#8217;s on screen animates from one state to another, it&#8217;s obvious, it stands out and it makes sense. Or, when showing any form of real-time data, animation is pretty much required.</li>
 <li>Animation can bring focus on the important things as a chart loads. Our vision is very sensitive to movement, so using these <em>introduction transitions</em> sensibly helps a lot to ease the effort required to get the right information off a chart.<br />
 Compare these two charts:<br />
-<iframe src="http://jckr.github.io/blog/stuff/transitions.html#15" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
-<iframe src="http://jckr.github.io/blog/stuff/transitions.html#16" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+<iframe src="https://jckr.github.io/blog/stuff/transitions.html#15" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+<iframe src="https://jckr.github.io/blog/stuff/transitions.html#16" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
 Which is better at getting the viewer&#8217;s attention on the last bar?<br />
 <em>[side note on examples: they all use the same model. Click on the button to start an animation. If there is nothing on the chart, clicking the button will make something appear.]</em>
 </li>
@@ -548,7 +548,7 @@ Which is better at getting the viewer&#8217;s attention on the last bar?<br />
 <li> Animation across many states (like a video of animated data) make them difficult to compare to one another, as opposed to showing still images of various states side by side. (see <a href="http://www.cc.gatech.edu/~john.stasko/papers/infovis08-anim.pdf" title="Effectiveness of Animation in Trend Visualization"></a> for more on this.</li>
 <li>If the animation is not continuous, if the chart is somehow wiped out during it, this caused <a href="http://nivea.psycho.univ-paris5.fr/Mudsplash/Nature_Supp_Inf/Movies/Movie_List.html">change blindness</a> which pretty much negates any benefit you may have hoped to reap from animation.<br />
 Look at this example.<br />
-<iframe src="http://jckr.github.io/blog/stuff/transitions.html#17" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+<iframe src="https://jckr.github.io/blog/stuff/transitions.html#17" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
 When animated, the line goes through a blank state which makes is close to impossible to track changes between the original and final state. The only way to detect change is to focus on one given point and memorize its original position, but this is very ineffective.
 </li>
 </ul>
@@ -560,18 +560,18 @@ For this purpose, let&#8217;s use <a href="http://d3-js.org/">d3</a>. d3 has man
 Animations are called transitions in d3 for a reason. A technical definition of animation can be that over a certain lapse of time, one or more characteristics of an object would <i>transition</i> from one value to another. </p>
 <p>And what do we mean by characteristics? Well, just about anything that can be expressed numerically. </p>
 <h4>A few examples of transitions</h4>
-<p><iframe src="http://jckr.github.io/blog/stuff/transitions.html#0" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+<p><iframe src="https://jckr.github.io/blog/stuff/transitions.html#0" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
 Unsuprisingly, when you update the position of an item smoothly over time, it moves. In svg, position is determined for most shapes, such as our blue rectangle here, by the x and y attributes, which correspond to the top-left corner of the shape. For circles, you use cx and cy, or the coordinates of the center. For paths, such as our red triangle, you actually specify the position of all of the points in the &#8220;d&#8221; attribute.</p>
-<p><iframe src="http://jckr.github.io/blog/stuff/transitions.html#1" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+<p><iframe src="https://jckr.github.io/blog/stuff/transitions.html#1" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
 Likewise, when you change size, your object grows (or shrinks!). You can use width and height for shapes like rectangles, or r for circles. </p>
-<p><iframe src="http://jckr.github.io/blog/stuff/transitions.html#2" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+<p><iframe src="https://jckr.github.io/blog/stuff/transitions.html#2" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
 Color is really a numerical attribute too, and it&#8217;s indeed possible (and very useful) to transition from one color to another. In svg, color is a style attribute that is defined by fill or stroke.</p>
-<p><iframe src="http://jckr.github.io/blog/stuff/transitions.html#3" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+<p><iframe src="https://jckr.github.io/blog/stuff/transitions.html#3" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
 Not unlike color, it&#8217;s very useful to be able to vary opacity. When opacity is set to 0, the corresponding object is completely transparent. So transitioning on opacity is very useful to make objects fade in or out. </p>
 <h4>How this is done</h4>
 <p>Now that we&#8217;ve seen what transitions can do, let&#8217;s see how to code this in d3.<br />
 Let&#8217;s go back to our first example. In fact, let&#8217;s make it even simpler.</p>
-<p><iframe src="http://jckr.github.io/blog/stuff/transitions.html#4" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+<p><iframe src="https://jckr.github.io/blog/stuff/transitions.html#4" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
 To create a square like this in d3, we would write something like:</p>
 <pre class="brush: jscript; title: ; notranslate">
 var mySquare=svg.append(&quot;rect&quot;)
@@ -613,7 +613,7 @@ button.on(&quot;click&quot;, function() {
 <p>And now, our animation only starts when the button is clicked. Obviously, since the transition is within a function, we could even determine where the square should go programmatically, but let&#8217;s keep it simple for the examples. </p>
 <h4>Animation 102</h4>
 <p>So far, we&#8217;ve seen how we can do simple animations in d3 and even throw in a little interaction. We&#8217;ve seen that it&#8217;s really as simple as creating elements in the same place. But here are some good news. Transitions in d3 are extremely versatile and can be customized with a lot of finesse without getting overly complex to write. It&#8217;s more a matter of knowing what to do.</p>
-<p><iframe src="http://jckr.github.io/blog/stuff/transitions.html#5" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+<p><iframe src="https://jckr.github.io/blog/stuff/transitions.html#5" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
 After using the transition() method, it&#8217;s possible to specify a value for duration and delay. Duration is the number of milliseconds the transition will last, while delay is the number of milliseconds the system will wait before launching it.<br />
 The syntax is: </p>
 <pre class="brush: jscript; title: ; notranslate">
@@ -625,10 +625,10 @@ mySquare.transition()
 <p>The default is a 250ms duration, and no delay.<br />
 I find 250ms to be a bit harsh. In most cases, transitions should be noticeable, so I oftentimes find myself increasing the duration to 500 or 1000. But unless there is a very good reason for that, durations should not be too long. If you use them to support your data, you don&#8217;t want the transition to take center stage by having them take several seconds.<br />
 Consider the following two examples (which you&#8217;ll have to start with the button)<br />
-<iframe src="http://jckr.github.io/blog/stuff/transitions.html#13" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
-<iframe src="http://jckr.github.io/blog/stuff/transitions.html#14" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+<iframe src="https://jckr.github.io/blog/stuff/transitions.html#13" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+<iframe src="https://jckr.github.io/blog/stuff/transitions.html#14" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
 Isn&#8217;t the second one simply atrocious? You may find hard to believe that it only wasted 25 seconds of your time. </p>
-<p><iframe src="http://jckr.github.io/blog/stuff/transitions.html#6" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+<p><iframe src="https://jckr.github.io/blog/stuff/transitions.html#6" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
 Easing is the technical name of the actual function that turns time into attribute changes. From the previous examples, you may have noticed that the values change slowly first, and then faster, then slowly at the end? Well, it turns out that you can use different functions to get different results. In my practice, I&#8217;ve only seen the use for the 3 displayed here although there are <a href="https://github.com/mbostock/d3/wiki/Transitions#wiki-d3_ease">many others</a>. And yes, you can write your own, although we are not going to cover this here.<br />
 The syntax is similar to the above: </p>
 <pre class="brush: jscript; title: ; notranslate">
@@ -637,13 +637,13 @@ mysquare.transition()
   .ease(&quot;elastic&quot;)
 </pre>
 <p>(and by the way, the order in which you change attributes or specify animation parameters has no effect, so feel free to use .ease first then .attr).</p>
-<p><iframe src="http://jckr.github.io/blog/stuff/transitions.html#7" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+<p><iframe src="https://jckr.github.io/blog/stuff/transitions.html#7" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
 For path objects, through transitions you can update the position of each point. This allows you to effectively turn one shape into another.<br />
 This can be especially interesting for line charts (or any chart which is a path)<br />
-<iframe src="http://jckr.github.io/blog/stuff/transitions.html#8" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+<iframe src="https://jckr.github.io/blog/stuff/transitions.html#8" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
 Like this, if the values that you are plotting change, you can spot these changes very efficiently. If, instead, you just erase your chart redraw your data if would be very difficult to spot where the data has changed.<br />
 For both of these examples, the &#8220;d&#8221; attribute of the path is updated (so they are not intrinsically different from the simplest example).</p>
-<p><iframe src="http://jckr.github.io/blog/stuff/transitions.html#9" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+<p><iframe src="https://jckr.github.io/blog/stuff/transitions.html#9" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
 Sometimes (and actually: often), you want to fire a transition right after another transition.<br />
 But in case you were wondering, the following doesn&#8217;t work: </p>
 <pre class="brush: jscript; title: ; notranslate">
@@ -677,7 +677,7 @@ mysquare
 </pre>
 <p>here, what&#8217;s in the callback function on the last line, introduced by .each(&#8220;end&#8221;, will be fired exactly as the transition ends. </p>
 <p>What can be done then? Here are 3 common scenarios.</p>
-<p><iframe src="http://jckr.github.io/blog/stuff/transitions.html#9" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+<p><iframe src="https://jckr.github.io/blog/stuff/transitions.html#9" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
 (btw, if you&#8217;re wondering what&#8217;s the difference between this and the previous example, there is none &#8211; it&#8217;s just to save you some scrolling).<br />
 One possibility is to launch another transition on the same item. Here, the square moves right, then down.<br />
 Here&#8217;s how it&#8217;s done: </p>
@@ -703,9 +703,9 @@ mysquare
    });
 </pre>
 <p>Finally, we can create a new object. That can be a nice way to add a special effect. Here&#8217;s an example: </p>
-<p><iframe src="http://jckr.github.io/blog/stuff/transitions.html#10" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+<p><iframe src="https://jckr.github.io/blog/stuff/transitions.html#10" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
 Here, at the end of the transition, a circle is created, a transition is started on that circle, which decreases opacity to 0, then the circle is removed. </p>
-<p><iframe src="http://jckr.github.io/blog/stuff/transitions.html#11" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
+<p><iframe src="https://jckr.github.io/blog/stuff/transitions.html#11" width=502px height=202px scrolling=no style="border:0px"></iframe><br />
 And here is a last example with several effects combined.</p>
 <h4>Going further</h4>
 <p>Believe it or not, we barely scratched the surface of what can be achieved with animations in d3.<br />
@@ -735,12 +735,12 @@ Another possibility is the use of the <a href="https://github.com/mbostock/d3/wi
 		<category><![CDATA[tutorial]]></category>
 
 		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1204</guid>
-		<description><![CDATA[So Jen and I released our Info+beauty awards entry. How did we end up with this? it&#8217;s really cool working around movies, because it&#8217;s something we can relate to. At first I wanted to do something out of keywords we could grab on the movies but  Jen came up with another idea I found more <a class="read-more" href="/2012/04/22/hollywood-data-iii-our-infobeauty-awards-entry-bonus-making-of/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+		<description><![CDATA[So Jen and I released our Info+beauty awards entry. How did we end up with this? it&#8217;s really cool working around movies, because it&#8217;s something we can relate to. At first I wanted to do something out of keywords we could grab on the movies but  Jen came up with another idea I found more <a class="read-more" href="/blog/2012/04/22/hollywood-data-iii-our-infobeauty-awards-entry-bonus-making-of/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[<p>So Jen and I released our <a href="http://bit.ly/starchallenge">Info+beauty awards entry</a>.</p>
-<p><a href="http://bit.ly/starchallenge"><img class="aligncenter size-full wp-image-1205" title="shootingstars" src="http://jckr.github.io/blog/wp-content/uploads/2012/02/shootingstars.png" alt="" width="628" height="636" /></a></p>
+<p><a href="http://bit.ly/starchallenge"><img class="aligncenter size-full wp-image-1205" title="shootingstars" src="https://jckr.github.io/blog/wp-content/uploads/2012/02/shootingstars.png" alt="" width="628" height="636" /></a></p>
 <p>How did we end up with this?</p>
 <p>it&#8217;s really cool working around movies, because it&#8217;s something we can relate to.</p>
-<p><div id="attachment_1206" style="width: 610px" class="wp-caption aligncenter"><a href="http://jckr.github.io/blog/wp-content/uploads/2012/02/20120203_105750.jpg"><img class="size-full wp-image-1206" title="20120203_105750" src="http://jckr.github.io/blog/wp-content/uploads/2012/02/20120203_105750.jpg" alt="" width="600" height="450" /></a><p class="wp-caption-text">A part of my movie ticket stubs stash.</p></div></p>
+<p><div id="attachment_1206" style="width: 610px" class="wp-caption aligncenter"><a href="http://jckr.github.io/blog/wp-content/uploads/2012/02/20120203_105750.jpg"><img class="size-full wp-image-1206" title="20120203_105750" src="https://jckr.github.io/blog/wp-content/uploads/2012/02/20120203_105750.jpg" alt="" width="600" height="450" /></a><p class="wp-caption-text">A part of my movie ticket stubs stash.</p></div></p>
 <p>At first I wanted to do something out of keywords we could grab on the movies but  Jen came up with another idea I found more worth pursuing: working around the story types (which was the most interesting aspect of the curated contest dataset) and see if there was not some kind of grand truth we could unravel there. She also requested stars and glitter, because we were not going to work on this glamorous dataset with a tedious dashboard done in Excel.</p>
 <p>That truth didn&#8217;t take so much time to find: the most frequently used story types (like comedy or movies with monsters) do not perform well in the box office while different story types (stories of teens growing up, or when the main character turns into something else), which are used less often, are much more profitable. So why doesn&#8217;t hollywood make more Junos and Black Swans and fewer College Road Trips or Dylan Dogs?</p>
 <p>That&#8217;s the idea. Now the making.</p>
@@ -853,7 +853,7 @@ I&#8217;m not entirely sure of what happened when I submitted the entry though. 
 		<category><![CDATA[tutorial]]></category>
 
 		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1211</guid>
-		<description><![CDATA[Tableau can do many things natively but there are a couple of basic primitives that are not built in because they behave somewhat differently from the overall logic. And treemaps is one of them. Then again treemaps are arguably one of the best way to express complex hierarchical information, i.e. to show the proportions in <a class="read-more" href="/2012/04/19/treemaps-in-tableau-can-be-done/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+		<description><![CDATA[Tableau can do many things natively but there are a couple of basic primitives that are not built in because they behave somewhat differently from the overall logic. And treemaps is one of them. Then again treemaps are arguably one of the best way to express complex hierarchical information, i.e. to show the proportions in <a class="read-more" href="/blog/2012/04/19/treemaps-in-tableau-can-be-done/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[Tableau can do many things natively but there are a couple of basic primitives that are not built in because they behave somewhat differently from the overall logic. And <a href="http://www.tableausoftware.com/about/blog/2011/05/alternative-tree-maps-0">treemaps is one of them</a>. Then again treemaps are arguably one of the best way to express complex hierarchical information, i.e. to show the proportions in a large dataset.</p>
 
 Fortunately, thanks to Tableau flexibility there are ways to do that. In the tutorial I'm going to cover 2 cases. First, we'll create a somewhat complex treemap off data which will not change in runtime. Then, we'll create mini-treemaps which can change dynamically.</p>
@@ -1011,7 +1011,7 @@ Let's take a look at a few rows :</p>
 </table>
 I'm creating 4 lines per "leaf" node. So in this example which has 220 nodes, that amounts to 880 lines. Why 4? Because to draw a rectangle in Tableau you really need to define 4 corners. This is why there is a column "Corner" which is worth 0,1,2 and 3. This, we will use to tell Tableau to read our corners in bottom left, bottom right, top right, top left order which produces a nice convex rectangle and not a concave hourglass shape.</p>
 
-Now off to Tableau with this data. <a href="http://jckr.github.io/blog/wp-content/uploads/2012/04/complex.png"><img class="aligncenter size-full wp-image-1212" title="complex" src="http://jckr.github.io/blog/wp-content/uploads/2012/04/complex.png" alt="" width="558" height="477" /></a></p>
+Now off to Tableau with this data. <a href="http://jckr.github.io/blog/wp-content/uploads/2012/04/complex.png"><img class="aligncenter size-full wp-image-1212" title="complex" src="https://jckr.github.io/blog/wp-content/uploads/2012/04/complex.png" alt="" width="558" height="477" /></a></p>
 
 Now it's just a matter of doing like this screen. Unsurprisingly the columns and rows are going to be determined by x and y. You want a polygon mark, and you absolutely must use your corner measure in the path. For color, you'll have a choice, you can use the top-level category column (as I have) or the full path which will divide your treemap in finer parts. Finally, level of detail: you must use the Id and not the name in case several of your nodes have the same name. It's quite important at this point to uncheck aggregate measures in Analysis. You do NOT want aggregate measures (though it's quite pretty). To be able to use the name, you must first make a measure out of it. And finally, you'll want to update your infotip slightly.</p>
 
@@ -1025,7 +1025,7 @@ This is fine and dandy if your data doesn't change but it won't scale if you nee
 
 To that end I've tried to emulate the <a href="http://www.congressspeaks.com/">Congress speaks</a> visualization by <a href="http://periscopic.com/">Periscopic</a>. I really like it. When you've selected representatives at the end of the process you are taken to a screen which shows the following mini-treemap:</p>
 
-<a href="http://jckr.github.io/blog/wp-content/uploads/2012/04/votingrecord.png"><img class="aligncenter size-full wp-image-1213" title="votingrecord" src="http://jckr.github.io/blog/wp-content/uploads/2012/04/votingrecord.png" alt="" width="246" height="166" /></a></p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2012/04/votingrecord.png"><img class="aligncenter size-full wp-image-1213" title="votingrecord" src="https://jckr.github.io/blog/wp-content/uploads/2012/04/votingrecord.png" alt="" width="246" height="166" /></a></p>
 
 There are just 5 rectangles. But they will change for any representative that we choose. Can this be done with Tableau? Obviously.</p>
 
@@ -1404,10 +1404,10 @@ Here is the final result:</p>
 		<category><![CDATA[xhr]]></category>
 
 		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1165</guid>
-		<description><![CDATA[Creating visualizations from static files is fine and dandy but sometimes you need to be able to access dynamic data. And some other times, you may want to somehow record interactions from your users. One way to do that is by interacting with a mySql database. Without further ado here is the demo: How does <a class="read-more" href="/2012/01/02/using-d3-with-a-mysql-database/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+		<description><![CDATA[Creating visualizations from static files is fine and dandy but sometimes you need to be able to access dynamic data. And some other times, you may want to somehow record interactions from your users. One way to do that is by interacting with a mySql database. Without further ado here is the demo: How does <a class="read-more" href="/blog/2012/01/02/using-d3-with-a-mysql-database/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[<p>Creating visualizations from static files is fine and dandy but sometimes you need to be able to access dynamic data. And some other times, you may want to somehow record interactions from your users. One way to do that is by interacting with a mySql database.</p>
 <p>Without further ado here is the demo:</p>
-<p><iframe src="http://jckr.github.io/blog/stuff/sql_map/sqlmap.html" scrolling="no" width="542px" height="680px"></iframe></p>
+<p><iframe src="https://jckr.github.io/blog/stuff/sql_map/sqlmap.html" scrolling="no" width="542px" height="680px"></iframe></p>
 <h3>How does it work?</h3>
 <p>There are several parts to that.</p>
 <p>First, one <a href="http://jckr.github.io/blog/stuff/sql_map/sqlmap.html">html file</a> which holds everything together. By the way, for the styling I used Twitter&#8217;s <a href="http://twitter.github.com/bootstrap/">bootstrap</a> which makes it easy for all elements to find their place, and look at those purty buttons.</p>
@@ -1533,11 +1533,11 @@ mysql_close();
 		<category><![CDATA[tutorial]]></category>
 
 		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1026</guid>
-		<description><![CDATA[In protovis, scales were super-useful in just about everything. That much hasn&#8217;t changed in d3, even though d3.scale is a bit different from pv.Scale. (do note that d3.scale is in lowercase for starters). Scales: the main idea Simply put: scales transform a number in a certain interval (called the domain) into a number in another <a class="read-more" href="/2011/08/11/d3-scales-and-color/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+		<description><![CDATA[In protovis, scales were super-useful in just about everything. That much hasn&#8217;t changed in d3, even though d3.scale is a bit different from pv.Scale. (do note that d3.scale is in lowercase for starters). Scales: the main idea Simply put: scales transform a number in a certain interval (called the domain) into a number in another <a class="read-more" href="/blog/2011/08/11/d3-scales-and-color/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[<p>In <a href="http://mbostock.github.com/protovis/docs/scale.html">protovis</a>, scales were super-useful in just about everything. That much hasn&#8217;t changed in d3, even though <a href="https://github.com/mbostock/d3/wiki/Scales">d3.scale</a> is a bit different from pv.Scale. (do note that <strong>d3.scale</strong> is in lowercase for starters).</p>
 <h2>Scales: the main idea</h2>
 <p>Simply put: scales transform a number in a certain interval (called the <em>domain</em>) into a number in another interval (called the <em>range</em>).<br />
-<img src="http://jckr.github.io/blog/wp-content/uploads/2011/08/d3scale1.png" alt="an example of how scales work" /><br />
+<img src="https://jckr.github.io/blog/wp-content/uploads/2011/08/d3scale1.png" alt="an example of how scales work" /><br />
 For instance, let&#8217;s suppose you <em>know</em> your data is always over 20 and always below 80. You would like to plot it, say, in a bar chart, which can be only 120 pixels tall.<br />
 You could, obviously, do the math:</p>
 <pre class="brush: jscript; title: ; notranslate">.attr(&quot;height&quot;, function(d) {return (d-20)*2;})</pre>
@@ -1564,14 +1564,14 @@ First, note that <strong>unlike in protovis</strong>, domain and range take an a
 var y=d3.scale.linear().range([20,60]).domain([0,120]);</pre>
 <p>This is because <strong>contrary to protovis</strong>, where domain could be a whole dataset, in d3, domain contains the bounds of the interval that is going to be transformed.<br />
 Typically, this is two numbers. If this is more, we are talking about a polypoint scale: there are as many segments in the intervals as there are numbers in the domain (minus one). The range must have as many numbers, and so as many segments. When using the scale, if a number is in the n-th segment of the domain, it is transformed into a number in the n-th segment of the range.<br />
-<img src="http://jckr.github.io/blog/wp-content/uploads/2011/08/d3scaleMultipoint.png" alt="illustration of a multipoint scale" /><br />
+<img src="https://jckr.github.io/blog/wp-content/uploads/2011/08/d3scaleMultipoint.png" alt="illustration of a multipoint scale" /><br />
 With this example, 30 finds itself in the first segment of the domain. So it&#8217;s transformed to a value in the first segment of the range. 60, however, is in the 2nd segment, so it&#8217;s transformed into a value in the 2nd segment of the range.<br />
 Also, bounds of domain and range need not be numbers, as long as they can be converted to numbers. One useful examples are colors. Color names can be used as range, for instance, to create <em>color ramps</em>:</p>
 <pre class="brush: jscript; title: ; notranslate">var ramp=d3.scale.linear().domain([0,100]).range([&quot;red&quot;,&quot;blue&quot;]);</pre>
 <p>This will transform any value betwen 0 and 100 into the corresponding color between red and blue.</p>
 <h3>Clamping</h3>
 <p>What happends if the scale is asked to process a number outside of the domain? That&#8217;s what clamping controls. If it is set, then the bounds of the range are the minimum and maximum value that can be returned by the scale. Else, the same transformation applies to all numbers, whether they fall within the domain or not.<br />
-<img src="http://jckr.github.io/blog/wp-content/uploads/2011/08/d3clamping.png" alt="Clamping example" /><br />
+<img src="https://jckr.github.io/blog/wp-content/uploads/2011/08/d3clamping.png" alt="Clamping example" /><br />
 Here, with clamping, the result of the linear transformation is 120, but without it, it&#8217;s 160. </p>
 <pre class="brush: jscript; title: ; notranslate">var clamp=d3.scale.linear().domain([20,80]).range([0,120]);
 clamp(100); // 160
@@ -1611,7 +1611,7 @@ y.invert(60); // 50</pre>
 <p>The <em>linear</em>scale is a function of the form y=ax+b which works for both ends of the domain and range. In the example we&#8217;ve used most often until now, this function is really f(x): y=2x-40.<br />
 Power and logarithm scales work the same, only we are looking for a function of the form y=ax<sup>k</sup>+b, or y=a.log(x)+b.<br />
 For the power scales, you can specify an exponent (k) with the .exponent() method. For instance, if we specify an exponent of 2, here is what the scale would look like:<br />
-<img src="http://jckr.github.io/blog/wp-content/uploads/2011/08/d3scalePower.png" alt="an example of a power scale" /><br />
+<img src="https://jckr.github.io/blog/wp-content/uploads/2011/08/d3scalePower.png" alt="an example of a power scale" /><br />
 The equation is now f(x): y=x²/50-8. So 20 still becomes 0 and 80 still becomes 120, but other than that the values at the beginning of the domain would be lower than with the linear scale, and those at the end of the scale will be higher.<br />
 For convenience, d3 includes a d3.scale.sqrt() (the square root scale) so you never have to type d3.scale.pow.exponent(0.5) in full.<br />
 Also note that if you are using a log scale, you <strong>cannot</strong> have 0 in the domain. </p>
@@ -1664,7 +1664,7 @@ x(&quot;Tuesday&quot;); // 34.285714285714285
 <p>With .rangePoints(<em>interval</em>), d3 fits n points within the interval, n being the number of categories in the domain. In that case, the value of the first point is the beginning of the interval, that of the last point is the end of the interval.<br />
 With .rangeBands(<em>interval</em>), d3 fit n <em>bands</em> within the interval. Here, the value of the last item in the domain is less than the upper bound of the interval.<br />
 Those methods <strong>replace the protovis methods</strong> .split() and .splitBanded().<br />
-<img src="http://jckr.github.io/blog/wp-content/uploads/2011/08/d3ordinalRange.png" alt="difference between rangeBands and rangePoints" /><br />
+<img src="https://jckr.github.io/blog/wp-content/uploads/2011/08/d3ordinalRange.png" alt="difference between rangeBands and rangePoints" /><br />
 This chart illustrates the difference between using rangeBands and rangePoints. </p>
 <pre class="brush: jscript; title: ; notranslate">var x=d3.scale.ordinal()
   .domain([&quot;Sunday&quot;,&quot;Monday&quot;,&quot;Tuesday&quot;,&quot;Wednesday&quot;,&quot;Thursday&quot;,&quot;Friday&quot;,&quot;Saturday&quot;]);
@@ -1751,9 +1751,9 @@ c.hsl().toString() // &quot;hsl(300, 76, 72)&quot;</pre>
 		<category><![CDATA[tutorial]]></category>
 
 		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1012</guid>
-		<description><![CDATA[From data to graphics d3 and protovis are built around the same principle. Take data, put it into an array, and for each element of data a graphical object can be created, whose properties are derived from the data that was provided. Only d3 and protovis have a slightly different way of adding those graphical <a class="read-more" href="/2011/08/09/d3-adding-stuff-and-oh-understanding-selections/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+		<description><![CDATA[From data to graphics d3 and protovis are built around the same principle. Take data, put it into an array, and for each element of data a graphical object can be created, whose properties are derived from the data that was provided. Only d3 and protovis have a slightly different way of adding those graphical <a class="read-more" href="/blog/2011/08/09/d3-adding-stuff-and-oh-understanding-selections/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[<h2>From data to graphics</h2>
-<p><img src="http://jckr.github.io/blog/wp-content/uploads/2011/08/d3principle.png" alt="the d3 principle (and also the protovis principle)" /><br />
+<p><img src="https://jckr.github.io/blog/wp-content/uploads/2011/08/d3principle.png" alt="the d3 principle (and also the protovis principle)" /><br />
 d3 and protovis are built around the same principle. Take data, put it into an array, and for each element of data a graphical object can be created, whose properties are derived from the data that was provided.</p>
 <p>Only d3 and protovis have a slightly different way of adding those graphical elements and getting data. </p>
 <p>In protovis, you start from a panel, a protovis-specific object, to which you add various marks. Each time you add a mark, you can either:</p>
@@ -1773,7 +1773,7 @@ vis.add(pv.Panel).top(10).left(10)
     .bottom(0)
     .height(function(d) {return d*10;});
 vis.render();</pre>
-<p><img src="http://jckr.github.io/blog/wp-content/uploads/2011/08/protoBar.png" alt="this simple bar chart in protovis" /><br />
+<p><img src="https://jckr.github.io/blog/wp-content/uploads/2011/08/protoBar.png" alt="this simple bar chart in protovis" /><br />
 you first create a panel (first line), you may add an element without data (here, another panel, line 2), and add to this panel bars: there would be 5, one for each element in the array in line 4. </p>
 <h2>And in d3?</h2>
 <p>In d3, you also have a way to add either one object without passing data, or a series of objects &#8211; one per data element. </p>
@@ -1841,17 +1841,17 @@ And since you have to know: there is no easy way to retrieve the data of the par
 <p>To add many elements at once we&#8217;ve used the sequence: selectAll, data, enter, append.<br />
 Why use 4 methods for what appears to be one elementary task? If you don&#8217;t care about manipulating nodes individually, for instance for animations, you can just remember the sequence. But if you want to know more, here is what each method does. </p>
 <h3>selectAll</h3>
-<p><img src="http://jckr.github.io/blog/wp-content/uploads/2011/08/d3selectAll.png" alt="the selectAll method" /><br />
+<p><img src="https://jckr.github.io/blog/wp-content/uploads/2011/08/d3selectAll.png" alt="the selectAll method" /><br />
 First, we select a point on which to add your new graphical objects. When you are creating your objects and use the selectAll method, it will return an <em>empty selection</em> but based on that given point. You may also use selectAll in another context, to update your objects for instance. But here, an empty selection is expected. </p>
 <h3>data</h3>
-<p><img src="http://jckr.github.io/blog/wp-content/uploads/2011/08/d3data.png" alt="the data method" /><br />
+<p><img src="https://jckr.github.io/blog/wp-content/uploads/2011/08/d3data.png" alt="the data method" /><br />
 Then, you attribute data. This works quite similarly to protovis: d3 expects an array. d3 takes the concept further (with the concept of <em>data joins</em>) but you need not concern yourself with that until you look at transitions.<br />
 Anyway, at this stage you have an empty selection, based on a given point in the page, but with data.</p>
 <h3>enter</h3>
-<p><img src="http://jckr.github.io/blog/wp-content/uploads/2011/08/d3enter.png" alt="the enter method" /><br />
+<p><img src="https://jckr.github.io/blog/wp-content/uploads/2011/08/d3enter.png" alt="the enter method" /><br />
 The enter method updates the selection with nodes which have data, but no graphical representation. Using enter() is like creating stubs where the graphical elements will be grafted. </p>
 <h3>append</h3>
-<p><img src="http://jckr.github.io/blog/wp-content/uploads/2011/08/d3append.png" alt="the append method" /><br />
+<p><img src="https://jckr.github.io/blog/wp-content/uploads/2011/08/d3append.png" alt="the append method" /><br />
 Finally, by appending we actually create the graphical objects. Each is tied to one data element, so it can be further styled (for instance, through &#8220;attr&#8221;) to derive its characteristics from the value of that data.</p>
 ]]></content:encoded>
 			<wfw:commentRss>/2011/08/09/d3-adding-stuff-and-oh-understanding-selections/feed/</wfw:commentRss>
@@ -1869,7 +1869,7 @@ Finally, by appending we actually create the graphical objects. Each is tied to 
 		<category><![CDATA[tutorial]]></category>
 
 		<guid isPermaLink="false">http://jckr.github.io/blog/?p=995</guid>
-		<description><![CDATA[You&#8217;ve spent some time learning protovis only to find that its development is halted as authors have switched to work on d3. Have your efforts all been in vain? Fear not! This series of posts will help you adapt to d3 with a protovis background. Before we go anywhere further, let me say that these <a class="read-more" href="/2011/08/08/from-protovis-to-d3/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+		<description><![CDATA[You&#8217;ve spent some time learning protovis only to find that its development is halted as authors have switched to work on d3. Have your efforts all been in vain? Fear not! This series of posts will help you adapt to d3 with a protovis background. Before we go anywhere further, let me say that these <a class="read-more" href="/blog/2011/08/08/from-protovis-to-d3/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[<p>You&#8217;ve spent some time <a href="http://jckr.github.io/blog/blog/2011/02/07/working-with-data-in-protovis/">learning protovis</a> only to find that its development is halted as authors have switched to work on <a href="http://www.d3-js.org/">d3</a>. Have your efforts all been in vain? Fear not! This series of posts will help you adapt to d3 with a protovis background. </p>
 <p>Before we go anywhere further, let me say that <strong>these posts won&#8217;t make you awesome at d3</strong> (yet). We won&#8217;t be talking about how to do all amazing things you could never do in protovis. Rather, we&#8217;ll focus on enabling you to be as comfortable with d3 than you could have been with protovis. And once that&#8217;s done, nothing will prevent you from learning the more powerful aspects of d3. </p>
 <p>Anyway, if you&#8217;re reading this, <strong>you are already awesome.</strong></p>

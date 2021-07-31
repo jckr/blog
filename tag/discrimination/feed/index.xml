@@ -33,7 +33,7 @@
 		<category><![CDATA[prénom]]></category>
 
 		<guid isPermaLink="false">http://jckr.github.io/blog/?p=804</guid>
-		<description><![CDATA[[another post in French. sorry for my English readers, but since it's again based on election data it really is only relevant to French people] Donner un prénom à ses enfants, c'est peut-être la décision qui va le plus influencer le regard des autres à son égard... surtout quand ils ne l'ont pas encore vu. <a class="read-more" href="/2011/04/01/votre-prenom-est-il-de-droite/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+		<description><![CDATA[[another post in French. sorry for my English readers, but since it's again based on election data it really is only relevant to French people] Donner un prénom à ses enfants, c'est peut-être la décision qui va le plus influencer le regard des autres à son égard... surtout quand ils ne l'ont pas encore vu. <a class="read-more" href="/blog/2011/04/01/votre-prenom-est-il-de-droite/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[[another post in French. sorry for my English readers, but since it's again based on election data it really is only relevant to French people]</p>
 Donner un prénom à ses enfants, c'est peut-être la décision qui va le plus influencer le regard des autres à son égard... surtout quand ils ne l'ont pas encore vu. Qu'est-ce qu'on peut s'imaginer d'un Édouard ou d'une Jacqueline avant de les connaître? sûrement pas la même chose. Est-ce qu'on peut deviner leur couleur politique? </p>
 pour vérifier ça j'ai pris la liste de tous les candidats aux dernières élections cantonales,soit 10361 personnes avec 1247 prénoms différents qui ont rendu publiques leurs convictions politiques. </p>
@@ -47,7 +47,7 @@ Parmi les prénoms qu'on trouve plus de 5 fois, les plus marqués à gauche sont
 
 Et... si Jean-Marie est plutôt de droite, les Nicolas sont d'habitude à gauche, mais pas les François. On trouve plus de Jean-Luc, de Martine et de Dominique à gauche, mais pas d'Olivier!</p><hr/></p>
 <script type="text/javascript" src="http://blog.oecdfactblog.org/wp-includes/js/protovis-r3.2.js"></script>
-<script type="text/javascript" src="http://jckr.github.io/blog/wp-content/uploads/2011/04/candidats.js" charset="ISO-8859-1"></script>
+<script type="text/javascript" src="https://jckr.github.io/blog/wp-content/uploads/2011/04/candidats.js" charset="ISO-8859-1"></script>
 <script type="text/javascript+protovis">
 var re="", sp=-1;
 partisDetails={

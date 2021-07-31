@@ -34,7 +34,7 @@
 </form>
 
 <p id="nav">
-	<a href="/wp-login.php?action=lostpassword">Lost your password?</a>
+	<a href="/blog/wp-login.php?action=lostpassword">Lost your password?</a>
 </p>
 
 <script type="text/javascript">
@@ -51,7 +51,7 @@ wp_attempt_focus();
 if(typeof wpOnload=='function')wpOnload();
 </script>
 
-	<p id="backtoblog"><a href="/">&larr; Back to jckr.github.io/blog</a></p>
+	<p id="backtoblog"><a href="/blog/">&larr; Back to jckr.github.io/blog</a></p>
 	
 	</div>
 

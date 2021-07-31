@@ -33,10 +33,10 @@
 		<category><![CDATA[xhr]]></category>
 
 		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1165</guid>
-		<description><![CDATA[Creating visualizations from static files is fine and dandy but sometimes you need to be able to access dynamic data. And some other times, you may want to somehow record interactions from your users. One way to do that is by interacting with a mySql database. Without further ado here is the demo: How does <a class="read-more" href="/2012/01/02/using-d3-with-a-mysql-database/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+		<description><![CDATA[Creating visualizations from static files is fine and dandy but sometimes you need to be able to access dynamic data. And some other times, you may want to somehow record interactions from your users. One way to do that is by interacting with a mySql database. Without further ado here is the demo: How does <a class="read-more" href="/blog/2012/01/02/using-d3-with-a-mysql-database/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[<p>Creating visualizations from static files is fine and dandy but sometimes you need to be able to access dynamic data. And some other times, you may want to somehow record interactions from your users. One way to do that is by interacting with a mySql database.</p>
 <p>Without further ado here is the demo:</p>
-<p><iframe src="http://jckr.github.io/blog/stuff/sql_map/sqlmap.html" scrolling="no" width="542px" height="680px"></iframe></p>
+<p><iframe src="https://jckr.github.io/blog/stuff/sql_map/sqlmap.html" scrolling="no" width="542px" height="680px"></iframe></p>
 <h3>How does it work?</h3>
 <p>There are several parts to that.</p>
 <p>First, one <a href="http://jckr.github.io/blog/stuff/sql_map/sqlmap.html">html file</a> which holds everything together. By the way, for the styling I used Twitter&#8217;s <a href="http://twitter.github.com/bootstrap/">bootstrap</a> which makes it easy for all elements to find their place, and look at those purty buttons.</p>

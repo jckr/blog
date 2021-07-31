@@ -38,7 +38,7 @@
 		<category><![CDATA[segregation]]></category>
 
 		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1496</guid>
-		<description><![CDATA[Inspired by the coursera class on model thinking, by Scott E Page, I have implemented a bunch of simulation models with d3. It&#8217;s something I have done on and off for the past few weeks, and let&#8217;s say it&#8217;s really the first 6. Those interactive versions just graze the surface of all there is to <a class="read-more" href="/2012/11/07/some-simulation-models/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+		<description><![CDATA[Inspired by the coursera class on model thinking, by Scott E Page, I have implemented a bunch of simulation models with d3. It&#8217;s something I have done on and off for the past few weeks, and let&#8217;s say it&#8217;s really the first 6. Those interactive versions just graze the surface of all there is to <a class="read-more" href="/blog/2012/11/07/some-simulation-models/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[<p>Inspired by the <a href="http://coursera.org/">coursera</a> class on <a href="https://class.coursera.org/modelthinking-2012-002/class/index">model thinking</a>, by Scott E Page, I have implemented a bunch of <a href="http://jckr.github.io/blog/projects/models/models.html">simulation models</a> with <a href="http://d3js.org/">d3</a>. It&#8217;s something I have done on and off for the past few weeks, and let&#8217;s say it&#8217;s really the first 6. Those interactive versions just graze the surface of all there is to see.</p>
 <p>So what I have is: </p>
 <ul>

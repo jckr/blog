@@ -112,7 +112,7 @@ img.emoji {
     </header>
     		<section class="post-content">
 		    <h2>From data to graphics</h2>
-<p><img src="http://jckr.github.io/blog/wp-content/uploads/2011/08/d3principle.png" alt="the d3 principle (and also the protovis principle)" /><br />
+<p><img src="https://jckr.github.io/blog/wp-content/uploads/2011/08/d3principle.png" alt="the d3 principle (and also the protovis principle)" /><br />
 d3 and protovis are built around the same principle. Take data, put it into an array, and for each element of data a graphical object can be created, whose properties are derived from the data that was provided.</p>
 <p>Only d3 and protovis have a slightly different way of adding those graphical elements and getting data. </p>
 <p>In protovis, you start from a panel, a protovis-specific object, to which you add various marks. Each time you add a mark, you can either:</p>
@@ -132,7 +132,7 @@ vis.add(pv.Panel).top(10).left(10)
     .bottom(0)
     .height(function(d) {return d*10;});
 vis.render();</pre>
-<p><img src="http://jckr.github.io/blog/wp-content/uploads/2011/08/protoBar.png" alt="this simple bar chart in protovis" /><br />
+<p><img src="https://jckr.github.io/blog/wp-content/uploads/2011/08/protoBar.png" alt="this simple bar chart in protovis" /><br />
 you first create a panel (first line), you may add an element without data (here, another panel, line 2), and add to this panel bars: there would be 5, one for each element in the array in line 4. </p>
 <h2>And in d3?</h2>
 <p>In d3, you also have a way to add either one object without passing data, or a series of objects &#8211; one per data element. </p>
@@ -200,17 +200,17 @@ And since you have to know: there is no easy way to retrieve the data of the par
 <p>To add many elements at once we&#8217;ve used the sequence: selectAll, data, enter, append.<br />
 Why use 4 methods for what appears to be one elementary task? If you don&#8217;t care about manipulating nodes individually, for instance for animations, you can just remember the sequence. But if you want to know more, here is what each method does. </p>
 <h3>selectAll</h3>
-<p><img src="http://jckr.github.io/blog/wp-content/uploads/2011/08/d3selectAll.png" alt="the selectAll method" /><br />
+<p><img src="https://jckr.github.io/blog/wp-content/uploads/2011/08/d3selectAll.png" alt="the selectAll method" /><br />
 First, we select a point on which to add your new graphical objects. When you are creating your objects and use the selectAll method, it will return an <em>empty selection</em> but based on that given point. You may also use selectAll in another context, to update your objects for instance. But here, an empty selection is expected. </p>
 <h3>data</h3>
-<p><img src="http://jckr.github.io/blog/wp-content/uploads/2011/08/d3data.png" alt="the data method" /><br />
+<p><img src="https://jckr.github.io/blog/wp-content/uploads/2011/08/d3data.png" alt="the data method" /><br />
 Then, you attribute data. This works quite similarly to protovis: d3 expects an array. d3 takes the concept further (with the concept of <em>data joins</em>) but you need not concern yourself with that until you look at transitions.<br />
 Anyway, at this stage you have an empty selection, based on a given point in the page, but with data.</p>
 <h3>enter</h3>
-<p><img src="http://jckr.github.io/blog/wp-content/uploads/2011/08/d3enter.png" alt="the enter method" /><br />
+<p><img src="https://jckr.github.io/blog/wp-content/uploads/2011/08/d3enter.png" alt="the enter method" /><br />
 The enter method updates the selection with nodes which have data, but no graphical representation. Using enter() is like creating stubs where the graphical elements will be grafted. </p>
 <h3>append</h3>
-<p><img src="http://jckr.github.io/blog/wp-content/uploads/2011/08/d3append.png" alt="the append method" /><br />
+<p><img src="https://jckr.github.io/blog/wp-content/uploads/2011/08/d3append.png" alt="the append method" /><br />
 Finally, by appending we actually create the graphical objects. Each is tied to one data element, so it can be further styled (for instance, through &#8220;attr&#8221;) to derive its characteristics from the value of that data.</p>
 		    			<div class="clear">&nbsp;</div>
 		</section>

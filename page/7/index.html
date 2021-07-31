@@ -121,7 +121,7 @@ Here&#8217;s my map for the record:<br />
 <div style="float:right; padding-right:8px;"><a href="http://www.tableausoftware.com/public?ref=http://public.tableausoftware.com/views/contest2011/WMap" target="_blank">Powered by Tableau</a></div>
 </div>
 <p>To create my map, I used the default mapping function of Tableau, where you declare the geographic role of two of your measures &#8211; one as latitude, one as longitude &#8211; and you can plot marks on a map, that can be zoomed, panned etc.<br />
-<a href="http://jckr.github.io/blog/wp-content/uploads/2011/06/latitude.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/06/latitude.png" alt="" title="latitude" class="aligncenter size-full wp-image-918" /></a><br />
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/06/latitude.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/06/latitude.png" alt="" title="latitude" class="aligncenter size-full wp-image-918" /></a><br />
 If one of your dimensions is geographical in nature, like a country, US state, US county name or code, Tableau can calculate latitude and longitude so you don&#8217;t have to provide them. This also works for zip codes. So, if you have a valid US address, you can extract the zip code out of that (before you put your data in Tableau) and Tableau can represent this on a map quite accurately.<br />
 In my case, I had tens of thousands of marks, which were available at a much finer level than the zip code (sometimes down to the appartment number) so I thought it would be a pity to aggregate them so. My data came with notions like neighborhood or block numbers, which is specific to the New York administration I suppose, but interesting in my context. That idea of block number sounded like the right level of aggregation for my data.<br />
 The problem is, how do I get the latitude and longitude of each of the blocks?<br />
@@ -131,7 +131,7 @@ In another view, I have a simpler map &#8211; by neighborhood. Neighborhoods are
 <p>While it can be desirable to let users interact with the map, in many cases it is not a safe option. Once you let your users unzoom and/or scrool away from the action, it is not obvious for them to get back.<br />
 So Agnieszka has used another nifty technique, that of background images.<br />
 Her map is really a static file imported with the background image function which is found in the data menu:<br />
-<a href="http://jckr.github.io/blog/wp-content/uploads/2011/06/background-image.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/06/background-image.png" alt="" title="background image" class="aligncenter size-full wp-image-919" /></a><br />
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/06/background-image.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/06/background-image.png" alt="" title="background image" class="aligncenter size-full wp-image-919" /></a><br />
 Like this, the user can really specify what to use for a map, when does it start, where does it end. The map won&#8217;t move afterwards.<br />
 However, by doing so one cannot use geographic coordinates to display marks. One has to obtain, outside of Tableau, the x and y coordinates of each mark on the screen. Then, those x and y coordinates can be made into measures, and assigned respectively to the column and row shelves of the viz. </p>
 <p>I&#8217;ll let you figure out which one is best for your next map project. Note that you can generate highly customizable map backgrounds with a service like <a href="http://www.cloudmade.com/">cloudmade</a>.</p>
@@ -183,17 +183,17 @@ You can also switch to a <a href="http://public.tableausoftware.com/views/contes
 <h3>Le rôle de la vitesse dans les accidents de la route</h3>
 <p>La théorie qui relie vitesse, nombre d&#8217;accidents et victimes est le modèle de Nilsson qui fut établi au début des années 1980. Pour simplifier, si la vitesse moyenne augmente de 1%, le nombre d&#8217;accidents augmente de 2% et celui de morts de 4%. Ce modèle s&#8217;est vérifié empiriquement, c&#8217;est pourquoi ont l&#8217;utilise toujours 30 ans plus tard.</p>
 <p>Cela dit, quand on parle d&#8217;augmentation ou de diminution de vitesse dans ce modèle, on parle de vitesse moyenne, avec la même distribution, c&#8217;est-à-dire qu&#8217;il y aura toujours autant de personnes qui conduisent 10% plus vite que la moyenne, 20% plus vite etc.<br />
-<script src="http://jckr.github.io/blog/wp-includes/js/protovis_r3_2.js" type="text/javascript"></script> <script src="http://jckr.github.io/blog/wp-content/uploads/2011/05/distri.js" type="text/javascript"></script><br />
+<script src="https://jckr.github.io/blog/wp-includes/js/protovis_r3_2.js" type="text/javascript"></script> <script src="https://jckr.github.io/blog/wp-content/uploads/2011/05/distri.js" type="text/javascript"></script><br />
 Or que savons-nous précisément sur ces vitesses trop élevées, celles précisément qui donnent lieu à des amendes?</p>
 <p>D&#8217;après <em>La sécurité routière en France – BILAN 2009</em>, page 168,</p>
 <blockquote><p>La vitesse est un facteur particulier d’accident dans la mesure où elle est pratiquement toujours présente dans une collision, que ce soit une vitesse inappropriée aux circonstances ou excessive.</p></blockquote>
 <h3>Dépassements de vitesse et radar</h3>
 <p>Mais est-ce que les radars ont été efficaces pour lutter contre ces vitesses excessives? Là encore on peut vérifier chiffres en main.<br />
 <!--[if IE]>
-<a href="http://jckr.github.io/blog/wp-content/uploads/2011/05/infractions.png" _mce_href="http://jckr.github.io/blog/wp-content/uploads/2011/05/infractions.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/05/infractions.png" _mce_src="http://jckr.github.io/blog/wp-content/uploads/2011/05/infractions.png" alt="" title="infractions" width="600" height="400" class="alignnone size-full wp-image-403" /></a>
-<a href="http://jckr.github.io/blog/wp-content/uploads/2011/05/vitesses.png" _mce_href="http://jckr.github.io/blog/wp-content/uploads/2011/05/vitesses.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/05/vitesses.png" _mce_src="http://jckr.github.io/blog/wp-content/uploads/2011/05/vitesses.png" alt="" title="vitesses" width="600" height="400" class="alignnone size-full wp-image-403" /></a>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/05/infractions.png" _mce_href="http://jckr.github.io/blog/wp-content/uploads/2011/05/infractions.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/05/infractions.png" _mce_src="https://jckr.github.io/blog/wp-content/uploads/2011/05/infractions.png" alt="" title="infractions" width="600" height="400" class="alignnone size-full wp-image-403" /></a>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/05/vitesses.png" _mce_href="http://jckr.github.io/blog/wp-content/uploads/2011/05/vitesses.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/05/vitesses.png" _mce_src="https://jckr.github.io/blog/wp-content/uploads/2011/05/vitesses.png" alt="" title="vitesses" width="600" height="400" class="alignnone size-full wp-image-403" /></a>
 <!--><br />
-<script src="http://jckr.github.io/blog/wp-content/uploads/2011/05/infractions.js" type="text/javascript"></script> <script src="http://jckr.github.io/blog/wp-content/uploads/2011/05/vitesses.js" type="text/javascript"></script></p>
+<script src="https://jckr.github.io/blog/wp-content/uploads/2011/05/infractions.js" type="text/javascript"></script> <script src="https://jckr.github.io/blog/wp-content/uploads/2011/05/vitesses.js" type="text/javascript"></script></p>
 <p>L&#8217;introduction des radars a augmenté le nombre de contrôles de vitesse dans de grandes proportions: de  1,350,000 à peu près en 2002 à près de 10 millions aujourd&#8217;hui. Dans le même temps,  la proportion de véhicules qui roulent 10km/h au-dessus des limites autorisées est passé d&#8217;environ 40% à 10%. Les chiffres passent de 5% à 0.5% pour ceux qui roulent à plus de 30 km/h au-dessus de la limite.<br />
 La <a href="http://www.lefigaro.fr/assets/pdf/110523-courrier-au-premier-ministre.pdf">lettre des députés</a> note que les accidents ont été divisés par 2 en 20 ans alors que la circulation a augmenté de 80%. Il serait plus exact de dire que les morts sur la route ont été divisés par 2&#8230; suite à l&#8217;introduction des radars automatiques.</p>
 <h3>Le coût des accidents</h3>
@@ -267,7 +267,7 @@ La <a href="http://www.lefigaro.fr/assets/pdf/110523-courrier-au-premier-ministr
 	<section class="post-content">
 
 		<p>Today, OECD launched the <a href="http://oe.cd/bli">Your better Life Index</a>, a project on which I had been involved for months.</p>
-<h2><a href="http://jckr.github.io/blog/wp-content/uploads/2011/05/bli.png"><img class="aligncenter size-full wp-image-880" title="bli" src="http://jckr.github.io/blog/wp-content/uploads/2011/05/bli.png" alt="" /></a></h2>
+<h2><a href="http://jckr.github.io/blog/wp-content/uploads/2011/05/bli.png"><img class="aligncenter size-full wp-image-880" title="bli" src="https://jckr.github.io/blog/wp-content/uploads/2011/05/bli.png" alt="" /></a></h2>
 <h2>The short</h2>
 <p>I&#8217;m happy with the launch, the traffic has been really good, and there was <a href="http://flowingdata.com/2011/05/24/better-life-index-measures-well-being-across-countries/">some</a> <a href="http://infosthetics.com/archives/2011/05/oecd_better_life_index_comparing_the_national_well-being_by_flowers.html">great</a> <a href="http://www.economist.com/blogs/dailychart/2011/05/well-being_and_wealth?fsrc=scn/tw/te/dc/thepursuitofhappiness">coverage.</a></p>
 <p>The three main lessons are:</p>
@@ -322,9 +322,9 @@ La <a href="http://www.lefigaro.fr/assets/pdf/110523-courrier-au-premier-ministr
 		<p>In the field of information visualization, professing one&#8217;s admiration for the work of the New York Times is not a very bold statement. However, my point is that they are admired mostly for the wrong reason (excellence in visual design and aesthetics). And by that, I don&#8217;t mean that it is not important to produce a visually pleasing experience, but rather that the work of the NYT graphics team deserves even more praise for its conception than its execution.</p>
 <p>In the two examples I have chosen I&#8217;m highlighting aspects of their work that should be emulated with more dedication than their trademark visual style.</p>
 <h2>The examples</h2>
-<p><div style="width: 978px" class="wp-caption alignnone"><img title="You fix the budget" src="http://jckr.github.io/blog/stuff/images/youfixthebudget.png" alt="You fix the budget" width="968" height="685" /><p class="wp-caption-text">You fix the budget, New York Times, November 13th 2010</p></div></p>
+<p><div style="width: 978px" class="wp-caption alignnone"><img title="You fix the budget" src="https://jckr.github.io/blog/stuff/images/youfixthebudget.png" alt="You fix the budget" width="968" height="685" /><p class="wp-caption-text">You fix the budget, New York Times, November 13th 2010</p></div></p>
 <p>Those will be: <a href="http://www.nytimes.com/interactive/2010/11/13/weekinreview/deficits-graphic.html">You Fix the Budget</a>, published in November 13th 2010, and the recent <a href="http://www.nytimes.com/interactive/2011/05/03/us/20110503-osama-response.html">The Death of a Terrorist: A Turning Point?</a> published May 3rd, 2011.</p>
-<p><div style="width: 964px" class="wp-caption alignnone"><img title="Death of a terrorist - a turning point" src="http://jckr.github.io/blog/stuff/images/Image_2.png" alt="Death of a terrorist - a turning point" width="954" height="576" /><p class="wp-caption-text">Death of a terrorist - a turning point, New York Times, May 3rd 2011</p></div></p>
+<p><div style="width: 964px" class="wp-caption alignnone"><img title="Death of a terrorist - a turning point" src="https://jckr.github.io/blog/stuff/images/Image_2.png" alt="Death of a terrorist - a turning point" width="954" height="576" /><p class="wp-caption-text">Death of a terrorist - a turning point, New York Times, May 3rd 2011</p></div></p>
 <h3>Putting the user in charge</h3>
 <p>In both examples the visualizations work by asking the user their opinion in a very simple, non-intrusive manner. In the budget example the user can check or uncheck boxes. Each box is attached to a highly legible text that can easily entice a reaction. The title alone (i.e. &#8220;cut foreign aid in half&#8221;) which is always short and to the point, is enough for the user to take a position &#8211; agree (and check the box) or disagree. In a possible second phase, the user can read a more detailed description and see how much money can be saved by enacting such or such measure.</p>
 <p>All in all, the experience is <strong>not directive</strong> and feels user-controlled. On typical information <strong>visualizations </strong>(say, <a href="http://www.gapminder.org/world/">gapminder</a>) even if there are many controls the user is left on the spectator seat: the data unfold, they can be presented differently but the output cannot be changed. Conversely,  this is a <strong>simulation</strong>: by capturing a certain number of key inputs from the user, there can be different outcomes.</p>
@@ -355,14 +355,14 @@ La <a href="http://www.lefigaro.fr/assets/pdf/110523-courrier-au-premier-ministr
 
 		<p>[A note to my English readers &#8211; as you&#8217;d have probably guessed by the title in French, this post about French politics is in French again, but I&#8217;ll soon resume posting in English]<br />
 Dimanche 27 a eu lieu le deuxième tour des élections cantonales, dont j&#8217;ai déjà un peu parlé <a href="http://jckr.github.io/blog/?p=764">ici</a> ou <a href="http://jckr.github.io/blog/?p=804">ici</a>. Et qui dit second tour dit duels :<br />
-<script type="text/javascript" src="http://jckr.github.io/blog/wp-content/uploads/2011/04/deuxieme.js"></script><br />
-<script type="text/javascript" src="http://jckr.github.io/blog/wp-content/uploads/2011/03/votes.js"></script><br />
-<script type="text/javascript" src="http://jckr.github.io/blog/protovis_r3_2.js"></script></p>
-<div style="width:500px;margin-left:auto;margin-right:auto;"><script type="text/javascript" src="http://jckr.github.io/blog/wp-content/uploads/2011/04/arc2.js"></script></div>
+<script type="text/javascript" src="https://jckr.github.io/blog/wp-content/uploads/2011/04/deuxieme.js"></script><br />
+<script type="text/javascript" src="https://jckr.github.io/blog/wp-content/uploads/2011/03/votes.js"></script><br />
+<script type="text/javascript" src="https://jckr.github.io/blog/protovis_r3_2.js"></script></p>
+<div style="width:500px;margin-left:auto;margin-right:auto;"><script type="text/javascript" src="https://jckr.github.io/blog/wp-content/uploads/2011/04/arc2.js"></script></div>
 <p>Comme on peut le voir, le &#8220;classico&#8221; du second tour c&#8217;était le duel UMP-PS (336 cas). Mais ce qui intéressait tout le monde c&#8217;était plutôt les cas où le FN était présent: 403 scrutins. Alors que s&#8217;est-il passé? est-ce que les voix se sont <em>bien transférées</em>? </p>
 <p>Ce que j&#8217;ai lu suite aux cantonales, c&#8217;est que si les électeurs de gauche avaient fait barrage au front national dans le cas des duels entre le FN et la droite, ce n&#8217;était pas trop le cas des électeurs de droite qui s&#8217;étaient souvent contentés de laisser gagner la gauche sans se mobiliser davantage. Alors voyons ce que disent les chiffres. </p>
 <p>Sur les 403 cantons où le front national s&#8217;est maintenu, il y a eu 266 duels avec la gauche et 127 avec la droite. On va passer sur les 10 autres cas de figure (triangulaires, duel avec une autre formation etc.) parce que ce qui nous intéresse ici c&#8217;est de voir <strong>pour qui vote un électeur d&#8217;une grande faction qui ne se retrouve pas au second tour</strong>.</p>
-<div style="width:490px;margin-left:auto;margin-right:auto;"><script type="text/javascript" src="http://jckr.github.io/blog/wp-content/uploads/2011/04/transfert11.js"></script></div>
+<div style="width:490px;margin-left:auto;margin-right:auto;"><script type="text/javascript" src="https://jckr.github.io/blog/wp-content/uploads/2011/04/transfert11.js"></script></div>
 </p>
 <p>Dans le cas des duels droite-FN, il y a presque 240,000 électeurs qui avaient voté à gauche au premier tour et qui se sont fait confisquer leur vote. Bien plus que les voix supplémentaire récoltées par les candidats de droite (environ 150,000)! De même, il y a eu environ 280,000 électeurs de droite qui n&#8217;ont pas pu soutenir leur candidat au deuxième tour, alors que les candidats de gauche n&#8217;ont récupéré que 190,000 voix en plus. </p>
 <p>Dans les deux cas, la participation a augmenté: environ 210,000 votants en plus. Pourtant, il y a eu une augmentation du nombre de votes nuls (plus de 150,000 supplémentaires) et surtout, un fort gain des voix du FN (presque 300,000).</p>
@@ -396,7 +396,7 @@ Parmi les prénoms qu'on trouve plus de 5 fois, les plus marqués à gauche sont
 
 Et... si Jean-Marie est plutôt de droite, les Nicolas sont d'habitude à gauche, mais pas les François. On trouve plus de Jean-Luc, de Martine et de Dominique à gauche, mais pas d'Olivier!</p><hr/></p>
 <script type="text/javascript" src="http://blog.oecdfactblog.org/wp-includes/js/protovis-r3.2.js"></script>
-<script type="text/javascript" src="http://jckr.github.io/blog/wp-content/uploads/2011/04/candidats.js" charset="ISO-8859-1"></script>
+<script type="text/javascript" src="https://jckr.github.io/blog/wp-content/uploads/2011/04/candidats.js" charset="ISO-8859-1"></script>
 <script type="text/javascript+protovis">
 var re="", sp=-1;
 partisDetails={
@@ -591,7 +591,7 @@ lessBox.anchor("center").add(pv.Label).text("précédents")
 	<section class="post-content">
 
 		<p>I just posted my <a href="http://www.datavizchallenge.org/">www.datavizchallenge.org</a> <a href="http://jckr.github.io/blog/stuff/datavizchallenge/index.html">entry</a>!<br />
-<a href="http://jckr.github.io/blog/stuff/datavizchallenge/index.html"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/03/myEntry3.png" alt="" title="My  datavizchallenge.org entry" width="323" height="330" class="aligncenter size-full wp-image-801" /></a></p>
+<a href="http://jckr.github.io/blog/stuff/datavizchallenge/index.html"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/03/myEntry3.png" alt="" title="My  datavizchallenge.org entry" width="323" height="330" class="aligncenter size-full wp-image-801" /></a></p>
 <p>So here&#8217;s a little explanation about what I&#8217;ve done, how and why. </p>
 <p>The idea behind the data provider web site, <a href="http://www.whatwepayfor.com/">WhatWePayFor</a>, is that billions and millions don&#8217;t talk to the average citizen. This doesn&#8217;t help them understand where their money goes.</p>
 <p>And in my work, I generally try to show as little data as possible to make a point. And I like to use interactivity to involve users. </p>
@@ -663,9 +663,9 @@ Je propose 3 scénarios: une comparaison gauche-droite, l'importance de l'extrê
 <input type="radio" checked name="group1" value="0" onclick="sc=0;reinit() ;vis.render();">Gauche-droite
 <input type="radio" name="group1" value="1" onclick="sc=1;reinit() ;vis.render();">Extrême-droite
 <input type="radio" name="group1" value="2" onclick="sc=2;reinit() ;vis.render();">Abstention</form>
-<script type="text/javascript" src="http://jckr.github.io/blog/wp-content/uploads/2011/03/votes.js"></script>
-<script type="text/javascript" src="http://jckr.github.io/blog/wp-content/uploads/2011/03/francedorling.js"></script>
-<script type="text/javascript" src="http://jckr.github.io/blog/wp-content/uploads/2011/03/cantonales.js"></script>
+<script type="text/javascript" src="https://jckr.github.io/blog/wp-content/uploads/2011/03/votes.js"></script>
+<script type="text/javascript" src="https://jckr.github.io/blog/wp-content/uploads/2011/03/francedorling.js"></script>
+<script type="text/javascript" src="https://jckr.github.io/blog/wp-content/uploads/2011/03/cantonales.js"></script>
 	    		<div class="clear">&nbsp;</div>
 	</section>
 </article><!-- #post-## -->

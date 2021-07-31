@@ -28,7 +28,7 @@
 		<category><![CDATA[data]]></category>
 
 		<guid isPermaLink="false">http://jckr.github.io/blog/?p=699</guid>
-		<description><![CDATA[In my short tutorial on working with data and protovis I briefly covered some standard javascript and protovis methods to work with arrays. The more I work with Protovis, the more I am convinced that efficient array manipulation is key to achieving just about anything with the library. So, I would like to go into <a class="read-more" href="/2011/03/15/more-fun-with-arrays-in-protovis/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+		<description><![CDATA[In my short tutorial on working with data and protovis I briefly covered some standard javascript and protovis methods to work with arrays. The more I work with Protovis, the more I am convinced that efficient array manipulation is key to achieving just about anything with the library. So, I would like to go into <a class="read-more" href="/blog/2011/03/15/more-fun-with-arrays-in-protovis/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[In my short tutorial on <a href="http://jckr.github.io/blog/?p=426">working with data and protovis</a> I briefly covered some standard javascript and protovis methods to <a href="http://jckr.github.io/blog/?p=494">work with arrays</a>.
 
 The more I work with Protovis, the more I am convinced that efficient array manipulation is key to achieving just about anything with the library. So, I would like to go into more detail in some javascript methods for building, processing and testing arrays that can really be helpful.
@@ -58,7 +58,7 @@ vis.add(pv.Bar)
 
 vis.render();
 </pre></td>
-<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/categories.png"><img class="aligncenter size-full wp-image-483" title="categories" src="http://jckr.github.io/blog/wp-content/uploads/2011/02/categories.png" alt="" width="144" height="135" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/categories.png"><img class="aligncenter size-full wp-image-483" title="categories" src="https://jckr.github.io/blog/wp-content/uploads/2011/02/categories.png" alt="" width="144" height="135" /></a></td>
 </tr>
 </tbody>
 </table>

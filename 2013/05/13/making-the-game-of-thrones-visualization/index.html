@@ -140,7 +140,7 @@ this has not been a small task. When I read the books, which was a while back (b
 <p>The method I chose was good (but not completely accurate) at preserving the relative importance of one clique compared to all the others, but just barely ok at preserving the relative importance of one given character.</p>
 <p>I would take all the mentions of all the characters, tally that by clique, then take the square roots of that for each clique. Then, for each clique I compute the ratio of that square root to the sum of all the other square roots.</p>
 <p>I multiply that by 2π and that&#8217;s an angle, that&#8217;s the &#8220;slice&#8221; of the main circle that will be occupied by the circle corresponding to that clique. Picture:<br />
-<iframe src="http://jckr.github.io/blog/projects/agot/littleChords.html" frameborder="0" width="800px" height="500px"></iframe></p>
+<iframe src="https://jckr.github.io/blog/projects/agot/littleChords.html" frameborder="0" width="800px" height="500px"></iframe></p>
 <p>(btw click on the circle on the left to regenerate the data points)</p>
 <p>So while those proportions don&#8217;t exactly match they are very very close. That doesn&#8217;t hold at the character level, because the sum of the areas of the character circles can occupy anywhere between 50% and 100% of the areas of the larger circle. But that&#8217;s not important. Accuracy is not important, as long as it is sufficient to say: this character appears often and this one doesn&#8217;t.</p>
 <p>Two other technical points about the making of the viz.<br />
@@ -151,7 +151,7 @@ So it wasn&#8217;t possible to read the datafile in sequence and to draw some ad
 <p>so it&#8217;s just a matter of separating the code that calculates all the positions from the one that draws the viz, two operations which more often than not are intertwined.</p>
 <p>Last, in the visualization I get to write group names in a circle around the main circle. How is this done?</p>
 <p>Well, in svg, you can&#8217;t write &#8220;on a circle&#8221;. You can write on a path, which can be anything, a circular arc for instance. In this case it&#8217;s a bit more complicated because I wanted to make sure that the writing would not be upside down. So I actually used two arcs.</p>
-<p><iframe src="http://jckr.github.io/blog/projects/agot/littleTextPaths.html" width="500px" height="500px" frameborder=0></iframe></p>
+<p><iframe src="https://jckr.github.io/blog/projects/agot/littleTextPaths.html" width="500px" height="500px" frameborder=0></iframe></p>
 		    			<div class="clear">&nbsp;</div>
 		</section>
 	

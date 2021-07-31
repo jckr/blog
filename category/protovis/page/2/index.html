@@ -118,9 +118,9 @@ img.emoji {
 		<h2>What is a map?</h2>
 <p>before we start looking at the code it may be a good idea to think of the best way to represent a country.<br />
 Countries are areas of land surrounded by borders, which are imaginary (or sometimes physical) <strong>lines</strong> going through a set of <strong>points</strong>.<br />
-<a href="http://jckr.github.io/blog/wp-content/uploads/2011/03/square.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/03/square.png" alt="" title="square" width="200" height="200" class="aligncenter size-full wp-image-748" /></a></p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/03/square.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/03/square.png" alt="" title="square" width="200" height="200" class="aligncenter size-full wp-image-748" /></a></p>
 <p>Some countries are made of one of such surfaces, but many countries are not one contiguous territory (they may include islands for instance) so they could be made out of <strong>several disjointed polygons</strong>.<br />
-<a href="http://jckr.github.io/blog/wp-content/uploads/2011/03/square1.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/03/square1.png" alt="" title="square" width="200" height="200" class="aligncenter size-full wp-image-749" /></a>.</p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/03/square1.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/03/square1.png" alt="" title="square" width="200" height="200" class="aligncenter size-full wp-image-749" /></a>.</p>
 <p>Now let&#8217;s put on our protovis hat. Let&#8217;s suppose we want to draw a map where each country could be colored differently (choropleth). What kind of data structure should be use to represent that?<br />
 First there should be a sort of array of countries. Each country should be an item in that array, so they can be indexed and assigned an individual color and various data points.<br />
 Then, at the lowest level, we would be drawing polygons, which are treated as pv.Line in protovis. For each polygon, we would require an array of coordinate pairs. To draw a country, we would need a list (array) of those polygons. </p>
@@ -142,7 +142,7 @@ Then, at the lowest level, we would be drawing polygons, which are treated as pv
 ...
 ]</pre>
 <h2>the map projections example</h2>
-<p><a href="http://jckr.github.io/blog/wp-content/uploads/2011/03/projections.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/03/projections.png" alt="" title="projections" width="600" height="360" class="aligncenter size-full wp-image-754" /></a></p>
+<p><a href="http://jckr.github.io/blog/wp-content/uploads/2011/03/projections.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/03/projections.png" alt="" title="projections" width="600" height="360" class="aligncenter size-full wp-image-754" /></a></p>
 <p>Can be found <a href="http://vis.stanford.edu/protovis/ex/projection.html">here: </a> http://vis.stanford.edu/protovis/ex/projection.html</p>
 <pre class="brush: jscript; title: ; notranslate" title="">/*
  * A diverging color scale, using previously-computed quantiles of population
@@ -514,14 +514,14 @@ On the very bottom-left, those who are happy to be there. Etc.</p>
 		<p>This week, I was made aware of a new set of maps by French ministry of Foreign Trade, called <em>cartographie de la France qui exporte</em> (map of France exports) (<a href="http://www.exporter.gouv.fr/exporter/Pages.aspx?iddoc=1821&#038;pex=1-2-40-926-1821">link</a>). Since I&#8217;m interested in the topic and that I know that French public services have killer cartographers I was eager to see what was so exciting about the first set of online maps on French exports. </p>
 <p>I was a little underwhelmed to be honest. Online here meant static pdf files, although this is a dataset that just begs to be explored and manipulated.<br />
 On top of that, those where basic choropleth maps with markers such as this one here:<br />
-<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/largemap.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/largemap.png" alt="" title="largemap" width="626" height="631" class="size-full wp-image-662" /></a></p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/largemap.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/largemap.png" alt="" title="largemap" width="626" height="631" class="size-full wp-image-662" /></a></p>
 <p>Now this map has two problems. First, it&#8217;s a choropleth with a discrete scale, but the values of adjacent areas can vary a lot. So, if you look at this portion of the map, what can be deduced on the values? not much I&#8217;m afraid.<br />
-<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/choropleth.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/choropleth.png" alt="" title="choropleth" width="123" height="132" class="aligncenter size-full wp-image-663" /></a></p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/choropleth.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/choropleth.png" alt="" title="choropleth" width="123" height="132" class="aligncenter size-full wp-image-663" /></a></p>
 <p>Second, it&#8217;s difficult to compare the marks on the map. Which region has the biggest? the smallest? how do two specific regions compare? with this representation, this type of question is even more difficult to answer than with a table.<br />
-<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/marks-only.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/marks-only.png" alt="" title="marks only" width="313" height="316" class="aligncenter size-full wp-image-664" /></a></p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/marks-only.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/marks-only.png" alt="" title="marks only" width="313" height="316" class="aligncenter size-full wp-image-664" /></a></p>
 <p>Also these charts answer one partial question. So this one, here, shows which region exports most food products. But to where? and how about the imports and balance? now if one given view was the most relevant and could illustrate some important finding, it can be highlighted but here the website gives us collections of many of such maps. As a citizen I&#8217;m leaving no more informed than I was.</p>
 <p>Not being the one to criticize without proposing an alternative, I whipped out an <strong>interactive exploratory tool of France trade flows</strong>.<br />
-<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/franceexport.html" target=”_blank”><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/treemap.png" alt="" title="treemap" width="561" height="443" class="aligncenter size-full wp-image-668" /></a><br />
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/franceexport.html" target=”_blank”><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/treemap.png" alt="" title="treemap" width="561" height="443" class="aligncenter size-full wp-image-668" /></a><br />
 (The interactive vis is too wide to conveniently fit in a blog, but clicking on the image will open it in a new tab).</p>
 <p>I don&#8217;t have access to the same dataset so I can&#8217;t show a strict equivalent. My data comes from <a href="http://comtrade.un.org/">COMTRADE</a>, the UN database of trade flows, and shows all exports and imports to France in 2009. They are not broken down by region or by type of company, but I got the flows by partner country and product category.<br />
 The idea is that one can select something on one treemap to update the other. Also, it&#8217;s possible to alternate between a categorical view (where all groups of products and continents look neatly separated) and a view of the balance, which quickly shows which products or which countries get the bulk of French trade. </p>
@@ -725,7 +725,7 @@ vis.add(pv.Layout.Grid)
      ;
 vis.render();</pre>
 </td>
-<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/QR-grid-big.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/QR-grid-big.png" alt="" title="QR-grid-big" width="216" height="216" class="aligncenter size-full wp-image-628" /></a>(BTW, this is the QR code to this page)</td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/QR-grid-big.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/QR-grid-big.png" alt="" title="QR-grid-big" width="216" height="216" class="aligncenter size-full wp-image-628" /></a>(BTW, this is the QR code to this page)</td>
 </tr>
 </table>
 <p>On line 29, I&#8217;m using a <a href="http://jckr.github.io/blog/?p=494">map function</a> to turn this array of strings, which is easier and shorter to type, into a <em>bona fide</em> 2-dimensional array. </p>
@@ -746,7 +746,7 @@ vis.add(pv.Layout.Stack)
     .y(function(d) d/20)
     .layer.add(pv.Area)</pre>
 </td>
-<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/stackedAreas.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/stackedAreas.png" alt="" title="stackedAreas" width="200" height="200" class="aligncenter size-full wp-image-636" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/stackedAreas.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/stackedAreas.png" alt="" title="stackedAreas" width="200" height="200" class="aligncenter size-full wp-image-636" /></a></td>
 </tr>
 </table>
 <p>all you need is to feed the layers, x, y properties of your stack, then say what you want to add to your layers.<br />
@@ -760,7 +760,7 @@ Now, columns: </p>
     .y(function(d) d/20)
     .layer.add(pv.Bar).width(40)</pre>
 </td>
-<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/stackedColumns.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/stackedColumns.png" alt="" title="stackedColumns" width="200" height="200" class="aligncenter size-full wp-image-637" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/stackedColumns.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/stackedColumns.png" alt="" title="stackedColumns" width="200" height="200" class="aligncenter size-full wp-image-637" /></a></td>
 </tr>
 </table>
 <p>and finally, bars: </p>
@@ -774,7 +774,7 @@ Now, columns: </p>
     .y(function(d) d/20)
     .layer.add(pv.Bar).height(40)</pre>
 </td>
-<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/stackedBars.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/stackedBars.png" alt="" title="stackedBars" width="200" height="200" class="aligncenter size-full wp-image-638" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/stackedBars.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/stackedBars.png" alt="" title="stackedBars" width="200" height="200" class="aligncenter size-full wp-image-638" /></a></td>
 </tr>
 </table>
 <p>For bars, there is a little trick here. I specify that the layer orientation is horizontal (&#8220;left&#8221;) and I change the height instead of the width of the added pv.Bar.<br />
@@ -811,7 +811,7 @@ arc.node.add(pv.Dot)
     .size(50)
 vis.render();</pre>
 </td>
-<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleNetwork1.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleNetwork1.png" alt="" title="simpleNetwork" width="200" height="200" class="aligncenter size-full wp-image-644" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleNetwork1.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/simpleNetwork1.png" alt="" title="simpleNetwork" width="200" height="200" class="aligncenter size-full wp-image-644" /></a></td>
 </tr>
 </table>
 <p>Here, by varying the strength of the link, the thickness of the arcs changes accordingly. The nodes are left unstyled, had we passed a more complicated dataset to the nodes array, we could have changed their properties (fillStyle, size, strokeStyle, labels etc.) with appropriate accessor functions. </p>
@@ -834,7 +834,7 @@ force.node.add(pv.Dot)
 vis.render();
 </pre>
 </td>
-<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleForce.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleForce.png" alt="" title="simpleForce" width="200" height="200" class="aligncenter size-full wp-image-645" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleForce.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/simpleForce.png" alt="" title="simpleForce" width="200" height="200" class="aligncenter size-full wp-image-645" /></a></td>
 </tr>
 </table>
 <p>Here I labelled the nodes so one can tell which is which. This is done by adding a pv.Label to the pv.Dot that&#8217;s attached to the node, just like with any other mark.</p>
@@ -856,7 +856,7 @@ Matrix.label.add(pv.Label).text(function() Math.floor(this.index/2))
 
 vis.render();</pre>
 </td>
-<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleMatrix1.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleMatrix1.png" alt="" title="simpleMatrix" width="200" height="200" class="aligncenter size-full wp-image-647" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleMatrix1.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/simpleMatrix1.png" alt="" title="simpleMatrix" width="200" height="200" class="aligncenter size-full wp-image-647" /></a></td>
 </tr>
 </table>
 <p>For the matrix things are slightly more complex than for the previous 2. Here I opted for a directed matrix, as opposed to a bidirectional one: this means that each link is shown once, to its source from its target, and not twice (ie from its target back to its source) which is the default.<br />
@@ -915,7 +915,7 @@ tree.node.add(pv.Dot)
 	.anchor(&quot;center&quot;).add(pv.Label).textAlign(&quot;center&quot;).text(function(n) n.nodeName)
 vis.render();</pre>
 <p>And here is the result:<br />
-<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleTree.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleTree.png" alt="" title="simpleTree" width="500" height="200" class="aligncenter size-full wp-image-652" /></a></p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleTree.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/simpleTree.png" alt="" title="simpleTree" width="500" height="200" class="aligncenter size-full wp-image-652" /></a></p>
 <p>There are many styling possibilities obviously left unexplored in this simple example (you can control properties of the tree.link, tree.node, tree.labels which we didn&#8217;t use here, etc.), but this won&#8217;t change much as far as data are concerned. </p>
 <p>Now let&#8217;s try a treemap with the same dataset.</p>
 <pre class="brush: jscript; first-line: 14; title: ; notranslate" title="">var vis = new pv.Panel()
@@ -952,7 +952,7 @@ vis.render();
 </pre>
 <p>and what took the longest part of the code was making the legend.</p>
 <p>Here is the outcome:<br />
-<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleTreemap.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleTreemap.png" alt="" title="simpleTreemap" width="400" height="200" class="aligncenter size-full wp-image-653" /></a></p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleTreemap.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/simpleTreemap.png" alt="" title="simpleTreemap" width="400" height="200" class="aligncenter size-full wp-image-653" /></a></p>
 	    		<div class="clear">&nbsp;</div>
 	</section>
 </article><!-- #post-## -->
@@ -1001,7 +1001,7 @@ An array of the shape:</p>
 </ul>
 <h3>Nesting</h3>
 <p>For this last reason, you may want to turn one flat array of associative arrays into an array of arrays of associative arrays. This process is called <strong>nesting</strong>.</p>
-<p><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/nesting.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/nesting.png" alt="" title="nesting" width="700" height="250" class="aligncenter size-full wp-image-528" /></a></p>
+<p><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/nesting.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/nesting.png" alt="" title="nesting" width="700" height="250" class="aligncenter size-full wp-image-528" /></a></p>
 <h4>Simple nesting</h4>
 <p>If you turn a <strong>single array</strong> like the one on the left-hand side to <strong>an array of arrays</strong> like on the right-hand side, you could easily do 3 smaller charts, one next to the other, by creating them inside of panels. You could have some information at this panel level (for instance the variety) and the rest at a lower level. </p>
 <p>Fortunately, there are protovis methods that can turn your flat list into a more complex array of arrays. And since protovis methods are meant to be chained, you can even go on and create arrays of arrays of arrays of arrays if needs be.<br />
@@ -1012,7 +1012,7 @@ To do the above, all you have to type is </p>
 <p>What this does is that it nests your <em>barley</em> array, according to the <em>variety</em> key. entries() at the end is required to obtain the array of arrays needed.</p>
 <p>Here is an example of what can be done with both kinds of data structures in just a few lines of code (which won&#8217;t include the data proper. The long, flat array is stored in the variable barley, as above).<br />
 Without nesting:<br />
-<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/BarleyWithoutNesting.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/BarleyWithoutNesting.png" alt="" title="BarleyWithoutNesting" width="606" height="198" class="aligncenter size-full wp-image-594" /></a></p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/BarleyWithoutNesting.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/BarleyWithoutNesting.png" alt="" title="BarleyWithoutNesting" width="606" height="198" class="aligncenter size-full wp-image-594" /></a></p>
 <pre class="brush: jscript; title: ; notranslate" title="">var vis = new pv.Panel()
     .width(600)
     .height(200)
@@ -1028,7 +1028,7 @@ vis.add(pv.Bar)
 vis.render();</pre>
 <p>As the pv.Bar goes through the array, there is not much it can do to structure it. We can just size the bars according to the value of yield, and color them according to another key (here the year).</p>
 <p>Now using nesting:<br />
-<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/BarleyWithNesting2.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/BarleyWithNesting2.png" alt="" title="BarleyWithNesting2" width="711" height="160" class="aligncenter size-full wp-image-598" /></a></p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/BarleyWithNesting2.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/BarleyWithNesting2.png" alt="" title="BarleyWithNesting2" width="711" height="160" class="aligncenter size-full wp-image-598" /></a></p>
 <pre class="brush: jscript; highlight: [1,8,15]; title: ; notranslate" title="">barley2=pv.nest(barley).key(function(d) d.variety).entries();
 barley2=pv.nest(barley).key(function(d) d.variety).entries();
 var vis = new pv.Panel()
@@ -1085,8 +1085,8 @@ vis.render();
 </td>
 </tr>
 <tr>
-<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/sort-unsorted.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/sort-unsorted.png" alt="" title="sort-unsorted" width="300" height="250" class="aligncenter size-full wp-image-524" /></a></td>
-<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/sort-sorted.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/sort-sorted.png" alt="" title="sort-sorted" width="300" height="250" class="aligncenter size-full wp-image-525" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/sort-unsorted.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/sort-unsorted.png" alt="" title="sort-unsorted" width="300" height="250" class="aligncenter size-full wp-image-524" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/sort-sorted.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/sort-sorted.png" alt="" title="sort-sorted" width="300" height="250" class="aligncenter size-full wp-image-525" /></a></td>
 </tr>
 </table>
 </li>
@@ -1667,14 +1667,14 @@ Once this is taken care of, the various objects can be added one to the other na
 Here&#8217;s a size-by-size comparison of the results:</p>
 <table>
 <tr>
-<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/protovisBarley.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/protovisBarley.png" alt="" title="protovisBarley" width="350" height="830" class="aligncenter size-full wp-image-551" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/protovisBarley.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/protovisBarley.png" alt="" title="protovisBarley" width="350" height="830" class="aligncenter size-full wp-image-551" /></a></td>
 <td><script type="text/javascript" src="http://public.tableausoftware.com/javascripts/api/viz_v1.js"></script><object class="tableauViz" width="356" height="901" style="display:none;"><param name="name" value="barley/Dashboard1" /><param name="toolbar" value="no" /><param name="tabs" value="no" /></object><noscript>Dashboard 1 <br /><a href="#"><img alt="Dashboard 1 " src="http://public.tableausoftware.com/static/images/ba/barley/Dashboard1/1_rss.png" height="100%" /></a></noscript></td>
 </tr>
 </table>
 <h2>How it&#8217;s done in Protovis</h2>
 <p>In protovis, the flat file is nested several times, so that its various elements can be called in a hierarchy from series of dots per variety, to panel per sites to a grander panel. Legend and ticks are added by hand for a perfect finish. Still, some careful planning is required to prepare the data file and to adjust the various elements (choice of colors, sizes, etc.)</p>
 <h2>How it&#8217;s done in Tableau</h2>
-<p><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/tableauBarley.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/tableauBarley.png" alt="" title="tableauBarley" width="665" height="497" class="aligncenter size-full wp-image-554" /></a><br />
+<p><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/tableauBarley.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/tableauBarley.png" alt="" title="tableauBarley" width="665" height="497" class="aligncenter size-full wp-image-554" /></a><br />
 The data file, unsurprisingly, has 4 dimensions: site, variety, year and yield. In tableau terms, yield is a measure (a numerical dimension) while the other 3 are categorical dimensions. With a few clicks, it is possible to get a result which is similar to the original vis in Protovis. We assign yield to column (horizontal attribute), site and variety to row in that order. We also untick aggregate measures in Analysis, so we get little circles and not big bars. Here, I&#8217;ve manually sorted the sites and the varieties. </p>
 <h2>Conclusion</h2>
 <p>It is much, much easier to achieve a similar result with Tableau, however using protovis provides a finer control. </p>
@@ -1877,7 +1877,7 @@ I want to sort the rows by the value of the latest year (which happens to be the
 And, since I only want the top 12 values, I just write .slice(0,12) after that. </p>
 <p>In line 55, I just add a label. pv.Label inherits the data of its parent. The data item is the whole row of my 2-dimensional table, so if I write function(d) d[0], I am referring to the left-most item which will be the country name. </p>
 <p>So, with the use of simple array functions, I can easily rework an unprepared dataset in protovis, rather than having to tailor my dataset with manual (and error-prone) manipulations in external programs. Here is the result:<br />
-<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/sortedBar.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/sortedBar.png" alt="" title="sortedBar" width="250" height="200" class="aligncenter size-full wp-image-589" /></a><br />
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/sortedBar.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/sortedBar.png" alt="" title="sortedBar" width="250" height="200" class="aligncenter size-full wp-image-589" /></a><br />
 Next: <a href="http://jckr.github.io/blog/?p=502">reshaping complex arrays</a></p>
 	    		<div class="clear">&nbsp;</div>
 	</section>
@@ -1918,7 +1918,7 @@ vis.add(pv.Bar)
 vis.render();
 </pre>
 </td>
-<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/categories.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/categories.png" alt="" title="categories" width="144" height="135" class="aligncenter size-full wp-image-483" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/categories.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/categories.png" alt="" title="categories" width="144" height="135" class="aligncenter size-full wp-image-483" /></a></td>
 </tr>
 </tbody>
 </table>
@@ -1972,7 +1972,7 @@ var bar = vis.add(pv.Bar)
 
 vis.render();</pre>
 </td>
-<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/hierarchy.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/hierarchy.png" alt="" title="hierarchy" width="220" height="170" class="aligncenter size-full wp-image-485" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/hierarchy.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/hierarchy.png" alt="" title="hierarchy" width="220" height="170" class="aligncenter size-full wp-image-485" /></a></td>
 </tr>
 </table>
 <p>The bar object is considered to be the child of vis, who is its parent.</br><br />
@@ -1990,7 +1990,7 @@ var bar = vis.add(pv.Bar)
   .anchor(&quot;top&quot;).add(pv.Label)
 vis.render();</pre>
 <td>
-<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/part3.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/part3.png" alt="" title="part3" width="154" height="154" class="aligncenter size-full wp-image-487" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/part3.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/part3.png" alt="" title="part3" width="154" height="154" class="aligncenter size-full wp-image-487" /></a></td>
 </tr>
 </table>
 <p>Here, I didn’t specify a data or a text value for the labels I added. They just took the value of its parent element – the marks of the pv.Bar object.<br />
@@ -2007,7 +2007,7 @@ vis.add(pv.Panel)
   .anchor(&quot;top&quot;).add(pv.Label)
 vis.render();</pre>
 </td>
-<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/part4.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/part4.png" alt="" title="part4" width="154" height="154" class="aligncenter size-full wp-image-488" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/part4.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/part4.png" alt="" title="part4" width="154" height="154" class="aligncenter size-full wp-image-488" /></a></td>
 </tr>
 </table>
 <p>Here, I’m adding panels, then a bar in each panel.<br />
@@ -2030,7 +2030,7 @@ vis.add(pv.Panel)
 vis.render();
 </pre>
 </td>
-<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/part4.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/part4.png" alt="" title="part4" width="154" height="154" class="aligncenter size-full wp-image-488" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/part4.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/part4.png" alt="" title="part4" width="154" height="154" class="aligncenter size-full wp-image-488" /></a></td>
 </tr>
 </table>
 <p>Well, the output is exactly the same, but how I obtained the data is different. Instead of getting the data using the standard accessor function, I passed two arguments: function(a, b).<br />
@@ -2099,7 +2099,7 @@ and c is the data value of the parent of the parent of the row, the square &#821
 The square number can be obtained by this.parent.parent.index.</p>
 <p>Finally, we add the numbers in large transparent gray digits on top of the squares.</p>
 <p>Here is the result:<br />
-<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/squarePies.png"><img src="http://jckr.github.io/blog/wp-content/uploads/2011/02/squarePies.png" alt="" title="squarePies" width="660" height="160" class="aligncenter size-full wp-image-559" /></a></p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/squarePies.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/squarePies.png" alt="" title="squarePies" width="660" height="160" class="aligncenter size-full wp-image-559" /></a></p>
 <p>Next: <a href="http://jckr.github.io/blog/?p=49">Javascript and protovis array functions</a></p>
 	    		<div class="clear">&nbsp;</div>
 	</section>
@@ -2133,7 +2133,7 @@ vis.add(pv.Bar)
 
 vis.render();</pre>
 </td>
-<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/01/basic-example1.png"><img class="aligncenter size-full wp-image-433" title="basic example" src="http://jckr.github.io/blog/wp-content/uploads/2011/01/basic-example1.png" alt="" width="150" height="150" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/01/basic-example1.png"><img class="aligncenter size-full wp-image-433" title="basic example" src="https://jckr.github.io/blog/wp-content/uploads/2011/01/basic-example1.png" alt="" width="150" height="150" /></a></td>
 </tr>
 </tbody>
 </table>

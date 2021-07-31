@@ -31,7 +31,7 @@
 		<category><![CDATA[map]]></category>
 
 		<guid isPermaLink="false">http://jckr.github.io/blog/?p=796</guid>
-		<description><![CDATA[This is a follow-up to the previous post where I used a Dorling cartogram to show election results in France. So how did I come up with that? Step 1: the data Without data, there wouldn&#8217;t be much to plot, right? So the first order of business was to fetch the data, which is theoretically <a class="read-more" href="/2011/03/27/building-the-france-dorling-cartogram/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+		<description><![CDATA[This is a follow-up to the previous post where I used a Dorling cartogram to show election results in France. So how did I come up with that? Step 1: the data Without data, there wouldn&#8217;t be much to plot, right? So the first order of business was to fetch the data, which is theoretically <a class="read-more" href="/blog/2011/03/27/building-the-france-dorling-cartogram/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[<p>This is a follow-up to <a href="http://jckr.github.io/blog/?p=764">the previous post</a> where I used a Dorling cartogram to show election results in France. So how did I come up with that?</p>
 <h2>Step 1: the data</h2>
 <p>Without data, there wouldn&#8217;t be much to plot, right? So the first order of business was to fetch the data, which is theoretically available from an <a href="http://elections.interieur.gouv.fr/CN2011/">official source.</a> Unfortunately, there is no way to download those results at once, instead they are presented in a myriad of formatted HTML pages &#8211; over 2000 in all. </br><br />
