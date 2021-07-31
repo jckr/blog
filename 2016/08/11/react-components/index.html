@@ -73,7 +73,7 @@ img.emoji {
 
 <body class="single single-post postid-1752 single-format-standard group-blog">
 
-<header id="masthead" role="banner" class="site-head site-header" style="background-image: url(http://localhost:8888/wp-content/uploads/2018/04/Screenshot-2018-04-09-19.38.59.png);">
+<header id="masthead" role="banner" class="site-head site-header" style="background-image: url(/wp-content/uploads/2018/04/Screenshot-2018-04-09-19.38.59.png);">
     <nav id="site-navigation" class="main-navigation" role="navigation">
         <div>
             <h1 class="menu-toggle">
@@ -111,7 +111,7 @@ img.emoji {
         
     </header>
     		<section class="post-content">
-		    <p><script src="//assets.codepen.io/assets/embed/ei.js" async=""></script>This article is part of my series <a href="http://wp.me/po630-rQ">Visualization with React</a>. Previous article: <a href="http://wp.me/po630-s3">Coding with React</a></p>
+		    <p><script src="//assets.codepen.io/assets/embed/ei.js" async=""></script>This article is part of my series <a href="/2016/08/09/visualization-with-react/">Visualization with React</a>. Previous article: <a href="/2016/08/10/coding-with-react/">Coding with React</a></p>
 <p>Using React to create elements out of data is nice, using JSX is hip but until you use your own components, you won&#8217;t use React to the fullest.<br />
 So let&#8217;s do that. Fair warning: <strong>that&#8217;s the speed bump</strong>, especially if you&#8217;re not familiar with javascript concepts like &#8216;this&#8217;, which you&#8217;re not really required to master with d3.</p>
 <p>In the previous examples, we created an element that held a bunch of elements. We are now going to create a custom Point component, to replace our circles. We&#8217;re going to do more than just replace it: our new component will be able to do more stuff. Each Point element should remember whether it&#8217;s highlighted or not. If it&#8217;s highlighted, it will be displayed in red. Else, it will stay in gray. Clicking on a Point will switch its highlighted status.</p>
@@ -501,7 +501,7 @@ This time, the top level component is Dashboard, which has 2 Chart components, w
 	(function(){
 		var corecss = document.createElement('link');
 		var themecss = document.createElement('link');
-		var corecssurl = "http://localhost:8888/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		var corecssurl = "/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
 		if ( corecss.setAttribute ) {
 				corecss.setAttribute( "rel", "stylesheet" );
 				corecss.setAttribute( "type", "text/css" );
@@ -511,7 +511,7 @@ This time, the top level component is Dashboard, which has 2 Chart components, w
 				corecss.href = corecssurl;
 		}
 		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
-		var themecssurl = "http://localhost:8888/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
+		var themecssurl = "/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
 		if ( themecss.setAttribute ) {
 				themecss.setAttribute( "rel", "stylesheet" );
 				themecss.setAttribute( "type", "text/css" );

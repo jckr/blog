@@ -67,7 +67,7 @@ img.emoji {
 
 <body class="archive category category-tips category-14 group-blog">
 
-<header id="masthead" role="banner" class="site-head site-header" style="background-image: url(http://localhost:8888/wp-content/uploads/2018/04/Screenshot-2018-04-09-19.38.59.png);">
+<header id="masthead" role="banner" class="site-head site-header" style="background-image: url(/wp-content/uploads/2018/04/Screenshot-2018-04-09-19.38.59.png);">
     <nav id="site-navigation" class="main-navigation" role="navigation">
         <div>
             <h1 class="menu-toggle">
@@ -115,7 +115,7 @@ img.emoji {
     </header>
 	<section class="post-content">
 
-		<p>This is the 5th post in my <a href="http://wp.me/po630-rq">Visualization with React</a> series. Previous post: <a href="http://wp.me/po630-sg">React components</a></p>
+		<p>This is the 5th post in my <a href="/2016/08/09/visualization-with-react/">Visualization with React</a> series. Previous post: <a href="http://wp.me/po630-sg">React components</a></p>
 <h1>The lifecycle functions</h1>
 <p>I&#8217;m not going to go into great details on this, but a talk on React without mentioning the <a href="https://facebook.github.io/react/docs/component-specs.html">lifecycle functions</a> would not be complete.<br />
 React components come with several functions which are fired when certain events occur, such as when the component is first created (&#8216;mounts&#8217;), when it&#8217;s updated or when it&#8217;s removed (&#8216;unmounts&#8217;).<br />
@@ -150,7 +150,7 @@ Here&#8217;s an example:</p>
 <p data-height="600" data-theme-id="0" data-slug-hash="BzxbPY" data-default-tab="result" data-user="jckr" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/jckr/pen/BzxbPY/">mixing react and d3</a> by Jerome Cukier (<a href="http://codepen.io/jckr">@jckr</a>) on <a href="http://codepen.io/">CodePen</a>.</p>
 <p>In that example, I have used a bona fide bl.ocks (<a href="https://bl.ocks.org/mbostock/7881887">https://bl.ocks.org/mbostock/7881887</a>) and wrapped it inside a React component. So I can create one, or in the case of that example, several such elements by just passing properties. Those components can perfectly function as black boxes: we give them properties, they give us visualizations that correspond to these parameters. And it doesn&#8217;t have to be D3 &#8211; once a React element has been created, we can use componentDidMount to do all kinds of operations on it. </p>
 <p>In the last 2 articles I will present actual data visualization web apps made with React.<br />
-In the next post, we&#8217;ll see how to set up a simple web app and we&#8217;ll create our <a href="http://wp.me/po630-sp">first example app</a>. </p>
+In the next post, we&#8217;ll see how to set up a simple web app and we&#8217;ll create our <a href="/2016/08/17/creating-a-react-visualization-web-app/">first example app</a>. </p>
 	    		<div class="clear">&nbsp;</div>
 	</section>
 </article><!-- #post-## -->
@@ -165,7 +165,7 @@ In the next post, we&#8217;ll see how to set up a simple web app and we&#8217;ll
     </header>
 	<section class="post-content">
 
-		<p><script src="//assets.codepen.io/assets/embed/ei.js" async=""></script>This article is part of my series <a href="http://wp.me/po630-rQ">Visualization with React</a>. Previous article: <a href="http://wp.me/po630-rX">An ES6 primer</a></p>
+		<p><script src="//assets.codepen.io/assets/embed/ei.js" async=""></script>This article is part of my series <a href="/2016/08/09/visualization-with-react/">Visualization with React</a>. Previous article: <a href="/2016/08/09/an-es6-primer/">An ES6 primer</a></p>
 <h1>Setting things up in Codepen</h1>
 <p>In the last two articles of the series, I&#8217;ll cover how to get a real React coding environment going, but to start dabbling, playgrounds like <a href="https://jsfiddle.net/reactjs/69z2wepo/">jsFiddle</a> or <a href="http://codepen.io/">codepen</a> are great. I&#8217;m partial to codepen. When you create a new pen, you still have a couple of options to set up before you can start creating React code: <img src="http://jckr.github.io/blog/assets/visualization-with-react/react-settings-in-codepen.png" alt="" /></p>
 <p>In the Settings / Javascript / quick-add section (the drop-down at the bottom left) please choose React, then React DOM.</p>
@@ -269,7 +269,7 @@ If you want to do this on your own, you&#8217;ll have to set up a build environm
 <p class="codepen" data-height="265" data-theme-id="0" data-slug-hash="mEeRvr" data-default-tab="result" data-user="jckr" data-embed-version="2">See the Pen <a href="http://codepen.io/jckr/pen/mEeRvr/">React simple scatterplot</a> by Jerome Cukier (<a href="http://codepen.io/jckr">@jckr</a>) on <a href="http://codepen.io/">CodePen</a>.</p>
 <p>We want to record the fact that the switch can be turned on or off. Here&#8217;s how it should work: First we create our switch component, and it&#8217;s supposed to be off. Then, if the user clicks it, it becomes on if it were off and vice-versa. And it should also be redrawn, to reflect that it&#8217;s been turned on (or off). The state does all that. It records the current status of the component. Technically, it&#8217;s an object with properties, so it can save a lot of information, not just a simple true or false value. The other great thing about the state is that if it changes, then the component is re-rendered. Rendering a component could require rendering children component, and they may be re-rendered as well. So with the state and properties, we have a powerful framework to handle events and whatever may happen to our app. If there&#8217;s an event we care about, it can change the state of a component, then, all of the children components may be re-rendered. And there&#8217;s no other way to redraw them. This is in contrast with plain d3 where anything goes &#8211; anything can change anything, data can be used to render elements, the underlying data can be changed without changing the element, the element can be transformed without changing the underlying data.</p>
 <p>State is an important notion in computer science. In d3, it&#8217;s just doesn&#8217;t have a more formal representation than all the variables in your code.</p>
-<p>In the next article in the series, <a href="http://wp.me/po630-rX">an ES6 Primer</a>, we will look in some useful ES6 features for React. </p>
+<p>In the next article in the series, <a href="/2016/08/09/an-es6-primer/">an ES6 Primer</a>, we will look in some useful ES6 features for React. </p>
 	    		<div class="clear">&nbsp;</div>
 	</section>
 </article><!-- #post-## -->
@@ -292,12 +292,12 @@ If you want to do this on your own, you&#8217;ll have to set up a build environm
 <p>I&#8217;ve structured this guide in 7 parts, and I&#8217;ll publish one per day:</p>
 <ol>
 <li><a href="http://jckr.github.io/blog/blog/2016/08/09/d3-and-react-similarities-and-differences/">React vs D3</a>, where we&#8217;ll explore similarities and differences between these two frameworks.</li>
-<li><a href="http://wp.me/po630-rX">An ES6 primer</a>. I have written all the examples in good, sensible, modern ES6 javascript, because as of 2016 this is probably the most common syntax. Without going too deep into the details, I&#8217;ll explain what parts of the language I used for the examples, and how they differ from ES5.</li>
-<li>Gentle introduction to <a href="http://wp.me/po630-s3">coding with React</a>, where we&#8217;ll explore the high-level concepts of the framework and see how we can create visual elements from data. We&#8217;ll end on a presentation of JSX, a flavor of Javascript used to write React applications, which I&#8217;ll also use for most of the examples for the same reasons as ES6 &#8211; because it&#8217;s the most widespread way of writing React code today.</li>
+<li><a href="/2016/08/09/an-es6-primer/">An ES6 primer</a>. I have written all the examples in good, sensible, modern ES6 javascript, because as of 2016 this is probably the most common syntax. Without going too deep into the details, I&#8217;ll explain what parts of the language I used for the examples, and how they differ from ES5.</li>
+<li>Gentle introduction to <a href="/2016/08/10/coding-with-react/">coding with React</a>, where we&#8217;ll explore the high-level concepts of the framework and see how we can create visual elements from data. We&#8217;ll end on a presentation of JSX, a flavor of Javascript used to write React applications, which I&#8217;ll also use for most of the examples for the same reasons as ES6 &#8211; because it&#8217;s the most widespread way of writing React code today.</li>
 <li><a href="http://wp.me/po630-sg">React components</a>, the most important concept in React and the building blocks of React applications.</li>
 <li><a href="http://wp.me/po630-sm">Beyond rendering</a>. We&#8217;ll look at the React concept of lifecycle methods, and also how we can use d3 within React components.</li>
-<li><a href="http://wp.me/po630-st">Creating a React visualization web app</a> &#8211; using what we&#8217;ve seen, and two libraries &#8211; Facebook&#8217;s <a href="https://github.com/facebookincubator/create-react-app">create-react-app</a> and Uber&#8217;s <a href="https://github.com/uber/react-vis/">React-vis</a>, we&#8217;ll create a small standalone React visualization that can be deployed on its own website.</li>
-<li><a href="http://wp.me/po630-st">The big leagues</a> &#8211; in that last part, we&#8217;ll write together a more complex visualization with live data and several components interacting with one another.</li>
+<li><a href="/2016/08/17/the-big-leagues/">Creating a React visualization web app</a> &#8211; using what we&#8217;ve seen, and two libraries &#8211; Facebook&#8217;s <a href="https://github.com/facebookincubator/create-react-app">create-react-app</a> and Uber&#8217;s <a href="https://github.com/uber/react-vis/">React-vis</a>, we&#8217;ll create a small standalone React visualization that can be deployed on its own website.</li>
+<li><a href="/2016/08/17/the-big-leagues/">The big leagues</a> &#8211; in that last part, we&#8217;ll write together a more complex visualization with live data and several components interacting with one another.</li>
 </ol>
 <h1>The code</h1>
 <p>The examples of parts 1-5 can be found on <a href="http://codepen.io/collection/XdEpyp/">codepen</a>. I&#8217;ll add link to examples of part 6 and 7 when they go live.</p>
@@ -1089,7 +1089,7 @@ Here, net likes = organic likes + paid likes &#8211; unlikes. The reason why we 
 	(function(){
 		var corecss = document.createElement('link');
 		var themecss = document.createElement('link');
-		var corecssurl = "http://localhost:8888/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		var corecssurl = "/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
 		if ( corecss.setAttribute ) {
 				corecss.setAttribute( "rel", "stylesheet" );
 				corecss.setAttribute( "type", "text/css" );
@@ -1099,7 +1099,7 @@ Here, net likes = organic likes + paid likes &#8211; unlikes. The reason why we 
 				corecss.href = corecssurl;
 		}
 		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
-		var themecssurl = "http://localhost:8888/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
+		var themecssurl = "/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
 		if ( themecss.setAttribute ) {
 				themecss.setAttribute( "rel", "stylesheet" );
 				themecss.setAttribute( "type", "text/css" );

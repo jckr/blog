@@ -50,7 +50,6 @@ img.emoji {
 <link rel='next' title='Hello world!' href='/2018/04/09/hello-world/' />
 <meta name="generator" content="WordPress 4.6.10" />
 <link rel="canonical" href="/2016/08/17/the-big-leagues/" />
-<link rel='shortlink' href='http://wp.me/p-st' />
 <link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2Flocalhost%3A8888%2F2016%2F08%2F17%2Fthe-big-leagues%2F" />
 <link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2Flocalhost%3A8888%2F2016%2F08%2F17%2Fthe-big-leagues%2F&#038;format=xml" />
 
@@ -105,7 +104,7 @@ img.emoji {
         
     </header>
     		<section class="post-content">
-		    <p>This is the 7th and last post in my <a href="http://wp.me/po630-rq">Visualization with React</a> series. Previous post: <a href="http://wp.me/po630-sp">Creating a React visualization web app</a></p>
+		    <p>This is the 7th and last post in my <a href="/2016/08/09/visualization-with-react/">Visualization with React</a> series. Previous post: <a href="/2016/08/17/creating-a-react-visualization-web-app/">Creating a React visualization web app</a></p>
 <p>We can finally take the little wheels off and create a real React app.<br />
 That&#8217;s what we&#8217;ll make:<br />
 <img src="http://jckr.github.io/blog/assets/visualization-with-react/react-weather-app.png" alt="App screenshot" /><br />
@@ -151,28 +150,28 @@ class App extends Component {
 We use our d3-request json function to read the url in the first line, which we compose by joining the URL prefix, the city id, the api key, and I&#8217;ve added &#8216;units=imperial&#8217; so that temperatures are in Farenheit. Feel free to change this to units=metric or remove it (in which case temperatures will be in Kelvin, why not).<br />
 The second argument of the json function is what is done with the request &#8211; this is our first private method, processResults, which is what comes next.</p>
 <pre class="brush: plain; title: ; notranslate" title="">
- processResults(error, queryResults) {
-    if (error) {
-      this.setState({error});
-    }
-    const data = CONSTANTS.KEYS.map(key =&gt; ({
-      key,
-      values: queryResults.list.map((d, i) =&gt; ({
-        i,
-        x: d.dt * 1000,
-        y: d[key.key1] ? d[key.key1][key.key2] || 0 : 0 
-      }))
-    })).reduce((prev, curr) =&gt; {
-      return {...prev, [curr.key.name]: curr.values}
-    }, {
-      'city-name': (
-        queryResults &amp;&amp;
-        queryResults.city &amp;&amp;
-        queryResults.city.name
-      ) || 'Unkown'
-    });
-    this.setState({data});
+processResults(error, queryResults) {
+  if (error) {
+    this.setState({error});
   }
+  const data = CONSTANTS.KEYS.map(key =&gt; ({
+    key,
+    values: queryResults.list.map((d, i) =&gt; ({
+      i,
+      x: d.dt * 1000,
+      y: d[key.key1] ? d[key.key1][key.key2] || 0 : 0 
+    }))
+  })).reduce((prev, curr) =&gt; {
+    return {...prev, [curr.key.name]: curr.values}
+  }, {
+    'city-name': (
+      queryResults &amp;&amp;
+      queryResults.city &amp;&amp;
+      queryResults.city.name
+    ) || 'Unkown'
+  });
+  this.setState({data});
+}
 </pre>
 <p>If the data can&#8217;t load, error will have a value, and we&#8217;ll pass it to the state.<br />
 Else, we&#8217;re going to process the result of the query (queryResults) according to the structure that we want (CONSTANTS.KEYS).<br />
@@ -302,49 +301,49 @@ labelValues will be created by a separate function (in the end). We&#8217;ll wri
 <p>Now we&#8217;ll create the chart proper. </p>
 <pre class="brush: plain; title: ; notranslate" title="">
 &lt;FlexibleXYPlot
-    	height={300}
-    	margin={{top: 5, bottom: 25, left: 40, right: 0}}
-    	onMouseLeave={() =&gt; this.props.highlightX(null)}
+    height={300}
+    margin={{top: 5, bottom: 25, left: 40, right: 0}}
+    onMouseLeave={() =&gt; this.props.highlightX(null)}
     	yDomain={yDomain}
     &gt;
-    	&lt;VerticalGridLines 
-    		values={labelValues}
-    	/&gt;
-        &lt;HorizontalGridLines /&gt;
-    	&lt;LineSeries 
-    		data={series}
-    		onNearestX={highlightX}
-    		stroke='#11939a'
+    &lt;VerticalGridLines 
+    	values={labelValues}
+    /&gt;
+    &lt;HorizontalGridLines /&gt;
+    &lt;LineSeries 
+    	data={series}
+    	onNearestX={highlightX}
+    	stroke='#11939a'
+    	strokeWidth={2}
+    /&gt;
+    {highlighted ? 
+    	&lt;LineSeries
+    		data={[
+    			{x: highlighted &amp;&amp; highlighted.x, y: yDomain[0]},
+    			{x: highlighted &amp;&amp; highlighted.x, y: yDomain[1]}
+    		]}
+    		stroke='rgba(17,147,154,0.7)'
     		strokeWidth={2}
-    	/&gt;
-    	{highlighted ? 
-    		&lt;LineSeries
-    			data={[
-    				{x: highlighted &amp;&amp; highlighted.x, y: yDomain[0]},
-    				{x: highlighted &amp;&amp; highlighted.x, y: yDomain[1]}
-    			]}
-    			stroke='rgba(17,147,154,0.7)'
-    			strokeWidth={2}
-    		/&gt; : null
-    	}
-       {highlighted ?  
-       &lt;MarkSeries
-          data={[{
-            x: highlighted &amp;&amp; highlighted.x,
+    	/&gt; : null
+    }
+    {highlighted ?  
+    &lt;MarkSeries
+    	data={[{
+        	x: highlighted &amp;&amp; highlighted.x,
             y: highlighted &amp;&amp; series[highlighted.i].y
-          }]}
-          color='rgba(17,147,154,0.7)'
-        /&gt; : null
-        }
-    	&lt;XAxis 
-    		tickSize={4}
-    		tickValues={tickValues}
-    		labelValues={labelValues}
-    		labelFormat={(d) =&gt; moment(new Date(d)).format('MM/DD')}
-    	/&gt;
-        &lt;YAxis 
-        	tickSize={4}
-        /&gt;
+        }]}
+        color='rgba(17,147,154,0.7)'
+    /&gt; : null
+    }
+    &lt;XAxis 
+    	tickSize={4}
+    	tickValues={tickValues}
+    	labelValues={labelValues}
+    	labelFormat={(d) =&gt; moment(new Date(d)).format('MM/DD')}
+    /&gt;
+    &lt;YAxis 
+    	tickSize={4}
+    /&gt;
     	
     &lt;/FlexibleXYPlot&gt;
 </pre>
@@ -592,7 +591,7 @@ Our visualization team is also behind three amazing open source libraries which 
 	(function(){
 		var corecss = document.createElement('link');
 		var themecss = document.createElement('link');
-		var corecssurl = "http://localhost:8888/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		var corecssurl = "/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
 		if ( corecss.setAttribute ) {
 				corecss.setAttribute( "rel", "stylesheet" );
 				corecss.setAttribute( "type", "text/css" );
@@ -602,7 +601,7 @@ Our visualization team is also behind three amazing open source libraries which 
 				corecss.href = corecssurl;
 		}
 		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
-		var themecssurl = "http://localhost:8888/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
+		var themecssurl = "/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
 		if ( themecss.setAttribute ) {
 				themecss.setAttribute( "rel", "stylesheet" );
 				themecss.setAttribute( "type", "text/css" );

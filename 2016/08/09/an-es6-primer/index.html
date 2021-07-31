@@ -73,7 +73,7 @@ img.emoji {
 
 <body class="single single-post postid-1733 single-format-standard group-blog">
 
-<header id="masthead" role="banner" class="site-head site-header" style="background-image: url(http://localhost:8888/wp-content/uploads/2018/04/Screenshot-2018-04-09-19.38.59.png);">
+<header id="masthead" role="banner" class="site-head site-header" style="background-image: url(/wp-content/uploads/2018/04/Screenshot-2018-04-09-19.38.59.png);">
     <nav id="site-navigation" class="main-navigation" role="navigation">
         <div>
             <h1 class="menu-toggle">
@@ -111,7 +111,7 @@ img.emoji {
         
     </header>
     		<section class="post-content">
-		    <p>This article is part of my series <a href="http://wp.me/po630-rQ">Visualization with React</a>. Previous article: <a href="http://wp.me/po630-rM">React and D3 &#8211; similarities and differences</a></p>
+		    <p>This article is part of my series <a href="/2016/08/09/visualization-with-react/">Visualization with React</a>. Previous article: <a href="/2016/08/09/d3-and-react-similarities-and-differences/">React and D3 &#8211; similarities and differences</a></p>
 <p>In this guide, I will use ES6 notation whenever I would normally do it in my day job. There are many, many differences in ES6 compared to previous versions of javascript and that can be daunting. But in this time and age, a lot of code you can run into is going to be written in ES6, so a cursory knowledge of some of its features can go a long way.<br />
 Here are the features I use most often:</p>
 <h1>Fat arrows functions</h1>
@@ -211,7 +211,7 @@ div({num: 3}); // still 3 - den has a default value
 <h1>Wrapping it all together</h1>
 <p>what&#8217;s another form for the last function I wrote?</p>
 <pre class="brush: jscript; title: ; notranslate" title="">const div = ({num, den = 1}) =&gt; num / den;</pre>
-<p>In the next article in the series, <a href="http://wp.me/po630-s3">Coding with React</a>, we will finally start to write some React code.</p>
+<p>In the next article in the series, <a href="/2016/08/10/coding-with-react/">Coding with React</a>, we will finally start to write some React code.</p>
 		    			<div class="clear">&nbsp;</div>
 		</section>
 	
@@ -374,7 +374,7 @@ div({num: 3}); // still 3 - den has a default value
 	(function(){
 		var corecss = document.createElement('link');
 		var themecss = document.createElement('link');
-		var corecssurl = "http://localhost:8888/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		var corecssurl = "/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
 		if ( corecss.setAttribute ) {
 				corecss.setAttribute( "rel", "stylesheet" );
 				corecss.setAttribute( "type", "text/css" );
@@ -384,7 +384,7 @@ div({num: 3}); // still 3 - den has a default value
 				corecss.href = corecssurl;
 		}
 		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
-		var themecssurl = "http://localhost:8888/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
+		var themecssurl = "/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
 		if ( themecss.setAttribute ) {
 				themecss.setAttribute( "rel", "stylesheet" );
 				themecss.setAttribute( "type", "text/css" );
