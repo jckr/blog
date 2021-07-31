@@ -8,7 +8,7 @@
 	>
 
 <channel>
-	<title>beginner &#8211; jeromecukier.net</title>
+	<title>beginner &#8211; jckr.github.io/blog</title>
 	<atom:link href="http://localhost/tag/beginner/feed/" rel="self" type="application/rss+xml" />
 	<link>/</link>
 	<description>Just another WordPress site</description>
@@ -103,7 +103,7 @@
 <p>is not absolutely required either. It specifies the encoding of the page, that is, what kind of characters will be seen in the page. Since I use non-ascii characters often, being French and all, I make sure to use it all the time. After all, this is a template, not something I type from beginning to end each time.</p>
 <p>Next, we specify a title. This is what will appear in the title area of your browser, or, more likely, as the name of your tab.</p>
 <p>In the next line, we load the d3 library. This is my preferred syntax. This is how my files are set up:</p>
-<p>I have a directory where all my d3 projects are, and in this directory, I am also keeping (and maintaining reasonably up-to-date) a version of the d3 library, a file called d3.v2.min.js. (min stands for minified, which means that it&#8217;s not meant to be read by persons, but it&#8217;s faster to load). All my projects proper are in folders within that directory. So my html files are one level down from where the d3.v2.min.js file is kept. This is why the src attribute reads &#8220;../d3.v2.min.js&#8221;: the ../ part means, look one level up. If the d3.v2.min.js file were on the same directory where I keep my html, I would write src=&#8221;d3.v2.min.js&#8221;, if I kept it within a specific directory like &#8220;d3&#8243;, I could write src=&#8221;../d3/d3.v2.min.js&#8221;, and finally, there is always the option of getting it from the website, src=&#8221;http://d3js.org/d3.v2.min.js&#8221;.</p>
+<p>I have a directory where all my d3 projects are, and in this directory, I am also keeping (and maintaining reasonably up-to-date) a version of the d3 library, a file called d3.v2.min.js. (min stands for minified, which means that it&#8217;s not meant to be read by persons, but it&#8217;s faster to load). All my projects proper are in folders within that directory. So my html files are one level down from where the d3.v2.min.js file is kept. This is why the src attribute reads &#8220;../d3.v2.min.js&#8221;: the ../ part means, look one level up. If the d3.v2.min.js file were on the same directory where I keep my html, I would write src=&#8221;d3.v2.min.js&#8221;, if I kept it within a specific directory like &#8220;d3&#8243;, I could write src=&#8221;../d3/d3.v2.min.js&#8221;, and finally, there is always the option of getting it from the website, src=&#8221;https://d3js.org/d3.v2.min.js&#8221;.</p>
 <p>I don&#8217;t have to load the d3 library then. I could have done it at the end of the page. The only requirement is that it should be before the script that will use it. But honestly, the file is so small that it doesn&#8217;t make much of a difference (9ms on my machine).</p>
 <p>Next, I link to a style sheet. With this syntax, I am assuming that my style is specified in a file called style.css which will be in the same directory as this html page. And if there is no such file, it&#8217;s not a problem. It doesn&#8217;t prevent the page to load.</p>
 <p>Instead of using this syntax, I could have written:</p>
