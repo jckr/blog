@@ -8,7 +8,7 @@
 	>
 
 <channel>
-	<title>datavizchallenge &#8211; jeromecukier.net</title>
+	<title>datavizchallenge &#8211; jckr.github.io/blog</title>
 	<atom:link href="http://localhost/tag/datavizchallenge/feed/" rel="self" type="application/rss+xml" />
 	<link>/</link>
 	<description>Just another WordPress site</description>
@@ -31,10 +31,10 @@
 		<category><![CDATA[game-y infographics]]></category>
 		<category><![CDATA[treemap]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=799</guid>
-		<description><![CDATA[I just posted my www.datavizchallenge.org entry! So here&#8217;s a little explanation about what I&#8217;ve done, how and why. The idea behind the data provider web site, WhatWePayFor, is that billions and millions don&#8217;t talk to the average citizen. This doesn&#8217;t help them understand where their money goes. And in my work, I generally try to <a class="read-more" href="/2011/03/27/datavizchallenge-org-my-entry/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
-				<content:encoded><![CDATA[<p>I just posted my <a href="http://www.datavizchallenge.org/">www.datavizchallenge.org</a> <a href="http://www.jeromecukier.net/stuff/datavizchallenge/index.html">entry</a>!<br />
-<a href="http://www.jeromecukier.net/stuff/datavizchallenge/index.html"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/03/myEntry3.png" alt="" title="My  datavizchallenge.org entry" width="323" height="330" class="aligncenter size-full wp-image-801" /></a></p>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=799</guid>
+		<description><![CDATA[I just posted my www.datavizchallenge.org entry! So here&#8217;s a little explanation about what I&#8217;ve done, how and why. The idea behind the data provider web site, WhatWePayFor, is that billions and millions don&#8217;t talk to the average citizen. This doesn&#8217;t help them understand where their money goes. And in my work, I generally try to <a class="read-more" href="/blog/2011/03/27/datavizchallenge-org-my-entry/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>I just posted my <a href="http://www.datavizchallenge.org/">www.datavizchallenge.org</a> <a href="http://jckr.github.io/blog/stuff/datavizchallenge/index.html">entry</a>!<br />
+<a href="http://jckr.github.io/blog/stuff/datavizchallenge/index.html"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/03/myEntry3.png" alt="" title="My  datavizchallenge.org entry" width="323" height="330" class="aligncenter size-full wp-image-801" /></a></p>
 <p>So here&#8217;s a little explanation about what I&#8217;ve done, how and why. </p>
 <p>The idea behind the data provider web site, <a href="http://www.whatwepayfor.com/">WhatWePayFor</a>, is that billions and millions don&#8217;t talk to the average citizen. This doesn&#8217;t help them understand where their money goes.</p>
 <p>And in my work, I generally try to show as little data as possible to make a point. And I like to use interactivity to involve users. </p>

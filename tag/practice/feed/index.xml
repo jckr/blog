@@ -8,7 +8,7 @@
 	>
 
 <channel>
-	<title>practice &#8211; jeromecukier.net</title>
+	<title>practice &#8211; jckr.github.io/blog</title>
 	<atom:link href="http://localhost/tag/practice/feed/" rel="self" type="application/rss+xml" />
 	<link>/</link>
 	<description>Just another WordPress site</description>
@@ -30,8 +30,8 @@
 		<category><![CDATA[see conference]]></category>
 		<category><![CDATA[see+]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1250</guid>
-		<description><![CDATA[I&#8217;m just returning from the 7th See conference on information visualization. I&#8217;ll do a longer, more descriptive post later (a lot happens in just 2 days) but for now I would like to mention one talk which really moved me. After the conference proper which takes place in the impressive Lutherkirche which sit hundreds, the See+ workshop <a class="read-more" href="/2012/05/03/impressions-from-wiesbaden/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1250</guid>
+		<description><![CDATA[I&#8217;m just returning from the 7th See conference on information visualization. I&#8217;ll do a longer, more descriptive post later (a lot happens in just 2 days) but for now I would like to mention one talk which really moved me. After the conference proper which takes place in the impressive Lutherkirche which sit hundreds, the See+ workshop <a class="read-more" href="/blog/2012/05/03/impressions-from-wiesbaden/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[<p>I&#8217;m just returning from the 7th <a href="http://see-conference.com/">See conference</a> on information visualization. I&#8217;ll do a longer, more descriptive post later (a lot happens in just 2 days) but for now I would like to mention one talk which really moved me. After the conference proper which takes place in the impressive <a href="http://www.lutherkirche-wiesbaden.de/">Lutherkirche</a> which sit hundreds, the See+ workshop was held in the offices of the organizing agency, <a href="http://www.s-v.de/">Scholz und Volkmer</a>. Most speakers of the main conference came back for a more laid-back discussion with a much smaller audience.</p>
 <p>The theme of See+ was tools. Speakers were invited to tell us how they work.</p>
 <p>One characteristic of the See conference is that it offers a broader perspective on data visualization. In addition to well-known datavis specialists, such as Manuel Lima this year, other guests include visual artists and designers who also work with data, as well as experts in communication who apply that skill to data.</p>

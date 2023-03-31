@@ -8,7 +8,7 @@
 	>
 
 <channel>
-	<title>matrix graph &#8211; jeromecukier.net</title>
+	<title>matrix graph &#8211; jckr.github.io/blog</title>
 	<atom:link href="http://localhost/tag/matrix-graph/feed/" rel="self" type="application/rss+xml" />
 	<link>/</link>
 	<description>Just another WordPress site</description>
@@ -31,17 +31,17 @@
 		<category><![CDATA[matrix graph]]></category>
 		<category><![CDATA[processing]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=54</guid>
-		<description><![CDATA[Here is the processing applet with source code for my entry. The code is based on a charter program I&#8217;ve been working on and off for a while, which I&#8217;ll publish once it&#8217;s more polished. Select the applet then press a key to alternate between the 2 representations. The text file is the data, and <a class="read-more" href="/2008/12/15/re-flowing-data-contest-code-for-my-entry/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=54</guid>
+		<description><![CDATA[Here is the processing applet with source code for my entry. The code is based on a charter program I&#8217;ve been working on and off for a while, which I&#8217;ll publish once it&#8217;s more polished. Select the applet then press a key to alternate between the 2 representations. The text file is the data, and <a class="read-more" href="/blog/2008/12/15/re-flowing-data-contest-code-for-my-entry/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[<p>Here is the <a href="http://processing.org/">processing </a>applet with source code for my entry. The code is based on a charter program I&#8217;ve been working on and off for a while, which I&#8217;ll publish once it&#8217;s more polished.<br />
 Select the applet then press a key to alternate between the 2 representations. The text file is the data, and the two png files are the images of the results. </p>
 <p>Inserting processing applets in wordpress is not obvious. Here&#8217;s a <a href="http://processing.org/discourse/yabb_beta/YaBB.cgi?board=Integrate;action=display;num=1220997737;start=0#13">discussion post</a> for anyone interested.</p>
-<p><APPLET name="fdcontest" WIDTH="450" HEIGHT="300" archive="http://www.jeromecukier.net/wp-content/uploads/2008/12/fdcontest.jar" standby="Loading Processing software..." codebase="http://www.jeromecukier.net/wp-content/uploads/2008/12/" code="fdcontest" mayscript="true" scriptable="true" image="http://www.jeromecukier.net/wp-content/uploads/2008/12/loading.gif"
+<p><APPLET name="fdcontest" WIDTH="450" HEIGHT="300" archive="http://jckr.github.io/blog/wp-content/uploads/2008/12/fdcontest.jar" standby="Loading Processing software..." codebase="http://jckr.github.io/blog/wp-content/uploads/2008/12/" code="fdcontest" mayscript="true" scriptable="true" image="http://jckr.github.io/blog/wp-content/uploads/2008/12/loading.gif"
 boxmessage="Loading Processing software..." boxcolor="#FFFFFF"><br />
-<IMG SRC="http://www.jeromecukier.net/wp-content/uploads/2008/12/loading.gif" WIDTH="1" HEIGHT="1" /><br />
+<IMG src="https://jckr.github.io/blog/wp-content/uploads/2008/12/loading.gif" WIDTH="1" HEIGHT="1" /><br />
 </APPLET></p>
-<p>source: <a href="http://www.jeromecukier.net/wp-content/uploads/2008/12/fdcontest.pde">fdcontest.pde</a> </p>
-<p>media files: <a href="http://www.jeromecukier.net/wp-content/uploads/2008/12/params.txt">params.txt</a> <a href="http://www.jeromecukier.net/wp-content/uploads/2008/12/image.png">image.png</a> <a href="http://www.jeromecukier.net/wp-content/uploads/2008/12/image_matrix2.png">image_matrix2.png</a></p>
+<p>source: <a href="http://jckr.github.io/blog/wp-content/uploads/2008/12/fdcontest.pde">fdcontest.pde</a> </p>
+<p>media files: <a href="http://jckr.github.io/blog/wp-content/uploads/2008/12/params.txt">params.txt</a> <a href="http://jckr.github.io/blog/wp-content/uploads/2008/12/image.png">image.png</a> <a href="http://jckr.github.io/blog/wp-content/uploads/2008/12/image_matrix2.png">image_matrix2.png</a></p>
 ]]></content:encoded>
 			<wfw:commentRss>/2008/12/15/re-flowing-data-contest-code-for-my-entry/feed/</wfw:commentRss>
 		<slash:comments>0</slash:comments>

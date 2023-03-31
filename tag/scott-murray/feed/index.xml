@@ -8,7 +8,7 @@
 	>
 
 <channel>
-	<title>Scott Murray &#8211; jeromecukier.net</title>
+	<title>Scott Murray &#8211; jckr.github.io/blog</title>
 	<atom:link href="http://localhost/tag/scott-murray/feed/" rel="self" type="application/rss+xml" />
 	<link>/</link>
 	<description>Just another WordPress site</description>
@@ -33,13 +33,13 @@
 		<category><![CDATA[tutorial]]></category>
 		<category><![CDATA[visweek]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1488</guid>
-		<description><![CDATA[Jeff Heer, Scott Murray and myself have done a d3 tutorial at visWeek 2012. You probably gathered that from the title of the post. Here is a link to all the slides and code examples that we have presented: d3 tutorial For the purpose of the tutorial I have compiled a d3 cheat sheet, on <a class="read-more" href="/2012/10/15/d3-tutorial-at-visweek-2012/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1488</guid>
+		<description><![CDATA[Jeff Heer, Scott Murray and myself have done a d3 tutorial at visWeek 2012. You probably gathered that from the title of the post. Here is a link to all the slides and code examples that we have presented: d3 tutorial For the purpose of the tutorial I have compiled a d3 cheat sheet, on <a class="read-more" href="/blog/2012/10/15/d3-tutorial-at-visweek-2012/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[<p>Jeff Heer, Scott Murray and myself have done a d3 tutorial at visWeek 2012. You probably gathered that from the title of the post.</p>
 <p>Here is a link to all the slides and code examples that we have presented:</p>
-<p><a href="http://www.jeromecukier.net/d3_tutorial.zip">d3 tutorial</a></p>
+<p><a href="http://jckr.github.io/blog/d3_tutorial.zip">d3 tutorial</a></p>
 <p>For the purpose of the tutorial I have compiled a d3 cheat sheet, on 4 pages it groups some of the most common d3 functions. When I was learning d3 my number one problem was figuring out which property should be set using .attr, and which required .style. And also: which svg element support which property? All of this is addressed in the cheat sheet. It&#8217;s part of the link above, but if you want it directly without downloading a 13Mb file, here it is: </p>
-<p><a href="http://www.jeromecukier.net/wp-content/uploads/2012/10/d3-cheat-sheet.pdf">d3 cheat sheet</a></p>
+<p><a href="http://jckr.github.io/blog/wp-content/uploads/2012/10/d3-cheat-sheet.pdf">d3 cheat sheet</a></p>
 ]]></content:encoded>
 			<wfw:commentRss>/2012/10/15/d3-tutorial-at-visweek-2012/feed/</wfw:commentRss>
 		<slash:comments>3</slash:comments>

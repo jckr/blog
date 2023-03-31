@@ -19,7 +19,7 @@
 		<link>/2012/07/16/animations-and-transitions/#comment-337</link>
 		<dc:creator><![CDATA[Simple examples with transition chaining &#8211; puzzlr]]></dc:creator>
 		<pubDate>Thu, 02 Jun 2016 00:38:36 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1351#comment-337</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1351#comment-337</guid>
 		<description><![CDATA[[&#8230;] are a few explanations and tutorials on the web about how to perform chained transitions on the same element using d3. Also existing [&#8230;]]]></description>
 		<content:encoded><![CDATA[<p>[&#8230;] are a few explanations and tutorials on the web about how to perform chained transitions on the same element using d3. Also existing [&#8230;]</p>
 ]]></content:encoded>
@@ -29,7 +29,7 @@
 		<link>/2012/07/16/animations-and-transitions/#comment-336</link>
 		<dc:creator><![CDATA[You may not need d3 &#124; Jerome Cukier]]></dc:creator>
 		<pubDate>Tue, 19 May 2015 21:35:18 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1351#comment-336</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1351#comment-336</guid>
 		<description><![CDATA[[&#8230;] all that needs to change, the time frame and the easing functions, and you&#8217;re good to go (see my previous post on animations and transitions). In native javascript, while you can have deep control of animations, it&#8217;s also, [&#8230;]]]></description>
 		<content:encoded><![CDATA[<p>[&#8230;] all that needs to change, the time frame and the easing functions, and you&#8217;re good to go (see my previous post on animations and transitions). In native javascript, while you can have deep control of animations, it&#8217;s also, [&#8230;]</p>
 ]]></content:encoded>
@@ -39,7 +39,7 @@
 		<link>/2012/07/16/animations-and-transitions/#comment-333</link>
 		<dc:creator><![CDATA[instructables.com]]></dc:creator>
 		<pubDate>Tue, 19 Nov 2013 14:07:37 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1351#comment-333</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1351#comment-333</guid>
 		<description><![CDATA[Awesome post.]]></description>
 		<content:encoded><![CDATA[<p>Awesome post.</p>
 ]]></content:encoded>
@@ -49,9 +49,9 @@
 		<link>/2012/07/16/animations-and-transitions/#comment-332</link>
 		<dc:creator><![CDATA[Animations and transitions in D3js &#124; Healthy Algorithms]]></dc:creator>
 		<pubDate>Fri, 09 Aug 2013 08:00:39 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1351#comment-332</guid>
-		<description><![CDATA[[...] Seeing data transition can be amazing, can be distracting. Making it work can be confusing. Here are some hints: http://www.jeromecukier.net/blog/2012/07/16/animations-and-transitions/ [...]]]></description>
-		<content:encoded><![CDATA[<p>[&#8230;] Seeing data transition can be amazing, can be distracting. Making it work can be confusing. Here are some hints: <a href="http://www.jeromecukier.net/blog/2012/07/16/animations-and-transitions/" rel="nofollow">http://www.jeromecukier.net/blog/2012/07/16/animations-and-transitions/</a> [&#8230;]</p>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1351#comment-332</guid>
+		<description><![CDATA[[...] Seeing data transition can be amazing, can be distracting. Making it work can be confusing. Here are some hints: http://jckr.github.io/blog/blog/2012/07/16/animations-and-transitions/ [...]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] Seeing data transition can be amazing, can be distracting. Making it work can be confusing. Here are some hints: <a href="http://jckr.github.io/blog/blog/2012/07/16/animations-and-transitions/" rel="nofollow">http://jckr.github.io/blog/blog/2012/07/16/animations-and-transitions/</a> [&#8230;]</p>
 ]]></content:encoded>
 	</item>
 	<item>
@@ -59,7 +59,7 @@
 		<link>/2012/07/16/animations-and-transitions/#comment-331</link>
 		<dc:creator><![CDATA[jerome]]></dc:creator>
 		<pubDate>Fri, 20 Jul 2012 10:30:31 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1351#comment-331</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1351#comment-331</guid>
 		<description><![CDATA[Hi you got the clicking part right in your code, and the transition does fire up. The reason why it doesn&#039;t appear to do anything is because you have written .attr(&quot;fill&quot;,&quot;white&quot;) as opposed to &lt;strong&gt;.style&lt;/strong&gt;(&quot;fill&quot;,&quot;white&quot;). Technically, you can add just any attribute to an element, to look up that value later for instance, but it won&#039;t do anything visible. But to change the color, it has to go through style instead.
 for a nice (and free) resource on svg: http://commons.oreilly.com/wiki/index.php/SVG_Essentials]]></description>
 		<content:encoded><![CDATA[<p>Hi you got the clicking part right in your code, and the transition does fire up. The reason why it doesn&#8217;t appear to do anything is because you have written .attr(&#8220;fill&#8221;,&#8221;white&#8221;) as opposed to <strong>.style</strong>(&#8220;fill&#8221;,&#8221;white&#8221;). Technically, you can add just any attribute to an element, to look up that value later for instance, but it won&#8217;t do anything visible. But to change the color, it has to go through style instead.<br />
@@ -71,7 +71,7 @@ for a nice (and free) resource on svg: <a href="http://commons.oreilly.com/wiki/
 		<link>/2012/07/16/animations-and-transitions/#comment-330</link>
 		<dc:creator><![CDATA[harry moreno]]></dc:creator>
 		<pubDate>Fri, 20 Jul 2012 07:52:54 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1351#comment-330</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1351#comment-330</guid>
 		<description><![CDATA[could you elaborate on how to get a button to respond to clicking? http://bl.ocks.org/3149367 I looked at your sourcecode to get some hints and already went through scott&#039;s tutorials.]]></description>
 		<content:encoded><![CDATA[<p>could you elaborate on how to get a button to respond to clicking? <a href="http://bl.ocks.org/3149367" rel="nofollow">http://bl.ocks.org/3149367</a> I looked at your sourcecode to get some hints and already went through scott&#8217;s tutorials.</p>
 ]]></content:encoded>

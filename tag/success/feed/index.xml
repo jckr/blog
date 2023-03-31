@@ -8,7 +8,7 @@
 	>
 
 <channel>
-	<title>success &#8211; jeromecukier.net</title>
+	<title>success &#8211; jckr.github.io/blog</title>
 	<atom:link href="http://localhost/tag/success/feed/" rel="self" type="application/rss+xml" />
 	<link>/</link>
 	<description>Just another WordPress site</description>
@@ -35,8 +35,8 @@
 		<category><![CDATA[visual analytics]]></category>
 		<category><![CDATA[why data visualization]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=43</guid>
-		<description><![CDATA[Today, Flowing Data has a post on the jobs in data visualization and gives a list, im my opinion quite restrictive, of the industries that need data visualization specialists &#8211; media, research, design. The truth is, any activity that produce data, which is every activity on  earth, needs a better way to represent and communicate <a class="read-more" href="/2008/12/10/is-data-visualization-needed/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=43</guid>
+		<description><![CDATA[Today, Flowing Data has a post on the jobs in data visualization and gives a list, im my opinion quite restrictive, of the industries that need data visualization specialists &#8211; media, research, design. The truth is, any activity that produce data, which is every activity on  earth, needs a better way to represent and communicate <a class="read-more" href="/blog/2008/12/10/is-data-visualization-needed/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[<p>Today, Flowing Data has a post on the <a href="http://flowingdata.com/2008/12/10/what-jobs-are-there-in-data-visualization/">jobs in data visualization</a> and gives a list, im my opinion quite restrictive, of the industries that need data visualization specialists &#8211; media, research, design.</p>
 <p>The truth is, <strong>any activity that produce data, </strong>which is every activity on  earth, needs a better way to represent and communicate that data. And they also often need a way to engage others through data. This is exactly the mission statement for data visualization.</p>
 <p>As far as I know, areas with the most complex data visualization challenges are sciences, like medicine, physics or meteorology, which use gigantic datasets. Other fields, like finance or even intelligence also demand advanced visualization solution. But really, <strong>all activities handle data, </strong>because they all generate data.</p>

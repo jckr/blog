@@ -8,7 +8,7 @@
 	>
 
 <channel>
-	<title>violence &#8211; jeromecukier.net</title>
+	<title>violence &#8211; jckr.github.io/blog</title>
 	<atom:link href="http://localhost/tag/violence/feed/" rel="self" type="application/rss+xml" />
 	<link>/</link>
 	<description>Just another WordPress site</description>
@@ -36,9 +36,9 @@
 		<category><![CDATA[usa]]></category>
 		<category><![CDATA[violence]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1530</guid>
-		<description><![CDATA[Click for interactive visualization I have created this map of every homicide in the USA using firearms for the latest year where detailed information was available. Every, that is from all the agencies that report homicides to the FBI, which is not an obligation &#8211; this is why the map lacks Florida data. In the <a class="read-more" href="/2012/12/29/gun-murders-in-america/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
-				<content:encoded><![CDATA[<p><a href="http://bit.ly/gunviolence"><img src="http://jeromecukier.net/projects/crime/murders.png" width="800" height="513" class="aligncenter" /></a><br />
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1530</guid>
+		<description><![CDATA[Click for interactive visualization I have created this map of every homicide in the USA using firearms for the latest year where detailed information was available. Every, that is from all the agencies that report homicides to the FBI, which is not an obligation &#8211; this is why the map lacks Florida data. In the <a class="read-more" href="/blog/2012/12/29/gun-murders-in-america/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p><a href="http://bit.ly/gunviolence"><img src="https://jckr.github.io/blog/projects/crime/murders.png" width="800" height="513" class="aligncenter" /></a><br />
 <a href="http://bit.ly/gunviolence"><strong>Click for interactive visualization</strong></a></p>
 <p>I have created this map of every homicide in the USA using firearms for the latest year where detailed information was available. Every, that is from all the agencies that report homicides to the FBI, which is not an obligation &#8211; this is why the map lacks Florida data.<br />
 In the interactive version you can see how murders happen through the year and explore them according to several criteria that were available in the database. While large shooting sprees receive media attention, unfortunately there are thousands of cases each year in just about every community.<br />

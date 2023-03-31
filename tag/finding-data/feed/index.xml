@@ -8,7 +8,7 @@
 	>
 
 <channel>
-	<title>finding data &#8211; jeromecukier.net</title>
+	<title>finding data &#8211; jckr.github.io/blog</title>
 	<atom:link href="http://localhost/tag/finding-data/feed/" rel="self" type="application/rss+xml" />
 	<link>/</link>
 	<description>Just another WordPress site</description>
@@ -32,8 +32,8 @@
 		<category><![CDATA[open data]]></category>
 		<category><![CDATA[xml]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=150</guid>
-		<description><![CDATA[The United States are the only western country without a centralized data office. Instead, official statistics are produced by well over 100 agencies. This makes obtaining official US data difficult, and that&#8217;s somewhat of a paradox because in most cases, these data are public and free. Of course, with data coming from so many sources, <a class="read-more" href="/2009/06/30/new-data-services-3-datagov/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=150</guid>
+		<description><![CDATA[The United States are the only western country without a centralized data office. Instead, official statistics are produced by well over 100 agencies. This makes obtaining official US data difficult, and that&#8217;s somewhat of a paradox because in most cases, these data are public and free. Of course, with data coming from so many sources, <a class="read-more" href="/blog/2009/06/30/new-data-services-3-datagov/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[<p>The United States are the only western country without a centralized data office. Instead, official statistics are produced by well over 100 agencies. This makes obtaining official US data difficult, and that&#8217;s somewhat of a paradox because in most cases, these data are public and free. Of course, with data coming from so many sources, they are also in a variety of shapes and sizes. Says <a href="http://www.wired.com/politics/onlinerights/magazine/17-07/mf_cio">Wired</a>,</p>
 <blockquote><p>Until now, the US government&#8217;s default position has been: If you can&#8217;t keep data secret, at least hide it on one of 24,000 federal Web sites, preferably in an incompatible or obsolete format.</p></blockquote>
 <p>A commitment made by the Obama administration was to tackle this and make data more widely available. To that end, a data portal was announced in early April and data.gov was officially launched end of May.</p>
@@ -74,9 +74,9 @@
 		<category><![CDATA[publishing]]></category>
 		<category><![CDATA[search]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=124</guid>
-		<description><![CDATA[To solve any problem with data, there are 5 things you need to do in sequence.  First, find the relevant data source. Then, access it and get the numbers you need.  Then, process those numbers to make them answer your question.  Present the results, for instance, as a data visualization,  and, optionally, share your analysis with <a class="read-more" href="/2009/05/19/finding-data/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
-				<content:encoded><![CDATA[<p style="text-align: left; "><img class="aligncenter size-full wp-image-130" title="data flow" src="http://www.jeromecukier.net/wp-content/uploads/2009/05/data-problem2.png" alt="data flow" width="448" height="298" /></p>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=124</guid>
+		<description><![CDATA[To solve any problem with data, there are 5 things you need to do in sequence.  First, find the relevant data source. Then, access it and get the numbers you need.  Then, process those numbers to make them answer your question.  Present the results, for instance, as a data visualization,  and, optionally, share your analysis with <a class="read-more" href="/blog/2009/05/19/finding-data/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p style="text-align: left; "><img class="aligncenter size-full wp-image-130" title="data flow" src="https://jckr.github.io/blog/wp-content/uploads/2009/05/data-problem2.png" alt="data flow" width="448" height="298" /></p>
 <p style="text-align: left; ">To solve any problem with data, there are 5 things you need to do in sequence. </p>
 <ul>
 <li>First, <strong>find </strong>the relevant data source.</li>

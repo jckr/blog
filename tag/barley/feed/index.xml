@@ -8,7 +8,7 @@
 	>
 
 <channel>
-	<title>barley &#8211; jeromecukier.net</title>
+	<title>barley &#8211; jckr.github.io/blog</title>
 	<atom:link href="http://localhost/tag/barley/feed/" rel="self" type="application/rss+xml" />
 	<link>/</link>
 	<description>Just another WordPress site</description>
@@ -32,8 +32,8 @@
 		<category><![CDATA[rollup]]></category>
 		<category><![CDATA[treillis]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=534</guid>
-		<description><![CDATA[We are taking a look at the Protovis Becker&#8217;s Barley example. Data: The code begins by defining a function that will be used throughout the program. this function expects an array of associative arrays which have the key “yield”. What it does is that it returns the median of all the values of the key <a class="read-more" href="/2011/02/11/protovis-analysis-of-the-beckers-barley-example-sketch/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=534</guid>
+		<description><![CDATA[We are taking a look at the Protovis Becker&#8217;s Barley example. Data: The code begins by defining a function that will be used throughout the program. this function expects an array of associative arrays which have the key “yield”. What it does is that it returns the median of all the values of the key <a class="read-more" href="/blog/2011/02/11/protovis-analysis-of-the-beckers-barley-example-sketch/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[<p>We are taking a look at the Protovis <a href="http://vis.stanford.edu/protovis/ex/barley.html">Becker&#8217;s Barley</a> example.</p>
 <pre class="brush: jscript; title: ; notranslate">&lt;html&gt;
   &lt;head&gt;

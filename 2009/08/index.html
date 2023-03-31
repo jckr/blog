@@ -7,14 +7,14 @@
 <meta name="HandheldFriendly" content="True" />
 <meta name="MobileOptimized" content="320" />
 
-<title>August | 2009 | jeromecukier.net</title>
+<title>August | 2009 | jckr.github.io/blog</title>
 
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="/xmlrpc.php">
 <link rel='dns-prefetch' href='//fonts.googleapis.com' />
 <link rel='dns-prefetch' href='//s.w.org' />
-<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Feed" href="/feed/" />
-<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Comments Feed" href="/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jckr.github.io/blog &raquo; Feed" href="/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jckr.github.io/blog &raquo; Comments Feed" href="/comments/feed/" />
 <!-- This site uses the Google Analytics by MonsterInsights plugin v7.0.5 - Using Analytics tracking - https://www.monsterinsights.com/ -->
 <!-- Note: MonsterInsights is not currently configured on this site. The site owner needs to authenticate with Google Analytics in the MonsterInsights settings panel. -->
 <!-- No UA code set -->
@@ -66,7 +66,7 @@ img.emoji {
 
 <body class="archive date group-blog">
 
-<header id="masthead" role="banner" class="site-head site-header" style="background-image: url(http://localhost:8888/wp-content/uploads/2018/04/Screenshot-2018-04-09-19.38.59.png);">
+<header id="masthead" role="banner" class="site-head site-header" style="background-image: url(/wp-content/uploads/2018/04/Screenshot-2018-04-09-19.38.59.png);">
     <nav id="site-navigation" class="main-navigation" role="navigation">
         <div>
             <h1 class="menu-toggle">
@@ -85,7 +85,7 @@ img.emoji {
                 
                 <div class="social-icons">
                                                                                                                                                                                                                                                                                                                                                                                                                                                     </div>
-                <h1 class="blog-title"><a class="blog-logo" href='/' rel='home'>jeromecukier.net</a></h1>
+                <h1 class="blog-title"><a class="blog-logo" href='/blog/' rel='home'>jckr.github.io/blog</a></h1>
                 <h2 class="blog-description">Just another WordPress site</h2>
             </div>
         </div>
@@ -116,7 +116,7 @@ img.emoji {
 
 		<p>Imagine a situation where you have data neatly stored in Excel, in a form you&#8217;re comfortable with (or stuck with) and you want to combine it to create a beautiful HTML document (or XML,  TXT, you name it).<br />
 For the sake of argument, let&#8217;s assume you have this spreadsheet here:</p>
-<p style="text-align: center;"><img class="aligncenter" style="margin-right: 149px; margin-left: 148px;" title="spreadsheet" src="http://www.jeromecukier.net/wp-content/uploads/2009/08/spreadsheet.png" alt="spreadsheet" width="373" height="185" /></p>
+<p style="text-align: center;"><img class="aligncenter" style="margin-right: 149px; margin-left: 148px;" title="spreadsheet" src="https://jckr.github.io/blog/wp-content/uploads/2009/08/spreadsheet.png" alt="spreadsheet" width="373" height="185" /></p>
 <p>and you want to create a list of links with the name of the site in column A, and the url in column B. That, and you want to be able to control every minute aspect of the file you would be creating.</p>
 <p>The solution to that problem is the <a href="http://msdn.microsoft.com/en-us/library/6kxy1a51(VS.85).aspx">file system object</a> in VBA. You create an object for file operations, like this:</p>
 <p><code>Dim fs as Object<br />
@@ -135,10 +135,10 @@ f.writeline "&lt;/ul&gt;"<br />
 <p><code>f.close<br />
 </code></p>
 <p>Voilà.</p>
-<p style="text-align: center;"><img class="size-full wp-image-174 aligncenter" style="margin-right: 125px; margin-left: 125px;" title="result" src="http://www.jeromecukier.net/wp-content/uploads/2009/08/result.png" alt="result" width="421" height="152" /></p>
+<p style="text-align: center;"><img class="size-full wp-image-174 aligncenter" style="margin-right: 125px; margin-left: 125px;" title="result" src="https://jckr.github.io/blog/wp-content/uploads/2009/08/result.png" alt="result" width="421" height="152" /></p>
 <p>When I use this technique, I like to have procedures that create the files, create a standard header and footer and write to the file using arguments, rather than using the fileSystemObject methods directly. I do that so I can have really clean, indented files with all the structure under control.<br />
 Here is a simple example file:</p>
-<p><a href="http://www.jeromecukier.net/wp-content/uploads/2009/08/fso.xlsm">fso.xlsm</a></p>
+<p><a href="http://jckr.github.io/blog/wp-content/uploads/2009/08/fso.xlsm">fso.xlsm</a></p>
 <p>And here&#8217;s a more complex project I&#8217;ve done using this technique : <a href="http://www.sourceoecd.org/rpsv/figures2008/en/index.htm">http://www.sourceoecd.org/rpsv/figures2008/en/index.htm</a> where all 240 html pages  (and 52 images) have been generated from content found in Excel documents. If the content and the output is more complex than the above example, the idea is pretty much identical.</p>
 	    		<div class="clear">&nbsp;</div>
 	</section>

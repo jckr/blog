@@ -8,7 +8,7 @@
 	>
 
 <channel>
-	<title>politics &#8211; jeromecukier.net</title>
+	<title>politics &#8211; jckr.github.io/blog</title>
 	<atom:link href="http://localhost/tag/politics/feed/" rel="self" type="application/rss+xml" />
 	<link>/</link>
 	<description>Just another WordPress site</description>
@@ -29,9 +29,9 @@
 		<category><![CDATA[principal components analysis]]></category>
 		<category><![CDATA[Tableau]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1465</guid>
-		<description><![CDATA[Following my Tableau politics contest entry, here is another view I had developed but which I didn&#8217;t include in the already full dashboard. In the main view I have tried to show how the values of candidates relate to those of the French. It&#8217;s difficult to convey that graphically when these values are determined by <a class="read-more" href="/2012/09/10/dimensionality-reduction/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
-				<content:encoded><![CDATA[<p>Following my <a href="http://www.jeromecukier.net/blog/2012/09/05/which-way-to-the-right/">Tableau politics contest entry</a>, here is another view I had developed but which I didn&#8217;t include in the already full dashboard. </p>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1465</guid>
+		<description><![CDATA[Following my Tableau politics contest entry, here is another view I had developed but which I didn&#8217;t include in the already full dashboard. In the main view I have tried to show how the values of candidates relate to those of the French. It&#8217;s difficult to convey that graphically when these values are determined by <a class="read-more" href="/blog/2012/09/10/dimensionality-reduction/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>Following my <a href="http://jckr.github.io/blog/blog/2012/09/05/which-way-to-the-right/">Tableau politics contest entry</a>, here is another view I had developed but which I didn&#8217;t include in the already full dashboard. </p>
 <p><iframe style="border: 0px;" src="http://public.tableausoftware.com/views/politics/DR_EN" scrolling="no" width="710px" height="810px"></iframe></p>
 <p>In the <a href="http://public.tableausoftware.com/views/politics/DashEN">main view</a> I have tried to show how the values of candidates relate to those of the French. It&#8217;s difficult to convey that graphically when these values are determined by the answers to as many as 19 questions (and there are many many more that could be used to that effect).</p>
 <p>Enter a technique called dimensionality reduction. The idea is to turn a dataset with many dimensions into a dataset with much fewer dimensions, as little as one, two or three. So we compute new variables, so that they capture virtually all the variability of the original dataset. In other words, if two records have different values in the original dataset, they should have different values in the transformed dataset too. </p>
@@ -55,10 +55,10 @@
 		<category><![CDATA[Tableau]]></category>
 		<category><![CDATA[UMP]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1458</guid>
-		<description><![CDATA[what led me to those choices I was technically happy of my entry for the sports contest. I had done what I wanted: obtain a hard-to-find, interesting dataset, attempt to create an exotic, hard-to-make and never-tableau&#8217;d-before shape with aesthetic appeal and insights. Yet the rules stated that the entries shall be judged on the story-telling <a class="read-more" href="/2012/09/05/tableau-2012-politics-contest-justification-and-making-of/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1458</guid>
+		<description><![CDATA[what led me to those choices I was technically happy of my entry for the sports contest. I had done what I wanted: obtain a hard-to-find, interesting dataset, attempt to create an exotic, hard-to-make and never-tableau&#8217;d-before shape with aesthetic appeal and insights. Yet the rules stated that the entries shall be judged on the story-telling <a class="read-more" href="/blog/2012/09/05/tableau-2012-politics-contest-justification-and-making-of/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[<h2>what led me to those choices</h2>
-<p>I was technically happy of my entry for the <a href="http://www.jeromecukier.net/blog/2012/06/30/tableau-2012-sports-visualization-contest-entry/">sports contest</a>. I had done what I wanted: obtain a hard-to-find, interesting dataset, attempt to create an exotic, hard-to-make and never-tableau&#8217;d-before shape with aesthetic appeal and insights.</p>
+<p>I was technically happy of my entry for the <a href="http://jckr.github.io/blog/blog/2012/06/30/tableau-2012-sports-visualization-contest-entry/">sports contest</a>. I had done what I wanted: obtain a hard-to-find, interesting dataset, attempt to create an exotic, hard-to-make and never-tableau&#8217;d-before shape with aesthetic appeal and insights.</p>
 <p>Yet the rules stated that the entries shall be judged on the story-telling front. While there were interesting insights, indeed, they didn&#8217;t constitute a story, a structured narration with a beginning and an end. Having <a href="http://thevcl.com/storytelling/">worked</a> <a href="http://flowingdata.com/2011/11/04/telling-stories-with-data-visweek-2011/">on that subject</a> on occasion, I think there is an inherent contradiction between a dashboard tool that lets a user freely manipulate a bunch of data and that articulated story where the user is more led throughout a process.</p>
 <p>So that&#8217;s what led most of the work.</p>
 <p>The second idea was that there is an unspoken, but IMO unnecessary rule about making Tableau dashboards compact things, highly interactive and interconnected. First, the elephant in the room: Tableau public is slow. It&#8217;s too slow. So too many interactions do not make a pleasant experience. Second, it is true that in Tableau one <em>can</em> assemble a dashboard out of interconnected worksheets, where clicking on one makes things happen in another. But just because you can doesn&#8217;t mean you <em>should</em>. Remember the &lt;BLINK&gt; element in the webpage of the 1990s? And this is this interconnectivity that causes dashboards to be compact and fit over the fold. If clicking on one element causes changes on another, you&#8217;d better be able to see both even on a laptop screen.</p>
@@ -98,7 +98,7 @@
 		<category><![CDATA[Tableau]]></category>
 		<category><![CDATA[UMP]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1445</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1445</guid>
 		<description><![CDATA[Here is my entry for the Tableau 2012 politics contest. Source of the data: Economic statistics from OECD, opinion data from TNS Sofres. Making-of and explanation post to follow.]]></description>
 				<content:encoded><![CDATA[<p>Here is my entry for the Tableau 2012 politics contest.</p>
 <p><iframe style="border: 0px;" src="http://public.tableausoftware.com/views/politics/DashEN" scrolling="no" width="802px" height="4000px"></iframe></p>
@@ -125,8 +125,8 @@
 		<category><![CDATA[stories]]></category>
 		<category><![CDATA[visweek]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1126</guid>
-		<description><![CDATA[Inspiration In June 2010, I attended a Wolfram&#124;Alpha event called the London Computational Knowledge Summit where speakers mostly focused on how computers can transform the way we teach and transmit knowledge. Several of the presentations made a lasting impression, and mostly the talk by Jon McLoone: Jon&#8217;s point was that academic papers today look an <a class="read-more" href="/2011/11/24/dont-take-my-word-for-it/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1126</guid>
+		<description><![CDATA[Inspiration In June 2010, I attended a Wolfram&#124;Alpha event called the London Computational Knowledge Summit where speakers mostly focused on how computers can transform the way we teach and transmit knowledge. Several of the presentations made a lasting impression, and mostly the talk by Jon McLoone: Jon&#8217;s point was that academic papers today look an <a class="read-more" href="/blog/2011/11/24/dont-take-my-word-for-it/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[<h2>Inspiration</h2>
 <p>In June 2010, I attended a Wolfram|Alpha event called the London Computational Knowledge Summit where speakers mostly focused on how computers can transform the way we teach and transmit knowledge. Several of the presentations made a lasting impression, and mostly the talk by Jon McLoone:</p>
 <pre><code><iframe src="http://www.youtube.com/embed/tizMNn6xKFw?version=3&amp;start=380&amp;wmode=transparent" width="600" height="362" style="background-color:#000;display:block;margin-bottom:0;max-width:100%;" title="YouTube video player" frameborder="0" allowfullscreen></iframe><p style="font-size:11px;margin-top:0;"><a href="http://www.youtube.com/watch?v=tizMNn6xKFw" target="_blank" title="Watch on YouTube">Watch this video on YouTube</a>.</p></code></pre>
@@ -136,7 +136,7 @@
 <h2>Application</h2>
 <h3>French pension reform</h3>
 <p>Right at the moment of visWeek 2010, France was plagued by strikes against the proposed pension reform. At the peak of contestation up to 3m people demonstrated (that&#8217;s as much as one adult out of 14). I was quite irritated by the protests. In theory, left and right had very comparable views on this problem and only disagreed on unsignificant details. They both knew reform was unavoidable, and, again, had similar plans. But when those of the current government were implemented, the opposition capitalized on the discontent and attacked the plan vigorously. <strong>Their rethoric were entirely verbal</strong> &#8211; no numbers were harmed in the making of their discourse! Consequently, protesters and a large part of the population started to develop notions about the state of pensions which were completely disconnected from reality.</p>
-<p style="text-align: center;"><a href="http://jeromecukier.net/stuff/visweek/datastories/index.html"><img class="aligncenter size-full wp-image-1143" title="retraites" src="http://www.jeromecukier.net/wp-content/uploads/2011/11/retraites.png" alt="" width="721" height="540" /></a></p>
+<p style="text-align: center;"><a href="http://jckr.github.io/blog/stuff/visweek/datastories/index.html"><img class="aligncenter size-full wp-image-1143" title="retraites" src="https://jckr.github.io/blog/wp-content/uploads/2011/11/retraites.png" alt="" width="721" height="540" /></a></p>
 <p>I believe that if numbers had been used early enough, it would have been enough to provide a counterpoint to such fallacies and while it may not have prevented demonstrations, it would have greatly helped to dampen their effect. With that in mind and with official data I tried to build a model to show what would happen if one changed this or that parameter of pension policy. Pension mechanics are quite simple: what you give on one side, you take on another; the evolution of population is quite well known, so making such a model is pretty straight forward. But putting that in a visual application really showed how the current situation was unsustainable. In this application I challenge the user to find a solution &#8211; any solution &#8211; to the pension problem, by using the same levers as the policy makers. It turns out that there is just one viable possibility. Yet, letting people find that by themselves and challenge that idea as hard as they could was very different from paternalizing and telling people that this was just the way it is.</p>
 <p>On the course of the year I got involved in several occasions in situations like this where data visualization could be used to influence people&#8217;s opinion, and likewise I tried to use that approach. Instead of sending a top-down message (with or without data), instead confront the assumptions of the audience and get them to interact with a model. After this experience, their perception will have changed. This technique doesn&#8217;t try to bypass the viewers critical thinking, but instead to leverage their intelligence.</p>
 <h3>In politics</h3>
@@ -153,7 +153,7 @@
 <p>Besides, having a working interactive model is no guarantee of success. You really have to be careful that your users are not likely to interpret your visualization in ways you never intended.</p>
 <h2>The presentation</h2>
 <p><iframe src="https://www.slideshare.net/slideshow/embed_code/10279298" width="400" height="337" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe><br/><br />
-All examples I used in the presentation both good and bad, both mine and others can be found at <a href="http://www.jeromecukier.net/data-stories/">http://www.jeromecukier.net/data-stories/</a></p>
+All examples I used in the presentation both good and bad, both mine and others can be found at <a href="http://jckr.github.io/blog/data-stories/">http://jckr.github.io/blog/data-stories/</a></p>
 ]]></content:encoded>
 			<wfw:commentRss>/2011/11/24/dont-take-my-word-for-it/feed/</wfw:commentRss>
 		<slash:comments>2</slash:comments>

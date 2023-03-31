@@ -8,7 +8,7 @@
 	>
 
 <channel>
-	<title>rgb &#8211; jeromecukier.net</title>
+	<title>rgb &#8211; jckr.github.io/blog</title>
 	<atom:link href="http://localhost/tag/rgb/feed/" rel="self" type="application/rss+xml" />
 	<link>/</link>
 	<description>Just another WordPress site</description>
@@ -38,12 +38,12 @@
 		<category><![CDATA[scales]]></category>
 		<category><![CDATA[tutorial]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1026</guid>
-		<description><![CDATA[In protovis, scales were super-useful in just about everything. That much hasn&#8217;t changed in d3, even though d3.scale is a bit different from pv.Scale. (do note that d3.scale is in lowercase for starters). Scales: the main idea Simply put: scales transform a number in a certain interval (called the domain) into a number in another <a class="read-more" href="/2011/08/11/d3-scales-and-color/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1026</guid>
+		<description><![CDATA[In protovis, scales were super-useful in just about everything. That much hasn&#8217;t changed in d3, even though d3.scale is a bit different from pv.Scale. (do note that d3.scale is in lowercase for starters). Scales: the main idea Simply put: scales transform a number in a certain interval (called the domain) into a number in another <a class="read-more" href="/blog/2011/08/11/d3-scales-and-color/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[<p>In <a href="http://mbostock.github.com/protovis/docs/scale.html">protovis</a>, scales were super-useful in just about everything. That much hasn&#8217;t changed in d3, even though <a href="https://github.com/mbostock/d3/wiki/Scales">d3.scale</a> is a bit different from pv.Scale. (do note that <strong>d3.scale</strong> is in lowercase for starters).</p>
 <h2>Scales: the main idea</h2>
 <p>Simply put: scales transform a number in a certain interval (called the <em>domain</em>) into a number in another interval (called the <em>range</em>).<br />
-<img src="http://www.jeromecukier.net/wp-content/uploads/2011/08/d3scale1.png" alt="an example of how scales work" /><br />
+<img src="https://jckr.github.io/blog/wp-content/uploads/2011/08/d3scale1.png" alt="an example of how scales work" /><br />
 For instance, let&#8217;s suppose you <em>know</em> your data is always over 20 and always below 80. You would like to plot it, say, in a bar chart, which can be only 120 pixels tall.<br />
 You could, obviously, do the math:</p>
 <pre class="brush: jscript; title: ; notranslate">.attr(&quot;height&quot;, function(d) {return (d-20)*2;})</pre>
@@ -70,14 +70,14 @@ First, note that <strong>unlike in protovis</strong>, domain and range take an a
 var y=d3.scale.linear().range([20,60]).domain([0,120]);</pre>
 <p>This is because <strong>contrary to protovis</strong>, where domain could be a whole dataset, in d3, domain contains the bounds of the interval that is going to be transformed.<br />
 Typically, this is two numbers. If this is more, we are talking about a polypoint scale: there are as many segments in the intervals as there are numbers in the domain (minus one). The range must have as many numbers, and so as many segments. When using the scale, if a number is in the n-th segment of the domain, it is transformed into a number in the n-th segment of the range.<br />
-<img src="http://www.jeromecukier.net/wp-content/uploads/2011/08/d3scaleMultipoint.png" alt="illustration of a multipoint scale" /><br />
+<img src="https://jckr.github.io/blog/wp-content/uploads/2011/08/d3scaleMultipoint.png" alt="illustration of a multipoint scale" /><br />
 With this example, 30 finds itself in the first segment of the domain. So it&#8217;s transformed to a value in the first segment of the range. 60, however, is in the 2nd segment, so it&#8217;s transformed into a value in the 2nd segment of the range.<br />
 Also, bounds of domain and range need not be numbers, as long as they can be converted to numbers. One useful examples are colors. Color names can be used as range, for instance, to create <em>color ramps</em>:</p>
 <pre class="brush: jscript; title: ; notranslate">var ramp=d3.scale.linear().domain([0,100]).range([&quot;red&quot;,&quot;blue&quot;]);</pre>
 <p>This will transform any value betwen 0 and 100 into the corresponding color between red and blue.</p>
 <h3>Clamping</h3>
 <p>What happends if the scale is asked to process a number outside of the domain? That&#8217;s what clamping controls. If it is set, then the bounds of the range are the minimum and maximum value that can be returned by the scale. Else, the same transformation applies to all numbers, whether they fall within the domain or not.<br />
-<img src="http://www.jeromecukier.net/wp-content/uploads/2011/08/d3clamping.png" alt="Clamping example" /><br />
+<img src="https://jckr.github.io/blog/wp-content/uploads/2011/08/d3clamping.png" alt="Clamping example" /><br />
 Here, with clamping, the result of the linear transformation is 120, but without it, it&#8217;s 160. </p>
 <pre class="brush: jscript; title: ; notranslate">var clamp=d3.scale.linear().domain([20,80]).range([0,120]);
 clamp(100); // 160
@@ -117,7 +117,7 @@ y.invert(60); // 50</pre>
 <p>The <em>linear</em>scale is a function of the form y=ax+b which works for both ends of the domain and range. In the example we&#8217;ve used most often until now, this function is really f(x): y=2x-40.<br />
 Power and logarithm scales work the same, only we are looking for a function of the form y=ax<sup>k</sup>+b, or y=a.log(x)+b.<br />
 For the power scales, you can specify an exponent (k) with the .exponent() method. For instance, if we specify an exponent of 2, here is what the scale would look like:<br />
-<img src="http://www.jeromecukier.net/wp-content/uploads/2011/08/d3scalePower.png" alt="an example of a power scale" /><br />
+<img src="https://jckr.github.io/blog/wp-content/uploads/2011/08/d3scalePower.png" alt="an example of a power scale" /><br />
 The equation is now f(x): y=x²/50-8. So 20 still becomes 0 and 80 still becomes 120, but other than that the values at the beginning of the domain would be lower than with the linear scale, and those at the end of the scale will be higher.<br />
 For convenience, d3 includes a d3.scale.sqrt() (the square root scale) so you never have to type d3.scale.pow.exponent(0.5) in full.<br />
 Also note that if you are using a log scale, you <strong>cannot</strong> have 0 in the domain. </p>
@@ -170,7 +170,7 @@ x(&quot;Tuesday&quot;); // 34.285714285714285
 <p>With .rangePoints(<em>interval</em>), d3 fits n points within the interval, n being the number of categories in the domain. In that case, the value of the first point is the beginning of the interval, that of the last point is the end of the interval.<br />
 With .rangeBands(<em>interval</em>), d3 fit n <em>bands</em> within the interval. Here, the value of the last item in the domain is less than the upper bound of the interval.<br />
 Those methods <strong>replace the protovis methods</strong> .split() and .splitBanded().<br />
-<img src="http://www.jeromecukier.net/wp-content/uploads/2011/08/d3ordinalRange.png" alt="difference between rangeBands and rangePoints" /><br />
+<img src="https://jckr.github.io/blog/wp-content/uploads/2011/08/d3ordinalRange.png" alt="difference between rangeBands and rangePoints" /><br />
 This chart illustrates the difference between using rangeBands and rangePoints. </p>
 <pre class="brush: jscript; title: ; notranslate">var x=d3.scale.ordinal()
   .domain([&quot;Sunday&quot;,&quot;Monday&quot;,&quot;Tuesday&quot;,&quot;Wednesday&quot;,&quot;Thursday&quot;,&quot;Friday&quot;,&quot;Saturday&quot;]);
@@ -253,8 +253,8 @@ c.hsl().toString() // &quot;hsl(300, 76, 72)&quot;</pre>
 		<category><![CDATA[violette]]></category>
 		<category><![CDATA[vision]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=925</guid>
-		<description><![CDATA[I&#8217;ve been posting quite a few times on Tableau these last few days, so I&#8217;ll end up the week with one viz I had previously shared on twitter with some success. Sheet 1 Powered by Tableau so what&#8217;s the story? I have been inspired to do this via the work on onformative which I discovered <a class="read-more" href="/2011/06/10/red-green-blue-something-else/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=925</guid>
+		<description><![CDATA[I&#8217;ve been posting quite a few times on Tableau these last few days, so I&#8217;ll end up the week with one viz I had previously shared on twitter with some success. Sheet 1 Powered by Tableau so what&#8217;s the story? I have been inspired to do this via the work on onformative which I discovered <a class="read-more" href="/blog/2011/06/10/red-green-blue-something-else/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[<p>I&#8217;ve been posting quite a few times on Tableau these last few days, so I&#8217;ll end up the week with one viz I had previously shared on twitter with some success.<br />
 <script type="text/javascript" src="http://public.tableausoftware.com/javascripts/api/viz_v1.js"></script><object class="tableauViz" width="1667" height="870" style="display:none;"><param name="host_url" value="http%3A%2F%2Fpublic.tableausoftware.com%2F" /><param name="name" value="violette&#47;Sheet1" /><param name="tabs" value="no" /><param name="toolbar" value="yes" /><param name="animate_transition" value="yes" /><param name="display_static_image" value="yes" /><param name="display_spinner" value="yes" /><param name="display_overlay" value="yes" /></object><noscript>Sheet 1 <br /><a href="#"><img alt="Sheet 1 " src="http:&#47;&#47;public.tableausoftware.com&#47;static&#47;images&#47;vi&#47;violette&#47;Sheet1&#47;1_rss.png" height="100%" /></a></noscript>
 <div style="width:1667px;height:22px;padding:0px 10px 0px 0px;color:black;font:normal 8pt verdana,helvetica,arial,sans-serif;">
@@ -264,7 +264,7 @@ c.hsl().toString() // &quot;hsl(300, 76, 72)&quot;</pre>
 I have been inspired to do this via the work on <a href="http://www.onformative.com/work/fragments-of-rgb/">onformative</a> which I discovered on <a href="http://butdoesitfloat.com/1420489/One-has-to-arrive-at-a-specific-temperature-at-which-the-objects">But does it float</a>.</p>
 <p>I was struck by how the proximity of a red dot, a green dot and a blue dot was interpreted by our human eyes as a spot of another color. Then again, this is how <a href="http://electronics.howstuffworks.com/lcd5.htm">monitors</a> <a href="http://computer.howstuffworks.com/monitor7.htm">work</a>. If you look hard enough on your lcd screen you may see the sub-pixels.<br />
 This is also why, in an image such as this one, the segments of the line appear unaligned, although logically this line is one pixel wide.<br />
-<a href="http://www.jeromecukier.net/wp-content/uploads/2011/06/unaligned.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/06/unaligned.png" alt="" title="unaligned" class="aligncenter size-full wp-image-926" /></a><br />
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/06/unaligned.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/06/unaligned.png" alt="" title="unaligned" class="aligncenter size-full wp-image-926" /></a><br />
 Physically, the segments are <em>indeed</em> unaligned, as the each segment uses sub-pixels of a different color which don&#8217;t have the same horizontal position within one pixel. </p>
 <p>However, I didn&#8217;t realize that this effect would work with patches of blue, green and red much bigger than a subpixel.<br />
 I made the underlying dataset from a picture of my daughter Violette when she was 2. I converted the picture to a list of values of red, green and blue (thanks, processing) which were all associated to a x and y position on the screen and the name of their layer (so they could be turned on or off). These x and y positions were derived from the position of the pixel on the original image, but the red, blue and green dots are all shifted in one direction so they form a triangle.<br />

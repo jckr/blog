@@ -7,15 +7,15 @@
 <meta name="HandheldFriendly" content="True" />
 <meta name="MobileOptimized" content="320" />
 
-<title>data visualization | jeromecukier.net | Page 3</title>
+<title>data visualization | jckr.github.io/blog | Page 3</title>
 
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="/xmlrpc.php">
 <link rel='dns-prefetch' href='//fonts.googleapis.com' />
 <link rel='dns-prefetch' href='//s.w.org' />
-<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Feed" href="/feed/" />
-<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Comments Feed" href="/comments/feed/" />
-<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; data visualization Category Feed" href="/category/data-visualization/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jckr.github.io/blog &raquo; Feed" href="/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jckr.github.io/blog &raquo; Comments Feed" href="/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jckr.github.io/blog &raquo; data visualization Category Feed" href="/category/data-visualization/feed/" />
 <!-- This site uses the Google Analytics by MonsterInsights plugin v7.0.5 - Using Analytics tracking - https://www.monsterinsights.com/ -->
 <!-- Note: MonsterInsights is not currently configured on this site. The site owner needs to authenticate with Google Analytics in the MonsterInsights settings panel. -->
 <!-- No UA code set -->
@@ -67,7 +67,7 @@ img.emoji {
 
 <body class="archive paged category category-data-visualization category-8 paged-3 category-paged-3 group-blog">
 
-<header id="masthead" role="banner" class="site-head site-header" style="background-image: url(http://localhost:8888/wp-content/uploads/2018/04/Screenshot-2018-04-09-19.38.59.png);">
+<header id="masthead" role="banner" class="site-head site-header" style="background-image: url(/wp-content/uploads/2018/04/Screenshot-2018-04-09-19.38.59.png);">
     <nav id="site-navigation" class="main-navigation" role="navigation">
         <div>
             <h1 class="menu-toggle">
@@ -86,7 +86,7 @@ img.emoji {
                 
                 <div class="social-icons">
                                                                                                                                                                                                                                                                                                                                                                                                                                                     </div>
-                <h1 class="blog-title"><a class="blog-logo" href='/' rel='home'>jeromecukier.net</a></h1>
+                <h1 class="blog-title"><a class="blog-logo" href='/blog/' rel='home'>jckr.github.io/blog</a></h1>
                 <h2 class="blog-description">Just another WordPress site</h2>
             </div>
         </div>
@@ -119,7 +119,7 @@ img.emoji {
 <p>Long story short. I run into problems all the time trying to properly embed Tableau vis into wordpress blog posts. Does it happen outside of wordpress, I don&#8217;t know, because I don&#8217;t really try to embed Tableau vis outside of wordpress. That said, I have the same problem with d3 vis in wordpress and I&#8217;ve been asked several times how do I do it.</p>
 <h3>iframes.</h3>
 <p>That&#8217;s how.</p>
-<p>Here is what I did <a href="http://www.jeromecukier.net/blog/2012/06/30/tableau-2012-sports-visualization-contest-entry/">last time</a>.</p>
+<p>Here is what I did <a href="http://jckr.github.io/blog/blog/2012/06/30/tableau-2012-sports-visualization-contest-entry/">last time</a>.</p>
 <pre class="brush: jscript; title: ; notranslate" title="">
 &lt;iframe
   style=&quot;border: 0px;&quot;
@@ -141,7 +141,7 @@ http://public.tableausoftware.com/views/ + <em>name of your workbook</em> + / + 
 <p>height=&#8230;px, width=&#8230;px. Here&#8217;s the tricky part. You have to manually set the size of your visualisation and add a couple of pixels for good measure.</p>
 <p>In tableau, when creating dashboards, I have always used the option to size them <em>exactly </em>at a precise size and I recommend you do that too. Then add 2-6 px to each dimension and use that as width and height.</p>
 <p>In my experience going through these steps is really less painful than using the &#8220;native&#8221; embed functionality of tableau vis which sometimes work and sometimes doesn&#8217;t. The added bonus is that the resulting html is much more legible than what Tableau generates, which, for the record, is:</p>
-<pre>&lt;script type="text/javascript" src="http://public.tableausoftware.com/javascripts/api/viz_v1.js"&gt;&lt;/script&gt;&lt;div style="width:654px; height:799px;"&gt;&lt;noscript&gt;&lt;a href="http:&amp;#47;&amp;#47;www.jeromecukier.net&amp;#47;blog&amp;#47;2012&amp;#47;06&amp;#47;30&amp;#47;tableau-2012-sports-visualization-contest-entry&amp;#47;"&gt;&lt;img alt="champions " src="http:&amp;#47;&amp;#47;public.tableausoftware.com&amp;#47;static&amp;#47;images&amp;#47;ch&amp;#47;champions&amp;#47;champions&amp;#47;1_rss.png" style="border: none" /&gt;&lt;/a&gt;&lt;/noscript&gt;&lt;object width="654" height="799" style="display:none;"&gt;&lt;param name="host_url" value="http%3A%2F%2Fpublic.tableausoftware.com%2F" /&gt;&lt;param name="site_root" value="" /&gt;&lt;param name="name" value="champions&amp;#47;champions" /&gt;&lt;param name="tabs" value="no" /&gt;&lt;param name="toolbar" value="yes" /&gt;&lt;param name="static_image" value="http:&amp;#47;&amp;#47;public.tableausoftware.com&amp;#47;static&amp;#47;images&amp;#47;ch&amp;#47;champions&amp;#47;champions&amp;#47;1.png" /&gt;&lt;param name="animate_transition" value="yes" /&gt;&lt;param name="display_static_image" value="yes" /&gt;&lt;param name="display_spinner" value="yes" /&gt;&lt;param name="display_overlay" value="yes" /&gt;&lt;param name="display_count" value="yes" /&gt;&lt;param name="from_wg" value="true" /&gt;&lt;/object&gt;&lt;/div&gt;&lt;div style="width:654px;height:22px;padding:0px 10px 0px 0px;color:black;font:normal 8pt verdana,helvetica,arial,sans-serif;"&gt;&lt;div style="float:right; padding-right:8px;"&gt;&lt;a href="http://www.tableausoftware.com/public?ref=http://public.tableausoftware.com/views/champions/champions" target="_blank"&gt;Powered by Tableau&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;</pre>
+<pre>&lt;script type="text/javascript" src="http://public.tableausoftware.com/javascripts/api/viz_v1.js"&gt;&lt;/script&gt;&lt;div style="width:654px; height:799px;"&gt;&lt;noscript&gt;&lt;a href="http:&amp;#47;&amp;#47;www.jckr.github.io/blog&amp;#47;blog&amp;#47;2012&amp;#47;06&amp;#47;30&amp;#47;tableau-2012-sports-visualization-contest-entry&amp;#47;"&gt;&lt;img alt="champions " src="http:&amp;#47;&amp;#47;public.tableausoftware.com&amp;#47;static&amp;#47;images&amp;#47;ch&amp;#47;champions&amp;#47;champions&amp;#47;1_rss.png" style="border: none" /&gt;&lt;/a&gt;&lt;/noscript&gt;&lt;object width="654" height="799" style="display:none;"&gt;&lt;param name="host_url" value="http%3A%2F%2Fpublic.tableausoftware.com%2F" /&gt;&lt;param name="site_root" value="" /&gt;&lt;param name="name" value="champions&amp;#47;champions" /&gt;&lt;param name="tabs" value="no" /&gt;&lt;param name="toolbar" value="yes" /&gt;&lt;param name="static_image" value="http:&amp;#47;&amp;#47;public.tableausoftware.com&amp;#47;static&amp;#47;images&amp;#47;ch&amp;#47;champions&amp;#47;champions&amp;#47;1.png" /&gt;&lt;param name="animate_transition" value="yes" /&gt;&lt;param name="display_static_image" value="yes" /&gt;&lt;param name="display_spinner" value="yes" /&gt;&lt;param name="display_overlay" value="yes" /&gt;&lt;param name="display_count" value="yes" /&gt;&lt;param name="from_wg" value="true" /&gt;&lt;/object&gt;&lt;/div&gt;&lt;div style="width:654px;height:22px;padding:0px 10px 0px 0px;color:black;font:normal 8pt verdana,helvetica,arial,sans-serif;"&gt;&lt;div style="float:right; padding-right:8px;"&gt;&lt;a href="http://www.tableausoftware.com/public?ref=http://public.tableausoftware.com/views/champions/champions" target="_blank"&gt;Powered by Tableau&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;</pre>
 <p>Yeah. You say &amp;#47; i say %2F. anyway, this is a bit difficult to troubleshoot.</p>
 <p>The drawback when using iframes is that you lose the nice static image which is generated for RSS flows and other environments without interactivity. If you don&#8217;t know what I&#8217;m talking about (if you&#8217;re not familiar with that large orange arrow at the center) you&#8217;ll have no regrets.</p>
 <h3>Bonus: d3.</h3>
@@ -175,7 +175,7 @@ Before I go on explaining what this is about and how it&#8217;s been made, I&#82
 <p>I try to do three things. First, work on interesting, non-trivial data. Second, aim for virtuosity in the execution, try to come up with a difficult technique and hopefully pull it out nicely. Finally, link the two together: make the visualization relevant, so it supports the interestingness of the data, without being too busy or complex.</p>
 <p>So we talked about the data. Again I must say it&#8217;s been really comfortable working with a professional dataset. The football statistics that reach mass audiences are usually very aggregated, so it&#8217;s really nice to have access to a degree of finesse. And by the way, I only used the tip of the iceberg of that data.</p>
 <p>Now the technique.</p>
-<p>Some time ago I wrote how <a href="http://www.google.fr/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;ved=0CFQQFjAA&amp;url=http%3A%2F%2Fwww.jeromecukier.net%2Fblog%2F2011%2F11%2F04%2Fan-open-letter-to-tableau%2F&amp;ei=gzDuT8WQPMfK0QWn5rmJDg&amp;usg=AFQjCNFHshZKvXmHRXzX1KnxvxTBc-dJKA&amp;sig2=i3qKGtUrVLrR0OWQkZnpoA">I regretted that Tableau doesn&#8217;t have a network graph module</a>. Though, I had a fair idea how to hack one.</p>
+<p>Some time ago I wrote how <a href="http://www.google.fr/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;ved=0CFQQFjAA&amp;url=http%3A%2F%2Fwww.jckr.github.io/blog%2Fblog%2F2011%2F11%2F04%2Fan-open-letter-to-tableau%2F&amp;ei=gzDuT8WQPMfK0QWn5rmJDg&amp;usg=AFQjCNFHshZKvXmHRXzX1KnxvxTBc-dJKA&amp;sig2=i3qKGtUrVLrR0OWQkZnpoA">I regretted that Tableau doesn&#8217;t have a network graph module</a>. Though, I had a fair idea how to hack one.</p>
 <p>As in a previous post on treemaps, we are using the line mark with aptly chosen coordinates. Note that since the lines I am drawing rely on two records, we won&#8217;t be needing the path shelf this time.</p>
 <p>There are two kinds of &#8220;lines&#8221; here: those who act as nodes, and those who act as links.</p>
 <p>Nodes are where the players circles are, and are also used to support labels. Those are given a size depending on the number of events each player is involved in. That number has been precomputed and is made available with the data.</p>
@@ -203,12 +203,12 @@ Before I go on explaining what this is about and how it&#8217;s been made, I&#82
 
 		<p>Updates:<br />
 1) I&#8217;ve put all the code examples in http://codepen.io/collection/njzYxo/<br />
-2) I will rewrite this post after I&#8217;m done publishing my <a href="http://wp.me/po630-rQ">Visualization with React</a> series, because it&#8217;s 4 years old and there are other ways to do this now.</p>
+2) I will rewrite this post after I&#8217;m done publishing my <a href="/2016/08/09/visualization-with-react/">Visualization with React</a> series, because it&#8217;s 4 years old and there are other ways to do this now.</p>
 <p>Data is the first D in d3 (or possibly the 3rd, but it&#8217;s definitely one of these).</p>
 <p>Anyway. Putting your data in the right form is crucial to have concise code that runs fast and is easy to read (and, later, troubleshoot).</p>
 <p>So what shape should your data be in?<br />
 You undoubtedly have many options. </p>
-<p>To follow through this tutorial, let&#8217;s assume you want to plot the relationship between R&#038;D expenditure and GDP growth for a number of countries. You have got <a href="http://www.jeromecukier.net/stuff/data%20example/data.csv">this file</a>, full of tabular data, which lists for every country a name, a continent, the gross R&#038;D expenditure as a percentage of GDP, GDP growth, and for context population and GDP per capita.</p>
+<p>To follow through this tutorial, let&#8217;s assume you want to plot the relationship between R&#038;D expenditure and GDP growth for a number of countries. You have got <a href="http://jckr.github.io/blog/stuff/data%20example/data.csv">this file</a>, full of tabular data, which lists for every country a name, a continent, the gross R&#038;D expenditure as a percentage of GDP, GDP growth, and for context population and GDP per capita.</p>
 <p>So one very basic approach would be to put each of these variables into one independent array.</p>
 <pre class="brush: jscript; title: ; notranslate" title="">var GERD=[2.21367, 2.74826, 1.96158, 1.80213, 0.39451, 1.52652, 3.01937, 1.44122, 3.84137, 2.20646, 2.78056, 0.5921, 1.14821, 2.64107, 1.78988, 4.2504, 1.26841, 3.33499, 3.3609, 1.67862, 0.41322, 1.81965, 1.13693, 1.75922, 0.67502, 1.65519, 1.24252, 0.48056, 1.85642, 0.92523, 1.38357, 3.61562, 2.99525, 0.84902, 1.82434, 2.78518];
 var growth=[2.48590317, 3.10741128, 1.89308521, 3.21494841, 5.19813626, 1.65489834, 1.04974368, 7.63563272, 2.85477157, 1.47996142, 2.99558644, -6.90796403, 1.69192342, -3.99988322, -0.42935239, 4.84602001, 0.43108032, 3.96559062, 6.16184325, 2.67806902, 5.56185685, 1.18517739, 2.33052515, 1.59773989, 4.34962928, -1.60958484, 4.03428262, 3.34920254, -0.17459255, 2.784, -0.06947685, 3.93555895, 2.71404473, 9.00558548, 2.09209263, 3.02171711];
@@ -233,8 +233,8 @@ Let&#8217;s do a bubble chart for instance.<br />
     .append(&quot;title&quot;)
     .text(String)</pre>
 <p>and this works:<br />
-<iframe src="http://www.jeromecukier.net/stuff/data%20example/data-example0.html" width=512px height=520px scrolling=no style="border:0px"></iframe><br />
-<a href="http://www.jeromecukier.net/stuff/data%20example/data-example0.html">See example in its own tab or window</a><br />
+<iframe src="https://jckr.github.io/blog/stuff/data%20example/data-example0.html" width=512px height=520px scrolling=no style="border:0px"></iframe><br />
+<a href="http://jckr.github.io/blog/stuff/data%20example/data-example0.html">See example in its own tab or window</a><br />
 but this is hell to maintain. If for some reason there is an error in one of the values, for instance due to a cat or a small child in the proximity of the computer, the error will be very difficult to troubleshoot.<br />
 Another problem is that it&#8217;s very difficult to apply any kind of subsequent treatment to the data. For instance, you will notice that there are smaller bubbles entirely within the large orange bubble which happens to be on top of them. So it&#8217;s not possible to mouseover the smaller bubbles. One way to address that would be to sort data in order of decreasing population (the size of the bubbles) so that it would be impossible to have this kind of situation. Now while it is possible sorting 6 arrays according to the values of one, it&#8217;s very messy.</p>
 <p><strong>Ideally, you should have all the values that will be translated graphically within one, single object.</strong> You want to have an array of these objects that you will pass to the data method, and be able to write something like: </p>
@@ -288,8 +288,8 @@ Another problem is that it&#8217;s very difficult to apply any kind of subsequen
 ]</pre>
 <p>and get this done, and furthermore if you are thinking &#8220;Hey, I can do this in Excel from my csv file, with one formula that I will copy across the rows&#8221;, <strong>you need to stop right now in the name of all that is good and holy</strong>.<br />
 Even though it works: </p>
-<p><iframe src="http://www.jeromecukier.net/stuff/data%20example/data-example1.html" width=512px height=520px scrolling=no style="border:0px"></iframe><br />
-<a href="http://www.jeromecukier.net/stuff/data%20example/data-example1.html">See example in its own tab or window</a></p>
+<p><iframe src="https://jckr.github.io/blog/stuff/data%20example/data-example1.html" width=512px height=520px scrolling=no style="border:0px"></iframe><br />
+<a href="http://jckr.github.io/blog/stuff/data%20example/data-example1.html">See example in its own tab or window</a></p>
 <p>This approach has a number of flaws which you can all avoid if you read on.<br />
 First, the execution of your program will be stopped while your browser reads the source code that contains the &#8220;data&#8221; variable. This is negligible for 36 rows, but as objects get bigger and more complex, an equivalent variable may take seconds or even minutes to load. And now we have a problem.<br />
 That&#8217;s a problem for your users. Now to you: creating a JSON variable from tabular data is tedious and error prone. The formula editing interface in Excel doesn&#8217;t really help you spot where you have misplaced a quote or a colon. As a result, this is very time-consuming. </p>
@@ -332,8 +332,8 @@ In other words, once inside the d3.csv function, the &#8220;csv&#8221; variable 
 <li>Everything read from the file is treated as strings. Javascript does a lot of type conversion but be mindful of that or you will have surprises. This is why I wrote x(+d.GERD) for instance (+ before a string converts it to a number).</li>
 </ul>
 <p>To celebrate this superior way of aquiring data, we&#8217;ve thrown in animated data entry: the circles are initiated at a default value and move towards their position. You may want to check the link to see the transition effect.</p>
-<p><iframe src="http://www.jeromecukier.net/stuff/data%20example/data-example2.html" width=512px height=520px scrolling=no style="border:0px"></iframe><br />
-<a href="http://www.jeromecukier.net/stuff/data%20example/data-example2.html">See example in its own tab or window</a></p>
+<p><iframe src="https://jckr.github.io/blog/stuff/data%20example/data-example2.html" width=512px height=520px scrolling=no style="border:0px"></iframe><br />
+<a href="http://jckr.github.io/blog/stuff/data%20example/data-example2.html">See example in its own tab or window</a></p>
 <p>So, at the level of the mark (ie our circles) the most comfortable form of data is an object with at least as many keys as there will be graphical properties to change dynamically.<br />
 One flat array of data is fine if we have just one series of data. But what if we have several series? Indeed, most visualizations have a structure and a hierarchy.<br />
 So let&#8217;s proceed with our data but now let&#8217;s assume that we want to show values for different continents as different little scatterplots (&#8220;small multiples&#8221;).<br />
@@ -415,8 +415,8 @@ The last part of the statement, .entries(csv), says that we want to do that oper
       .style(&quot;opacity&quot;,function(d) {return o(d.population)})
       .style(&quot;opacity&quot;,function(d) {return o(+d.GDPcap);})</pre>
 <p>(you may want to click on the link to see the transition effect and read the full source).<br />
-<iframe src="http://www.jeromecukier.net/stuff/data%20example/data-example3.html" width=512px height=122px scrolling=no style="border:0px"></iframe><br />
-<a href="http://www.jeromecukier.net/stuff/data%20example/data-example3.html">See example in its own tab or window</a></p>
+<iframe src="https://jckr.github.io/blog/stuff/data%20example/data-example3.html" width=512px height=122px scrolling=no style="border:0px"></iframe><br />
+<a href="http://jckr.github.io/blog/stuff/data%20example/data-example3.html">See example in its own tab or window</a></p>
 <p>This is all very nice but wouldn&#8217;t it be better if we could characterize some aggregate information from the continents? Let&#8217;s try to find out the average values for R&#038;D expenditure and GDP growth. </p>
 <p>Can it be done easily? This is a job for the other main d3.nest method, rollup.</p>
 <p>rollup is the aggregating function. Here&#8217;s an example.</p>
@@ -501,8 +501,8 @@ Now it&#8217;s just a matter of adding them to the sketch. Two little additions 
     .attr(&quot;x1&quot;,function(d,i) {return x(avgs[i].values.GERD);})
     .attr(&quot;x2&quot;,function(d,i) {return x(avgs[i].values.GERD);})</pre>
 <p>This is the final example &#8211; again you may want to click on the link to see the transition and get the entirety of the source.<br />
-<iframe src="http://www.jeromecukier.net/stuff/data%20example/data-example4.html" width=512px height=122px scrolling=no style="border:0px"></iframe><br />
-<a href="http://www.jeromecukier.net/stuff/data%20example/data-example4.html">See example in its own tab or window</a></p>
+<iframe src="https://jckr.github.io/blog/stuff/data%20example/data-example4.html" width=512px height=122px scrolling=no style="border:0px"></iframe><br />
+<a href="http://jckr.github.io/blog/stuff/data%20example/data-example4.html">See example in its own tab or window</a></p>
 <p>To wrap up:</p>
 <ul>
 <li>At the mark level, you want to have objects with as many properties as you need graphical variables (like x,y, fill, etc.)</li>
@@ -524,9 +524,9 @@ Now it&#8217;s just a matter of adding them to the sketch. Two little additions 
     </header>
 	<section class="post-content">
 
-		<p><div id="attachment_1290" style="width: 620px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/projects/elections/parite.html"><img class="size-full wp-image-1290" title="La parité, c'est maintenant" src="http://www.jeromecukier.net/wp-content/uploads/2012/05/parite.png" alt="" width="610" height="572" /></a><p class="wp-caption-text">It&#39;s all about this map (click for interactive version)</p></div></p>
+		<p><div id="attachment_1290" style="width: 620px" class="wp-caption aligncenter"><a href="http://jckr.github.io/blog/projects/elections/parite.html"><img class="size-full wp-image-1290" title="La parité, c'est maintenant" src="https://jckr.github.io/blog/wp-content/uploads/2012/05/parite.png" alt="" width="610" height="572" /></a><p class="wp-caption-text">It&#39;s all about this map (click for interactive version)</p></div></p>
 <p>To my datavis readers, sorry for that string of posts in French but what better data to visualize than political data, and what better time to visualize political data than election time, and what better audience for such visualizations than the folks who are asked to vote?</p>
-<p><a href="http://www.jeromecukier.net/blog/2012/05/15/making-of-cutting-paris-in-voting-districts/">Like last time</a>, though, I am writing a follow-up technical post about how I dealt with the issues of this visualization.</p>
+<p><a href="http://jckr.github.io/blog/blog/2012/05/15/making-of-cutting-paris-in-voting-districts/">Like last time</a>, though, I am writing a follow-up technical post about how I dealt with the issues of this visualization.</p>
 <p>So anyone who ever tried to make data visualizations knows that you can hardly start without <strong>data</strong>.</p>
 <p>My ingredients for the recipe were:</p>
 <p>2012 presidential election results <a href="http://www.data.gouv.fr/donnees/view/Pr%C3%A9sidentielle-2012%2C-r%C3%A9sultats-par-circonscriptions-l%C3%A9gislatives%2C-2%C3%A8me-tour-551768?xtmc=presidentielle+circonscription&amp;xtcr=4">by circonscription</a>, plus those <a href="http://www.data.gouv.fr/donnees/view/R%C3%A9sultats-par-circonscription-%C3%A9lection-pr%C3%A9sidentielle-2007---Tours-1-et-2-30379819?xtmc=presidentielle+circonscription&amp;xtcr=1">of 2007</a>.</p>
@@ -537,18 +537,18 @@ Now it&#8217;s just a matter of adding them to the sketch. Two little additions 
 <p>Now <strong>calculations</strong>.</p>
 <p>There is a pretty strong statistical link between the score of a party on an election in a certain territory, and the chances of a congress candidate of the same party of winning the district.</p>
 <p>Predicting these chances is a well-known problem known as <em>classification </em> for which the textbook method is <em>logistic regression.</em></p>
-<p>All we need was the 575 districts for which I had results. We then associate the score of a party at the 2nd round of the election to whether the corresponding congress candidate got elected (1 or 0). That gives us <a href="http://www.jeromecukier.net/projects/elections/deputes.txt">1150 pairs of values</a> which we throw in the mathematical cooking pot.</p>
+<p>All we need was the 575 districts for which I had results. We then associate the score of a party at the 2nd round of the election to whether the corresponding congress candidate got elected (1 or 0). That gives us <a href="http://jckr.github.io/blog/projects/elections/deputes.txt">1150 pairs of values</a> which we throw in the mathematical cooking pot.</p>
 <p>And what we get is the following formula:</p>
-<p><a href="http://www.jeromecukier.net/wp-content/uploads/2012/05/equation.png"><img class="aligncenter size-full wp-image-1305" title="equation" src="http://www.jeromecukier.net/wp-content/uploads/2012/05/equation.png" alt="" width="297" height="66" /></a></p>
+<p><a href="http://jckr.github.io/blog/wp-content/uploads/2012/05/equation.png"><img class="aligncenter size-full wp-image-1305" title="equation" src="https://jckr.github.io/blog/wp-content/uploads/2012/05/equation.png" alt="" width="297" height="66" /></a></p>
 <p>where x is the score in the previous election (between 0 and 1).  As you can see when x gets close to 0, the denominator becomes a very large number and the probability quickly drops to virtually nothing, and converserly when x gets close to 1, the denominator becomes very close to 1 so the probability rises up to 1 equally fast.</p>
-<p><iframe style="border: none;" src="http://www.jeromecukier.net/stuff/littlesigmoid.html" scrolling="no" width="502px" height="270px"></iframe></p>
-<p>With this and that in place, it is possible to come up with a <a href="http://www.jeromecukier.net/projects/elections/pariteFM.csv">reasonable estimation</a> of the chances of any candidate based on the recent results. As an aside, the current Prime Minister has renewed the tradition started by his predecessor to ask ministers to seek office and to force them to step down if they fail to win their district. As a result, 24 out of the 37 ministers are campaigning. Out of those 24, 2 are taking very serious risks according to this model: Marie-Anne Carlotti and Benoît Hamon.</p>
+<p><iframe style="border: none;" src="https://jckr.github.io/blog/stuff/littlesigmoid.html" scrolling="no" width="502px" height="270px"></iframe></p>
+<p>With this and that in place, it is possible to come up with a <a href="http://jckr.github.io/blog/projects/elections/pariteFM.csv">reasonable estimation</a> of the chances of any candidate based on the recent results. As an aside, the current Prime Minister has renewed the tradition started by his predecessor to ask ministers to seek office and to force them to step down if they fail to win their district. As a result, 24 out of the 37 ministers are campaigning. Out of those 24, 2 are taking very serious risks according to this model: Marie-Anne Carlotti and Benoît Hamon.</p>
 <p>Finally, <strong>geography</strong>.</p>
 <p>In an ideal world, there will be an abundance of geoJSON files describing France and its many administrative entities. Usable data must exist somewhere, because the maps on <a href="view-source:http://www.elections-legislatives.fr/candidats.asp">www.elections-legislatives.fr</a> have all been generated (by Raphael.js says the source code). If I&#8217;m doing another project on these elections I might reverse engineer the shape of the maps to extract the coordinates.</p>
-<p>Without a dataset, the work of drawing the boundaries of 577 districts is just huge. However, accuracy is not required as I&#8217;m only putting the districts on a map so people can look up where they live or places they know. <a href="http://www.jeromecukier.net/blog/2012/05/15/making-of-cutt…ting-districts/">In my previous work</a> in order to let users change the composition of the districts, I wanted to be rigorous in the placement of everything but here we can live with imperfection.</p>
-<p>So I am using the same <a href="http://www.jeromecukier.net/blog/2012/05/15/making-of-cutt…ting-districts/">principle as I did</a>: voronoi tesselation.</p>
+<p>Without a dataset, the work of drawing the boundaries of 577 districts is just huge. However, accuracy is not required as I&#8217;m only putting the districts on a map so people can look up where they live or places they know. <a href="http://jckr.github.io/blog/blog/2012/05/15/making-of-cutt…ting-districts/">In my previous work</a> in order to let users change the composition of the districts, I wanted to be rigorous in the placement of everything but here we can live with imperfection.</p>
+<p>So I am using the same <a href="http://jckr.github.io/blog/blog/2012/05/15/making-of-cutt…ting-districts/">principle as I did</a>: voronoi tesselation.</p>
 <p>For each district I am picking the largest city, for which I have the coordinates. But most large cities belong to several districts. So I am adding random noise to each point. Then, I am drawing shapes around them.</p>
-<p><iframe style="border: none;" src="http://www.jeromecukier.net/stuff/littlevoronoi.html" scrolling="no" width="502px" height="270px"></iframe></p>
+<p><iframe style="border: none;" src="https://jckr.github.io/blog/stuff/littlevoronoi.html" scrolling="no" width="502px" height="270px"></iframe></p>
 <p>That would normally fill a rectangle, so in order to make it look like France, I have drawn a <a href="http://commons.oreilly.com/wiki/index.php/SVG_Essentials/Clipping_and_Masking">clipping mask</a> on top of it (that, I&#8217;ve done by hand, picking coordinates of the outline of France).</p>
 <p>That about wraps it up!</p>
 	    		<div class="clear">&nbsp;</div>
@@ -565,12 +565,12 @@ Now it&#8217;s just a matter of adding them to the sketch. Two little additions 
     </header>
 	<section class="post-content">
 
-		<p><div id="attachment_1290" style="width: 620px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/projects/elections/parite.html"><img class="size-full wp-image-1290" title="La parité, c'est maintenant" src="http://www.jeromecukier.net/wp-content/uploads/2012/05/parite.png" alt="" width="610" height="572" /></a><p class="wp-caption-text">Cliquez sur l&#39;image pour arriver à l&#39;application interactive</p></div></p>
+		<p><div id="attachment_1290" style="width: 620px" class="wp-caption aligncenter"><a href="http://jckr.github.io/blog/projects/elections/parite.html"><img class="size-full wp-image-1290" title="La parité, c'est maintenant" src="https://jckr.github.io/blog/wp-content/uploads/2012/05/parite.png" alt="" width="610" height="572" /></a><p class="wp-caption-text">Cliquez sur l&#39;image pour arriver à l&#39;application interactive</p></div></p>
 <p>J&#8217;ai eu l&#8217;idée de créer cette carte quand j&#8217;ai pu mettre la main sur les données des résultats de la présidentielle par circonscription législative. En 2007, les résulats du deuxième tour ont été un très bon prédicteur de ceux des législatives qui ont suivi: une circonscription pour qui un candidat à la présidentielle au second tour a fait ne serait-ce que 52% a plus de 75% de chances d&#8217;être remportée par le député du même parti.<br />
 Et encore, tout le monde s&#8217;était accordé à dire qu&#8217;en 2007, la gauche avait fait une très bonne campagne et qu&#8217;elle avait <a href="http://www.rfi.fr/actufr/articles/090/article_52924.asp">endigué la vague bleue</a>. Les probabilités sont sûrement encore plus élevées.</p>
 <p>Or, presque 80% des circonscriptions ont été gagnées avec un score supérieur à 52%, ce qui est donc une très grosse marge. Dans plus du quart d&#8217;entre elles, le gagnant du scrutin a même récolté plus de 60% des voix&#8230;</p>
 <p>Bref. Dans la plupart des circonscriptions, il n&#8217;y aura pas tellement de suspsens. Là où je vote, on n&#8217;a pas souvent le droit à un deuxième tour.</p>
-<p>Comme pour<a href="http://www.jeromecukier.net/blog/2012/05/15/le-decoupage-de-paris-en-circonscriptions/"> le découpage électoral</a>, je trouve ça un peu dérangeant. L&#8217;élection n&#8217;est pas tant la rencontre entre une personne et une population qui la choisit, mais surtout le fait d&#8217;un parti qui place ses pions, surtout si on rajoute les &#8220;accords électoraux&#8221;. Je crois que j&#8217;ai moins de chance de rencontrer la candidate <em>challenger</em> de ma circonscription que de voir François Hollande ou Nicolas Sarkozy &#8220;en vrai&#8221;.</p>
+<p>Comme pour<a href="http://jckr.github.io/blog/blog/2012/05/15/le-decoupage-de-paris-en-circonscriptions/"> le découpage électoral</a>, je trouve ça un peu dérangeant. L&#8217;élection n&#8217;est pas tant la rencontre entre une personne et une population qui la choisit, mais surtout le fait d&#8217;un parti qui place ses pions, surtout si on rajoute les &#8220;accords électoraux&#8221;. Je crois que j&#8217;ai moins de chance de rencontrer la candidate <em>challenger</em> de ma circonscription que de voir François Hollande ou Nicolas Sarkozy &#8220;en vrai&#8221;.</p>
 <p>Alors pourquoi ne pas en profiter pour s&#8217;approcher de la parité à l&#8217;assemblée?</p>
 <p>Pourquoi ne pas le faire d&#8217;abord: si un parti ne présente pas autant de femmes que d&#8217;hommes, il récupère une amende. Ou plutôt, comme l&#8217;explique bien <a href="http://www.lemonde.fr/politique/article/2012/05/22/les-manquements-a-la-parite-coutent-cher-aux-partis_1705246_823448.html">Alexandre Léchenet</a>,  il perd des financements. Mais le mode de calcul est biaisé. Un parti récupère une certaine somme par voix  au niveau national, puis cette somme est minorée si les femmes représentent moins de la moitié des candidats. Pour contrer ce système, il aurait été plus judicieux de le baser sur la proportion des voix <em>remportées</em> par des femmes, pas sur celles qu&#8217;on a alignées au départ.</p>
 <p>Donc, on envoie les femmes au casse-pipe: on les met dans des circonscriptions impossibles à gagner, histoire d&#8217;éviter l&#8217;amende. Il y a presque 100 candidates qui se retrouvent contre le représentant d&#8217;un parti qui a fait plus de 55% au second tour.</p>
@@ -592,15 +592,15 @@ Et encore, tout le monde s&#8217;était accordé à dire qu&#8217;en 2007, la ga
     </header>
 	<section class="post-content">
 
-		<p>Hi, in my previous post I showcased <a href="http://www.jeromecukier.net/projects/elections/circonscriptions.html#">one of my recent projects</a>. I really enjoyed building it and so would like to share how this has been done.</p>
+		<p>Hi, in my previous post I showcased <a href="http://jckr.github.io/blog/projects/elections/circonscriptions.html#">one of my recent projects</a>. I really enjoyed building it and so would like to share how this has been done.</p>
 <p>First, getting the data. I already scraped the results of both rounds of the presidential election by city. The districts for the congress election are also known, but it&#8217;s not possible to do a match, because large cities are almost systematically broken down into several such districts. Paris, for instance, will be represented by no less than 18 <em>députés</em>.</p>
 <p>So I needed the results by the finest possible unit, that is by individual polling station. During the election night these results are compiled by city and centralized, so you would assume that the raw data of each polling station is available somewhere. That is not the case, unfortunately. Although it seems that they will be made public eventually, that may not be the case before the June 2012 election.</p>
 <p>Fortunately, <a href="http://opendata.paris.fr/opendata/jsp/site/Portal.jsp?document_id=133&amp;portlet_id=102">Open Data Paris</a> had the results by polling station. More: it had their address and matching of every inhabited building in Paris to its corresponding polling station.</p>
 <p>To map the polling stations, my first intuition was to create a <a href="http://en.wikipedia.org/wiki/Voronoi_diagram">voronoi tesselation</a> of their projected, geocoded coordinates (I only had their addresses in the raw data file). In short, voronoi polygons can be generated for a certain number of control points and correspond to the area nearer to that control point than to any other. So it&#8217;s a good approximation of the areas  which correspond to a given polling station.</p>
-<p><iframe style="border:none;" src="http://www.jeromecukier.net/stuff/littlevoronoi.html" scrolling="no" width="502px" height="270px"></iframe></p>
+<p><iframe style="border:none;" src="https://jckr.github.io/blog/stuff/littlevoronoi.html" scrolling="no" width="502px" height="270px"></iframe></p>
 <p>Problem: several polling stations could be in the same address, and for the voronoi algorithm the control points have to be distinct. So I tried jittering them (adding random noise to each one). A tesselation could be done that kind of looked like Paris but voting districts will look messy as there were frequent inversions between neighboring districts.</p>
 <p>So I had to come up with a better approximation of what part of the city corresponded to what voting district. So I used the address to polling station correspondance, and for each polling station I took the first and the last street number of any street that was covered by it. Then I geocoded the whole lot. That&#8217;s about 16000 points. It took some time.</p>
-<p><div id="attachment_1280" style="width: 616px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2012/05/centroids.png"><img class="wp-image-1280" title="centroids" src="http://www.jeromecukier.net/wp-content/uploads/2012/05/centroids.png" alt="" width="606" height="478" /></a><p class="wp-caption-text">Here&#39;s my polling station as an example.</p></div></p>
+<p><div id="attachment_1280" style="width: 616px" class="wp-caption aligncenter"><a href="http://jckr.github.io/blog/wp-content/uploads/2012/05/centroids.png"><img class="wp-image-1280" title="centroids" src="https://jckr.github.io/blog/wp-content/uploads/2012/05/centroids.png" alt="" width="606" height="478" /></a><p class="wp-caption-text">Here&#39;s my polling station as an example.</p></div></p>
 <p>Then, for each polling station area, I took the minimum and maximum longitude and latitude, which formed a bounding box, and assigned the polling station to the center of that box. Then, I used tesselation again.</p>
 <p>I found a number of oddities in the geocoding that I had to correct manually, because if one address was not accurately coded, chances are it would change the shape of the bounding box drastically and so the position of its corresponding polling station. Sometimes the geocoding service wouldn&#8217;t find the street and/or would use a street of the same name in another city, sometimes they did find the street but the coordinates were way off&#8230; So the dataset required a lot of massaging before it got into shape.</p>
 <p>The last geographic errand I had to do for this visualization was to create a perimeter of Paris to use as a clipping mask, else the tesselation would be done on a rectangular shape with the edge polygons being very large and very skewed. So I collected coordinates of points around Paris to create one polygon. Only what&#8217;s inside of this polygon is shown (.style(&#8220;clip-path&#8221;) in d3).</p>
@@ -621,8 +621,8 @@ Et encore, tout le monde s&#8217;était accordé à dire qu&#8217;en 2007, la ga
     </header>
 	<section class="post-content">
 
-		<p>Mon <a href="http://www.jeromecukier.net/projects/elections/circonscriptions.html">dernier projet</a> permet de voir les résultats des élections présidentielles à Paris par bureau de vote et de les projeter sur les circonscriptions qui serviront aux élections législatives de juin 2012.</p>
-<p><a href="http://www.jeromecukier.net/projects/elections/circonscriptions.html"><img class="aligncenter size-full wp-image-1274" title="votes" src="http://www.jeromecukier.net/wp-content/uploads/2012/05/votes.jpg" alt="" width="556" height="385" /></a>Et surtout il permet de changer la composition de ces circonscriptions, dont le tracé aujourd&#8217;hui est assez arbitraire. Il y aura 18 circonscriptions à Paris contre 21 aujourd&#8217;hui, et elles ne suivent pas les arrondissements.</p>
+		<p>Mon <a href="http://jckr.github.io/blog/projects/elections/circonscriptions.html">dernier projet</a> permet de voir les résultats des élections présidentielles à Paris par bureau de vote et de les projeter sur les circonscriptions qui serviront aux élections législatives de juin 2012.</p>
+<p><a href="http://jckr.github.io/blog/projects/elections/circonscriptions.html"><img class="aligncenter size-full wp-image-1274" title="votes" src="https://jckr.github.io/blog/wp-content/uploads/2012/05/votes.jpg" alt="" width="556" height="385" /></a>Et surtout il permet de changer la composition de ces circonscriptions, dont le tracé aujourd&#8217;hui est assez arbitraire. Il y aura 18 circonscriptions à Paris contre 21 aujourd&#8217;hui, et elles ne suivent pas les arrondissements.</p>
 <p>Le tracé de ces circonscriptions est déterminant pour le résultat des élections. Aujourd&#8217;hui, par exemple, il y a deux circonscriptions où Nicolas Sarkozy a récupéré plus de 75% des voix au 2ème tour de l&#8217;élection présidentielle, j&#8217;imagine que la gauche ne place pas trop d&#8217;espoir sur leur reconquête. De même, il existe pas moins de 9 circonscriptions où François Hollande a reçu plus de 60% des votes. En l&#8217;état actuel des choses, 12 circonscriptions semblent acquises à la gauche et 6 à la droite, dont 3 pourraient peut-être quand même être gagnées par la gauche.</p>
 <p>Le découpage actuel n&#8217;est optimum ni pour la gauche, ni pour la droite. En modifiant le tracé des circonscriptions, la gauche pourrait toutes les remporter, et la droite pourrait en gagner 12 sur 18 (ou peut-être plus, 12 restant mon <em>high-score</em> personnel). Pour favoriser un camp, l&#8217;idée consiste à répartir les bureaux de votes les plus favorables entre le plus de circonscriptions possibles, plutôt que de les garder dans peu de circonscriptions. En généralisant sur le territoire, on imagine ce que ça peut donner!</p>
 <p>Donc, quelque soit le sentiment actuel, tel ou tel redécoupage peut complètement redistribuer les cartes. C&#8217;est un sentiment dérangeant parce que ces redécoupages arrivent régulièrement et sont relativement opaques. D&#8217;ailleurs, il est assez difficile de faire le lien entre les données des élections présidentielles et les circonscriptions législatives parce que les résultats ne sont que rarement disponibles par bureau de vote.</p>
@@ -641,28 +641,28 @@ Et encore, tout le monde s&#8217;était accordé à dire qu&#8217;en 2007, la ga
     </header>
 	<section class="post-content">
 
-		<p style="text-align: center;"><a href="http://www.jeromecukier.net/projects/elections/dtour2012.html"><img class="aligncenter size-full wp-image-1265" title="front" src="http://www.jeromecukier.net/wp-content/uploads/2012/05/front.jpg" alt="" width="700" height="374" /></a></p>
+		<p style="text-align: center;"><a href="http://jckr.github.io/blog/projects/elections/dtour2012.html"><img class="aligncenter size-full wp-image-1265" title="front" src="https://jckr.github.io/blog/wp-content/uploads/2012/05/front.jpg" alt="" width="700" height="374" /></a></p>
 <p>Qui dit élection présidentielle, dit résultats.</p>
 <p>Et qui dit résultats dit représentation visuelle dans les médias.</p>
 <p>Et donc souvent carte.</p>
 <p>Cela dit, une carte ne nous apprend pas grand chose de ce qui s&#8217;est vraiment passé dans une élection. C&#8217;est vrai que c&#8217;est utile pour retrouver sa région ou sa ville, mais les résultats de deux villes proches géographiquement (par exemple, Boulogne-Billancourt et Issy-les-Moulineaux) n&#8217;a strictement rien à voir.</p>
 <p>En revanche, avec une carte c&#8217;est très difficile de répondre à certaines questions, comme: où a-t-on le plus voté pour Nicolas Sarkozy? Qu&#8217;est ce qui s&#8217;est passé dans les villes qui ont beaucoup voté pour Marine Le Pen ou François Bayrou? D&#8217;où vient l&#8217;explosion du vote blanc au deuxième tour?</p>
-<p>Pour répondre à ces questions, on peut utiliser les <a href="http://www.jeromecukier.net/projects/elections/dtour2012.html">coordonnées parallèles</a>.</p>
+<p>Pour répondre à ces questions, on peut utiliser les <a href="http://jckr.github.io/blog/projects/elections/dtour2012.html">coordonnées parallèles</a>.</p>
 <p>Chaque axe vertical correspond à un vote possible &#8211; d&#8217;abord ceux du premier tour, puis ceux du deuxième. Chaque ligne de couleur correspond à une ville (ou à un département, à une région, ou à la France). Chacune de ces lignes coupe chaque axe à une hauteur qui correspond à la proportion des gens qui ont fait tel ou tel choix. Par exemple, les villes où on a beaucoup voté pour Jean-Luc Mélenchon, comme Bagnolet ou Gennevilliers, se retrouveront vers le haut de l&#8217;axe du milieu.</p>
 <p>En s&#8217;approchant des axes, le curseur devient une croix. Il suffit alors de le faire glisser le long de l&#8217;axe pour dessiner un rectangle, et mettre en valeur toutes les lignes qui passent par ce rectangle. Par exemple, voici les villes qui ont donné plus de 70% de leurs voix du second tour à François Hollande:</p>
-<p><a href="http://jeromecukier.net/projects/elections/dtour2012.html"><img class="aligncenter size-full wp-image-1266" title="hollande70" src="http://www.jeromecukier.net/wp-content/uploads/2012/05/hollande70.jpg" alt="" width="700" height="500" /></a></p>
+<p><a href="http://jckr.github.io/blog/projects/elections/dtour2012.html"><img class="aligncenter size-full wp-image-1266" title="hollande70" src="https://jckr.github.io/blog/wp-content/uploads/2012/05/hollande70.jpg" alt="" width="700" height="500" /></a></p>
 <p>&nbsp;</p>
 <p>On peut tracer autant de rectangles qu&#8217;on veut. Par exemple, on peut ne garder que les endroits qui avaient soutenu Bayrou (par exemple à plus de 10%).</p>
-<p><a href="http://jeromecukier.net/projects/elections/dtour2012.html"><img class="aligncenter size-full wp-image-1267" title="hollande70bayrou10" src="http://www.jeromecukier.net/wp-content/uploads/2012/05/hollande70bayrou10.jpg" alt="" width="700" height="500" /></a></p>
+<p><a href="http://jckr.github.io/blog/projects/elections/dtour2012.html"><img class="aligncenter size-full wp-image-1267" title="hollande70bayrou10" src="https://jckr.github.io/blog/wp-content/uploads/2012/05/hollande70bayrou10.jpg" alt="" width="700" height="500" /></a></p>
 <p>et voilà: il n&#8217;y en a plus que 2.</p>
 <p>Pour supprimer une sélection, il suffit de cliquer près de l&#8217;axe sans glisser. Si on clique sur un rectangle, on peut aussi le faire coulisser le long de l&#8217;axe.</p>
 <p>Avec cette technique, on peut tout de suite voir les fiefs de tel ou tel candidat: il s&#8217;agit des lignes qui touchent le haut du graphique.</p>
 <p>On peut répondre à des questions plus complexes. Par exemple, je parlais de l&#8217;explosion du vote blanc au deuxième tour. Que s&#8217;est-il passé?</p>
 <p>Sélectionnons les endroits où le vote blanc a dépassé les 4% au deuxième tour, tout en restant à moins de 1.5% au premier tour:</p>
-<p><a href="http://www.jeromecukier.net/projects/elections/dtour2012.html"><img class="aligncenter size-full wp-image-1268" title="blanc" src="http://www.jeromecukier.net/wp-content/uploads/2012/05/blanc.jpg" alt="" width="700" height="370" /></a></p>
+<p><a href="http://jckr.github.io/blog/projects/elections/dtour2012.html"><img class="aligncenter size-full wp-image-1268" title="blanc" src="https://jckr.github.io/blog/wp-content/uploads/2012/05/blanc.jpg" alt="" width="700" height="370" /></a></p>
 <p>On voit trois pics: les villes où Marine Le Pen, Jean-Luc Mélenchon ou François Bayrou ont fait un très gros score. On peut continuer à sélectionner et voir que ce sont bien les villes qui sont dans la pointe de l&#8217;un des trois triangles et pas celles qui passent par le bas qui se retrouvent dans ce cas de figure. Ces électeurs ont préféré voter blanc plutôt que de choisir.</p>
 <p>Bonne exploration!</p>
-<p><a href="http://www.jeromecukier.net/projects/elections/dtour2012.html">http://www.jeromecukier.net/projects/elections/dtour2012.html</a></p>
+<p><a href="http://jckr.github.io/blog/projects/elections/dtour2012.html">http://jckr.github.io/blog/projects/elections/dtour2012.html</a></p>
 	    		<div class="clear">&nbsp;</div>
 	</section>
 </article><!-- #post-## -->
@@ -865,7 +865,7 @@ Et encore, tout le monde s&#8217;était accordé à dire qu&#8217;en 2007, la ga
 	(function(){
 		var corecss = document.createElement('link');
 		var themecss = document.createElement('link');
-		var corecssurl = "http://localhost:8888/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		var corecssurl = "/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
 		if ( corecss.setAttribute ) {
 				corecss.setAttribute( "rel", "stylesheet" );
 				corecss.setAttribute( "type", "text/css" );
@@ -875,7 +875,7 @@ Et encore, tout le monde s&#8217;était accordé à dire qu&#8217;en 2007, la ga
 				corecss.href = corecssurl;
 		}
 		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
-		var themecssurl = "http://localhost:8888/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
+		var themecssurl = "/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
 		if ( themecss.setAttribute ) {
 				themecss.setAttribute( "rel", "stylesheet" );
 				themecss.setAttribute( "type", "text/css" );

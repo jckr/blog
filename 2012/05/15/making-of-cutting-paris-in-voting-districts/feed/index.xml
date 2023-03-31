@@ -19,7 +19,7 @@
 		<link>/2012/05/15/making-of-cutting-paris-in-voting-districts/#comment-325</link>
 		<dc:creator><![CDATA[Jerome Cukier &#187; Making-of: the map of congress equality]]></dc:creator>
 		<pubDate>Thu, 24 May 2012 10:36:51 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1277#comment-325</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1277#comment-325</guid>
 		<description><![CDATA[[...] Like last time, though, I am writing a follow-up technical post about how I dealt with the issues of this visualization. [...]]]></description>
 		<content:encoded><![CDATA[<p>[&#8230;] Like last time, though, I am writing a follow-up technical post about how I dealt with the issues of this visualization. [&#8230;]</p>
 ]]></content:encoded>
@@ -29,7 +29,7 @@
 		<link>/2012/05/15/making-of-cutting-paris-in-voting-districts/#comment-324</link>
 		<dc:creator><![CDATA[Les data en forme &#187; OWNI, News, Augmented]]></dc:creator>
 		<pubDate>Tue, 22 May 2012 12:23:38 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1277#comment-324</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1277#comment-324</guid>
 		<description><![CDATA[[...] ne rien gâcher, Jérôme nous explique dans l&#8217;un de ses derniers posts comment il a construit cette [...]]]></description>
 		<content:encoded><![CDATA[<p>[&#8230;] ne rien gâcher, Jérôme nous explique dans l&#8217;un de ses derniers posts comment il a construit cette [&#8230;]</p>
 ]]></content:encoded>
@@ -39,7 +39,7 @@
 		<link>/2012/05/15/making-of-cutting-paris-in-voting-districts/#comment-323</link>
 		<dc:creator><![CDATA[jerome]]></dc:creator>
 		<pubDate>Tue, 15 May 2012 14:42:11 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1277#comment-323</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1277#comment-323</guid>
 		<description><![CDATA[there is a Git street of sorts, too, &quot;rue Gît-le-coeur&quot;, though it has little to do with every coder&#039;s favorite cat]]></description>
 		<content:encoded><![CDATA[<p>there is a Git street of sorts, too, &#8220;rue Gît-le-coeur&#8221;, though it has little to do with every coder&#8217;s favorite cat</p>
 ]]></content:encoded>
@@ -49,7 +49,7 @@
 		<link>/2012/05/15/making-of-cutting-paris-in-voting-districts/#comment-322</link>
 		<dc:creator><![CDATA[Jim Vallandingham]]></dc:creator>
 		<pubDate>Tue, 15 May 2012 14:27:37 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1277#comment-322</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1277#comment-322</guid>
 		<description><![CDATA[Thanks for the links!
 
 Ha - &#039;rue Python&#039;. Perhaps &#039;Ruby&#039; would be more likely to find then javascript...]]></description>
@@ -62,7 +62,7 @@ Ha - &#039;rue Python&#039;. Perhaps &#039;Ruby&#039; would be more likely to fi
 		<link>/2012/05/15/making-of-cutting-paris-in-voting-districts/#comment-321</link>
 		<dc:creator><![CDATA[jerome]]></dc:creator>
 		<pubDate>Tue, 15 May 2012 14:10:21 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1277#comment-321</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1277#comment-321</guid>
 		<description><![CDATA[Hi Jim, thanks
 actually I&#039;m not very good at manipulating geo data (but wish I could be better). I do some geocoding now and again though so I have python scripts that can in theory lookup a bunch of addresses and spit back longitudes and latitudes. Only by the time I run them the APIs they use are deprecated or seriously limited. so for this exercise I ended up using websites with online forms to lookup a bunch of addresses in one go. I used http://www.batchgeocodeur.mapjmz.com/ which can lookup 10,000 addresses but which is quite slow and runs against google geocoder (I presume) and http://www.gpsvisualizer.com/geocoder/ which can process 1,000 addresses and uses yahoo&#039;s. I actually looked up the missing addresses or the ones that were apparently incorrect on google map and manually entered more reliable points. I have been living for about 15 years in Paris so it was time I put that knowledge to good use :) Though, I have discovered that Paris has a &quot;rue Python&quot;. no word on a javascript avenue though.]]></description>
 		<content:encoded><![CDATA[<p>Hi Jim, thanks<br />
@@ -74,7 +74,7 @@ actually I&#8217;m not very good at manipulating geo data (but wish I could be b
 		<link>/2012/05/15/making-of-cutting-paris-in-voting-districts/#comment-320</link>
 		<dc:creator><![CDATA[Jim Vallandingham]]></dc:creator>
 		<pubDate>Tue, 15 May 2012 13:55:44 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1277#comment-320</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1277#comment-320</guid>
 		<description><![CDATA[Great writeup! - and really great insights on how you tackled this interesting problem.
 
 Could I ask what geocoding service you were using for this?

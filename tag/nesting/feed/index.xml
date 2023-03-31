@@ -8,7 +8,7 @@
 	>
 
 <channel>
-	<title>nesting &#8211; jeromecukier.net</title>
+	<title>nesting &#8211; jckr.github.io/blog</title>
 	<atom:link href="http://localhost/tag/nesting/feed/" rel="self" type="application/rss+xml" />
 	<link>/</link>
 	<description>Just another WordPress site</description>
@@ -34,12 +34,12 @@
 		<category><![CDATA[rollup]]></category>
 		<category><![CDATA[trees]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=502</guid>
-		<description><![CDATA[Previous: array functions in javascript and protovis Reshaping complex arrays This really is what protovis data processing is all about. In today&#8217;s tutorial, I am going to refer extensively to protovis&#8217;s Becker&#8217;s Barley example. One reason for that is that it&#8217;s also used in the API documentation of the methods we are going to cover, <a class="read-more" href="/2011/02/11/working-with-data-in-protovis-part-4-of-5/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
-				<content:encoded><![CDATA[<p><a href="http://www.jeromecukier.net/?p=494">Previous: array functions in javascript and protovis</a></p>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=502</guid>
+		<description><![CDATA[Previous: array functions in javascript and protovis Reshaping complex arrays This really is what protovis data processing is all about. In today&#8217;s tutorial, I am going to refer extensively to protovis&#8217;s Becker&#8217;s Barley example. One reason for that is that it&#8217;s also used in the API documentation of the methods we are going to cover, <a class="read-more" href="/blog/2011/02/11/working-with-data-in-protovis-part-4-of-5/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p><a href="http://jckr.github.io/blog/?p=494">Previous: array functions in javascript and protovis</a></p>
 <h2>Reshaping complex arrays</h2>
 <p>This really is what protovis data processing is all about.<br />
-In today&#8217;s tutorial, I am going to refer extensively to protovis&#8217;s <a href="http://vis.stanford.edu/protovis/ex/barley.html">Becker&#8217;s Barley</a> example. One reason for that is that it&#8217;s also used in the <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Nest.html">API documentation of the methods</a> we are going to cover, and also because I am posting <a href="http://www.jeromecukier.net/?p=534">a line-by-line explanation of this example</a> that you can refer to.</p>
+In today&#8217;s tutorial, I am going to refer extensively to protovis&#8217;s <a href="http://vis.stanford.edu/protovis/ex/barley.html">Becker&#8217;s Barley</a> example. One reason for that is that it&#8217;s also used in the <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Nest.html">API documentation of the methods</a> we are going to cover, and also because I am posting <a href="http://jckr.github.io/blog/?p=534">a line-by-line explanation of this example</a> that you can refer to.</p>
 <p>So far we’ve seen that :</p>
 <ul>
 <li>Associative arrays are great as data elements, as their various values can be used for various attributes.<br />
@@ -70,7 +70,7 @@ An array of the shape:</p>
 </ul>
 <h3>Nesting</h3>
 <p>For this last reason, you may want to turn one flat array of associative arrays into an array of arrays of associative arrays. This process is called <strong>nesting</strong>.</p>
-<p><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/nesting.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/nesting.png" alt="" title="nesting" width="700" height="250" class="aligncenter size-full wp-image-528" /></a></p>
+<p><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/nesting.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/nesting.png" alt="" title="nesting" width="700" height="250" class="aligncenter size-full wp-image-528" /></a></p>
 <h4>Simple nesting</h4>
 <p>If you turn a <strong>single array</strong> like the one on the left-hand side to <strong>an array of arrays</strong> like on the right-hand side, you could easily do 3 smaller charts, one next to the other, by creating them inside of panels. You could have some information at this panel level (for instance the variety) and the rest at a lower level. </p>
 <p>Fortunately, there are protovis methods that can turn your flat list into a more complex array of arrays. And since protovis methods are meant to be chained, you can even go on and create arrays of arrays of arrays of arrays if needs be.<br />
@@ -81,7 +81,7 @@ To do the above, all you have to type is </p>
 <p>What this does is that it nests your <em>barley</em> array, according to the <em>variety</em> key. entries() at the end is required to obtain the array of arrays needed.</p>
 <p>Here is an example of what can be done with both kinds of data structures in just a few lines of code (which won&#8217;t include the data proper. The long, flat array is stored in the variable barley, as above).<br />
 Without nesting:<br />
-<a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/BarleyWithoutNesting.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/BarleyWithoutNesting.png" alt="" title="BarleyWithoutNesting" width="606" height="198" class="aligncenter size-full wp-image-594" /></a></p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/BarleyWithoutNesting.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/BarleyWithoutNesting.png" alt="" title="BarleyWithoutNesting" width="606" height="198" class="aligncenter size-full wp-image-594" /></a></p>
 <pre class="brush: jscript; title: ; notranslate">var vis = new pv.Panel()
     .width(600)
     .height(200)
@@ -97,7 +97,7 @@ vis.add(pv.Bar)
 vis.render();</pre>
 <p>As the pv.Bar goes through the array, there is not much it can do to structure it. We can just size the bars according to the value of yield, and color them according to another key (here the year).</p>
 <p>Now using nesting:<br />
-<a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/BarleyWithNesting2.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/BarleyWithNesting2.png" alt="" title="BarleyWithNesting2" width="711" height="160" class="aligncenter size-full wp-image-598" /></a></p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/BarleyWithNesting2.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/BarleyWithNesting2.png" alt="" title="BarleyWithNesting2" width="711" height="160" class="aligncenter size-full wp-image-598" /></a></p>
 <pre class="brush: jscript; highlight: [1,8,15]; title: ; notranslate">barley2=pv.nest(barley).key(function(d) d.variety).entries();
 barley2=pv.nest(barley).key(function(d) d.variety).entries();
 var vis = new pv.Panel()
@@ -154,8 +154,8 @@ vis.render();
 </td>
 </tr>
 <tr>
-<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/sort-unsorted.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/sort-unsorted.png" alt="" title="sort-unsorted" width="300" height="250" class="aligncenter size-full wp-image-524" /></a></td>
-<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/sort-sorted.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/sort-sorted.png" alt="" title="sort-sorted" width="300" height="250" class="aligncenter size-full wp-image-525" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/sort-unsorted.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/sort-unsorted.png" alt="" title="sort-unsorted" width="300" height="250" class="aligncenter size-full wp-image-524" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/sort-sorted.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/sort-sorted.png" alt="" title="sort-sorted" width="300" height="250" class="aligncenter size-full wp-image-525" /></a></td>
 </tr>
 </table>
 </li>
@@ -340,7 +340,7 @@ What rollup does is that it would go through each of the values that correspond 
     ]</pre>
 <p>so rollup will just look at each element of this array and apply the function.<br />
 This is what (data) in &#8220;function(data)&#8221; corresponds to.<br />
-Next, we tell protovis what to do with these elements. Here, we are interested in the average, so we take pv.mean (not pv.average, <a href="http://www.jeromecukier.net/?p=494">remember</a>?)<br />
+Next, we tell protovis what to do with these elements. Here, we are interested in the average, so we take pv.mean (not pv.average, <a href="http://jckr.github.io/blog/?p=494">remember</a>?)<br />
 However, we can&#8217;t directly compute the average of an array of associative arrays &#8211; we must tell protovis exactly what to average. This is why we use an accessor function, function(d) d.score.</p>
 <p>Of course, pv.mean used in this example can be replaced by just about any function.</p>
 <p>In the name of clarity, especially if there is only one property that can be aggregated, you can declare a function outside of the rollup() method. This is useful if you are going to aggregate your array by different dimensions:</p>
@@ -362,9 +362,9 @@ The main advantage of having a flat array is that you can nest it in a different
 <pre class="brush: jscript; light: true; title: ; notranslate">barley=pv.flatten(barley).key(&quot;variety&quot;).key(&quot;site&quot;).key(&quot;year&quot;).key(&quot;yield&quot;).array()</pre>
 <p>Finally, pv.tree &#8211; well, I haven&#8217;t seen this method used outside the <a href="http://vis.stanford.edu/protovis/jsdoc/symbols/pv.Tree.html">documentation</a>. It&#8217;s not used in any live example, not covered by any question in the forum, and I haven&#8217;t found any trace of it in the internet. So I&#8217;d rather leave you with the explanation in the documentation which is fairly clear than come up with my own. If you find yourself in a situation like in the documentation, where you have a flat array of associative arrays, which have a property that could be interpreted as a hierarchy, then you could use this method to turn your array in something more useful to protovis.</p>
 <h3>Putting it all together</h3>
-<p>Instead of coming up with a specific new example for this section I refer you to my explanation of the <a href="http://www.jeromecukier.net/?p=534">Becker&#8217;s Barley example</a>.<br />
-On the same subject, see a comparison of how to <a href="http://www.jeromecukier.net/?p=550">re-create Becker&#8217;s Barley with protovis and Tableau</a></p>
-<p>next: <a href="http://www.jeromecukier.net/?p=623">working with layouts</a></p>
+<p>Instead of coming up with a specific new example for this section I refer you to my explanation of the <a href="http://jckr.github.io/blog/?p=534">Becker&#8217;s Barley example</a>.<br />
+On the same subject, see a comparison of how to <a href="http://jckr.github.io/blog/?p=550">re-create Becker&#8217;s Barley with protovis and Tableau</a></p>
+<p>next: <a href="http://jckr.github.io/blog/?p=623">working with layouts</a></p>
 ]]></content:encoded>
 			<wfw:commentRss>/2011/02/11/working-with-data-in-protovis-part-4-of-5/feed/</wfw:commentRss>
 		<slash:comments>5</slash:comments>
@@ -384,8 +384,8 @@ On the same subject, see a comparison of how to <a href="http://www.jeromecukier
 		<category><![CDATA[rollup]]></category>
 		<category><![CDATA[treillis]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=534</guid>
-		<description><![CDATA[We are taking a look at the Protovis Becker&#8217;s Barley example. Data: The code begins by defining a function that will be used throughout the program. this function expects an array of associative arrays which have the key “yield”. What it does is that it returns the median of all the values of the key <a class="read-more" href="/2011/02/11/protovis-analysis-of-the-beckers-barley-example-sketch/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=534</guid>
+		<description><![CDATA[We are taking a look at the Protovis Becker&#8217;s Barley example. Data: The code begins by defining a function that will be used throughout the program. this function expects an array of associative arrays which have the key “yield”. What it does is that it returns the median of all the values of the key <a class="read-more" href="/blog/2011/02/11/protovis-analysis-of-the-beckers-barley-example-sketch/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[<p>We are taking a look at the Protovis <a href="http://vis.stanford.edu/protovis/ex/barley.html">Becker&#8217;s Barley</a> example.</p>
 <pre class="brush: jscript; title: ; notranslate">&lt;html&gt;
   &lt;head&gt;
@@ -743,21 +743,21 @@ Once this is taken care of, the various objects can be added one to the other na
 		<category><![CDATA[Tableau]]></category>
 		<category><![CDATA[tutorial]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=550</guid>
-		<description><![CDATA[Protovis, like Tableau, are based on the grammar of graphics framework. In a nutshell, in both environments, a chart designer can map visual attributes (such as x or y dimension, color, shape, etc.) to dimensions of data. The flat file which Becker&#8217;s Barley is based on can be used in Tableau public nearly as is. <a class="read-more" href="/2011/02/11/working-with-data-in-protovis-interlude-protovis-nesting-vs-tableau/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=550</guid>
+		<description><![CDATA[Protovis, like Tableau, are based on the grammar of graphics framework. In a nutshell, in both environments, a chart designer can map visual attributes (such as x or y dimension, color, shape, etc.) to dimensions of data. The flat file which Becker&#8217;s Barley is based on can be used in Tableau public nearly as is. <a class="read-more" href="/blog/2011/02/11/working-with-data-in-protovis-interlude-protovis-nesting-vs-tableau/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[<p>Protovis, like Tableau, are based on the grammar of graphics framework. In a nutshell, in both environments, a chart designer can map visual attributes (such as x or y dimension, color, shape, etc.) to dimensions of data. </p>
 <p>The flat file which <a href="http://vis.stanford.edu/protovis/ex/barley.html">Becker&#8217;s Barley</a> is based on can be used in Tableau public nearly as is.<br />
 Here&#8217;s a size-by-size comparison of the results:</p>
 <table>
 <tr>
-<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/protovisBarley.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/protovisBarley.png" alt="" title="protovisBarley" width="350" height="830" class="aligncenter size-full wp-image-551" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/protovisBarley.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/protovisBarley.png" alt="" title="protovisBarley" width="350" height="830" class="aligncenter size-full wp-image-551" /></a></td>
 <td><script type="text/javascript" src="http://public.tableausoftware.com/javascripts/api/viz_v1.js"></script><object class="tableauViz" width="356" height="901" style="display:none;"><param name="name" value="barley/Dashboard1" /><param name="toolbar" value="no" /><param name="tabs" value="no" /></object><noscript>Dashboard 1 <br /><a href="#"><img alt="Dashboard 1 " src="http://public.tableausoftware.com/static/images/ba/barley/Dashboard1/1_rss.png" height="100%" /></a></noscript></td>
 </tr>
 </table>
 <h2>How it&#8217;s done in Protovis</h2>
 <p>In protovis, the flat file is nested several times, so that its various elements can be called in a hierarchy from series of dots per variety, to panel per sites to a grander panel. Legend and ticks are added by hand for a perfect finish. Still, some careful planning is required to prepare the data file and to adjust the various elements (choice of colors, sizes, etc.)</p>
 <h2>How it&#8217;s done in Tableau</h2>
-<p><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/tableauBarley.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/tableauBarley.png" alt="" title="tableauBarley" width="665" height="497" class="aligncenter size-full wp-image-554" /></a><br />
+<p><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/tableauBarley.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/tableauBarley.png" alt="" title="tableauBarley" width="665" height="497" class="aligncenter size-full wp-image-554" /></a><br />
 The data file, unsurprisingly, has 4 dimensions: site, variety, year and yield. In tableau terms, yield is a measure (a numerical dimension) while the other 3 are categorical dimensions. With a few clicks, it is possible to get a result which is similar to the original vis in Protovis. We assign yield to column (horizontal attribute), site and variety to row in that order. We also untick aggregate measures in Analysis, so we get little circles and not big bars. Here, I&#8217;ve manually sorted the sites and the varieties. </p>
 <h2>Conclusion</h2>
 <p>It is much, much easier to achieve a similar result with Tableau, however using protovis provides a finer control. </p>

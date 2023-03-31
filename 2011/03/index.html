@@ -7,14 +7,14 @@
 <meta name="HandheldFriendly" content="True" />
 <meta name="MobileOptimized" content="320" />
 
-<title>March | 2011 | jeromecukier.net</title>
+<title>March | 2011 | jckr.github.io/blog</title>
 
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="/xmlrpc.php">
 <link rel='dns-prefetch' href='//fonts.googleapis.com' />
 <link rel='dns-prefetch' href='//s.w.org' />
-<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Feed" href="/feed/" />
-<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Comments Feed" href="/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jckr.github.io/blog &raquo; Feed" href="/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jckr.github.io/blog &raquo; Comments Feed" href="/comments/feed/" />
 <!-- This site uses the Google Analytics by MonsterInsights plugin v7.0.5 - Using Analytics tracking - https://www.monsterinsights.com/ -->
 <!-- Note: MonsterInsights is not currently configured on this site. The site owner needs to authenticate with Google Analytics in the MonsterInsights settings panel. -->
 <!-- No UA code set -->
@@ -66,7 +66,7 @@ img.emoji {
 
 <body class="archive date group-blog">
 
-<header id="masthead" role="banner" class="site-head site-header" style="background-image: url(http://localhost:8888/wp-content/uploads/2018/04/Screenshot-2018-04-09-19.38.59.png);">
+<header id="masthead" role="banner" class="site-head site-header" style="background-image: url(/wp-content/uploads/2018/04/Screenshot-2018-04-09-19.38.59.png);">
     <nav id="site-navigation" class="main-navigation" role="navigation">
         <div>
             <h1 class="menu-toggle">
@@ -85,7 +85,7 @@ img.emoji {
                 
                 <div class="social-icons">
                                                                                                                                                                                                                                                                                                                                                                                                                                                     </div>
-                <h1 class="blog-title"><a class="blog-logo" href='/' rel='home'>jeromecukier.net</a></h1>
+                <h1 class="blog-title"><a class="blog-logo" href='/blog/' rel='home'>jckr.github.io/blog</a></h1>
                 <h2 class="blog-description">Just another WordPress site</h2>
             </div>
         </div>
@@ -114,8 +114,8 @@ img.emoji {
     </header>
 	<section class="post-content">
 
-		<p>I just posted my <a href="http://www.datavizchallenge.org/">www.datavizchallenge.org</a> <a href="http://www.jeromecukier.net/stuff/datavizchallenge/index.html">entry</a>!<br />
-<a href="http://www.jeromecukier.net/stuff/datavizchallenge/index.html"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/03/myEntry3.png" alt="" title="My  datavizchallenge.org entry" width="323" height="330" class="aligncenter size-full wp-image-801" /></a></p>
+		<p>I just posted my <a href="http://www.datavizchallenge.org/">www.datavizchallenge.org</a> <a href="http://jckr.github.io/blog/stuff/datavizchallenge/index.html">entry</a>!<br />
+<a href="http://jckr.github.io/blog/stuff/datavizchallenge/index.html"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/03/myEntry3.png" alt="" title="My  datavizchallenge.org entry" width="323" height="330" class="aligncenter size-full wp-image-801" /></a></p>
 <p>So here&#8217;s a little explanation about what I&#8217;ve done, how and why. </p>
 <p>The idea behind the data provider web site, <a href="http://www.whatwepayfor.com/">WhatWePayFor</a>, is that billions and millions don&#8217;t talk to the average citizen. This doesn&#8217;t help them understand where their money goes.</p>
 <p>And in my work, I generally try to show as little data as possible to make a point. And I like to use interactivity to involve users. </p>
@@ -137,12 +137,12 @@ img.emoji {
     </header>
 	<section class="post-content">
 
-		<p>This is a follow-up to <a href="http://www.jeromecukier.net/?p=764">the previous post</a> where I used a Dorling cartogram to show election results in France. So how did I come up with that?</p>
+		<p>This is a follow-up to <a href="http://jckr.github.io/blog/?p=764">the previous post</a> where I used a Dorling cartogram to show election results in France. So how did I come up with that?</p>
 <h2>Step 1: the data</h2>
 <p>Without data, there wouldn&#8217;t be much to plot, right? So the first order of business was to fetch the data, which is theoretically available from an <a href="http://elections.interieur.gouv.fr/CN2011/">official source.</a> Unfortunately, there is no way to download those results at once, instead they are presented in a myriad of formatted HTML pages &#8211; over 2000 in all. </br><br />
 I used <a href="http://www.google.com/search?q=wget">wget</a> to download them all. wget allows for recursive download, that is, you can download a page, and all the links from that page, etc. You can also specify the depth of the recursive download, which is a good idea in that case because there are lots of duplicates of that information on the server, so trying to get everything will take a couple of hours vs about 10 minutes.</p>
 <p>Once that&#8217;s done, I used python and <a href="http://www.crummy.com/software/BeautifulSoup/">Beautiful Soup</a> to turn the HTML pages into nice JSON objects. Fortunately the pages followed the same strict template, so I could run a relatively simple extraction script, like: look at the second HTML table of the page, get the number of registered voters who didn&#8217;t vote from the 2nd cell of the 2nd row, etc.<br />
-Once that was done I came up with 2 files: <a href="http://www.jeromecukier.net/wp-content/uploads/2011/03/votes.js">one which listed the aggregate votes per county</a> and per party, and another one which listed all the candidates, their affiliation and their votes. I ended up using only the 1st one, actually at an even more aggregated level, but I may use the second one for further work.</p>
+Once that was done I came up with 2 files: <a href="http://jckr.github.io/blog/wp-content/uploads/2011/03/votes.js">one which listed the aggregate votes per county</a> and per party, and another one which listed all the candidates, their affiliation and their votes. I ended up using only the 1st one, actually at an even more aggregated level, but I may use the second one for further work.</p>
 <h2>Next up: setting the geography</h2>
 <p>A dorling cartogram is really a kind of <a href="http://en.wikipedia.org/wiki/Force-based_algorithms_(graph_drawing)">force-directed layout graph</a> where the nodes represent geographical entities, which are initially positioned at a place corresponding to their geography, but which are then resized by a variable, and whose movement is subject to several forces: each node is linked to its original geographical neighbors, which attract each other, but also cannot intersect with other nodes, so it pushes back its neighbors.</p>
 <p>So for this to work I had to:
@@ -152,7 +152,7 @@ Once that was done I came up with 2 files: <a href="http://www.jeromecukier.net/
 </ul>
 <p>To get the initial position I fetched the list of all French towns and their lon-lat coordinates which I averaged for each département. That gave me a workable proxy of the centroid of that departement. Note that I didn&#8217;t need anything very accurate at this stage, since nodes are going to be pushing each other anyway.<br />
 I listed the neighbors manually, since the number of départements is workable. Else, one possible way to do that from a shape file is look at every point of every shape and list all the entities that use it. If two entities use it they are neighbors. Again at this stage it&#8217;s not mandatory to be exhaustive. If an entity is surrounded by 8 others and we only use 4 the results will look sensibly the same.<br />
-Anyone who wants to create dorling cartograms for France can <a href="http://www.jeromecukier.net/wp-content/uploads/2011/03/francedorling.js">reuse the file</a>. </p>
+Anyone who wants to create dorling cartograms for France can <a href="http://jckr.github.io/blog/wp-content/uploads/2011/03/francedorling.js">reuse the file</a>. </p>
 <h2>Putting it all together</h2>
 <p>The rest is standard protovis fare. There is an example which uses <a href="http://vis.stanford.edu/protovis/ex/cartogram.html">Dorling cartograms</a> which I used as a basis. I prepared my data files so that I could aggregate the stuff I needed at the level of the département (which is about 20 counties). I never really considered showing anything at the county level because except for looking up specific results it is never too relevant. For instance, in most places there are some agreement between parties which don&#8217;t all present candidates in order to favor their allies. </p>
 <p>An interesting parameter when building the visualization is choosing the constant by which to multiply the size of the nodes. If it is too high, the cartogram will look like a featureless cluster of circles. If it is too low, it will ressemble the map a lot, and circles won&#8217;t touch each other.</p>
@@ -170,13 +170,13 @@ Anyone who wants to create dorling cartograms for France can <a href="http://www
     </header>
 	<section class="post-content">
 
-		[I write this here post in French because it's more relevant for a French audience, a <a href="http://www.jeromecukier.net/?p=796">more technical post</a> with an explanation of how it's done follows in English].</p>
+		[I write this here post in French because it's more relevant for a French audience, a <a href="http://jckr.github.io/blog/?p=796">more technical post</a> with an explanation of how it's done follows in English].</p>
 
 J'ai écrit que j'avais été déçu par les infographies des principaux médias au lendemain des cantonales.</p>
 
 Si on prend la carte du Monde par exemple, on y voit la France nettemement découpée en départements, soit bien roses, soit bien bleus, ou à la rigueur gris si l'issue est incertaine. Mais ce n'est pas l'enjeu de ces élections. Ce sont les dernières élections avant la présidentielle, et on est donc attentif aux enseignements nationaux du scrutin au-delà de la composition des conseils généraux. Ce qu'on commente, c'est plus la percée de l'extrême droite ou le poids de l'abstention. C'est la capacité de la droite ou de la gauche à s'imposer. </p>
 Dans cette optique, chaque département n'a pas le même poids. Le Nord par exemple, avec presque 900,000 électeurs, compte plus que la Lozère qui en compte juste un peu plus de 20,000. Donc, tracer une carte géographiquement exacte n'est pas très honnête, puisque cela cache ces différences qui peuvent être énormes.</p>
-Comme je n'ai pas l'habitude de porter des critiques <a href="http://www.jeromecukier.net/?p=661">sans proposer autre chose</a>, j'ai fabriqué des cartogrammes de Dorling pour rendre compte de ce qui s'est vraiment passé dimanche dernier.</p>
+Comme je n'ai pas l'habitude de porter des critiques <a href="http://jckr.github.io/blog/?p=661">sans proposer autre chose</a>, j'ai fabriqué des cartogrammes de Dorling pour rendre compte de ce qui s'est vraiment passé dimanche dernier.</p>
 
 Les cartogrammes, ce sont presque des cartes, sauf que le côté géographique n'est pas pris au sens strict. Leur forme dépend plus des données qu'elles représentent. Et dans la version de Dorling, on remplace les morceaux de la carte (ici, les départements) par des cercles, plus ou moins gros. Là, la taille des cercles dépend du nombre d'électeurs inscrits aux cantonales. Du coup, leur position sur la carte n'est pas exactement la même que celle des départements sur la carte de France mais elle est assez proche pour qu'on puisse les retrouver.</p>
 
@@ -187,9 +187,9 @@ Je propose 3 scénarios: une comparaison gauche-droite, l'importance de l'extrê
 <input type="radio" checked name="group1" value="0" onclick="sc=0;reinit() ;vis.render();">Gauche-droite
 <input type="radio" name="group1" value="1" onclick="sc=1;reinit() ;vis.render();">Extrême-droite
 <input type="radio" name="group1" value="2" onclick="sc=2;reinit() ;vis.render();">Abstention</form>
-<script type="text/javascript" src="http://www.jeromecukier.net/wp-content/uploads/2011/03/votes.js"></script>
-<script type="text/javascript" src="http://www.jeromecukier.net/wp-content/uploads/2011/03/francedorling.js"></script>
-<script type="text/javascript" src="http://www.jeromecukier.net/wp-content/uploads/2011/03/cantonales.js"></script>
+<script type="text/javascript" src="https://jckr.github.io/blog/wp-content/uploads/2011/03/votes.js"></script>
+<script type="text/javascript" src="https://jckr.github.io/blog/wp-content/uploads/2011/03/francedorling.js"></script>
+<script type="text/javascript" src="https://jckr.github.io/blog/wp-content/uploads/2011/03/cantonales.js"></script>
 	    		<div class="clear">&nbsp;</div>
 	</section>
 </article><!-- #post-## -->
@@ -204,7 +204,7 @@ Je propose 3 scénarios: une comparaison gauche-droite, l'importance de l'extrê
     </header>
 	<section class="post-content">
 
-		In my short tutorial on <a href="http://www.jeromecukier.net/?p=426">working with data and protovis</a> I briefly covered some standard javascript and protovis methods to <a href="http://www.jeromecukier.net/?p=494">work with arrays</a>.
+		In my short tutorial on <a href="http://jckr.github.io/blog/?p=426">working with data and protovis</a> I briefly covered some standard javascript and protovis methods to <a href="http://jckr.github.io/blog/?p=494">work with arrays</a>.
 
 The more I work with Protovis, the more I am convinced that efficient array manipulation is key to achieving just about anything with the library. So, I would like to go into more detail in some javascript methods for building, processing and testing arrays that can really be helpful.
 <h3>Going through arrays: map and forEach</h3>
@@ -233,7 +233,7 @@ vis.add(pv.Bar)
 
 vis.render();
 </pre></td>
-<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/categories.png"><img class="aligncenter size-full wp-image-483" title="categories" src="http://www.jeromecukier.net/wp-content/uploads/2011/02/categories.png" alt="" width="144" height="135" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/categories.png"><img class="aligncenter size-full wp-image-483" title="categories" src="https://jckr.github.io/blog/wp-content/uploads/2011/02/categories.png" alt="" width="144" height="135" /></a></td>
 </tr>
 </tbody>
 </table>
@@ -296,7 +296,7 @@ It is also possible to get only the elements that fit a condition using the filt
 </pre>
 
 Of course, the more complex the array, the more interesting these functions get. 
-With the barley array from <a href="http://www.jeromecukier.net/?p=502">part 4</a>:
+With the barley array from <a href="http://jckr.github.io/blog/?p=502">part 4</a>:
 
 <pre class="brush: jscript; title: ; notranslate" title=""> barley.filter(function(d) {return d.variety==&quot;Manchuria&quot;;}
 /* this will return: 
@@ -463,9 +463,9 @@ No matter the manipulations you inflict to an array you will always be able to m
 		<h2>What is a map?</h2>
 <p>before we start looking at the code it may be a good idea to think of the best way to represent a country.<br />
 Countries are areas of land surrounded by borders, which are imaginary (or sometimes physical) <strong>lines</strong> going through a set of <strong>points</strong>.<br />
-<a href="http://www.jeromecukier.net/wp-content/uploads/2011/03/square.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/03/square.png" alt="" title="square" width="200" height="200" class="aligncenter size-full wp-image-748" /></a></p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/03/square.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/03/square.png" alt="" title="square" width="200" height="200" class="aligncenter size-full wp-image-748" /></a></p>
 <p>Some countries are made of one of such surfaces, but many countries are not one contiguous territory (they may include islands for instance) so they could be made out of <strong>several disjointed polygons</strong>.<br />
-<a href="http://www.jeromecukier.net/wp-content/uploads/2011/03/square1.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/03/square1.png" alt="" title="square" width="200" height="200" class="aligncenter size-full wp-image-749" /></a>.</p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/03/square1.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/03/square1.png" alt="" title="square" width="200" height="200" class="aligncenter size-full wp-image-749" /></a>.</p>
 <p>Now let&#8217;s put on our protovis hat. Let&#8217;s suppose we want to draw a map where each country could be colored differently (choropleth). What kind of data structure should be use to represent that?<br />
 First there should be a sort of array of countries. Each country should be an item in that array, so they can be indexed and assigned an individual color and various data points.<br />
 Then, at the lowest level, we would be drawing polygons, which are treated as pv.Line in protovis. For each polygon, we would require an array of coordinate pairs. To draw a country, we would need a list (array) of those polygons. </p>
@@ -487,7 +487,7 @@ Then, at the lowest level, we would be drawing polygons, which are treated as pv
 ...
 ]</pre>
 <h2>the map projections example</h2>
-<p><a href="http://www.jeromecukier.net/wp-content/uploads/2011/03/projections.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/03/projections.png" alt="" title="projections" width="600" height="360" class="aligncenter size-full wp-image-754" /></a></p>
+<p><a href="http://jckr.github.io/blog/wp-content/uploads/2011/03/projections.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/03/projections.png" alt="" title="projections" width="600" height="360" class="aligncenter size-full wp-image-754" /></a></p>
 <p>Can be found <a href="http://vis.stanford.edu/protovis/ex/projection.html">here: </a> http://vis.stanford.edu/protovis/ex/projection.html</p>
 <pre class="brush: jscript; title: ; notranslate" title="">/*
  * A diverging color scale, using previously-computed quantiles of population
@@ -600,7 +600,7 @@ countries.forEach(function(c) {
       : &quot;#ccc&quot;; // unknown
 });</pre>
 <p>As the remark says, this will precompute the country&#8217;s color once and for all.<br />
-The <a href="http://www.jeromecukier.net/?p=494">forEach() method</a> goes to every element of the countries array.<br />
+The <a href="http://jckr.github.io/blog/?p=494">forEach() method</a> goes to every element of the countries array.<br />
 the c.color = statement will add a color key to each element of that array (which, as you may recall, already has values for the code, name and borders keys.<br />
 What it does is that is retrieves the country code of that element of countries, c.code, and uses that to find out whether we have an area value for that country code (this is stats[/c].area?).<br />
 If this is the case, we are going to compute the color that should be attributed to the country, by passing the population divided by the area to the color scale we just made. Else, we just use light grey.</p>
@@ -629,7 +629,7 @@ This time, we use function(c) c.borders as data. That is, we go into the borders
 <p>Finally, we are going to create a filled polygon for each of these independent areas. This is achieved by adding a pv.Line to the previous panels. Likewise, we use (function(b) b) as data, meaning that we go yet another level into the borders array. Now, we are accessing the pairs of longitude + latitude numbers.</p>
 <p>geo.x and geo.y convert this pair of numbers to X and Y coordinates on the screen.<br />
 For the next two lines, title and fillStyle, we need to go back to the country level.<br />
-so, we use a function of the form <a href="http://www.jeromecukier.net/?p=479">function(d,b,c)</a>. d is the current item (pair of longitude, latitude), b its parent (individual area) and c, its grand-parent (the country).<br />
+so, we use a function of the form <a href="http://jckr.github.io/blog/?p=479">function(d,b,c)</a>. d is the current item (pair of longitude, latitude), b its parent (individual area) and c, its grand-parent (the country).<br />
 so, function(d,b,c) c.name retrieves the country name, and function(d,b,c) c.color retrieves the color we had computed for that country to begin with.</p>
 <p>For the color of the border, we wish to use a darker version of the fill color. This is what the this.fillStyle().darker() does.</p>
 <p>The rest of the vis is longitude and latitude ticks, using the built-in properties of the scale.</p>
@@ -803,7 +803,7 @@ Anyway, about 30,000 people tried to finish the semi-marathon, and 23764 did (pl
 	(function(){
 		var corecss = document.createElement('link');
 		var themecss = document.createElement('link');
-		var corecssurl = "http://localhost:8888/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		var corecssurl = "/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
 		if ( corecss.setAttribute ) {
 				corecss.setAttribute( "rel", "stylesheet" );
 				corecss.setAttribute( "type", "text/css" );
@@ -813,7 +813,7 @@ Anyway, about 30,000 people tried to finish the semi-marathon, and 23764 did (pl
 				corecss.href = corecssurl;
 		}
 		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
-		var themecssurl = "http://localhost:8888/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
+		var themecssurl = "/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
 		if ( themecss.setAttribute ) {
 				themecss.setAttribute( "rel", "stylesheet" );
 				themecss.setAttribute( "type", "text/css" );

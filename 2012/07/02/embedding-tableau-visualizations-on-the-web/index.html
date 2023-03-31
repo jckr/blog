@@ -7,15 +7,15 @@
 <meta name="HandheldFriendly" content="True" />
 <meta name="MobileOptimized" content="320" />
 
-<title>Embedding tableau visualizations on the web | jeromecukier.net</title>
+<title>Embedding tableau visualizations on the web | jckr.github.io/blog</title>
 
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="/xmlrpc.php">
 <link rel='dns-prefetch' href='//fonts.googleapis.com' />
 <link rel='dns-prefetch' href='//s.w.org' />
-<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Feed" href="/feed/" />
-<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Comments Feed" href="/comments/feed/" />
-<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Embedding tableau visualizations on the web Comments Feed" href="/2012/07/02/embedding-tableau-visualizations-on-the-web/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jckr.github.io/blog &raquo; Feed" href="/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jckr.github.io/blog &raquo; Comments Feed" href="/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jckr.github.io/blog &raquo; Embedding tableau visualizations on the web Comments Feed" href="/2012/07/02/embedding-tableau-visualizations-on-the-web/feed/" />
 <!-- This site uses the Google Analytics by MonsterInsights plugin v7.0.5 - Using Analytics tracking - https://www.monsterinsights.com/ -->
 <!-- Note: MonsterInsights is not currently configured on this site. The site owner needs to authenticate with Google Analytics in the MonsterInsights settings panel. -->
 <!-- No UA code set -->
@@ -73,7 +73,7 @@ img.emoji {
 
 <body class="single single-post postid-1395 single-format-standard group-blog">
 
-<header id="masthead" role="banner" class="site-head site-header" style="background-image: url(http://localhost:8888/wp-content/uploads/2018/04/Screenshot-2018-04-09-19.38.59.png);">
+<header id="masthead" role="banner" class="site-head site-header" style="background-image: url(/wp-content/uploads/2018/04/Screenshot-2018-04-09-19.38.59.png);">
     <nav id="site-navigation" class="main-navigation" role="navigation">
         <div>
             <h1 class="menu-toggle">
@@ -92,7 +92,7 @@ img.emoji {
                 
                 <div class="social-icons">
                                                                                                                                                                                                                                                                                                                                                                                                                                                     </div>
-                <h1 class="blog-title"><a class="blog-logo" href='/' rel='home'>jeromecukier.net</a></h1>
+                <h1 class="blog-title"><a class="blog-logo" href='/blog/' rel='home'>jckr.github.io/blog</a></h1>
                 <h2 class="blog-description">Just another WordPress site</h2>
             </div>
         </div>
@@ -115,7 +115,7 @@ img.emoji {
 <p>Long story short. I run into problems all the time trying to properly embed Tableau vis into wordpress blog posts. Does it happen outside of wordpress, I don&#8217;t know, because I don&#8217;t really try to embed Tableau vis outside of wordpress. That said, I have the same problem with d3 vis in wordpress and I&#8217;ve been asked several times how do I do it.</p>
 <h3>iframes.</h3>
 <p>That&#8217;s how.</p>
-<p>Here is what I did <a href="http://www.jeromecukier.net/blog/2012/06/30/tableau-2012-sports-visualization-contest-entry/">last time</a>.</p>
+<p>Here is what I did <a href="http://jckr.github.io/blog/blog/2012/06/30/tableau-2012-sports-visualization-contest-entry/">last time</a>.</p>
 <pre class="brush: jscript; title: ; notranslate" title="">
 &lt;iframe
   style=&quot;border: 0px;&quot;
@@ -137,7 +137,7 @@ http://public.tableausoftware.com/views/ + <em>name of your workbook</em> + / + 
 <p>height=&#8230;px, width=&#8230;px. Here&#8217;s the tricky part. You have to manually set the size of your visualisation and add a couple of pixels for good measure.</p>
 <p>In tableau, when creating dashboards, I have always used the option to size them <em>exactly </em>at a precise size and I recommend you do that too. Then add 2-6 px to each dimension and use that as width and height.</p>
 <p>In my experience going through these steps is really less painful than using the &#8220;native&#8221; embed functionality of tableau vis which sometimes work and sometimes doesn&#8217;t. The added bonus is that the resulting html is much more legible than what Tableau generates, which, for the record, is:</p>
-<pre>&lt;script type="text/javascript" src="http://public.tableausoftware.com/javascripts/api/viz_v1.js"&gt;&lt;/script&gt;&lt;div style="width:654px; height:799px;"&gt;&lt;noscript&gt;&lt;a href="http:&amp;#47;&amp;#47;www.jeromecukier.net&amp;#47;blog&amp;#47;2012&amp;#47;06&amp;#47;30&amp;#47;tableau-2012-sports-visualization-contest-entry&amp;#47;"&gt;&lt;img alt="champions " src="http:&amp;#47;&amp;#47;public.tableausoftware.com&amp;#47;static&amp;#47;images&amp;#47;ch&amp;#47;champions&amp;#47;champions&amp;#47;1_rss.png" style="border: none" /&gt;&lt;/a&gt;&lt;/noscript&gt;&lt;object width="654" height="799" style="display:none;"&gt;&lt;param name="host_url" value="http%3A%2F%2Fpublic.tableausoftware.com%2F" /&gt;&lt;param name="site_root" value="" /&gt;&lt;param name="name" value="champions&amp;#47;champions" /&gt;&lt;param name="tabs" value="no" /&gt;&lt;param name="toolbar" value="yes" /&gt;&lt;param name="static_image" value="http:&amp;#47;&amp;#47;public.tableausoftware.com&amp;#47;static&amp;#47;images&amp;#47;ch&amp;#47;champions&amp;#47;champions&amp;#47;1.png" /&gt;&lt;param name="animate_transition" value="yes" /&gt;&lt;param name="display_static_image" value="yes" /&gt;&lt;param name="display_spinner" value="yes" /&gt;&lt;param name="display_overlay" value="yes" /&gt;&lt;param name="display_count" value="yes" /&gt;&lt;param name="from_wg" value="true" /&gt;&lt;/object&gt;&lt;/div&gt;&lt;div style="width:654px;height:22px;padding:0px 10px 0px 0px;color:black;font:normal 8pt verdana,helvetica,arial,sans-serif;"&gt;&lt;div style="float:right; padding-right:8px;"&gt;&lt;a href="http://www.tableausoftware.com/public?ref=http://public.tableausoftware.com/views/champions/champions" target="_blank"&gt;Powered by Tableau&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;</pre>
+<pre>&lt;script type="text/javascript" src="http://public.tableausoftware.com/javascripts/api/viz_v1.js"&gt;&lt;/script&gt;&lt;div style="width:654px; height:799px;"&gt;&lt;noscript&gt;&lt;a href="http:&amp;#47;&amp;#47;www.jckr.github.io/blog&amp;#47;blog&amp;#47;2012&amp;#47;06&amp;#47;30&amp;#47;tableau-2012-sports-visualization-contest-entry&amp;#47;"&gt;&lt;img alt="champions " src="http:&amp;#47;&amp;#47;public.tableausoftware.com&amp;#47;static&amp;#47;images&amp;#47;ch&amp;#47;champions&amp;#47;champions&amp;#47;1_rss.png" style="border: none" /&gt;&lt;/a&gt;&lt;/noscript&gt;&lt;object width="654" height="799" style="display:none;"&gt;&lt;param name="host_url" value="http%3A%2F%2Fpublic.tableausoftware.com%2F" /&gt;&lt;param name="site_root" value="" /&gt;&lt;param name="name" value="champions&amp;#47;champions" /&gt;&lt;param name="tabs" value="no" /&gt;&lt;param name="toolbar" value="yes" /&gt;&lt;param name="static_image" value="http:&amp;#47;&amp;#47;public.tableausoftware.com&amp;#47;static&amp;#47;images&amp;#47;ch&amp;#47;champions&amp;#47;champions&amp;#47;1.png" /&gt;&lt;param name="animate_transition" value="yes" /&gt;&lt;param name="display_static_image" value="yes" /&gt;&lt;param name="display_spinner" value="yes" /&gt;&lt;param name="display_overlay" value="yes" /&gt;&lt;param name="display_count" value="yes" /&gt;&lt;param name="from_wg" value="true" /&gt;&lt;/object&gt;&lt;/div&gt;&lt;div style="width:654px;height:22px;padding:0px 10px 0px 0px;color:black;font:normal 8pt verdana,helvetica,arial,sans-serif;"&gt;&lt;div style="float:right; padding-right:8px;"&gt;&lt;a href="http://www.tableausoftware.com/public?ref=http://public.tableausoftware.com/views/champions/champions" target="_blank"&gt;Powered by Tableau&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;</pre>
 <p>Yeah. You say &amp;#47; i say %2F. anyway, this is a bit difficult to troubleshoot.</p>
 <p>The drawback when using iframes is that you lose the nice static image which is generated for RSS flows and other environments without interactivity. If you don&#8217;t know what I&#8217;m talking about (if you&#8217;re not familiar with that large orange arrow at the center) you&#8217;ll have no regrets.</p>
 <h3>Bonus: d3.</h3>
@@ -150,7 +150,7 @@ http://public.tableausoftware.com/views/ + <em>name of your workbook</em> + / + 
 	<footer class="post-footer">
 
 	    <section class="author">
-	    	<img alt='' src='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=100&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=200&amp;d=mm&amp;r=g 2x' class='avatar avatar-100 photo' height='100' width='100' />	        <h4>jerome</h4>
+	    	<img alt='' src='https://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=100&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=200&amp;d=mm&amp;r=g 2x' class='avatar avatar-100 photo' height='100' width='100' />	        <h4>jerome</h4>
 	        <p></p>
 			<div class="clear">&nbsp;</div>
 	    </section>
@@ -176,7 +176,7 @@ http://public.tableausoftware.com/views/ + <em>name of your workbook</em> + / + 
 			<article id="div-comment-344" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://0.gravatar.com/avatar/93142b00ce695e40a0ee7af6c7fe1197?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/93142b00ce695e40a0ee7af6c7fe1197?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://vallandingham.me/' rel='external nofollow' class='url'>Jim Vallandingham</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://0.gravatar.com/avatar/93142b00ce695e40a0ee7af6c7fe1197?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/93142b00ce695e40a0ee7af6c7fe1197?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://vallandingham.me/' rel='external nofollow' class='url'>Jim Vallandingham</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/07/02/embedding-tableau-visualizations-on-the-web/#comment-344">
@@ -198,7 +198,7 @@ http://public.tableausoftware.com/views/ + <em>name of your workbook</em> + / + 
 			<article id="div-comment-345" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://1.gravatar.com/avatar/d429dab35bc0e5015b55134124086a11?s=32&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/d429dab35bc0e5015b55134124086a11?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://www.scienceprimer.com/' rel='external nofollow' class='url'>Andrew Staroscik</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://1.gravatar.com/avatar/d429dab35bc0e5015b55134124086a11?s=32&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/d429dab35bc0e5015b55134124086a11?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://www.scienceprimer.com/' rel='external nofollow' class='url'>Andrew Staroscik</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/07/02/embedding-tableau-visualizations-on-the-web/#comment-345">
@@ -219,7 +219,7 @@ http://public.tableausoftware.com/views/ + <em>name of your workbook</em> + / + 
 			<article id="div-comment-346" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://1.gravatar.com/avatar/d429dab35bc0e5015b55134124086a11?s=32&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/d429dab35bc0e5015b55134124086a11?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://www.scienceprimer.com/' rel='external nofollow' class='url'>Andrew Staroscik</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://1.gravatar.com/avatar/d429dab35bc0e5015b55134124086a11?s=32&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/d429dab35bc0e5015b55134124086a11?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://www.scienceprimer.com/' rel='external nofollow' class='url'>Andrew Staroscik</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/07/02/embedding-tableau-visualizations-on-the-web/#comment-346">
@@ -241,7 +241,7 @@ http://public.tableausoftware.com/views/ + <em>name of your workbook</em> + / + 
 			<article id="div-comment-347" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://jeromecukier.net/' rel='external nofollow' class='url'>jerome cukier</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://jckr.github.io/blog/' rel='external nofollow' class='url'>jerome cukier</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/07/02/embedding-tableau-visualizations-on-the-web/#comment-347">
@@ -266,7 +266,7 @@ http://public.tableausoftware.com/views/ + <em>name of your workbook</em> + / + 
 			<article id="div-comment-349" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://0.gravatar.com/avatar/c4aa43e5eb48d5b710618eb0f427ae52?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/c4aa43e5eb48d5b710618eb0f427ae52?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://www.keepitplanned.com/cities-to-visit-in-alabama/' rel='external nofollow' class='url'>emily.bronte</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://0.gravatar.com/avatar/c4aa43e5eb48d5b710618eb0f427ae52?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/c4aa43e5eb48d5b710618eb0f427ae52?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://www.keepitplanned.com/cities-to-visit-in-alabama/' rel='external nofollow' class='url'>emily.bronte</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/07/02/embedding-tableau-visualizations-on-the-web/#comment-349">
@@ -291,7 +291,7 @@ emily.bronte<br />
 			<article id="div-comment-350" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://0.gravatar.com/avatar/c8ea2e6c84dde96a9a94a1f28e761ea5?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/c8ea2e6c84dde96a9a94a1f28e761ea5?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='https://research4resonance.ca/' rel='external nofollow' class='url'>John Burrett</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://0.gravatar.com/avatar/c8ea2e6c84dde96a9a94a1f28e761ea5?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/c8ea2e6c84dde96a9a94a1f28e761ea5?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='https://research4resonance.ca/' rel='external nofollow' class='url'>John Burrett</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/07/02/embedding-tableau-visualizations-on-the-web/#comment-350">
@@ -313,7 +313,7 @@ emily.bronte<br />
 			<article id="div-comment-351" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://www.jeromecukier.net/' rel='external nofollow' class='url'>jerome</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://jckr.github.io/blog/' rel='external nofollow' class='url'>jerome</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/07/02/embedding-tableau-visualizations-on-the-web/#comment-351">
@@ -336,7 +336,7 @@ emily.bronte<br />
 			<article id="div-comment-357" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://2.gravatar.com/avatar/22f0d4b3b9027df5fac8456603fdd59b?s=32&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/22f0d4b3b9027df5fac8456603fdd59b?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">Andrea</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://2.gravatar.com/avatar/22f0d4b3b9027df5fac8456603fdd59b?s=32&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/22f0d4b3b9027df5fac8456603fdd59b?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">Andrea</b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/07/02/embedding-tableau-visualizations-on-the-web/#comment-357">
@@ -357,7 +357,7 @@ emily.bronte<br />
 			<article id="div-comment-358" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://1.gravatar.com/avatar/d0b4b685a3f123fa636d142315eb2d4a?s=32&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/d0b4b685a3f123fa636d142315eb2d4a?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://evetslefurac.wordpress.com/' rel='external nofollow' class='url'>evetslefurac</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://1.gravatar.com/avatar/d0b4b685a3f123fa636d142315eb2d4a?s=32&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/d0b4b685a3f123fa636d142315eb2d4a?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://evetslefurac.wordpress.com/' rel='external nofollow' class='url'>evetslefurac</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/07/02/embedding-tableau-visualizations-on-the-web/#comment-358">
@@ -380,7 +380,7 @@ emily.bronte<br />
 			<article id="div-comment-359" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://www.jeromecukier.net/' rel='external nofollow' class='url'>jerome</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://jckr.github.io/blog/' rel='external nofollow' class='url'>jerome</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/07/02/embedding-tableau-visualizations-on-the-web/#comment-359">
@@ -404,7 +404,7 @@ can you point me to your page where you have the problem?</p>
 			<article id="div-comment-360" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://1.gravatar.com/avatar/1fa25c8c85a9a3854b8c29af0757b13e?s=32&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/1fa25c8c85a9a3854b8c29af0757b13e?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://dimeler.wordpress.com/' rel='external nofollow' class='url'>dimeler</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://1.gravatar.com/avatar/1fa25c8c85a9a3854b8c29af0757b13e?s=32&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/1fa25c8c85a9a3854b8c29af0757b13e?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://dimeler.wordpress.com/' rel='external nofollow' class='url'>dimeler</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/07/02/embedding-tableau-visualizations-on-the-web/#comment-360">
@@ -426,7 +426,7 @@ can you point me to your page where you have the problem?</p>
 			<article id="div-comment-361" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://2.gravatar.com/avatar/ed404512f240d0e4bded28af5bf7fce1?s=32&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/ed404512f240d0e4bded28af5bf7fce1?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">Oscar</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://2.gravatar.com/avatar/ed404512f240d0e4bded28af5bf7fce1?s=32&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/ed404512f240d0e4bded28af5bf7fce1?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">Oscar</b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/07/02/embedding-tableau-visualizations-on-the-web/#comment-361">
@@ -453,7 +453,7 @@ I also found that if you set the dashboard size to &#8220;automatic&#8221; it mi
 			<article id="div-comment-369" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://2.gravatar.com/avatar/e0599fce457106dd62dc88fbfffb66bb?s=32&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/e0599fce457106dd62dc88fbfffb66bb?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">Abhiram</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://2.gravatar.com/avatar/e0599fce457106dd62dc88fbfffb66bb?s=32&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/e0599fce457106dd62dc88fbfffb66bb?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">Abhiram</b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/07/02/embedding-tableau-visualizations-on-the-web/#comment-369">
@@ -612,7 +612,7 @@ I also found that if you set the dashboard size to &#8220;automatic&#8221; it mi
 	(function(){
 		var corecss = document.createElement('link');
 		var themecss = document.createElement('link');
-		var corecssurl = "http://localhost:8888/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		var corecssurl = "/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
 		if ( corecss.setAttribute ) {
 				corecss.setAttribute( "rel", "stylesheet" );
 				corecss.setAttribute( "type", "text/css" );
@@ -622,7 +622,7 @@ I also found that if you set the dashboard size to &#8220;automatic&#8221; it mi
 				corecss.href = corecssurl;
 		}
 		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
-		var themecssurl = "http://localhost:8888/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
+		var themecssurl = "/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
 		if ( themecss.setAttribute ) {
 				themecss.setAttribute( "rel", "stylesheet" );
 				themecss.setAttribute( "type", "text/css" );

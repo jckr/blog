@@ -19,7 +19,7 @@
 		<link>/2013/01/14/interactive-map-of-the-subway/#comment-473</link>
 		<dc:creator><![CDATA[jerome]]></dc:creator>
 		<pubDate>Thu, 17 Jan 2013 14:14:56 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1533#comment-473</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1533#comment-473</guid>
 		<description><![CDATA[1) yes. In the second view the segments which are not part of any shortest path are not displayed. For instance, from Montparnasse, there are large chunks of ligne 8 that should never be used, because it&#039;s always faster not to use it. 
 2) that is a remnant of the first project I did with that data.
 3) in some cases, it is indeed quicker to go to a station which is one or two stops further because it can be quicker to exit. many people who live halfway across two stops have a preference which &quot;feels quicker&quot; even though the number of stops actually increases. 
@@ -35,7 +35,7 @@
 		<link>/2013/01/14/interactive-map-of-the-subway/#comment-472</link>
 		<dc:creator><![CDATA[JulienW]]></dc:creator>
 		<pubDate>Thu, 17 Jan 2013 08:08:58 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1533#comment-472</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1533#comment-472</guid>
 		<description><![CDATA[I love the idea.
 
 Small comments:
@@ -56,7 +56,7 @@ Small comments:
 		<link>/2013/01/14/interactive-map-of-the-subway/#comment-471</link>
 		<dc:creator><![CDATA[Victor Blaer]]></dc:creator>
 		<pubDate>Tue, 15 Jan 2013 12:35:23 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1533#comment-471</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1533#comment-471</guid>
 		<description><![CDATA[holy cow that is some awesome work.]]></description>
 		<content:encoded><![CDATA[<p>holy cow that is some awesome work.</p>
 ]]></content:encoded>
@@ -66,7 +66,7 @@ Small comments:
 		<link>/2013/01/14/interactive-map-of-the-subway/#comment-470</link>
 		<dc:creator><![CDATA[Hig]]></dc:creator>
 		<pubDate>Mon, 14 Jan 2013 08:56:32 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1533#comment-470</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1533#comment-470</guid>
 		<description><![CDATA[I love it!
 
 Except one fiddly detail... the transition animation shows circles appearing and disappearing from the center, but it seems like it should be from the edge.  The circles should stretch to be larger if you click on a station that is more central (thus closer to everywhere) and they should shrink to be smaller if you do the opposite.  But instead new circles pop into or out of existence at the middle, so the circle that once referred to a certain time now refers to a different time.]]></description>
@@ -79,7 +79,7 @@ Except one fiddly detail... the transition animation shows circles appearing and
 		<link>/2013/01/14/interactive-map-of-the-subway/#comment-469</link>
 		<dc:creator><![CDATA[Ken Cherven]]></dc:creator>
 		<pubDate>Mon, 14 Jan 2013 02:28:07 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1533#comment-469</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1533#comment-469</guid>
 		<description><![CDATA[route - not rote]]></description>
 		<content:encoded><![CDATA[<p>route &#8211; not rote</p>
 ]]></content:encoded>
@@ -89,7 +89,7 @@ Except one fiddly detail... the transition animation shows circles appearing and
 		<link>/2013/01/14/interactive-map-of-the-subway/#comment-468</link>
 		<dc:creator><![CDATA[Ken Cherven]]></dc:creator>
 		<pubDate>Mon, 14 Jan 2013 02:27:15 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1533#comment-468</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1533#comment-468</guid>
 		<description><![CDATA[Fantastic work on the Paris Metro! Centering the selected station and highlighting the best rote is especially effective.]]></description>
 		<content:encoded><![CDATA[<p>Fantastic work on the Paris Metro! Centering the selected station and highlighting the best rote is especially effective.</p>
 ]]></content:encoded>

@@ -7,15 +7,15 @@
 <meta name="HandheldFriendly" content="True" />
 <meta name="MobileOptimized" content="320" />
 
-<title>Protovis: analysis of the Map projections example | jeromecukier.net</title>
+<title>Protovis: analysis of the Map projections example | jckr.github.io/blog</title>
 
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="/xmlrpc.php">
 <link rel='dns-prefetch' href='//fonts.googleapis.com' />
 <link rel='dns-prefetch' href='//s.w.org' />
-<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Feed" href="/feed/" />
-<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Comments Feed" href="/comments/feed/" />
-<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Protovis: analysis of the Map projections example Comments Feed" href="/2011/03/15/protovis-analysis-of-the-map-projections-example/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jckr.github.io/blog &raquo; Feed" href="/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jckr.github.io/blog &raquo; Comments Feed" href="/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jckr.github.io/blog &raquo; Protovis: analysis of the Map projections example Comments Feed" href="/2011/03/15/protovis-analysis-of-the-map-projections-example/feed/" />
 <!-- This site uses the Google Analytics by MonsterInsights plugin v7.0.5 - Using Analytics tracking - https://www.monsterinsights.com/ -->
 <!-- Note: MonsterInsights is not currently configured on this site. The site owner needs to authenticate with Google Analytics in the MonsterInsights settings panel. -->
 <!-- No UA code set -->
@@ -73,7 +73,7 @@ img.emoji {
 
 <body class="single single-post postid-573 single-format-standard group-blog">
 
-<header id="masthead" role="banner" class="site-head site-header" style="background-image: url(http://localhost:8888/wp-content/uploads/2018/04/Screenshot-2018-04-09-19.38.59.png);">
+<header id="masthead" role="banner" class="site-head site-header" style="background-image: url(/wp-content/uploads/2018/04/Screenshot-2018-04-09-19.38.59.png);">
     <nav id="site-navigation" class="main-navigation" role="navigation">
         <div>
             <h1 class="menu-toggle">
@@ -92,7 +92,7 @@ img.emoji {
                 
                 <div class="social-icons">
                                                                                                                                                                                                                                                                                                                                                                                                                                                     </div>
-                <h1 class="blog-title"><a class="blog-logo" href='/' rel='home'>jeromecukier.net</a></h1>
+                <h1 class="blog-title"><a class="blog-logo" href='/blog/' rel='home'>jckr.github.io/blog</a></h1>
                 <h2 class="blog-description">Just another WordPress site</h2>
             </div>
         </div>
@@ -114,9 +114,9 @@ img.emoji {
 		    <h2>What is a map?</h2>
 <p>before we start looking at the code it may be a good idea to think of the best way to represent a country.<br />
 Countries are areas of land surrounded by borders, which are imaginary (or sometimes physical) <strong>lines</strong> going through a set of <strong>points</strong>.<br />
-<a href="http://www.jeromecukier.net/wp-content/uploads/2011/03/square.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/03/square.png" alt="" title="square" width="200" height="200" class="aligncenter size-full wp-image-748" /></a></p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/03/square.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/03/square.png" alt="" title="square" width="200" height="200" class="aligncenter size-full wp-image-748" /></a></p>
 <p>Some countries are made of one of such surfaces, but many countries are not one contiguous territory (they may include islands for instance) so they could be made out of <strong>several disjointed polygons</strong>.<br />
-<a href="http://www.jeromecukier.net/wp-content/uploads/2011/03/square1.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/03/square1.png" alt="" title="square" width="200" height="200" class="aligncenter size-full wp-image-749" /></a>.</p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/03/square1.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/03/square1.png" alt="" title="square" width="200" height="200" class="aligncenter size-full wp-image-749" /></a>.</p>
 <p>Now let&#8217;s put on our protovis hat. Let&#8217;s suppose we want to draw a map where each country could be colored differently (choropleth). What kind of data structure should be use to represent that?<br />
 First there should be a sort of array of countries. Each country should be an item in that array, so they can be indexed and assigned an individual color and various data points.<br />
 Then, at the lowest level, we would be drawing polygons, which are treated as pv.Line in protovis. For each polygon, we would require an array of coordinate pairs. To draw a country, we would need a list (array) of those polygons. </p>
@@ -138,7 +138,7 @@ Then, at the lowest level, we would be drawing polygons, which are treated as pv
 ...
 ]</pre>
 <h2>the map projections example</h2>
-<p><a href="http://www.jeromecukier.net/wp-content/uploads/2011/03/projections.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/03/projections.png" alt="" title="projections" width="600" height="360" class="aligncenter size-full wp-image-754" /></a></p>
+<p><a href="http://jckr.github.io/blog/wp-content/uploads/2011/03/projections.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/03/projections.png" alt="" title="projections" width="600" height="360" class="aligncenter size-full wp-image-754" /></a></p>
 <p>Can be found <a href="http://vis.stanford.edu/protovis/ex/projection.html">here: </a> http://vis.stanford.edu/protovis/ex/projection.html</p>
 <pre class="brush: jscript; title: ; notranslate" title="">/*
  * A diverging color scale, using previously-computed quantiles of population
@@ -251,7 +251,7 @@ countries.forEach(function(c) {
       : &quot;#ccc&quot;; // unknown
 });</pre>
 <p>As the remark says, this will precompute the country&#8217;s color once and for all.<br />
-The <a href="http://www.jeromecukier.net/?p=494">forEach() method</a> goes to every element of the countries array.<br />
+The <a href="http://jckr.github.io/blog/?p=494">forEach() method</a> goes to every element of the countries array.<br />
 the c.color = statement will add a color key to each element of that array (which, as you may recall, already has values for the code, name and borders keys.<br />
 What it does is that is retrieves the country code of that element of countries, c.code, and uses that to find out whether we have an area value for that country code (this is stats[/c].area?).<br />
 If this is the case, we are going to compute the color that should be attributed to the country, by passing the population divided by the area to the color scale we just made. Else, we just use light grey.</p>
@@ -280,7 +280,7 @@ This time, we use function(c) c.borders as data. That is, we go into the borders
 <p>Finally, we are going to create a filled polygon for each of these independent areas. This is achieved by adding a pv.Line to the previous panels. Likewise, we use (function(b) b) as data, meaning that we go yet another level into the borders array. Now, we are accessing the pairs of longitude + latitude numbers.</p>
 <p>geo.x and geo.y convert this pair of numbers to X and Y coordinates on the screen.<br />
 For the next two lines, title and fillStyle, we need to go back to the country level.<br />
-so, we use a function of the form <a href="http://www.jeromecukier.net/?p=479">function(d,b,c)</a>. d is the current item (pair of longitude, latitude), b its parent (individual area) and c, its grand-parent (the country).<br />
+so, we use a function of the form <a href="http://jckr.github.io/blog/?p=479">function(d,b,c)</a>. d is the current item (pair of longitude, latitude), b its parent (individual area) and c, its grand-parent (the country).<br />
 so, function(d,b,c) c.name retrieves the country name, and function(d,b,c) c.color retrieves the color we had computed for that country to begin with.</p>
 <p>For the color of the border, we wish to use a darker version of the fill color. This is what the this.fillStyle().darker() does.</p>
 <p>The rest of the vis is longitude and latitude ticks, using the built-in properties of the scale.</p>
@@ -290,7 +290,7 @@ so, function(d,b,c) c.name retrieves the country name, and function(d,b,c) c.col
 	<footer class="post-footer">
 
 	    <section class="author">
-	    	<img alt='' src='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=100&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=200&amp;d=mm&amp;r=g 2x' class='avatar avatar-100 photo' height='100' width='100' />	        <h4>jerome</h4>
+	    	<img alt='' src='https://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=100&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=200&amp;d=mm&amp;r=g 2x' class='avatar avatar-100 photo' height='100' width='100' />	        <h4>jerome</h4>
 	        <p></p>
 			<div class="clear">&nbsp;</div>
 	    </section>
@@ -446,7 +446,7 @@ so, function(d,b,c) c.name retrieves the country name, and function(d,b,c) c.col
 	(function(){
 		var corecss = document.createElement('link');
 		var themecss = document.createElement('link');
-		var corecssurl = "http://localhost:8888/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		var corecssurl = "/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
 		if ( corecss.setAttribute ) {
 				corecss.setAttribute( "rel", "stylesheet" );
 				corecss.setAttribute( "type", "text/css" );
@@ -456,7 +456,7 @@ so, function(d,b,c) c.name retrieves the country name, and function(d,b,c) c.col
 				corecss.href = corecssurl;
 		}
 		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
-		var themecssurl = "http://localhost:8888/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
+		var themecssurl = "/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
 		if ( themecss.setAttribute ) {
 				themecss.setAttribute( "rel", "stylesheet" );
 				themecss.setAttribute( "type", "text/css" );

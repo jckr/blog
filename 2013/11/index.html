@@ -7,14 +7,14 @@
 <meta name="HandheldFriendly" content="True" />
 <meta name="MobileOptimized" content="320" />
 
-<title>November | 2013 | jeromecukier.net</title>
+<title>November | 2013 | jckr.github.io/blog</title>
 
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="/xmlrpc.php">
 <link rel='dns-prefetch' href='//fonts.googleapis.com' />
 <link rel='dns-prefetch' href='//s.w.org' />
-<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Feed" href="/feed/" />
-<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Comments Feed" href="/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jckr.github.io/blog &raquo; Feed" href="/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jckr.github.io/blog &raquo; Comments Feed" href="/comments/feed/" />
 <!-- This site uses the Google Analytics by MonsterInsights plugin v7.0.5 - Using Analytics tracking - https://www.monsterinsights.com/ -->
 <!-- Note: MonsterInsights is not currently configured on this site. The site owner needs to authenticate with Google Analytics in the MonsterInsights settings panel. -->
 <!-- No UA code set -->
@@ -66,7 +66,7 @@ img.emoji {
 
 <body class="archive date group-blog">
 
-<header id="masthead" role="banner" class="site-head site-header" style="background-image: url(http://localhost:8888/wp-content/uploads/2018/04/Screenshot-2018-04-09-19.38.59.png);">
+<header id="masthead" role="banner" class="site-head site-header" style="background-image: url(/wp-content/uploads/2018/04/Screenshot-2018-04-09-19.38.59.png);">
     <nav id="site-navigation" class="main-navigation" role="navigation">
         <div>
             <h1 class="menu-toggle">
@@ -85,7 +85,7 @@ img.emoji {
                 
                 <div class="social-icons">
                                                                                                                                                                                                                                                                                                                                                                                                                                                     </div>
-                <h1 class="blog-title"><a class="blog-logo" href='/' rel='home'>jeromecukier.net</a></h1>
+                <h1 class="blog-title"><a class="blog-logo" href='/blog/' rel='home'>jckr.github.io/blog</a></h1>
                 <h2 class="blog-description">Just another WordPress site</h2>
             </div>
         </div>
@@ -114,7 +114,7 @@ img.emoji {
     </header>
 	<section class="post-content">
 
-		<p>About a year ago I proposed a <a href="http://www.jeromecukier.net/blog/2012/09/04/getting-to-hello-world-with-d3/">very simple template</a> to start working with d3. But is that the way I actually work? Of course not. Because, though you and I know that displaying hello world in d3 is not exactly trivial, this is not a highly marketable skill either. That said, I just can&#8217;t afford to start each of my projects from scratch.</p>
+		<p>About a year ago I proposed a <a href="http://jckr.github.io/blog/blog/2012/09/04/getting-to-hello-world-with-d3/">very simple template</a> to start working with d3. But is that the way I actually work? Of course not. Because, though you and I know that displaying hello world in d3 is not exactly trivial, this is not a highly marketable skill either. That said, I just can&#8217;t afford to start each of my projects from scratch.</p>
 <p>So in this article I will present you the template I actually use. I won&#8217;t go in as much detail as last time because the exact instructions matter less than the general idea.</p>
 <p>My template is a set of two files, an html file and a js file. Of course, extra files can be used as needed.</p>
 <p>There&#8217;s not much to the html file &#8211; its role is really to call the javascript code. There is a little twist though. This is also where the interface elements (ie buttons and other controls) may be. Another thing is that I don&#8217;t load a css file through the html. The reason is that when I work with svg, I may export the svg proper to a file to have it reworked in Adobe Illustrator etc. and so having style inside the file makes things easier. So I would instead load a style sheet into the svg through javascript.</p>
@@ -530,7 +530,7 @@ vis.init(params);
 	(function(){
 		var corecss = document.createElement('link');
 		var themecss = document.createElement('link');
-		var corecssurl = "http://localhost:8888/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		var corecssurl = "/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
 		if ( corecss.setAttribute ) {
 				corecss.setAttribute( "rel", "stylesheet" );
 				corecss.setAttribute( "type", "text/css" );
@@ -540,7 +540,7 @@ vis.init(params);
 				corecss.href = corecssurl;
 		}
 		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
-		var themecssurl = "http://localhost:8888/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
+		var themecssurl = "/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
 		if ( themecss.setAttribute ) {
 				themecss.setAttribute( "rel", "stylesheet" );
 				themecss.setAttribute( "type", "text/css" );

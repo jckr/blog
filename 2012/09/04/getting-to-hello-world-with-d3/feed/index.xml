@@ -19,9 +19,9 @@
 		<link>/2012/09/04/getting-to-hello-world-with-d3/#comment-419</link>
 		<dc:creator><![CDATA[D3 &#8211; Getting Started &#124; abgoswam&#039;s tech blog]]></dc:creator>
 		<pubDate>Sat, 08 Oct 2016 06:59:40 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1419#comment-419</guid>
-		<description><![CDATA[[&#8230;] http://www.jeromecukier.net/blog/2012/09/04/getting-to-hello-world-with-d3/ [&#8230;]]]></description>
-		<content:encoded><![CDATA[<p>[&#8230;] <a href="http://www.jeromecukier.net/blog/2012/09/04/getting-to-hello-world-with-d3/" rel="nofollow">http://www.jeromecukier.net/blog/2012/09/04/getting-to-hello-world-with-d3/</a> [&#8230;]</p>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1419#comment-419</guid>
+		<description><![CDATA[[&#8230;] http://jckr.github.io/blog/blog/2012/09/04/getting-to-hello-world-with-d3/ [&#8230;]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] <a href="http://jckr.github.io/blog/blog/2012/09/04/getting-to-hello-world-with-d3/" rel="nofollow">http://jckr.github.io/blog/blog/2012/09/04/getting-to-hello-world-with-d3/</a> [&#8230;]</p>
 ]]></content:encoded>
 	</item>
 	<item>
@@ -29,7 +29,7 @@
 		<link>/2012/09/04/getting-to-hello-world-with-d3/#comment-418</link>
 		<dc:creator><![CDATA[Broto Bhattacharjee]]></dc:creator>
 		<pubDate>Sat, 24 Sep 2016 13:24:40 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1419#comment-418</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1419#comment-418</guid>
 		<description><![CDATA[@Anna it is probably not working because you have written src=&quot;../d3.v2.js&quot; in the html file. However you might have downloaded a different version on d3. As in my case, I changed the line to src=&quot;../d3.js&quot; and it worked thereafter.]]></description>
 		<content:encoded><![CDATA[<p>@Anna it is probably not working because you have written src=&#8221;../d3.v2.js&#8221; in the html file. However you might have downloaded a different version on d3. As in my case, I changed the line to src=&#8221;../d3.js&#8221; and it worked thereafter.</p>
 ]]></content:encoded>
@@ -39,7 +39,7 @@
 		<link>/2012/09/04/getting-to-hello-world-with-d3/#comment-417</link>
 		<dc:creator><![CDATA[Broto Bhattacharjee]]></dc:creator>
 		<pubDate>Sat, 24 Sep 2016 13:22:54 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1419#comment-417</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1419#comment-417</guid>
 		<description><![CDATA[@Anna it is probably not working because we have written  in the html file. However you might have downloaded a different version on d3. As in my case, I changed the line to  and it worked thereafter.]]></description>
 		<content:encoded><![CDATA[<p>@Anna it is probably not working because we have written  in the html file. However you might have downloaded a different version on d3. As in my case, I changed the line to  and it worked thereafter.</p>
 ]]></content:encoded>
@@ -49,7 +49,7 @@
 		<link>/2012/09/04/getting-to-hello-world-with-d3/#comment-416</link>
 		<dc:creator><![CDATA[jerome]]></dc:creator>
 		<pubDate>Tue, 06 Sep 2016 17:33:32 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1419#comment-416</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1419#comment-416</guid>
 		<description><![CDATA[Hi, what do you see in your console along with your blank screen?]]></description>
 		<content:encoded><![CDATA[<p>Hi, what do you see in your console along with your blank screen?</p>
 ]]></content:encoded>
@@ -59,7 +59,7 @@
 		<link>/2012/09/04/getting-to-hello-world-with-d3/#comment-415</link>
 		<dc:creator><![CDATA[Anna]]></dc:creator>
 		<pubDate>Tue, 30 Aug 2016 15:38:41 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1419#comment-415</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1419#comment-415</guid>
 		<description><![CDATA[It doesn&#039;t work... I know it has been some time since this post but why? I copied all as you wrote here and I get an empty screen. Otherwise, this is the only post so far in the whole internet that explains it the way it should be explained :)]]></description>
 		<content:encoded><![CDATA[<p>It doesn&#8217;t work&#8230; I know it has been some time since this post but why? I copied all as you wrote here and I get an empty screen. Otherwise, this is the only post so far in the whole internet that explains it the way it should be explained 🙂</p>
 ]]></content:encoded>
@@ -69,9 +69,9 @@
 		<link>/2012/09/04/getting-to-hello-world-with-d3/#comment-382</link>
 		<dc:creator><![CDATA[Live Streaming Κάλυψη Συνεδρείων]]></dc:creator>
 		<pubDate>Mon, 16 Dec 2013 20:32:32 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1419#comment-382</guid>
-		<description><![CDATA[[&#8230;] Details: http://www.jeromecukier.net/blog/2012/09/04/getting-to-hello-world-with-d3/ [&#8230;]]]></description>
-		<content:encoded><![CDATA[<p>[&#8230;] Details: <a href="http://www.jeromecukier.net/blog/2012/09/04/getting-to-hello-world-with-d3/" rel="nofollow">http://www.jeromecukier.net/blog/2012/09/04/getting-to-hello-world-with-d3/</a> [&#8230;]</p>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1419#comment-382</guid>
+		<description><![CDATA[[&#8230;] Details: http://jckr.github.io/blog/blog/2012/09/04/getting-to-hello-world-with-d3/ [&#8230;]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] Details: <a href="http://jckr.github.io/blog/blog/2012/09/04/getting-to-hello-world-with-d3/" rel="nofollow">http://jckr.github.io/blog/blog/2012/09/04/getting-to-hello-world-with-d3/</a> [&#8230;]</p>
 ]]></content:encoded>
 	</item>
 	<item>
@@ -79,7 +79,7 @@
 		<link>/2012/09/04/getting-to-hello-world-with-d3/#comment-381</link>
 		<dc:creator><![CDATA[Jerome Cukier &#187; Getting beyond hello world with d3]]></dc:creator>
 		<pubDate>Wed, 20 Nov 2013 05:26:43 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1419#comment-381</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1419#comment-381</guid>
 		<description><![CDATA[[&#8230;] a year ago I proposed a very simple template to start working with d3. But is that the way I actually work? Of course not. Because, though you [&#8230;]]]></description>
 		<content:encoded><![CDATA[<p>[&#8230;] a year ago I proposed a very simple template to start working with d3. But is that the way I actually work? Of course not. Because, though you [&#8230;]</p>
 ]]></content:encoded>
@@ -89,7 +89,7 @@
 		<link>/2012/09/04/getting-to-hello-world-with-d3/#comment-380</link>
 		<dc:creator><![CDATA[Spencer Haley]]></dc:creator>
 		<pubDate>Wed, 06 Nov 2013 05:47:41 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1419#comment-380</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1419#comment-380</guid>
 		<description><![CDATA[Thank you so much for putting this information out there in such a clear and concise fashion. Wonderfully done, and extremely helpful!]]></description>
 		<content:encoded><![CDATA[<p>Thank you so much for putting this information out there in such a clear and concise fashion. Wonderfully done, and extremely helpful!</p>
 ]]></content:encoded>
@@ -99,7 +99,7 @@
 		<link>/2012/09/04/getting-to-hello-world-with-d3/#comment-379</link>
 		<dc:creator><![CDATA[Going Here]]></dc:creator>
 		<pubDate>Thu, 09 May 2013 11:43:11 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1419#comment-379</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1419#comment-379</guid>
 		<description><![CDATA[This blog was... how do you say it? Relevant!! Finally I have found something that helped me.
 
 Thanks a lot!]]></description>
@@ -112,7 +112,7 @@ Thanks a lot!]]></description>
 		<link>/2012/09/04/getting-to-hello-world-with-d3/#comment-378</link>
 		<dc:creator><![CDATA[David Carter]]></dc:creator>
 		<pubDate>Fri, 26 Apr 2013 23:15:47 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1419#comment-378</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1419#comment-378</guid>
 		<description><![CDATA[Awesome intro to d3 - exactly what I was looking for!! Thanks.]]></description>
 		<content:encoded><![CDATA[<p>Awesome intro to d3 &#8211; exactly what I was looking for!! Thanks.</p>
 ]]></content:encoded>

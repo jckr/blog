@@ -8,7 +8,7 @@
 	>
 
 <channel>
-	<title>content &#8211; jeromecukier.net</title>
+	<title>content &#8211; jckr.github.io/blog</title>
 	<atom:link href="http://localhost/tag/content/feed/" rel="self" type="application/rss+xml" />
 	<link>/</link>
 	<description>Just another WordPress site</description>
@@ -39,8 +39,8 @@
 		<category><![CDATA[usability]]></category>
 		<category><![CDATA[writing for the web]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=116</guid>
-		<description><![CDATA[And he gave us a talk about the internet in general. While I enjoyed the talk in general, there were some ideas which I really liked and some with which I&#8217;d adamantly disagree. Here goes. The task-centric internet. That&#8217;s the main theory. We went from a tool-centric internet to a content-centric internet. Now the web <a class="read-more" href="/2008/12/17/gerry-mcgovern-paid-us-a-visit/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=116</guid>
+		<description><![CDATA[And he gave us a talk about the internet in general. While I enjoyed the talk in general, there were some ideas which I really liked and some with which I&#8217;d adamantly disagree. Here goes. The task-centric internet. That&#8217;s the main theory. We went from a tool-centric internet to a content-centric internet. Now the web <a class="read-more" href="/blog/2008/12/17/gerry-mcgovern-paid-us-a-visit/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[<p>And he gave us a talk about the internet in general. While I enjoyed the talk in general, there were some ideas which I really liked and some with which I&#8217;d adamantly disagree.</p>
 <p>Here goes.</p>
 <p><strong>The task-centric internet</strong>.<br />

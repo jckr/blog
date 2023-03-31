@@ -8,7 +8,7 @@
 	>
 
 <channel>
-	<title>dorling &#8211; jeromecukier.net</title>
+	<title>dorling &#8211; jckr.github.io/blog</title>
 	<atom:link href="http://localhost/tag/dorling/feed/" rel="self" type="application/rss+xml" />
 	<link>/</link>
 	<description>Just another WordPress site</description>
@@ -30,14 +30,14 @@
 		<category><![CDATA[france]]></category>
 		<category><![CDATA[map]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=796</guid>
-		<description><![CDATA[This is a follow-up to the previous post where I used a Dorling cartogram to show election results in France. So how did I come up with that? Step 1: the data Without data, there wouldn&#8217;t be much to plot, right? So the first order of business was to fetch the data, which is theoretically <a class="read-more" href="/2011/03/27/building-the-france-dorling-cartogram/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
-				<content:encoded><![CDATA[<p>This is a follow-up to <a href="http://www.jeromecukier.net/?p=764">the previous post</a> where I used a Dorling cartogram to show election results in France. So how did I come up with that?</p>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=796</guid>
+		<description><![CDATA[This is a follow-up to the previous post where I used a Dorling cartogram to show election results in France. So how did I come up with that? Step 1: the data Without data, there wouldn&#8217;t be much to plot, right? So the first order of business was to fetch the data, which is theoretically <a class="read-more" href="/blog/2011/03/27/building-the-france-dorling-cartogram/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>This is a follow-up to <a href="http://jckr.github.io/blog/?p=764">the previous post</a> where I used a Dorling cartogram to show election results in France. So how did I come up with that?</p>
 <h2>Step 1: the data</h2>
 <p>Without data, there wouldn&#8217;t be much to plot, right? So the first order of business was to fetch the data, which is theoretically available from an <a href="http://elections.interieur.gouv.fr/CN2011/">official source.</a> Unfortunately, there is no way to download those results at once, instead they are presented in a myriad of formatted HTML pages &#8211; over 2000 in all. </br><br />
 I used <a href="http://www.google.com/search?q=wget">wget</a> to download them all. wget allows for recursive download, that is, you can download a page, and all the links from that page, etc. You can also specify the depth of the recursive download, which is a good idea in that case because there are lots of duplicates of that information on the server, so trying to get everything will take a couple of hours vs about 10 minutes.</p>
 <p>Once that&#8217;s done, I used python and <a href="http://www.crummy.com/software/BeautifulSoup/">Beautiful Soup</a> to turn the HTML pages into nice JSON objects. Fortunately the pages followed the same strict template, so I could run a relatively simple extraction script, like: look at the second HTML table of the page, get the number of registered voters who didn&#8217;t vote from the 2nd cell of the 2nd row, etc.<br />
-Once that was done I came up with 2 files: <a href="http://www.jeromecukier.net/wp-content/uploads/2011/03/votes.js">one which listed the aggregate votes per county</a> and per party, and another one which listed all the candidates, their affiliation and their votes. I ended up using only the 1st one, actually at an even more aggregated level, but I may use the second one for further work.</p>
+Once that was done I came up with 2 files: <a href="http://jckr.github.io/blog/wp-content/uploads/2011/03/votes.js">one which listed the aggregate votes per county</a> and per party, and another one which listed all the candidates, their affiliation and their votes. I ended up using only the 1st one, actually at an even more aggregated level, but I may use the second one for further work.</p>
 <h2>Next up: setting the geography</h2>
 <p>A dorling cartogram is really a kind of <a href="http://en.wikipedia.org/wiki/Force-based_algorithms_(graph_drawing)">force-directed layout graph</a> where the nodes represent geographical entities, which are initially positioned at a place corresponding to their geography, but which are then resized by a variable, and whose movement is subject to several forces: each node is linked to its original geographical neighbors, which attract each other, but also cannot intersect with other nodes, so it pushes back its neighbors.</p>
 <p>So for this to work I had to:
@@ -47,7 +47,7 @@ Once that was done I came up with 2 files: <a href="http://www.jeromecukier.net/
 </ul>
 <p>To get the initial position I fetched the list of all French towns and their lon-lat coordinates which I averaged for each département. That gave me a workable proxy of the centroid of that departement. Note that I didn&#8217;t need anything very accurate at this stage, since nodes are going to be pushing each other anyway.<br />
 I listed the neighbors manually, since the number of départements is workable. Else, one possible way to do that from a shape file is look at every point of every shape and list all the entities that use it. If two entities use it they are neighbors. Again at this stage it&#8217;s not mandatory to be exhaustive. If an entity is surrounded by 8 others and we only use 4 the results will look sensibly the same.<br />
-Anyone who wants to create dorling cartograms for France can <a href="http://www.jeromecukier.net/wp-content/uploads/2011/03/francedorling.js">reuse the file</a>. </p>
+Anyone who wants to create dorling cartograms for France can <a href="http://jckr.github.io/blog/wp-content/uploads/2011/03/francedorling.js">reuse the file</a>. </p>
 <h2>Putting it all together</h2>
 <p>The rest is standard protovis fare. There is an example which uses <a href="http://vis.stanford.edu/protovis/ex/cartogram.html">Dorling cartograms</a> which I used as a basis. I prepared my data files so that I could aggregate the stuff I needed at the level of the département (which is about 20 counties). I never really considered showing anything at the county level because except for looking up specific results it is never too relevant. For instance, in most places there are some agreement between parties which don&#8217;t all present candidates in order to favor their allies. </p>
 <p>An interesting parameter when building the visualization is choosing the constant by which to multiply the size of the nodes. If it is too high, the cartogram will look like a featureless cluster of circles. If it is too low, it will ressemble the map a lot, and circles won&#8217;t touch each other.</p>
@@ -71,15 +71,15 @@ Anyone who wants to create dorling cartograms for France can <a href="http://www
 		<category><![CDATA[france]]></category>
 		<category><![CDATA[politiques]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=764</guid>
-		<description><![CDATA[[I write this here post in French because it's more relevant for a French audience, a more technical post with an explanation of how it's done follows in English]. J'ai écrit que j'avais été déçu par les infographies des principaux médias au lendemain des cantonales. Si on prend la carte du Monde par exemple, on <a class="read-more" href="/2011/03/26/la-carte-des-cantonales/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
-				<content:encoded><![CDATA[[I write this here post in French because it's more relevant for a French audience, a <a href="http://www.jeromecukier.net/?p=796">more technical post</a> with an explanation of how it's done follows in English].</p>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=764</guid>
+		<description><![CDATA[[I write this here post in French because it's more relevant for a French audience, a more technical post with an explanation of how it's done follows in English]. J'ai écrit que j'avais été déçu par les infographies des principaux médias au lendemain des cantonales. Si on prend la carte du Monde par exemple, on <a class="read-more" href="/blog/2011/03/26/la-carte-des-cantonales/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[[I write this here post in French because it's more relevant for a French audience, a <a href="http://jckr.github.io/blog/?p=796">more technical post</a> with an explanation of how it's done follows in English].</p>
 
 J'ai écrit que j'avais été déçu par les infographies des principaux médias au lendemain des cantonales.</p>
 
 Si on prend la carte du Monde par exemple, on y voit la France nettemement découpée en départements, soit bien roses, soit bien bleus, ou à la rigueur gris si l'issue est incertaine. Mais ce n'est pas l'enjeu de ces élections. Ce sont les dernières élections avant la présidentielle, et on est donc attentif aux enseignements nationaux du scrutin au-delà de la composition des conseils généraux. Ce qu'on commente, c'est plus la percée de l'extrême droite ou le poids de l'abstention. C'est la capacité de la droite ou de la gauche à s'imposer. </p>
 Dans cette optique, chaque département n'a pas le même poids. Le Nord par exemple, avec presque 900,000 électeurs, compte plus que la Lozère qui en compte juste un peu plus de 20,000. Donc, tracer une carte géographiquement exacte n'est pas très honnête, puisque cela cache ces différences qui peuvent être énormes.</p>
-Comme je n'ai pas l'habitude de porter des critiques <a href="http://www.jeromecukier.net/?p=661">sans proposer autre chose</a>, j'ai fabriqué des cartogrammes de Dorling pour rendre compte de ce qui s'est vraiment passé dimanche dernier.</p>
+Comme je n'ai pas l'habitude de porter des critiques <a href="http://jckr.github.io/blog/?p=661">sans proposer autre chose</a>, j'ai fabriqué des cartogrammes de Dorling pour rendre compte de ce qui s'est vraiment passé dimanche dernier.</p>
 
 Les cartogrammes, ce sont presque des cartes, sauf que le côté géographique n'est pas pris au sens strict. Leur forme dépend plus des données qu'elles représentent. Et dans la version de Dorling, on remplace les morceaux de la carte (ici, les départements) par des cercles, plus ou moins gros. Là, la taille des cercles dépend du nombre d'électeurs inscrits aux cantonales. Du coup, leur position sur la carte n'est pas exactement la même que celle des départements sur la carte de France mais elle est assez proche pour qu'on puisse les retrouver.</p>
 
@@ -90,9 +90,9 @@ Je propose 3 scénarios: une comparaison gauche-droite, l'importance de l'extrê
 <input type="radio" checked name="group1" value="0" onclick="sc=0;reinit() ;vis.render();">Gauche-droite
 <input type="radio" name="group1" value="1" onclick="sc=1;reinit() ;vis.render();">Extrême-droite
 <input type="radio" name="group1" value="2" onclick="sc=2;reinit() ;vis.render();">Abstention</form>
-<script type="text/javascript" src="http://www.jeromecukier.net/wp-content/uploads/2011/03/votes.js"></script>
-<script type="text/javascript" src="http://www.jeromecukier.net/wp-content/uploads/2011/03/francedorling.js"></script>
-<script type="text/javascript" src="http://www.jeromecukier.net/wp-content/uploads/2011/03/cantonales.js"></script>
+<script type="text/javascript" src="https://jckr.github.io/blog/wp-content/uploads/2011/03/votes.js"></script>
+<script type="text/javascript" src="https://jckr.github.io/blog/wp-content/uploads/2011/03/francedorling.js"></script>
+<script type="text/javascript" src="https://jckr.github.io/blog/wp-content/uploads/2011/03/cantonales.js"></script>
 ]]></content:encoded>
 			<wfw:commentRss>/2011/03/26/la-carte-des-cantonales/feed/</wfw:commentRss>
 		<slash:comments>5</slash:comments>

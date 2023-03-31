@@ -8,7 +8,7 @@
 	>
 
 <channel>
-	<title>ajax &#8211; jeromecukier.net</title>
+	<title>ajax &#8211; jckr.github.io/blog</title>
 	<atom:link href="http://localhost/tag/ajax/feed/" rel="self" type="application/rss+xml" />
 	<link>/</link>
 	<description>Just another WordPress site</description>
@@ -32,15 +32,15 @@
 		<category><![CDATA[tutorial]]></category>
 		<category><![CDATA[xhr]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1165</guid>
-		<description><![CDATA[Creating visualizations from static files is fine and dandy but sometimes you need to be able to access dynamic data. And some other times, you may want to somehow record interactions from your users. One way to do that is by interacting with a mySql database. Without further ado here is the demo: How does <a class="read-more" href="/2012/01/02/using-d3-with-a-mysql-database/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1165</guid>
+		<description><![CDATA[Creating visualizations from static files is fine and dandy but sometimes you need to be able to access dynamic data. And some other times, you may want to somehow record interactions from your users. One way to do that is by interacting with a mySql database. Without further ado here is the demo: How does <a class="read-more" href="/blog/2012/01/02/using-d3-with-a-mysql-database/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[<p>Creating visualizations from static files is fine and dandy but sometimes you need to be able to access dynamic data. And some other times, you may want to somehow record interactions from your users. One way to do that is by interacting with a mySql database.</p>
 <p>Without further ado here is the demo:</p>
-<p><iframe src="http://www.jeromecukier.net/stuff/sql_map/sqlmap.html" scrolling="no" width="542px" height="680px"></iframe></p>
+<p><iframe src="https://jckr.github.io/blog/stuff/sql_map/sqlmap.html" scrolling="no" width="542px" height="680px"></iframe></p>
 <h3>How does it work?</h3>
 <p>There are several parts to that.</p>
-<p>First, one <a href="http://www.jeromecukier.net/stuff/sql_map/sqlmap.html">html file</a> which holds everything together. By the way, for the styling I used Twitter&#8217;s <a href="http://twitter.github.com/bootstrap/">bootstrap</a> which makes it easy for all elements to find their place, and look at those purty buttons.</p>
-<p>Second, one <a href="http://www.jeromecukier.net/stuff/sql_map/sqlmap.js">javascript file</a> which contains the visualization proper.  If you have some familiarity with <a href="http://www.d3-js.org/">d3</a>, there is really nothing scary in this script. I&#8217;ll go back to the parts where the script interacts with databases in detail.</p>
+<p>First, one <a href="http://jckr.github.io/blog/stuff/sql_map/sqlmap.html">html file</a> which holds everything together. By the way, for the styling I used Twitter&#8217;s <a href="http://twitter.github.com/bootstrap/">bootstrap</a> which makes it easy for all elements to find their place, and look at those purty buttons.</p>
+<p>Second, one <a href="http://jckr.github.io/blog/stuff/sql_map/sqlmap.js">javascript file</a> which contains the visualization proper.  If you have some familiarity with <a href="http://www.d3-js.org/">d3</a>, there is really nothing scary in this script. I&#8217;ll go back to the parts where the script interacts with databases in detail.</p>
 <p>Here&#8217;s what the rest does at a high level.</p>
 <ol>
 <li>We give some behaviors to the buttons</li>

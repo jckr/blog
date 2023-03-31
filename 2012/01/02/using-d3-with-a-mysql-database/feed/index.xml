@@ -19,7 +19,7 @@
 		<link>/2012/01/02/using-d3-with-a-mysql-database/#comment-239</link>
 		<dc:creator><![CDATA[Steve]]></dc:creator>
 		<pubDate>Tue, 14 Jan 2014 20:00:35 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1165#comment-239</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1165#comment-239</guid>
 		<description><![CDATA[Hi,  This is very nice.   I got stuck with the php code.  Any chance you could tell me how to connect to an ms sql or oracle database?   Has this advanced at all in the last year?]]></description>
 		<content:encoded><![CDATA[<p>Hi,  This is very nice.   I got stuck with the php code.  Any chance you could tell me how to connect to an ms sql or oracle database?   Has this advanced at all in the last year?</p>
 ]]></content:encoded>
@@ -29,9 +29,9 @@
 		<link>/2012/01/02/using-d3-with-a-mysql-database/#comment-238</link>
 		<dc:creator><![CDATA[jerome]]></dc:creator>
 		<pubDate>Tue, 31 Jan 2012 15:40:42 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1165#comment-238</guid>
-		<description><![CDATA[you could see them via http://www.jeromecukier.net/stuff/sql_map/mapread.php, but the data is not very interesting, it&#039;s pretty random at this point.]]></description>
-		<content:encoded><![CDATA[<p>you could see them via <a href="http://www.jeromecukier.net/stuff/sql_map/mapread.php" rel="nofollow">http://www.jeromecukier.net/stuff/sql_map/mapread.php</a>, but the data is not very interesting, it&#8217;s pretty random at this point.</p>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1165#comment-238</guid>
+		<description><![CDATA[you could see them via http://jckr.github.io/blog/stuff/sql_map/mapread.php, but the data is not very interesting, it&#039;s pretty random at this point.]]></description>
+		<content:encoded><![CDATA[<p>you could see them via <a href="http://jckr.github.io/blog/stuff/sql_map/mapread.php" rel="nofollow">http://jckr.github.io/blog/stuff/sql_map/mapread.php</a>, but the data is not very interesting, it&#8217;s pretty random at this point.</p>
 ]]></content:encoded>
 	</item>
 	<item>
@@ -39,7 +39,7 @@
 		<link>/2012/01/02/using-d3-with-a-mysql-database/#comment-237</link>
 		<dc:creator><![CDATA[Surya Yadav]]></dc:creator>
 		<pubDate>Tue, 31 Jan 2012 15:31:01 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1165#comment-237</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1165#comment-237</guid>
 		<description><![CDATA[Thank you for the link to sqlmap.css. Is it possible to get the data points so that I can create a mysql database in order to duplicate the example on my machine?]]></description>
 		<content:encoded><![CDATA[<p>Thank you for the link to sqlmap.css. Is it possible to get the data points so that I can create a mysql database in order to duplicate the example on my machine?</p>
 ]]></content:encoded>
@@ -49,9 +49,9 @@
 		<link>/2012/01/02/using-d3-with-a-mysql-database/#comment-236</link>
 		<dc:creator><![CDATA[jerome]]></dc:creator>
 		<pubDate>Mon, 30 Jan 2012 22:02:41 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1165#comment-236</guid>
-		<description><![CDATA[it&#039;s at http://www.jeromecukier.net/stuff/sql_map/sqlmap.css]]></description>
-		<content:encoded><![CDATA[<p>it&#8217;s at <a href="http://www.jeromecukier.net/stuff/sql_map/sqlmap.css" rel="nofollow">http://www.jeromecukier.net/stuff/sql_map/sqlmap.css</a></p>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1165#comment-236</guid>
+		<description><![CDATA[it&#039;s at http://jckr.github.io/blog/stuff/sql_map/sqlmap.css]]></description>
+		<content:encoded><![CDATA[<p>it&#8217;s at <a href="http://jckr.github.io/blog/stuff/sql_map/sqlmap.css" rel="nofollow">http://jckr.github.io/blog/stuff/sql_map/sqlmap.css</a></p>
 ]]></content:encoded>
 	</item>
 	<item>
@@ -59,7 +59,7 @@
 		<link>/2012/01/02/using-d3-with-a-mysql-database/#comment-235</link>
 		<dc:creator><![CDATA[Surya]]></dc:creator>
 		<pubDate>Sun, 29 Jan 2012 02:20:31 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1165#comment-235</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1165#comment-235</guid>
 		<description><![CDATA[Very nice post. Can you please send me the sqlmap.css file. I could not locate it on the post?]]></description>
 		<content:encoded><![CDATA[<p>Very nice post. Can you please send me the sqlmap.css file. I could not locate it on the post?</p>
 ]]></content:encoded>
@@ -69,7 +69,7 @@
 		<link>/2012/01/02/using-d3-with-a-mysql-database/#comment-234</link>
 		<dc:creator><![CDATA[Ben]]></dc:creator>
 		<pubDate>Thu, 05 Jan 2012 22:03:43 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1165#comment-234</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1165#comment-234</guid>
 		<description><![CDATA[Also Jerome, with most if the custom slippy map libraries e.g. Leaflet.js, polymaps etc. you can get the bounds of the visible map region and fire an ajax request for new data for the region/tile each time a drag happens. This means you should be able to only load the data points you need for your geo-spatial map on demand. Shoot me a mail if you need some code samples closer to the date.]]></description>
 		<content:encoded><![CDATA[<p>Also Jerome, with most if the custom slippy map libraries e.g. Leaflet.js, polymaps etc. you can get the bounds of the visible map region and fire an ajax request for new data for the region/tile each time a drag happens. This means you should be able to only load the data points you need for your geo-spatial map on demand. Shoot me a mail if you need some code samples closer to the date.</p>
 ]]></content:encoded>
@@ -79,7 +79,7 @@
 		<link>/2012/01/02/using-d3-with-a-mysql-database/#comment-233</link>
 		<dc:creator><![CDATA[jerome cukier]]></dc:creator>
 		<pubDate>Thu, 05 Jan 2012 16:29:55 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1165#comment-233</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1165#comment-233</guid>
 		<description><![CDATA[Hi Ben, thanks for the tip, especially since I&#039;m considering doing this type of map some time soon, the dataset I&#039;m looking at has 450k entries so loading them all in memory just won&#039;t do... 
 re the other problem, I hadn&#039;t tried this, since the data file was generated with python I tried using pickle but the size gains were really minimal. I&#039;ll see if it helps!]]></description>
 		<content:encoded><![CDATA[<p>Hi Ben, thanks for the tip, especially since I&#8217;m considering doing this type of map some time soon, the dataset I&#8217;m looking at has 450k entries so loading them all in memory just won&#8217;t do&#8230;<br />
@@ -91,7 +91,7 @@ re the other problem, I hadn&#8217;t tried this, since the data file was generat
 		<link>/2012/01/02/using-d3-with-a-mysql-database/#comment-232</link>
 		<dc:creator><![CDATA[Ben]]></dc:creator>
 		<pubDate>Tue, 03 Jan 2012 21:17:30 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1165#comment-232</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1165#comment-232</guid>
 		<description><![CDATA[Jerome, 
 
 This is probably a bit advanced from where you are at the moment, but it would be worth looking at Backbone.js as a pseudo MVC framework to handle updates to data and subsequent rendering of views in Html and D3. 
@@ -116,7 +116,7 @@ Ben]]></description>
 		<link>/2012/01/02/using-d3-with-a-mysql-database/#comment-231</link>
 		<dc:creator><![CDATA[Ken Cherven]]></dc:creator>
 		<pubDate>Tue, 03 Jan 2012 18:09:44 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1165#comment-231</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1165#comment-231</guid>
 		<description><![CDATA[Jerome -
 
 Very interesting, and look forward to experimenting with MySQL connections to d3. The d3 charts are exceptional, but static data makes for a lot of work to create multiple visualizations.

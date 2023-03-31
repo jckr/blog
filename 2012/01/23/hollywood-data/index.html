@@ -7,15 +7,15 @@
 <meta name="HandheldFriendly" content="True" />
 <meta name="MobileOptimized" content="320" />
 
-<title>Hollywood + data | jeromecukier.net</title>
+<title>Hollywood + data | jckr.github.io/blog</title>
 
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="/xmlrpc.php">
 <link rel='dns-prefetch' href='//fonts.googleapis.com' />
 <link rel='dns-prefetch' href='//s.w.org' />
-<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Feed" href="/feed/" />
-<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Comments Feed" href="/comments/feed/" />
-<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Hollywood + data Comments Feed" href="/2012/01/23/hollywood-data/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jckr.github.io/blog &raquo; Feed" href="/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jckr.github.io/blog &raquo; Comments Feed" href="/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jckr.github.io/blog &raquo; Hollywood + data Comments Feed" href="/2012/01/23/hollywood-data/feed/" />
 <!-- This site uses the Google Analytics by MonsterInsights plugin v7.0.5 - Using Analytics tracking - https://www.monsterinsights.com/ -->
 <!-- Note: MonsterInsights is not currently configured on this site. The site owner needs to authenticate with Google Analytics in the MonsterInsights settings panel. -->
 <!-- No UA code set -->
@@ -73,7 +73,7 @@ img.emoji {
 
 <body class="single single-post postid-1185 single-format-standard group-blog">
 
-<header id="masthead" role="banner" class="site-head site-header" style="background-image: url(http://localhost:8888/wp-content/uploads/2018/04/Screenshot-2018-04-09-19.38.59.png);">
+<header id="masthead" role="banner" class="site-head site-header" style="background-image: url(/wp-content/uploads/2018/04/Screenshot-2018-04-09-19.38.59.png);">
     <nav id="site-navigation" class="main-navigation" role="navigation">
         <div>
             <h1 class="menu-toggle">
@@ -92,7 +92,7 @@ img.emoji {
                 
                 <div class="social-icons">
                                                                                                                                                                                                                                                                                                                                                                                                                                                     </div>
-                <h1 class="blog-title"><a class="blog-logo" href='/' rel='home'>jeromecukier.net</a></h1>
+                <h1 class="blog-title"><a class="blog-logo" href='/blog/' rel='home'>jckr.github.io/blog</a></h1>
                 <h2 class="blog-description">Just another WordPress site</h2>
             </div>
         </div>
@@ -116,9 +116,9 @@ img.emoji {
 <p>Part of the dataset is the total box office earnings of over 600 of the movies released in the US in the last 5 years. What I did is cross that list with the <a href="http://www.imdb.com/Sections/Keywords/">user-contributed plot keywords</a> on <a href="http://www.imdb.com/">imdb</a>. Then, I ran a regression on that to find out <strong>how much each keyword would generate in the box office? </strong>(I only kept those keywords mentioned over 5 times, that&#8217;s just over 2500, because else the full list is  20,000+). The full list is at the end of the article.</p>
 <p><span id="more-1185"></span></p>
 <p>ok the main motivation for doing this was after seeing the Tree of Life.</p>
-<p><div id="attachment_1192" style="width: 514px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2012/01/TOL_dinosaur.jpg"><img class="size-full wp-image-1192" title="TOL_dinosaur" src="http://www.jeromecukier.net/wp-content/uploads/2012/01/TOL_dinosaur.jpg" alt="" width="504" height="283" /></a><p class="wp-caption-text">Yeah!</p></div></p>
+<p><div id="attachment_1192" style="width: 514px" class="wp-caption aligncenter"><a href="http://jckr.github.io/blog/wp-content/uploads/2012/01/TOL_dinosaur.jpg"><img class="size-full wp-image-1192" title="TOL_dinosaur" src="https://jckr.github.io/blog/wp-content/uploads/2012/01/TOL_dinosaur.jpg" alt="" width="504" height="283" /></a><p class="wp-caption-text">Yeah!</p></div></p>
 <p>Tree of Life was a contemplative family drama, but Terrence Malick turned that into a totally awesome contemplative family drama by throwing in the mix dinosaurs and outer space scenes. I would have liked to prove that a liberal addition of dinosaurs can turn every movie into a better movie, alas, the numbers think otherwise. Movies with dinosaurs will make $500k less in the box office than movies without. For the effort, directors might just as well use dogs instead (movies tagged with &#8220;dog&#8221; make an extra $4.6m).</p>
-<p><div id="attachment_1188" style="width: 510px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2012/01/hello-yes-this-is-dog.png"><img class="size-full wp-image-1188" title="hello-yes-this-is-dog" src="http://www.jeromecukier.net/wp-content/uploads/2012/01/hello-yes-this-is-dog.png" alt="" width="500" height="409" /></a><p class="wp-caption-text">and one can see why.</p></div></p>
+<p><div id="attachment_1188" style="width: 510px" class="wp-caption aligncenter"><a href="http://jckr.github.io/blog/wp-content/uploads/2012/01/hello-yes-this-is-dog.png"><img class="size-full wp-image-1188" title="hello-yes-this-is-dog" src="https://jckr.github.io/blog/wp-content/uploads/2012/01/hello-yes-this-is-dog.png" alt="" width="500" height="409" /></a><p class="wp-caption-text">and one can see why.</p></div></p>
 <p>What else can we tell from the numbers?</p>
 <p>Believe it or not, nudity will <em>not</em> generate extra profit &#8211; movies tagged with nudity will make $2.9m less. Full frontal nudity makes a movie lose even more money. &#8220;Partial nudity&#8221; or &#8220;implied nudity&#8221; is ok, though. Now sex is another story. Sex will make a movie get another $6.7m (actors should just keep their clothes on).</p>
 <p>Violence is always a hit, too! Explosions generate $6.6m profit, murder is a classic, too &#8211; +$2.7m. And &#8220;nude woman murdered&#8221; is +$1.2m, so if you really need nudity in a movie&#8230; Then, you have to choose your weapons &#8211; pistol, rifle and rocket launcher make $5.6m, $5.5m and $5.4m respectively. Axes and knives work, too (+$1.4m and +$2.0m) but &#8220;knife throwing&#8221; or &#8220;threatened with a knife&#8221; is a no-no (-$2.8m and -$3.5m).</p>
@@ -12943,7 +12943,7 @@ Let&#8217;s suppose I have a script idea with an alien invasion, giant robots, l
 	<footer class="post-footer">
 
 	    <section class="author">
-	    	<img alt='' src='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=100&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=200&amp;d=mm&amp;r=g 2x' class='avatar avatar-100 photo' height='100' width='100' />	        <h4>jerome</h4>
+	    	<img alt='' src='https://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=100&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=200&amp;d=mm&amp;r=g 2x' class='avatar avatar-100 photo' height='100' width='100' />	        <h4>jerome</h4>
 	        <p></p>
 			<div class="clear">&nbsp;</div>
 	    </section>
@@ -12969,7 +12969,7 @@ Let&#8217;s suppose I have a script idea with an alien invasion, giant robots, l
 			<article id="div-comment-242" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://2.gravatar.com/avatar/bf35919ddc760e7428df733d7042a157?s=32&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/bf35919ddc760e7428df733d7042a157?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://informationisbeautiful.com/' rel='external nofollow' class='url'>David mcCandless</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://2.gravatar.com/avatar/bf35919ddc760e7428df733d7042a157?s=32&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/bf35919ddc760e7428df733d7042a157?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://informationisbeautiful.com/' rel='external nofollow' class='url'>David mcCandless</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/01/23/hollywood-data/#comment-242">
@@ -12990,7 +12990,7 @@ Let&#8217;s suppose I have a script idea with an alien invasion, giant robots, l
 			<article id="div-comment-243" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://www.jeromecukier.net/' rel='external nofollow' class='url'>jerome</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://jckr.github.io/blog/' rel='external nofollow' class='url'>jerome</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/01/23/hollywood-data/#comment-243">
@@ -13011,7 +13011,7 @@ Let&#8217;s suppose I have a script idea with an alien invasion, giant robots, l
 			<article id="div-comment-244" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://www.jeromecukier.net/' rel='external nofollow' class='url'>jerome</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://jckr.github.io/blog/' rel='external nofollow' class='url'>jerome</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/01/23/hollywood-data/#comment-244">
@@ -13032,7 +13032,7 @@ Let&#8217;s suppose I have a script idea with an alien invasion, giant robots, l
 			<article id="div-comment-245" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://2.gravatar.com/avatar/b5eac119dbd6978333bbb4c5d6665d3f?s=32&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b5eac119dbd6978333bbb4c5d6665d3f?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">Ben Ash</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://2.gravatar.com/avatar/b5eac119dbd6978333bbb4c5d6665d3f?s=32&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b5eac119dbd6978333bbb4c5d6665d3f?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">Ben Ash</b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/01/23/hollywood-data/#comment-245">
@@ -13056,7 +13056,7 @@ Let&#8217;s suppose I have a script idea with an alien invasion, giant robots, l
 			<article id="div-comment-247" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://www.jeromecukier.net/' rel='external nofollow' class='url'>jerome</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://jckr.github.io/blog/' rel='external nofollow' class='url'>jerome</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/01/23/hollywood-data/#comment-247">
@@ -13079,7 +13079,7 @@ Let&#8217;s suppose I have a script idea with an alien invasion, giant robots, l
 			<article id="div-comment-246" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://2.gravatar.com/avatar/ebd7a13013f64a559deed5f2e3b104c0?s=32&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/ebd7a13013f64a559deed5f2e3b104c0?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://www.fusselwurm.de/' rel='external nofollow' class='url'>Fusselwurm</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://2.gravatar.com/avatar/ebd7a13013f64a559deed5f2e3b104c0?s=32&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/ebd7a13013f64a559deed5f2e3b104c0?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://www.fusselwurm.de/' rel='external nofollow' class='url'>Fusselwurm</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/01/23/hollywood-data/#comment-246">
@@ -13104,7 +13104,7 @@ Let&#8217;s suppose I have a script idea with an alien invasion, giant robots, l
 			<article id="div-comment-249" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://0.gravatar.com/avatar/fd8bc92ecb6a608cddf1edb795f4299b?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/fd8bc92ecb6a608cddf1edb795f4299b?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">Jouss</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://0.gravatar.com/avatar/fd8bc92ecb6a608cddf1edb795f4299b?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/fd8bc92ecb6a608cddf1edb795f4299b?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">Jouss</b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/01/23/hollywood-data/#comment-249">
@@ -13126,7 +13126,7 @@ Let&#8217;s suppose I have a script idea with an alien invasion, giant robots, l
 			<article id="div-comment-250" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://1.gravatar.com/avatar/457b4eb2e9f12da943707ffae23b27fc?s=32&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/457b4eb2e9f12da943707ffae23b27fc?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">Rick</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://1.gravatar.com/avatar/457b4eb2e9f12da943707ffae23b27fc?s=32&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/457b4eb2e9f12da943707ffae23b27fc?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">Rick</b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/01/23/hollywood-data/#comment-250">
@@ -13149,7 +13149,7 @@ Let&#8217;s suppose I have a script idea with an alien invasion, giant robots, l
 			<article id="div-comment-251" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://www.jeromecukier.net/' rel='external nofollow' class='url'>jerome</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://jckr.github.io/blog/' rel='external nofollow' class='url'>jerome</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/01/23/hollywood-data/#comment-251">
@@ -13176,7 +13176,7 @@ Let&#8217;s suppose I have a script idea with an alien invasion, giant robots, l
 			<article id="div-comment-253" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://0.gravatar.com/avatar/93142b00ce695e40a0ee7af6c7fe1197?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/93142b00ce695e40a0ee7af6c7fe1197?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://vallandingham.me/' rel='external nofollow' class='url'>Jim V</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://0.gravatar.com/avatar/93142b00ce695e40a0ee7af6c7fe1197?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/93142b00ce695e40a0ee7af6c7fe1197?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://vallandingham.me/' rel='external nofollow' class='url'>Jim V</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/01/23/hollywood-data/#comment-253">
@@ -13199,7 +13199,7 @@ Let&#8217;s suppose I have a script idea with an alien invasion, giant robots, l
 			<article id="div-comment-254" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://www.jeromecukier.net/' rel='external nofollow' class='url'>jerome</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://jckr.github.io/blog/' rel='external nofollow' class='url'>jerome</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/01/23/hollywood-data/#comment-254">
@@ -13224,7 +13224,7 @@ Good luck to you too!</p>
 			<article id="div-comment-255" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://1.gravatar.com/avatar/11a25e8769300dbab634e7c26b834ca8?s=32&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/11a25e8769300dbab634e7c26b834ca8?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">mike</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://1.gravatar.com/avatar/11a25e8769300dbab634e7c26b834ca8?s=32&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/11a25e8769300dbab634e7c26b834ca8?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">mike</b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/01/23/hollywood-data/#comment-255">
@@ -13245,7 +13245,7 @@ Good luck to you too!</p>
 			<article id="div-comment-256" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://www.jeromecukier.net/' rel='external nofollow' class='url'>jerome</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://jckr.github.io/blog/' rel='external nofollow' class='url'>jerome</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/01/23/hollywood-data/#comment-256">
@@ -13272,7 +13272,7 @@ Good luck to you too!</p>
 			<article id="div-comment-258" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://2.gravatar.com/avatar/ef0c409f5bf79e26ea55059b81198807?s=32&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/ef0c409f5bf79e26ea55059b81198807?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">Matthew</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://2.gravatar.com/avatar/ef0c409f5bf79e26ea55059b81198807?s=32&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/ef0c409f5bf79e26ea55059b81198807?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">Matthew</b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/01/23/hollywood-data/#comment-258">
@@ -13293,7 +13293,7 @@ Good luck to you too!</p>
 			<article id="div-comment-259" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://www.jeromecukier.net/' rel='external nofollow' class='url'>jerome</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://jckr.github.io/blog/' rel='external nofollow' class='url'>jerome</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/01/23/hollywood-data/#comment-259">

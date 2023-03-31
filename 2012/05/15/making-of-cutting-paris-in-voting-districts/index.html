@@ -7,15 +7,15 @@
 <meta name="HandheldFriendly" content="True" />
 <meta name="MobileOptimized" content="320" />
 
-<title>Making-of: cutting Paris in voting districts | jeromecukier.net</title>
+<title>Making-of: cutting Paris in voting districts | jckr.github.io/blog</title>
 
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="/xmlrpc.php">
 <link rel='dns-prefetch' href='//fonts.googleapis.com' />
 <link rel='dns-prefetch' href='//s.w.org' />
-<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Feed" href="/feed/" />
-<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Comments Feed" href="/comments/feed/" />
-<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Making-of: cutting Paris in voting districts Comments Feed" href="/2012/05/15/making-of-cutting-paris-in-voting-districts/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jckr.github.io/blog &raquo; Feed" href="/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jckr.github.io/blog &raquo; Comments Feed" href="/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jckr.github.io/blog &raquo; Making-of: cutting Paris in voting districts Comments Feed" href="/2012/05/15/making-of-cutting-paris-in-voting-districts/feed/" />
 <!-- This site uses the Google Analytics by MonsterInsights plugin v7.0.5 - Using Analytics tracking - https://www.monsterinsights.com/ -->
 <!-- Note: MonsterInsights is not currently configured on this site. The site owner needs to authenticate with Google Analytics in the MonsterInsights settings panel. -->
 <!-- No UA code set -->
@@ -73,7 +73,7 @@ img.emoji {
 
 <body class="single single-post postid-1277 single-format-standard group-blog">
 
-<header id="masthead" role="banner" class="site-head site-header" style="background-image: url(http://localhost:8888/wp-content/uploads/2018/04/Screenshot-2018-04-09-19.38.59.png);">
+<header id="masthead" role="banner" class="site-head site-header" style="background-image: url(/wp-content/uploads/2018/04/Screenshot-2018-04-09-19.38.59.png);">
     <nav id="site-navigation" class="main-navigation" role="navigation">
         <div>
             <h1 class="menu-toggle">
@@ -92,7 +92,7 @@ img.emoji {
                 
                 <div class="social-icons">
                                                                                                                                                                                                                                                                                                                                                                                                                                                     </div>
-                <h1 class="blog-title"><a class="blog-logo" href='/' rel='home'>jeromecukier.net</a></h1>
+                <h1 class="blog-title"><a class="blog-logo" href='/blog/' rel='home'>jckr.github.io/blog</a></h1>
                 <h2 class="blog-description">Just another WordPress site</h2>
             </div>
         </div>
@@ -111,15 +111,15 @@ img.emoji {
         
     </header>
     		<section class="post-content">
-		    <p>Hi, in my previous post I showcased <a href="http://www.jeromecukier.net/projects/elections/circonscriptions.html#">one of my recent projects</a>. I really enjoyed building it and so would like to share how this has been done.</p>
+		    <p>Hi, in my previous post I showcased <a href="http://jckr.github.io/blog/projects/elections/circonscriptions.html#">one of my recent projects</a>. I really enjoyed building it and so would like to share how this has been done.</p>
 <p>First, getting the data. I already scraped the results of both rounds of the presidential election by city. The districts for the congress election are also known, but it&#8217;s not possible to do a match, because large cities are almost systematically broken down into several such districts. Paris, for instance, will be represented by no less than 18 <em>députés</em>.</p>
 <p>So I needed the results by the finest possible unit, that is by individual polling station. During the election night these results are compiled by city and centralized, so you would assume that the raw data of each polling station is available somewhere. That is not the case, unfortunately. Although it seems that they will be made public eventually, that may not be the case before the June 2012 election.</p>
 <p>Fortunately, <a href="http://opendata.paris.fr/opendata/jsp/site/Portal.jsp?document_id=133&amp;portlet_id=102">Open Data Paris</a> had the results by polling station. More: it had their address and matching of every inhabited building in Paris to its corresponding polling station.</p>
 <p>To map the polling stations, my first intuition was to create a <a href="http://en.wikipedia.org/wiki/Voronoi_diagram">voronoi tesselation</a> of their projected, geocoded coordinates (I only had their addresses in the raw data file). In short, voronoi polygons can be generated for a certain number of control points and correspond to the area nearer to that control point than to any other. So it&#8217;s a good approximation of the areas  which correspond to a given polling station.</p>
-<p><iframe style="border:none;" src="http://www.jeromecukier.net/stuff/littlevoronoi.html" scrolling="no" width="502px" height="270px"></iframe></p>
+<p><iframe style="border:none;" src="https://jckr.github.io/blog/stuff/littlevoronoi.html" scrolling="no" width="502px" height="270px"></iframe></p>
 <p>Problem: several polling stations could be in the same address, and for the voronoi algorithm the control points have to be distinct. So I tried jittering them (adding random noise to each one). A tesselation could be done that kind of looked like Paris but voting districts will look messy as there were frequent inversions between neighboring districts.</p>
 <p>So I had to come up with a better approximation of what part of the city corresponded to what voting district. So I used the address to polling station correspondance, and for each polling station I took the first and the last street number of any street that was covered by it. Then I geocoded the whole lot. That&#8217;s about 16000 points. It took some time.</p>
-<p><div id="attachment_1280" style="width: 616px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/wp-content/uploads/2012/05/centroids.png"><img class="wp-image-1280" title="centroids" src="http://www.jeromecukier.net/wp-content/uploads/2012/05/centroids.png" alt="" width="606" height="478" /></a><p class="wp-caption-text">Here&#39;s my polling station as an example.</p></div></p>
+<p><div id="attachment_1280" style="width: 616px" class="wp-caption aligncenter"><a href="http://jckr.github.io/blog/wp-content/uploads/2012/05/centroids.png"><img class="wp-image-1280" title="centroids" src="https://jckr.github.io/blog/wp-content/uploads/2012/05/centroids.png" alt="" width="606" height="478" /></a><p class="wp-caption-text">Here&#39;s my polling station as an example.</p></div></p>
 <p>Then, for each polling station area, I took the minimum and maximum longitude and latitude, which formed a bounding box, and assigned the polling station to the center of that box. Then, I used tesselation again.</p>
 <p>I found a number of oddities in the geocoding that I had to correct manually, because if one address was not accurately coded, chances are it would change the shape of the bounding box drastically and so the position of its corresponding polling station. Sometimes the geocoding service wouldn&#8217;t find the street and/or would use a street of the same name in another city, sometimes they did find the street but the coordinates were way off&#8230; So the dataset required a lot of massaging before it got into shape.</p>
 <p>The last geographic errand I had to do for this visualization was to create a perimeter of Paris to use as a clipping mask, else the tesselation would be done on a rectangular shape with the edge polygons being very large and very skewed. So I collected coordinates of points around Paris to create one polygon. Only what&#8217;s inside of this polygon is shown (.style(&#8220;clip-path&#8221;) in d3).</p>
@@ -132,7 +132,7 @@ img.emoji {
 	<footer class="post-footer">
 
 	    <section class="author">
-	    	<img alt='' src='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=100&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=200&amp;d=mm&amp;r=g 2x' class='avatar avatar-100 photo' height='100' width='100' />	        <h4>jerome</h4>
+	    	<img alt='' src='https://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=100&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=200&amp;d=mm&amp;r=g 2x' class='avatar avatar-100 photo' height='100' width='100' />	        <h4>jerome</h4>
 	        <p></p>
 			<div class="clear">&nbsp;</div>
 	    </section>
@@ -158,7 +158,7 @@ img.emoji {
 			<article id="div-comment-320" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://0.gravatar.com/avatar/93142b00ce695e40a0ee7af6c7fe1197?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/93142b00ce695e40a0ee7af6c7fe1197?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://vallandingham.me/' rel='external nofollow' class='url'>Jim Vallandingham</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://0.gravatar.com/avatar/93142b00ce695e40a0ee7af6c7fe1197?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/93142b00ce695e40a0ee7af6c7fe1197?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://vallandingham.me/' rel='external nofollow' class='url'>Jim Vallandingham</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/05/15/making-of-cutting-paris-in-voting-districts/#comment-320">
@@ -181,7 +181,7 @@ And, did you use a GIS tool to do the manual correction &#8211; like qQis?</p>
 			<article id="div-comment-321" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://www.jeromecukier.net/' rel='external nofollow' class='url'>jerome</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://jckr.github.io/blog/' rel='external nofollow' class='url'>jerome</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/05/15/making-of-cutting-paris-in-voting-districts/#comment-321">
@@ -205,7 +205,7 @@ actually I&#8217;m not very good at manipulating geo data (but wish I could be b
 			<article id="div-comment-322" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://0.gravatar.com/avatar/93142b00ce695e40a0ee7af6c7fe1197?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/93142b00ce695e40a0ee7af6c7fe1197?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://vallandingham.me/' rel='external nofollow' class='url'>Jim Vallandingham</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://0.gravatar.com/avatar/93142b00ce695e40a0ee7af6c7fe1197?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/93142b00ce695e40a0ee7af6c7fe1197?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://vallandingham.me/' rel='external nofollow' class='url'>Jim Vallandingham</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/05/15/making-of-cutting-paris-in-voting-districts/#comment-322">
@@ -227,7 +227,7 @@ actually I&#8217;m not very good at manipulating geo data (but wish I could be b
 			<article id="div-comment-323" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://www.jeromecukier.net/' rel='external nofollow' class='url'>jerome</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://jckr.github.io/blog/' rel='external nofollow' class='url'>jerome</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/05/15/making-of-cutting-paris-in-voting-districts/#comment-323">
@@ -252,7 +252,7 @@ actually I&#8217;m not very good at manipulating geo data (but wish I could be b
 </li><!-- #comment-## -->
 		<li id="comment-325" class="pingback odd alt thread-odd thread-alt depth-1">
 			<div class="comment-body">
-				Pingback: <a href='http://www.jeromecukier.net/blog/2012/05/24/making-of-the-map-of-congress-equality/' rel='external nofollow' class='url'>Jerome Cukier &raquo; Making-of: the map of congress equality</a> 			</div>
+				Pingback: <a href='http://jckr.github.io/blog/blog/2012/05/24/making-of-the-map-of-congress-equality/' rel='external nofollow' class='url'>Jerome Cukier &raquo; Making-of: the map of congress equality</a> 			</div>
 </li><!-- #comment-## -->
 		</ol><!-- .comment-list -->
 

@@ -19,7 +19,7 @@
 		<link>/2011/11/04/an-open-letter-to-tableau/#comment-213</link>
 		<dc:creator><![CDATA[Matt York]]></dc:creator>
 		<pubDate>Tue, 08 Nov 2011 02:09:57 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1081#comment-213</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1081#comment-213</guid>
 		<description><![CDATA[Hey Jerome and commenting folk,
 
 Tableau Public engineer here. Just letting you know that we&#039;re listening and we love the feedback. Keep it coming. 
@@ -35,7 +35,7 @@ Matt]]></description>
 		<link>/2011/11/04/an-open-letter-to-tableau/#comment-212</link>
 		<dc:creator><![CDATA[jerome]]></dc:creator>
 		<pubDate>Fri, 04 Nov 2011 12:09:03 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1081#comment-212</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1081#comment-212</guid>
 		<description><![CDATA[from what I&#039;ve seen in 7 it&#039;s arguably easier to layout dashboards.]]></description>
 		<content:encoded><![CDATA[<p>from what I&#8217;ve seen in 7 it&#8217;s arguably easier to layout dashboards.</p>
 ]]></content:encoded>
@@ -45,7 +45,7 @@ Matt]]></description>
 		<link>/2011/11/04/an-open-letter-to-tableau/#comment-211</link>
 		<dc:creator><![CDATA[Andrew Marritt]]></dc:creator>
 		<pubDate>Fri, 04 Nov 2011 12:05:44 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1081#comment-211</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1081#comment-211</guid>
 		<description><![CDATA[I couldn&#039;t agree more with you on the font / colour / theme part.  I have quite tightly defined colours, fonts etc for the whole of my business and trying to get Tableau to meet these standards has been difficult. Currently I reckon 25% of my time creating dashboards is spent on these activities. It could all be sorted so easily with a set of user-defined themes.
 
 Whilst on a similar topic I&#039;d like more control over layout on dashboards. I&#039;d like to be able to set the dimensions of items like blank items by giving pixel dimensions.  Having proportions would be even better.  Oh, and some really simple drawing elements like lines and arrows would be great so I can link elements together.

@@ -8,7 +8,7 @@
 	>
 
 <channel>
-	<title>change &#8211; jeromecukier.net</title>
+	<title>change &#8211; jckr.github.io/blog</title>
 	<atom:link href="http://localhost/tag/change/feed/" rel="self" type="application/rss+xml" />
 	<link>/</link>
 	<description>Just another WordPress site</description>
@@ -34,7 +34,7 @@
 		<category><![CDATA[visualization]]></category>
 		<category><![CDATA[visweek 2009]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=256</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=256</guid>
 		<description><![CDATA[I&#8217;ve put my slides from the panel on slideshare: Changing the world with visualization View more presentations from vozome.]]></description>
 				<content:encoded><![CDATA[<p>I&#8217;ve put my slides from the panel on slideshare:</p>
 <div style="width:425px;text-align:left" id="__ss_2320883"><a style="font:14px Helvetica,Arial,Sans-serif;display:block;margin:12px 0 3px 0;text-decoration:underline;" href="http://www.slideshare.net/vozome/changing-the-world-with-visualization" title="Changing the world with visualization">Changing the world with visualization</a><object style="margin:0px" width="425" height="355"><param name="movie" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=jeromecukier20091014-091022104217-phpapp02&#038;rel=0&#038;stripped_title=changing-the-world-with-visualization" /><param name="allowFullScreen" value="true"/><param name="allowScriptAccess" value="always"/><embed src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=jeromecukier20091014-091022104217-phpapp02&#038;rel=0&#038;stripped_title=changing-the-world-with-visualization" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="355"></embed></object>

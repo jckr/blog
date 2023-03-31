@@ -8,7 +8,7 @@
 	>
 
 <channel>
-	<title>radars &#8211; jeromecukier.net</title>
+	<title>radars &#8211; jckr.github.io/blog</title>
 	<atom:link href="http://localhost/tag/radars/feed/" rel="self" type="application/rss+xml" />
 	<link>/</link>
 	<description>Just another WordPress site</description>
@@ -29,25 +29,25 @@
 		<category><![CDATA[sécurité routière]]></category>
 		<category><![CDATA[statistique]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=882</guid>
-		<description><![CDATA[Cette semaine le gouvernement a annoncé que le projet de retirer les panneaux annonçant les radars était gelé. Seuls 13 panneaux ont été retirés sur environ 1000. Cette décision fait suite à un appel de députés à qui leurs électeurs ont fait savoir leur &#8220;profonde exaspération&#8221; suite à ce fameux retrait de panneaux et plus <a class="read-more" href="/2011/05/30/exasperes-par-les-radars/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=882</guid>
+		<description><![CDATA[Cette semaine le gouvernement a annoncé que le projet de retirer les panneaux annonçant les radars était gelé. Seuls 13 panneaux ont été retirés sur environ 1000. Cette décision fait suite à un appel de députés à qui leurs électeurs ont fait savoir leur &#8220;profonde exaspération&#8221; suite à ce fameux retrait de panneaux et plus <a class="read-more" href="/blog/2011/05/30/exasperes-par-les-radars/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[<p>Cette semaine le gouvernement a annoncé que le projet de retirer les panneaux annonçant les radars était gelé. Seuls 13 panneaux ont été retirés sur environ 1000. Cette décision fait suite à un <a href="http://www.lefigaro.fr/assets/pdf/110523-courrier-au-premier-ministre.pdf">appel de députés</a> à qui leurs électeurs ont fait savoir leur &#8220;profonde exaspération&#8221; suite à ce fameux retrait de panneaux et plus généralement, à cause des contrôles automatisés.</p>
 <p>Heureusement, la sécurité routière est l&#8217;un des sujets les plus analysés par les pouvoirs publics. Alors, chiffres en mains, quelle est la bonne décision?</p>
 <p>Est-ce que, <a href="http://blog.40millionsdautomobilistes.com/2011/05/24/verite-argent-radars/">comme disent certains</a>, les radars ne sont qu&#8217;un moyen de faire rentrer de l&#8217;argent dans les caisses de l&#8217;État? ou est-ce que les radars sauvent des vies?</p>
 <h3>Le rôle de la vitesse dans les accidents de la route</h3>
 <p>La théorie qui relie vitesse, nombre d&#8217;accidents et victimes est le modèle de Nilsson qui fut établi au début des années 1980. Pour simplifier, si la vitesse moyenne augmente de 1%, le nombre d&#8217;accidents augmente de 2% et celui de morts de 4%. Ce modèle s&#8217;est vérifié empiriquement, c&#8217;est pourquoi ont l&#8217;utilise toujours 30 ans plus tard.</p>
 <p>Cela dit, quand on parle d&#8217;augmentation ou de diminution de vitesse dans ce modèle, on parle de vitesse moyenne, avec la même distribution, c&#8217;est-à-dire qu&#8217;il y aura toujours autant de personnes qui conduisent 10% plus vite que la moyenne, 20% plus vite etc.<br />
-<script src="http://www.jeromecukier.net/wp-includes/js/protovis_r3_2.js" type="text/javascript"></script> <script src="http://www.jeromecukier.net/wp-content/uploads/2011/05/distri.js" type="text/javascript"></script><br />
+<script src="https://jckr.github.io/blog/wp-includes/js/protovis_r3_2.js" type="text/javascript"></script> <script src="https://jckr.github.io/blog/wp-content/uploads/2011/05/distri.js" type="text/javascript"></script><br />
 Or que savons-nous précisément sur ces vitesses trop élevées, celles précisément qui donnent lieu à des amendes?</p>
 <p>D&#8217;après <em>La sécurité routière en France – BILAN 2009</em>, page 168,</p>
 <blockquote><p>La vitesse est un facteur particulier d’accident dans la mesure où elle est pratiquement toujours présente dans une collision, que ce soit une vitesse inappropriée aux circonstances ou excessive.</p></blockquote>
 <h3>Dépassements de vitesse et radar</h3>
 <p>Mais est-ce que les radars ont été efficaces pour lutter contre ces vitesses excessives? Là encore on peut vérifier chiffres en main.<br />
 <!--[if IE]>
-<a href="http://www.jeromecukier.net/wp-content/uploads/2011/05/infractions.png" _mce_href="http://www.jeromecukier.net/wp-content/uploads/2011/05/infractions.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/05/infractions.png" _mce_src="http://www.jeromecukier.net/wp-content/uploads/2011/05/infractions.png" alt="" title="infractions" width="600" height="400" class="alignnone size-full wp-image-403" /></a>
-<a href="http://www.jeromecukier.net/wp-content/uploads/2011/05/vitesses.png" _mce_href="http://www.jeromecukier.net/wp-content/uploads/2011/05/vitesses.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/05/vitesses.png" _mce_src="http://www.jeromecukier.net/wp-content/uploads/2011/05/vitesses.png" alt="" title="vitesses" width="600" height="400" class="alignnone size-full wp-image-403" /></a>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/05/infractions.png" _mce_href="http://jckr.github.io/blog/wp-content/uploads/2011/05/infractions.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/05/infractions.png" _mce_src="https://jckr.github.io/blog/wp-content/uploads/2011/05/infractions.png" alt="" title="infractions" width="600" height="400" class="alignnone size-full wp-image-403" /></a>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/05/vitesses.png" _mce_href="http://jckr.github.io/blog/wp-content/uploads/2011/05/vitesses.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/05/vitesses.png" _mce_src="https://jckr.github.io/blog/wp-content/uploads/2011/05/vitesses.png" alt="" title="vitesses" width="600" height="400" class="alignnone size-full wp-image-403" /></a>
 <!--><br />
-<script src="http://www.jeromecukier.net/wp-content/uploads/2011/05/infractions.js" type="text/javascript"></script> <script src="http://www.jeromecukier.net/wp-content/uploads/2011/05/vitesses.js" type="text/javascript"></script></p>
+<script src="https://jckr.github.io/blog/wp-content/uploads/2011/05/infractions.js" type="text/javascript"></script> <script src="https://jckr.github.io/blog/wp-content/uploads/2011/05/vitesses.js" type="text/javascript"></script></p>
 <p>L&#8217;introduction des radars a augmenté le nombre de contrôles de vitesse dans de grandes proportions: de  1,350,000 à peu près en 2002 à près de 10 millions aujourd&#8217;hui. Dans le même temps,  la proportion de véhicules qui roulent 10km/h au-dessus des limites autorisées est passé d&#8217;environ 40% à 10%. Les chiffres passent de 5% à 0.5% pour ceux qui roulent à plus de 30 km/h au-dessus de la limite.<br />
 La <a href="http://www.lefigaro.fr/assets/pdf/110523-courrier-au-premier-ministre.pdf">lettre des députés</a> note que les accidents ont été divisés par 2 en 20 ans alors que la circulation a augmenté de 80%. Il serait plus exact de dire que les morts sur la route ont été divisés par 2&#8230; suite à l&#8217;introduction des radars automatiques.</p>
 <h3>Le coût des accidents</h3>

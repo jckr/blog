@@ -7,15 +7,15 @@
 <meta name="HandheldFriendly" content="True" />
 <meta name="MobileOptimized" content="320" />
 
-<title>Manipulating data like a boss with d3 | jeromecukier.net</title>
+<title>Manipulating data like a boss with d3 | jckr.github.io/blog</title>
 
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="/xmlrpc.php">
 <link rel='dns-prefetch' href='//fonts.googleapis.com' />
 <link rel='dns-prefetch' href='//s.w.org' />
-<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Feed" href="/feed/" />
-<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Comments Feed" href="/comments/feed/" />
-<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Manipulating data like a boss with d3 Comments Feed" href="/2012/05/28/manipulating-data-like-a-boss-with-d3/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jckr.github.io/blog &raquo; Feed" href="/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jckr.github.io/blog &raquo; Comments Feed" href="/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jckr.github.io/blog &raquo; Manipulating data like a boss with d3 Comments Feed" href="/2012/05/28/manipulating-data-like-a-boss-with-d3/feed/" />
 <!-- This site uses the Google Analytics by MonsterInsights plugin v7.0.5 - Using Analytics tracking - https://www.monsterinsights.com/ -->
 <!-- Note: MonsterInsights is not currently configured on this site. The site owner needs to authenticate with Google Analytics in the MonsterInsights settings panel. -->
 <!-- No UA code set -->
@@ -73,7 +73,7 @@ img.emoji {
 
 <body class="single single-post postid-1246 single-format-standard group-blog">
 
-<header id="masthead" role="banner" class="site-head site-header" style="background-image: url(http://localhost:8888/wp-content/uploads/2018/04/Screenshot-2018-04-09-19.38.59.png);">
+<header id="masthead" role="banner" class="site-head site-header" style="background-image: url(/wp-content/uploads/2018/04/Screenshot-2018-04-09-19.38.59.png);">
     <nav id="site-navigation" class="main-navigation" role="navigation">
         <div>
             <h1 class="menu-toggle">
@@ -92,7 +92,7 @@ img.emoji {
                 
                 <div class="social-icons">
                                                                                                                                                                                                                                                                                                                                                                                                                                                     </div>
-                <h1 class="blog-title"><a class="blog-logo" href='/' rel='home'>jeromecukier.net</a></h1>
+                <h1 class="blog-title"><a class="blog-logo" href='/blog/' rel='home'>jckr.github.io/blog</a></h1>
                 <h2 class="blog-description">Just another WordPress site</h2>
             </div>
         </div>
@@ -113,12 +113,12 @@ img.emoji {
     		<section class="post-content">
 		    <p>Updates:<br />
 1) I&#8217;ve put all the code examples in http://codepen.io/collection/njzYxo/<br />
-2) I will rewrite this post after I&#8217;m done publishing my <a href="http://wp.me/po630-rQ">Visualization with React</a> series, because it&#8217;s 4 years old and there are other ways to do this now.</p>
+2) I will rewrite this post after I&#8217;m done publishing my <a href="/2016/08/09/visualization-with-react/">Visualization with React</a> series, because it&#8217;s 4 years old and there are other ways to do this now.</p>
 <p>Data is the first D in d3 (or possibly the 3rd, but it&#8217;s definitely one of these).</p>
 <p>Anyway. Putting your data in the right form is crucial to have concise code that runs fast and is easy to read (and, later, troubleshoot).</p>
 <p>So what shape should your data be in?<br />
 You undoubtedly have many options. </p>
-<p>To follow through this tutorial, let&#8217;s assume you want to plot the relationship between R&#038;D expenditure and GDP growth for a number of countries. You have got <a href="http://www.jeromecukier.net/stuff/data%20example/data.csv">this file</a>, full of tabular data, which lists for every country a name, a continent, the gross R&#038;D expenditure as a percentage of GDP, GDP growth, and for context population and GDP per capita.</p>
+<p>To follow through this tutorial, let&#8217;s assume you want to plot the relationship between R&#038;D expenditure and GDP growth for a number of countries. You have got <a href="http://jckr.github.io/blog/stuff/data%20example/data.csv">this file</a>, full of tabular data, which lists for every country a name, a continent, the gross R&#038;D expenditure as a percentage of GDP, GDP growth, and for context population and GDP per capita.</p>
 <p>So one very basic approach would be to put each of these variables into one independent array.</p>
 <pre class="brush: jscript; title: ; notranslate" title="">var GERD=[2.21367, 2.74826, 1.96158, 1.80213, 0.39451, 1.52652, 3.01937, 1.44122, 3.84137, 2.20646, 2.78056, 0.5921, 1.14821, 2.64107, 1.78988, 4.2504, 1.26841, 3.33499, 3.3609, 1.67862, 0.41322, 1.81965, 1.13693, 1.75922, 0.67502, 1.65519, 1.24252, 0.48056, 1.85642, 0.92523, 1.38357, 3.61562, 2.99525, 0.84902, 1.82434, 2.78518];
 var growth=[2.48590317, 3.10741128, 1.89308521, 3.21494841, 5.19813626, 1.65489834, 1.04974368, 7.63563272, 2.85477157, 1.47996142, 2.99558644, -6.90796403, 1.69192342, -3.99988322, -0.42935239, 4.84602001, 0.43108032, 3.96559062, 6.16184325, 2.67806902, 5.56185685, 1.18517739, 2.33052515, 1.59773989, 4.34962928, -1.60958484, 4.03428262, 3.34920254, -0.17459255, 2.784, -0.06947685, 3.93555895, 2.71404473, 9.00558548, 2.09209263, 3.02171711];
@@ -143,8 +143,8 @@ Let&#8217;s do a bubble chart for instance.<br />
     .append(&quot;title&quot;)
     .text(String)</pre>
 <p>and this works:<br />
-<iframe src="http://www.jeromecukier.net/stuff/data%20example/data-example0.html" width=512px height=520px scrolling=no style="border:0px"></iframe><br />
-<a href="http://www.jeromecukier.net/stuff/data%20example/data-example0.html">See example in its own tab or window</a><br />
+<iframe src="https://jckr.github.io/blog/stuff/data%20example/data-example0.html" width=512px height=520px scrolling=no style="border:0px"></iframe><br />
+<a href="http://jckr.github.io/blog/stuff/data%20example/data-example0.html">See example in its own tab or window</a><br />
 but this is hell to maintain. If for some reason there is an error in one of the values, for instance due to a cat or a small child in the proximity of the computer, the error will be very difficult to troubleshoot.<br />
 Another problem is that it&#8217;s very difficult to apply any kind of subsequent treatment to the data. For instance, you will notice that there are smaller bubbles entirely within the large orange bubble which happens to be on top of them. So it&#8217;s not possible to mouseover the smaller bubbles. One way to address that would be to sort data in order of decreasing population (the size of the bubbles) so that it would be impossible to have this kind of situation. Now while it is possible sorting 6 arrays according to the values of one, it&#8217;s very messy.</p>
 <p><strong>Ideally, you should have all the values that will be translated graphically within one, single object.</strong> You want to have an array of these objects that you will pass to the data method, and be able to write something like: </p>
@@ -198,8 +198,8 @@ Another problem is that it&#8217;s very difficult to apply any kind of subsequen
 ]</pre>
 <p>and get this done, and furthermore if you are thinking &#8220;Hey, I can do this in Excel from my csv file, with one formula that I will copy across the rows&#8221;, <strong>you need to stop right now in the name of all that is good and holy</strong>.<br />
 Even though it works: </p>
-<p><iframe src="http://www.jeromecukier.net/stuff/data%20example/data-example1.html" width=512px height=520px scrolling=no style="border:0px"></iframe><br />
-<a href="http://www.jeromecukier.net/stuff/data%20example/data-example1.html">See example in its own tab or window</a></p>
+<p><iframe src="https://jckr.github.io/blog/stuff/data%20example/data-example1.html" width=512px height=520px scrolling=no style="border:0px"></iframe><br />
+<a href="http://jckr.github.io/blog/stuff/data%20example/data-example1.html">See example in its own tab or window</a></p>
 <p>This approach has a number of flaws which you can all avoid if you read on.<br />
 First, the execution of your program will be stopped while your browser reads the source code that contains the &#8220;data&#8221; variable. This is negligible for 36 rows, but as objects get bigger and more complex, an equivalent variable may take seconds or even minutes to load. And now we have a problem.<br />
 That&#8217;s a problem for your users. Now to you: creating a JSON variable from tabular data is tedious and error prone. The formula editing interface in Excel doesn&#8217;t really help you spot where you have misplaced a quote or a colon. As a result, this is very time-consuming. </p>
@@ -242,8 +242,8 @@ In other words, once inside the d3.csv function, the &#8220;csv&#8221; variable 
 <li>Everything read from the file is treated as strings. Javascript does a lot of type conversion but be mindful of that or you will have surprises. This is why I wrote x(+d.GERD) for instance (+ before a string converts it to a number).</li>
 </ul>
 <p>To celebrate this superior way of aquiring data, we&#8217;ve thrown in animated data entry: the circles are initiated at a default value and move towards their position. You may want to check the link to see the transition effect.</p>
-<p><iframe src="http://www.jeromecukier.net/stuff/data%20example/data-example2.html" width=512px height=520px scrolling=no style="border:0px"></iframe><br />
-<a href="http://www.jeromecukier.net/stuff/data%20example/data-example2.html">See example in its own tab or window</a></p>
+<p><iframe src="https://jckr.github.io/blog/stuff/data%20example/data-example2.html" width=512px height=520px scrolling=no style="border:0px"></iframe><br />
+<a href="http://jckr.github.io/blog/stuff/data%20example/data-example2.html">See example in its own tab or window</a></p>
 <p>So, at the level of the mark (ie our circles) the most comfortable form of data is an object with at least as many keys as there will be graphical properties to change dynamically.<br />
 One flat array of data is fine if we have just one series of data. But what if we have several series? Indeed, most visualizations have a structure and a hierarchy.<br />
 So let&#8217;s proceed with our data but now let&#8217;s assume that we want to show values for different continents as different little scatterplots (&#8220;small multiples&#8221;).<br />
@@ -325,8 +325,8 @@ The last part of the statement, .entries(csv), says that we want to do that oper
       .style(&quot;opacity&quot;,function(d) {return o(d.population)})
       .style(&quot;opacity&quot;,function(d) {return o(+d.GDPcap);})</pre>
 <p>(you may want to click on the link to see the transition effect and read the full source).<br />
-<iframe src="http://www.jeromecukier.net/stuff/data%20example/data-example3.html" width=512px height=122px scrolling=no style="border:0px"></iframe><br />
-<a href="http://www.jeromecukier.net/stuff/data%20example/data-example3.html">See example in its own tab or window</a></p>
+<iframe src="https://jckr.github.io/blog/stuff/data%20example/data-example3.html" width=512px height=122px scrolling=no style="border:0px"></iframe><br />
+<a href="http://jckr.github.io/blog/stuff/data%20example/data-example3.html">See example in its own tab or window</a></p>
 <p>This is all very nice but wouldn&#8217;t it be better if we could characterize some aggregate information from the continents? Let&#8217;s try to find out the average values for R&#038;D expenditure and GDP growth. </p>
 <p>Can it be done easily? This is a job for the other main d3.nest method, rollup.</p>
 <p>rollup is the aggregating function. Here&#8217;s an example.</p>
@@ -411,8 +411,8 @@ Now it&#8217;s just a matter of adding them to the sketch. Two little additions 
     .attr(&quot;x1&quot;,function(d,i) {return x(avgs[i].values.GERD);})
     .attr(&quot;x2&quot;,function(d,i) {return x(avgs[i].values.GERD);})</pre>
 <p>This is the final example &#8211; again you may want to click on the link to see the transition and get the entirety of the source.<br />
-<iframe src="http://www.jeromecukier.net/stuff/data%20example/data-example4.html" width=512px height=122px scrolling=no style="border:0px"></iframe><br />
-<a href="http://www.jeromecukier.net/stuff/data%20example/data-example4.html">See example in its own tab or window</a></p>
+<iframe src="https://jckr.github.io/blog/stuff/data%20example/data-example4.html" width=512px height=122px scrolling=no style="border:0px"></iframe><br />
+<a href="http://jckr.github.io/blog/stuff/data%20example/data-example4.html">See example in its own tab or window</a></p>
 <p>To wrap up:</p>
 <ul>
 <li>At the mark level, you want to have objects with as many properties as you need graphical variables (like x,y, fill, etc.)</li>
@@ -426,7 +426,7 @@ Now it&#8217;s just a matter of adding them to the sketch. Two little additions 
 	<footer class="post-footer">
 
 	    <section class="author">
-	    	<img alt='' src='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=100&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=200&amp;d=mm&amp;r=g 2x' class='avatar avatar-100 photo' height='100' width='100' />	        <h4>jerome</h4>
+	    	<img alt='' src='https://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=100&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=200&amp;d=mm&amp;r=g 2x' class='avatar avatar-100 photo' height='100' width='100' />	        <h4>jerome</h4>
 	        <p></p>
 			<div class="clear">&nbsp;</div>
 	    </section>
@@ -452,7 +452,7 @@ Now it&#8217;s just a matter of adding them to the sketch. Two little additions 
 			<article id="div-comment-269" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://2.gravatar.com/avatar/ea61fc97aab700c9413a1b2f34ab6afc?s=32&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/ea61fc97aab700c9413a1b2f34ab6afc?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://visual-baseball.com/' rel='external nofollow' class='url'>Ken Cherven</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://2.gravatar.com/avatar/ea61fc97aab700c9413a1b2f34ab6afc?s=32&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/ea61fc97aab700c9413a1b2f34ab6afc?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://visual-baseball.com/' rel='external nofollow' class='url'>Ken Cherven</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-269">
@@ -473,7 +473,7 @@ Now it&#8217;s just a matter of adding them to the sketch. Two little additions 
 			<article id="div-comment-270" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://www.jeromecukier.net/' rel='external nofollow' class='url'>jerome</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://jckr.github.io/blog/' rel='external nofollow' class='url'>jerome</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-270">
@@ -485,7 +485,7 @@ Now it&#8217;s just a matter of adding them to the sketch. Two little additions 
 									</footer><!-- .comment-meta -->
 
 				<div class="comment-content">
-					<p>Hi, thanks; though d3 can completely interact with a database like mySQL with a similar approach <a href="http://www.jeromecukier.net/blog/2012/01/02/using-d3-with-a-mysql-database/" rel="nofollow">http://www.jeromecukier.net/blog/2012/01/02/using-d3-with-a-mysql-database/</a><br />
+					<p>Hi, thanks; though d3 can completely interact with a database like mySQL with a similar approach <a href="http://jckr.github.io/blog/blog/2012/01/02/using-d3-with-a-mysql-database/" rel="nofollow">http://jckr.github.io/blog/blog/2012/01/02/using-d3-with-a-mysql-database/</a><br />
 but if you have data in tabular format to begin with, d3.csv is very practical</p>
 				</div><!-- .comment-content -->
 
@@ -499,7 +499,7 @@ but if you have data in tabular format to begin with, d3.csv is very practical</
 			<article id="div-comment-272" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://1.gravatar.com/avatar/7005b0353700331ae983ee90c81b2e69?s=32&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/7005b0353700331ae983ee90c81b2e69?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">EvanZ</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://1.gravatar.com/avatar/7005b0353700331ae983ee90c81b2e69?s=32&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/7005b0353700331ae983ee90c81b2e69?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">EvanZ</b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-272">
@@ -520,7 +520,7 @@ but if you have data in tabular format to begin with, d3.csv is very practical</
 			<article id="div-comment-273" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://0.gravatar.com/avatar/0914468667cea81f7c28d10cc4702f8a?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/0914468667cea81f7c28d10cc4702f8a?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">Gorkem Yurtseven</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://0.gravatar.com/avatar/0914468667cea81f7c28d10cc4702f8a?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/0914468667cea81f7c28d10cc4702f8a?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">Gorkem Yurtseven</b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-273">
@@ -541,7 +541,7 @@ but if you have data in tabular format to begin with, d3.csv is very practical</
 			<article id="div-comment-274" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://www.jeromecukier.net/' rel='external nofollow' class='url'>jerome</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://jckr.github.io/blog/' rel='external nofollow' class='url'>jerome</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-274">
@@ -564,7 +564,7 @@ but if you have data in tabular format to begin with, d3.csv is very practical</
 			<article id="div-comment-275" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://0.gravatar.com/avatar/0914468667cea81f7c28d10cc4702f8a?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/0914468667cea81f7c28d10cc4702f8a?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">Gorkem Yurtseven</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://0.gravatar.com/avatar/0914468667cea81f7c28d10cc4702f8a?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/0914468667cea81f7c28d10cc4702f8a?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">Gorkem Yurtseven</b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-275">
@@ -590,7 +590,7 @@ but if you have data in tabular format to begin with, d3.csv is very practical</
 			<article id="div-comment-277" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://0.gravatar.com/avatar/f3c0ff913750ee7ed0050049e34729b0?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/f3c0ff913750ee7ed0050049e34729b0?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">Jade</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://0.gravatar.com/avatar/f3c0ff913750ee7ed0050049e34729b0?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/f3c0ff913750ee7ed0050049e34729b0?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">Jade</b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-277">
@@ -612,7 +612,7 @@ How can this be done using d3.xml? That is, loading data from an XML file, to a 
 			<article id="div-comment-279" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://www.jeromecukier.net/' rel='external nofollow' class='url'>jerome</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://jckr.github.io/blog/' rel='external nofollow' class='url'>jerome</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-279">
@@ -636,7 +636,7 @@ the xml variable inside the function call will hold the entire xml document, whi
 			<article id="div-comment-278" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://0.gravatar.com/avatar/002bb32dee0f3f90893d5a0251193f16?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/002bb32dee0f3f90893d5a0251193f16?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">Newbie D3 User</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://0.gravatar.com/avatar/002bb32dee0f3f90893d5a0251193f16?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/002bb32dee0f3f90893d5a0251193f16?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">Newbie D3 User</b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-278">
@@ -657,7 +657,7 @@ the xml variable inside the function call will hold the entire xml document, whi
 			<article id="div-comment-280" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://0.gravatar.com/avatar/fc24bd19be9763553b4a7b37bf550bbf?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/fc24bd19be9763553b4a7b37bf550bbf?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">TapioK</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://0.gravatar.com/avatar/fc24bd19be9763553b4a7b37bf550bbf?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/fc24bd19be9763553b4a7b37bf550bbf?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">TapioK</b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-280">
@@ -688,7 +688,7 @@ So that:<br />
 			<article id="div-comment-281" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://www.jeromecukier.net/' rel='external nofollow' class='url'>jerome</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://jckr.github.io/blog/' rel='external nofollow' class='url'>jerome</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-281">
@@ -713,7 +713,7 @@ So that:<br />
 			<article id="div-comment-282" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://2.gravatar.com/avatar/8849ba5dc510cc528ebd922949cfc094?s=32&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/8849ba5dc510cc528ebd922949cfc094?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">Etienne Ramstein</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://2.gravatar.com/avatar/8849ba5dc510cc528ebd922949cfc094?s=32&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/8849ba5dc510cc528ebd922949cfc094?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">Etienne Ramstein</b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-282">
@@ -736,7 +736,7 @@ Did you learn D3 just by reading the API, or did you initially get help on messa
 			<article id="div-comment-283" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://www.jeromecukier.net/' rel='external nofollow' class='url'>jerome</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://jckr.github.io/blog/' rel='external nofollow' class='url'>jerome</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-283">
@@ -759,7 +759,7 @@ Did you learn D3 just by reading the API, or did you initially get help on messa
 			<article id="div-comment-284" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://1.gravatar.com/avatar/7005b0353700331ae983ee90c81b2e69?s=32&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/7005b0353700331ae983ee90c81b2e69?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">EvanZ</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://1.gravatar.com/avatar/7005b0353700331ae983ee90c81b2e69?s=32&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/7005b0353700331ae983ee90c81b2e69?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">EvanZ</b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-284">
@@ -782,7 +782,7 @@ An Introduction to Designing With D3&#8243;</p>
 			<article id="div-comment-285" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://0.gravatar.com/avatar/9c35a77d69f69a2c121bc65b887d256e?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9c35a77d69f69a2c121bc65b887d256e?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">kamesh peri</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://0.gravatar.com/avatar/9c35a77d69f69a2c121bc65b887d256e?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9c35a77d69f69a2c121bc65b887d256e?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">kamesh peri</b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-285">
@@ -803,7 +803,7 @@ An Introduction to Designing With D3&#8243;</p>
 			<article id="div-comment-286" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://www.jeromecukier.net/' rel='external nofollow' class='url'>jerome</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://jckr.github.io/blog/' rel='external nofollow' class='url'>jerome</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-286">
@@ -826,7 +826,7 @@ An Introduction to Designing With D3&#8243;</p>
 			<article id="div-comment-287" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://2.gravatar.com/avatar/5fb086d2860f5bbc18fa390ad0591d85?s=32&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/5fb086d2860f5bbc18fa390ad0591d85?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">Fiore</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://2.gravatar.com/avatar/5fb086d2860f5bbc18fa390ad0591d85?s=32&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/5fb086d2860f5bbc18fa390ad0591d85?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">Fiore</b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-287">
@@ -851,7 +851,7 @@ first :can I rename the attributes GERD and growth,say , as avg_GERD or avg_grow
 			<article id="div-comment-288" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://www.jeromecukier.net/' rel='external nofollow' class='url'>jerome</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://jckr.github.io/blog/' rel='external nofollow' class='url'>jerome</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-288">
@@ -904,7 +904,7 @@ csv.forEach(function (d) {<br />
 			<article id="div-comment-289" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://2.gravatar.com/avatar/5fb086d2860f5bbc18fa390ad0591d85?s=32&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/5fb086d2860f5bbc18fa390ad0591d85?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">fiore</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://2.gravatar.com/avatar/5fb086d2860f5bbc18fa390ad0591d85?s=32&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/5fb086d2860f5bbc18fa390ad0591d85?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">fiore</b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-289">
@@ -930,7 +930,7 @@ csv.forEach(function (d) {<br />
 			<article id="div-comment-291" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://2.gravatar.com/avatar/b057f1329d7fa1fbd53ddde7288ef4d5?s=32&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b057f1329d7fa1fbd53ddde7288ef4d5?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://ueye.info/' rel='external nofollow' class='url'>centerofme</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://2.gravatar.com/avatar/b057f1329d7fa1fbd53ddde7288ef4d5?s=32&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b057f1329d7fa1fbd53ddde7288ef4d5?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://ueye.info/' rel='external nofollow' class='url'>centerofme</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-291">
@@ -951,7 +951,7 @@ csv.forEach(function (d) {<br />
 			<article id="div-comment-292" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://1.gravatar.com/avatar/79926c16912be46da4af9737ab747124?s=32&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/79926c16912be46da4af9737ab747124?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">Paul</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://1.gravatar.com/avatar/79926c16912be46da4af9737ab747124?s=32&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/79926c16912be46da4af9737ab747124?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">Paul</b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-292">
@@ -991,7 +991,7 @@ csv.forEach(function (d) {<br />
 			<article id="div-comment-295" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://www.jeromecukier.net/' rel='external nofollow' class='url'>jerome</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://jckr.github.io/blog/' rel='external nofollow' class='url'>jerome</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-295">
@@ -1015,7 +1015,7 @@ that being said, for any element of the array, you can do d3.keys() which will r
 			<article id="div-comment-293" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://1.gravatar.com/avatar/7eb61278c974ea3fde3540174254aeec?s=32&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/7eb61278c974ea3fde3540174254aeec?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">maadso</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://1.gravatar.com/avatar/7eb61278c974ea3fde3540174254aeec?s=32&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/7eb61278c974ea3fde3540174254aeec?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">maadso</b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-293">
@@ -1061,7 +1061,7 @@ that being said, for any element of the array, you can do d3.keys() which will r
 			<article id="div-comment-294" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://www.jeromecukier.net/' rel='external nofollow' class='url'>jerome</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9bb03f0a91eab52fe022450c323810f2?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://jckr.github.io/blog/' rel='external nofollow' class='url'>jerome</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-294">
@@ -1084,7 +1084,7 @@ that being said, for any element of the array, you can do d3.keys() which will r
 			<article id="div-comment-296" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://2.gravatar.com/avatar/25d868f796d5f7fd001dfd1f2aadd744?s=32&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/25d868f796d5f7fd001dfd1f2aadd744?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">Emesh</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://2.gravatar.com/avatar/25d868f796d5f7fd001dfd1f2aadd744?s=32&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/25d868f796d5f7fd001dfd1f2aadd744?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">Emesh</b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-296">
@@ -1108,7 +1108,7 @@ Thanks in advance!!</p>
 			<article id="div-comment-297" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://1.gravatar.com/avatar/75f5707160697b2164444fc3f5054084?s=32&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/75f5707160697b2164444fc3f5054084?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://stevebennett.me/' rel='external nofollow' class='url'>Steve Bennett</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://1.gravatar.com/avatar/75f5707160697b2164444fc3f5054084?s=32&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/75f5707160697b2164444fc3f5054084?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://stevebennett.me/' rel='external nofollow' class='url'>Steve Bennett</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-297">
@@ -1134,13 +1134,13 @@ Thanks in advance!!</p>
 </li><!-- #comment-## -->
 		<li id="comment-305" class="pingback even thread-even depth-1">
 			<div class="comment-body">
-				Pingback: <a href='http://www.jeromecukier.net/blog/2015/05/19/you-may-not-need-d3/' rel='external nofollow' class='url'>You may not need d3 | Jerome Cukier</a> 			</div>
+				Pingback: <a href='http://jckr.github.io/blog/blog/2015/05/19/you-may-not-need-d3/' rel='external nofollow' class='url'>You may not need d3 | Jerome Cukier</a> 			</div>
 </li><!-- #comment-## -->
 		<li id="comment-310" class="comment odd alt thread-odd thread-alt depth-1">
 			<article id="div-comment-310" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://1.gravatar.com/avatar/170fecc990709d765e5307b3e3d9513f?s=32&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/170fecc990709d765e5307b3e3d9513f?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='https://plus.google.com/+MohammadAlshafey' rel='external nofollow' class='url'>Mohammad Alshafey</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://1.gravatar.com/avatar/170fecc990709d765e5307b3e3d9513f?s=32&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/170fecc990709d765e5307b3e3d9513f?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='https://plus.google.com/+MohammadAlshafey' rel='external nofollow' class='url'>Mohammad Alshafey</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-310">
@@ -1162,7 +1162,7 @@ Thanks in advance!!</p>
 			<article id="div-comment-311" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://0.gravatar.com/avatar/0df0e70c58b3c085cd5f888f609dd77a?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/0df0e70c58b3c085cd5f888f609dd77a?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://thewsnblog.wordpress.com/' rel='external nofollow' class='url'>rookalkar</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://0.gravatar.com/avatar/0df0e70c58b3c085cd5f888f609dd77a?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/0df0e70c58b3c085cd5f888f609dd77a?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn"><a href='http://thewsnblog.wordpress.com/' rel='external nofollow' class='url'>rookalkar</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-311">
@@ -1183,7 +1183,7 @@ Thanks in advance!!</p>
 			<article id="div-comment-312" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://1.gravatar.com/avatar/7e038996082ba53b42300d8d323d2a35?s=32&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/7e038996082ba53b42300d8d323d2a35?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">Carlos Ayres</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://1.gravatar.com/avatar/7e038996082ba53b42300d8d323d2a35?s=32&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/7e038996082ba53b42300d8d323d2a35?s=64&amp;d=mm&amp;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />						<b class="fn">Carlos Ayres</b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-312">
@@ -1342,7 +1342,7 @@ Thanks in advance!!</p>
 	(function(){
 		var corecss = document.createElement('link');
 		var themecss = document.createElement('link');
-		var corecssurl = "http://localhost:8888/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		var corecssurl = "/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
 		if ( corecss.setAttribute ) {
 				corecss.setAttribute( "rel", "stylesheet" );
 				corecss.setAttribute( "type", "text/css" );
@@ -1352,7 +1352,7 @@ Thanks in advance!!</p>
 				corecss.href = corecssurl;
 		}
 		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
-		var themecssurl = "http://localhost:8888/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
+		var themecssurl = "/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
 		if ( themecss.setAttribute ) {
 				themecss.setAttribute( "rel", "stylesheet" );
 				themecss.setAttribute( "type", "text/css" );

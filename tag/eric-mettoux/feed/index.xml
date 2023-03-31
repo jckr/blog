@@ -8,7 +8,7 @@
 	>
 
 <channel>
-	<title>eric mettoux &#8211; jeromecukier.net</title>
+	<title>eric mettoux &#8211; jckr.github.io/blog</title>
 	<atom:link href="http://localhost/tag/eric-mettoux/feed/" rel="self" type="application/rss+xml" />
 	<link>/</link>
 	<description>Just another WordPress site</description>
@@ -46,8 +46,8 @@
 		<category><![CDATA[tunisia]]></category>
 		<category><![CDATA[we_do_data]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1060</guid>
-		<description><![CDATA[Yesterday I attended a workshop organized by Etalab on data journalism. Since open data, data visualization and storytelling with data are my 3 work interests I could not just be found elsewhere that day. Interestingly, while speakers and attendants were very much discussing the same subject, what was said (or inferred in questions asked) was <a class="read-more" href="/2011/10/14/open-data-and-data-journalism/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1060</guid>
+		<description><![CDATA[Yesterday I attended a workshop organized by Etalab on data journalism. Since open data, data visualization and storytelling with data are my 3 work interests I could not just be found elsewhere that day. Interestingly, while speakers and attendants were very much discussing the same subject, what was said (or inferred in questions asked) was <a class="read-more" href="/blog/2011/10/14/open-data-and-data-journalism/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[<p>Yesterday I attended a workshop organized by <a href="http://www.etalab.gouv.fr/article-4eme-atelier-de-travail-datajournalisme-86096912.html">Etalab on data journalism</a>. Since open data, data visualization and storytelling with data are my 3 work interests I could not just be found elsewhere that day.</p>
 <p>Interestingly, while speakers and attendants were very much discussing the same subject, what was said (or inferred in questions asked) was very different. On some topics participants presented opposite opinions,  while on others there was a strong agreement.</p>
 <h2>Inspiration and enthusiasm</h2>
@@ -56,7 +56,7 @@
 <p>Every presenter, <a href="http://www.twitter.com/!#/dataveyes">@dataveyes</a>, Pierre Falga, <a href="http://www.twitter.com/!#/datastore">@datastore</a>, <a href="http://www.twitter.com/!#/sayseal">@sayseal</a>, <a href="http://www.twitter.com/!#/we_do_data">@we_do_data</a> and <a href="http://www.twitter.com/!#/epelboin">@epelboin</a> all showed are talked about things which were pretty awesome and which would have not been possible with data or visualization. While I was familiar with the other examples, I was most fired up by Fabrice Epelboin&#8217;s presentation of Tunisian media, Fhimt.com and its <a href="http://dataviz.fhimt.com/">dataviz gallery</a>.</p>
 <p>What was interesting was how it was easy to tell a memorable story with the support of data. I think for the picture to be complete you also have to include in the big picture the viewer&#8217;s assumption and the presenter/journalist narration. One example which was shown by both Caroline Goulard and Simon Rogers is the relationship between tweets and UK riots.</p>
 <p>The unsaid assumption was that social media have helped organize the riots.</p>
-<p><a href="http://www.guardian.co.uk/uk/interactive/2011/aug/24/riots-twitter-traffic-interactive"><img class="aligncenter size-full wp-image-1061" title="guardian" src="http://www.jeromecukier.net/wp-content/uploads/2011/10/guardian.png" alt="" /></a></p>
+<p><a href="http://www.guardian.co.uk/uk/interactive/2011/aug/24/riots-twitter-traffic-interactive"><img class="aligncenter size-full wp-image-1061" title="guardian" src="https://jckr.github.io/blog/wp-content/uploads/2011/10/guardian.png" alt="" /></a></p>
 <p>Facts in hand, in turns out that the bulks of the tweets related to a  riot happened after, not before, the event.  So the narrator help us conclude that riot caused tweets rather than the other way around.</p>
 <p>Another example from <a href="http://www.fhimt.com/">fhimt.com</a>:<br />
 We assume that tertiary graduates have better job prospects than those with less education.<br />

@@ -7,14 +7,14 @@
 <meta name="HandheldFriendly" content="True" />
 <meta name="MobileOptimized" content="320" />
 
-<title>jeromecukier.net | Just another WordPress site | Page 2</title>
+<title>jckr.github.io/blog | Just another WordPress site | Page 2</title>
 
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="/xmlrpc.php">
 <link rel='dns-prefetch' href='//fonts.googleapis.com' />
 <link rel='dns-prefetch' href='//s.w.org' />
-<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Feed" href="/feed/" />
-<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Comments Feed" href="/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jckr.github.io/blog &raquo; Feed" href="/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jckr.github.io/blog &raquo; Comments Feed" href="/comments/feed/" />
 <!-- This site uses the Google Analytics by MonsterInsights plugin v7.0.5 - Using Analytics tracking - https://www.monsterinsights.com/ -->
 <!-- Note: MonsterInsights is not currently configured on this site. The site owner needs to authenticate with Google Analytics in the MonsterInsights settings panel. -->
 <!-- No UA code set -->
@@ -46,7 +46,7 @@ img.emoji {
 <link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd" />
 <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml" /> 
 <meta name="generator" content="WordPress 4.6.10" />
-<link rel='shortlink' href='http://wp.me/' />
+
 
    	<style type="text/css">
 					.blog-title a, .blog-description, .social-icons a { color: #222222; }
@@ -67,7 +67,7 @@ img.emoji {
 
 <body class="home blog paged paged-2 group-blog">
 
-<header id="masthead" role="banner" class="site-head site-header" style="background-image: url(http://localhost:8888/wp-content/uploads/2018/04/Screenshot-2018-04-09-19.38.59.png);">
+<header id="masthead" role="banner" class="site-head site-header" style="background-image: url(/wp-content/uploads/2018/04/Screenshot-2018-04-09-19.38.59.png);">
     <nav id="site-navigation" class="main-navigation" role="navigation">
         <div>
             <h1 class="menu-toggle">
@@ -86,7 +86,7 @@ img.emoji {
                 
                 <div class="social-icons">
                                                                                                                                                                                                                                                                                                                                                                                                                                                     </div>
-                <h1 class="blog-title"><a class="blog-logo" href='/' rel='home'>jeromecukier.net</a></h1>
+                <h1 class="blog-title"><a class="blog-logo" href='/blog/' rel='home'>jckr.github.io/blog</a></h1>
                 <h2 class="blog-description">Just another WordPress site</h2>
             </div>
         </div>
@@ -119,18 +119,18 @@ img.emoji {
 <p>Since words are made of letters, I went for simplicity. There would be 5 attributes (pattern, main color, secondary color, scale and orientation), and for each one, each of the 26 possible letters corresponded to one value. And while there were &#8220;only&#8221; 26 possible patterns, I experimented much much more &#8211; possibly 100 or so.</p>
 <h2>Letters as patterns</h2>
 <p>My patterns fell in several categories. There were very simple geometric shapes (A, G, I, O, R). Some were hand-drawn (L and S). Some were more sophisticated geometric shapes (B, D, E, F, H, J, K, M, P, V, W, Y). Finally, some were inspired by islamic art (C, N, Z).</p>
-<p><img class="aligncenter" src="http://www.jeromecukier.net/projects/cards2015/patterns.png" alt="" width="950" height="325" /></p>
+<p><img class="aligncenter" src="https://jckr.github.io/blog/projects/cards2015/patterns.png" alt="" width="950" height="325" /></p>
 <p>Finally, there are some letters I didn&#8217;t assign patterns to, because there was just no name starting with those letters in my dataset 🙂 (Q, U and X).</p>
 <p>In my explorations / experimentations one thing I kept in mind was the weight of the pattern. The M, or the O, for instance, are really light. But the K or the F are heavier. I tend to attribute the lighter patterns to letters that started first names, while giving the heavier patterns to letters that mostly started last names (and were in the back).</p>
 <p>Pinterest was a great source of inspiration for <a href="https://www.pinterest.com/jcukier/datavis-patterns/">patterns</a>. At some point in the process I really wanted to use islamic patterns. I have a couple of books on the subject and I always really liked their look and feel, their &#8220;tileliness&#8221; and also that they are built with ruler and compass. Many of these patterns, even if very intricate, can easily be reproduced with computers (ie, drawing an hexagon requires using a compass 7 times, but with a computer all you need to do is compute the cosine and sine of 6 points and link them). And I thought there was beauty in the process of building them. So I created an &#8216;islamic pattern builder&#8221; as a side project &#8211; which will get its own blog post.</p>
-<p>Here is a <a href="http://jeromecukier.net/projects/cards2015/make-cards.html">slightly modified card maker</a> compared to the one I used (it only exports a card in 600&#215;1080 as opposed to 1875 x 3375)</p>
+<p>Here is a <a href="http://jckr.github.io/blog/projects/cards2015/make-cards.html">slightly modified card maker</a> compared to the one I used (it only exports a card in 600&#215;1080 as opposed to 1875 x 3375)</p>
 <h2>Wrapping it up</h2>
 <p>Eventually I put together the cards. Minor setback &#8211; I don&#8217;t have a color printer at home, so I would have to have the cards printed. Since I had to use a vendor anyway, I thought I might as well look for someone who could also send them, and that&#8217;s how I ended up choosing <a href="http://lob.com/">lob.com</a>. Lob.com allowed me to send 6&#215;11&#8243; cards which seemed cool (although, to be honest, I didn&#8217;t have a good sense of how big that was) and took as input 300 dpi png bitmaps. So I had to create 3375 x 1875 images, that&#8217;s up to 10 Mb per card! I initially hesitated between creating my cards with d3 and processing and chose d3 because it was easier for me to manipulate shapes using svg. I soon regretted that decision because exporting large bitmaps is not easy from the browser. Chrome won&#8217;t let you do that &#8211; exporting a png over a certain size (I think 2.56mb) will crash it. So my way around it was to export it as webp, chrome&#8217;s preferred compression format (which was with one exception always below its threshold) and then, convert them to png. Then, we ran into some unexpected issues and delays 🙂 but eventually all the cards were sent and people are telling me that they are getting them 🙂</p>
 <h2>Making the ensemble visualization</h2>
 <p>I always intended to show things about all the cards. But I also wanted to keep all the information that had been shared with me private. I made the front side of the cards public in a <a href="https://www.pinterest.com/jcukier/new-years-cards-2015/">pinterest board</a> but it would be really difficult to reverse engineer them to come up with a name. I made a map, by geocoding all the information I was given, but I also clustered all of the addresses and rounded all geocoding, so it&#8217;s not possible to go from one of the pixels of the map (or the data file) to an actual address.</p>
 <p>I also contributed the visualization I had made to show the distribution of names and initials.</p>
 <p>I was conflicted about whether using what people shared with me in the free text section of my form. On one hand, I wanted to find a way to show it, but on the other, showing even fractions of a phrase would challenge the confidentiality of what was written. But still, I wanted to restitute what I was given. Some of the text that was sent to me was really awesome. So I opted for a word cloud kind of setting. This is the first time since word clouds have gained mainstream acceptance that I used one 🙂 I thought it was appropriate &#8211; I&#8217;d show only words, not phrases. Also the aesthetics was interesting &#8211; with only 2 angles (0 or 30 degrees) and a cool set of colors. I&#8217;m using Jason Davies wordcloud generator for d3.</p>
-<p>And there you have it &#8211; here&#8217;s the <a href="http://jeromecukier.net/projects/cards2015/index.html">final visualization</a>.</p>
+<p>And there you have it &#8211; here&#8217;s the <a href="http://jckr.github.io/blog/projects/cards2015/index.html">final visualization</a>.</p>
 	    		<div class="clear">&nbsp;</div>
 	</section>
 </article><!-- #post-## -->
@@ -145,13 +145,13 @@ img.emoji {
     </header>
 	<section class="post-content">
 
-		<p><a href="http://wp.me/po630-qe">From the past posts</a>, you would have gathered that dashboards are tools to solve specific problems. They are also formed from individual charts and data elements.</p>
+		<p><a href="/category/dashboards/">From the past posts</a>, you would have gathered that dashboards are tools to solve specific problems. They are also formed from individual charts and data elements.</p>
 <h2>Selecting information</h2>
 <p>That dashboards are so specific is great, because the problem that they are designed to solve will help choosing the information that we need and also prioritizing it &#8211; two essential tasks in dashboard creation. Again, we don&#8217;t want to shove every data point we have.</p>
 <p>Another great tool to help us do those two tasks is user research. As a designer, we may think we chose the right metrics, but they have to make sense to real users and resonate with them. The bias that we may have is that we would favor data which is easy to obtain or that makes sense to us, compared to data which can be more elaborate, more sophisticated or more expensive to collect or compute, even if that makes more sense to the user.</p>
 <p>Here&#8217;s an illustration of that.</p>
 <p>When I was working at Facebook on this product, Audience Insights, we designed <a href="https://www.facebook.com/ads/audience_insights/activity?age=18-&amp;country=US&amp;interests=6003349754405">this page</a> to help marketers understand how a group of users they could be interested in used Facebook. (The link / screenshot showcases fans of the Golden State Warriors). One of the main ways we classified users at Facebook, for internal purposes, is by counting how many days of the last four weeks they have been on Facebook. It&#8217;s a metric called L28 and one of the high-level things Facebook knows about everyone. So, we integrated it in the first version of this page. But, even though it&#8217;s not a concept unique to Facebook, it wasn&#8217;t that useful to our users, and it was taking space from a more relevant indicator.</p>
-<p><img class="alignnone" src="http://jeromecukier.net/projects/dashboards/AI activity.png" alt="" width="800" height="625" /></p>
+<p><img class="alignnone" src="https://jckr.github.io/blog/projects/dashboards/AI activity.png" alt="" width="800" height="625" /></p>
 <p>Instead, we have included indicators which are more relevant to the task at hand (ie getting a sense of who those users are through the prism of their activity). For instance we can see that very few Warriors fans only use Facebook on their computer, compared to the general population of US Facebook users. They tend to skew more towards Android and mobile web (going to www.facebook.com from their phone, versus using an app.) They tend to be more active in terms of likes, comments and shares.</p>
 <h2>Information hierarchy</h2>
 <p>Once information is chosen and you get a sense of what is more important than the rest, it&#8217;s time to represent that visually.</p>
@@ -167,14 +167,14 @@ img.emoji {
 <p>So you have data. It probably changes over time, too (and you have that history as well!). And a sense of how important it is.</p>
 <p>You can represent it as a static number (and, further, to adjust the precision of that number) or as a time series (i.e. line graph, area graph, bar graph etc.), or both.</p>
 <p>The key question to answer is whether the history and how the metric moved over time is relevant and important, versus the latest figures.  If you think that the history is always important or that it doesn&#8217;t hurt to have it for context anyway, consider that it&#8217;s yet another visual element to digest, another thing that can be misinterpreted, and that unless its importance is clearly demonstrated, you&#8217;d rather not include it. Yes &#8211; even as a tiny sparkline.</p>
-<p><img class="alignnone" src="http://www.jeromecukier.net/projects/dashboards/jl-facebook-insights-overview.png" alt="" width="482" height="492" /></p>
+<p><img class="alignnone" src="https://jckr.github.io/blog/projects/dashboards/jl-facebook-insights-overview.png" alt="" width="482" height="492" /></p>
 <p>Here is another example from my work at Facebook of a page where proper hierarchy has been applied.</p>
 <p>Page Insights, to use a parallel with a better known product, is like google analytics, only for Facebook Pages instead of web sites. Unsurprisingly, the metric we put to the top left is the Page Likes, which is the number of people who like a page. The whole point of the system is to let people understand what affects that number and how to grow it. Two other high-level metrics are shown on the same row in the two cards on the right: the Post Reach for the week (number of people who have seen content from this page this week, whether they like the Page or not) and Engagement (number of people who acted on the content &#8211; actions could be liking, commenting, sharing, clicking, etc.)</p>
 <p>The number of new Page Likes of the past week, which is represented as a both a line chart and a number in the left card, is an example of a level two metric. It supports the top metric &#8211; total likes. The number of Page Likes of the past week, which is represented as a line chart only, is a level three metric. It&#8217;s here just as a comparison to the number of the current week &#8211; here, it helps us figuring out that last week has been a better week.</p>
 <h2>Connecting the dots</h2>
 <p>Ultimately, a dashboard is more than a collection of charts. It&#8217;s an ensemble: charts and data are meant to be consumed as a whole, with an order and a structure. Charts that belong together should be seen together. The information gained like so will be much more useful than from looking at them in sequence.</p>
 <p><a href="http://www.infovis-wiki.net/index.php?title=Linking_and_Brushing">Linking</a>, for instance, is the concept of highlighting an element in a given chart with repercussions on other charts, depending on the element highlighted. A common use case is to look at a data for one given time point, and see the value for that time point highlighted in related charts. Here is an example:</p>
-<p><img class="alignnone" src="http://www.jeromecukier.net/projects/dashboards/linking.png" alt="" width="784" height="212" /></p>
+<p><img class="alignnone" src="https://jckr.github.io/blog/projects/dashboards/linking.png" alt="" width="784" height="212" /></p>
 <p>In this specific case, the fact that both charts share the same x-axis makes comparing the shape of both charts easier even without linking.</p>
 <p>Each variable doesn&#8217;t have to be on its own chart. Your variables can have an implicit relation between one another. Bringing them together might make that relation explicit. Here are some interesting relationship between variables or properties of variables that can be made apparent through the right chart choice.</p>
 <ul>
@@ -194,7 +194,7 @@ img.emoji {
 Here, we look at the net likes of a Facebook Page, that is, the difference between the number of people who like a page on a given day and the day before.<br />
 Two factors can make more people like a page: paid likes (a user sees an ad, is interested, and from it, likes the page) or organic likes (a user visits a page, or somehow see content from that page, and likes it, without advertisement involved). Finally, people may also decide to stop liking the page (&#8220;unlikes&#8221;).<br />
 Here, net likes = organic likes + paid likes &#8211; unlikes. The reason why we have decomposed Likes between organic and paid is because we wanted to show that ads can amplify the effect of good content. So, visually, we chose to represent that as a layer on top of the rest. (important remark: your dashboard doesn&#8217;t have to be neutral. If it can show that your product, company, team etc. is delivering, and you have an occasion to demonstrate it, don&#8217;t hesitate a moment). By showing the unlikes as a negative number, as opposed to a positive variable, going up, possibly above the likes (which would be unpredictable) we can keep the visual legible and uncluttered. A user can do the visual combination of all these variables. This chart, by the way, shows the typical dynamic of a Page : new content will generate peaks of new users, but also will cause some users to stop liking the page.</p>
-<p><img class="alignnone" src="http://www.jeromecukier.net/projects/dashboards/net-likes-1024x454.png" alt="" width="832" height="453" /></p>
+<p><img class="alignnone" src="https://jckr.github.io/blog/projects/dashboards/net-likes-1024x454.png" alt="" width="832" height="453" /></p>
 <ul>
 <li>One variable could be <strong>always growing.</strong> Or <strong>always positive.</strong></li>
 </ul>
@@ -215,7 +215,7 @@ Here, net likes = organic likes + paid likes &#8211; unlikes. The reason why we 
     </header>
 	<section class="post-content">
 
-		<p>In the <a href="http://wp.me/po630-q7">past few articles</a> I&#8217;ve exposed what dashboards are not:</p>
+		<p>In the <a href="/category/dashboards/">past few articles</a> I&#8217;ve exposed what dashboards are not:</p>
 <ul>
 <li>an exercise in <em>visual design</em>,</li>
 <li>an exercise in <em>data visualization</em> technique.</li>
@@ -241,7 +241,7 @@ Here, net likes = organic likes + paid likes &#8211; unlikes. The reason why we 
 <li>Try to <strong>better understand</strong> a complex system. For instance: user flow between pages can show where users are dropping out or where efficiency gains lie.</li>
 </ul>
 <p>This list is by no means limitative. But it&#8217;s really useful to start from the problem at hand than just try to create a visual repository for data.</p>
-<p>Next, we&#8217;ll see how to implement these in the last article: <a href="http://www.jeromecukier.net/blog/2015/02/07/charts-assemble/">charts assemble!</a></p>
+<p>Next, we&#8217;ll see how to implement these in the last article: <a href="http://jckr.github.io/blog/blog/2015/02/07/charts-assemble/">charts assemble!</a></p>
 	    		<div class="clear">&nbsp;</div>
 	</section>
 </article><!-- #post-## -->
@@ -262,7 +262,7 @@ Here, net likes = organic likes + paid likes &#8211; unlikes. The reason why we 
 <p>Data visualization provides superior tools and techniques to present or analyze data. With libraries and languages dedicated to making visualizations, there is little that can&#8217;t be done. In many successful visualizations, the author will create an entirely new form, or at least control the form very finely to match their data and their angle. Even without inventing a new form, there are many which have been created for a specific use, and which are relatively easy to make on the web (as opposed to say, in Excel): <a href="https://www.google.fr/search?q=tree+maps&amp;safe=off&amp;espv=2&amp;biw=2025&amp;bih=1140&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ei=UCR4VNmKAufCiALyo4FY&amp;ved=0CAYQ_AUoAQ#safe=off&amp;tbm=isch&amp;q=treemaps">treemaps</a>, <a href="https://www.google.fr/search?q=tree+maps&amp;safe=off&amp;espv=2&amp;biw=2025&amp;bih=1140&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ei=UCR4VNmKAufCiALyo4FY&amp;ved=0CAYQ_AUoAQ#safe=off&amp;tbm=isch&amp;q=force-directed+graphs">force-directed graphs</a> and other <a href="https://www.google.fr/search?q=tree+maps&amp;safe=off&amp;espv=2&amp;biw=2025&amp;bih=1140&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ei=UCR4VNmKAufCiALyo4FY&amp;ved=0CAYQ_AUoAQ#safe=off&amp;tbm=isch&amp;q=node-link+diagrams">node-link diagrams</a>, <a href="https://www.google.fr/search?q=tree+maps&amp;safe=off&amp;espv=2&amp;biw=2025&amp;bih=1140&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ei=UCR4VNmKAufCiALyo4FY&amp;ved=0CAYQ_AUoAQ#safe=off&amp;tbm=isch&amp;q=chord+diagrams">chord diagrams</a>, <a href="https://www.google.fr/search?q=tree+maps&amp;safe=off&amp;espv=2&amp;biw=2025&amp;bih=1140&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ei=UCR4VNmKAufCiALyo4FY&amp;ved=0CAYQ_AUoAQ#safe=off&amp;tbm=isch&amp;q=dendrograms">trees</a>, <a href="https://www.google.fr/search?q=tree+maps&amp;safe=off&amp;espv=2&amp;biw=2025&amp;bih=1140&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ei=UCR4VNmKAufCiALyo4FY&amp;ved=0CAYQ_AUoAQ#safe=off&amp;tbm=isch&amp;q=bubble+charts">bubble charts</a> and the like. And even good old geographic maps.</p>
 <p>In most cases, it is not a good idea to be too clever and have a more advanced form.</p>
 <p>Up until mid November 2014, Google Analytics allowed users to view their data using <a href="https://www.youtube.com/watch?v=UKsBTqqhVTs">motion charts</a>.</p>
-<p><img class="alignnone" src="http://jeromecukier.net/projects/dashboards/motion charts" alt="" width="1280" height="784" /></p>
+<p><img class="alignnone" src="https://jckr.github.io/blog/projects/dashboards/motion charts" alt="" width="1280" height="784" /></p>
 <p>This was really an example of having a hammer and considering all problems as nails. Fortunately, this function disappeared from the latest redesign.</p>
 <p><img class="alignnone" src="http://media-cache-ec0.pinimg.com/736x/1c/69/b7/1c69b7ea8e23d5d8fd800a67e727d0db.jpg" alt="" width="736" height="432" /></p>
 <p>Likewise, on twitter followers dashboard, the treemap might be a bit over the top:</p>
@@ -276,7 +276,7 @@ Here, net likes = organic likes + paid likes &#8211; unlikes. The reason why we 
 <p>Most of the dashboards examples I find on sites like dribbble or beyance (see <a href="http://www.pinterest.com/jcukier/data-vis-dashboard-ui-elements/">my Pinterest board</a>) fall into that category: inspiring visual design, probably not real data, no flow, no obvious use.</p>
 <h2>Dashboards are problems of their own</h2>
 <p>What makes a dashboard, or any other information-based design successful, is neither the design execution nor the clever infovis technique. Dashboards, eventually, are meant to be useful and to solve a specific problem.</p>
-<p>How so? We&#8217;ll see in the next article: <a href="http://www.jeromecukier.net/blog/2015/02/07/dashboards-as-products/">dashboards as products. </a></p>
+<p>How so? We&#8217;ll see in the next article: <a href="http://jckr.github.io/blog/blog/2015/02/07/dashboards-as-products/">dashboards as products. </a></p>
 <p>&nbsp;</p>
 	    		<div class="clear">&nbsp;</div>
 	</section>
@@ -294,7 +294,7 @@ Here, net likes = organic likes + paid likes &#8211; unlikes. The reason why we 
 
 		<p>In 2008, when I was working at <a href="http://www.oecd.org/">OECD</a>, my job description was that of an editor. That implied I was mostly working on books. I was designing charts, but they were seen as components of books. And this was typical of the era.</p>
 <p>So we would create charts like this one:</p>
-<p><img class="alignnone" src="http://jeromecukier.net/projects/dashboards/02-01-01-g2" alt="" width="685" height="288" /></p>
+<p><img class="alignnone" src="https://jckr.github.io/blog/projects/dashboards/02-01-01-g2" alt="" width="685" height="288" /></p>
 <p>And it was awesome! (kind of). I mean, we respected all the rules. Look at that nicely labelled y-axis! and all the categories are on the x-axis! the bars are ordered in size, it&#8217;s easy to see which has the biggest or smallest value! And with those awesome gridlines, we can lookup values &#8211; at least get an order of magnitude.</p>
 <p>What we really did though was apply styling to an excel chart (literally).</p>
 <h2>Print charts vs interactive charts</h2>
@@ -306,24 +306,24 @@ Here, net likes = organic likes + paid likes &#8211; unlikes. The reason why we 
 <p>And so, when everything else than a table is chosen, we typically don&#8217;t show values with all the data points, because adding data labels would burden the chart and make its overall shape harder to make out.</p>
 <p>In this framework, it makes sense to think in term of <strong>data-ink </strong>(the cornerstone of Tuftean concepts): make sure that out of all the ink needed to print the chart (you can tell it&#8217;s a print concept already&#8230;), as much should go to encode the data as possible, versus anything else.</p>
 <h3>How about now</h3>
-<p><img class="alignnone" src="http://jeromecukier.net/projects/dashboards/chart trad vs online 2" alt="" width="680" height="847" /></p>
+<p><img class="alignnone" src="https://jckr.github.io/blog/projects/dashboards/chart trad vs online 2" alt="" width="680" height="847" /></p>
 <p>However, there is not a single of these reasons which is valid today in the world of web or mobile charts. Data-ink only made sense on paper. </p>
 <p>Web charts have many mechanisms to let the user get extra information on a given data point. That can be information that updates on mouseover, callouts and tooltips&#8230; This might be less true of mobile in general where the distinction between hovering and clicking is less distinct. But it is definitely possible to obtain more than what is originally displayed. If I want to have an exact value, I shouldn&#8217;t have to simply deduce that from the shape of the chart. There can be mechanisms that can deliver that to me on demand.</p>
 <h3>An example: Google Finance Quote &amp; News</h3>
 <p>The <a href="https://www.google.com/finance?q=NASDAQ%3AGOOG">Google Finance Quote and News chart</a> is a very representative example of a web-native chart. Around since 2006, they provide the price of a given security, along with news for context. While its visual design has probably been topped by other dashboards, what makes it a great example is that it&#8217;s publicly available, which is uncommon for business data.</p>
-<p><img class="alignnone" src="http://jeromecukier.net/projects/dashboards/online chart" alt="" width="984" height="543" /></p>
+<p><img class="alignnone" src="https://jckr.github.io/blog/projects/dashboards/online chart" alt="" width="984" height="543" /></p>
 <p>While this chart has gridlines and labelled axes, that is not enough to lookup precise values. However, moving the <strong>mouse over</strong> the chart allows the user to read a precise value at a given point in time. A blue point appears and the precise value can be read in the top left corner.</p>
-<p><img class="alignnone" src="http://jeromecukier.net/projects/dashboards/mouseover" alt="" width="996" height="524" /></p>
+<p><img class="alignnone" src="https://jckr.github.io/blog/projects/dashboards/mouseover" alt="" width="996" height="524" /></p>
 <p>One very common <strong>data filter </strong>in chart is controls that affect the time range: date pickers. By selecting a different time range, we make the chart represent a different slice of the dataset &#8211; we effectively filter the dataset so that only the relevant dates are shown. This is in contrast with the traditional printed charts, again, where all of the dataset is shown at once. For instance, we can click on &#8220;6m&#8221; and we&#8217;ll be treated with data from the last 6 months:</p>
-<p><img class="alignnone" src="http://jeromecukier.net/projects/dashboards/data filters" alt="" width="985" height="424" /></p>
+<p><img class="alignnone" src="https://jckr.github.io/blog/projects/dashboards/data filters" alt="" width="985" height="424" /></p>
 <p>Comparing the selected security with others will make the chart show the data in a <strong>different mode</strong>. This is the same data (plus added series), in the same screen and the same context, but the chart is visually very different:</p>
-<p><img class="alignnone" src="http://jeromecukier.net/projects/dashboards/different modes" alt="" width="986" height="526" /></p>
+<p><img class="alignnone" src="https://jckr.github.io/blog/projects/dashboards/different modes" alt="" width="986" height="526" /></p>
 <p>As to the other two characteristics of web charts I mentioned, <strong>data exports</strong> and <strong>drill downs, </strong>they are also featured (but less graphical to show, so I haven&#8217;t captured a screenshot for those). There is a link on a left-side column to get the equivalent data (so it is always possible to go beyond what is shown on screen). The little flags with letters in the 3 first screenshots are clickable, and represent relevant news. Clicking them will highlight that article in a right-side column. So it is always possible to get more information.</p>
 <h3>What does that change?</h3>
 <p>Everything.</p>
 <p>Rules or best practices based on the assumption that data is hard to lookup or to compare are less important. The chart itself has to be legible though. So, for instance, it&#8217;s ok to have pie charts or donut charts, as long as the number of categories doesn&#8217;t go totally overboard.</p>
 <p>Web charts, and dashboards even more so, should focus on<strong> only showing relevant data</strong> first, then showing it in the most useful and legible way. Again, a noted difference with the print philosophy where as much data as possible should be shown.</p>
-<p>How this play out is what we&#8217;ll cover in the <a href="http://www.jeromecukier.net/blog/2015/02/07/dashboards-versus-data-visualization/">next articles of the series: Dashboards versus data visualizations.</a></p>
+<p>How this play out is what we&#8217;ll cover in the <a href="http://jckr.github.io/blog/blog/2015/02/07/dashboards-versus-data-visualization/">next articles of the series: Dashboards versus data visualizations.</a></p>
 <p>&nbsp;</p>
 	    		<div class="clear">&nbsp;</div>
 	</section>
@@ -343,14 +343,14 @@ Here, net likes = organic likes + paid likes &#8211; unlikes. The reason why we 
 <h2>Why talk about dashboards?</h2>
 <p>Legit questions. Dashboards are so uncool and boring! I could make more advanced tutorials on d3 or canvas or processing (which is also&#8230; in the plans). Or update new cool visualizations.</p>
 <p>But the interest of discussing dashboards is <em>precisely </em>because they are not cool. In the first part to his <a href="%20http://amzn.com/1938377001">Information Dashboard Design</a>, Stephen Few presents a lengthy gallery of terrible dashboards he collected over years. Most of these dashboards exhibit a serious and obvious production flaws: they are often gaudy, using 3d columns or pie charts, when not taking the dashboard metaphor too literally with replicas of gauges and meters. Here&#8217;s a typical dashboard from the early 2000s:</p>
-<p><img class="alignnone" src="http://www.jeromecukier.net/projects/dashboards/old dashboard.jpg" alt="" width="640" height="481" /></p>
+<p><img class="alignnone" src="https://jckr.github.io/blog/projects/dashboards/old dashboard.jpg" alt="" width="640" height="481" /></p>
 <p>In the past 5 years though, these problems have largely been solved. The overall <a href="http://www.perceptualedge.com/files/GraphDesignIQ.html">&#8220;Graph Design IQ&#8221;</a>, to borrow another Stephen Few concept, has greatly increased. People who make charts are increasingly aware that there are some best practices to build them and that there are a variety of forms beyond the core &#8220;Excel&#8221; chart types such as bar charts, line charts, pie charts and scatterplots. Besides, anyone who had to code a chart from scratch realized that, as opposed to Excel or similar software where users can rely on defaults, every detail of a chart needs decisions: not only how to encode the data (ie bars, lines etc.) but also whether to have gridlines or not and if so how, how to format axes, how to present legends, and so on and so forth. Oftentimes, having to make these decisions implies taking the time to think about these choices which makes the overall chart quality stronger. Also, in products like Tableau (and to be honest in every version of Excel) the default choices are much more robust than they used to be.</p>
 <h2>Down with the old, up with the new</h2>
 <p>While these old problems are as good as solved, dashboards are still not awesome because they are plagued with a set of new problems.</p>
-<p>First, the <strong><a href="http://www.jeromecukier.net/blog/2015/02/07/charts-in-the-age-of-the-web/">rules and best practices for charts</a> </strong>that we keep perpetuating were thought for an old world of printed or otherwise static charts,  not the interactive environments such as web or mobile. As such, some recommendations of the 90s have become myths that need to be busted (I&#8217;m looking squarely at you, data-ink ratio).</p>
-<p>Second, dashboard design is <strong><a href="http://www.jeromecukier.net/blog/2015/02/07/dashboards-versus-data-visualization/">neither a data visualization problem, nor a visual design problem.</a></strong> By this I mean that thinking strictly as a designer or as a data visualization specialist might provide a textbook answer to some well-identified problems that arise with dashboards, but neither of these approaches is optimal.</p>
-<p>The not-so-secret secret to dashboards is to apply <a href="http://www.jeromecukier.net/blog/2015/02/07/dashboards-as-products/"><strong>product thinking</strong>. </a>How will people use the dashboard? That should guide what you try to accomplish.</p>
-<p>Finally, it&#8217;s really critical to realize that dashboards are<strong><a href="http://www.jeromecukier.net/blog/2015/02/07/charts-assemble/"> not collection of individual charts, but an ensemble.</a> </strong>Components of a dashboard should not be thought individually but as pieces that fit with one another.</p>
+<p>First, the <strong><a href="http://jckr.github.io/blog/blog/2015/02/07/charts-in-the-age-of-the-web/">rules and best practices for charts</a> </strong>that we keep perpetuating were thought for an old world of printed or otherwise static charts,  not the interactive environments such as web or mobile. As such, some recommendations of the 90s have become myths that need to be busted (I&#8217;m looking squarely at you, data-ink ratio).</p>
+<p>Second, dashboard design is <strong><a href="http://jckr.github.io/blog/blog/2015/02/07/dashboards-versus-data-visualization/">neither a data visualization problem, nor a visual design problem.</a></strong> By this I mean that thinking strictly as a designer or as a data visualization specialist might provide a textbook answer to some well-identified problems that arise with dashboards, but neither of these approaches is optimal.</p>
+<p>The not-so-secret secret to dashboards is to apply <a href="http://jckr.github.io/blog/blog/2015/02/07/dashboards-as-products/"><strong>product thinking</strong>. </a>How will people use the dashboard? That should guide what you try to accomplish.</p>
+<p>Finally, it&#8217;s really critical to realize that dashboards are<strong><a href="http://jckr.github.io/blog/blog/2015/02/07/charts-assemble/"> not collection of individual charts, but an ensemble.</a> </strong>Components of a dashboard should not be thought individually but as pieces that fit with one another.</p>
 <p>Each of these themes will be the subject of an individual article!</p>
 <h2>Follow me on Pinterest</h2>
 <p>On <a href="http://pinterest.com/jcukier">Pinterest</a>, I maintain two dashboard-related boards you may find interesting.</p>
@@ -371,7 +371,7 @@ Here, net likes = organic likes + paid likes &#8211; unlikes. The reason why we 
 	<section class="post-content">
 
 		<p>Hi, it&#8217;s been a while since I last posted!<br />
-Here is a new project using publicly available data: <a href="http://jeromecukier.net/projects/slopes/slopes.html">slopes of San Francisco</a>.</p>
+Here is a new project using publicly available data: <a href="http://jckr.github.io/blog/projects/slopes/slopes.html">slopes of San Francisco</a>.</p>
 <p>As a San Franciscan who likes to walk, I&#8217;m confronted to a common problem. Most cities, such as Paris where I&#8217;m from, are mostly flat. So, in order to go one block east and one block north of where I am standing, I can go North then East or East then North: this is mostly equivalent (except that streets never meet at a right angle in Paris but that&#8217;s another problem). In San Francisco, going North then East can mean climbing a huge hill then down, versus walking on a flat surface. Itineraries matter, and often times I found myself going through mountains and valleys just because I thought the straight line was the simplest way to go from A to B.</p>
 <p>Which is why I wanted to create a map of streets by slope, to help me (and my fellow San Franciscans) figure out which streets are practicable, and which should be avoided.</p>
 <p>Here&#8217;s how I did it.</p>
@@ -381,43 +381,43 @@ Here is a new project using publicly available data: <a href="http://jeromecukie
 <p>So my first task was to figure out how many of those 1.4m nodes I really needed. Turns out that the metro extract covers much more than the city but also the whole bay area. So my first pass was to filter out nodes that were outside a bounding box. Then, I only kept nodes that were part of a street, and furthermore, only the ones that would be either at the end of one street or at an intersection. By doing so, I&#8217;m assuming that all streets are straight between any two intersections, which is far from true, but would do for our purposes. I applied further filtering to weed out streets that were made of just one node. Eventually, I arrived at just over 10000 nodes! and in the process, I also extracted from the XML file the shape of the streets, that is, in which order nodes appeared in those streets. After several iterations in my code, I also scrapped their number of lanes when available and the street names.</p>
 <h2>Sanity check</h2>
 <p>The first thing I did was to plot my nodes on a map.</p>
-<p><div style="width: 610px" class="wp-caption alignnone"><img class="" src="http://jeromecukier.net/projects/slopes/v0.png" alt="First draft" width="600" height="499" /><p class="wp-caption-text">First draft</p></div></p>
+<p><div style="width: 610px" class="wp-caption alignnone"><img class="" src="https://jckr.github.io/blog/projects/slopes/v0.png" alt="First draft" width="600" height="499" /><p class="wp-caption-text">First draft</p></div></p>
 <p>Looks ok. So next, I just drawed my streets. I did that using d3, and each of my streets in this next iteration is a single path object.</p>
 <p>&nbsp;</p>
-<p><div style="width: 610px" class="wp-caption alignnone"><img class="" src="http://jeromecukier.net/projects/slopes/v1.png" alt="First network of streets" width="600" height="506" /><p class="wp-caption-text">First network of streets</p></div></p>
+<p><div style="width: 610px" class="wp-caption alignnone"><img class="" src="https://jckr.github.io/blog/projects/slopes/v1.png" alt="First network of streets" width="600" height="506" /><p class="wp-caption-text">First network of streets</p></div></p>
 <p>So that&#8217;s a basic node-and-link mesh of San Francisco, the problem with that approach is that I can only style one street (i.e. the links between the nodes) as a whole. However, what I wanted to highlight was where the streets were steep: many streets just go up and down, so giving them a single &#8220;steepness&#8221; rating wasn&#8217;t going to cut it.</p>
 <h2>Encoding steepness</h2>
-<p><div style="width: 610px" class="wp-caption alignnone"><img class="" src="http://jeromecukier.net/projects/slopes/v2.png" alt="Segments of streets" width="600" height="506" /><p class="wp-caption-text">Segments of streets</p></div></p>
+<p><div style="width: 610px" class="wp-caption alignnone"><img class="" src="https://jckr.github.io/blog/projects/slopes/v2.png" alt="Segments of streets" width="600" height="506" /><p class="wp-caption-text">Segments of streets</p></div></p>
 <p>The next logical step was to draw each of the edges individually (this time, they are lines, not paths). There are 6000+ &#8220;streets&#8221; (in the OSM sense &#8211; streets can be split in any number of different entities in Open Street Map), versus about 16000 different edges. I also found I didn&#8217;t really need to draw the nodes.</p>
 <p>The obvious way was to encode steepness from green to red on a linear scale. That looks ok, but that&#8217;s not super interesting because it&#8217;s very difficult to tell whether one street is steeper than another just by comparing colors. I didn&#8217;t need an infinite variation of colors, I just wanted to know whether a street was flat (or quasi-flat), with a noticeable slope, or really steep. So instead of using a full linear scale, I just used 3 colors from the green &#8211; purple colorbrewer scale.</p>
-<p><div style="width: 610px" class="wp-caption alignnone"><img class="" src="http://jeromecukier.net/projects/slopes/v3.png" alt="Same map with discrete colors" width="600" height="516" /><p class="wp-caption-text">Same map with discrete colors</p></div></p>
+<p><div style="width: 610px" class="wp-caption alignnone"><img class="" src="https://jckr.github.io/blog/projects/slopes/v3.png" alt="Same map with discrete colors" width="600" height="516" /><p class="wp-caption-text">Same map with discrete colors</p></div></p>
 <p>I could see instantly which streets were flat or not, yet wondered if there wasn&#8217;t a good simple way to compare between two streets which would be the steepest. Color is no good for that, but how about line width?</p>
-<p><div style="width: 610px" class="wp-caption alignnone"><img class="" src="http://jeromecukier.net/projects/slopes/v4.png" alt="Using line width to express steepness" width="600" height="500" /><p class="wp-caption-text">Using line width to express steepness</p></div></p>
+<p><div style="width: 610px" class="wp-caption alignnone"><img class="" src="https://jckr.github.io/blog/projects/slopes/v4.png" alt="Using line width to express steepness" width="600" height="500" /><p class="wp-caption-text">Using line width to express steepness</p></div></p>
 <p>That was kind of an interesting aesthetics but I found it was difficult to find a precise cross street. When looking on a map of San Francisco, we instinctively look for larger streets like Market or Van Ness and if width was used by something else, it can be confusing. At that moment I didn&#8217;t have a good measure of street width, so I went back to my OSM extract and tried to scrap the number of lanes from my dataset.</p>
-<p><div style="width: 610px" class="wp-caption alignnone"><img class="" src="http://jeromecukier.net/projects/slopes/v5.png" alt="using street widths" width="600" height="374" /><p class="wp-caption-text">using street widths</p></div></p>
+<p><div style="width: 610px" class="wp-caption alignnone"><img class="" src="https://jckr.github.io/blog/projects/slopes/v5.png" alt="using street widths" width="600" height="374" /><p class="wp-caption-text">using street widths</p></div></p>
 <p>You will notice that the streets now have an outline. I don&#8217;t draw the shape of each block, that would be too difficult given my dataset. Instead, for each street segment, I first draw a dark grey line, then on top of it, a slightly thinner colored line 🙂</p>
 <h2>Have the map do something</h2>
-<p>This being a data visualization I thought there could be interesting calculations that could be done with the map. My first intuition was to reuse the ideas of my <a href="http://www.jeromecukier.net/projects/metro/map.html">interactive Paris metro map</a> and make a deformed SF map based on the effort needed to go from one point of the map to everywhere, taking the slopes of the streets into account.</p>
+<p>This being a data visualization I thought there could be interesting calculations that could be done with the map. My first intuition was to reuse the ideas of my <a href="http://jckr.github.io/blog/projects/metro/map.html">interactive Paris metro map</a> and make a deformed SF map based on the effort needed to go from one point of the map to everywhere, taking the slopes of the streets into account.</p>
 <p>I basically refactored my code which I hadn&#8217;t visited in almost two years&#8230; and adapted shortest-path algorithms to my network of streets. It confirmed what I feared, that not all of my streets connect. Some streets in the map form tiny islands which are isolated from the rest of the network, and so cannot be reached from outside. I decided not to deal with it, debugging the dataset was really too complicated at this stage (and to be honest the filters I had used to extract the street data had already gone through many, many iterations).</p>
 <p>I also used voronoi tessellation to create a layer of polygons on top of my nodes to capture clicks. The user can choose where to base their map, not by clicking on a precise cross street, but in the area around it, like so:</p>
-<p><div style="width: 610px" class="wp-caption alignnone"><img class="" src="http://jeromecukier.net/projects/slopes/v31.png" alt="Showing the voronoi layer on top of the map" width="600" height="353" /><p class="wp-caption-text">Showing the voronoi layer on top of the map</p></div></p>
+<p><div style="width: 610px" class="wp-caption alignnone"><img class="" src="https://jckr.github.io/blog/projects/slopes/v31.png" alt="Showing the voronoi layer on top of the map" width="600" height="353" /><p class="wp-caption-text">Showing the voronoi layer on top of the map</p></div></p>
 <p>However, the results proved to be underwhelming.</p>
-<p><div style="width: 610px" class="wp-caption alignnone"><img class="" src="http://jeromecukier.net/projects/slopes/v6.png" alt="Deformed map by effort needed to walk from a given point" width="600" height="536" /><p class="wp-caption-text">Deformed map by effort needed to walk from a given point</p></div></p>
+<p><div style="width: 610px" class="wp-caption alignnone"><img class="" src="https://jckr.github.io/blog/projects/slopes/v6.png" alt="Deformed map by effort needed to walk from a given point" width="600" height="536" /><p class="wp-caption-text">Deformed map by effort needed to walk from a given point</p></div></p>
 <p>All right, so some points are closer, some points are further, but overall it&#8217;s not a super interesting map. It&#8217;s less legible, and it doesn&#8217;t help me figuring out my initial problem: from a given point, which streets should I take to not go up and down?</p>
 <p>So I was back to the drawing board. Now with the Dijkstra algorithm which I use to compute the shortest distance from one point to the others in the network, I can also get which path is the shortest, i.e. which is the actual itinerary, edge by edge, that takes me from one point to the others using the shortest path.</p>
 <h2>Path-finding</h2>
 <p>So my next idea was to hide all the edges that would not be in a shortest path. Again there were about 16000 edges, and 10000 nodes; there is only 1 shortest-path edge per node, so that&#8217;s hiding about 1/3 of the streets. Let&#8217;s see how this looks:</p>
-<p><div style="width: 610px" class="wp-caption alignnone"><img class="" src="http://jeromecukier.net/projects/slopes/v7.png" alt="All streets which are not in a shortest path are hidden." width="600" height="347" /><p class="wp-caption-text">All streets which are not in a shortest path are hidden.</p></div></p>
+<p><div style="width: 610px" class="wp-caption alignnone"><img class="" src="https://jckr.github.io/blog/projects/slopes/v7.png" alt="All streets which are not in a shortest path are hidden." width="600" height="347" /><p class="wp-caption-text">All streets which are not in a shortest path are hidden.</p></div></p>
 <p>That&#8217;s more interesting! At least, I know which streets I should not even consider from a given starting point.</p>
 <p>I could do better: once this is done and a starting point is selected, I can actually draw the shortest path to wherever the user moves his or her mouse:</p>
-<p><div style="width: 610px" class="wp-caption alignnone"><img class="" src="http://jeromecukier.net/projects/slopes/v8.png" alt="Drawing the shortest path" width="600" height="346" /><p class="wp-caption-text">Drawing the shortest path</p></div></p>
+<p><div style="width: 610px" class="wp-caption alignnone"><img class="" src="https://jckr.github.io/blog/projects/slopes/v8.png" alt="Drawing the shortest path" width="600" height="346" /><p class="wp-caption-text">Drawing the shortest path</p></div></p>
 <h2>Styling and wrapping it up</h2>
 <p>In parallel I had worked on a page template to put everything on and my map looked kind of abstract. I had considered adding street names but algorithmically it&#8217;s pretty complicated (it would have been much quicker to do it completely manually but eventually I decided against that). I needed the map to belong to one specific part of the page as opposed to be just hanging in free space. For this I thought I really needed the shape of the land.</p>
 <p>So I went back to my OSM dataset and this time looked at the nodes which were on coastlines. Coastlines, though, are lines, not shapes, so some reworking was in order. In the original dataset there were some 200 different lines. Many of them were outside San Francisco proper, but still by removing those there were about 50 left. Many of them could be joined, and I had just to do a tiny bit of manual stitching to come up with one landmass shape for San Francisco.</p>
-<p><div style="width: 610px" class="wp-caption alignnone"><img class="" src="http://jeromecukier.net/projects/slopes/v9.png" alt="Now with a landmass" width="600" height="330" /><p class="wp-caption-text">Now with a landmass</p></div></p>
+<p><div style="width: 610px" class="wp-caption alignnone"><img class="" src="https://jckr.github.io/blog/projects/slopes/v9.png" alt="Now with a landmass" width="600" height="330" /><p class="wp-caption-text">Now with a landmass</p></div></p>
 <p>I tried various combinations for styling and finally fell back on using green, orange and red for the steepness &#8211; the very palette I avoided in the beginning. I used more balanced, slightly less saturated colors though.</p>
 <p>One last thing I did on the data side was to get, for every node (which is every end of street or cross-street) the name of all the streets that go through it, so I could describe them &#8211; both the first node the user will click on and anyone he or she will mouseover on.</p>
-<p><div style="width: 610px" class="wp-caption alignnone"><img class="" src="http://jeromecukier.net/projects/slopes/v10.png" alt="The end result!" width="600" height="361" /><p class="wp-caption-text">The end result!</p></div></p>
+<p><div style="width: 610px" class="wp-caption alignnone"><img class="" src="https://jckr.github.io/blog/projects/slopes/v10.png" alt="The end result!" width="600" height="361" /><p class="wp-caption-text">The end result!</p></div></p>
 	    		<div class="clear">&nbsp;</div>
 	</section>
 </article><!-- #post-## -->
@@ -432,7 +432,7 @@ Here is a new project using publicly available data: <a href="http://jeromecukie
     </header>
 	<section class="post-content">
 
-		<p>About a year ago I proposed a <a href="http://www.jeromecukier.net/blog/2012/09/04/getting-to-hello-world-with-d3/">very simple template</a> to start working with d3. But is that the way I actually work? Of course not. Because, though you and I know that displaying hello world in d3 is not exactly trivial, this is not a highly marketable skill either. That said, I just can&#8217;t afford to start each of my projects from scratch.</p>
+		<p>About a year ago I proposed a <a href="http://jckr.github.io/blog/blog/2012/09/04/getting-to-hello-world-with-d3/">very simple template</a> to start working with d3. But is that the way I actually work? Of course not. Because, though you and I know that displaying hello world in d3 is not exactly trivial, this is not a highly marketable skill either. That said, I just can&#8217;t afford to start each of my projects from scratch.</p>
 <p>So in this article I will present you the template I actually use. I won&#8217;t go in as much detail as last time because the exact instructions matter less than the general idea.</p>
 <p>My template is a set of two files, an html file and a js file. Of course, extra files can be used as needed.</p>
 <p>There&#8217;s not much to the html file &#8211; its role is really to call the javascript code. There is a little twist though. This is also where the interface elements (ie buttons and other controls) may be. Another thing is that I don&#8217;t load a css file through the html. The reason is that when I work with svg, I may export the svg proper to a file to have it reworked in Adobe Illustrator etc. and so having style inside the file makes things easier. So I would instead load a style sheet into the svg through javascript.</p>
@@ -729,7 +729,7 @@ vis.init(params);
     </header>
 	<section class="post-content">
 
-		<p>So I made this <a href="http://www.jeromecukier.net/projects/agot/events.html">interactive visualization</a> about the 5 Game of Thrones books. How?</p>
+		<p>So I made this <a href="http://jckr.github.io/blog/projects/agot/events.html">interactive visualization</a> about the 5 Game of Thrones books. How?</p>
 <h2>The project</h2>
 <p>The visualization is based on the events which happen to the main characters of the books. With over 2000 characters and close to 5000 pages over 343 chapters, it&#8217;s not possible to show everything, so I took about 300 characters and restricted to a small selection of events, such as characters killing each other. Also, I regrouped characters in a 2-level hierarchy so that it would be easier to find them and see what happens at a higher level.</p>
 <h2>Data</h2>
@@ -748,7 +748,7 @@ this has not been a small task. When I read the books, which was a while back (b
 <p>The other 3 groups are as follows: antagonists, that is aggressive characters (including monsters) who may attack any other; neutral characters, who tend to stay out of conflict, and opportunists, who look for more power.</p>
 <p>Each of the 5 groups exhibits different patterns when it comes to killing: Starks (&#8220;the good guys&#8221;) don&#8217;t kill their own or neutral characters, but may have to fight characters from the other groups; conversely, some characters in the Lannister clan or among opportunists may carry out assassinations where anyone can be targeted. Neutral characters don&#8217;t fight except against antagonists, and the latter may fight characters from any group.</p>
 <h2>Drawing the visualization</h2>
-<p>I started thinking of that project a long time ago, and I&#8217;ve made experiments taking many forms. One of such form was a previous visualization on the <a href="http://www.jeromecukier.net/projects/agot/places.html">places in Games of Thrones</a>. That one visualization was the low-hanging fruit of the dataset I was building and refining. I knew I wanted to show events happening to the characters. Originally I thought of something linear, like a gantt chart, possibly grouping the characters by families which would be collapsable. But even in the broad sense that&#8217;s a lot of families, it wouldn&#8217;t make the visualization very legible.</p>
+<p>I started thinking of that project a long time ago, and I&#8217;ve made experiments taking many forms. One of such form was a previous visualization on the <a href="http://jckr.github.io/blog/projects/agot/places.html">places in Games of Thrones</a>. That one visualization was the low-hanging fruit of the dataset I was building and refining. I knew I wanted to show events happening to the characters. Originally I thought of something linear, like a gantt chart, possibly grouping the characters by families which would be collapsable. But even in the broad sense that&#8217;s a lot of families, it wouldn&#8217;t make the visualization very legible.</p>
 <p>What I had in mind then was to find a way to represent the status of the characters over time, who got killed, who got crippled, that sort of thing.</p>
 <p>Eventually, I thought it was more interesting to represent the relationships of characters among themselves, so I started to take notice of all the interactions between characters, such as: who kills whom, who captures whom, who marries whom, etc. There were many which didn&#8217;t make it in the final visualization which is already complex enough as is.</p>
 <p>I thought of the chord form early because it&#8217;s possible to use it to represent a lot of nodes and a lot of relationships among them even and even if it&#8217;s difficult to see one individual node expect the most important ones, and even more difficult to see one individual relationship, it&#8217;s possible to get a vague idea of mass. So I thought of representing characters as circles around a main circle coloring them by family or something. But doesn&#8217;t work, there are just too many different families. By so doing I was just plotting complexity.</p>
@@ -758,7 +758,7 @@ this has not been a small task. When I read the books, which was a while back (b
 <p>The method I chose was good (but not completely accurate) at preserving the relative importance of one clique compared to all the others, but just barely ok at preserving the relative importance of one given character.</p>
 <p>I would take all the mentions of all the characters, tally that by clique, then take the square roots of that for each clique. Then, for each clique I compute the ratio of that square root to the sum of all the other square roots.</p>
 <p>I multiply that by 2π and that&#8217;s an angle, that&#8217;s the &#8220;slice&#8221; of the main circle that will be occupied by the circle corresponding to that clique. Picture:<br />
-<iframe src="http://www.jeromecukier.net/projects/agot/littleChords.html" frameborder="0" width="800px" height="500px"></iframe></p>
+<iframe src="https://jckr.github.io/blog/projects/agot/littleChords.html" frameborder="0" width="800px" height="500px"></iframe></p>
 <p>(btw click on the circle on the left to regenerate the data points)</p>
 <p>So while those proportions don&#8217;t exactly match they are very very close. That doesn&#8217;t hold at the character level, because the sum of the areas of the character circles can occupy anywhere between 50% and 100% of the areas of the larger circle. But that&#8217;s not important. Accuracy is not important, as long as it is sufficient to say: this character appears often and this one doesn&#8217;t.</p>
 <p>Two other technical points about the making of the viz.<br />
@@ -769,7 +769,7 @@ So it wasn&#8217;t possible to read the datafile in sequence and to draw some ad
 <p>so it&#8217;s just a matter of separating the code that calculates all the positions from the one that draws the viz, two operations which more often than not are intertwined.</p>
 <p>Last, in the visualization I get to write group names in a circle around the main circle. How is this done?</p>
 <p>Well, in svg, you can&#8217;t write &#8220;on a circle&#8221;. You can write on a path, which can be anything, a circular arc for instance. In this case it&#8217;s a bit more complicated because I wanted to make sure that the writing would not be upside down. So I actually used two arcs.</p>
-<p><iframe src="http://www.jeromecukier.net/projects/agot/littleTextPaths.html" width="500px" height="500px" frameborder=0></iframe></p>
+<p><iframe src="https://jckr.github.io/blog/projects/agot/littleTextPaths.html" width="500px" height="500px" frameborder=0></iframe></p>
 	    		<div class="clear">&nbsp;</div>
 	</section>
 </article><!-- #post-## -->
@@ -790,7 +790,7 @@ You&#8217;re also welcome to the slides and examples of the tutorial which can b
 <p>We had done a d3 workshop a few months back at Visweek with Jeff Heer. This time around, we changed our approach: we covered less ground, went at a slower pace, but targeted what is in our opinion the most troublesome aspects of learning d3: selecting, creating and removing elements. </p>
 <p>I have learned d3 from deciphering script examples and in the earliest ones one ubiquitous construct was this sequence : select / selectAll / data / enter / append.<br />
 It does the work, so like everyone else I&#8217;ve copied it and reused very often. It happens to be the most proper way of adding new elements in most cases, but the point is, while learning d3, I (and many people before and after me) have copy/pasted it without understanding it deeply. Though, copy pasting something you don&#8217;t understand thoroughly is the best way to get errors you don&#8217;t understand any better, and it would prevent you from accessing the rest of the potential of the library. Conversely, once this is cleared, you can be &#8220;thinking in d3&#8221; and easily do many things you might have thought impossible before.</p>
-<p>We did the tutorial hands-on, live coding most of the time. To follow through, I invite you to create or open an empty page with d3 loaded (such as <a href="http://www.jeromecukier.net/projects/template.html" title="d3 template" target="_blank">this one</a> &#8211; the link opens a new tab) and then open the &#8220;console&#8221; or &#8220;web developer tools&#8221; which allow you to type javascript statements directly, without having to write and load scripts. Here are the shortcuts to the console: </p>
+<p>We did the tutorial hands-on, live coding most of the time. To follow through, I invite you to create or open an empty page with d3 loaded (such as <a href="http://jckr.github.io/blog/projects/template.html" title="d3 template" target="_blank">this one</a> &#8211; the link opens a new tab) and then open the &#8220;console&#8221; or &#8220;web developer tools&#8221; which allow you to type javascript statements directly, without having to write and load scripts. Here are the shortcuts to the console: </p>
 <ul>
 <li>Chrome: Ctrl-J (windows), ⌥ ⌘+j (Mac)</li>
 <li>Firefox: Ctrl+Shift+k (windows), ⌥ ⌘+k (Mac)</li>
@@ -1200,7 +1200,7 @@ At Strata, we went further &#8211; we discussed interaction and transition, but 
 	(function(){
 		var corecss = document.createElement('link');
 		var themecss = document.createElement('link');
-		var corecssurl = "http://localhost:8888/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		var corecssurl = "/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
 		if ( corecss.setAttribute ) {
 				corecss.setAttribute( "rel", "stylesheet" );
 				corecss.setAttribute( "type", "text/css" );
@@ -1210,7 +1210,7 @@ At Strata, we went further &#8211; we discussed interaction and transition, but 
 				corecss.href = corecssurl;
 		}
 		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
-		var themecssurl = "http://localhost:8888/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
+		var themecssurl = "/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
 		if ( themecss.setAttribute ) {
 				themecss.setAttribute( "rel", "stylesheet" );
 				themecss.setAttribute( "type", "text/css" );

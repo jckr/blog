@@ -8,7 +8,7 @@
 	>
 
 <channel>
-	<title>deception &#8211; jeromecukier.net</title>
+	<title>deception &#8211; jckr.github.io/blog</title>
 	<atom:link href="http://localhost/tag/deception/feed/" rel="self" type="application/rss+xml" />
 	<link>/</link>
 	<description>Just another WordPress site</description>
@@ -34,10 +34,10 @@
 		<category><![CDATA[statistics]]></category>
 		<category><![CDATA[VAT]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=153</guid>
-		<description><![CDATA[Two weeks ago I have been at DD4D conference, conveniently located at my workplace. I will write some more on DD4D, meanwhile you can see this post on infosthetics by Petra and Marian. One of the things that struck me at DD4D was that several talks were about either data visualization for advocacy, or for <a class="read-more" href="/2009/07/02/using-data-visualization-to-disinform/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=153</guid>
+		<description><![CDATA[Two weeks ago I have been at DD4D conference, conveniently located at my workplace. I will write some more on DD4D, meanwhile you can see this post on infosthetics by Petra and Marian. One of the things that struck me at DD4D was that several talks were about either data visualization for advocacy, or for <a class="read-more" href="/blog/2009/07/02/using-data-visualization-to-disinform/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[<p>Two weeks ago I have been at <a href="http://DD4D.net/">DD4D</a> conference, conveniently located at my workplace. I will write some more on DD4D, meanwhile you can see this post on <a href="http://infosthetics.com/archives/2009/07/dd4d_conference_coverage_best-of.html">infosthetics </a>by <a href="http://pages.cpsc.ucalgary.ca/~pneumann/">Petra</a> and <a href="http://www.mariandoerk.de/">Marian</a>.  One of the things that struck me at DD4D was that several talks were about either data visualization for advocacy, or for education purposes. One speaker said that data visualization could be used to <strong>protect </strong>people <strong>against those who</strong> use numbers to <strong>mislead and disinform</strong>.  Yesterday, I saw this typical example of such a manipulation, reminding of <a href="http://en.wikipedia.org/wiki/Lies,_damned_lies,_and_statistics">the famous Disraeli quote</a>.<br />
-<img class="aligncenter size-full wp-image-154" title="disinform" src="http://www.jeromecukier.net/wp-content/uploads/2009/07/disinform.png" alt="disinform" width="440" height="309" /></p>
+<img class="aligncenter size-full wp-image-154" title="disinform" src="https://jckr.github.io/blog/wp-content/uploads/2009/07/disinform.png" alt="disinform" width="440" height="309" /></p>
 <p>This is a poster for restaurants to display. Yesterday, VAT for restaurants in France was cut from 19.6% to 5.5%. This is the result over 10 years of lobbying. Initially, restaurants asked for a VAT drop and committed to cut their listed prices accordingly. That cut in price would have attracted more consumers, eventually generating more profit and possibly more tax money. That would have been a win-win-win situation for the restaurant industry, the consumer and the state.</p>
 <p>But eventually, the changes that restaurants have agreed to their price structure are as follow. They would cut the listed price of up to 10 menu items by 11.8% to &#8220;reflect the tax drop&#8221;. In exchange, they are allowed to display this poster, on which the <strong>c</strong><strong>hart ominously promises a massive price drop</strong>.</p>
 <p>In reality, 11.8% is not enough to offset the VAT drop.</p>

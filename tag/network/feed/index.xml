@@ -8,7 +8,7 @@
 	>
 
 <channel>
-	<title>network &#8211; jeromecukier.net</title>
+	<title>network &#8211; jckr.github.io/blog</title>
 	<atom:link href="http://localhost/tag/network/feed/" rel="self" type="application/rss+xml" />
 	<link>/</link>
 	<description>Just another WordPress site</description>
@@ -31,10 +31,10 @@
 		<category><![CDATA[network]]></category>
 		<category><![CDATA[visualization]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1514</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1514</guid>
 		<description><![CDATA[I&#8217;ve created an interactive visualization on the Game of Thrones. (A more technical post on how this was done to follow)]]></description>
-				<content:encoded><![CDATA[<p><div id="attachment_1518" style="width: 745px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/projects/agot/events.html"><img class="size-full wp-image-1518" title="Events in a Game of Thrones" src="http://www.jeromecukier.net/wp-content/uploads/2012/12/GoTviz.png" alt="Events in a Game of Thrones" width="735" height="692" /></a><p class="wp-caption-text">Click for the interactive version</p></div></p>
-<p>I&#8217;ve created an <a href="http://www.jeromecukier.net/projects/agot/events.html">interactive visualization</a> on the Game of Thrones.</p>
+				<content:encoded><![CDATA[<p><div id="attachment_1518" style="width: 745px" class="wp-caption aligncenter"><a href="http://jckr.github.io/blog/projects/agot/events.html"><img class="size-full wp-image-1518" title="Events in a Game of Thrones" src="https://jckr.github.io/blog/wp-content/uploads/2012/12/GoTviz.png" alt="Events in a Game of Thrones" width="735" height="692" /></a><p class="wp-caption-text">Click for the interactive version</p></div></p>
+<p>I&#8217;ve created an <a href="http://jckr.github.io/blog/projects/agot/events.html">interactive visualization</a> on the Game of Thrones.</p>
 <p>(A more technical post on how this was done to follow)</p>
 ]]></content:encoded>
 			<wfw:commentRss>/2012/12/09/events-in-the-game-of-thrones/feed/</wfw:commentRss>
@@ -63,9 +63,9 @@
 		<category><![CDATA[trees]]></category>
 		<category><![CDATA[tutorial]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=623</guid>
-		<description><![CDATA[previous: reshaping complex arrays (4/5) Working with layouts In this final part, we&#8217;re going to look at how we can shape our data to use the protovis built-in layouts such as stacked areas, treemaps or force-directed graphs. This is not a tutorial on how to use layouts stricto sensu, and I advise anyone interested to <a class="read-more" href="/2011/02/11/working-with-data-in-protovis-part-5-of-5/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
-				<content:encoded><![CDATA[<p>previous: <a href="http://www.jeromecukier.net/?p=502">reshaping complex arrays (4/5)</a></p>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=623</guid>
+		<description><![CDATA[previous: reshaping complex arrays (4/5) Working with layouts In this final part, we&#8217;re going to look at how we can shape our data to use the protovis built-in layouts such as stacked areas, treemaps or force-directed graphs. This is not a tutorial on how to use layouts stricto sensu, and I advise anyone interested to <a class="read-more" href="/blog/2011/02/11/working-with-data-in-protovis-part-5-of-5/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>previous: <a href="http://jckr.github.io/blog/?p=502">reshaping complex arrays (4/5)</a></p>
 <h2>Working with layouts</h2>
 <p>In this final part, we&#8217;re going to look at how we can shape our data to use the protovis built-in layouts such as stacked areas, treemaps or force-directed graphs.<br />
 This is not a tutorial on how to use layouts stricto sensu, and I advise anyone interested to first look at the <a href="http://vis.stanford.edu/protovis/docs/layout.html">protovis documentation</a> to see what can be done with this and to understand the underlying concepts. </p>
@@ -170,10 +170,10 @@ vis.add(pv.Layout.Grid)
      ;
 vis.render();</pre>
 </td>
-<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/QR-grid-big.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/QR-grid-big.png" alt="" title="QR-grid-big" width="216" height="216" class="aligncenter size-full wp-image-628" /></a>(BTW, this is the QR code to this page)</td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/QR-grid-big.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/QR-grid-big.png" alt="" title="QR-grid-big" width="216" height="216" class="aligncenter size-full wp-image-628" /></a>(BTW, this is the QR code to this page)</td>
 </tr>
 </table>
-<p>On line 29, I&#8217;m using a <a href="http://www.jeromecukier.net/?p=494">map function</a> to turn this array of strings, which is easier and shorter to type, into a <em>bona fide</em> 2-dimensional array. </p>
+<p>On line 29, I&#8217;m using a <a href="http://jckr.github.io/blog/?p=494">map function</a> to turn this array of strings, which is easier and shorter to type, into a <em>bona fide</em> 2-dimensional array. </p>
 <p>That&#8217;s all there is to grids, of all the layouts they are among the easiest to reproduce with regular protovis.</p>
 <p>Now, stacks.<br />
 The easiest way to use them is to pass them 2-dimensional arrays. Now it doesn&#8217;t have to be arrays of numbers, it can be arrays of associative arrays in case you need to do something exotic. But for the following examples let&#8217;s just assume you don&#8217;t. Here is how you&#8217;d do a stacked area, stacked columns and stacked bars respectively:</p>
@@ -191,7 +191,7 @@ vis.add(pv.Layout.Stack)
     .y(function(d) d/20)
     .layer.add(pv.Area)</pre>
 </td>
-<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/stackedAreas.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/stackedAreas.png" alt="" title="stackedAreas" width="200" height="200" class="aligncenter size-full wp-image-636" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/stackedAreas.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/stackedAreas.png" alt="" title="stackedAreas" width="200" height="200" class="aligncenter size-full wp-image-636" /></a></td>
 </tr>
 </table>
 <p>all you need is to feed the layers, x, y properties of your stack, then say what you want to add to your layers.<br />
@@ -205,7 +205,7 @@ Now, columns: </p>
     .y(function(d) d/20)
     .layer.add(pv.Bar).width(40)</pre>
 </td>
-<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/stackedColumns.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/stackedColumns.png" alt="" title="stackedColumns" width="200" height="200" class="aligncenter size-full wp-image-637" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/stackedColumns.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/stackedColumns.png" alt="" title="stackedColumns" width="200" height="200" class="aligncenter size-full wp-image-637" /></a></td>
 </tr>
 </table>
 <p>and finally, bars: </p>
@@ -219,7 +219,7 @@ Now, columns: </p>
     .y(function(d) d/20)
     .layer.add(pv.Bar).height(40)</pre>
 </td>
-<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/stackedBars.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/stackedBars.png" alt="" title="stackedBars" width="200" height="200" class="aligncenter size-full wp-image-638" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/stackedBars.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/stackedBars.png" alt="" title="stackedBars" width="200" height="200" class="aligncenter size-full wp-image-638" /></a></td>
 </tr>
 </table>
 <p>For bars, there is a little trick here. I specify that the layer orientation is horizontal (&#8220;left&#8221;) and I change the height instead of the width of the added pv.Bar.<br />
@@ -256,7 +256,7 @@ arc.node.add(pv.Dot)
     .size(50)
 vis.render();</pre>
 </td>
-<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleNetwork1.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleNetwork1.png" alt="" title="simpleNetwork" width="200" height="200" class="aligncenter size-full wp-image-644" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleNetwork1.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/simpleNetwork1.png" alt="" title="simpleNetwork" width="200" height="200" class="aligncenter size-full wp-image-644" /></a></td>
 </tr>
 </table>
 <p>Here, by varying the strength of the link, the thickness of the arcs changes accordingly. The nodes are left unstyled, had we passed a more complicated dataset to the nodes array, we could have changed their properties (fillStyle, size, strokeStyle, labels etc.) with appropriate accessor functions. </p>
@@ -279,7 +279,7 @@ force.node.add(pv.Dot)
 vis.render();
 </pre>
 </td>
-<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleForce.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleForce.png" alt="" title="simpleForce" width="200" height="200" class="aligncenter size-full wp-image-645" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleForce.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/simpleForce.png" alt="" title="simpleForce" width="200" height="200" class="aligncenter size-full wp-image-645" /></a></td>
 </tr>
 </table>
 <p>Here I labelled the nodes so one can tell which is which. This is done by adding a pv.Label to the pv.Dot that&#8217;s attached to the node, just like with any other mark.</p>
@@ -301,7 +301,7 @@ Matrix.label.add(pv.Label).text(function() Math.floor(this.index/2))
 
 vis.render();</pre>
 </td>
-<td><a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleMatrix1.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleMatrix1.png" alt="" title="simpleMatrix" width="200" height="200" class="aligncenter size-full wp-image-647" /></a></td>
+<td><a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleMatrix1.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/simpleMatrix1.png" alt="" title="simpleMatrix" width="200" height="200" class="aligncenter size-full wp-image-647" /></a></td>
 </tr>
 </table>
 <p>For the matrix things are slightly more complex than for the previous 2. Here I opted for a directed matrix, as opposed to a bidirectional one: this means that each link is shown once, to its source from its target, and not twice (ie from its target back to its source) which is the default.<br />
@@ -360,7 +360,7 @@ tree.node.add(pv.Dot)
 	.anchor(&quot;center&quot;).add(pv.Label).textAlign(&quot;center&quot;).text(function(n) n.nodeName)
 vis.render();</pre>
 <p>And here is the result:<br />
-<a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleTree.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleTree.png" alt="" title="simpleTree" width="500" height="200" class="aligncenter size-full wp-image-652" /></a></p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleTree.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/simpleTree.png" alt="" title="simpleTree" width="500" height="200" class="aligncenter size-full wp-image-652" /></a></p>
 <p>There are many styling possibilities obviously left unexplored in this simple example (you can control properties of the tree.link, tree.node, tree.labels which we didn&#8217;t use here, etc.), but this won&#8217;t change much as far as data are concerned. </p>
 <p>Now let&#8217;s try a treemap with the same dataset.</p>
 <pre class="brush: jscript; first-line: 14; title: ; notranslate">var vis = new pv.Panel()
@@ -397,7 +397,7 @@ vis.render();
 </pre>
 <p>and what took the longest part of the code was making the legend.</p>
 <p>Here is the outcome:<br />
-<a href="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleTreemap.png"><img src="http://www.jeromecukier.net/wp-content/uploads/2011/02/simpleTreemap.png" alt="" title="simpleTreemap" width="400" height="200" class="aligncenter size-full wp-image-653" /></a></p>
+<a href="http://jckr.github.io/blog/wp-content/uploads/2011/02/simpleTreemap.png"><img src="https://jckr.github.io/blog/wp-content/uploads/2011/02/simpleTreemap.png" alt="" title="simpleTreemap" width="400" height="200" class="aligncenter size-full wp-image-653" /></a></p>
 ]]></content:encoded>
 			<wfw:commentRss>/2011/02/11/working-with-data-in-protovis-part-5-of-5/feed/</wfw:commentRss>
 		<slash:comments>3</slash:comments>

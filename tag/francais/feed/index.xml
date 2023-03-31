@@ -8,7 +8,7 @@
 	>
 
 <channel>
-	<title>français &#8211; jeromecukier.net</title>
+	<title>français &#8211; jckr.github.io/blog</title>
 	<atom:link href="http://localhost/tag/francais/feed/" rel="self" type="application/rss+xml" />
 	<link>/</link>
 	<description>Just another WordPress site</description>
@@ -32,8 +32,8 @@
 		<category><![CDATA[nom]]></category>
 		<category><![CDATA[prénom]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=804</guid>
-		<description><![CDATA[[another post in French. sorry for my English readers, but since it's again based on election data it really is only relevant to French people] Donner un prénom à ses enfants, c'est peut-être la décision qui va le plus influencer le regard des autres à son égard... surtout quand ils ne l'ont pas encore vu. <a class="read-more" href="/2011/04/01/votre-prenom-est-il-de-droite/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=804</guid>
+		<description><![CDATA[[another post in French. sorry for my English readers, but since it's again based on election data it really is only relevant to French people] Donner un prénom à ses enfants, c'est peut-être la décision qui va le plus influencer le regard des autres à son égard... surtout quand ils ne l'ont pas encore vu. <a class="read-more" href="/blog/2011/04/01/votre-prenom-est-il-de-droite/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[[another post in French. sorry for my English readers, but since it's again based on election data it really is only relevant to French people]</p>
 Donner un prénom à ses enfants, c'est peut-être la décision qui va le plus influencer le regard des autres à son égard... surtout quand ils ne l'ont pas encore vu. Qu'est-ce qu'on peut s'imaginer d'un Édouard ou d'une Jacqueline avant de les connaître? sûrement pas la même chose. Est-ce qu'on peut deviner leur couleur politique? </p>
 pour vérifier ça j'ai pris la liste de tous les candidats aux dernières élections cantonales,soit 10361 personnes avec 1247 prénoms différents qui ont rendu publiques leurs convictions politiques. </p>
@@ -47,7 +47,7 @@ Parmi les prénoms qu'on trouve plus de 5 fois, les plus marqués à gauche sont
 
 Et... si Jean-Marie est plutôt de droite, les Nicolas sont d'habitude à gauche, mais pas les François. On trouve plus de Jean-Luc, de Martine et de Dominique à gauche, mais pas d'Olivier!</p><hr/></p>
 <script type="text/javascript" src="http://blog.oecdfactblog.org/wp-includes/js/protovis-r3.2.js"></script>
-<script type="text/javascript" src="http://www.jeromecukier.net/wp-content/uploads/2011/04/candidats.js" charset="ISO-8859-1"></script>
+<script type="text/javascript" src="https://jckr.github.io/blog/wp-content/uploads/2011/04/candidats.js" charset="ISO-8859-1"></script>
 <script type="text/javascript+protovis">
 var re="", sp=-1;
 partisDetails={
@@ -247,15 +247,15 @@ lessBox.anchor("center").add(pv.Label).text("précédents")
 		<category><![CDATA[france]]></category>
 		<category><![CDATA[politiques]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=764</guid>
-		<description><![CDATA[[I write this here post in French because it's more relevant for a French audience, a more technical post with an explanation of how it's done follows in English]. J'ai écrit que j'avais été déçu par les infographies des principaux médias au lendemain des cantonales. Si on prend la carte du Monde par exemple, on <a class="read-more" href="/2011/03/26/la-carte-des-cantonales/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
-				<content:encoded><![CDATA[[I write this here post in French because it's more relevant for a French audience, a <a href="http://www.jeromecukier.net/?p=796">more technical post</a> with an explanation of how it's done follows in English].</p>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=764</guid>
+		<description><![CDATA[[I write this here post in French because it's more relevant for a French audience, a more technical post with an explanation of how it's done follows in English]. J'ai écrit que j'avais été déçu par les infographies des principaux médias au lendemain des cantonales. Si on prend la carte du Monde par exemple, on <a class="read-more" href="/blog/2011/03/26/la-carte-des-cantonales/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[[I write this here post in French because it's more relevant for a French audience, a <a href="http://jckr.github.io/blog/?p=796">more technical post</a> with an explanation of how it's done follows in English].</p>
 
 J'ai écrit que j'avais été déçu par les infographies des principaux médias au lendemain des cantonales.</p>
 
 Si on prend la carte du Monde par exemple, on y voit la France nettemement découpée en départements, soit bien roses, soit bien bleus, ou à la rigueur gris si l'issue est incertaine. Mais ce n'est pas l'enjeu de ces élections. Ce sont les dernières élections avant la présidentielle, et on est donc attentif aux enseignements nationaux du scrutin au-delà de la composition des conseils généraux. Ce qu'on commente, c'est plus la percée de l'extrême droite ou le poids de l'abstention. C'est la capacité de la droite ou de la gauche à s'imposer. </p>
 Dans cette optique, chaque département n'a pas le même poids. Le Nord par exemple, avec presque 900,000 électeurs, compte plus que la Lozère qui en compte juste un peu plus de 20,000. Donc, tracer une carte géographiquement exacte n'est pas très honnête, puisque cela cache ces différences qui peuvent être énormes.</p>
-Comme je n'ai pas l'habitude de porter des critiques <a href="http://www.jeromecukier.net/?p=661">sans proposer autre chose</a>, j'ai fabriqué des cartogrammes de Dorling pour rendre compte de ce qui s'est vraiment passé dimanche dernier.</p>
+Comme je n'ai pas l'habitude de porter des critiques <a href="http://jckr.github.io/blog/?p=661">sans proposer autre chose</a>, j'ai fabriqué des cartogrammes de Dorling pour rendre compte de ce qui s'est vraiment passé dimanche dernier.</p>
 
 Les cartogrammes, ce sont presque des cartes, sauf que le côté géographique n'est pas pris au sens strict. Leur forme dépend plus des données qu'elles représentent. Et dans la version de Dorling, on remplace les morceaux de la carte (ici, les départements) par des cercles, plus ou moins gros. Là, la taille des cercles dépend du nombre d'électeurs inscrits aux cantonales. Du coup, leur position sur la carte n'est pas exactement la même que celle des départements sur la carte de France mais elle est assez proche pour qu'on puisse les retrouver.</p>
 
@@ -266,9 +266,9 @@ Je propose 3 scénarios: une comparaison gauche-droite, l'importance de l'extrê
 <input type="radio" checked name="group1" value="0" onclick="sc=0;reinit() ;vis.render();">Gauche-droite
 <input type="radio" name="group1" value="1" onclick="sc=1;reinit() ;vis.render();">Extrême-droite
 <input type="radio" name="group1" value="2" onclick="sc=2;reinit() ;vis.render();">Abstention</form>
-<script type="text/javascript" src="http://www.jeromecukier.net/wp-content/uploads/2011/03/votes.js"></script>
-<script type="text/javascript" src="http://www.jeromecukier.net/wp-content/uploads/2011/03/francedorling.js"></script>
-<script type="text/javascript" src="http://www.jeromecukier.net/wp-content/uploads/2011/03/cantonales.js"></script>
+<script type="text/javascript" src="https://jckr.github.io/blog/wp-content/uploads/2011/03/votes.js"></script>
+<script type="text/javascript" src="https://jckr.github.io/blog/wp-content/uploads/2011/03/francedorling.js"></script>
+<script type="text/javascript" src="https://jckr.github.io/blog/wp-content/uploads/2011/03/cantonales.js"></script>
 ]]></content:encoded>
 			<wfw:commentRss>/2011/03/26/la-carte-des-cantonales/feed/</wfw:commentRss>
 		<slash:comments>5</slash:comments>

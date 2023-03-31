@@ -7,15 +7,15 @@
 <meta name="HandheldFriendly" content="True" />
 <meta name="MobileOptimized" content="320" />
 
-<title>data visualization | jeromecukier.net | Page 2</title>
+<title>data visualization | jckr.github.io/blog | Page 2</title>
 
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="/xmlrpc.php">
 <link rel='dns-prefetch' href='//fonts.googleapis.com' />
 <link rel='dns-prefetch' href='//s.w.org' />
-<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Feed" href="/feed/" />
-<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; Comments Feed" href="/comments/feed/" />
-<link rel="alternate" type="application/rss+xml" title="jeromecukier.net &raquo; data visualization Category Feed" href="/category/data-visualization/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jckr.github.io/blog &raquo; Feed" href="/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jckr.github.io/blog &raquo; Comments Feed" href="/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jckr.github.io/blog &raquo; data visualization Category Feed" href="/category/data-visualization/feed/" />
 <!-- This site uses the Google Analytics by MonsterInsights plugin v7.0.5 - Using Analytics tracking - https://www.monsterinsights.com/ -->
 <!-- Note: MonsterInsights is not currently configured on this site. The site owner needs to authenticate with Google Analytics in the MonsterInsights settings panel. -->
 <!-- No UA code set -->
@@ -67,7 +67,7 @@ img.emoji {
 
 <body class="archive paged category category-data-visualization category-8 paged-2 category-paged-2 group-blog">
 
-<header id="masthead" role="banner" class="site-head site-header" style="background-image: url(http://localhost:8888/wp-content/uploads/2018/04/Screenshot-2018-04-09-19.38.59.png);">
+<header id="masthead" role="banner" class="site-head site-header" style="background-image: url(/wp-content/uploads/2018/04/Screenshot-2018-04-09-19.38.59.png);">
     <nav id="site-navigation" class="main-navigation" role="navigation">
         <div>
             <h1 class="menu-toggle">
@@ -86,7 +86,7 @@ img.emoji {
                 
                 <div class="social-icons">
                                                                                                                                                                                                                                                                                                                                                                                                                                                     </div>
-                <h1 class="blog-title"><a class="blog-logo" href='/' rel='home'>jeromecukier.net</a></h1>
+                <h1 class="blog-title"><a class="blog-logo" href='/blog/' rel='home'>jckr.github.io/blog</a></h1>
                 <h2 class="blog-description">Just another WordPress site</h2>
             </div>
         </div>
@@ -116,7 +116,7 @@ img.emoji {
 	<section class="post-content">
 
 		<p>Hi, it&#8217;s been a while since I last posted!<br />
-Here is a new project using publicly available data: <a href="http://jeromecukier.net/projects/slopes/slopes.html">slopes of San Francisco</a>.</p>
+Here is a new project using publicly available data: <a href="http://jckr.github.io/blog/projects/slopes/slopes.html">slopes of San Francisco</a>.</p>
 <p>As a San Franciscan who likes to walk, I&#8217;m confronted to a common problem. Most cities, such as Paris where I&#8217;m from, are mostly flat. So, in order to go one block east and one block north of where I am standing, I can go North then East or East then North: this is mostly equivalent (except that streets never meet at a right angle in Paris but that&#8217;s another problem). In San Francisco, going North then East can mean climbing a huge hill then down, versus walking on a flat surface. Itineraries matter, and often times I found myself going through mountains and valleys just because I thought the straight line was the simplest way to go from A to B.</p>
 <p>Which is why I wanted to create a map of streets by slope, to help me (and my fellow San Franciscans) figure out which streets are practicable, and which should be avoided.</p>
 <p>Here&#8217;s how I did it.</p>
@@ -126,43 +126,43 @@ Here is a new project using publicly available data: <a href="http://jeromecukie
 <p>So my first task was to figure out how many of those 1.4m nodes I really needed. Turns out that the metro extract covers much more than the city but also the whole bay area. So my first pass was to filter out nodes that were outside a bounding box. Then, I only kept nodes that were part of a street, and furthermore, only the ones that would be either at the end of one street or at an intersection. By doing so, I&#8217;m assuming that all streets are straight between any two intersections, which is far from true, but would do for our purposes. I applied further filtering to weed out streets that were made of just one node. Eventually, I arrived at just over 10000 nodes! and in the process, I also extracted from the XML file the shape of the streets, that is, in which order nodes appeared in those streets. After several iterations in my code, I also scrapped their number of lanes when available and the street names.</p>
 <h2>Sanity check</h2>
 <p>The first thing I did was to plot my nodes on a map.</p>
-<p><div style="width: 610px" class="wp-caption alignnone"><img class="" src="http://jeromecukier.net/projects/slopes/v0.png" alt="First draft" width="600" height="499" /><p class="wp-caption-text">First draft</p></div></p>
+<p><div style="width: 610px" class="wp-caption alignnone"><img class="" src="https://jckr.github.io/blog/projects/slopes/v0.png" alt="First draft" width="600" height="499" /><p class="wp-caption-text">First draft</p></div></p>
 <p>Looks ok. So next, I just drawed my streets. I did that using d3, and each of my streets in this next iteration is a single path object.</p>
 <p>&nbsp;</p>
-<p><div style="width: 610px" class="wp-caption alignnone"><img class="" src="http://jeromecukier.net/projects/slopes/v1.png" alt="First network of streets" width="600" height="506" /><p class="wp-caption-text">First network of streets</p></div></p>
+<p><div style="width: 610px" class="wp-caption alignnone"><img class="" src="https://jckr.github.io/blog/projects/slopes/v1.png" alt="First network of streets" width="600" height="506" /><p class="wp-caption-text">First network of streets</p></div></p>
 <p>So that&#8217;s a basic node-and-link mesh of San Francisco, the problem with that approach is that I can only style one street (i.e. the links between the nodes) as a whole. However, what I wanted to highlight was where the streets were steep: many streets just go up and down, so giving them a single &#8220;steepness&#8221; rating wasn&#8217;t going to cut it.</p>
 <h2>Encoding steepness</h2>
-<p><div style="width: 610px" class="wp-caption alignnone"><img class="" src="http://jeromecukier.net/projects/slopes/v2.png" alt="Segments of streets" width="600" height="506" /><p class="wp-caption-text">Segments of streets</p></div></p>
+<p><div style="width: 610px" class="wp-caption alignnone"><img class="" src="https://jckr.github.io/blog/projects/slopes/v2.png" alt="Segments of streets" width="600" height="506" /><p class="wp-caption-text">Segments of streets</p></div></p>
 <p>The next logical step was to draw each of the edges individually (this time, they are lines, not paths). There are 6000+ &#8220;streets&#8221; (in the OSM sense &#8211; streets can be split in any number of different entities in Open Street Map), versus about 16000 different edges. I also found I didn&#8217;t really need to draw the nodes.</p>
 <p>The obvious way was to encode steepness from green to red on a linear scale. That looks ok, but that&#8217;s not super interesting because it&#8217;s very difficult to tell whether one street is steeper than another just by comparing colors. I didn&#8217;t need an infinite variation of colors, I just wanted to know whether a street was flat (or quasi-flat), with a noticeable slope, or really steep. So instead of using a full linear scale, I just used 3 colors from the green &#8211; purple colorbrewer scale.</p>
-<p><div style="width: 610px" class="wp-caption alignnone"><img class="" src="http://jeromecukier.net/projects/slopes/v3.png" alt="Same map with discrete colors" width="600" height="516" /><p class="wp-caption-text">Same map with discrete colors</p></div></p>
+<p><div style="width: 610px" class="wp-caption alignnone"><img class="" src="https://jckr.github.io/blog/projects/slopes/v3.png" alt="Same map with discrete colors" width="600" height="516" /><p class="wp-caption-text">Same map with discrete colors</p></div></p>
 <p>I could see instantly which streets were flat or not, yet wondered if there wasn&#8217;t a good simple way to compare between two streets which would be the steepest. Color is no good for that, but how about line width?</p>
-<p><div style="width: 610px" class="wp-caption alignnone"><img class="" src="http://jeromecukier.net/projects/slopes/v4.png" alt="Using line width to express steepness" width="600" height="500" /><p class="wp-caption-text">Using line width to express steepness</p></div></p>
+<p><div style="width: 610px" class="wp-caption alignnone"><img class="" src="https://jckr.github.io/blog/projects/slopes/v4.png" alt="Using line width to express steepness" width="600" height="500" /><p class="wp-caption-text">Using line width to express steepness</p></div></p>
 <p>That was kind of an interesting aesthetics but I found it was difficult to find a precise cross street. When looking on a map of San Francisco, we instinctively look for larger streets like Market or Van Ness and if width was used by something else, it can be confusing. At that moment I didn&#8217;t have a good measure of street width, so I went back to my OSM extract and tried to scrap the number of lanes from my dataset.</p>
-<p><div style="width: 610px" class="wp-caption alignnone"><img class="" src="http://jeromecukier.net/projects/slopes/v5.png" alt="using street widths" width="600" height="374" /><p class="wp-caption-text">using street widths</p></div></p>
+<p><div style="width: 610px" class="wp-caption alignnone"><img class="" src="https://jckr.github.io/blog/projects/slopes/v5.png" alt="using street widths" width="600" height="374" /><p class="wp-caption-text">using street widths</p></div></p>
 <p>You will notice that the streets now have an outline. I don&#8217;t draw the shape of each block, that would be too difficult given my dataset. Instead, for each street segment, I first draw a dark grey line, then on top of it, a slightly thinner colored line 🙂</p>
 <h2>Have the map do something</h2>
-<p>This being a data visualization I thought there could be interesting calculations that could be done with the map. My first intuition was to reuse the ideas of my <a href="http://www.jeromecukier.net/projects/metro/map.html">interactive Paris metro map</a> and make a deformed SF map based on the effort needed to go from one point of the map to everywhere, taking the slopes of the streets into account.</p>
+<p>This being a data visualization I thought there could be interesting calculations that could be done with the map. My first intuition was to reuse the ideas of my <a href="http://jckr.github.io/blog/projects/metro/map.html">interactive Paris metro map</a> and make a deformed SF map based on the effort needed to go from one point of the map to everywhere, taking the slopes of the streets into account.</p>
 <p>I basically refactored my code which I hadn&#8217;t visited in almost two years&#8230; and adapted shortest-path algorithms to my network of streets. It confirmed what I feared, that not all of my streets connect. Some streets in the map form tiny islands which are isolated from the rest of the network, and so cannot be reached from outside. I decided not to deal with it, debugging the dataset was really too complicated at this stage (and to be honest the filters I had used to extract the street data had already gone through many, many iterations).</p>
 <p>I also used voronoi tessellation to create a layer of polygons on top of my nodes to capture clicks. The user can choose where to base their map, not by clicking on a precise cross street, but in the area around it, like so:</p>
-<p><div style="width: 610px" class="wp-caption alignnone"><img class="" src="http://jeromecukier.net/projects/slopes/v31.png" alt="Showing the voronoi layer on top of the map" width="600" height="353" /><p class="wp-caption-text">Showing the voronoi layer on top of the map</p></div></p>
+<p><div style="width: 610px" class="wp-caption alignnone"><img class="" src="https://jckr.github.io/blog/projects/slopes/v31.png" alt="Showing the voronoi layer on top of the map" width="600" height="353" /><p class="wp-caption-text">Showing the voronoi layer on top of the map</p></div></p>
 <p>However, the results proved to be underwhelming.</p>
-<p><div style="width: 610px" class="wp-caption alignnone"><img class="" src="http://jeromecukier.net/projects/slopes/v6.png" alt="Deformed map by effort needed to walk from a given point" width="600" height="536" /><p class="wp-caption-text">Deformed map by effort needed to walk from a given point</p></div></p>
+<p><div style="width: 610px" class="wp-caption alignnone"><img class="" src="https://jckr.github.io/blog/projects/slopes/v6.png" alt="Deformed map by effort needed to walk from a given point" width="600" height="536" /><p class="wp-caption-text">Deformed map by effort needed to walk from a given point</p></div></p>
 <p>All right, so some points are closer, some points are further, but overall it&#8217;s not a super interesting map. It&#8217;s less legible, and it doesn&#8217;t help me figuring out my initial problem: from a given point, which streets should I take to not go up and down?</p>
 <p>So I was back to the drawing board. Now with the Dijkstra algorithm which I use to compute the shortest distance from one point to the others in the network, I can also get which path is the shortest, i.e. which is the actual itinerary, edge by edge, that takes me from one point to the others using the shortest path.</p>
 <h2>Path-finding</h2>
 <p>So my next idea was to hide all the edges that would not be in a shortest path. Again there were about 16000 edges, and 10000 nodes; there is only 1 shortest-path edge per node, so that&#8217;s hiding about 1/3 of the streets. Let&#8217;s see how this looks:</p>
-<p><div style="width: 610px" class="wp-caption alignnone"><img class="" src="http://jeromecukier.net/projects/slopes/v7.png" alt="All streets which are not in a shortest path are hidden." width="600" height="347" /><p class="wp-caption-text">All streets which are not in a shortest path are hidden.</p></div></p>
+<p><div style="width: 610px" class="wp-caption alignnone"><img class="" src="https://jckr.github.io/blog/projects/slopes/v7.png" alt="All streets which are not in a shortest path are hidden." width="600" height="347" /><p class="wp-caption-text">All streets which are not in a shortest path are hidden.</p></div></p>
 <p>That&#8217;s more interesting! At least, I know which streets I should not even consider from a given starting point.</p>
 <p>I could do better: once this is done and a starting point is selected, I can actually draw the shortest path to wherever the user moves his or her mouse:</p>
-<p><div style="width: 610px" class="wp-caption alignnone"><img class="" src="http://jeromecukier.net/projects/slopes/v8.png" alt="Drawing the shortest path" width="600" height="346" /><p class="wp-caption-text">Drawing the shortest path</p></div></p>
+<p><div style="width: 610px" class="wp-caption alignnone"><img class="" src="https://jckr.github.io/blog/projects/slopes/v8.png" alt="Drawing the shortest path" width="600" height="346" /><p class="wp-caption-text">Drawing the shortest path</p></div></p>
 <h2>Styling and wrapping it up</h2>
 <p>In parallel I had worked on a page template to put everything on and my map looked kind of abstract. I had considered adding street names but algorithmically it&#8217;s pretty complicated (it would have been much quicker to do it completely manually but eventually I decided against that). I needed the map to belong to one specific part of the page as opposed to be just hanging in free space. For this I thought I really needed the shape of the land.</p>
 <p>So I went back to my OSM dataset and this time looked at the nodes which were on coastlines. Coastlines, though, are lines, not shapes, so some reworking was in order. In the original dataset there were some 200 different lines. Many of them were outside San Francisco proper, but still by removing those there were about 50 left. Many of them could be joined, and I had just to do a tiny bit of manual stitching to come up with one landmass shape for San Francisco.</p>
-<p><div style="width: 610px" class="wp-caption alignnone"><img class="" src="http://jeromecukier.net/projects/slopes/v9.png" alt="Now with a landmass" width="600" height="330" /><p class="wp-caption-text">Now with a landmass</p></div></p>
+<p><div style="width: 610px" class="wp-caption alignnone"><img class="" src="https://jckr.github.io/blog/projects/slopes/v9.png" alt="Now with a landmass" width="600" height="330" /><p class="wp-caption-text">Now with a landmass</p></div></p>
 <p>I tried various combinations for styling and finally fell back on using green, orange and red for the steepness &#8211; the very palette I avoided in the beginning. I used more balanced, slightly less saturated colors though.</p>
 <p>One last thing I did on the data side was to get, for every node (which is every end of street or cross-street) the name of all the streets that go through it, so I could describe them &#8211; both the first node the user will click on and anyone he or she will mouseover on.</p>
-<p><div style="width: 610px" class="wp-caption alignnone"><img class="" src="http://jeromecukier.net/projects/slopes/v10.png" alt="The end result!" width="600" height="361" /><p class="wp-caption-text">The end result!</p></div></p>
+<p><div style="width: 610px" class="wp-caption alignnone"><img class="" src="https://jckr.github.io/blog/projects/slopes/v10.png" alt="The end result!" width="600" height="361" /><p class="wp-caption-text">The end result!</p></div></p>
 	    		<div class="clear">&nbsp;</div>
 	</section>
 </article><!-- #post-## -->
@@ -177,7 +177,7 @@ Here is a new project using publicly available data: <a href="http://jeromecukie
     </header>
 	<section class="post-content">
 
-		<p>About a year ago I proposed a <a href="http://www.jeromecukier.net/blog/2012/09/04/getting-to-hello-world-with-d3/">very simple template</a> to start working with d3. But is that the way I actually work? Of course not. Because, though you and I know that displaying hello world in d3 is not exactly trivial, this is not a highly marketable skill either. That said, I just can&#8217;t afford to start each of my projects from scratch.</p>
+		<p>About a year ago I proposed a <a href="http://jckr.github.io/blog/blog/2012/09/04/getting-to-hello-world-with-d3/">very simple template</a> to start working with d3. But is that the way I actually work? Of course not. Because, though you and I know that displaying hello world in d3 is not exactly trivial, this is not a highly marketable skill either. That said, I just can&#8217;t afford to start each of my projects from scratch.</p>
 <p>So in this article I will present you the template I actually use. I won&#8217;t go in as much detail as last time because the exact instructions matter less than the general idea.</p>
 <p>My template is a set of two files, an html file and a js file. Of course, extra files can be used as needed.</p>
 <p>There&#8217;s not much to the html file &#8211; its role is really to call the javascript code. There is a little twist though. This is also where the interface elements (ie buttons and other controls) may be. Another thing is that I don&#8217;t load a css file through the html. The reason is that when I work with svg, I may export the svg proper to a file to have it reworked in Adobe Illustrator etc. and so having style inside the file makes things easier. So I would instead load a style sheet into the svg through javascript.</p>
@@ -474,7 +474,7 @@ vis.init(params);
     </header>
 	<section class="post-content">
 
-		<p>So I made this <a href="http://www.jeromecukier.net/projects/agot/events.html">interactive visualization</a> about the 5 Game of Thrones books. How?</p>
+		<p>So I made this <a href="http://jckr.github.io/blog/projects/agot/events.html">interactive visualization</a> about the 5 Game of Thrones books. How?</p>
 <h2>The project</h2>
 <p>The visualization is based on the events which happen to the main characters of the books. With over 2000 characters and close to 5000 pages over 343 chapters, it&#8217;s not possible to show everything, so I took about 300 characters and restricted to a small selection of events, such as characters killing each other. Also, I regrouped characters in a 2-level hierarchy so that it would be easier to find them and see what happens at a higher level.</p>
 <h2>Data</h2>
@@ -493,7 +493,7 @@ this has not been a small task. When I read the books, which was a while back (b
 <p>The other 3 groups are as follows: antagonists, that is aggressive characters (including monsters) who may attack any other; neutral characters, who tend to stay out of conflict, and opportunists, who look for more power.</p>
 <p>Each of the 5 groups exhibits different patterns when it comes to killing: Starks (&#8220;the good guys&#8221;) don&#8217;t kill their own or neutral characters, but may have to fight characters from the other groups; conversely, some characters in the Lannister clan or among opportunists may carry out assassinations where anyone can be targeted. Neutral characters don&#8217;t fight except against antagonists, and the latter may fight characters from any group.</p>
 <h2>Drawing the visualization</h2>
-<p>I started thinking of that project a long time ago, and I&#8217;ve made experiments taking many forms. One of such form was a previous visualization on the <a href="http://www.jeromecukier.net/projects/agot/places.html">places in Games of Thrones</a>. That one visualization was the low-hanging fruit of the dataset I was building and refining. I knew I wanted to show events happening to the characters. Originally I thought of something linear, like a gantt chart, possibly grouping the characters by families which would be collapsable. But even in the broad sense that&#8217;s a lot of families, it wouldn&#8217;t make the visualization very legible.</p>
+<p>I started thinking of that project a long time ago, and I&#8217;ve made experiments taking many forms. One of such form was a previous visualization on the <a href="http://jckr.github.io/blog/projects/agot/places.html">places in Games of Thrones</a>. That one visualization was the low-hanging fruit of the dataset I was building and refining. I knew I wanted to show events happening to the characters. Originally I thought of something linear, like a gantt chart, possibly grouping the characters by families which would be collapsable. But even in the broad sense that&#8217;s a lot of families, it wouldn&#8217;t make the visualization very legible.</p>
 <p>What I had in mind then was to find a way to represent the status of the characters over time, who got killed, who got crippled, that sort of thing.</p>
 <p>Eventually, I thought it was more interesting to represent the relationships of characters among themselves, so I started to take notice of all the interactions between characters, such as: who kills whom, who captures whom, who marries whom, etc. There were many which didn&#8217;t make it in the final visualization which is already complex enough as is.</p>
 <p>I thought of the chord form early because it&#8217;s possible to use it to represent a lot of nodes and a lot of relationships among them even and even if it&#8217;s difficult to see one individual node expect the most important ones, and even more difficult to see one individual relationship, it&#8217;s possible to get a vague idea of mass. So I thought of representing characters as circles around a main circle coloring them by family or something. But doesn&#8217;t work, there are just too many different families. By so doing I was just plotting complexity.</p>
@@ -503,7 +503,7 @@ this has not been a small task. When I read the books, which was a while back (b
 <p>The method I chose was good (but not completely accurate) at preserving the relative importance of one clique compared to all the others, but just barely ok at preserving the relative importance of one given character.</p>
 <p>I would take all the mentions of all the characters, tally that by clique, then take the square roots of that for each clique. Then, for each clique I compute the ratio of that square root to the sum of all the other square roots.</p>
 <p>I multiply that by 2π and that&#8217;s an angle, that&#8217;s the &#8220;slice&#8221; of the main circle that will be occupied by the circle corresponding to that clique. Picture:<br />
-<iframe src="http://www.jeromecukier.net/projects/agot/littleChords.html" frameborder="0" width="800px" height="500px"></iframe></p>
+<iframe src="https://jckr.github.io/blog/projects/agot/littleChords.html" frameborder="0" width="800px" height="500px"></iframe></p>
 <p>(btw click on the circle on the left to regenerate the data points)</p>
 <p>So while those proportions don&#8217;t exactly match they are very very close. That doesn&#8217;t hold at the character level, because the sum of the areas of the character circles can occupy anywhere between 50% and 100% of the areas of the larger circle. But that&#8217;s not important. Accuracy is not important, as long as it is sufficient to say: this character appears often and this one doesn&#8217;t.</p>
 <p>Two other technical points about the making of the viz.<br />
@@ -514,7 +514,7 @@ So it wasn&#8217;t possible to read the datafile in sequence and to draw some ad
 <p>so it&#8217;s just a matter of separating the code that calculates all the positions from the one that draws the viz, two operations which more often than not are intertwined.</p>
 <p>Last, in the visualization I get to write group names in a circle around the main circle. How is this done?</p>
 <p>Well, in svg, you can&#8217;t write &#8220;on a circle&#8221;. You can write on a path, which can be anything, a circular arc for instance. In this case it&#8217;s a bit more complicated because I wanted to make sure that the writing would not be upside down. So I actually used two arcs.</p>
-<p><iframe src="http://www.jeromecukier.net/projects/agot/littleTextPaths.html" width="500px" height="500px" frameborder=0></iframe></p>
+<p><iframe src="https://jckr.github.io/blog/projects/agot/littleTextPaths.html" width="500px" height="500px" frameborder=0></iframe></p>
 	    		<div class="clear">&nbsp;</div>
 	</section>
 </article><!-- #post-## -->
@@ -535,7 +535,7 @@ You&#8217;re also welcome to the slides and examples of the tutorial which can b
 <p>We had done a d3 workshop a few months back at Visweek with Jeff Heer. This time around, we changed our approach: we covered less ground, went at a slower pace, but targeted what is in our opinion the most troublesome aspects of learning d3: selecting, creating and removing elements. </p>
 <p>I have learned d3 from deciphering script examples and in the earliest ones one ubiquitous construct was this sequence : select / selectAll / data / enter / append.<br />
 It does the work, so like everyone else I&#8217;ve copied it and reused very often. It happens to be the most proper way of adding new elements in most cases, but the point is, while learning d3, I (and many people before and after me) have copy/pasted it without understanding it deeply. Though, copy pasting something you don&#8217;t understand thoroughly is the best way to get errors you don&#8217;t understand any better, and it would prevent you from accessing the rest of the potential of the library. Conversely, once this is cleared, you can be &#8220;thinking in d3&#8221; and easily do many things you might have thought impossible before.</p>
-<p>We did the tutorial hands-on, live coding most of the time. To follow through, I invite you to create or open an empty page with d3 loaded (such as <a href="http://www.jeromecukier.net/projects/template.html" title="d3 template" target="_blank">this one</a> &#8211; the link opens a new tab) and then open the &#8220;console&#8221; or &#8220;web developer tools&#8221; which allow you to type javascript statements directly, without having to write and load scripts. Here are the shortcuts to the console: </p>
+<p>We did the tutorial hands-on, live coding most of the time. To follow through, I invite you to create or open an empty page with d3 loaded (such as <a href="http://jckr.github.io/blog/projects/template.html" title="d3 template" target="_blank">this one</a> &#8211; the link opens a new tab) and then open the &#8220;console&#8221; or &#8220;web developer tools&#8221; which allow you to type javascript statements directly, without having to write and load scripts. Here are the shortcuts to the console: </p>
 <ul>
 <li>Chrome: Ctrl-J (windows), ⌥ ⌘+j (Mac)</li>
 <li>Firefox: Ctrl+Shift+k (windows), ⌥ ⌘+k (Mac)</li>
@@ -819,7 +819,7 @@ At Strata, we went further &#8211; we discussed interaction and transition, but 
     </header>
 	<section class="post-content">
 
-		<p><a href="http://bit.ly/gunviolence"><img src="http://jeromecukier.net/projects/crime/murders.png" width="800" height="513" class="aligncenter" /></a><br />
+		<p><a href="http://bit.ly/gunviolence"><img src="https://jckr.github.io/blog/projects/crime/murders.png" width="800" height="513" class="aligncenter" /></a><br />
 <a href="http://bit.ly/gunviolence"><strong>Click for interactive visualization</strong></a></p>
 <p>I have created this map of every homicide in the USA using firearms for the latest year where detailed information was available. Every, that is from all the agencies that report homicides to the FBI, which is not an obligation &#8211; this is why the map lacks Florida data.<br />
 In the interactive version you can see how murders happen through the year and explore them according to several criteria that were available in the database. While large shooting sprees receive media attention, unfortunately there are thousands of cases each year in just about every community.<br />
@@ -838,8 +838,8 @@ Technically this is my first foray with <a href="http://d3js.org/">d3.v3</a> and
     </header>
 	<section class="post-content">
 
-		<p><div id="attachment_1518" style="width: 745px" class="wp-caption aligncenter"><a href="http://www.jeromecukier.net/projects/agot/events.html"><img class="size-full wp-image-1518" title="Events in a Game of Thrones" src="http://www.jeromecukier.net/wp-content/uploads/2012/12/GoTviz.png" alt="Events in a Game of Thrones" width="735" height="692" /></a><p class="wp-caption-text">Click for the interactive version</p></div></p>
-<p>I&#8217;ve created an <a href="http://www.jeromecukier.net/projects/agot/events.html">interactive visualization</a> on the Game of Thrones.</p>
+		<p><div id="attachment_1518" style="width: 745px" class="wp-caption aligncenter"><a href="http://jckr.github.io/blog/projects/agot/events.html"><img class="size-full wp-image-1518" title="Events in a Game of Thrones" src="https://jckr.github.io/blog/wp-content/uploads/2012/12/GoTviz.png" alt="Events in a Game of Thrones" width="735" height="692" /></a><p class="wp-caption-text">Click for the interactive version</p></div></p>
+<p>I&#8217;ve created an <a href="http://jckr.github.io/blog/projects/agot/events.html">interactive visualization</a> on the Game of Thrones.</p>
 <p>(A more technical post on how this was done to follow)</p>
 	    		<div class="clear">&nbsp;</div>
 	</section>
@@ -855,36 +855,36 @@ Technically this is my first foray with <a href="http://d3js.org/">d3.v3</a> and
     </header>
 	<section class="post-content">
 
-		<p>TL;DR: go check the model <a href="http://www.jeromecukier.net/projects/models/nuitblanche.html">here</a> </p>
+		<p>TL;DR: go check the model <a href="http://jckr.github.io/blog/projects/models/nuitblanche.html">here</a> </p>
 <p>So I live in Paris and try to go to the museums there as much as I can, which is often.<br />
 About ten years ago (2002, I think) the city came up with what I thought was a fantastic idea: &#8220;nuit blanche&#8221;, an art event during one night in October. There were a dozen or so exhibits planned, all of which were fairly ambitious. For instance <a href="http://fr.wikipedia.org/wiki/Sophie_Calle">Sophie Calle</a> would welcome visitors on a secret bedroom on the very top of the Eiffel tower.</p>
 <p>When I saw the programme it was almost to good to be true: all those world class artists would do something extraordinary in Paris! I thought I could just casually walk all night from one installation to another along with a few other like-minded night wanderers. so it would look a bit like this: </p>
-<p><iframe src="http://www.jeromecukier.net/projects/models/smallnb.html#night=300&#038;duration=50&#038;nbPeople=100&#038;step=15&#038;stepStd=1&#038;timePerVisit=10&#038;timePerVisitO=1&#038;nbAttractions=10&#038;o=0&#038;minCap=100&#038;maxCap=100&#038;mode=true&#038;lyak=true" width="520" height="650" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><br />
+<p><iframe src="https://jckr.github.io/blog/projects/models/smallnb.html#night=300&#038;duration=50&#038;nbPeople=100&#038;step=15&#038;stepStd=1&#038;timePerVisit=10&#038;timePerVisitO=1&#038;nbAttractions=10&#038;o=0&#038;minCap=100&#038;maxCap=100&#038;mode=true&#038;lyak=true" width="520" height="650" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><br />
 (how to read this: circles are installations. The large black circle represents their capacity, the inner green circle the occupancy. If too many people try to enter an installation, the green circle will grow larger than the black one and will turn red, this is when queuing appears. Dots represent visitors).</p>
 <p>Little did I know that the city expected 100000 visitors. Actually, 1 million showed up. </p>
-<p><iframe src="http://www.jeromecukier.net/projects/models/smallnb.html#night=300&#038;duration=50&#038;nbPeople=1000&#038;step=15&#038;stepStd=1&#038;timePerVisit=20&#038;timePerVisitO=2&#038;nbAttractions=10&#038;o=0&#038;minCap=10&#038;maxCap=30&#038;mode=true&#038;lyak=true" width="520" height="650" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></p>
+<p><iframe src="https://jckr.github.io/blog/projects/models/smallnb.html#night=300&#038;duration=50&#038;nbPeople=1000&#038;step=15&#038;stepStd=1&#038;timePerVisit=20&#038;timePerVisitO=2&#038;nbAttractions=10&#038;o=0&#038;minCap=10&#038;maxCap=30&#038;mode=true&#038;lyak=true" width="520" height="650" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></p>
 <p>If the total number of visitors that were in the streets at one given moment in time is an indication of success, Nuit Blanche has been fantastic. But to anybody who&#8217;s experienced it it was really a night of waiting and walking. There just wasn&#8217;t enough capacity in the various places that would host the event, and no way for a visitor to expect the size of the queue that they would be facing (more on that later).</p>
 <p>Every year, it&#8217;s a struggle. I&#8217;m like, the programme is so exciting, but then I know I will spend my time queuing or walking (in later editions, public transportation got better, so let&#8217;s say queuing and moving). </p>
 <p>And each year I end up going, and I end up thinking: never again. (but <a href="http://www.micheldebroin.org/projects/nuitblanche/4.html">hey</a>, <a href="http://www.ryojiikeda.com/project/spectra/#spectra_paris">hey</a>, and <a href="http://www.leandroerlich.com.ar/works.php?id=27">hey</a>). </p>
 <p>In the last edition there&#8217;s been something like 2.5 million visitors. There are about 100 places to visit in Paris. Many of which are indoors with a limited capacity and so enforce queues. Some are outside, so people can just walk past it and enjoy the art (sometimes, even from a great distance). </p>
 <p>What I found annoying though it that there was no way to tell in advance which installations were going to be crowded, and which were going to be empty.<br />
 This is what led me to build this model. </p>
-<p><iframe src="http://www.jeromecukier.net/projects/models/smallnb.html#night=500&#038;duration=100&#038;nbPeople=2500&#038;step=10&#038;stepStd=1&#038;timePerVisit=20&#038;timePerVisitO=2&#038;nbAttractions=100&#038;o=0.2&#038;minCap=5&#038;maxCap=20&#038;mode=true&#038;lyak=false" width="520" height="650" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></p>
+<p><iframe src="https://jckr.github.io/blog/projects/models/smallnb.html#night=500&#038;duration=100&#038;nbPeople=2500&#038;step=10&#038;stepStd=1&#038;timePerVisit=20&#038;timePerVisitO=2&#038;nbAttractions=100&#038;o=0.2&#038;minCap=5&#038;maxCap=20&#038;mode=true&#038;lyak=false" width="520" height="650" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></p>
 <p>Here&#8217;s how it works.<br />
 A certain number of people and attractions are randomly distributed in the city.<br />
 People will go to the nearest attraction. If it&#8217;s possible, they will go in, else they will queue until there is room.<br />
 While inside, they will enjoy it for a certain time, then they will move out and go to the nearest one they haven&#8217;t visited. </p>
 <p>This model, which is fairly close to how things work currently, will always end up creating large queues in some places while others will run under capacity.<br />
-<iframe src="http://www.jeromecukier.net/projects/models/smallnb.html#night=500&#038;duration=100&#038;nbPeople=2500&#038;step=10&#038;stepStd=1&#038;timePerVisit=20&#038;timePerVisitO=2&#038;nbAttractions=100&#038;o=0.2&#038;minCap=5&#038;maxCap=20&#038;mode=true&#038;lyak=true" width="520" height="650" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><br />
+<iframe src="https://jckr.github.io/blog/projects/models/smallnb.html#night=500&#038;duration=100&#038;nbPeople=2500&#038;step=10&#038;stepStd=1&#038;timePerVisit=20&#038;timePerVisitO=2&#038;nbAttractions=100&#038;o=0.2&#038;minCap=5&#038;maxCap=20&#038;mode=true&#038;lyak=true" width="520" height="650" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><br />
 Now imagine a simple change: people get an idea of how long the queues are everywhere. Instead of going to the nearest exhibit, they will go to the place where they would be able to get in the quickest, taking into account the time to get there and the time to queue if applicable. Since nobody likes to wait, people will shy away from the places with long queues, evening the load, and by the same token reducing the waiting time for other visitors. Technically the waiting time at all the installations become <a href="http://en.wikipedia.org/wiki/Lyapunov_function">Lyapunov functions</a>, and provided they have enough information agents will make it optimal.</p>
-<p>If you run this model in <a href="http://www.jeromecukier.net/projects/models/nuitblanche.html#night=500&#038;duration=100&#038;nbPeople=2500&#038;step=5&#038;stepStd=1&#038;timePerVisit=20&#038;timePerVisitO=2&#038;nbAttractions=50&#038;o=0.2&#038;minCap=5&#038;maxCap=20&#038;mode=true&#038;lyak=true">its full screen incarnation</a> with dashboards, bells and whistles, you will see that this doesn&#8217;t really help increasing the number of installations that people get to visit. What happens is that the time spent waiting in queue shifts to time spent moving between places. (the overall time spent inside installations should increase, though).</p>
+<p>If you run this model in <a href="http://jckr.github.io/blog/projects/models/nuitblanche.html#night=500&#038;duration=100&#038;nbPeople=2500&#038;step=5&#038;stepStd=1&#038;timePerVisit=20&#038;timePerVisitO=2&#038;nbAttractions=50&#038;o=0.2&#038;minCap=5&#038;maxCap=20&#038;mode=true&#038;lyak=true">its full screen incarnation</a> with dashboards, bells and whistles, you will see that this doesn&#8217;t really help increasing the number of installations that people get to visit. What happens is that the time spent waiting in queue shifts to time spent moving between places. (the overall time spent inside installations should increase, though).</p>
 <p>In order to reduce the time spent moving, one can improve the public transportation (represented by the average speed, in the model), or putting installations close together, which has been done to some extent since the start. But do that with a limit, because that moving time is an interesting buffer, it&#8217;s not as annoying as queuing and Paris is beautiful at night, and when you&#8217;re among 2.5 million art enthousiasts it&#8217;s as safe a city can get. </p>
 <p>To further improve the time spent visiting exhibits, one has to improve capacity or reduce attendance (two options which I trust the city of Paris will be wary about). One other option would be to improve the percentage of art installations that can be enjoyed from the outside, another parameter in the simulation.</p>
 <p>Lastly, here are a few things the model doesn&#8217;t include, which IMO don&#8217;t make a lot of difference in the results, but to be honest:<br />
 &#8211; the installations are presented as being equally attractive. In fact, some are always more interesting than others and get even more queue. (that would make the model where queues are ignored even more unbalanced).<br />
 &#8211; the capacities of the installations are determined by random, but uniformly distributed. That isn&#8217;t the case, the largest museums are open that night and they can welcome thousands of visitors, while some other places would be full at 100.<br />
 &#8211; opening times of installations haven&#8217;t been taken into account; most will close at some point during the night. </p>
-<p>and on that note, <a href="http://www.jeromecukier.net/projects/models/nuitblanche.html">enjoy the model</a> </p>
+<p>and on that note, <a href="http://jckr.github.io/blog/projects/models/nuitblanche.html">enjoy the model</a> </p>
 	    		<div class="clear">&nbsp;</div>
 	</section>
 </article><!-- #post-## -->
@@ -899,15 +899,15 @@ Now imagine a simple change: people get an idea of how long the queues are every
     </header>
 	<section class="post-content">
 
-		<p>Inspired by the <a href="http://coursera.org/">coursera</a> class on <a href="https://class.coursera.org/modelthinking-2012-002/class/index">model thinking</a>, by Scott E Page, I have implemented a bunch of <a href="http://jeromecukier.net/projects/models/models.html">simulation models</a> with <a href="http://d3js.org/">d3</a>. It&#8217;s something I have done on and off for the past few weeks, and let&#8217;s say it&#8217;s really the first 6. Those interactive versions just graze the surface of all there is to see.</p>
+		<p>Inspired by the <a href="http://coursera.org/">coursera</a> class on <a href="https://class.coursera.org/modelthinking-2012-002/class/index">model thinking</a>, by Scott E Page, I have implemented a bunch of <a href="http://jckr.github.io/blog/projects/models/models.html">simulation models</a> with <a href="http://d3js.org/">d3</a>. It&#8217;s something I have done on and off for the past few weeks, and let&#8217;s say it&#8217;s really the first 6. Those interactive versions just graze the surface of all there is to see.</p>
 <p>So what I have is: </p>
 <ul>
-<li><a href="http://www.jeromecukier.net/projects/models/life.html">Conway&#8217;s game of life </a></li>
-<li><a href="http://www.jeromecukier.net/projects/models/ca.html">1D cellular automata </a></li>
-<li><a href="http://www.jeromecukier.net/projects/models/polya.html">Polya&#8217;s process </a></li>
-<li><a href="http://www.jeromecukier.net/projects/models/percolate.html">square lattice percolation model </a></li>
-<li><a href="http://www.jeromecukier.net/projects/models/markov.html">Markov processes </a></li>
-<li><a href="http://www.jeromecukier.net/projects/models/segregate.html">Schelling&#8217;s segregation model </a></li>
+<li><a href="http://jckr.github.io/blog/projects/models/life.html">Conway&#8217;s game of life </a></li>
+<li><a href="http://jckr.github.io/blog/projects/models/ca.html">1D cellular automata </a></li>
+<li><a href="http://jckr.github.io/blog/projects/models/polya.html">Polya&#8217;s process </a></li>
+<li><a href="http://jckr.github.io/blog/projects/models/percolate.html">square lattice percolation model </a></li>
+<li><a href="http://jckr.github.io/blog/projects/models/markov.html">Markov processes </a></li>
+<li><a href="http://jckr.github.io/blog/projects/models/segregate.html">Schelling&#8217;s segregation model </a></li>
 </ul>
 <p>Enjoy!</p>
 	    		<div class="clear">&nbsp;</div>
@@ -926,9 +926,9 @@ Now imagine a simple change: people get an idea of how long the queues are every
 
 		<p>Jeff Heer, Scott Murray and myself have done a d3 tutorial at visWeek 2012. You probably gathered that from the title of the post.</p>
 <p>Here is a link to all the slides and code examples that we have presented:</p>
-<p><a href="http://www.jeromecukier.net/d3_tutorial.zip">d3 tutorial</a></p>
+<p><a href="http://jckr.github.io/blog/d3_tutorial.zip">d3 tutorial</a></p>
 <p>For the purpose of the tutorial I have compiled a d3 cheat sheet, on 4 pages it groups some of the most common d3 functions. When I was learning d3 my number one problem was figuring out which property should be set using .attr, and which required .style. And also: which svg element support which property? All of this is addressed in the cheat sheet. It&#8217;s part of the link above, but if you want it directly without downloading a 13Mb file, here it is: </p>
-<p><a href="http://www.jeromecukier.net/wp-content/uploads/2012/10/d3-cheat-sheet.pdf">d3 cheat sheet</a></p>
+<p><a href="http://jckr.github.io/blog/wp-content/uploads/2012/10/d3-cheat-sheet.pdf">d3 cheat sheet</a></p>
 	    		<div class="clear">&nbsp;</div>
 	</section>
 </article><!-- #post-## -->
@@ -944,8 +944,8 @@ Now imagine a simple change: people get an idea of how long the queues are every
 	<section class="post-content">
 
 		<p>Inspired by the, well, inspiring set of Lost visualizations released by Santiago Ortiz &#8211; <a href="http://intuitionanalytics.com/other/lostalgic/">Lostalgic</a>, I decided to publish the one visualization on all the data I had gathered on the Song of Ice and Fire series of books.</p>
-<p><a href="http://www.jeromecukier.net/projects/agot/places.html"><img src="http://www.jeromecukier.net/wp-content/uploads/2012/10/places.png" alt="" title="places" width="600" height="448" class="aligncenter size-full wp-image-1484" /></a></p>
-<p><a href="http://www.jeromecukier.net/projects/agot/places.html">Click to see the vis</a></p>
+<p><a href="http://jckr.github.io/blog/projects/agot/places.html"><img src="https://jckr.github.io/blog/wp-content/uploads/2012/10/places.png" alt="" title="places" width="600" height="448" class="aligncenter size-full wp-image-1484" /></a></p>
+<p><a href="http://jckr.github.io/blog/projects/agot/places.html">Click to see the vis</a></p>
 <p>Here&#8217;s the idea behind this one. Many books set in a fantasy world come with a map where all the places mentioned in the books are situated. I end up looking up these places very often to get an idea for the distances, for instance. But the way these locations are placed on a map is one specific convention. If two places are supposed to be fairly close from each other on a map but that it is very inconvenient to travel from one to the other, it is as if they were far, and conversely, if two places are a world apart but travel between them is fast and easy, it is as if they were close. </p>
 <p>With that in mind I am drawing a subjective map of the Game of Thrones world.<br />
 In the books, chapters are broadly comparable. Since all chapters are narrated from the point of view of one character, I link two places between which this protagonist has travelled in the course of one chapter. I also add links for travels suggested in the chapter, even if not done by the point of view character.<br />
@@ -1092,7 +1092,7 @@ Places which are linked are drawn one to the other. As a result, this creates an
 	(function(){
 		var corecss = document.createElement('link');
 		var themecss = document.createElement('link');
-		var corecssurl = "http://localhost:8888/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		var corecssurl = "/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
 		if ( corecss.setAttribute ) {
 				corecss.setAttribute( "rel", "stylesheet" );
 				corecss.setAttribute( "type", "text/css" );
@@ -1102,7 +1102,7 @@ Places which are linked are drawn one to the other. As a result, this creates an
 				corecss.href = corecssurl;
 		}
 		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
-		var themecssurl = "http://localhost:8888/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
+		var themecssurl = "/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
 		if ( themecss.setAttribute ) {
 				themecss.setAttribute( "rel", "stylesheet" );
 				themecss.setAttribute( "type", "text/css" );

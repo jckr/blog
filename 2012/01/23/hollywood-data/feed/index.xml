@@ -19,7 +19,7 @@
 		<link>/2012/01/23/hollywood-data/#comment-264</link>
 		<dc:creator><![CDATA[Hollywood budgets &#8211; extended deadline &#124; Information is Beautiful]]></dc:creator>
 		<pubDate>Tue, 26 May 2015 15:01:16 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1185#comment-264</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1185#comment-264</guid>
 		<description><![CDATA[[&#8230;] Jermone Cukier&#8216;s explorations of the dollar value of individual features of a plot. He cross-referenced [&#8230;]]]></description>
 		<content:encoded><![CDATA[<p>[&#8230;] Jermone Cukier&#8216;s explorations of the dollar value of individual features of a plot. He cross-referenced [&#8230;]</p>
 ]]></content:encoded>
@@ -29,7 +29,7 @@
 		<link>/2012/01/23/hollywood-data/#comment-260</link>
 		<dc:creator><![CDATA[Hollywood budgets – extended deadline &#124; One Step To Information]]></dc:creator>
 		<pubDate>Fri, 22 Jun 2012 15:18:28 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1185#comment-260</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1185#comment-260</guid>
 		<description><![CDATA[[...] Jermone Cukier&#8216;s explorations of the dollar value of individual features of a plot. He cross-referenced [...]]]></description>
 		<content:encoded><![CDATA[<p>[&#8230;] Jermone Cukier&#8216;s explorations of the dollar value of individual features of a plot. He cross-referenced [&#8230;]</p>
 ]]></content:encoded>
@@ -39,7 +39,7 @@
 		<link>/2012/01/23/hollywood-data/#comment-259</link>
 		<dc:creator><![CDATA[jerome]]></dc:creator>
 		<pubDate>Fri, 09 Mar 2012 13:43:12 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1185#comment-259</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1185#comment-259</guid>
 		<description><![CDATA[oh yes. I gave many caveats emptors in the post. The main problem is that keywords are not universally attributed. Also, more popular movies tend to be better described (ie with more keywords) so that the value of each keyword is artifically high. Also, as you point out, the ratio of parameters / observation is ridiculously high so overfitting is a certainty (even if the regression is regularized). 
 however I think that it&#039;s possible to get some meaningful results by watching whether a few  features are present in a large number of movies.]]></description>
 		<content:encoded><![CDATA[<p>oh yes. I gave many caveats emptors in the post. The main problem is that keywords are not universally attributed. Also, more popular movies tend to be better described (ie with more keywords) so that the value of each keyword is artifically high. Also, as you point out, the ratio of parameters / observation is ridiculously high so overfitting is a certainty (even if the regression is regularized).<br />
@@ -51,7 +51,7 @@ however I think that it&#8217;s possible to get some meaningful results by watch
 		<link>/2012/01/23/hollywood-data/#comment-258</link>
 		<dc:creator><![CDATA[Matthew]]></dc:creator>
 		<pubDate>Tue, 21 Feb 2012 13:37:10 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1185#comment-258</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1185#comment-258</guid>
 		<description><![CDATA[This is a neat idea, but you&#039;re estimating an awful lot of parameters with your regression here, which is a dangerous thing to do unless you&#039;re careful to avoid over-fitting. Which of these effects are statistically significant and how do we know we&#039;re not just looking at noise for the parameter estimates for a lot of these keywords? Maybe worth doing some feature selection here, or at least giving p-values or confidence intervals...]]></description>
 		<content:encoded><![CDATA[<p>This is a neat idea, but you&#8217;re estimating an awful lot of parameters with your regression here, which is a dangerous thing to do unless you&#8217;re careful to avoid over-fitting. Which of these effects are statistically significant and how do we know we&#8217;re not just looking at noise for the parameter estimates for a lot of these keywords? Maybe worth doing some feature selection here, or at least giving p-values or confidence intervals&#8230;</p>
 ]]></content:encoded>
@@ -61,7 +61,7 @@ however I think that it&#8217;s possible to get some meaningful results by watch
 		<link>/2012/01/23/hollywood-data/#comment-257</link>
 		<dc:creator><![CDATA[Episode 23: Statistics]]></dc:creator>
 		<pubDate>Thu, 09 Feb 2012 23:51:09 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1185#comment-257</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1185#comment-257</guid>
 		<description><![CDATA[[...] Jerome Cukier &#062;&#062; Hollywood + Data [...]]]></description>
 		<content:encoded><![CDATA[<p>[&#8230;] Jerome Cukier &gt;&gt; Hollywood + Data [&#8230;]</p>
 ]]></content:encoded>
@@ -71,7 +71,7 @@ however I think that it&#8217;s possible to get some meaningful results by watch
 		<link>/2012/01/23/hollywood-data/#comment-256</link>
 		<dc:creator><![CDATA[jerome]]></dc:creator>
 		<pubDate>Sat, 28 Jan 2012 09:16:52 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1185#comment-256</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1185#comment-256</guid>
 		<description><![CDATA[The tricky part was to obtain the imdb ID for each movie. Then yes the corresponding web pages (list of all keywords for each movie) were scraped.]]></description>
 		<content:encoded><![CDATA[<p>The tricky part was to obtain the imdb ID for each movie. Then yes the corresponding web pages (list of all keywords for each movie) were scraped.</p>
 ]]></content:encoded>
@@ -81,7 +81,7 @@ however I think that it&#8217;s possible to get some meaningful results by watch
 		<link>/2012/01/23/hollywood-data/#comment-255</link>
 		<dc:creator><![CDATA[mike]]></dc:creator>
 		<pubDate>Sat, 28 Jan 2012 06:20:29 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1185#comment-255</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1185#comment-255</guid>
 		<description><![CDATA[one question: i look at the IMDB keyword search page, but i can&#039;t figure out how you were able to query it based on keyword count, or movie titles in order to join it back to the original dataset. did you write some sort of scraper for their website?]]></description>
 		<content:encoded><![CDATA[<p>one question: i look at the IMDB keyword search page, but i can&#8217;t figure out how you were able to query it based on keyword count, or movie titles in order to join it back to the original dataset. did you write some sort of scraper for their website?</p>
 ]]></content:encoded>
@@ -91,7 +91,7 @@ however I think that it&#8217;s possible to get some meaningful results by watch
 		<link>/2012/01/23/hollywood-data/#comment-254</link>
 		<dc:creator><![CDATA[jerome]]></dc:creator>
 		<pubDate>Fri, 27 Jan 2012 14:56:55 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1185#comment-254</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1185#comment-254</guid>
 		<description><![CDATA[thanks for your good wishes!
 what we have done has nothing to do with this (except: explosions). Doing something with keywords was my original idea, but Jen came up with something better and so we move in that direction. 
 Good luck to you too!]]></description>
@@ -105,7 +105,7 @@ Good luck to you too!</p>
 		<link>/2012/01/23/hollywood-data/#comment-253</link>
 		<dc:creator><![CDATA[Jim V]]></dc:creator>
 		<pubDate>Fri, 27 Jan 2012 14:31:23 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1185#comment-253</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1185#comment-253</guid>
 		<description><![CDATA[Very interesting stuff. I&#039;m excited to see what you guys come up with for the challenge. I have my own submission, but it sounds like its going to get blown out of the water by more creative entries. 
 
 Would also be interested in finding out a bit more of the process behind how you and Jen designed and split up the implementation. And how long the total project took.
@@ -121,7 +121,7 @@ Good luck!]]></description>
 		<link>/2012/01/23/hollywood-data/#comment-252</link>
 		<dc:creator><![CDATA[Expodomain.com &#187; Hollywood budgets – extended deadline]]></dc:creator>
 		<pubDate>Thu, 26 Jan 2012 09:18:32 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1185#comment-252</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1185#comment-252</guid>
 		<description><![CDATA[[...] Jermone Cukier‘s explorations of the dollar value of individual features of a plot. He cross-referenced keywords [...]]]></description>
 		<content:encoded><![CDATA[<p>[&#8230;] Jermone Cukier‘s explorations of the dollar value of individual features of a plot. He cross-referenced keywords [&#8230;]</p>
 ]]></content:encoded>

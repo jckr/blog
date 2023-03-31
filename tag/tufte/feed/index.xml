@@ -8,7 +8,7 @@
 	>
 
 <channel>
-	<title>Tufte &#8211; jeromecukier.net</title>
+	<title>Tufte &#8211; jckr.github.io/blog</title>
 	<atom:link href="http://localhost/tag/tufte/feed/" rel="self" type="application/rss+xml" />
 	<link>/</link>
 	<description>Just another WordPress site</description>
@@ -30,8 +30,8 @@
 		<category><![CDATA[Kaiser Fung]]></category>
 		<category><![CDATA[Tufte]]></category>
 
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=36</guid>
-		<description><![CDATA[I&#8217;d like to write a few words about blogs I read regularly and to start this series, I am happy to talk about Junk Charts.  Junk Charts is the one-man crusade of Kaiser Fung against ineffective charts, who has been working on the blog since 2005. Kaiser is a convinced follower of Tufte, whom he owes <a class="read-more" href="/2008/12/05/junk-charts/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=36</guid>
+		<description><![CDATA[I&#8217;d like to write a few words about blogs I read regularly and to start this series, I am happy to talk about Junk Charts.  Junk Charts is the one-man crusade of Kaiser Fung against ineffective charts, who has been working on the blog since 2005. Kaiser is a convinced follower of Tufte, whom he owes <a class="read-more" href="/blog/2008/12/05/junk-charts/">&#8230;&#160;<span class="meta-nav">&#8594;</span></a>]]></description>
 				<content:encoded><![CDATA[<p><div style="width: 260px" class="wp-caption alignleft"><img title="A 3D pie chart" src="http://junkcharts.typepad.com/junk_charts/images/2007/11/18/dropkicks_pie_chart.gif" alt="" width="250" height="153" /><p class="wp-caption-text">The enemy.</p></div></p>
 <p>I&#8217;d like to write a few words about blogs I read regularly and to start this series, I am happy to talk about Junk Charts. </p>
 <p><a href="http://junkcharts.typepad.com/">Junk Charts</a> is the one-man crusade of Kaiser Fung against ineffective charts, who has been working on the blog since 2005. Kaiser is a convinced follower of Tufte, whom he owes his blog&#8217;s name. Tufte describes chart junk as whatever clutters graphs and obscures information contained in the chart data. </p>

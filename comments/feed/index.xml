@@ -6,7 +6,7 @@
 	
 	>
 <channel>
-	<title>Comments for jeromecukier.net</title>
+	<title>Comments for jckr.github.io/blog</title>
 	<atom:link href="http://localhost/comments/feed/" rel="self" type="application/rss+xml" />
 	<link>/</link>
 	<description>Just another WordPress site</description>
@@ -19,7 +19,7 @@
 		<link>/2016/08/17/the-big-leagues/#comment-567</link>
 		<dc:creator><![CDATA[עומר עזריאל]]></dc:creator>
 		<pubDate>Sun, 11 Dec 2016 21:06:23 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1765#comment-567</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1765#comment-567</guid>
 		<description><![CDATA[wow, man, thanks for sharing so much knowledge! I am starting my first project in vis, gonna be way more fun now. ]]></description>
 		<content:encoded><![CDATA[<p>wow, man, thanks for sharing so much knowledge! I am starting my first project in vis, gonna be way more fun now. </p>
 ]]></content:encoded>
@@ -29,7 +29,7 @@
 		<link>/2012/05/28/manipulating-data-like-a-boss-with-d3/#comment-312</link>
 		<dc:creator><![CDATA[Carlos Ayres]]></dc:creator>
 		<pubDate>Tue, 01 Nov 2016 10:04:23 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1246#comment-312</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1246#comment-312</guid>
 		<description><![CDATA[Yes, an old post, but still excelent. Thanks for sharing]]></description>
 		<content:encoded><![CDATA[<p>Yes, an old post, but still excelent. Thanks for sharing</p>
 ]]></content:encoded>
@@ -39,7 +39,7 @@
 		<link>/2013/05/13/making-the-game-of-thrones-visualization/#comment-466</link>
 		<dc:creator><![CDATA[Game of ThronesInteractions Among the Top 30 Characters &#8211; PowerTrip Analytics]]></dc:creator>
 		<pubDate>Mon, 10 Oct 2016 15:23:16 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1524#comment-466</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1524#comment-466</guid>
 		<description><![CDATA[[&#8230;] This data was originally compiled by Jerome Cukier and visualized beautifully on his web site using D3. You can read more about the data and how he collected on his site. [&#8230;]]]></description>
 		<content:encoded><![CDATA[<p>[&#8230;] This data was originally compiled by Jerome Cukier and visualized beautifully on his web site using D3. You can read more about the data and how he collected on his site. [&#8230;]</p>
 ]]></content:encoded>
@@ -49,9 +49,9 @@
 		<link>/2012/09/04/getting-to-hello-world-with-d3/#comment-419</link>
 		<dc:creator><![CDATA[D3 &#8211; Getting Started &#124; abgoswam&#039;s tech blog]]></dc:creator>
 		<pubDate>Sat, 08 Oct 2016 06:59:40 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1419#comment-419</guid>
-		<description><![CDATA[[&#8230;] http://www.jeromecukier.net/blog/2012/09/04/getting-to-hello-world-with-d3/ [&#8230;]]]></description>
-		<content:encoded><![CDATA[<p>[&#8230;] <a href="http://www.jeromecukier.net/blog/2012/09/04/getting-to-hello-world-with-d3/" rel="nofollow">http://www.jeromecukier.net/blog/2012/09/04/getting-to-hello-world-with-d3/</a> [&#8230;]</p>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1419#comment-419</guid>
+		<description><![CDATA[[&#8230;] http://jckr.github.io/blog/blog/2012/09/04/getting-to-hello-world-with-d3/ [&#8230;]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] <a href="http://jckr.github.io/blog/blog/2012/09/04/getting-to-hello-world-with-d3/" rel="nofollow">http://jckr.github.io/blog/blog/2012/09/04/getting-to-hello-world-with-d3/</a> [&#8230;]</p>
 ]]></content:encoded>
 	</item>
 	<item>
@@ -59,7 +59,7 @@
 		<link>/2012/09/04/getting-to-hello-world-with-d3/#comment-418</link>
 		<dc:creator><![CDATA[Broto Bhattacharjee]]></dc:creator>
 		<pubDate>Sat, 24 Sep 2016 13:24:40 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1419#comment-418</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1419#comment-418</guid>
 		<description><![CDATA[@Anna it is probably not working because you have written src=&quot;../d3.v2.js&quot; in the html file. However you might have downloaded a different version on d3. As in my case, I changed the line to src=&quot;../d3.js&quot; and it worked thereafter.]]></description>
 		<content:encoded><![CDATA[<p>@Anna it is probably not working because you have written src=&#8221;../d3.v2.js&#8221; in the html file. However you might have downloaded a different version on d3. As in my case, I changed the line to src=&#8221;../d3.js&#8221; and it worked thereafter.</p>
 ]]></content:encoded>
@@ -69,7 +69,7 @@
 		<link>/2012/09/04/getting-to-hello-world-with-d3/#comment-417</link>
 		<dc:creator><![CDATA[Broto Bhattacharjee]]></dc:creator>
 		<pubDate>Sat, 24 Sep 2016 13:22:54 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1419#comment-417</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1419#comment-417</guid>
 		<description><![CDATA[@Anna it is probably not working because we have written  in the html file. However you might have downloaded a different version on d3. As in my case, I changed the line to  and it worked thereafter.]]></description>
 		<content:encoded><![CDATA[<p>@Anna it is probably not working because we have written  in the html file. However you might have downloaded a different version on d3. As in my case, I changed the line to  and it worked thereafter.</p>
 ]]></content:encoded>
@@ -79,7 +79,7 @@
 		<link>/2012/07/02/embedding-tableau-visualizations-on-the-web/#comment-369</link>
 		<dc:creator><![CDATA[Abhiram]]></dc:creator>
 		<pubDate>Thu, 22 Sep 2016 05:53:21 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1395#comment-369</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1395#comment-369</guid>
 		<description><![CDATA[Thanks Jerome, this was a lifesaver for I have less than zero knowledge in html :P]]></description>
 		<content:encoded><![CDATA[<p>Thanks Jerome, this was a lifesaver for I have less than zero knowledge in html 😛</p>
 ]]></content:encoded>
@@ -89,7 +89,7 @@
 		<link>/2011/08/11/d3-scales-and-color/#comment-209</link>
 		<dc:creator><![CDATA[Step4- Adding Axes and text &#8211; Qlik and Dirty]]></dc:creator>
 		<pubDate>Tue, 13 Sep 2016 09:16:53 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1026#comment-209</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1026#comment-209</guid>
 		<description><![CDATA[[&#8230;] d3: scales, and color. [&#8230;]]]></description>
 		<content:encoded><![CDATA[<p>[&#8230;] d3: scales, and color. [&#8230;]</p>
 ]]></content:encoded>
@@ -99,7 +99,7 @@
 		<link>/2015/05/19/you-may-not-need-d3/#comment-554</link>
 		<dc:creator><![CDATA[saravna]]></dc:creator>
 		<pubDate>Thu, 08 Sep 2016 04:46:51 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1664#comment-554</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1664#comment-554</guid>
 		<description><![CDATA[such a nice post!!!!]]></description>
 		<content:encoded><![CDATA[<p>such a nice post!!!!</p>
 ]]></content:encoded>
@@ -109,7 +109,7 @@
 		<link>/2012/09/04/getting-to-hello-world-with-d3/#comment-416</link>
 		<dc:creator><![CDATA[jerome]]></dc:creator>
 		<pubDate>Tue, 06 Sep 2016 17:33:32 +0000</pubDate>
-		<guid isPermaLink="false">http://www.jeromecukier.net/?p=1419#comment-416</guid>
+		<guid isPermaLink="false">http://jckr.github.io/blog/?p=1419#comment-416</guid>
 		<description><![CDATA[Hi, what do you see in your console along with your blank screen?]]></description>
 		<content:encoded><![CDATA[<p>Hi, what do you see in your console along with your blank screen?</p>
 ]]></content:encoded>
